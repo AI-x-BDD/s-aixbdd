@@ -20,11 +20,12 @@
 │   ├── 主幹式開發.md
 │   └── 雙鑽石原則.md
 └── .claude/skills/            專案層級 Skills，只在本專案生效
-    └── conventional-commits/  自建，依 docs/conventional-commits.md 撰寫
+    ├── conventional-commits/  自建，依 docs/conventional-commits.md 撰寫
+    └── trunk-based-development/  自建，依 docs/主幹式開發.md 撰寫
 ```
 
 ## Skills
 
 - Skill 放在 `.claude/skills/<name>/SKILL.md`，每個 Skill 一個資料夾。
 - 從外部 repo 安裝的 Skill 保持原樣，不直接修改內容；要更新時從上游重新複製。
-- 自建的 Skill（目前是 `conventional-commits`）可以直接修改；來源筆記更新時，一併同步 Skill 內容。
+- 自建的 Skill（目前是 `conventional-commits`、`trunk-based-development`）可以直接修改；來源筆記更新時，一併同步 Skill 內容。
