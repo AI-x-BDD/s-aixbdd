@@ -20,6 +20,7 @@
 │   ├── 主幹式開發.md
 │   └── 雙鑽石原則.md
 └── .claude/skills/            專案層級 Skills，只在本專案生效
+    ├── agent-reach/           外部安裝，來源 Panniantong/agent-reach（CLI 在 ~/.agent-reach-venv）
     ├── conventional-commits/  自建，依 docs/conventional-commits.md 撰寫
     ├── double-diamond/        自建，依 docs/雙鑽石原則.md 撰寫
     └── trunk-based-development/  自建，依 docs/主幹式開發.md 撰寫
