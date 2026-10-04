@@ -22,4 +22,14 @@ class StringCalculatorTest {
     void twoCommaSeparatedNumbersReturnTheirSum() {
         assertEquals(3, calculator.add("1,2"));
     }
+
+    @Test
+    void threeCommaSeparatedNumbersReturnTheirSum() {
+        assertEquals(6, calculator.add("1,2,3"));
+    }
+
+    @Test
+    void fiveCommaSeparatedNumbersReturnTheirSum() {
+        assertEquals(15, calculator.add("1,2,3,4,5"));
+    }
 }

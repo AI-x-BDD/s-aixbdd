@@ -7,9 +7,10 @@ public class StringCalculator {
             return 0;
         }
         String[] parts = numbers.split(",");
-        if (parts.length == 1) {
-            return Integer.parseInt(parts[0]);
+        int sum = 0;
+        for (String part : parts) {
+            sum += Integer.parseInt(part);
         }
-        return Integer.parseInt(parts[0]) + Integer.parseInt(parts[1]);
+        return sum;
     }
 }
