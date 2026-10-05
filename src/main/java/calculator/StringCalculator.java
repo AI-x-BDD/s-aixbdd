@@ -1,5 +1,6 @@
 package calculator;
 
+import java.util.StringJoiner;
 import java.util.regex.Pattern;
 
 public class StringCalculator {
@@ -13,8 +14,16 @@ public class StringCalculator {
             throw new IllegalArgumentException("Input must not end with a delimiter");
         }
         int sum = 0;
+        StringJoiner negatives = new StringJoiner(",");
         for (String part : parts) {
-            sum += Integer.parseInt(part);
+            int number = Integer.parseInt(part);
+            if (number < 0) {
+                negatives.add(Integer.toString(number));
+            }
+            sum += number;
+        }
+        if (negatives.length() > 0) {
+            throw new IllegalArgumentException("Negative not allowed: " + negatives);
         }
         return sum;
     }

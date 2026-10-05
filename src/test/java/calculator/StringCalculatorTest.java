@@ -10,6 +10,39 @@ class StringCalculatorTest {
     private final StringCalculator calculator = new StringCalculator();
 
     @Test
+    void singleNegativeNumberIsRejected() {
+        IllegalArgumentException exception =
+                assertThrows(IllegalArgumentException.class, () -> calculator.add("-1,2"));
+        assertEquals("Negative not allowed: -1", exception.getMessage());
+    }
+
+    @Test
+    void allNegativeNumbersAreReportedInInputOrder() {
+        IllegalArgumentException exception =
+                assertThrows(IllegalArgumentException.class, () -> calculator.add("-1,2,-3"));
+        assertEquals("Negative not allowed: -1,-3", exception.getMessage());
+    }
+
+    @Test
+    void negativeNumbersWithNewlineSeparatorsAreRejected() {
+        IllegalArgumentException exception =
+                assertThrows(IllegalArgumentException.class, () -> calculator.add("-3\n2,-1"));
+        assertEquals("Negative not allowed: -3,-1", exception.getMessage());
+    }
+
+    @Test
+    void negativeNumbersWithCustomDelimiterAreRejected() {
+        IllegalArgumentException exception =
+                assertThrows(IllegalArgumentException.class, () -> calculator.add("//|\n-1|2|-3"));
+        assertEquals("Negative not allowed: -1,-3", exception.getMessage());
+    }
+
+    @Test
+    void zeroIsAllowed() {
+        assertEquals(2, calculator.add("0,2"));
+    }
+
+    @Test
     void emptyStringReturnsZero() {
         assertEquals(0, calculator.add(""));
     }
