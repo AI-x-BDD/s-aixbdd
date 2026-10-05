@@ -4,10 +4,72 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 class StringCalculatorTest {
 
     private final StringCalculator calculator = new StringCalculator();
+
+    @Test
+    void missingNumberAndAllNegativesAreReportedTogether() {
+        IllegalArgumentException exception =
+                assertThrows(IllegalArgumentException.class, () -> calculator.add("-1,,-3"));
+        assertEquals("Missing number at position 2; Negative not allowed: -1,-3",
+                exception.getMessage());
+    }
+
+    @Test
+    void trailingDelimiterAndNegativesAreReportedTogether() {
+        IllegalArgumentException exception =
+                assertThrows(IllegalArgumentException.class, () -> calculator.add("-1,2,"));
+        assertEquals("Input must not end with a delimiter; Negative not allowed: -1",
+                exception.getMessage());
+    }
+
+    @Test
+    void invalidNumberDoesNotHideLaterNegatives() {
+        IllegalArgumentException exception =
+                assertThrows(IllegalArgumentException.class, () -> calculator.add("1,x,-3"));
+        assertEquals("Invalid number at position 2: x; Negative not allowed: -3",
+                exception.getMessage());
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"//;", "//;1;2", "//", "//\n1,2"})
+    void malformedCustomDelimiterHeaderIsRejected(String input) {
+        IllegalArgumentException exception =
+                assertThrows(IllegalArgumentException.class, () -> calculator.add(input));
+        assertEquals("Invalid delimiter header: expected //delimiter followed by a newline",
+                exception.getMessage());
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"-1,,2", "//;\n-1;;2", "//|\n-1||2", "-1\n\n2"})
+    void mixedErrorsWorkWithEveryDelimiter(String input) {
+        IllegalArgumentException exception =
+                assertThrows(IllegalArgumentException.class, () -> calculator.add(input));
+        assertEquals("Missing number at position 2; Negative not allowed: -1",
+                exception.getMessage());
+    }
+
+    @Test
+    void customDelimiterWithoutNumbersReportsMissingNumber() {
+        IllegalArgumentException exception =
+                assertThrows(IllegalArgumentException.class, () -> calculator.add("//;\n"));
+        assertEquals("Missing number at position 1", exception.getMessage());
+    }
+
+    @Test
+    void allRecognizableErrorsAreReportedInStableOrderWithoutDuplicates() {
+        IllegalArgumentException exception =
+                assertThrows(IllegalArgumentException.class,
+                        () -> calculator.add(",x,-1,,2147483648,-1,"));
+        assertEquals("Missing number at position 1; Invalid number at position 2: x; "
+                        + "Missing number at position 4; Invalid number at position 5: 2147483648; "
+                        + "Input must not end with a delimiter; Negative not allowed: -1,-1",
+                exception.getMessage());
+    }
 
     @Test
     void singleNegativeNumberIsRejected() {
