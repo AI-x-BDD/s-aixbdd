@@ -6,7 +6,7 @@ public class StringCalculator {
         if (numbers.isEmpty()) {
             return 0;
         }
-        String[] parts = numbers.split("[,\n]", -1);
+        String[] parts = tokenize(numbers);
         if (parts[parts.length - 1].isEmpty()) {
             throw new IllegalArgumentException("Input must not end with a delimiter");
         }
@@ -15,5 +15,9 @@ public class StringCalculator {
             sum += Integer.parseInt(part);
         }
         return sum;
+    }
+
+    private String[] tokenize(String numbers) {
+        return numbers.split("[,\n]", -1);
     }
 }
