@@ -32,4 +32,14 @@ class StringCalculatorTest {
     void fiveCommaSeparatedNumbersReturnTheirSum() {
         assertEquals(15, calculator.add("1,2,3,4,5"));
     }
+
+    @Test
+    void newlineAndCommaCanBeMixedAsSeparators() {
+        assertEquals(6, calculator.add("1\n2,3"));
+    }
+
+    @Test
+    void newlineAloneCanSeparateNumbers() {
+        assertEquals(6, calculator.add("1\n2\n3"));
+    }
 }
