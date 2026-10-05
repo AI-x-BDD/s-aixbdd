@@ -6,16 +6,31 @@ import java.util.regex.Pattern;
 public class StringCalculator {
 
     public int add(String numbers) {
-        if (numbers.isEmpty()) {
-            return 0;
-        }
-        String[] parts = tokenize(numbers);
-        int[] values = parseAndValidate(parts);
+        int[] values = parse(numbers);
         int sum = 0;
         for (int value : values) {
             sum += value;
         }
         return sum;
+    }
+
+    public int multiply(String numbers) {
+        int[] values = parse(numbers);
+        if (values.length == 0) {
+            return 0;
+        }
+        int product = 1;
+        for (int value : values) {
+            product *= value;
+        }
+        return product;
+    }
+
+    private int[] parse(String numbers) {
+        if (numbers.isEmpty()) {
+            return new int[0];
+        }
+        return parseAndValidate(tokenize(numbers));
     }
 
     private int[] parseAndValidate(String[] parts) {
