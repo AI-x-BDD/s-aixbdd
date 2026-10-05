@@ -1,5 +1,7 @@
 package calculator;
 
+import java.util.regex.Pattern;
+
 public class StringCalculator {
 
     public int add(String numbers) {
@@ -18,6 +20,11 @@ public class StringCalculator {
     }
 
     private String[] tokenize(String numbers) {
+        if (numbers.startsWith("//")) {
+            int headerEnd = numbers.indexOf('\n');
+            String delimiter = numbers.substring(2, headerEnd);
+            return numbers.substring(headerEnd + 1).split("[,\n]|" + Pattern.quote(delimiter), -1);
+        }
         return numbers.split("[,\n]", -1);
     }
 }

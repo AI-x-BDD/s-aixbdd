@@ -57,4 +57,21 @@ class StringCalculatorTest {
                 assertThrows(IllegalArgumentException.class, () -> calculator.add("1\n2\n"));
         assertEquals("Input must not end with a delimiter", exception.getMessage());
     }
+
+    @Test
+    void customDelimiterSeparatesNumbers() {
+        assertEquals(3, calculator.add("//;\n1;2"));
+    }
+
+    @Test
+    void regexSpecialCharacterCanBeCustomDelimiter() {
+        assertEquals(6, calculator.add("//|\n1|2|3"));
+    }
+
+    @Test
+    void trailingCustomDelimiterIsRejected() {
+        IllegalArgumentException exception =
+                assertThrows(IllegalArgumentException.class, () -> calculator.add("//;\n1;2;"));
+        assertEquals("Input must not end with a delimiter", exception.getMessage());
+    }
 }
