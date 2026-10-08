@@ -1,0 +1,9 @@
+[submodule "upstreams/asd-ste100-skill"]
+	path = upstreams/asd-ste100-skill
+	url = https://github.com/danyuchn/asd-ste100-skill.git
+[submodule "upstreams/no-ai-slop"]
+	path = upstreams/no-ai-slop
+	url = https://github.com/petergyang/no-ai-slop.git
+[submodule "upstreams/shuorenhua"]
+	path = upstreams/shuorenhua
+	url = https://github.com/MrGeDiao/shuorenhua.git

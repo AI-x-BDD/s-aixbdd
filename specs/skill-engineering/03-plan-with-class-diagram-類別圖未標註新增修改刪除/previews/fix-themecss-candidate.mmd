@@ -1,0 +1,36 @@
+%%{init: {'themeCSS': '.added rect, .added path { fill: #e6f4ea; stroke: #1e8e3e; } .changed rect, .changed path { fill: #fef7e0; stroke: #e37400; } .removed rect, .removed path { fill: #fce8e6; stroke: #d93025; stroke-dasharray: 5 5; } .kept rect, .kept path { fill: #f1f3f4; stroke: #80868b; } .added text, .changed text, .removed text, .kept text { fill: #202124; } .added span, .changed span, .removed span, .kept span { color: #202124; }'}}%%
+classDiagram
+    OrderService ..> PaymentGateway : charges through
+    OrderService ..> OrderRepository : persists through
+    OrderService ..> LegacyOrderDao : persists through
+    OrderService ..> OrderNotifier : notifies cancellation «new»
+    OrderRepository <|.. SqlOrderRepository
+
+    class OrderService:::changed {
+        <<modified>>
+        +placeOrder(command: PlaceOrderCommand) Order «changed»
+        +cancelOrder(orderId: OrderId) void «new»
+    }
+
+    class OrderRepository:::added {
+        <<interface · new>>
+        +save(order: Order) void
+        +findById(orderId: OrderId) Order
+    }
+
+    class SqlOrderRepository:::added {
+        <<new>>
+    }
+
+    class LegacyOrderDao:::removed {
+        <<deleted>>
+        +insert(order: Order) void
+    }
+
+    class PaymentGateway:::kept {
+        <<interface · existing>>
+    }
+
+    class OrderNotifier:::kept {
+        <<existing>>
+    }

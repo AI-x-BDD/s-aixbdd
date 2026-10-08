@@ -18,3 +18,4 @@ jobs:
           java-version: '21'
           cache: maven
       - run: mvn -B test
+      - run: mvn -B test -f java-web-framework/pom.xml
