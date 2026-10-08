@@ -10,10 +10,13 @@
 
 ## 專案概覽
 
-練習用專案，用來建立與試用 Agent Skills，並以 [Coding Dojo](https://codingdojo.org/) 的 String Calculator 題目（Java 21、Maven、JUnit 5）實際驗證三個自建 Skill。
+練習用專案，用來建立與試用 Agent Skills。
 
-- 測試：`mvn test`
-- CI：`.github/workflows/ci.yml`，push 或 PR 到 `main` 時執行 `scripts/sync-skills.sh --check` 與 `mvn -B test`
+- 第一份作業（tag `homework-01`）：以 [Coding Dojo](https://codingdojo.org/) 的 String Calculator 題目（Java 21、Maven、JUnit 5）實際驗證三個自建 Skill。
+- 第二份作業：由 [stevecyj/skills](https://github.com/stevecyj/skills) 以保留雙方 Git 歷史的 merge 整合進來，包含 `skill-engineering` 系列 Skill、`plan-with-class-diagram`，以及用它規劃實作的 `java-web-framework/`（Java 17、Maven、JUnit 5）。
+
+- 測試：根目錄 `mvn test`（String Calculator）；`mvn test -f java-web-framework/pom.xml`（第二份作業）
+- CI：`.github/workflows/ci.yml`，push 或 PR 到 `main` 時執行 `scripts/sync-skills.sh --check`、`mvn -B test` 與 `mvn -B test -f java-web-framework/pom.xml`
 
 ## 目錄結構
 
@@ -24,8 +27,20 @@
 ├── README.md                  repo 介紹，文末保留官方區塊
 ├── VERSION                    Template 版本
 ├── pom.xml                    Maven 設定
-├── scripts/sync-skills.sh     同步兩邊的 skills 與 CLAUDE.md／AGENTS.md
+├── LICENSE                    MIT 授權原文（來自 stevecyj/skills）與授權範圍；第三方與課程內容為例外
+├── skills-lock.json           外部 Skill（skill-creator）的來源與雜湊
+├── scripts/
+│   ├── sync-skills.sh         同步兩邊的 skills 與 CLAUDE.md／AGENTS.md
+│   ├── install.sh             個人工具：把 skills/ 與 upstreams/ 的 Skill 以 symlink 裝到家目錄
+│   └── sync-upstreams.sh      個人工具：更新 upstreams/ 的 submodule 版本
 ├── src/                       String Calculator 程式碼與測試
+├── java-web-framework/        第二份作業的 Java Web 框架（獨立的 Maven 專案）
+├── specs/                     第二份作業的紀錄
+│   ├── skill-engineering/     skill-engineering 各次建立與優化的藍圖、根因報告
+│   └── plan/                  plan-with-class-diagram 產出的類別圖提案
+├── assets/                    Skill 資源目錄結構示意圖
+├── skills/                    個人跨專案使用的 Skill，由 install.sh 安裝，不是課程平台讀取的路徑
+├── upstreams/                 第三方 Skill 的 Git submodule，由 install.sh 安裝
 ├── docs/                      學習筆記
 │   ├── ch1.md                 ch1 的 Skill 說明與實作驗證
 │   ├── conventional-commits.md
@@ -36,7 +51,12 @@
 ├── .claude/skills/            專案層級 Skills，只在本專案生效
 │   ├── conventional-commits/  自建，依 docs/conventional-commits.md 撰寫
 │   ├── double-diamond/        自建，依 docs/雙鑽石原則.md 撰寫
-│   └── trunk-based-development/  自建，依 docs/主幹式開發.md 撰寫
+│   ├── trunk-based-development/  自建，依 docs/主幹式開發.md 撰寫
+│   ├── skill-engineering/     自建，編排 Skill 的建立與優化
+│   ├── skill-form-*/          自建，撰寫 Skill 單一部位（description、sop、rule、template、script）
+│   ├── skill-derive-*/        自建，為 SOP 步驟抽出部位（rule、template、script）
+│   ├── plan-with-class-diagram/  自建，實作前先提出類別圖
+│   └── skill-creator/         外部，來源見 skills-lock.json，授權見 skill-creator/LICENSE.txt
 └── .agents/skills/            Codex 等讀 .agents 的 agent 讀這裡；各 Skill 是 .claude/skills/ 的實體複製
 ```
 
@@ -50,7 +70,10 @@
   - 刪除 Skill 時，腳本不會刪除另一邊的同名資料夾，要手動刪掉兩邊。
   - 同步後用 `scripts/sync-skills.sh --check` 確認兩邊一致；CI 也會執行這項檢查。
 - 從外部 repo 安裝的 Skill 保持原樣，不直接修改內容；要更新時從上游重新複製。
-- 自建的 Skill（目前是 `conventional-commits`、`double-diamond`、`trunk-based-development`）可以直接修改；來源筆記更新時，一併同步 Skill 內容。
+- 自建的 Skill（第一份作業的 `conventional-commits`、`double-diamond`、`trunk-based-development`，以及第二份作業的 `skill-engineering`、`skill-form-*`、`skill-derive-*`、`plan-with-class-diagram`）可以直接修改；來源筆記更新時，一併同步 Skill 內容。外部的 `skill-creator` 與它的 `LICENSE.txt` 保持原樣。
+- `skill-engineering` 施工後在專案根目錄執行 `scripts/sync-skills.sh --from <寫入的一側>` 與 `--check`，以實體目錄同步兩邊，不建立 symlink。
+- 授權範圍以根目錄 `LICENSE` 為準：自建程式與 Skill 採 MIT；`skill-creator`、`upstreams/`、課程官方文字及素材保留各自授權。不要更動既有的版權與授權聲明。
+- 根目錄的 `skills/`、`upstreams/`、`scripts/install.sh`、`scripts/sync-upstreams.sh` 是個人工具，與課程產出無關：不要為了本專案執行 `install.sh`（會改動家目錄），也不要自行更新 submodule 版本。
 
 ## 課程產出規範
 

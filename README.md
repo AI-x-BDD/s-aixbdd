@@ -14,12 +14,106 @@
 | `docs/`           | Skill 的來源筆記、各章需求清單與過程紀錄                                           |
 | `docs/ch1.md`     | ch1 的 Skill 說明與實作驗證                                                        |
 | `src/`、`pom.xml` | String Calculator 實作與測試（Java 21、Maven、JUnit 5）                            |
+| `specs/`          | 第二份作業的紀錄：`skill-engineering/` 為 Skill 建立與優化的藍圖和根因報告，`plan/` 為類別圖提案 |
+| `java-web-framework/` | 第二份作業以 `plan-with-class-diagram` 規劃實作的 Java Web 框架（Java 17、Maven、JUnit 5） |
+| `assets/`         | Skill 資源目錄結構示意圖                                                           |
+| `skills/`、`upstreams/`、`scripts/install.sh`、`scripts/sync-upstreams.sh`、`skills-lock.json` | 來自 [stevecyj/skills](https://github.com/stevecyj/skills) 的個人 Skill、上游 submodule 與安裝腳本，見下方「個人 Skill 與安裝腳本」 |
+| `LICENSE`         | MIT 授權原文（來自 [stevecyj/skills](https://github.com/stevecyj/skills)）與本 repo 的授權範圍，見下方「授權」 |
 
 ## 各章內容
 
 | 章節 | Skill | 說明 |
 | ---- | ----- | ---- |
 | ch1  | `double-diamond`、`trunk-based-development`、`conventional-commits` | [docs/ch1.md](docs/ch1.md) |
+| 第二份作業 | `skill-engineering`、`skill-form-*`（description、sop、rule、template、script）、`skill-derive-*`（rule、template、script）、`plan-with-class-diagram`；另收錄外部的 `skill-creator` | [specs/](specs/)、[java-web-framework/](java-web-framework/) |
+
+## 個人 Skill 與安裝腳本
+
+第二份作業原本放在 [stevecyj/skills](https://github.com/stevecyj/skills)，以保留雙方 Git 歷史的 merge 整合進本 repo。根目錄的 `skills/`、`upstreams/`、`scripts/install.sh` 與 `scripts/sync-upstreams.sh` 是個人跨專案使用的 Skill 與安裝工具，和課程平台讀取的 `.claude/skills/`、`.agents/skills/` 分開；`install.sh` 會在家目錄建立 symlink，只影響個人環境。
+
+以下保留原 repo README 的內容，其中的 clone 網址與 `~/src/skills` 路徑仍以原 repo 為準。
+
+Personal agent skills for Codex CLI and Claude Code.
+
+`skills/` contains skills maintained here. `upstreams/` contains third-party skills as Git submodules, so their history and release updates stay with the original authors.
+
+### Install
+
+```bash
+git clone --recurse-submodules https://github.com/stevecyj/skills.git ~/src/skills
+~/src/skills/scripts/install.sh
+```
+
+The installer creates a symbolic link for every managed skill in both locations:
+
+- Codex CLI: `~/.agents/skills/<skill>`
+- Claude Code: `~/.claude/skills/<skill>`
+
+It preserves a non-symlinked skill with the same name and reports the conflict instead of overwriting it.
+
+#### Important: `--recurse-submodules`
+
+The `--recurse-submodules` flag is **required** to clone upstream skills (no-ai-slop, shuorenhua, etc.). Without it, the `upstreams/` directory will be empty and those skills won't be available.
+
+**If you already cloned without `--recurse-submodules`:**
+
+```bash
+cd ~/src/skills
+git submodule update --init --recursive
+~/src/skills/scripts/install.sh
+```
+
+#### Verify installation
+
+After running `install.sh`, confirm all 7 skills are linked:
+
+```bash
+ls -la ~/.claude/skills/ | grep -E "transcript|commit|article|slop|shuorenhua|ste100"
+# Should show symlinks to all 7 skills
+```
+
+### Update
+
+Update this repository and its pinned upstream versions:
+
+```bash
+git pull --ff-only
+git submodule update --init --recursive
+./scripts/install.sh
+```
+
+To review and adopt the newest upstream versions, run:
+
+```bash
+./scripts/sync-upstreams.sh
+git diff --submodule=log
+git commit -am "chore: update upstream skills"
+git push
+```
+
+The sync script never commits or pushes. Review the submodule revisions before committing them.
+
+### Managed upstreams
+
+| Skill | Source |
+| --- | --- |
+| `asd-ste100-skill` | [`danyuchn/asd-ste100-skill`](https://github.com/danyuchn/asd-ste100-skill) (MIT) |
+| `no-ai-slop` | [`petergyang/no-ai-slop`](https://github.com/petergyang/no-ai-slop) (MIT) |
+| `shuorenhua` | [`MrGeDiao/shuorenhua`](https://github.com/MrGeDiao/shuorenhua) (MIT) |
+
+Third-party files remain in their own repositories; this repo records only the upstream commit to use.
+
+## 授權
+
+完整範圍以 [LICENSE](LICENSE) 為準，摘要如下：
+
+- **MIT**：我擁有權利的自建程式與 Skill，包括第一份作業的 `src/`、`pom.xml`、`scripts/sync-skills.sh` 與 `conventional-commits`、`double-diamond`、`trunk-based-development`，以及第二份作業的 `skill-engineering`、`skill-form-*`、`skill-derive-*`、`plan-with-class-diagram`。
+- **沿用原狀**：原 stevecyj/skills 的其他內容（`skills/`、`java-web-framework/`、`specs/`、`assets/`、`scripts/install.sh`、`scripts/sync-upstreams.sh`、`skills-lock.json`）維持該 repo 原本的授權狀態。
+- **第三方與課程內容，保留各自授權**：
+  - `skill-creator`：來自 [anthropics/skills](https://github.com/anthropics/skills)，Apache License 2.0，見 `skill-creator/LICENSE.txt`
+  - `upstreams/` 的 submodule：依各自 repo 的授權
+  - 水球軟體學院課程官方文字及素材：文末官方區塊、`CLAUDE.md`／`AGENTS.md` 的「課程產出規範」、兩個 `skills/README.md`、`VERSION`
+- **未宣告**：`docs/` 的學習筆記與過程紀錄。
 
 ## 交流
 
