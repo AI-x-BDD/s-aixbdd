@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      - run: scripts/sync-skills.sh --check
       - uses: actions/setup-java@v6
         with:
           distribution: temurin

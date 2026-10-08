@@ -13,17 +13,18 @@
 練習用專案，用來建立與試用 Agent Skills，並以 [Coding Dojo](https://codingdojo.org/) 的 String Calculator 題目（Java 21、Maven、JUnit 5）實際驗證三個自建 Skill。
 
 - 測試：`mvn test`
-- CI：`.github/workflows/ci.yml`，push 或 PR 到 `main` 時執行 `mvn -B test`
+- CI：`.github/workflows/ci.yml`，push 或 PR 到 `main` 時執行 `scripts/sync-skills.sh --check` 與 `mvn -B test`
 
 ## 目錄結構
 
 ```
 .
-├── AGENTS.md                  指向 CLAUDE.md 的 symlink，給讀 AGENTS.md 的 agent
+├── AGENTS.md                  與 CLAUDE.md 內容相同的實體檔，給讀 AGENTS.md 的 agent
 ├── CLAUDE.md                  本檔，agent 共用指引與課程產出規範
 ├── README.md                  repo 介紹，文末保留官方區塊
 ├── VERSION                    Template 版本
 ├── pom.xml                    Maven 設定
+├── scripts/sync-skills.sh     同步兩邊的 skills 與 CLAUDE.md／AGENTS.md
 ├── src/                       String Calculator 程式碼與測試
 ├── docs/                      學習筆記
 │   ├── ch1.md                 ch1 的 Skill 說明與實作驗證
@@ -36,13 +37,18 @@
 │   ├── conventional-commits/  自建，依 docs/conventional-commits.md 撰寫
 │   ├── double-diamond/        自建，依 docs/雙鑽石原則.md 撰寫
 │   └── trunk-based-development/  自建，依 docs/主幹式開發.md 撰寫
-└── .agents/skills/            Codex 等讀 .agents 的 agent 讀這裡；各 Skill 目前是指向 .claude/skills/ 的 symlink
+└── .agents/skills/            Codex 等讀 .agents 的 agent 讀這裡；各 Skill 是 .claude/skills/ 的實體複製
 ```
 
 ## Skills
 
 - Skill 放在 `.claude/skills/<name>/SKILL.md`，每個 Skill 一個資料夾。
-- `.agents/skills/` 的內容須與 `.claude/skills/` 保持一致。目前以 symlink 共用同一份內容。
+- `.agents/skills/` 的內容須與 `.claude/skills/` 實體相同，不使用 symlink（課程平台與 Windows 不一定會跟著 symlink 讀取）。兩個 `skills/README.md` 刻意寫給不同 agent，不需要相同。
+- 在任一邊建立、修改或刪除 Skill，或修改 `CLAUDE.md`／`AGENTS.md` 之後，從自己編輯的那一邊執行同步：
+  - 改的是 `.claude/skills/` 或 `CLAUDE.md`：`scripts/sync-skills.sh --from claude`
+  - 改的是 `.agents/skills/` 或 `AGENTS.md`：`scripts/sync-skills.sh --from agents`
+  - 刪除 Skill 時，腳本不會刪除另一邊的同名資料夾，要手動刪掉兩邊。
+  - 同步後用 `scripts/sync-skills.sh --check` 確認兩邊一致；CI 也會執行這項檢查。
 - 從外部 repo 安裝的 Skill 保持原樣，不直接修改內容；要更新時從上游重新複製。
 - 自建的 Skill（目前是 `conventional-commits`、`double-diamond`、`trunk-based-development`）可以直接修改；來源筆記更新時，一併同步 Skill 內容。
 

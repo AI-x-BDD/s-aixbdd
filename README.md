@@ -9,7 +9,7 @@
 | 路徑              | 內容                                                                               |
 | ----------------- | ---------------------------------------------------------------------------------- |
 | `.claude/skills/` | Claude Code 格式的 skills                                                          |
-| `.agents/skills/` | Codex／.agents 格式的 skills（目前以 symlink 指向 `.claude/skills/` 的同名資料夾） |
+| `.agents/skills/` | Codex／.agents 格式的 skills（與 `.claude/skills/` 實體相同，用 `scripts/sync-skills.sh` 同步） |
 | `VERSION`         | template 版本                                                                      |
 | `docs/`           | Skill 的來源筆記、各章需求清單與過程紀錄                                           |
 | `docs/ch1.md`     | ch1 的 Skill 說明與實作驗證                                                        |
