@@ -21,10 +21,6 @@
 | ---- | ----- | ---- |
 | ch1  | `double-diamond`、`trunk-based-development`、`conventional-commits` | [docs/ch1.md](docs/ch1.md) |
 
-## 外部工具：`agent-reach`
-
-`.claude/skills/agent-reach/` 是別人做好的 Skill，用來搜尋與讀取網路內容，我從 [Panniantong/Agent-Reach](https://github.com/Panniantong/Agent-Reach) 安裝。
-
 ## 交流
 
 使用上的問題或改進建議，歡迎開 issue 討論。
