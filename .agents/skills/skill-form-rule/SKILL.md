@@ -9,7 +9,8 @@ description: 撰寫或修改 Skill 之 rules/ 底下的 RuleFile（條列規則�
 
 1. `READ` 使用者需求、目標 Skill 的 `SKILL.md` 與其 SOP 載入的其他 RuleFile 與樣板組、其 SOP 委派之腳本的介面說明，以及修改既有 RuleFile 時的目標 RuleFile。
 2. `READ` `rules/RuleFile-格式規範.md` 的所有 Rule，建立完成檢查清單。
-3. `THINK` 依已載入的完成檢查清單，確定每個 RuleFile 的主題與 Rule 清單；呼叫者提供已確認的設計（例如工程藍圖的工作項內容，或 skill-derive-* 的已確認提案）時，以該設計為內容，不另行設計，該設計不符合完成檢查清單時向呼叫者回報差異並停止。
+3. `READ` 需要更新目標 `SKILL.md` 的載入步驟時，讀取 `../skill-form-sop/rules/SOP-按需載入-格式規範.md` 的所有 Rule，補入完成檢查清單。
+4. `THINK` 依已載入的完成檢查清單，確定每個 RuleFile 的主題與 Rule 清單；呼叫者提供已確認的設計（例如工程藍圖的工作項內容，或 skill-derive-* 的已確認提案）時，以該設計為內容，不另行設計，該設計不符合完成檢查清單時向呼叫者回報差異並停止。
 
 完成條件：已確定目標檔案與 Rule 清單。
 

@@ -147,13 +147,8 @@ Rule 2: 資料庫 table 必須使用 snake_case
 
 # Rule 5 - RuleFile 必須由 SKILL.md 按需載入
 
-- 擁有 RuleFile 的 `SKILL.md` 必須指定 RuleFile 的相對路徑。
-- RuleFile 的路徑必須只出現在實際讀取該檔案的 `READ` 步驟。
-- `READ` 步驟必須指定適用的任務或條件。
-- `READ` 步驟必須在確認 RuleFile 適用後，且在第一個依賴該 RuleFile 的 `THINK`、`WRITE` 或 `CHECK` 步驟之前執行。
-- 擁有多個 RuleFile 時，`SKILL.md` 必須只載入當前任務需要的 RuleFile。
-- `READ` 步驟必須讀取適用 RuleFile 的所有 Rule，並為載入結果指定明確名稱。
-- 後續步驟必須使用該名稱引用載入結果，不得重複 RuleFile 的路徑。
+- 擁有 RuleFile 的 `SKILL.md` 必須以 `READ` 步驟按需載入 RuleFile，且只載入當前任務需要的 RuleFile。
+- 載入步驟的提名位置、適用條件與載入結果命名，依 `skill-form-sop` 的 `rules/SOP-按需載入-格式規範.md`。
 
 ## Good Example
 
