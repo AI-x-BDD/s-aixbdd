@@ -1,0 +1,17 @@
+{
+  "description": "選用的 Jev 任務路由；預設關閉。",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$(git rev-parse --show-toplevel)/.codex/hooks/jev_router.py\"",
+            "timeout": 10,
+            "additionalContextLimit": 1200
+          }
+        ]
+      }
+    ]
+  }
+}

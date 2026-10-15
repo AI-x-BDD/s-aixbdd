@@ -1,1 +1,3 @@
 target/
+.codex/jev-router/
+.codex/**/__pycache__/
