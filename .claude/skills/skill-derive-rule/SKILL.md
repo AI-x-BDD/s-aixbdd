@@ -29,6 +29,6 @@ description: 針對既有 Skill 的指定 SOP 步驟，設計並寫入按需載�
 2. `CHECK` 已確認的提案符合 RuleFile 委派檢查清單；未通過時返回 Phase 2。
 3. `DELEGATE` 依已確認的提案與 RuleFile 委派檢查清單，使用 `skill-form-rule` 建立或更新 RuleFile。
 4. `DELEGATE` 依已確認的 After 使用 `skill-form-sop` 更新目標 `SKILL.md`，讓 RuleFile 在第一個依賴步驟前按需載入並產生具名檢查清單。
-5. `CHECK` 實際變更符合已確認的 Before／After，原有流程目的與順序未被非必要改變，且受影響的 Skill 通過適用驗證。
+5. `CHECK` 實際變更符合已確認的 Before／After，原有流程目的與順序未被非必要改變，且受影響的 Skill 通過適用驗證；`skill-form-rule` 或 `skill-form-sop` 回報差異並停止時，向使用者或呼叫者回報本次未完成、已寫入的檔案與回報的差異，並返回 Phase 2。
 
 完成條件：RuleFile 委派檢查清單已通過，RuleFile 與 SOP 載入步驟均符合已確認的提案，且所有適用驗證均已通過。
