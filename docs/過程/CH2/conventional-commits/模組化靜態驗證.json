@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "ToBe全文一致": true,
+    "主檔只保留SOP與frontmatter": true,
+    "三個RuleFile": true,
+    "舊references已移除": true,
+    "frontmatter不變": true,
+    "歷史處理-格式規範.md編號與正反例": true,
+    "提交訊息-格式規範.md編號與正反例": true,
+    "變更分類-格式規範.md編號與正反例": true,
+    "普通流程不強制歷史規則": true,
+    "兩側所有檔案一致": true,
+    "主檔不重複判準": true
+  },
+  "line_counts": {
+    "原版主檔": 118,
+    "中間版主檔": 121,
+    "模組版主檔": 27,
+    "規則總行數": 301
+  }
+}

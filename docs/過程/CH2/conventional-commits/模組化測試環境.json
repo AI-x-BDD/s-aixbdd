@@ -1,0 +1,18 @@
+{
+  "fixture": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/cc-modular-4dn5w_gb/project",
+  "skill": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/cc-modular-4dn5w_gb/conventional-commits",
+  "head": "07271ff0a3ad5e3ec420febb5a08b0728d3f076b",
+  "status": "M  engine.py\n?? scratch.txt\n",
+  "staged_diff": "diff --git a/engine.py b/engine.py\nindex 73df9d4..a3fb760 100644\n--- a/engine.py\n+++ b/engine.py\n@@ -1,2 +1,2 @@\n def total(items):\n-    return sum([x for x in items])\n+    return sum(items)\n",
+  "file_sha256": {
+    "engine.py": "859cb6b0c69f0e06bb5ae054c70fb7148c1955b918465157dbc4882c71830125",
+    "CONTRIBUTING.md": "c15e012b20d087af883922577eb719b45f72084210f1782635575913e3387dc5",
+    "scratch.txt": "9108dd0e977fffdead038ae02b6259f84330dfa57e782cc6337e31679d924715"
+  },
+  "skill_sha256": {
+    "SKILL.md": "1b7c0e995dbfd7a7602ed4459584bf39c3eaadad1bea0d1607b45901e5075fab",
+    "rules/歷史處理-格式規範.md": "7d310949467675b5b18dbb8363e0db8e838562b7af317a0f00ee3750a7f15b44",
+    "rules/提交訊息-格式規範.md": "8431d9f467553e48208b6644ba2ec48b74ca56af79924efc4a70dc21b1f4bf53",
+    "rules/變更分類-格式規範.md": "f37ba7c470b65e4631ab8759a0057181a7eebcf71da94bddd3089e034ba22359"
+  }
+}

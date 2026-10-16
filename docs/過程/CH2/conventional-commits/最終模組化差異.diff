@@ -1,0 +1,525 @@
+--- 原版/SKILL.md
++++ 模組版/SKILL.md
+@@ -6 +6 @@
+-# Conventional Commits
++# SOP
+@@ -8 +8 @@
+-依「修改目的」決定 type，不依「改了哪種檔案」。回答時區分規則來源：官方規定（CC 1.0.0 的 MUST）、官方建議（FAQ）、業界慣例（Angular／commitlint）、團隊規則。
++## Phase 1 -- 分析變更與適用規則
+@@ -10 +10,8 @@
+-## 格式（官方規定）
++1. `READ` 使用者需求與提供的變更摘要或待審查訊息；依 repository 產生訊息時，讀取 `git status`、`git diff --staged`，沒有 staged 時讀取 `git diff`，建立「本次輸入」。
++2. `READ` 有專案環境時，讀取適用的 CONTRIBUTING、commitlint 與 release 設定及 `git log --oneline -30`，建立「專案慣例」；沒有專案環境時記錄為無額外規則。
++3. `READ` 分析變更時，讀取 `rules/變更分類-格式規範.md` 的所有 Rule，建立「變更分類檢查清單」。
++4. `THINK` 依「本次輸入」、「專案慣例」與「變更分類檢查清單」，決定修改目的、是否分拆與各訊息的 type。
++5. `READ` 決定或審查訊息內容時，讀取 `rules/提交訊息-格式規範.md` 的所有 Rule，建立「提交訊息檢查清單」。
++6. `THINK` 依「提交訊息檢查清單」與「專案慣例」，決定 scope、相容性影響及訊息組成。
++7. `READ` 涉及 revert、既有 commit 修正、squash merge 或 release 工具行為時，讀取 `rules/歷史處理-格式規範.md` 的所有 Rule，建立「歷史處理檢查清單」。
++8. `THINK` 已載入「歷史處理檢查清單」時，依其判斷本次的歷史處理或工具限制；其餘情境直接進入 Phase 2。
+@@ -12,2 +19 @@
+-```text
+-<type>[optional scope][!]: <description>
++完成條件：各項變更的目的、type、scope、相容性影響與是否分拆已有依據，適用的檢查清單均已載入。
+@@ -15 +21 @@
+-[optional body]
++## Phase 2 -- 產生訊息與交付
+@@ -17,2 +23,3 @@
+-[optional footer(s)]
+-```
++1. `WRITE` 依「變更分類檢查清單」、「提交訊息檢查清單」、「專案慣例」及已載入的「歷史處理檢查清單」，產生訊息或審查結果，指出採用的規則來源。
++2. `CHECK` 逐條核對所有已載入的檢查清單與使用者要求；未通過時修正後重新檢查。
++3. `DELEGATE` 使用者明確要求 commit 時才使用 Git 建立 commit，執行前重新核對 status、diff 與本次提交範圍；只要求訊息或審查時交付文字，不變更 index 或檔案。
+@@ -20,99 +27 @@
+-- type、`:`、一個空格、description 都必須有。
+-- scope 可選，描述 codebase 的區域。
+-- description 與 body 之間空一行。
+-- Breaking change 二選一或並用：type／scope 後加 `!`，或 footer 寫 `BREAKING CHANGE: <說明>`。
+-
+-只有 `feat`、`fix`、`BREAKING CHANGE` 有官方語意，並對應 SemVer：
+-
+-```text
+-fix             → PATCH
+-feat            → MINOR
+-BREAKING CHANGE → MAJOR
+-```
+-
+-`docs`、`style`、`refactor`、`perf`、`test`、`build`、`ci`、`chore`、`revert` 是業界慣例（`@commitlint/config-conventional`、Angular），官方只允許使用其他 type，沒有定義語意。專案若有 commitlint 設定或 CONTRIBUTING 規範，以專案規則為準。
+-
+-## 工作流程
+-
+-1. 讀 diff（`git diff --staged`，沒有 staged 就看 `git diff` 與 `git status`）。
+-2. 找出修改目的。檔案類型只是線索，不是判斷依據。
+-3. 確認是不是單一 logical change。混了多個目的（例如新功能＋順手修 bug＋格式化），依官方 FAQ 建議拆成多個 commit，提出拆分方式與各自的 message。
+-4. 用下方 Decision Tree 決定 type。
+-5. 決定 scope：對應功能、模組、package 或 domain（`auth`、`checkout`、`report`），不用檔名（不要 `fix(UserDialog.vue):`）。先看 `git log --oneline -30` 沿用專案既有的 scope。
+-6. 判斷是否破壞既有使用方式（API、設定、資料格式、公開介面）。是就加 `!` 或 `BREAKING CHANGE` footer。
+-7. 寫 description：祈使句、說明實際改了什麼。`fix: fix bug`、`update`、`misc changes` 不合格。語言沿用專案 git log 的慣例。
+-8. 需要時寫 body：為什麼改、之前發生什麼、為什麼選這種解法。小改動不用 body。
+-9. 使用者要求 commit 才執行 commit；只要求寫 message 就只給 message。
+-
+-## Decision Tree
+-
+-```text
+-這次修改有改變系統行為嗎？
+-│
+-├─ 沒有
+-│   ├─ 只改文件         → docs
+-│   ├─ 只改測試         → test
+-│   ├─ 只改格式／空白   → style
+-│   ├─ 整理程式結構     → refactor
+-│   ├─ build 系統／依賴 → build
+-│   ├─ CI 設定          → ci
+-│   └─ 其他維護雜務     → chore
+-│
+-└─ 有
+-    ├─ 新增以前沒有的能力？           → feat
+-    ├─ 原本就該正常，但其實是錯的？   → fix
+-    └─ 行為相同但更快？               → perf
+-
+-決定後再問：是否破壞既有使用方式？是 → 加 ! 或 BREAKING CHANGE
+-```
+-
+-分辨 feat／fix 時問：「以前本來就應該能做到嗎？」應該能卻不能 → `fix`；以前根本沒有 → `feat`。
+-
+-## 常見誤判
+-
+-- **依檔案選 type**：`.css` 不等於 `style`、`package.json` 不等於 `chore`、新增程式碼不等於 `feat`（`+ if (user == null) return` 可能是修 crash，用 `fix`）。
+-- **`style` 指程式格式**（Prettier、空白、分號），不是 CSS／UI 樣式。產品要求的 UI 外觀改動用 `feat` 或 `fix`。
+-- **什麼都 `chore`**：`chore: fix login`、`chore: add export` 等於沒有 convention。
+-- **`refactor` 偷帶行為改變**：`refactor` 是既不修 bug 也不加功能的修改。重構時順便修 bug，目的若是修錯就用 `fix`，或拆成兩個 commit。
+-- **scope 太細**：`fix(UserLoginDialogModal.vue):` → `fix(auth):`。
+-
+-dependency 升級、CSS 修改、revert、type 寫錯、squash merge 等情境的判斷與範例，見 [references/cases.md](references/cases.md)。
+-
+-## 範例
+-
+-```text
+-feat(report): add Excel export
+-fix(table): ignore stale pagination responses
+-refactor(user): migrate profile component to Composition API
+-docs(api): document authentication
+-style: format source files
+-chore(deps): update Vue to 3.6
+-```
+-
+-有 body 的 fix：
+-
+-```text
+-fix(search): prevent stale responses replacing latest results
+-
+-Ignore responses whose request ID does not match the latest request.
+-```
+-
+-Breaking change 兩種寫法：
+-
+-```text
+-feat(api)!: replace users endpoint with members endpoint
+-```
+-
+-```text
+-feat(api): replace users endpoint with members endpoint
+-
+-BREAKING CHANGE: /users/:id has been replaced by /members/:id
+-```
+-
+-## 送出前檢查
+-
+-1. 這個 commit 只有一個主要目的嗎？
+-2. 是新增能力，還是修原本的錯誤？
+-3. 都不是的話，真正性質是什麼？
+-4. scope 能讓人更快知道影響區域嗎？
+-5. 有沒有讓原本正常的使用方式失效？
++完成條件：訊息或審查結果通過所有適用檢查清單，Git 操作符合使用者授權。
+--- 原版/references/cases.md
++++ /dev/null
+@@ -1,80 +0,0 @@
+-# 容易誤判的情境
+-
+-## 目錄
+-
+-- Dependency 升級
+-- CSS 修改
+-- Options API → Composition API
+-- 一個 commit 同時符合兩個 type
+-- Revert
+-- Commit type 寫錯
+-- Squash merge 與 feature branch 的暫存 commit
+-- 工具鏈：commitlint 與 semantic-release
+-
+-## Dependency 升級
+-
+-沒有唯一答案，看升級目的（業界慣例）：
+-
+-```text
+-純維護                   → chore(deps): update Vue to 3.6
+-為了修實際 bug           → fix(deps): update Vue to resolve hydration issue
+-為了使用新的產品能力     → feat: support <新能力>
+-```
+-
+-`package.json` 有變動時，先問這次修改真正的目的。
+-
+-## CSS 修改
+-
+-`style` 在 Angular-style convention 指程式格式，CC 官方沒有定義。
+-
+-```text
+-產品需求（CTA 改成新品牌樣式） → feat(checkout): update checkout CTA appearance
+-樣式原本就錯（按鈕顏色不符規格） → fix(<scope>): ...
+-重新排列 CSS、跑 Prettier       → style: format stylesheets
+-```
+-
+-## Options API → Composition API
+-
+-UI 與行為完全不變時，不是 `feat`：
+-
+-```text
+-refactor(user): migrate profile component to Composition API
+-```
+-
+-## 一個 commit 同時符合兩個 type
+-
+-官方 FAQ 建議可以的話拆成多個 commit：
+-
+-```text
+-feat(search): add employee search
+-fix(date): correct timezone conversion
+-```
+-
+-比 `feat: add search and fix date bug` 好。如果 staged 內容混在一起，建議用 `git add -p` 分批 stage。
+-
+-## Revert
+-
+-官方刻意交給工具處理，只建議一種寫法（官方建議，細節由工具與團隊決定）：
+-
+-```text
+-revert: remove experimental checkout
+-
+-Refs: 676104e
+-```
+-
+-## Commit type 寫錯
+-
+-例如 `fix: add Excel export` 應該是 `feat`。
+-
+-- 還沒 merge 或 release：官方 FAQ 建議用 rebase 修改歷史（最近一個 commit 用 `git commit --amend`）。
+-- 已經正式發布或推到共用分支：不要為了漂亮的歷史改公開的 Git history，依 release 流程處理。改寫已 push 的歷史前一定要先問使用者。
+-
+-## Squash merge 與 feature branch 的暫存 commit
+-
+-官方 FAQ 承認 squash merge workflow。feature branch 裡的 `wip`、`review fix` 可以不合規，只要 squash 進 `main` 時的 message 合規即可，例如 `feat(report): add Excel export`。需要保持乾淨的是 `main` 的 history。
+-
+-## 工具鏈：commitlint 與 semantic-release
+-
+-- commitlint 檢查 commit message，常搭配 `@commitlint/config-conventional`。專案有 `commitlint.config.*` 或 `.commitlintrc*` 時，讀它確認允許的 type、scope 與長度限制。
+-- semantic-release 依 commit 決定版本：`feat`、`fix`、`BREAKING CHANGE` 直接決定版本號，type 用錯版本號就跟著錯。有自動 release 的專案要特別注意 feat／fix／breaking 的判斷。
+-- 一次性 demo、學習 sandbox 用 CC 沒問題，但不需要為它建立 commitlint、Husky、release pipeline。
+--- /dev/null
++++ 模組版/rules/提交訊息-格式規範.md
+@@ -0,0 +1,119 @@
++# Rule 1 - 訊息必須符合官方基本格式
++
++- 訊息必須包含 type、冒號、一個空格與具體 description；scope、body、footer 可以省略。
++- 使用 scope 時，必須以括號包住描述 codebase 區域的名詞。
++- type 的大小寫可以依團隊慣例；不得把所有 type 小寫說成官方強制要求。
++- 官方依據：[CC 1.0.0 規格第 1、4、5、15 條](https://www.conventionalcommits.org/en/v1.0.0/#specification)。
++
++```text
++<type>[optional scope][!]: <description>
++
++[optional body]
++
++[optional footer(s)]
++```
++
++## Good Example
++
++- type 後有必要分隔符與具體描述。
++
++```text
++fix(auth): 阻止過期 token 重複使用
++```
++
++## Bad Example
++
++- 缺少冒號與空格。
++
++```text
++fix(auth)阻止過期 token 重複使用
++```
++
++# Rule 2 - scope 與 description 必須符合專案慣例
++
++- scope 必須優先遵守專案明文規則；沒有規則時應沿用既有慣例，再以功能、模組、package 或 domain 為預設建議。
++- 檔名能代表影響區域時，可以用作 scope；不得把檔名全面判成官方禁止。
++- description 必須用具體、祈使的措辭說明修改，不得只寫 fix bug、update 或 misc changes。
++- 訊息語言必須優先遵守專案明文規則；沒有規則時應沿用 git log 的語言慣例。
++
++## Good Example
++
++- 團隊明訂 engine.py scope 時，遵守團隊規則。
++
++```text
++perf(engine.py): 減少中間 list 配置
++```
++
++## Bad Example
++
++- 同一情境擅自以模組建議蓋過團隊明文規則。
++
++```text
++perf(engine): update
++```
++
++# Rule 3 - body 與 footer 必須保留必要分隔
++
++- 需要解釋動機、先前行為或解法取捨時，可以提供 body；小改動可以只給標題。
++- 提供 body 時，必須與 description 空一行。
++- 提供 footer 時，必須與前面的 body 空一行；沒有 body 時必須與標題空一行。
++- footer 必須由 token、分隔符與值組成；分隔符可以是冒號加空格，或空格加 #。
++- 一般 footer token 的空白必須改成連字號；breaking token 的例外與語意由下一條規範。
++
++## Good Example
++
++- 動機與參照各自分段。
++
++```text
++fix(search): 忽略過期回應
++
++只套用最後一次查詢的結果，避免舊資料覆蓋新資料。
++
++Refs: #42
++```
++
++## Bad Example
++
++- body 緊接標題且 footer 沒有分段。
++
++```text
++fix(search): 忽略過期回應
++只套用最後一次查詢的結果。
++Refs: #42
++```
++
++# Rule 4 - breaking change 必須接受兩種官方同義 footer
++
++- 變更破壞既有 API、設定、資料格式或公開使用方式時，必須在 type／scope 後的冒號前加 !，或提供 breaking footer；兩者可以並用。
++- breaking footer 必須接受大寫的 BREAKING CHANGE 與 BREAKING-CHANGE，後接冒號、空格與說明；不得因連字號版未出現在範例就判其不合法。
++- 小寫 breaking change 不得視為合法 breaking footer。
++- 使用 ! 時，可以省略 breaking footer，但 description 必須說明破壞性變更。
++- 任何 type 都可以包含 breaking change；不得因 type 是 refactor 而否定合法標示。
++- 說明 SemVer 對應時，必須區分 fix 對應 PATCH、feat 對應 MINOR、breaking change 對應 MAJOR；其他 type 本身沒有官方隱含的版本影響。
++- 官方依據：[CC 1.0.0 規格第 11～16 條與 Summary](https://www.conventionalcommits.org/en/v1.0.0/#specification)。
++
++## Good Example
++
++- 同一破壞性設定變更的兩種 footer 都合法。
++
++```text
++refactor(config): 移除舊的重試設定
++
++BREAKING CHANGE: 請改用 retryLimit。
++```
++
++```text
++refactor(config): 移除舊的重試設定
++
++BREAKING-CHANGE: 請改用 retryLimit。
++```
++
++## Bad Example
++
++- 同一變更使用小寫 breaking token，且沒有 ! 標示。
++
++```text
++refactor(config): 移除舊的重試設定
++
++breaking change: 請改用 retryLimit。
++```
+--- /dev/null
++++ 模組版/rules/歷史處理-格式規範.md
+@@ -0,0 +1,92 @@
++# Rule 1 - revert 必須區分建議與工具行為
++
++- 處理 revert 時，必須說明 CC 官方沒有完整規定其語意與版本影響。
++- 沒有團隊另定慣例時，可以採官方 FAQ 建議的 revert type，並以 Refs footer 指出被撤回的 commit。
++- 不得把所有 revert 都自動判成 PATCH；必須依專案 release 工具與實際影響判斷。
++- 官方依據：[CC 1.0.0 FAQ](https://www.conventionalcommits.org/en/v1.0.0/#how-does-conventional-commits-handle-revert-commits)。
++
++## Good Example
++
++- 提供參照並保留工具決定版本的界線。
++
++```text
++revert: 撤回實驗通知功能
++
++Refs: 123abcd
++```
++
++說明：版本影響依專案工具設定決定。
++
++## Bad Example
++
++- 同一情境虛構官方保證。
++
++```text
++revert: 撤回實驗通知功能
++```
++
++說明：官方規定所有 revert 一律發布 PATCH。
++
++# Rule 2 - 修正既有 commit 必須保留歷史操作授權
++
++- 尚未合併或發布時，可以建議以 git rebase -i 或最近一筆的 git commit --amend 修正誤用 type。
++- 已正式發布或位於共用分支時，應依 release 流程處理，不得只為美化歷史而改寫。
++- 改寫已 push 的歷史前，必須取得使用者明確同意；沒有授權時必須只提供建議。
++
++## Good Example
++
++- 已 push 到共用分支，只交付處理建議。
++
++情境：訊息誤用 fix 描述新增能力。
++
++- 指出應使用 feat。
++- 說明應依 release 流程處理，未執行 amend、rebase 或 force push。
++
++## Bad Example
++
++- 同一情境未經同意就操作。
++
++```text
++git commit --amend -m 'feat: 新增能力'
++git push --force
++```
++
++# Rule 3 - squash 合規範圍必須依團隊流程
++
++- 團隊使用 squash merge 且沒有要求每筆合規時，可以容許 feature branch 中的 wip、review fix 等暫存訊息。
++- 最後 squash 進主幹的訊息必須符合專案採用的 Conventional Commits 規則。
++- 團隊明訂逐筆檢查時，必須遵守該規則，不得以 squash 為由略過。
++
++## Good Example
++
++- 團隊只檢查 squash 結果時，建議整理最終標題。
++
++```text
++feat(report): 新增報表下載
++```
++
++## Bad Example
++
++- 同一流程無依據要求重寫每筆暫存 commit。
++
++- 即使只檢查 squash 結果，也要求改寫已 push 的所有 wip 訊息。
++
++# Rule 4 - 工具限制必須讀設定確認
++
++- 專案使用 commitlint 時，必須從設定確認 type、scope、長度等限制，不得把套件預設當成專案現況。
++- 專案使用 semantic-release 等工具時，必須依實際設定說明 release 影響，不得只憑檔案類型推定版本。
++- 一次性 demo 或練習專案可以只採提交慣例，不得無需求就新增 commitlint、Husky 或 release pipeline。
++
++## Good Example
++
++- 只要求檢查訊息時，先讀現有工具設定，再說明檢查結果。
++
++- 找到既有 commitlint 設定並核對 scope。
++- 沒有新增 hook 或工具依賴。
++
++## Bad Example
++
++- 同一需求擅自擴大成工具安裝。
++
++- 未讀專案設定就判定使用套件預設。
++- 新增 Husky 與 release pipeline。
+--- /dev/null
++++ 模組版/rules/變更分類-格式規範.md
+@@ -0,0 +1,90 @@
++# Rule 1 - 判斷必須區分來源
++
++- 回答必須區分官方規定（CC 1.0.0 的 MUST）、官方建議（FAQ）、業界慣例與團隊規則。
++- 判斷必須依修改目的，不得只根據檔案副檔名或新增程式碼行數。
++- 官方未定義的 type 慣例必須優先遵守專案明文規則；不得把團隊慣例說成官方要求。
++- 官方依據：[Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/)。
++
++## Good Example
++
++- 相同 CSS 檔依目的判斷，且交代來源。
++
++情境：修復按鈕不符合既定規格的顏色。
++
++```text
++fix(checkout): 修正按鈕顏色
++```
++
++說明：目的為修錯，fix 是官方語意；style 用於程式格式是採用的業界慣例。
++
++## Bad Example
++
++- 只因副檔名就分類，並誤稱官方規定。
++
++```text
++style(checkout): 修正按鈕顏色
++```
++
++說明：因為改 CSS，所以官方規定必須用 style。
++
++# Rule 2 - type 必須依修改目的分類
++
++- 新增能力必須用 feat；修正原本應正常卻出錯的行為必須用 fix。兩者為官方定義。
++- 區分 feat 與 fix 時，必須判斷該能力原本是否已被要求提供，不得以新增程式碼就認定 feat。
++- 沒有專案另定慣例時，其他目的應採用下表的業界慣例；不得把功能不變的效能改善擋在 perf 分類之外。
++
++| 目的 | type |
++| ---- | ---- |
++| 功能不變、改善效能 | perf |
++| 不修 bug、不加功能、整理內部結構 | refactor |
++| 只改文件 | docs |
++| 只改測試 | test |
++| 只改格式、空白、分號 | style |
++| build 系統或依賴維護 | build 或專案既有的 chore(deps) |
++| CI 設定 | ci |
++| 其他維護雜務 | chore |
++
++- Dependency 升級必須依升級目的分類：純維護採專案的 build／chore 慣例，修實際 bug 用 fix，提供新產品能力用 feat。
++- 產品 UI 或 CSS 修改必須按目的判 feat／fix；只有程式格式調整才用 style。
++- Options API 改 Composition API 等遷移，UI 與行為完全相同且不以效能為目的時，應用 refactor。
++
++## Good Example
++
++- 不因內部實作改變就誤認新增功能。
++
++情境：快取重複計算，公開輸入輸出不變，目的為降低延遲。
++
++```text
++perf(price): 快取重複計算結果
++```
++
++## Bad Example
++
++- 同一情境以新增快取程式碼為由選 feat。
++
++```text
++feat(price): 快取重複計算結果
++```
++
++# Rule 3 - 無關目的應拆分
++
++- 同一次 diff 含多個無關目的時，應依官方 FAQ 建議提出拆分方式與各自訊息。
++- 同一功能所需的實作、測試與文件可以是同一 logical change，不得只因檔案種類不同就要求分拆。
++- staged 內容混合時，可以建議 git add -p 分批 stage；建議本身不代表操作授權。
++
++## Good Example
++
++- 無關功能與修錯分成兩個提交建議。
++
++```text
++feat(search): 新增條件篩選
++fix(date): 修正日期偏移
++```
++
++## Bad Example
++
++- 將無關目的包在同一訊息。
++
++```text
++feat: 新增條件篩選並修正日期偏移
++```

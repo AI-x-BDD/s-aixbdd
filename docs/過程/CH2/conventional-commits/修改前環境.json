@@ -1,0 +1,10 @@
+{
+  "fixture": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/cc-baseline-2r3ab16d",
+  "head": "07271ff0a3ad5e3ec420febb5a08b0728d3f076b",
+  "status": "M  engine.py\n?? scratch.txt\n",
+  "staged_diff": "diff --git a/engine.py b/engine.py\nindex 73df9d4..a3fb760 100644\n--- a/engine.py\n+++ b/engine.py\n@@ -1,2 +1,2 @@\n def total(items):\n-    return sum([x for x in items])\n+    return sum(items)\n",
+  "skill_sha256": {
+    "最佳化前技能/SKILL.md": "0a4bba2798a471ee309140b0157304887a1e713e2feaf127accef254648bad7f",
+    "最佳化前技能/references/cases.md": "73b1c2f066b045408ca5baa84d9c2002a4321024e5e06acbbcd709c83b5eb090"
+  }
+}

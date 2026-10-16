@@ -279,7 +279,7 @@ feat!: change authentication API
 feat(auth)!: change token format
 ```
 
-第二種是加上 `BREAKING CHANGE` footer：
+第二種是加上 `BREAKING CHANGE` footer；[官方規格第 16 條](https://www.conventionalcommits.org/en/v1.0.0/#specification)也允許同義的 `BREAKING-CHANGE`。兩種都必須使用大寫，不能把小寫 `breaking change` 當成合法標示：
 
 ```text
 feat: change authentication API
@@ -294,25 +294,18 @@ BREAKING CHANGE: tokens must now be passed in the Authorization header
 不知道該用哪個 type 時，直接跑這棵樹：
 
 ```text
-這次修改有改變系統行為嗎？
-│
-├─ 沒有
-│   │
-│   ├─ 只改文件 → docs
-│   ├─ 只改測試 → test
-│   ├─ 整理程式結構 → refactor
-│   └─ 工具/設定/雜務 → build / ci / chore
-│
-└─ 有
-    │
-    ├─ 新增以前沒有的能力？ → feat
-    │
-    └─ 原本應該正常，但其實錯了？ → fix
-
-    決定 feat 或 fix 之後，再問：
-    是否破壞既有使用方式？
-    └─ 是 → 加 ! 或 BREAKING CHANGE
+依修改目的分類：
+├─ 新增以前沒有的能力         → feat
+├─ 修正原本應正常卻出錯的行為 → fix
+├─ 功能不變、改善效能         → perf
+├─ 功能不變、整理程式結構     → refactor
+├─ 只改文件                   → docs
+├─ 只改測試                   → test
+├─ 只改格式／空白             → style
+└─ 工具／設定／維護           → build / ci / chore
 ```
+
+這是預設分類，dependency 等情境仍依修改目的選擇。選完任何 type，都要另外判斷相容性，依第 5 節標示 breaking change。
 
 其中 `feat`、`fix` 和 breaking change 是官方語意，其他分類是常見的業界 convention。
 
@@ -437,7 +430,7 @@ MAJOR = 不相容 API 修改
 
 ## 13. scope 怎麼判斷
 
-scope 應該對應功能、模組、package 或 domain：
+scope 優先遵守專案明文規則；沒有規則時沿用既有慣例，再以功能、模組、package 或 domain 為預設建議：
 
 ```text
 fix(auth):
@@ -446,7 +439,7 @@ fix(employee):
 feat(report):
 ```
 
-用檔名當 scope，例如 `fix(UserDialog.vue):`，通常不好。你的 Vue 專案可能會建立 `auth`、`employees`、`schedules`、`reports`、`settings` 這些 scope。這屬於團隊規則，像 Angular 就直接維護自己的合法 scope 清單。
+檔名若能代表影響區域，也可以使用，例如團隊明訂 `fix(UserDialog.vue):`。官方沒有全面禁止檔名；官方要求的是描述 codebase 區域。沒有專案規則時，可優先考慮 `auth`、`employees`、`schedules` 等模組名稱。這是慣例建議，不能誤稱官方禁令。
 
 ---
 
@@ -659,7 +652,7 @@ chore: refactor api
 
 ### 錯誤 5：scope 太細
 
-`fix(UserLoginDialogModal.vue):` 通常沒有必要，`fix(auth):` 比較合理。
+沒有專案規則或既有慣例時，`fix(auth):` 通常較容易辨識功能區域；若專案明訂使用檔名，或檔名確實代表影響區域，`fix(UserLoginDialogModal.vue):` 也可以使用。
 
 ---
 

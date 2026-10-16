@@ -1,0 +1,78 @@
+--- 最佳化前/SKILL.md
++++ 中間版/SKILL.md
+@@ -23 +23,2 @@
+-- Breaking change 二選一或並用：type／scope 後加 `!`，或 footer 寫 `BREAKING CHANGE: <說明>`。
++- Breaking change 可在 type／scope 後加 `!`，或以大寫 footer `BREAKING CHANGE: <說明>` 標示，兩者也可並用。官方規格第 16 條允許 `BREAKING-CHANGE: <說明>` 作為同義 footer；空格版與連字號版都合規。小寫 `breaking change:` 不符合此大寫要求。
++- 官方依據：[Conventional Commits 1.0.0 規格第 11～16 條](https://www.conventionalcommits.org/en/v1.0.0/#specification)。
+@@ -33,13 +34 @@
+-`docs`、`style`、`refactor`、`perf`、`test`、`build`、`ci`、`chore`、`revert` 是業界慣例（`@commitlint/config-conventional`、Angular），官方只允許使用其他 type，沒有定義語意。專案若有 commitlint 設定或 CONTRIBUTING 規範，以專案規則為準。
+-
+-## 工作流程
+-
+-1. 讀 diff（`git diff --staged`，沒有 staged 就看 `git diff` 與 `git status`）。
+-2. 找出修改目的。檔案類型只是線索，不是判斷依據。
+-3. 確認是不是單一 logical change。混了多個目的（例如新功能＋順手修 bug＋格式化），依官方 FAQ 建議拆成多個 commit，提出拆分方式與各自的 message。
+-4. 用下方 Decision Tree 決定 type。
+-5. 決定 scope：對應功能、模組、package 或 domain（`auth`、`checkout`、`report`），不用檔名（不要 `fix(UserDialog.vue):`）。先看 `git log --oneline -30` 沿用專案既有的 scope。
+-6. 判斷是否破壞既有使用方式（API、設定、資料格式、公開介面）。是就加 `!` 或 `BREAKING CHANGE` footer。
+-7. 寫 description：祈使句、說明實際改了什麼。`fix: fix bug`、`update`、`misc changes` 不合格。語言沿用專案 git log 的慣例。
+-8. 需要時寫 body：為什麼改、之前發生什麼、為什麼選這種解法。小改動不用 body。
+-9. 使用者要求 commit 才執行 commit；只要求寫 message 就只給 message。
++`docs`、`style`、`refactor`、`perf`、`test`、`build`、`ci`、`chore`、`revert` 是業界慣例（`@commitlint/config-conventional`、Angular），官方只允許使用其他 type，沒有定義語意。專案的 type／scope 慣例可自行約定，但不能把與官方規格衝突的要求說成官方規定。
+@@ -50,15 +39,12 @@
+-這次修改有改變系統行為嗎？
+-│
+-├─ 沒有
+-│   ├─ 只改文件         → docs
+-│   ├─ 只改測試         → test
+-│   ├─ 只改格式／空白   → style
+-│   ├─ 整理程式結構     → refactor
+-│   ├─ build 系統／依賴 → build
+-│   ├─ CI 設定          → ci
+-│   └─ 其他維護雜務     → chore
+-│
+-└─ 有
+-    ├─ 新增以前沒有的能力？           → feat
+-    ├─ 原本就該正常，但其實是錯的？   → fix
+-    └─ 行為相同但更快？               → perf
++依修改目的分類：
++├─ 新增以前沒有的能力             → feat
++├─ 修正原本應正常卻出錯的行為     → fix
++├─ 功能不變、改善效能             → perf
++├─ 功能不變、整理程式結構         → refactor
++├─ 只改文件                       → docs
++├─ 只改測試                       → test
++├─ 只改格式／空白                 → style
++├─ build 系統／依賴維護           → build
++├─ CI 設定                        → ci
++└─ 其他維護雜務                   → chore
++```
+@@ -66,2 +52 @@
+-決定後再問：是否破壞既有使用方式？是 → 加 ! 或 BREAKING CHANGE
+-```
++分類為預設慣例；dependency 等跨類型情境仍依實際目的判斷。
+@@ -77 +62 @@
+-- **scope 太細**：`fix(UserLoginDialogModal.vue):` → `fix(auth):`。
++- **scope 範例**：沒有專案明文規則或既有慣例時，`fix(auth):` 通常比 `fix(UserLoginDialogModal.vue):` 更容易辨識功能區域；檔名並非官方禁止的寫法。
+@@ -100 +85 @@
+-Breaking change 兩種寫法：
++Breaking change 標示範例：
+@@ -118,0 +104,18 @@
++
++# SOP
++
++## Phase 1 -- 判斷與交付
++
++1. `READ` 使用者需求與提供的變更摘要或待審查訊息；依 repository 產生訊息時，讀取 `git status`、`git diff --staged`，沒有 staged 時讀取 `git diff`，建立「本次輸入」。
++2. `READ` 有專案環境時，讀取適用的 CONTRIBUTING 規範、commitlint 設定與 `git log --oneline -30`，建立「專案慣例」；沒有專案環境時採用本 Skill 的預設慣例。
++3. `THINK` 從「本次輸入」找出修改目的，依開頭的來源分類區分官方規格、官方建議、業界慣例與團隊規則。
++4. `THINK` 確認是否為單一 logical change；混了多個無關目的時，依官方 FAQ 建議拆成多個 commit，提出拆分方式與各自的 message。
++5. `THINK` 依 Decision Tree 與「專案慣例」決定 type。
++6. `THINK` 決定 scope：優先遵守專案明文規則；沒有規則時沿用既有慣例，再以功能、模組、package 或 domain 為預設建議。檔名若能代表影響區域，也可以使用；scope 的官方要求見格式區。
++7. `THINK` 判斷是否破壞既有使用方式（API、設定、資料格式、公開介面）；依格式區的官方規定處理 breaking 標示。
++8. `WRITE` 撰寫或審查 description：使用祈使句，說明實際改了什麼；`fix: fix bug`、`update`、`misc changes` 不合格。語言優先依專案明文規則，再沿用 git log 慣例。
++9. `WRITE` 需要時補充 body：為什麼改、之前發生什麼、為什麼選這種解法。小改動不用 body。
++10. `CHECK` 依格式區、判斷規則、「專案慣例」及送出前檢查逐項核對訊息或審查結論；未通過時修正後重查。
++11. `DELEGATE` 使用者明確要求 commit 時才使用 Git 建立 commit；只要求訊息或審查時交付文字結果，不變更 index 或檔案。
++
++完成條件：訊息或審查結論已通過檢查，規則來源可辨識，且 Git 操作符合使用者授權範圍。

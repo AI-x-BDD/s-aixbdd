@@ -1,0 +1,10 @@
+{
+  "head": "07271ff0a3ad5e3ec420febb5a08b0728d3f076b",
+  "status": "M  engine.py\n?? scratch.txt\n",
+  "staged_diff": "diff --git a/engine.py b/engine.py\nindex 73df9d4..a3fb760 100644\n--- a/engine.py\n+++ b/engine.py\n@@ -1,2 +1,2 @@\n def total(items):\n-    return sum([x for x in items])\n+    return sum(items)\n",
+  "file_sha256": {
+    "engine.py": "859cb6b0c69f0e06bb5ae054c70fb7148c1955b918465157dbc4882c71830125",
+    "CONTRIBUTING.md": "c15e012b20d087af883922577eb719b45f72084210f1782635575913e3387dc5",
+    "scratch.txt": "9108dd0e977fffdead038ae02b6259f84330dfa57e782cc6337e31679d924715"
+  }
+}
