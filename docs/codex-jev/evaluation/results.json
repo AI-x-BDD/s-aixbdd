@@ -1,0 +1,1330 @@
+{
+  "router_sha256": "c292bc9faf224599a55414c3d1d0bea3065bc30ca2dd214492c1d0e70170b37c",
+  "catalog": [
+    {
+      "name": "conventional-commits",
+      "description": "依 Conventional Commits 1.0.0 判斷 commit type、scope 與 breaking change，並撰寫或審查 commit message。用在：根據 git diff 寫 commit message、判斷該用 feat／fix／refactor／chore 等哪個 type、檢查既有 commit message 是否合規、處理一個 commit 混了多種修改要不要拆、dependency／CSS／revert 等容易誤判的情境，以及設計團隊的 type／scope 規則。",
+      "path": ".agents/skills/conventional-commits/SKILL.md"
+    },
+    {
+      "name": "double-diamond",
+      "description": "依雙鑽石原則（Double Diamond：Discover → Define → Develop → Deliver，兩次發散 → 收斂）釐清需求、定義問題與比較解法。用在：收到需求／ticket／老闆或 PM 指定的做法（例如「加 Excel 匯出」「換 Redis」「加 Google Login」「加 AI Chatbot」）時判斷它是問題還是已經是解法、拆解真正要解的問題、撰寫 Problem Statement／Design Brief／Success Criteria、判斷目前卡在哪個階段與下一步該做什麼、展開多個方案並挑選最便宜的驗證方式、判斷研究是否已經夠了、判斷某個變更需不需要跑完整流程（小修正、緊急事故、法規要求），以及說明 Double Diamond 與 Design Thinking、Agile 的關係。",
+      "path": ".agents/skills/double-diamond/SKILL.md"
+    },
+    {
+      "name": "plan-with-class-diagram",
+      "description": "實作或重構會新增或變更類別的功能前，必須使用此 Skill；先提出 Mermaid 類別圖提案並取得使用者明確確認，再依已確認的類別圖與相依順序實作。使用者要求先規劃類別或先畫類別圖（class diagram）再實作時使用。",
+      "path": ".agents/skills/plan-with-class-diagram/SKILL.md"
+    },
+    {
+      "name": "skill-creator",
+      "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.",
+      "path": ".agents/skills/skill-creator/SKILL.md"
+    },
+    {
+      "name": "skill-derive-rule",
+      "description": "針對既有 Skill 的指定 SOP 步驟，設計並寫入按需載入的 RuleFile；當使用者要求為某一步驟展開、補強或逐步增加規則（extract rules、add rules to a step）時，必須使用此 Skill。只修改 RuleFile 內容而不改載入步驟時改用 skill-form-rule；建立新 Skill 或整體優化既有 Skill 時改用 skill-engineering。",
+      "path": ".agents/skills/skill-derive-rule/SKILL.md"
+    },
+    {
+      "name": "skill-derive-script",
+      "description": "針對既有 Skill 的指定 SOP 步驟，抽出可重複執行的單檔 Python 腳本並更新委派方式；當使用者要求將某一步驟腳本化或以腳本加速（extract script、automate a step）時使用。只修改既有腳本內容時改用 skill-form-script；建立新 Skill 或整體優化既有 Skill 時改用 skill-engineering。",
+      "path": ".agents/skills/skill-derive-script/SKILL.md"
+    },
+    {
+      "name": "skill-derive-template",
+      "description": "針對既有 Skill 的指定 SOP 步驟，抽出按需載入的雙檔樣板，並更新該步驟的載入方式；當步驟需要規範 AI 產生檔案的整體格式（extract template、output format）時使用。只修改既有樣板內容時改用 skill-form-template；建立新 Skill 或整體優化既有 Skill 時改用 skill-engineering。",
+      "path": ".agents/skills/skill-derive-template/SKILL.md"
+    },
+    {
+      "name": "skill-engineering",
+      "description": "建立新 Skill，或依使用者回報的不滿意結果優化既有 Skill（包含透過上下游委派一起產出結果的相關 Skill）時，必須使用此 Skill；使用者提到建立 skill、create skill、改寫或優化 skill、skill 結果不如預期時使用。先定義驗收條件；優化時先做根因分析並取得使用者確認，再從預期重新設計、刪除無法追溯的流程與規則，並編排 skill-form-* 與 skill-derive-* 施工及實跑驗收。只為單一 SOP 步驟抽取單一部位時，改用對應的 skill-derive-*；只撰寫單一部位檔案時，改用對應的 skill-form-*。",
+      "path": ".agents/skills/skill-engineering/SKILL.md"
+    },
+    {
+      "name": "skill-form-description",
+      "description": "建立或修改 Skill 的 SKILL.md frontmatter（name 與 description）時，必須使用此 Skill；description 決定 Skill 何時被觸發，需寫明用途、觸發情境與相鄰 Skill 的分流。撰寫 SOP 內容時改用 skill-form-sop。",
+      "path": ".agents/skills/skill-form-description/SKILL.md"
+    },
+    {
+      "name": "skill-form-rule",
+      "description": "撰寫或修改 Skill 之 rules/ 底下的 RuleFile（條列規則加正反範例）內容時，必須使用此 Skill；使用者提到 rule file、規則檔、格式規範時使用。要為某個 SOP 步驟新增規則並掛上載入步驟時，改用 skill-derive-rule。",
+      "path": ".agents/skills/skill-form-rule/SKILL.md"
+    },
+    {
+      "name": "skill-form-script",
+      "description": "建立或修改 Skill 的 scripts/ 目錄中的單檔 Python 腳本時使用；處理 PEP 723 依賴宣告、命令列介面、跨平台執行與驗證，使用者提到 script、腳本、uv run 時使用。要把某個 SOP 步驟改由腳本執行時，改用 skill-derive-script。",
+      "path": ".agents/skills/skill-form-script/SKILL.md"
+    },
+    {
+      "name": "skill-form-sop",
+      "description": "撰寫或修改 Skill 的 SKILL.md 中 SOP 流程（Phase、步驟、完成條件與部位載入步驟）時，必須使用此 Skill；使用者提到 SOP、流程、Phase、workflow steps 時使用。撰寫 frontmatter 時改用 skill-form-description；建立新 Skill 或整體優化既有 Skill 時改用 skill-engineering。",
+      "path": ".agents/skills/skill-form-sop/SKILL.md"
+    },
+    {
+      "name": "skill-form-template",
+      "description": "建立或修改 Skill 的 templates/ 目錄中的雙檔樣板時使用；每份樣板包含供 AI 複製及填寫的骨架，以及展示完成內容的範例，使用者提到 template、樣板、骨架時使用。要為某個 SOP 步驟抽出樣板並掛上載入步驟時，改用 skill-derive-template。",
+      "path": ".agents/skills/skill-form-template/SKILL.md"
+    },
+    {
+      "name": "trunk-based-development",
+      "description": "依主幹式開發（Trunk-Based Development，TBD）規劃與審查工作拆分、branch 策略與整合方式。用在：收到需求或 ticket 時規劃要拆成幾個 PR、判斷一個變更該直接走短期 branch 還是需要 Feature Flag／Branch by Abstraction／新舊並存／Release Branch、大型重構或框架遷移（例如 Vuex → Pinia、Axios → Fetch）如何每天安全 merge main、舊版本 hotfix 怎麼修、檢查某個 branch 或 PR 是否活太久或太大、審查團隊的 Git workflow 算不算 TBD，以及比較 TBD 與 GitFlow。",
+      "path": ".agents/skills/trunk-based-development/SKILL.md"
+    },
+    {
+      "name": "typesafe-ai",
+      "description": "Build AI-powered software with TypeSafe: small units of AI intelligence you can use like programming primitives. Its System One models, including Jev, turn natural language and application state into typed judgments and probabilities that code can combine. Use when a feature needs programmable common sense, when brainstorming what AI could make possible in an app, or when an LLM prompt-and-parse step could become a structured decision. Applications include routing, ranking, extraction, verification, and interactive experiences; these are starting points, not the limits. Read live docs and cookbooks to find useful patterns and discover new combinations.",
+      "path": ".agents/skills/typesafe-ai/SKILL.md"
+    }
+  ],
+  "skill_cases": [
+    {
+      "id": "S1",
+      "prompt": "只修改某個 Skill 的 description，不改 SOP、規則或其他部位。",
+      "expected": [
+        "skill-form-description"
+      ],
+      "suggested": [
+        "skill-form-description"
+      ],
+      "exact": true,
+      "result": {
+        "seconds": 0.448913208,
+        "model": "jev-1.13.0",
+        "usage": {
+          "input_tokens": 4975,
+          "output_tokens": 317
+        },
+        "answers": {
+          "tier": {
+            "type": "choice",
+            "choice": "light",
+            "confidence": 0.23,
+            "probabilities": {
+              "light": 0.49,
+              "main": 0.35,
+              "insufficient": 0.16
+            }
+          },
+          "skill_0": {
+            "type": "noul",
+            "noul": 0.29
+          },
+          "skill_1": {
+            "type": "noul",
+            "noul": 0.13
+          },
+          "skill_2": {
+            "type": "noul",
+            "noul": 0.17
+          },
+          "skill_3": {
+            "type": "noul",
+            "noul": 0.36
+          },
+          "skill_4": {
+            "type": "noul",
+            "noul": 0.09
+          },
+          "skill_5": {
+            "type": "noul",
+            "noul": 0.08
+          },
+          "skill_6": {
+            "type": "noul",
+            "noul": 0.15
+          },
+          "skill_7": {
+            "type": "noul",
+            "noul": 0.22
+          },
+          "skill_8": {
+            "type": "noul",
+            "noul": 0.9
+          },
+          "skill_9": {
+            "type": "noul",
+            "noul": 0.13
+          },
+          "skill_10": {
+            "type": "noul",
+            "noul": 0.08
+          },
+          "skill_11": {
+            "type": "noul",
+            "noul": 0.08
+          },
+          "skill_12": {
+            "type": "noul",
+            "noul": 0.1
+          },
+          "skill_13": {
+            "type": "noul",
+            "noul": 0.12
+          },
+          "skill_14": {
+            "type": "noul",
+            "noul": 0.1
+          }
+        }
+      }
+    },
+    {
+      "id": "S2",
+      "prompt": "只修改既有樣板的骨架與完成範例，不新增 SOP 載入步驟。",
+      "expected": [
+        "skill-form-template"
+      ],
+      "suggested": [],
+      "exact": false,
+      "result": {
+        "seconds": 0.2430335,
+        "model": "jev-1.13.0",
+        "usage": {
+          "input_tokens": 4982,
+          "output_tokens": 317
+        },
+        "answers": {
+          "tier": {
+            "type": "choice",
+            "choice": "main",
+            "confidence": 0.27,
+            "probabilities": {
+              "light": 0.3,
+              "main": 0.51,
+              "insufficient": 0.19
+            }
+          },
+          "skill_0": {
+            "type": "noul",
+            "noul": 0.06
+          },
+          "skill_1": {
+            "type": "noul",
+            "noul": 0.12
+          },
+          "skill_2": {
+            "type": "noul",
+            "noul": 0.1
+          },
+          "skill_3": {
+            "type": "noul",
+            "noul": 0.17
+          },
+          "skill_4": {
+            "type": "noul",
+            "noul": 0.1
+          },
+          "skill_5": {
+            "type": "noul",
+            "noul": 0.07
+          },
+          "skill_6": {
+            "type": "noul",
+            "noul": 0.17
+          },
+          "skill_7": {
+            "type": "noul",
+            "noul": 0.17
+          },
+          "skill_8": {
+            "type": "noul",
+            "noul": 0.13
+          },
+          "skill_9": {
+            "type": "noul",
+            "noul": 0.11
+          },
+          "skill_10": {
+            "type": "noul",
+            "noul": 0.09
+          },
+          "skill_11": {
+            "type": "noul",
+            "noul": 0.16
+          },
+          "skill_12": {
+            "type": "noul",
+            "noul": 0.89
+          },
+          "skill_13": {
+            "type": "noul",
+            "noul": 0.09
+          },
+          "skill_14": {
+            "type": "noul",
+            "noul": 0.08
+          }
+        }
+      }
+    },
+    {
+      "id": "S3",
+      "prompt": "把既有 SOP 的指定步驟抽成樣板組，並更新該步驟的樣板載入方式。",
+      "expected": [
+        "skill-derive-template"
+      ],
+      "suggested": [
+        "skill-derive-template"
+      ],
+      "exact": true,
+      "result": {
+        "seconds": 0.230618875,
+        "model": "jev-1.13.0",
+        "usage": {
+          "input_tokens": 4986,
+          "output_tokens": 317
+        },
+        "answers": {
+          "tier": {
+            "type": "choice",
+            "choice": "main",
+            "confidence": 0.72,
+            "probabilities": {
+              "light": 0.02,
+              "main": 0.81,
+              "insufficient": 0.17
+            }
+          },
+          "skill_0": {
+            "type": "noul",
+            "noul": 0.05
+          },
+          "skill_1": {
+            "type": "noul",
+            "noul": 0.15
+          },
+          "skill_2": {
+            "type": "noul",
+            "noul": 0.11
+          },
+          "skill_3": {
+            "type": "noul",
+            "noul": 0.13
+          },
+          "skill_4": {
+            "type": "noul",
+            "noul": 0.09
+          },
+          "skill_5": {
+            "type": "noul",
+            "noul": 0.07
+          },
+          "skill_6": {
+            "type": "noul",
+            "noul": 0.94
+          },
+          "skill_7": {
+            "type": "noul",
+            "noul": 0.15
+          },
+          "skill_8": {
+            "type": "noul",
+            "noul": 0.1
+          },
+          "skill_9": {
+            "type": "noul",
+            "noul": 0.08
+          },
+          "skill_10": {
+            "type": "noul",
+            "noul": 0.08
+          },
+          "skill_11": {
+            "type": "noul",
+            "noul": 0.21
+          },
+          "skill_12": {
+            "type": "noul",
+            "noul": 0.15
+          },
+          "skill_13": {
+            "type": "noul",
+            "noul": 0.07
+          },
+          "skill_14": {
+            "type": "noul",
+            "noul": 0.07
+          }
+        }
+      }
+    },
+    {
+      "id": "S4",
+      "prompt": "只修改既有 RuleFile 的正反例，不改任何 SOP 載入步驟。",
+      "expected": [
+        "skill-form-rule"
+      ],
+      "suggested": [
+        "skill-form-rule"
+      ],
+      "exact": true,
+      "result": {
+        "seconds": 0.240890375,
+        "model": "jev-1.13.0",
+        "usage": {
+          "input_tokens": 4980,
+          "output_tokens": 317
+        },
+        "answers": {
+          "tier": {
+            "type": "choice",
+            "choice": "main",
+            "confidence": 0.33,
+            "probabilities": {
+              "light": 0.26,
+              "main": 0.55,
+              "insufficient": 0.19
+            }
+          },
+          "skill_0": {
+            "type": "noul",
+            "noul": 0.06
+          },
+          "skill_1": {
+            "type": "noul",
+            "noul": 0.08
+          },
+          "skill_2": {
+            "type": "noul",
+            "noul": 0.05
+          },
+          "skill_3": {
+            "type": "noul",
+            "noul": 0.13
+          },
+          "skill_4": {
+            "type": "noul",
+            "noul": 0.12
+          },
+          "skill_5": {
+            "type": "noul",
+            "noul": 0.06
+          },
+          "skill_6": {
+            "type": "noul",
+            "noul": 0.1
+          },
+          "skill_7": {
+            "type": "noul",
+            "noul": 0.12
+          },
+          "skill_8": {
+            "type": "noul",
+            "noul": 0.11
+          },
+          "skill_9": {
+            "type": "noul",
+            "noul": 0.92
+          },
+          "skill_10": {
+            "type": "noul",
+            "noul": 0.08
+          },
+          "skill_11": {
+            "type": "noul",
+            "noul": 0.1
+          },
+          "skill_12": {
+            "type": "noul",
+            "noul": 0.12
+          },
+          "skill_13": {
+            "type": "noul",
+            "noul": 0.06
+          },
+          "skill_14": {
+            "type": "noul",
+            "noul": 0.06
+          }
+        }
+      }
+    },
+    {
+      "id": "S5",
+      "prompt": "將 abc 轉成大寫，只輸出文字。",
+      "expected": [],
+      "suggested": [],
+      "exact": true,
+      "result": {
+        "seconds": 0.21414479100000006,
+        "model": "jev-1.13.0",
+        "usage": {
+          "input_tokens": 4967,
+          "output_tokens": 317
+        },
+        "answers": {
+          "tier": {
+            "type": "choice",
+            "choice": "light",
+            "confidence": 0.91,
+            "probabilities": {
+              "light": 0.94,
+              "main": 0.04,
+              "insufficient": 0.02
+            }
+          },
+          "skill_0": {
+            "type": "noul",
+            "noul": 0.03
+          },
+          "skill_1": {
+            "type": "noul",
+            "noul": 0.06
+          },
+          "skill_2": {
+            "type": "noul",
+            "noul": 0.04
+          },
+          "skill_3": {
+            "type": "noul",
+            "noul": 0.05
+          },
+          "skill_4": {
+            "type": "noul",
+            "noul": 0.05
+          },
+          "skill_5": {
+            "type": "noul",
+            "noul": 0.06
+          },
+          "skill_6": {
+            "type": "noul",
+            "noul": 0.09
+          },
+          "skill_7": {
+            "type": "noul",
+            "noul": 0.06
+          },
+          "skill_8": {
+            "type": "noul",
+            "noul": 0.07
+          },
+          "skill_9": {
+            "type": "noul",
+            "noul": 0.07
+          },
+          "skill_10": {
+            "type": "noul",
+            "noul": 0.08
+          },
+          "skill_11": {
+            "type": "noul",
+            "noul": 0.07
+          },
+          "skill_12": {
+            "type": "noul",
+            "noul": 0.08
+          },
+          "skill_13": {
+            "type": "noul",
+            "noul": 0.05
+          },
+          "skill_14": {
+            "type": "noul",
+            "noul": 0.09
+          }
+        }
+      }
+    },
+    {
+      "id": "S6",
+      "prompt": "好，繼續。",
+      "expected": [],
+      "suggested": [],
+      "exact": true,
+      "result": {
+        "seconds": 0.25368274999999985,
+        "model": "jev-1.13.0",
+        "usage": {
+          "input_tokens": 4959,
+          "output_tokens": 320
+        },
+        "answers": {
+          "tier": {
+            "type": "choice",
+            "choice": "insufficient",
+            "confidence": 1.0,
+            "probabilities": {
+              "light": 0.0,
+              "main": 0.0,
+              "insufficient": 1.0
+            }
+          },
+          "skill_0": {
+            "type": "noul",
+            "noul": 0.09
+          },
+          "skill_1": {
+            "type": "noul",
+            "noul": 0.15
+          },
+          "skill_2": {
+            "type": "noul",
+            "noul": 0.13
+          },
+          "skill_3": {
+            "type": "noul",
+            "noul": 0.12
+          },
+          "skill_4": {
+            "type": "noul",
+            "noul": 0.11
+          },
+          "skill_5": {
+            "type": "noul",
+            "noul": 0.1
+          },
+          "skill_6": {
+            "type": "noul",
+            "noul": 0.13
+          },
+          "skill_7": {
+            "type": "noul",
+            "noul": 0.14
+          },
+          "skill_8": {
+            "type": "noul",
+            "noul": 0.14
+          },
+          "skill_9": {
+            "type": "noul",
+            "noul": 0.11
+          },
+          "skill_10": {
+            "type": "noul",
+            "noul": 0.09
+          },
+          "skill_11": {
+            "type": "noul",
+            "noul": 0.13
+          },
+          "skill_12": {
+            "type": "noul",
+            "noul": 0.12
+          },
+          "skill_13": {
+            "type": "noul",
+            "noul": 0.14
+          },
+          "skill_14": {
+            "type": "noul",
+            "noul": 0.12
+          }
+        }
+      }
+    }
+  ],
+  "template_cases": [
+    {
+      "id": "T1",
+      "pair": {
+        "path": ".agents/skills/evaluation/templates/class-diagram.mmd",
+        "skeleton": "classDiagram\nclass {{CLASS_NAME}}\nnote for {{CLASS_NAME}} \"Domain entity\"",
+        "example": "classDiagram\nclass Order\nnote for Order \"Domain entity\""
+      },
+      "expected": [
+        "consistent",
+        "consistent"
+      ],
+      "decisions": [
+        "consistent",
+        "consistent"
+      ],
+      "result": {
+        "seconds": 0.20739820799999986,
+        "model": "jev-1.13.0",
+        "usage": {
+          "input_tokens": 821,
+          "output_tokens": 88
+        },
+        "answers": {
+          "pair_0_name": {
+            "type": "choice",
+            "choice": "consistent",
+            "confidence": 1.0,
+            "probabilities": {
+              "consistent": 1.0,
+              "issue": 0.0,
+              "insufficient": 0.0
+            }
+          },
+          "pair_0_placeholders": {
+            "type": "choice",
+            "choice": "consistent",
+            "confidence": 1.0,
+            "probabilities": {
+              "consistent": 1.0,
+              "issue": 0.0,
+              "insufficient": 0.0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "T2",
+      "pair": {
+        "path": ".agents/skills/evaluation/templates/template.mmd",
+        "skeleton": "classDiagram\nclass {{CLASS_NAME}}",
+        "example": "classDiagram\nclass Order"
+      },
+      "expected": [
+        "issue",
+        "consistent"
+      ],
+      "decisions": [
+        "manual",
+        "manual"
+      ],
+      "result": {
+        "seconds": 0.209346625,
+        "model": "jev-1.13.0",
+        "usage": {
+          "input_tokens": 801,
+          "output_tokens": 88
+        },
+        "answers": {
+          "pair_0_name": {
+            "type": "choice",
+            "choice": "issue",
+            "confidence": 0.79,
+            "probabilities": {
+              "consistent": 0.13,
+              "issue": 0.86,
+              "insufficient": 0.01
+            }
+          },
+          "pair_0_placeholders": {
+            "type": "choice",
+            "choice": "consistent",
+            "confidence": 0.79,
+            "probabilities": {
+              "consistent": 0.86,
+              "issue": 0.0,
+              "insufficient": 0.14
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "T3",
+      "pair": {
+        "path": ".agents/skills/evaluation/templates/class-diagram.mmd",
+        "skeleton": "classDiagram\nclass {{NAME}} {\n+{{NAME}}()\n}",
+        "example": "classDiagram\nclass Order {\n+submit()\n}"
+      },
+      "expected": [
+        "consistent",
+        "issue"
+      ],
+      "decisions": [
+        "consistent",
+        "manual"
+      ],
+      "result": {
+        "seconds": 0.22073158300000006,
+        "model": "jev-1.13.0",
+        "usage": {
+          "input_tokens": 815,
+          "output_tokens": 88
+        },
+        "answers": {
+          "pair_0_name": {
+            "type": "choice",
+            "choice": "consistent",
+            "confidence": 1.0,
+            "probabilities": {
+              "consistent": 1.0,
+              "issue": 0.0,
+              "insufficient": 0.0
+            }
+          },
+          "pair_0_placeholders": {
+            "type": "choice",
+            "choice": "consistent",
+            "confidence": 0.62,
+            "probabilities": {
+              "consistent": 0.75,
+              "issue": 0.2,
+              "insufficient": 0.05
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "T4",
+      "pair": {
+        "path": ".agents/skills/evaluation/templates/class-diagram.mmd",
+        "skeleton": "classDiagram\n{{SOURCE_CLASS}} --> {{TARGET_CLASS}}\nnote for {{sourceClass}} \"Association source\"",
+        "example": "classDiagram\nOrder --> Customer\nnote for Order \"Association source\""
+      },
+      "expected": [
+        "consistent",
+        "issue"
+      ],
+      "decisions": [
+        "consistent",
+        "manual"
+      ],
+      "result": {
+        "seconds": 0.21627170800000028,
+        "model": "jev-1.13.0",
+        "usage": {
+          "input_tokens": 829,
+          "output_tokens": 88
+        },
+        "answers": {
+          "pair_0_name": {
+            "type": "choice",
+            "choice": "consistent",
+            "confidence": 1.0,
+            "probabilities": {
+              "consistent": 1.0,
+              "issue": 0.0,
+              "insufficient": 0.0
+            }
+          },
+          "pair_0_placeholders": {
+            "type": "choice",
+            "choice": "issue",
+            "confidence": 0.43,
+            "probabilities": {
+              "consistent": 0.37,
+              "issue": 0.62,
+              "insufficient": 0.01
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "T5",
+      "pair": {
+        "path": ".agents/skills/evaluation/templates/class-diagram.mmd",
+        "skeleton": "classDiagram\n{{SOURCE_CLASS}} --> {{TARGET_CLASS}}\nnote for {{SOURCE_CLASS}} \"Association source\"",
+        "example": "classDiagram\nOrder --> Order\nnote for Order \"Association source\""
+      },
+      "expected": [
+        "consistent",
+        "consistent"
+      ],
+      "decisions": [
+        "consistent",
+        "consistent"
+      ],
+      "result": {
+        "seconds": 0.21046583399999985,
+        "model": "jev-1.13.0",
+        "usage": {
+          "input_tokens": 826,
+          "output_tokens": 88
+        },
+        "answers": {
+          "pair_0_name": {
+            "type": "choice",
+            "choice": "consistent",
+            "confidence": 1.0,
+            "probabilities": {
+              "consistent": 1.0,
+              "issue": 0.0,
+              "insufficient": 0.0
+            }
+          },
+          "pair_0_placeholders": {
+            "type": "choice",
+            "choice": "consistent",
+            "confidence": 0.94,
+            "probabilities": {
+              "consistent": 0.96,
+              "issue": 0.03,
+              "insufficient": 0.01
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "T6",
+      "pair": {
+        "path": ".agents/skills/evaluation/templates/class-diagram.mmd",
+        "skeleton": "classDiagram\nclass {{CLASS_NAME}} {\n+{{METHOD_NAME}}()\n}",
+        "example": "classDiagram\nclass Order {\n+submit()\n}"
+      },
+      "expected": [
+        "consistent",
+        "consistent"
+      ],
+      "decisions": [
+        "consistent",
+        "consistent"
+      ],
+      "result": {
+        "seconds": 0.2755769579999998,
+        "model": "jev-1.13.0",
+        "usage": {
+          "input_tokens": 817,
+          "output_tokens": 88
+        },
+        "answers": {
+          "pair_0_name": {
+            "type": "choice",
+            "choice": "consistent",
+            "confidence": 1.0,
+            "probabilities": {
+              "consistent": 1.0,
+              "issue": 0.0,
+              "insufficient": 0.0
+            }
+          },
+          "pair_0_placeholders": {
+            "type": "choice",
+            "choice": "consistent",
+            "confidence": 0.92,
+            "probabilities": {
+              "consistent": 0.95,
+              "issue": 0.0,
+              "insufficient": 0.05
+            }
+          }
+        }
+      }
+    }
+  ],
+  "replays": [
+    {
+      "id": "S3",
+      "repetition": 0,
+      "arm": "baseline",
+      "correct": true,
+      "jev_seconds": 0,
+      "jev_usage": null,
+      "seconds": 5.448371999999999,
+      "exit_code": 0,
+      "usage": {
+        "input_tokens": 26390,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 26,
+        "reasoning_output_tokens": 0
+      },
+      "answer": {
+        "skills": [
+          "skill-derive-template"
+        ],
+        "name": "",
+        "placeholders": ""
+      },
+      "tool_items": [
+        "error"
+      ]
+    },
+    {
+      "id": "S3",
+      "repetition": 0,
+      "arm": "assisted",
+      "correct": true,
+      "jev_seconds": 0.230618875,
+      "jev_usage": {
+        "input_tokens": 4986,
+        "output_tokens": 317
+      },
+      "seconds": 5.175707707999999,
+      "exit_code": 0,
+      "usage": {
+        "input_tokens": 26421,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 26,
+        "reasoning_output_tokens": 0
+      },
+      "answer": {
+        "skills": [
+          "skill-derive-template"
+        ],
+        "name": "",
+        "placeholders": ""
+      },
+      "tool_items": [
+        "error"
+      ]
+    },
+    {
+      "id": "S5",
+      "repetition": 0,
+      "arm": "baseline",
+      "correct": true,
+      "jev_seconds": 0,
+      "jev_usage": null,
+      "seconds": 5.594063290999998,
+      "exit_code": 0,
+      "usage": {
+        "input_tokens": 25343,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 21,
+        "reasoning_output_tokens": 0
+      },
+      "answer": {
+        "skills": [],
+        "name": "",
+        "placeholders": ""
+      },
+      "tool_items": [
+        "error"
+      ]
+    },
+    {
+      "id": "S5",
+      "repetition": 0,
+      "arm": "assisted",
+      "correct": true,
+      "jev_seconds": 0.21414479100000006,
+      "jev_usage": {
+        "input_tokens": 4967,
+        "output_tokens": 317
+      },
+      "seconds": 8.819343374999999,
+      "exit_code": 0,
+      "usage": {
+        "input_tokens": 25375,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 21,
+        "reasoning_output_tokens": 0
+      },
+      "answer": {
+        "skills": [],
+        "name": "",
+        "placeholders": ""
+      },
+      "tool_items": [
+        "error"
+      ]
+    },
+    {
+      "id": "T3",
+      "repetition": 0,
+      "arm": "baseline",
+      "correct": true,
+      "jev_seconds": 0,
+      "jev_usage": null,
+      "seconds": 8.886671374999995,
+      "exit_code": 0,
+      "usage": {
+        "input_tokens": 25873,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 52,
+        "reasoning_output_tokens": 27
+      },
+      "answer": {
+        "skills": [],
+        "name": "consistent",
+        "placeholders": "issue"
+      },
+      "tool_items": [
+        "error"
+      ]
+    },
+    {
+      "id": "T3",
+      "repetition": 0,
+      "arm": "assisted",
+      "correct": true,
+      "jev_seconds": 0.22073158300000006,
+      "jev_usage": {
+        "input_tokens": 815,
+        "output_tokens": 88
+      },
+      "seconds": 5.570649208000006,
+      "exit_code": 0,
+      "usage": {
+        "input_tokens": 25920,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 43,
+        "reasoning_output_tokens": 18
+      },
+      "answer": {
+        "skills": [],
+        "name": "consistent",
+        "placeholders": "issue"
+      },
+      "tool_items": [
+        "error"
+      ]
+    },
+    {
+      "id": "T5",
+      "repetition": 0,
+      "arm": "baseline",
+      "correct": true,
+      "jev_seconds": 0,
+      "jev_usage": null,
+      "seconds": 5.493267083000006,
+      "exit_code": 0,
+      "usage": {
+        "input_tokens": 25882,
+        "cached_input_tokens": 13312,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 41,
+        "reasoning_output_tokens": 16
+      },
+      "answer": {
+        "skills": [],
+        "name": "consistent",
+        "placeholders": "consistent"
+      },
+      "tool_items": [
+        "error"
+      ]
+    },
+    {
+      "id": "T5",
+      "repetition": 0,
+      "arm": "assisted",
+      "correct": true,
+      "jev_seconds": 0.21046583399999985,
+      "jev_usage": {
+        "input_tokens": 826,
+        "output_tokens": 88
+      },
+      "seconds": 5.780839125,
+      "exit_code": 0,
+      "usage": {
+        "input_tokens": 24896,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 23,
+        "reasoning_output_tokens": 0
+      },
+      "answer": {
+        "skills": [],
+        "name": "consistent",
+        "placeholders": "consistent"
+      },
+      "tool_items": [
+        "error"
+      ]
+    },
+    {
+      "id": "S3",
+      "repetition": 1,
+      "arm": "assisted",
+      "correct": true,
+      "jev_seconds": 0.230618875,
+      "jev_usage": {
+        "input_tokens": 4986,
+        "output_tokens": 317
+      },
+      "seconds": 5.380919792,
+      "exit_code": 0,
+      "usage": {
+        "input_tokens": 26425,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 26,
+        "reasoning_output_tokens": 0
+      },
+      "answer": {
+        "skills": [
+          "skill-derive-template"
+        ],
+        "name": "",
+        "placeholders": ""
+      },
+      "tool_items": [
+        "error"
+      ]
+    },
+    {
+      "id": "S3",
+      "repetition": 1,
+      "arm": "baseline",
+      "correct": true,
+      "jev_seconds": 0,
+      "jev_usage": null,
+      "seconds": 5.511162083000002,
+      "exit_code": 0,
+      "usage": {
+        "input_tokens": 26394,
+        "cached_input_tokens": 23168,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 26,
+        "reasoning_output_tokens": 0
+      },
+      "answer": {
+        "skills": [
+          "skill-derive-template"
+        ],
+        "name": "",
+        "placeholders": ""
+      },
+      "tool_items": [
+        "error"
+      ]
+    },
+    {
+      "id": "S5",
+      "repetition": 1,
+      "arm": "assisted",
+      "correct": true,
+      "jev_seconds": 0.21414479100000006,
+      "jev_usage": {
+        "input_tokens": 4967,
+        "output_tokens": 317
+      },
+      "seconds": 6.644173667000004,
+      "exit_code": 0,
+      "usage": {
+        "input_tokens": 26405,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 38,
+        "reasoning_output_tokens": 15
+      },
+      "answer": {
+        "skills": [],
+        "name": "",
+        "placeholders": ""
+      },
+      "tool_items": [
+        "error"
+      ]
+    },
+    {
+      "id": "S5",
+      "repetition": 1,
+      "arm": "baseline",
+      "correct": true,
+      "jev_seconds": 0,
+      "jev_usage": null,
+      "seconds": 4.9662517080000015,
+      "exit_code": 0,
+      "usage": {
+        "input_tokens": 26371,
+        "cached_input_tokens": 13312,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 21,
+        "reasoning_output_tokens": 0
+      },
+      "answer": {
+        "skills": [],
+        "name": "",
+        "placeholders": ""
+      },
+      "tool_items": [
+        "error"
+      ]
+    },
+    {
+      "id": "T3",
+      "repetition": 1,
+      "arm": "assisted",
+      "correct": true,
+      "jev_seconds": 0.22073158300000006,
+      "jev_usage": {
+        "input_tokens": 815,
+        "output_tokens": 88
+      },
+      "seconds": 5.428358250000002,
+      "exit_code": 0,
+      "usage": {
+        "input_tokens": 25918,
+        "cached_input_tokens": 13312,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 44,
+        "reasoning_output_tokens": 19
+      },
+      "answer": {
+        "skills": [],
+        "name": "consistent",
+        "placeholders": "issue"
+      },
+      "tool_items": [
+        "error"
+      ]
+    },
+    {
+      "id": "T3",
+      "repetition": 1,
+      "arm": "baseline",
+      "correct": true,
+      "jev_seconds": 0,
+      "jev_usage": null,
+      "seconds": 5.617308208000011,
+      "exit_code": 0,
+      "usage": {
+        "input_tokens": 25871,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 23,
+        "reasoning_output_tokens": 0
+      },
+      "answer": {
+        "skills": [],
+        "name": "consistent",
+        "placeholders": "issue"
+      },
+      "tool_items": [
+        "error"
+      ]
+    },
+    {
+      "id": "T5",
+      "repetition": 1,
+      "arm": "assisted",
+      "correct": true,
+      "jev_seconds": 0.21046583399999985,
+      "jev_usage": {
+        "input_tokens": 826,
+        "output_tokens": 88
+      },
+      "seconds": 5.356266040999998,
+      "exit_code": 0,
+      "usage": {
+        "input_tokens": 24896,
+        "cached_input_tokens": 13312,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 48,
+        "reasoning_output_tokens": 23
+      },
+      "answer": {
+        "skills": [],
+        "name": "consistent",
+        "placeholders": "consistent"
+      },
+      "tool_items": [
+        "error"
+      ]
+    },
+    {
+      "id": "T5",
+      "repetition": 1,
+      "arm": "baseline",
+      "correct": true,
+      "jev_seconds": 0,
+      "jev_usage": null,
+      "seconds": 5.474907166999998,
+      "exit_code": 0,
+      "usage": {
+        "input_tokens": 25886,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 45,
+        "reasoning_output_tokens": 20
+      },
+      "answer": {
+        "skills": [],
+        "name": "consistent",
+        "placeholders": "consistent"
+      },
+      "tool_items": [
+        "error"
+      ]
+    }
+  ]
+}
