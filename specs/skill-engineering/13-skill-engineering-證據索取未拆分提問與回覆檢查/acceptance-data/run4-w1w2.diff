@@ -1,0 +1,20 @@
+diff --color -r before/.agents/skills/skill-engineering/SKILL.md work/.agents/skills/skill-engineering/SKILL.md
+15,21c15,24
+< 6. `READ` 優化模式時，讀取問題發生時的對話紀錄（本次對話上下文或使用者指定的紀錄檔）與不滿意的產出物，建立「問題證據」；缺少判斷所需的關鍵證據時，請使用者提供。
+< 7. `DELEGATE` 優化模式時，在本 Skill 目錄執行 `uv run --script scripts/audit_skill.py --skills-root <skills 目錄絕對路徑> --skill <目標 Skill 名稱> --graph`，每個 skills 目錄各加一個 `--skills-root` 參數，從標準輸出取得 JSON「結構診斷」；若缺少 `uv`，依 https://docs.astral.sh/uv/getting-started/installation/ 的目前平台安裝說明安裝後重試，安裝失敗時回報原因並停止。
+< 8. `CHECK` 執行腳本時確認退出狀態為零且標準輸出為可解析的 JSON；失敗時依標準錯誤輸出修正參數後重試，仍失敗時回報原因並停止。
+< 9. `READ` 優化模式時，依「問題證據」與「結構診斷」的呼叫關係，讀取產出問題結果之 Skill 及其上下游 Skill 的 `SKILL.md`、所有 RuleFile 與樣板組，並以 `--help` 與檔頭說明了解每個腳本的介面，腳本與問題相關時才讀取全文，建立「產出鏈現況」。
+< 10. `READ` 定義預期時，讀取 `rules/驗收條件-格式規範.md` 的所有 Rule，建立驗收條件檢查清單。
+< 11. `THINK` 依已載入的驗收條件檢查清單，將使用者需求（優化模式另含「產出鏈現況」）寫成驗收條件與驗收情境。
+< 12. `CHECK` 逐條驗證驗收條件檢查清單；未通過時修正驗收條件與驗收情境。
+---
+> 6. `READ` 優化模式時，讀取問題發生時的對話紀錄（本次對話上下文或使用者指定的紀錄檔）、不滿意的產出物，以及使用者在本次對話補充的證據，建立「問題證據」，並讀取 `rules/根因分析-格式規範.md` 的 Rule 1 第 4 條，建立「證據要求」檢查清單。
+> 7. `CHECK` 新建模式時進入步驟 10；優化模式時依已載入的「證據要求」檢查「問題證據」，充分時進入步驟 10，不足時列出缺少的證據並進入步驟 8。
+> 8. `WRITE` 向使用者索取步驟 7 列出的缺少證據。
+> 9. `CHECK` 使用者回覆：提供了證據時返回步驟 6；表示無法提供時，回報缺少的證據並停止執行；尚未回覆時停止執行，等待回覆。
+> 10. `DELEGATE` 優化模式時，在本 Skill 目錄執行 `uv run --script scripts/audit_skill.py --skills-root <skills 目錄絕對路徑> --skill <目標 Skill 名稱> --graph`，每個 skills 目錄各加一個 `--skills-root` 參數，從標準輸出取得 JSON「結構診斷」；若缺少 `uv`，依 https://docs.astral.sh/uv/getting-started/installation/ 的目前平台安裝說明安裝後重試，安裝失敗時回報原因並停止。
+> 11. `CHECK` 執行腳本時確認退出狀態為零且標準輸出為可解析的 JSON；失敗時依標準錯誤輸出修正參數後重試，仍失敗時回報原因並停止。
+> 12. `READ` 優化模式時，依「問題證據」與「結構診斷」的呼叫關係，讀取產出問題結果之 Skill 及其上下游 Skill 的 `SKILL.md`、所有 RuleFile 與樣板組，並以 `--help` 與檔頭說明了解每個腳本的介面，腳本與問題相關時才讀取全文，建立「產出鏈現況」。
+> 13. `READ` 定義預期時，讀取 `rules/驗收條件-格式規範.md` 的所有 Rule，建立驗收條件檢查清單。
+> 14. `THINK` 依已載入的驗收條件檢查清單，將使用者需求（優化模式另含「產出鏈現況」）寫成驗收條件與驗收情境。
+> 15. `CHECK` 逐條驗證驗收條件檢查清單；未通過時修正驗收條件與驗收情境。
