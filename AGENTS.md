@@ -7,6 +7,7 @@
 ## 規則
 
 1. Always reply in ZH-TW
+2. 規劃影片、修改影片製作流程、美術提案或設計評審時，先讀 `videos/WORKFLOW.md`；只重建既有影片時讀 `videos/README.md`。
 
 ## 專案概覽
 
