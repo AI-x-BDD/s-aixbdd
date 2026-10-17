@@ -81,3 +81,27 @@ make preview SOURCE_ROOT=/外部大專案 PORT=60071
 工具不依賴母專案名稱或 Python 環境。複製工具不包含外部素材；外部來源也包含 claims 引用的課程證據文件。
 
 新增影片建立獨立設定與輸出目錄，再以 `make render PROJECT=projects/新影片/project.toml` 選擇。環境、快取及 build 均由 videos/.gitignore 排除，不建立巢狀 Git，不自動更新 Skills 或外層 CI。
+
+## CH2 美術樣稿
+
+正式九幕已完成美術更新；完整新版使用原本的 `/預覽/預覽.html`。以下保留第 1、3、6 幕代表樣稿，以及第三幕 11.84 秒樣片，作為設計過程。
+
+```sh
+make visual-samples
+make preview
+```
+
+開啟 <http://127.0.0.1:60070/預覽/美術提案/>。SVG 原稿留在外層 `製作來源/畫面/美術提案/`，樣片頁面、MP4 與中間檔各自放在 build 原有三類目錄下的美術提案子目錄。網頁播放同一支已編碼 MP4，聚焦不依賴網頁額外效果。此命令只建立樣稿與短片，不覆寫正式九幕。
+
+## 現行語意聚焦與設計 Skill
+
+CH2 profile 的 `visuals` 指向外層 `製作來源/畫面/視覺設定.json`。該檔保存現行視覺分鏡、旁白定位片語與 SVG 語意節點；`scripts/visual_motion.py` 將其轉成狀態並編碼至 MP4。沒有 visuals 的 profile 保留原本的框線渲染流程。
+
+完整預覽使用 `templates/preview_video.html` 直接播放同一 MP4。九幕、旁白文字與配音時間仍由製作內容及原對齊資料決定，不需因美術變更重做對齊；內容 JSON 舊的 visual/focus 為歷史相容資料，現行視覺以上述獨立檔為準。
+
+```sh
+uv run --frozen python tests/check_recorded.py
+uv run --frozen python tests/check_visuals.py
+```
+
+設計 Skill 在 `.agents/skills/`，與影片工具一起管理，來源及內容雜湊見該目錄 `來源.json`。第三方原文保持原樣。一般 render 不會執行 Skill 的安裝器、引擎或下載；複製 videos 也不需要它們才能重建既有影片。
