@@ -1,0 +1,8 @@
+{
+  "duration_seconds": 116.28,
+  "added_padding_seconds": 0,
+  "silences_at_least_half_second": [],
+  "maximum_scene_trailing_silence_seconds": 0.157,
+  "source_files_unchanged": true,
+  "subtitle_alignment": "estimated"
+}

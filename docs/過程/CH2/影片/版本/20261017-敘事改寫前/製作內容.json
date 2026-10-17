@@ -1,0 +1,311 @@
+{
+  "title": "Skill Engineering",
+  "min_seconds": 90,
+  "max_seconds": 120,
+  "voice": "Meijia",
+  "speech_rate": 205,
+  "fps": 25,
+  "scenes": [
+    {
+      "frame": "01",
+      "title": "由下而上組合",
+      "text": "這是我做出的 Skill Engineering。它把分工明確的小技能組合起來，用來新建 Skill，也用來優化既有 Skill。",
+      "visual": "六張主圖中的第一張。先看「8 支 primitives → 1 支 orchestrator → 3 支成果」，右側交代新建／優化兩種任務。",
+      "evidence": "E1、E2"
+    },
+    {
+      "frame": "02",
+      "title": "primitives 的分工",
+      "text": "這套基礎技能分成兩組。Form 負責把關各個部位。Form Description 寫清楚各支技能的用途與使用時機；Form SOP 整理執行流程。規則要有正反例；樣板提供骨架和範例；腳本寫清楚輸入輸出。三支 Deriver，從流程步驟抽出部位，再接回流程。",
+      "visual": "上方 form-sop；下方 Rule／Template／Script 三欄，分別呈現 derive → form。依旁白點亮 Form 與三種部位的具體要求，再說明 Deriver，介紹 Form Description 的用途與使用時機。",
+      "evidence": "E3–E6、E10–E16"
+    },
+    {
+      "frame": "03",
+      "title": "Engineering 如何調度",
+      "text": "收到任務，Engineering 先定義預期。優化時先找問題與根因，確認後再提藍圖。施工先用 Form SOP 整理流程。步驟需要規則、固定輸出或自動化，就交給對應的 Deriver。它呼叫 Form 建立檔案，也把讀取或執行時機接回流程，避免檔案建好了，流程卻沒有使用它。既有部位只改內容，就直接交給 Form。這三支優化主要走 SOP 和 Rule；Template 和 Script 依任務需要選用。最後完成檢查與驗收。",
+      "visual": "先呈現定義預期、優化才走的根因確認、藍圖確認；接著點亮 SOP，三條可選抽取路徑，再回到 SOP 載入／執行。末段顯示既有部位只改內容可直交 Form，以及本次主要走 SOP／Rule。",
+      "evidence": "E1–E5"
+    },
+    {
+      "frame": "04",
+      "title": "慣例式提交的前後差異",
+      "text": "我用這套流程優化三支技能。慣例式提交，把混在主檔的規則，拆成變更分類、提交訊息和歷史處理。",
+      "visual": "同版型前後卡：左側流程、分類與訊息規則混合；右側 SOP 與三份規則。",
+      "evidence": "E7"
+    },
+    {
+      "frame": "05",
+      "title": "主幹式開發的前後差異",
+      "text": "主幹式開發，從流程與判準混寫，改成 SOP 加三份規則，依規劃或審查用途載入。",
+      "visual": "沿用同版型：左側混寫；右側 SOP 與 TBD 判準、變更規劃、工作流程評估。",
+      "evidence": "E8"
+    },
+    {
+      "frame": "06",
+      "title": "雙鑽石的前後差異",
+      "text": "雙鑽石，原本混在一起的模型說明、分流與分析，現在由 SOP 負責流程，判準、任務分流與需求分析分開管理。",
+      "visual": "沿用同版型：左側模型、分流與分析混合；右側三份規則。頁尾交代 SOP 負責流程；判準、任務分流與需求分析分開管理。",
+      "evidence": "E9"
+    },
+    {
+      "frame": "01",
+      "title": "組合後的成果",
+      "text": "三支技能都完成 SOP 與規則分工。同一套 primitives 可以重複組合，保留三支技能的領域用途，各自依任務讀取規則。",
+      "visual": "回到第一張組合總覽，三份成果並列收尾。",
+      "evidence": "E1、E2、E7–E9"
+    }
+  ],
+  "focus": [
+    {
+      "scene": 1,
+      "entries": [
+        [
+          "這套基礎",
+          [
+            88,
+            230,
+            1424,
+            557
+          ]
+        ],
+        [
+          "Form Description",
+          [
+            88,
+            728,
+            1424,
+            59
+          ]
+        ],
+        [
+          "Form SOP",
+          [
+            88,
+            230,
+            1424,
+            122
+          ]
+        ],
+        [
+          "規則要有",
+          [
+            88,
+            389,
+            450,
+            308
+          ]
+        ],
+        [
+          "樣板提供",
+          [
+            575,
+            389,
+            450,
+            308
+          ]
+        ],
+        [
+          "腳本寫清楚",
+          [
+            1062,
+            389,
+            450,
+            308
+          ]
+        ],
+        [
+          "三支 Deriver",
+          [
+            88,
+            389,
+            1424,
+            308
+          ]
+        ]
+      ]
+    },
+    {
+      "scene": 2,
+      "entries": [
+        [
+          "收到任務",
+          [
+            88,
+            228,
+            1424,
+            107
+          ]
+        ],
+        [
+          "施工先用",
+          [
+            88,
+            425,
+            310,
+            199
+          ]
+        ],
+        [
+          "步驟需要",
+          [
+            495,
+            378,
+            651,
+            336
+          ]
+        ],
+        [
+          "它呼叫",
+          [
+            495,
+            378,
+            1017,
+            336
+          ]
+        ],
+        [
+          "既有部位",
+          [
+            88,
+            720,
+            1424,
+            64
+          ]
+        ],
+        [
+          "這三支",
+          [
+            495,
+            378,
+            651,
+            336
+          ]
+        ],
+        [
+          "最後完成",
+          [
+            1229,
+            425,
+            283,
+            199
+          ]
+        ]
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "E1",
+      "claim": "新建與優化兩種模式；優化先蒐證、根因確認；藍圖確認後施工與驗收",
+      "path": ".agents/skills/skill-engineering/SKILL.md",
+      "start": "## Phase 1",
+      "end": null
+    },
+    {
+      "id": "E2",
+      "claim": "SOP 先整理；新增部位交 Deriver；只改既有內容交 Form",
+      "path": ".agents/skills/skill-engineering/rules/施工委派-格式規範.md",
+      "start": "# Rule 1",
+      "end": "# Rule 3"
+    },
+    {
+      "id": "E3",
+      "claim": "Rule Deriver 呼叫 Form Rule、Form SOP，建立規則並接回載入步驟",
+      "path": ".agents/skills/skill-derive-rule/SKILL.md",
+      "start": "## Phase 3",
+      "end": null
+    },
+    {
+      "id": "E4",
+      "claim": "Template Deriver 呼叫 Form Template、Form SOP，骨架與範例一同載入",
+      "path": ".agents/skills/skill-derive-template/SKILL.md",
+      "start": "## Phase 3",
+      "end": null
+    },
+    {
+      "id": "E5",
+      "claim": "Script Deriver 呼叫 Form Script、Form SOP，補上執行與驗證",
+      "path": ".agents/skills/skill-derive-script/SKILL.md",
+      "start": "## Phase 3",
+      "end": null
+    },
+    {
+      "id": "E6",
+      "claim": "Form Description 負責 Skill 名稱、用途與使用時機",
+      "path": ".agents/skills/skill-form-description/SKILL.md",
+      "start": "description:",
+      "end": null
+    },
+    {
+      "id": "E7",
+      "claim": "Conventional Commits 結構差異、三份規則及實際施工分工",
+      "path": "docs/過程/CH2/conventional-commits/前後比較.md",
+      "start": "## 結構差異",
+      "end": "## 同題前後結果"
+    },
+    {
+      "id": "E8",
+      "claim": "TBD 結構差異、三份規則與按用途載入",
+      "path": "docs/過程/CH2/trunk-based-development/前後比較.md",
+      "start": "## 結構差異",
+      "end": "## 同題前後結果"
+    },
+    {
+      "id": "E9",
+      "claim": "雙鑽石的 SOP、判準、任務分流與需求分析分工",
+      "path": "docs/過程/CH2/double-diamond/前後比較.md",
+      "start": "## 結構改了什麼",
+      "end": "## 載入與證據界線"
+    },
+    {
+      "id": "E10",
+      "claim": "Form sop 的格式把關職責",
+      "path": ".agents/skills/skill-form-sop/SKILL.md",
+      "start": "description:",
+      "end": null
+    },
+    {
+      "id": "E11",
+      "claim": "Form rule 的格式把關職責",
+      "path": ".agents/skills/skill-form-rule/SKILL.md",
+      "start": "description:",
+      "end": null
+    },
+    {
+      "id": "E12",
+      "claim": "Form template 的格式把關職責",
+      "path": ".agents/skills/skill-form-template/SKILL.md",
+      "start": "description:",
+      "end": null
+    },
+    {
+      "id": "E13",
+      "claim": "Form script 的格式把關職責",
+      "path": ".agents/skills/skill-form-script/SKILL.md",
+      "start": "description:",
+      "end": null
+    },
+    {
+      "id": "E14",
+      "claim": "規則包含正反例",
+      "path": ".agents/skills/skill-form-rule/rules/RuleFile-格式規範.md",
+      "start": null,
+      "end": null
+    },
+    {
+      "id": "E15",
+      "claim": "樣板包含骨架與範例",
+      "path": ".agents/skills/skill-form-template/rules/樣板組-格式規範.md",
+      "start": null,
+      "end": null
+    },
+    {
+      "id": "E16",
+      "claim": "腳本寫清楚輸入輸出",
+      "path": ".agents/skills/skill-form-script/rules/Python腳本-格式規範.md",
+      "start": null,
+      "end": null
+    }
+  ]
+}
