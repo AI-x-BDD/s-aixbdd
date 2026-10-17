@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-17",
+  "candidate": "短版 r05",
+  "formal_agents_equals_tested_candidate": true,
+  "formal_claude_equals_tested_candidate": true,
+  "after_snapshot_equals_tested_candidate": true,
+  "frontmatter_unchanged": true,
+  "cases_unchanged": true,
+  "physical_files_no_symlinks": true,
+  "tracked_files_outside_target_unchanged": true,
+  "structure_summary": {
+    "skills": 1,
+    "errors": 0,
+    "warnings": 0
+  },
+  "git_diff_check_exit": 0,
+  "behavior_evidence": "既有 r05 S1 靜態、S2–S12 實跑及 c05a/b；本次未重跑相同候選",
+  "commit_or_push_performed": false,
+  "hashes": {
+    "SKILL.md": "cffc4d07bcfcfb7a83627ca607868a3a19e0c61e90577941ffd83254db708fb3",
+    "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+    "rules/TBD判準-格式規範.md": "ec647cea13ca7e72f6dd599edabdf2b8dffecf505dff58e8942fdce1e9fef7f7",
+    "rules/工作流程評估-格式規範.md": "efe2c973eafe6d78e87f772c722396dc71cb93934cac1d3cb1d10877cba7ac45",
+    "rules/變更規劃-格式規範.md": "d56a348ccc8bcc3d2203a594c7c54a740461bcf73aebcd0ad75b02f3574fb341"
+  }
+}

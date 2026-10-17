@@ -1,0 +1,1283 @@
+第一筆研究證據提交的 git diff --cached --check 輸出。
+以下空白出現在原始快照、實跑紀錄或差異檔；保留原始位元組及既有雜湊，不為排除空白提示改寫證據。
+正式 Skill 與新撰對照文件另外檢查。
+
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/共同複驗技能/SKILL.md:42: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/原始實跑輸出/S3回報.md:64: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/工程紀錄/個案回報/驗收環境/S3/測試回報.md:64: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/工程紀錄/原始實跑輸出/S3回報.md:64: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/工程紀錄/回修驗收/單行施工差異.md:9: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/工程紀錄/回修驗收/單行施工差異.md:13: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/工程紀錄/基線至最終差異.md:9: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/工程紀錄/基線至最終差異.md:12: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/工程紀錄/基線至最終差異.md:15: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/工程紀錄/基線至最終差異.md:21: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/工程紀錄/基線至最終差異.md:26: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/工程紀錄/基線至最終差異.md:29: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/工程紀錄/基線至最終差異.md:42: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/工程紀錄/基線至最終差異.md:50: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/工程紀錄/基線至最終差異.md:56: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/工程紀錄/基線至最終差異.md:59: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/工程紀錄/基線至首次施工差異.md:9: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/工程紀錄/基線至首次施工差異.md:12: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/工程紀錄/基線至首次施工差異.md:15: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/工程紀錄/基線至首次施工差異.md:21: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/工程紀錄/基線至首次施工差異.md:26: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/工程紀錄/基線至首次施工差異.md:29: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/工程紀錄/基線至首次施工差異.md:42: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/工程紀錄/基線至首次施工差異.md:50: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/工程紀錄/基線至首次施工差異.md:56: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/工程紀錄/基線至首次施工差異.md:59: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/工程紀錄/首次至回修差異.md:9: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/工程紀錄/首次至回修差異.md:13: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/技能前後差異.diff:8: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/技能前後差異.diff:11: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/技能前後差異.diff:14: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/技能前後差異.diff:20: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/技能前後差異.diff:25: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/技能前後差異.diff:28: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/技能前後差異.diff:41: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/技能前後差異.diff:49: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/技能前後差異.diff:55: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/技能前後差異.diff:58: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/最終技能/SKILL.md:42: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r01/首次施工技能/SKILL.md:42: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/修改前配對基線結果.md:22: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/基線配對-S1-原始輸出.jsonl:15: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/基線配對-S2-原始輸出.jsonl:15: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/基線配對-S3-原始輸出.jsonl:15: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/基線配對-S3-完整原始輸出.jsonl:19: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/基線配對-S5-原始輸出.jsonl:15: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/基線配對-S6-原始輸出.jsonl:17: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/基線配對-S7-原始輸出.jsonl:19: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/基線配對-S8-原始輸出.jsonl:16: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/拆分抽取後流程.txt:16: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/拆分抽取後流程.txt:18: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/拆分抽取後流程.txt:22: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/拆分抽取後流程.txt:24: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/拆分抽取後流程.txt:26: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/拆分抽取後流程.txt:28: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/拆分抽取後流程.txt:32: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/拆分抽取後流程.txt:34: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/拆分抽取後流程.txt:36: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/拆分抽取後流程.txt:37: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/拆分抽取後流程.txt:38: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/拆分抽取後流程.txt:39: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/拆分抽取後流程.txt:41: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/拆分抽取後流程.txt:47: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/拆分抽取後流程.txt:48: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/拆分抽取後流程.txt:50: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/拆分抽取後流程.txt:52: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/拆分抽取後流程.txt:54: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/拆分抽取後流程.txt:57: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/拆分抽取後流程.txt:59: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:17: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:19: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:23: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:25: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:27: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:29: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:33: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:35: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:37: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:38: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:39: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:40: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:42: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:49: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:51: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:53: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:55: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:58: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:60: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:64: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:65: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:80: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:82: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:84: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:89: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:90: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:91: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:92: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:98: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:99: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:100: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/工程紀錄/胖流程施工基準.txt:101: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r02/技能前後差異.diff:8: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/修改前原始輸出-S1.md:1: trailing whitespace.
++PR 1：修正匯出報表檔名日期補零，並新增或調整日期格式測試　— 使用技巧：無  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/修改前原始輸出-S1.md:2: trailing whitespace.
++每個 PR merge 後 main 為什麼仍可工作：變更範圍小，完成測試後依序通過 CI（約 4 分鐘）與 review（約 20 分鐘）再 merge；merge 後刪除短期 branch。  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/修改後原始輸出-S3.md:28: trailing whitespace.
++PR 1：在 `main` 修復 2.7 的 bug，補自動迴歸測試，通過 build、lint、unit test 及必要的 integration test — 使用技巧：無，採短期 branch  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/同步前Git差異.txt:8: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/同步前Git差異.txt:11: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/同步前Git差異.txt:14: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/同步前Git差異.txt:27: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/同步前Git差異.txt:32: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/同步前Git差異.txt:35: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/同步前Git差異.txt:39: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/同步前Git差異.txt:47: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/同步前Git差異.txt:52: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/同步後Git差異.txt:8: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/同步後Git差異.txt:11: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/同步後Git差異.txt:14: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/同步後Git差異.txt:27: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/同步後Git差異.txt:32: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/同步後Git差異.txt:35: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/同步後Git差異.txt:39: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/同步後Git差異.txt:47: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/同步後Git差異.txt:52: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/同步後Git差異.txt:150: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/同步後Git差異.txt:153: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/同步後Git差異.txt:156: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/同步後Git差異.txt:169: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/同步後Git差異.txt:174: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/同步後Git差異.txt:177: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/同步後Git差異.txt:181: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/同步後Git差異.txt:189: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/同步後Git差異.txt:194: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修前Git差異.diff:8: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修前Git差異.diff:11: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修前Git差異.diff:14: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修前Git差異.diff:27: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修前Git差異.diff:32: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修前Git差異.diff:35: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修前Git差異.diff:39: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修前Git差異.diff:47: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修前Git差異.diff:52: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修前Git差異.diff:150: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修前Git差異.diff:153: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修前Git差異.diff:156: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修前Git差異.diff:169: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修前Git差異.diff:174: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修前Git差異.diff:177: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修前Git差異.diff:181: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修前Git差異.diff:189: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修前Git差異.diff:194: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修實測前Git差異.diff:8: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修實測前Git差異.diff:11: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修實測前Git差異.diff:14: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修實測前Git差異.diff:27: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修實測前Git差異.diff:32: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修實測前Git差異.diff:35: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修實測前Git差異.diff:39: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修實測前Git差異.diff:47: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修實測前Git差異.diff:52: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修實測前Git差異.diff:150: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修實測前Git差異.diff:153: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修實測前Git差異.diff:156: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修實測前Git差異.diff:169: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修實測前Git差異.diff:174: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修實測前Git差異.diff:177: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修實測前Git差異.diff:181: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修實測前Git差異.diff:189: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修實測前Git差異.diff:194: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S1.md:1: trailing whitespace.
++PR 1：修正匯出報表檔名日期補零，並加入／更新測試 — 使用技巧：無  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:5: trailing whitespace.
++PR 1：建立 `MailSender` abstraction，讓既有寄信功能先改接 SMTP adapter，行為維持不變 — 使用技巧：Abstraction  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:6: trailing whitespace.
++每個 PR merge 後 `main` 為什麼仍可工作：所有既有呼叫仍走原本 SMTP，只有呼叫入口改經 abstraction；通過寄信與自動測試。  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:9: trailing whitespace.
++PR 2：加入郵件服務 SDK adapter、契約測試與 provider 設定，預設仍使用 SMTP — 使用技巧：新舊並存  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:10: trailing whitespace.
++每個 PR merge 後 `main` 為什麼仍可工作：SDK 尚未接管流量，SMTP 是預設路徑；SDK 只在測試或明確設定下使用。  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:13: trailing whitespace.
++PR 3：將低風險寄信流程切到 SDK，使用逐流程 provider flag，失敗可切回 SMTP — 使用技巧：Feature Flag  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:14: trailing whitespace.
++每個 PR merge 後 `main` 為什麼仍可工作：其他流程仍走 SMTP，這批流程也保留可逆的 fallback；合併前驗證寄送結果。  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:17: trailing whitespace.
++PR 4：將第二批寄信流程切到 SDK，維持逐流程切換與 fallback — 使用技巧：Feature Flag  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:18: trailing whitespace.
++每個 PR merge 後 `main` 為什麼仍可工作：尚未遷移的流程不受影響，已遷移流程可關閉 flag 回到 SMTP。  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:21: trailing whitespace.
++PR 5：完成剩餘流程遷移，驗證所有既有寄信功能後將 SDK 設為預設，暫留 SMTP fallback — 使用技巧：Feature Flag  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:22: trailing whitespace.
++每個 PR merge 後 `main` 為什麼仍可工作：所有流程都已通過整合驗證，仍保留 provider 切換以處理異常。  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:25: trailing whitespace.
++PR 6：確認 SDK 穩定後移除 SMTP adapter 與 provider flag — 使用技巧：無  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:26: trailing whitespace.
++每個 PR merge 後 `main` 為什麼仍可工作：所有寄信流程已由 SDK 承接並完成驗證，清理只移除不再使用的相容程式。若六天內尚未完成觀察，這個清理 PR 延後，先保留 fallback。  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:31: trailing whitespace.
++PR 1：加入兌換頁 route、頁面骨架與功能 flag，預設關閉 — 使用技巧：Feature Flag  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:32: trailing whitespace.
++每個 PR merge 後 `main` 為什麼仍可工作：flag 關閉時不註冊使用者入口，既有點數頁與流程不變。  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:35: trailing whitespace.
++PR 2：加入兌換表單、驗證與錯誤狀態，所有入口持續受 flag 控制 — 使用技巧：Feature Flag  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:36: trailing whitespace.
++每個 PR merge 後 `main` 為什麼仍可工作：功能程式已部署但未 release，導覽與直接 URL 都不能在 flag 關閉時曝光。  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:39: trailing whitespace.
++PR 3：接上兌換 API、權限與必要的整合測試，flag 維持關閉 — 使用技巧：Feature Flag  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:40: trailing whitespace.
++每個 PR merge 後 `main` 為什麼仍可工作：新 API 與頁面不影響既有流程，活動前仍不提供使用者入口。  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:43: trailing whitespace.
++PR 4：完成端到端驗證、監控與活動時的開啟設定；確認後才在活動時間打開 flag — 使用技巧：Feature Flag  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:44: trailing whitespace.
++每個 PR merge 後 `main` 為什麼仍可工作：flag 仍可保持關閉，既有點數功能正常；部署與曝光分離。  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:47: trailing whitespace.
++活動穩定後另開清理 PR，移除 flag 與死碼 — 使用技巧：無  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:48: trailing whitespace.
++每個 PR merge 後 `main` 為什麼仍可工作：功能已正式承接流量，清理只移除控制開關與不再需要的分支。  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:53: trailing whitespace.
++PR 1：新增新版本 API 或新 response contract，保留舊格式與舊 endpoint — 使用技巧：新舊並存  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:54: trailing whitespace.
++每個 PR merge 後 `main` 為什麼仍可工作：兩個舊版 consumer 仍使用舊格式，新格式先由契約測試驗證。  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:57: trailing whitespace.
++PR 2：將 consumer 1 遷移到新格式，consumer 2 暫時維持舊格式 — 使用技巧：新舊並存  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:58: trailing whitespace.
++每個 PR merge 後 `main` 為什麼可工作：舊 API 仍保留，consumer 2 不會因 consumer 1 的遷移而中斷。  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:61: trailing whitespace.
++PR 3：將 consumer 2 遷移到新格式，確認兩個 consumer 都完成驗證 — 使用技巧：新舊並存  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:62: trailing whitespace.
++每個 PR merge 後 `main` 為什麼可工作：兩個 consumer 都已使用新格式，舊格式仍暫留作回復與流量確認。  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:65: trailing whitespace.
++PR 4：確認沒有舊格式流量後移除舊 API 與相容層 — 使用技巧：無  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修後原始輸出-S2.md:66: trailing whitespace.
++每個 PR merge 後 `main` 為什麼可工作：所有已知 consumer 都已完成遷移，移除的是不再使用的舊介面。  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修最終Git差異.diff:8: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修最終Git差異.diff:11: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修最終Git差異.diff:14: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修最終Git差異.diff:27: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修最終Git差異.diff:32: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修最終Git差異.diff:35: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修最終Git差異.diff:39: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修最終Git差異.diff:47: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修最終Git差異.diff:52: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修最終Git差異.diff:150: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修最終Git差異.diff:153: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修最終Git差異.diff:156: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修最終Git差異.diff:169: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修最終Git差異.diff:174: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修最終Git差異.diff:177: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修最終Git差異.diff:181: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修最終Git差異.diff:189: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/回修最終Git差異.diff:194: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/技能前後差異.diff:8: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/技能前後差異.diff:11: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/技能前後差異.diff:14: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/技能前後差異.diff:27: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/技能前後差異.diff:32: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/技能前後差異.diff:35: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/技能前後差異.diff:39: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/技能前後差異.diff:47: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/技能前後差異.diff:52: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/提交訊息草稿.md:26: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/首次施工至回修差異.diff:6: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/首次施工至回修差異.diff:12: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/首次施工至回修差異.diff:16: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/首次施工至回修差異.diff:18: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/首次施工至回修差異.diff:21: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/首次施工至回修差異.diff:32: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/首次施工至回修差異.diff:34: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/首次施工至回修差異.diff:37: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/工程紀錄/首次施工至回修差異.diff:45: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/技能前後差異.diff:8: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/技能前後差異.diff:11: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/技能前後差異.diff:14: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/技能前後差異.diff:27: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/技能前後差異.diff:32: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/技能前後差異.diff:35: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/技能前後差異.diff:39: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/技能前後差異.diff:47: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/技能前後差異.diff:52: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/原始到最終完整差異.diff:6: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/原始到最終完整差異.diff:9: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/原始到最終完整差異.diff:12: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/原始到最終完整差異.diff:15: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/原始到最終完整差異.diff:23: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/原始到最終完整差異.diff:26: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/原始到最終完整差異.diff:29: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/原始到最終完整差異.diff:40: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/原始到最終完整差異.diff:45: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/原始到最終完整差異.diff:48: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/原始到最終完整差異.diff:51: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/原始到最終完整差異.diff:59: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/原始到最終完整差異.diff:63: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/原始到首次完整差異.diff:6: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/原始到首次完整差異.diff:9: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/原始到首次完整差異.diff:12: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/原始到首次完整差異.diff:15: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/原始到首次完整差異.diff:23: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/原始到首次完整差異.diff:26: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/原始到首次完整差異.diff:29: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/原始到首次完整差異.diff:40: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/原始到首次完整差異.diff:45: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/原始到首次完整差異.diff:48: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/原始到首次完整差異.diff:51: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/原始到首次完整差異.diff:59: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/原始到首次完整差異.diff:63: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/情境一首次實跑.md:5: trailing whitespace.
++PR 1：修正設定頁標點錯誤 — 使用技巧：無  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/情境一首次實跑.md:6: trailing whitespace.
++每個 PR merge 後 main 為什麼仍可工作：這是可獨立整合的單一小變更；完成 CI 驗證後即可合併，main 持續保持可工作。此變更不需要 Feature Flag 或其他整合技巧。  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/工程紀錄/情境三實跑.md:34: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/技能前後差異.diff:8: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/技能前後差異.diff:11: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/技能前後差異.diff:14: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/技能前後差異.diff:17: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/技能前後差異.diff:25: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/技能前後差異.diff:28: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/技能前後差異.diff:31: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/技能前後差異.diff:42: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/技能前後差異.diff:47: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/技能前後差異.diff:50: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/技能前後差異.diff:53: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/技能前後差異.diff:61: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r04/技能前後差異.diff:65: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-初版工程藍圖.md:225: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-初版工程藍圖.md:227: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-初版工程藍圖.md:231: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-初版工程藍圖.md:233: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-初版工程藍圖.md:235: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-初版工程藍圖.md:237: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-初版工程藍圖.md:241: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-初版工程藍圖.md:243: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-初版工程藍圖.md:249: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-初版工程藍圖.md:255: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-初版工程藍圖.md:257: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-初版工程藍圖.md:264: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-初版工程藍圖.md:266: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-初版工程藍圖.md:281: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-初版工程藍圖.md:283: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-初版工程藍圖.md:285: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-初版工程藍圖.md:290: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-初版工程藍圖.md:301: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-初版工程藍圖.md:307: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-初版工程藍圖.md:309: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-初版工程藍圖.md:311: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-初版工程藍圖.md:318: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-初版工程藍圖.md:320: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-初版工程藍圖.md:322: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-初版工程藍圖.md:324: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-初版工程藍圖.md:327: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-核准工程藍圖.md:226: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-核准工程藍圖.md:228: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-核准工程藍圖.md:232: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-核准工程藍圖.md:234: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-核准工程藍圖.md:236: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-核准工程藍圖.md:238: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-核准工程藍圖.md:242: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-核准工程藍圖.md:244: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-核准工程藍圖.md:250: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-核准工程藍圖.md:256: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-核准工程藍圖.md:258: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-核准工程藍圖.md:265: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-核准工程藍圖.md:267: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-核准工程藍圖.md:282: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-核准工程藍圖.md:284: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-核准工程藍圖.md:286: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-核准工程藍圖.md:291: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-核准工程藍圖.md:302: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-核准工程藍圖.md:308: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-核准工程藍圖.md:310: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-核准工程藍圖.md:312: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-核准工程藍圖.md:319: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-核准工程藍圖.md:321: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-核准工程藍圖.md:323: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-核准工程藍圖.md:325: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05-核准工程藍圖.md:328: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖.md:226: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖.md:228: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖.md:232: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖.md:234: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖.md:236: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖.md:238: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖.md:242: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖.md:244: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖.md:250: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖.md:256: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖.md:258: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖.md:265: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖.md:267: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖.md:282: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖.md:284: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖.md:286: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖.md:291: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖.md:302: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖.md:308: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖.md:310: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖.md:312: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖.md:319: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖.md:321: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖.md:323: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖.md:325: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖.md:328: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖第一版.md:225: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖第一版.md:227: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖第一版.md:231: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖第一版.md:233: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖第一版.md:235: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖第一版.md:237: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖第一版.md:241: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖第一版.md:243: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖第一版.md:249: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖第一版.md:255: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖第一版.md:257: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖第一版.md:264: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖第一版.md:266: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖第一版.md:281: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖第一版.md:283: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖第一版.md:285: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖第一版.md:290: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖第一版.md:301: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖第一版.md:307: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖第一版.md:309: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖第一版.md:311: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖第一版.md:318: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖第一版.md:320: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖第一版.md:322: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖第一版.md:324: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/工程藍圖第一版.md:327: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/驗收原始輸出/情境S4環境不符原始.md:118: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/驗收原始輸出/情境S5.md:58: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/驗收原始輸出/情境S6環境不符原始.md:70: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/驗收原始輸出/情境S7環境不符原始.md:91: trailing whitespace.
++PR 1：建立可重現的 build、最小自動 test 與 gated CI — 使用技巧：無  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/驗收原始輸出/情境S7環境不符原始.md:92: trailing whitespace.
++PR 2：挑一個低風險 Web 變更，拆成可獨立整合的小步驟；尚未準備曝光的功能用關閉的 Feature Flag 控制 — 使用技巧：Feature Flag  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/驗收原始輸出/情境S7環境不符原始.md:93: trailing whitespace.
++每個 PR merge 後 main 為什麼仍可工作：PR 1 先提供 build／自動 test／CI 的快速回饋；PR 2 每步都保持既有行為可用，未完成入口由關閉的 flag 隔離。  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/驗收原始輸出/情境S7環境不符原始.md:110: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/工程紀錄/驗收原始輸出/情境S9.md:58: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/技能前後差異.diff:8: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/技能前後差異.diff:11: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/技能前後差異.diff:14: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/技能前後差異.diff:23: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/技能前後差異.diff:28: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/技能前後差異.diff:31: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r05/技能前後差異.diff:36: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/修改後原始輸出三.md:3: trailing whitespace.
++PR 1：建立日期處理 abstraction 與既有行為測試；由 Moment.js 實作並維持為預設。 — 使用技巧：Branch by Abstraction  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/修改後原始輸出三.md:4: trailing whitespace.
++PR 2：加入 date-fns implementation，補齊 parse、format、compare、locale、timezone、invalid-date 等 parity tests；先不切換既有模組。 — 使用技巧：Branch by Abstraction／新舊並存  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/修改後原始輸出三.md:5: trailing whitespace.
++PR 3～PR N：每個模組各一張 PR，將該模組改接 abstraction 並切換到 date-fns；其他尚未遷移的模組繼續使用 Moment.js。若單一模組隔天仍無法完成，繼續拆成可獨立合併的小變更。 — 使用技巧：Branch by Abstraction／新舊並存  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/修改後原始輸出二.md:3: trailing whitespace.
++PR 1（週一）：後端新增訂閱比較新 API、契約與測試，加入舊 API 使用量監測；舊 API 保留。  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/修改後原始輸出二.md:6: trailing whitespace.
++PR 2（週一至週二）：新增前端 new API client，讓新頁面可以呼叫新 API；既有頁面不修改，仍呼叫舊 API。  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/修改後原始輸出二.md:9: trailing whitespace.
++PR 3（週二）：建立新訂閱方案比較頁，先以關閉的 Feature Flag 進入 `main`，不對使用者曝光。  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/修改後原始輸出二.md:12: trailing whitespace.
++PR 4（週三）：完成比較頁的資料呈現、錯誤處理、權限與整合測試；Feature Flag 仍關閉。  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/修改後原始輸出二.md:15: trailing whitespace.
++PR 5（週三至週四）：將已盤點的既有 consumer 逐一遷移到新 API，每個 consumer 各自一個小 PR。遷移期間舊 API 持續可用，舊頁面暫時維持原狀。  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/修改後原始輸出二.md:18: trailing whitespace.
++PR 6（週四）：完成端對端測試、監控、回滾檢查與公開前驗證；確認新頁面可在 Feature Flag 開啟後工作。  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/修改後原始輸出四.md:5: trailing whitespace.
++PR 1：在 `main` 修正時區 bug — 使用技巧：無  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/修改後原始輸出四.md:11: trailing whitespace.
++PR 2：將已驗證的修正回補 `release/2.4` — 使用技巧：無  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/修改後原始輸出四.md:20: trailing whitespace.
++每個 PR merge 後 main 為什麼仍可工作：PR 1 直接讓 `main` 得到並驗證時區修正；PR 2 只更新 `release/2.4`，不會把維護分支的整體歷史帶回 `main`。  
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/技能前後差異.diff:6: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/技能前後差異.diff:9: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/技能前後差異.diff:12: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/技能前後差異.diff:21: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/技能前後差異.diff:31: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/技能前後差異.diff:35: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/抽取拆分規則後主檔.md:15: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/抽取拆分規則後主檔.md:17: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/抽取拆分規則後主檔.md:21: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/抽取拆分規則後主檔.md:23: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/抽取拆分規則後主檔.md:25: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/抽取拆分規則後主檔.md:27: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/抽取拆分規則後主檔.md:31: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/抽取拆分規則後主檔.md:33: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/抽取拆分規則後主檔.md:35: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/抽取拆分規則後主檔.md:36: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/抽取拆分規則後主檔.md:37: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/抽取拆分規則後主檔.md:39: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/抽取拆分規則後主檔.md:46: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/抽取拆分規則後主檔.md:48: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/抽取拆分規則後主檔.md:50: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/抽取拆分規則後主檔.md:52: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/抽取拆分規則後主檔.md:55: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/胖SOP施工基準.md:15: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/胖SOP施工基準.md:17: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/胖SOP施工基準.md:21: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/胖SOP施工基準.md:23: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/胖SOP施工基準.md:25: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/胖SOP施工基準.md:27: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/胖SOP施工基準.md:31: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/胖SOP施工基準.md:33: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/胖SOP施工基準.md:35: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/胖SOP施工基準.md:36: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/胖SOP施工基準.md:37: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/胖SOP施工基準.md:39: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/胖SOP施工基準.md:46: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/胖SOP施工基準.md:48: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/胖SOP施工基準.md:50: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/胖SOP施工基準.md:52: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/胖SOP施工基準.md:55: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/胖SOP施工基準.md:74: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/胖SOP施工基準.md:76: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/胖SOP施工基準.md:78: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/胖SOP施工基準.md:83: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/胖SOP施工基準.md:84: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/胖SOP施工基準.md:85: trailing whitespace.
++   
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/藍圖第二版差異.diff:5: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/藍圖第二版差異.diff:12: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/藍圖第二版差異.diff:14: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/藍圖第二版差異.diff:34: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/藍圖第二版差異.diff:39: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/藍圖第二版差異.diff:43: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/藍圖第二版差異.diff:57: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/藍圖第二版差異.diff:60: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/藍圖第二版差異.diff:62: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/藍圖第二版差異.diff:96: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/藍圖第二版差異.diff:103: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/藍圖第二版差異.diff:105: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/藍圖第二版差異.diff:111: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/藍圖第二版差異.diff:114: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/藍圖第二版差異.diff:120: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/藍圖第二版差異.diff:123: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/藍圖第二版差異.diff:125: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/藍圖第二版差異.diff:128: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/藍圖第二版差異.diff:138: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/藍圖第二版差異.diff:140: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/藍圖第二版差異.diff:152: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/藍圖第二版差異.diff:154: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/藍圖第二版差異.diff:156: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/藍圖第二版差異.diff:159: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/藍圖第二版差異.diff:165: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/工程紀錄/藍圖第二版差異.diff:186: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/技能前後差異.diff:8: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/技能前後差異.diff:11: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/技能前後差異.diff:14: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/技能前後差異.diff:23: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/技能前後差異.diff:33: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r06/技能前後差異.diff:37: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/短提示詞/完整package-diff.patch:6: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/短提示詞/完整package-diff.patch:27: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/短提示詞/完整package-diff.patch:29: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/短提示詞/完整package-diff.patch:140: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/短提示詞/完整package-diff.patch:161: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/短提示詞/完整package-diff.patch:163: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/C22位置補正相對首次驗收版本-agents-diff-原始輸出.diff:6: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/C22位置補正相對首次驗收版本-agents-diff-原始輸出.diff:16: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/C22位置補正相對首次驗收版本-agents-diff-原始輸出.diff:18: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/C22位置補正相對首次驗收版本-agents-diff-原始輸出.diff:25: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/C22位置補正相對首次驗收版本-agents-diff-原始輸出.diff:36: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/C22位置補正相對首次驗收版本-agents-diff-原始輸出.diff:42: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/C22位置補正相對首次驗收版本-agents-diff-原始輸出.diff:44: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/C22位置補正相對首次驗收版本-agents-diff-原始輸出.diff:63: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/C22位置補正相對首次驗收版本-claude-diff-原始輸出.diff:6: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/C22位置補正相對首次驗收版本-claude-diff-原始輸出.diff:16: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/C22位置補正相對首次驗收版本-claude-diff-原始輸出.diff:18: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/C22位置補正相對首次驗收版本-claude-diff-原始輸出.diff:25: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/C22位置補正相對首次驗收版本-claude-diff-原始輸出.diff:36: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/C22位置補正相對首次驗收版本-claude-diff-原始輸出.diff:42: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/C22位置補正相對首次驗收版本-claude-diff-原始輸出.diff:44: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/C22位置補正相對首次驗收版本-claude-diff-原始輸出.diff:63: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W1施工-原始輸出與diff.txt:11: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W1施工-原始輸出與diff.txt:13: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-1施工-原始輸出與diff.txt:19: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-1施工-原始輸出與diff.txt:21: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-1施工-原始輸出與diff.txt:24: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-1施工-原始輸出與diff.txt:27: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-1施工-原始輸出與diff.txt:42: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-1施工-原始輸出與diff.txt:45: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-1施工-原始輸出與diff.txt:48: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-1施工-原始輸出與diff.txt:57: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-1施工-原始輸出與diff.txt:62: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-2施工-原始輸出與diff.txt:19: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-2施工-原始輸出與diff.txt:21: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-2施工-原始輸出與diff.txt:24: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-2施工-原始輸出與diff.txt:27: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-2施工-原始輸出與diff.txt:42: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-2施工-原始輸出與diff.txt:45: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-2施工-原始輸出與diff.txt:48: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-2施工-原始輸出與diff.txt:57: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-2施工-原始輸出與diff.txt:62: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-2施工-原始輸出與diff.txt:64: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-3施工-原始輸出與diff.txt:19: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-3施工-原始輸出與diff.txt:21: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-3施工-原始輸出與diff.txt:24: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-3施工-原始輸出與diff.txt:27: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-3施工-原始輸出與diff.txt:42: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-3施工-原始輸出與diff.txt:45: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-3施工-原始輸出與diff.txt:48: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-3施工-原始輸出與diff.txt:57: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-3施工-原始輸出與diff.txt:62: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-3施工-原始輸出與diff.txt:64: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-3施工-原始輸出與diff.txt:66: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-4施工-原始輸出與diff.txt:19: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-4施工-原始輸出與diff.txt:21: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-4施工-原始輸出與diff.txt:24: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-4施工-原始輸出與diff.txt:27: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-4施工-原始輸出與diff.txt:42: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-4施工-原始輸出與diff.txt:45: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-4施工-原始輸出與diff.txt:48: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-4施工-原始輸出與diff.txt:57: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-4施工-原始輸出與diff.txt:62: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-4施工-原始輸出與diff.txt:64: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-4施工-原始輸出與diff.txt:66: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-4施工-原始輸出與diff.txt:68: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-5施工-原始輸出與diff.txt:16: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-5施工-原始輸出與diff.txt:18: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-5施工-原始輸出與diff.txt:21: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-5施工-原始輸出與diff.txt:24: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-5施工-原始輸出與diff.txt:39: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-5施工-原始輸出與diff.txt:42: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-5施工-原始輸出與diff.txt:45: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-5施工-原始輸出與diff.txt:48: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-5施工-原始輸出與diff.txt:132: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-5施工-原始輸出與diff.txt:135: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-5施工-原始輸出與diff.txt:137: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-5施工-原始輸出與diff.txt:140: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-5施工-原始輸出與diff.txt:142: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W2-5施工-原始輸出與diff.txt:144: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/W3施工-原始輸出與diff.txt:10: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/修改前基準評分.md:55: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/修改後基準評分.md:53: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/工程施工紀錄.md:59: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/工程藍圖-第二版.md:474: trailing whitespace.
++W1 完成條件：SKILL.md 有唯一 # SOP、連續 Phase／步驟／完成條件，且控制流程可定位 W2 的抽取點。  
+docs/過程/CH2/trunk-based-development/長提示詞/工程藍圖-第二版.md:475: trailing whitespace.
++W2 完成條件：五個 RuleFile 的 15 條 Rule、正反例、溯源與條件式載入均可逐項核對。  
+docs/過程/CH2/trunk-based-development/長提示詞/工程藍圖-第二版.md:500: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/工程藍圖.md:552: trailing whitespace.
++W1 完成條件：SKILL.md 有唯一 # SOP、連續 Phase／步驟／完成條件，且 P1-4 的全部待抽取約束可逐段定位。  
+docs/過程/CH2/trunk-based-development/長提示詞/工程藍圖.md:553: trailing whitespace.
++W2 完成條件：五個 RuleFile 的 15 條 Rule、正反例、溯源、條件式 READ、具名清單使用與 CHECK 更新均可逐項核對。  
+docs/過程/CH2/trunk-based-development/長提示詞/工程藍圖.md:614: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/施工後完整 package diff-原始輸出.diff:7: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/施工後完整 package diff-原始輸出.diff:9: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/施工後完整 package diff-原始輸出.diff:12: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/施工後完整 package diff-原始輸出.diff:15: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/施工後完整 package diff-原始輸出.diff:24: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/施工後完整 package diff-原始輸出.diff:27: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/施工後完整 package diff-原始輸出.diff:30: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/施工後完整 package diff-原始輸出.diff:33: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/施工後完整 package diff-原始輸出.diff:120: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/施工後完整 package diff-原始輸出.diff:123: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/施工後完整 package diff-原始輸出.diff:136: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/施工後完整 package diff-原始輸出.diff:138: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/施工後完整 package diff-原始輸出.diff:141: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/施工後完整 package diff-原始輸出.diff:144: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/施工後完整 package diff-原始輸出.diff:153: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/施工後完整 package diff-原始輸出.diff:156: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/施工後完整 package diff-原始輸出.diff:159: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/施工後完整 package diff-原始輸出.diff:162: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/施工後完整 package diff-原始輸出.diff:249: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/施工後完整 package diff-原始輸出.diff:252: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/最佳化後技能/rules/主幹式開發來源分級-格式規範.md:49: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/最佳化後技能/rules/主幹式開發核心規則-格式規範.md:41: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/最佳化後技能/rules/主幹式開發流程審查-格式規範.md:50: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/最佳化後技能/rules/主幹式開發策略選擇-格式規範.md:81: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/最佳化後技能/rules/主幹式開發需求拆分-格式規範.md:48: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/藍圖審核回饋.md:26: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/藍圖確認紀錄.md:50: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/藍圖階段驗證紀錄.md:51: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/補正相對首次驗收版本-agents-diff-原始輸出.diff:6: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/補正相對首次驗收版本-agents-diff-原始輸出.diff:16: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/補正相對首次驗收版本-agents-diff-原始輸出.diff:18: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/補正相對首次驗收版本-agents-diff-原始輸出.diff:23: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/補正相對首次驗收版本-agents-diff-原始輸出.diff:25: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/補正相對首次驗收版本-agents-diff-原始輸出.diff:39: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/補正相對首次驗收版本-agents-diff-原始輸出.diff:41: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/補正相對首次驗收版本-agents-diff-原始輸出.diff:60: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/補正相對首次驗收版本-claude-diff-原始輸出.diff:6: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/補正相對首次驗收版本-claude-diff-原始輸出.diff:16: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/補正相對首次驗收版本-claude-diff-原始輸出.diff:18: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/補正相對首次驗收版本-claude-diff-原始輸出.diff:23: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/補正相對首次驗收版本-claude-diff-原始輸出.diff:25: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/補正相對首次驗收版本-claude-diff-原始輸出.diff:39: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/補正相對首次驗收版本-claude-diff-原始輸出.diff:41: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/補正相對首次驗收版本-claude-diff-原始輸出.diff:60: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本/.agents/skills/trunk-based-development/rules/主幹式開發來源分級-格式規範.md:49: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本/.agents/skills/trunk-based-development/rules/主幹式開發核心規則-格式規範.md:32: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本/.agents/skills/trunk-based-development/rules/主幹式開發流程審查-格式規範.md:50: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本/.agents/skills/trunk-based-development/rules/主幹式開發策略選擇-格式規範.md:64: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本/.agents/skills/trunk-based-development/rules/主幹式開發需求拆分-格式規範.md:48: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本/.claude/skills/trunk-based-development/rules/主幹式開發來源分級-格式規範.md:49: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本/.claude/skills/trunk-based-development/rules/主幹式開發核心規則-格式規範.md:32: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本/.claude/skills/trunk-based-development/rules/主幹式開發流程審查-格式規範.md:50: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本/.claude/skills/trunk-based-development/rules/主幹式開發策略選擇-格式規範.md:64: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本/.claude/skills/trunk-based-development/rules/主幹式開發需求拆分-格式規範.md:48: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本/技能/rules/主幹式開發來源分級-格式規範.md:49: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本/技能/rules/主幹式開發核心規則-格式規範.md:32: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本/技能/rules/主幹式開發流程審查-格式規範.md:50: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本/技能/rules/主幹式開發策略選擇-格式規範.md:64: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本/技能/rules/主幹式開發需求拆分-格式規範.md:48: new blank line at EOF.
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本完整 package diff-原始輸出.diff:7: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本完整 package diff-原始輸出.diff:9: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本完整 package diff-原始輸出.diff:12: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本完整 package diff-原始輸出.diff:15: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本完整 package diff-原始輸出.diff:24: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本完整 package diff-原始輸出.diff:27: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本完整 package diff-原始輸出.diff:30: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本完整 package diff-原始輸出.diff:33: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本完整 package diff-原始輸出.diff:120: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本完整 package diff-原始輸出.diff:123: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本完整 package diff-原始輸出.diff:136: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本完整 package diff-原始輸出.diff:138: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本完整 package diff-原始輸出.diff:141: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本完整 package diff-原始輸出.diff:144: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本完整 package diff-原始輸出.diff:153: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本完整 package diff-原始輸出.diff:156: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本完整 package diff-原始輸出.diff:159: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本完整 package diff-原始輸出.diff:162: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本完整 package diff-原始輸出.diff:249: trailing whitespace.
++ 
+docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本完整 package diff-原始輸出.diff:252: trailing whitespace.
++ 

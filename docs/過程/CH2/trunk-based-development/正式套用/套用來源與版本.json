@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-17",
+  "source": "提示詞重複對照/tbd-r05/最終技能",
+  "prompt": "短版提示詞",
+  "engineering": "沿用已完成且通過驗收的 r05，未重新產生候選",
+  "baseline_HEAD": "e588ae1d1fc87b3456a56af08e1379f131333050",
+  "before_hashes": {
+    "SKILL.md": "245e3fcfc88066e3936d84e254038f6644fa18a8155808ca7b790ecc227527f2",
+    "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294"
+  },
+  "adopted_hashes": {
+    "SKILL.md": "cffc4d07bcfcfb7a83627ca607868a3a19e0c61e90577941ffd83254db708fb3",
+    "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+    "rules/TBD判準-格式規範.md": "ec647cea13ca7e72f6dd599edabdf2b8dffecf505dff58e8942fdce1e9fef7f7",
+    "rules/工作流程評估-格式規範.md": "efe2c973eafe6d78e87f772c722396dc71cb93934cac1d3cb1d10877cba7ac45",
+    "rules/變更規劃-格式規範.md": "d56a348ccc8bcc3d2203a594c7c54a740461bcf73aebcd0ad75b02f3574fb341"
+  },
+  "source_hashes": {
+    "SKILL.md": "cffc4d07bcfcfb7a83627ca607868a3a19e0c61e90577941ffd83254db708fb3",
+    "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+    "rules/TBD判準-格式規範.md": "ec647cea13ca7e72f6dd599edabdf2b8dffecf505dff58e8942fdce1e9fef7f7",
+    "rules/工作流程評估-格式規範.md": "efe2c973eafe6d78e87f772c722396dc71cb93934cac1d3cb1d10877cba7ac45",
+    "rules/變更規劃-格式規範.md": "d56a348ccc8bcc3d2203a594c7c54a740461bcf73aebcd0ad75b02f3574fb341"
+  },
+  "behavior_acceptance": "沿用同一份候選的 S1 靜態核對、S2–S12 隔離實跑及共同 c05a/c05b；本次套用另做檔案一致性、結構與同步檢查",
+  "committed": false
+}

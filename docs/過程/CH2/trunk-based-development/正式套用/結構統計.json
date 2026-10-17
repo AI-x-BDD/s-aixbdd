@@ -1,0 +1,16 @@
+{
+  "before": {
+    "files": 2,
+    "main_lines": 114,
+    "total_lines": 231,
+    "bytes": 10355,
+    "rules": 0
+  },
+  "after": {
+    "files": 5,
+    "main_lines": 26,
+    "total_lines": 426,
+    "bytes": 21178,
+    "rules": 11
+  }
+}
