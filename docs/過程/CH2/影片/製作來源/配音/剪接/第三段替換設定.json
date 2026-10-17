@@ -1,0 +1,12 @@
+{
+  "original": "素材/配音/完整.mp3",
+  "replacement": "素材/配音/03-修正版.mp3",
+  "output": "完整-03修正版.m4a",
+  "cut_start": 11.36,
+  "cut_end": 36.04,
+  "method": "FFmpeg decoded trim and concat; no speed change; only scene 3 replaced",
+  "input_sha256": {
+    "完整.mp3": "7525e519e2450283e339b85d78488c94292520214d3fe917be4aa8944de67a4e",
+    "03-修正版.mp3": "1ea3ad95ae6b3ab0c4a4b2cbd21ce94ee0d3061b176f8d495bac9643417466c8"
+  }
+}

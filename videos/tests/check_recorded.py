@@ -43,7 +43,7 @@ with tempfile.TemporaryDirectory(dir=HOME/'build') as folder:
     rows = video.recorded_timeline(data,materials,config)
     assert rows[0]['start']==0
     assert all(a['end']==b['start'] for a,b in zip(rows,rows[1:]))
-    assert abs(rows[-1]['end']-video.duration(materials/config['audio'])) < 1/data['fps']
+    assert abs(rows[-1]['end']-video.duration(video.audio_path(materials,config))) < 1/data['fps']
     cues = video.captions(rows,folder)
     assert all(c['end']>c['start'] for c in cues)
     assert all(a['end']<=b['start']+.002 for a,b in zip(cues,cues[1:]))

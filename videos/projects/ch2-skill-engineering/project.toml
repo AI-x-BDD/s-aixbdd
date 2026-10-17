@@ -1,8 +1,9 @@
-# 相對 source_root 以 videos/ 為起點；可用 --source-root 覆寫。
+# 所有來源路徑相對 materials；工具與建置環境均在 videos/。
 source_root = ".."
 materials = "docs/過程/CH2/影片"
-content = "製作內容.json"
-slides = "靜幀"
+content = "製作來源/內容/製作內容.json"
+slides = "製作來源/畫面/圖稿"
 output = "build/ch2-skill-engineering"
-audio = "正式配音/完整-03修正版.m4a"
-alignment = "正式配音/對齊.json"
+audio = "完整-03修正版.m4a"
+audio_recipe = "製作來源/配音/剪接/第三段替換設定.json"
+alignment = "製作來源/配音/對齊/對齊.json"

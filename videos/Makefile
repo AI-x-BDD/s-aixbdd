@@ -7,10 +7,12 @@ ifneq ($(SOURCE_ROOT),)
 RUN += --source-root "$(SOURCE_ROOT)"
 endif
 
-.PHONY: setup check render preview
+.PHONY: setup audio check render preview
 setup:
 	uv sync --frozen
-check:
+audio:
+	$(RUN) prepare-audio
+check: audio
 	$(RUN) check
 render:
 	$(RUN) render

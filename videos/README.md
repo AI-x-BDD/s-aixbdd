@@ -1,12 +1,12 @@
 # 影片製作專案
 
-這個目錄是可獨立複製的影片製作工具。目前由外層 `s-aixbdd` repo 管理版本；原始素材、旁白文字、圖稿與課程證據留在外層專案，工具唯讀載入。
+這是可獨立複製的影片製作工具，目前由外層 s-aixbdd Git 管理。內容、圖稿與原始素材在外層章節目錄；環境、快取與建置產物留在 videos。
 
-## 環境
+## 製作與預覽
 
-目前支援 macOS，使用 Python 3.11 以上、uv、FFmpeg（含 ffprobe）、macOS `say` 的 Meijia 語音與 `qlmanage`。一般建置只用 Python 標準函式庫；重新分析配音時另用選配的 `alignment` 套件；環境在 `.venv/`，uv 快取在 `.cache/uv/`，兩者均不進版控。系統執行檔仍由 macOS／套件管理器提供，無須複製進本目錄。
+支援 macOS、Python 3.11 以上、uv、FFmpeg／ffprobe、qlmanage；系統預覽語音另需 macOS say 與 Meijia 語音。系統工具由電腦提供，不包含在 Python 環境中。
 
-已安裝工具後，在本目錄執行：
+從本目錄執行：
 
 ```sh
 make setup
@@ -15,57 +15,69 @@ make render
 make preview
 ```
 
-預覽預設為 <http://127.0.0.1:60070/預覽.html>。`render` 重建影片，`preview` 只提供現有輸出的靜態伺服器。修改素材後先重新 render，再重新整理網頁。`Ctrl-C` 停止伺服器。
+預覽：<http://127.0.0.1:60070/預覽/預覽.html>。`render` 重建，`preview` 只提供靜態檔案；重建後重新整理網頁。用 Ctrl-C 停止伺服器，同一埠不必重複啟動。
 
-## CH2 的來源與輸出
+## 來源與目錄規則
 
-- 設定：`projects/ch2-skill-engineering/project.toml`。
-- 外部來源：`../docs/過程/CH2/影片/製作內容.json`（旁白、分鏡、重點框及證據引用）與同目錄的 `靜幀/*.svg`。
-- 證據引用：依設定的 `source_root` 讀取外部專案 Skill 與前後比較文件。
-- 生成輸出：`build/ch2-skill-engineering/`，包含預覽 HTML、MP4、旁白、字幕、時間軸、節奏檢查、可供瀏覽器使用的 PNG 及中間檔。
+設定檔為 `projects/ch2-skill-engineering/project.toml`。`source_root` 相對 videos 解析，`materials` 相對 source_root，content／slides／alignment／audio_recipe 相對 materials。
 
-所有原始素材留在外層。`build/` 裡的 PNG、音訊和影片均為可重建的衍生檔，不是素材來源。現有外層預覽檔先保留，新的建置流程不再讀取它們，也不覆寫它們。
+CH2 來源位於 `../docs/過程/CH2/影片/`：
 
-目前 SVG 輸入為 1600×900、PingFang TC 字體，採 Quick Look 轉圖；影片為 25 fps。CH2 目前使用外層 `正式配音/完整-03修正版.m4a` 與 `對齊.json`，依實際語音詞時間切畫面、字幕及 focus。音檔不做變速或刪減；自然停頓保留，不額外補時。對齊屬自動辨識結果，仍需聽看驗收。未設定 audio／alignment 的其他專案，維持系統語音與比例估時。
+- `製作來源/內容/製作內容.json`：旁白、分鏡、紅框及課程證據引用，為修改入口。
+- `製作來源/畫面/圖稿/`：1600×900 SVG，使用 PingFang TC。
+- `製作來源/配音/稿件/`：完整旁白與九段 TXT。
+- `製作來源/配音/剪接/`：可執行的剪接設定及原始音檔雜湊。
+- `製作來源/配音/對齊/`：目前採用的字元時間與音檔、原稿雜湊。
+- `製作紀錄/`：敘事、參考來源、檢查與修改紀錄，保留代表版本。
+- `素材/配音/`：使用者提供的完整與第三段修正版 MP3。
 
-## 獨立複製
+CH3、CH4 沿用相同分類，需要時再建立錄影、圖片等素材子目錄。內容與製作過程保留版控，原始素材在交付確認後可清理；刪除前記錄來源與取得方式。刪除後如要重建，必須重新取得音檔，重新生成的聲音可能不同。刪除已追蹤素材不會清除 Git 歷史。
 
-複製本目錄的已版控檔案即可建立另一個製作專案；`.venv/`、`.cache/`、`build/` 可省略並重新生成。素材仍需另行指定：
+所有衍生檔在 `build/ch2-skill-engineering/`，不納入版控：
+
+| 子目錄 | 內容 |
+| --- | --- |
+| 預覽/ | 預覽.html、時間軸、節奏檢查、腳本與分鏡、證據對照 |
+| 輸出/ | 影片.mp4、字幕.srt、字幕.vtt |
+| 中間產物/ | 合成配音、PNG、SVG 轉圖、分段編碼 |
+
+發布後可清理 build；不會自動刪除素材或成品。一般修改由 Git 保存，不為每次 render 複製完整來源快照。
+
+## 配音剪接與對齊
+
+CH2 的 `audio_recipe` 指向第三段替換設定。原始完整配音的 11.36–36.04 秒，由第三段修正版取代，其餘保持原樣、不變速。`make audio` 從兩份原始 MP3 重建 `build/ch2-skill-engineering/中間產物/完整-03修正版.m4a`；check／render 也會先重建並核對雜湊。
+
+有 audio_recipe 時，audio 是建置中間產物的檔名。未設定 recipe 時，audio 仍是 materials 內的既有音檔路徑；未設定 audio 的影片使用系統預覽語音。
+
+只搬移來源路徑不需要重新辨識。修改音檔或內容 JSON 後，舊對齊資料會被雜湊檢查阻擋；先確認剪接設定與原始音檔雜湊，再執行：
+
+```sh
+make audio
+UV_CACHE_DIR=.cache/uv uv run --frozen --extra alignment python scripts/align.py \
+  --audio build/ch2-skill-engineering/中間產物/完整-03修正版.m4a \
+  --content ../docs/過程/CH2/影片/製作來源/內容/製作內容.json \
+  --output ../docs/過程/CH2/影片/製作來源/配音/對齊/對齊.json \
+  --model .cache/models/whisper-large-v3-turbo
+make check
+make render
+uv run --frozen python tests/check_recorded.py
+```
+
+alignment 為選配依賴，包含 MLX Whisper 與 OpenCC。分析在本機進行；繁簡字正規化只用於比對，字幕保留原稿，少量異字時間採相鄰詞內插。這是語音詞時間與原稿匹配，仍需聽看確認，文字匹配率不代表對齊精準度。參考 [MLX Whisper 官方文件](https://github.com/ml-explore/mlx-examples/blob/main/whisper/README.md)。
+
+模型約 1.5 GiB，位於 `.cache/models/`；辨識快取位於 `build/alignment/`。不指定 model 時首次會下載預設模型。一般 render 不用載入模型，只需既有對齊資料。
+
+## 獨立複製與新增影片
+
+複製 videos 已版控檔案即可，省略 `.venv/`、`.cache/`、`build/`，再指定外部來源：
 
 ```sh
 make setup
-make check SOURCE_ROOT=/外部素材所在的大專案
-make render SOURCE_ROOT=/外部素材所在的大專案
-make preview SOURCE_ROOT=/外部素材所在的大專案 PORT=60071
+make check SOURCE_ROOT=/外部大專案
+make render SOURCE_ROOT=/外部大專案
+make preview SOURCE_ROOT=/外部大專案 PORT=60071
 ```
 
-`SOURCE_ROOT` 指向大專案根目錄；素材位置與證據路徑相對於此根目錄解析。也可直接調整 `project.toml`。工具不假設母目錄名稱，也不依賴母專案的 Python 環境。
+工具不依賴母專案名稱或 Python 環境。複製工具不包含外部素材；外部來源也包含 claims 引用的課程證據文件。
 
-增加 CH3、CH4 時，建立新的 project.toml，指向各章外部素材，再用 `make render PROJECT=projects/新影片/project.toml` 選擇。每個影片使用獨立的輸出目錄。
-
-程式、模板、設定與鎖檔納入外層 Git；環境、快取和建置產物由本目錄的 `.gitignore` 排除。目前未設定 Git LFS，也未修改外層 Skill 或 CI。
-
-## 正式配音與重新對齊
-
-CH2 設定檔的 `audio`、`alignment` 路徑相對於外部素材目錄。一般 check/render 只讀取現有音檔及對齊資料，不需要載入辨識模型。若音檔或原始 JSON 改變，雜湊檢查會阻止使用舊時間軸，應先重新對齊：
-
-```sh
-UV_CACHE_DIR=.cache/uv uv run --frozen --extra alignment python scripts/align.py \
-  --audio ../docs/過程/CH2/影片/正式配音/完整-03修正版.m4a \
-  --content ../docs/過程/CH2/影片/製作內容.json \
-  --output ../docs/過程/CH2/影片/正式配音/對齊.json
-make check
-make render
-```
-
-以上指令從 videos 執行。此分析使用本機 MLX Whisper 詞時間及原稿比對，繁簡字正規化只用於匹配，字幕保留原稿。少量辨識異字的時間由相鄰已匹配詞內插；它不是人工逐字校時，也不聲稱是音素強制對齊。參考 [MLX Whisper 官方文件](https://github.com/ml-explore/mlx-examples/blob/main/whisper/README.md)。
-
-`alignment` 選配套件包括 mlx-whisper 與 OpenCC。模型與辨識快取分別留在本專案 `.cache/`、`build/alignment/`，均不進版控；模型約 1.5 GiB，套件另占空間。這次重用本機已有權重，複製到影片專案自己的忽略快取，沒有把其他專案路徑寫進設定或程式。也可用 `--model .cache/models/whisper-large-v3-turbo` 指定本機模型，未指定時首次會下載預設模型。
-
-已保存的 `對齊.json` 含音檔／來源 JSON 雜湊、各原稿字元時間與辨識差異。獨立複製工具後，只要外部素材包含正式音檔和對齊資料，就能直接重建，不必重新辨識。
-
-檢查正式音檔時間軸及過期資料阻擋：
-
-```sh
-uv run --frozen python tests/check_recorded.py
-```
+新增影片建立獨立設定與輸出目錄，再以 `make render PROJECT=projects/新影片/project.toml` 選擇。環境、快取及 build 均由 videos/.gitignore 排除，不建立巢狀 Git，不自動更新 Skills 或外層 CI。

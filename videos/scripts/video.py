@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 import re
 import shutil
+import socketserver
 import subprocess
 import sys
 import tomllib
@@ -62,6 +63,36 @@ def load(args):
     return root, materials, content_path, data, out, config
 
 
+def audio_path(materials, config):
+    if config.get("audio_recipe"):
+        return HOME / config["output"] / "中間產物" / config["audio"]
+    return materials / config["audio"]
+
+
+def prepare_audio(materials, config):
+    """原始音檔唯讀，依已保存的剪接設定重建合成音檔。"""
+    if not config.get("audio_recipe"):
+        return
+    recipe = json.loads((materials / config["audio_recipe"]).read_text())
+    original, replacement = [materials / recipe[k] for k in ("original", "replacement")]
+    for source in (original, replacement):
+        expected = recipe["input_sha256"][source.name]
+        if hashlib.sha256(source.read_bytes()).hexdigest() != expected:
+            raise ValueError(f"原始配音已改動，請確認剪接設定：{source}")
+    target = audio_path(materials, config)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    start, end = float(recipe["cut_start"]), float(recipe["cut_end"])
+    if not 0 <= start < end <= duration(original):
+        raise ValueError("配音剪接時間超出原始音檔")
+    filters = (f"[0:a]atrim=end={start},asetpts=PTS-STARTPTS[a];"
+               "[1:a]asetpts=PTS-STARTPTS[b];"
+               f"[0:a]atrim=start={end},asetpts=PTS-STARTPTS[c];"
+               "[a][b][c]concat=n=3:v=0:a=1[out]")
+    ffmpeg("-i", original, "-i", replacement, "-filter_complex", filters,
+           "-map", "[out]", "-c:a", "aac", "-b:a", "192k", target)
+    print(f"合成配音：{target}", flush=True)
+
+
 def check(root, materials, content_path, data, out, config):
     if sys.platform != "darwin":
         raise RuntimeError("目前的臨時語音與 SVG 轉圖流程支援 macOS")
@@ -70,7 +101,7 @@ def check(root, materials, content_path, data, out, config):
     if missing:
         raise RuntimeError("缺少工具：" + ", ".join(missing))
     if config.get("audio"):
-        audio, alignment_path = materials / config["audio"], materials / config["alignment"]
+        audio, alignment_path = audio_path(materials, config), materials / config["alignment"]
         alignment = json.loads(alignment_path.read_text())
         if alignment["audio_sha256"] != hashlib.sha256(audio.read_bytes()).hexdigest():
             raise ValueError("音檔已改動，請重新對齊")
@@ -101,7 +132,7 @@ def check(root, materials, content_path, data, out, config):
 def recorded_timeline(data, materials, config):
     alignment = json.loads((materials / config["alignment"]).read_text())
     fps = data["fps"]
-    length = math.ceil(duration(materials / config["audio"])*fps)/fps
+    length = math.ceil(duration(audio_path(materials, config))*fps)/fps
     starts = [0.0]
     for previous, current in zip(alignment["scenes"], alignment["scenes"][1:]):
         # 新畫面稍微領先發聲，但不提早切掉上一段尚在發聲的內容。
@@ -249,7 +280,7 @@ def documents(root, data, rows, out, config):
     for r in rows:
         md += [f"## {r['start']:.2f}–{r['end']:.2f} 秒：{r['title']}\n",
                r["text"] + "\n", "畫面：" + r.get("visual", "") + "\n",
-               f"[畫面](靜幀/{r['frame']}.png)\n"]
+               f"[畫面](../中間產物/靜幀/{r['frame']}.png)\n"]
     md.append(("字幕與重點框依語音詞時間對齊；旁白使用 ElevenLabs 正式音檔，仍待聽看確認。\n"
                if config.get("audio") else "字幕與重點框依段內文字比例估時，尚未逐字校時；旁白使用 macOS 臨時系統語音。\n"))
     (out / "腳本與分鏡.md").write_text("\n".join(md))
@@ -258,10 +289,10 @@ def documents(root, data, rows, out, config):
 def export_video(data, rows, focus, out, work, materials, config):
     count = len(rows)
     if config.get("audio"):
-        audio = out / "正式旁白.m4a"
-        ffmpeg("-i", materials / config["audio"], "-vn", "-c:a", "aac", "-b:a", "192k", audio)
+        audio = work / "正式旁白.m4a"
+        ffmpeg("-i", audio_path(materials, config), "-vn", "-c:a", "aac", "-b:a", "192k", audio)
     else:
-        audio = out / "臨時旁白.mp3"
+        audio = work / "臨時旁白.mp3"
         args = []
         for i in range(count):
             args += ["-i", work / f"voice-{i}.aiff"]
@@ -278,7 +309,7 @@ def export_video(data, rows, focus, out, work, materials, config):
                 x, y, w, h = f["box"]
                 boxes.append(f"drawbox=x={x}:y={y}:w={w}:h={h}:color=0xBA582D:t=3:enable='between(t,{f['start']-row['start']},{f['end']-row['start']})'")
         filters = ["-vf", ",".join(boxes)] if boxes else []
-        ffmpeg("-loop", "1", "-framerate", data["fps"], "-i", out / "靜幀" / f"{row['frame']}.png",
+        ffmpeg("-loop", "1", "-framerate", data["fps"], "-i", work / "靜幀" / f"{row['frame']}.png",
                "-t", row["voice_seconds"], *filters, "-c:v", "libx264", "-preset", "veryfast",
                "-crf", "24", "-pix_fmt", "yuv420p", "-threads", "2", work / f"part{i}.mp4")
     with ThreadPoolExecutor(max_workers=2) as pool:
@@ -288,7 +319,7 @@ def export_video(data, rows, focus, out, work, materials, config):
     ffmpeg("-f", "concat", "-safe", "0", "-i", work / "concat.txt", "-i", audio,
            "-i", out / "字幕.srt", "-map", "0:v", "-map", "1:a", "-map", "2:s", "-c:v", "copy",
            "-c:a", "aac", "-b:a", "192k", "-c:s", "mov_text", "-metadata:s:s:0", "language=zho",
-           "-disposition:s:0", "default", "-t", rows[-1]["end"], "-movflags", "+faststart", out / "計時預覽.mp4")
+           "-disposition:s:0", "default", "-t", rows[-1]["end"], "-movflags", "+faststart", out / "影片.mp4")
 
 
 def preview(data, rows, cues, focus, out, config):
@@ -302,32 +333,40 @@ def preview(data, rows, cues, focus, out, config):
                     "__CUES__": json.dumps(cues, ensure_ascii=False), "__FOCUS__": json.dumps(focus)}
     for key, value in replacements.items():
         page = page.replace(key, value)
-    audio = out / ("正式旁白.m4a" if config.get("audio") else "臨時旁白.mp3")
+    audio = out.parent / "中間產物" / ("正式旁白.m4a" if config.get("audio") else "臨時旁白.mp3")
     mime = "audio/mp4" if config.get("audio") else "audio/mpeg"
     page = page.replace('src="臨時旁白.mp3"', f'src="data:{mime};base64,' + base64.b64encode(audio.read_bytes()).decode() + '"')
     if config.get("audio"):
         page = page.replace("靜幀＋臨時系統語音", "ElevenLabs 正式配音・對齊預覽")
         page = page.replace("聲音為本機 Meijia 臨時語音；字幕為段內估時稿。", "使用正式配音；字幕與重點框依語音詞時間對齊，待聽看確認。")
+    page = page.replace('靜幀/', '../中間產物/靜幀/')
+    page = page.replace('href="計時預覽.mp4"', 'href="../輸出/影片.mp4"')
     (out / "預覽.html").write_text(page)
 
 
 def render(root, materials, content_path, data, out, config):
+    prepare_audio(materials, config)
     check(root, materials, content_path, data, out, config)
-    work = out / "work"
-    work.mkdir(parents=True, exist_ok=True)
+    work, review, export = out / "中間產物", out / "預覽", out / "輸出"
+    raster = work / "轉圖"
+    for folder in (work, review, export, raster):
+        folder.mkdir(parents=True, exist_ok=True)
     inputs = [content_path] + sorted((materials / config["slides"]).glob("*.svg"))
     if config.get("audio"):
-        inputs += [materials / config["audio"], materials / config["alignment"]]
+        inputs += [audio_path(materials, config), materials / config["alignment"]]
+        if config.get("audio_recipe"):
+            recipe = json.loads((materials / config["audio_recipe"]).read_text())
+            inputs += [materials / config["audio_recipe"], materials / recipe["original"], materials / recipe["replacement"]]
     before = {str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in inputs}
     rows = recorded_timeline(data, materials, config) if config.get("audio") else audio_timeline(data, work)
-    (out / "時間軸.json").write_text(json.dumps(rows, ensure_ascii=False, indent=2) + "\n")
-    cues, focus = captions(rows, out), focus_timeline(data, rows)
-    frames(materials, config, rows, out, work)
-    documents(root, data, rows, out, config)
-    export_video(data, rows, focus, out, work, materials, config)
-    preview(data, rows, cues, focus, out, config)
-    length = duration(out / "計時預覽.mp4")
-    events = silence(out / "計時預覽.mp4", .5)
+    (review / "時間軸.json").write_text(json.dumps(rows, ensure_ascii=False, indent=2) + "\n")
+    cues, focus = captions(rows, export), focus_timeline(data, rows)
+    frames(materials, config, rows, work, raster)
+    documents(root, data, rows, review, config)
+    export_video(data, rows, focus, export, work, materials, config)
+    preview(data, rows, cues, focus, review, config)
+    length = duration(export / "影片.mp4")
+    events = silence(export / "影片.mp4", .5)
     if not data["min_seconds"] <= length <= data["max_seconds"]:
         raise ValueError(f"輸出片長不符：{length}")
     if any(before[str(p)] != hashlib.sha256(p.read_bytes()).hexdigest() for p in inputs):
@@ -338,8 +377,8 @@ def render(root, materials, content_path, data, out, config):
               "source_files_unchanged": True,
               "audio_source": config.get("audio", "macOS say"),
               "subtitle_alignment": "whisper-word-timestamps" if config.get("audio") else "estimated"}
-    (out / "節奏檢查.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
-    print(f"輸出完成：{out / '計時預覽.mp4'}（{length:.2f} 秒）", flush=True)
+    (review / "節奏檢查.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
+    print(f"輸出完成：{export / '影片.mp4'}（{length:.2f} 秒）", flush=True)
 
 
 def main():
@@ -348,23 +387,31 @@ def main():
     parser.add_argument("--source-root", help="外部素材所在的大專案根目錄")
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("check", help="檢查環境與素材")
+    commands.add_parser("prepare-audio", help="從原始音檔重建剪接配音")
     commands.add_parser("render", help="重新製作旁白、字幕、預覽與 MP4")
     serve = commands.add_parser("serve", help="啟動本機預覽，不重新製作影片")
     serve.add_argument("--port", type=int, default=60070)
     args = parser.parse_args()
     state = load(args)
-    if args.command == "check":
+    if args.command == "prepare-audio":
+        prepare_audio(state[1], state[5])
+    elif args.command == "check":
         check(*state)
     elif args.command == "render":
         render(*state)
     else:
         out = state[4]
-        if not (out / "預覽.html").is_file():
+        if not (out / "預覽/預覽.html").is_file():
             parser.error("請先執行 render")
         handler = partial(http.server.SimpleHTTPRequestHandler, directory=str(out))
-        server = http.server.ThreadingHTTPServer(("127.0.0.1", args.port), handler)
-        print(f"預覽：http://127.0.0.1:{server.server_port}/預覽.html", flush=True)
-        server.serve_forever()
+        # 本機固定 IP 不需反查主機名稱，避免 macOS DNS 延遲阻塞預覽啟動。
+        with http.server.ThreadingHTTPServer(("127.0.0.1", args.port), handler,
+                                             bind_and_activate=False) as server:
+            socketserver.TCPServer.server_bind(server)
+            server.server_name, server.server_port = server.server_address
+            server.server_activate()
+            print(f"預覽：http://127.0.0.1:{server.server_port}/預覽/預覽.html", flush=True)
+            server.serve_forever()
 
 
 if __name__ == "__main__":
