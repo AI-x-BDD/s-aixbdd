@@ -1,0 +1,9 @@
+[project]
+name = "video-workshop"
+version = "0.1.0"
+description = "讀取外部素材，製作簡報式說明影片"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.uv]
+package = false

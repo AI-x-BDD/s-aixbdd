@@ -1,0 +1,6 @@
+# 相對 source_root 以 videos/ 為起點；可用 --source-root 覆寫。
+source_root = ".."
+materials = "docs/過程/CH2/影片"
+content = "製作內容.json"
+slides = "靜幀"
+output = "build/ch2-skill-engineering"
