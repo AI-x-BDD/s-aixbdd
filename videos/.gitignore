@@ -3,3 +3,8 @@
 __pycache__/
 build/
 .DS_Store
+
+# 本機環境與憑證；範例設定仍保留版控
+.env
+.env.*
+!.env.example

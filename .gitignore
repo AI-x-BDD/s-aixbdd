@@ -1,3 +1,6 @@
 target/
 .codex/jev-router/
 .codex/**/__pycache__/
+
+# macOS 本機檔案
+.DS_Store
