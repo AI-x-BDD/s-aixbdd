@@ -1,0 +1,19 @@
+{
+  "HEAD": {
+    "exit_code": 0,
+    "stdout": "e588ae1d1fc87b3456a56af08e1379f131333050",
+    "stderr": ""
+  },
+  "formal_skill_diff": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "skill_sync": {
+    "exit_code": 0,
+    "stdout": "兩邊一致",
+    "stderr": ""
+  },
+  "owned_temporary_worktrees_absent": true,
+  "report_missing_links": []
+}

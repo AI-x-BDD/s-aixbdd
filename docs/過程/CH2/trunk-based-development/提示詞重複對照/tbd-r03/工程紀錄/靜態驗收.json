@@ -1,0 +1,29 @@
+{
+  "主檔符合藍圖": true,
+  "frontmatter逐字保留": true,
+  "案例原文保留": true,
+  "首次施工快照與受測版相同": true,
+  "規則檔數": 3,
+  "Rule數量": {
+    "Workflow評估-格式規範.md": 2,
+    "變更規劃-格式規範.md": 5,
+    "TBD判準-格式規範.md": 3
+  },
+  "READ及首次使用": [
+    {
+      "清單": "TBD判準檢查清單",
+      "同Phase且相鄰": true,
+      "CHECK使用": true
+    },
+    {
+      "清單": "變更規劃檢查清單",
+      "同Phase且相鄰": true,
+      "CHECK使用": true
+    },
+    {
+      "清單": "Workflow評估檢查清單",
+      "同Phase且相鄰": true,
+      "CHECK使用": true
+    }
+  ]
+}

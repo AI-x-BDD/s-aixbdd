@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "rejected_blueprint_preserved_sha256": "e597e197205a788f46ff59613b2460653e799174faefed8bab9d42a612801c12",
+  "current_blueprint_sha256": "e5abc7ff837927b8e4ab792173a914b38c04559d360d3b7722d99cbcac18da4e",
+  "acceptance_numbers_match": true,
+  "constraints": 24,
+  "work_items_pending": 4,
+  "scenario_rows": 7,
+  "baseline_main_unchanged": true,
+  "baseline_cases_unchanged": true,
+  "note": "僅藍圖與記錄靜態檢查，不代表實跑驗收或核准施工。",
+  "frontmatter_unchanged": true,
+  "sop_steps": 9,
+  "both_sides_main_equal": true,
+  "both_sides_cases_equal": true,
+  "original_unchanged": true
+}

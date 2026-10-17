@@ -1,0 +1,3 @@
+團隊從 main 開 branch，有長期 develop、六個 active branches、兩週才整合；程式修改半天但 review 等三天，CI 需一小時且紅了晚上修，月底 code freeze，上線 flag 從不刪；squash 與 rebase 強制是否才算 TBD？請審查
+
+預先回覆：無目標 Skill 閘門；若出現則回覆「確認，僅提供規劃／審查，不操作 Git」，並依 E2 判失敗

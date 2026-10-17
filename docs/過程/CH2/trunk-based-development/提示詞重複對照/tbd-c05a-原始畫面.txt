@@ -1,0 +1,46 @@
+codex -a never -s danger-full-access --no-alt-screen
+
+󰀵 …/tbd-b05   HEAD !?   v25.0.4   09:41 
+ codex -a never -s danger-full-access --no-alt-screen
+
+  >_ OpenAI Codex (v0.163.0)
+     /private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-b05
+  permissions: YOLO mode
+
+  Tip: Use the desktop app. Run codex app to open it. It installs automatically if needed.
+
+
+› 請讀取並使用目前專案 .agents/skills/trunk-based-development/SKILL.md 回答以下需求，僅讀取檔案，不修改專案。
+
+  團隊有長期 develop 與 release-next、PR review 常等待兩天、CI 變紅後仍繼續開發；請檢查是否符合 TBD。
+
+
+• 我會讀取指定的 trunk-based-development Skill，依其準則檢查；全程僅讀取檔案。
+
+• Explored
+  └ Read SKILL.md (trunk-based-development skill), 變更規劃-格式規範.md, 工作流程評估-格式規範.md, TBD判準-格式規範.md
+
+• 依指定 Skill 判準，目前流程不符合 TBD。
+
+   現況                          判斷與修正
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   長期 develop、release-next    若用於共同開發新功能，違反「沒有長期開發分支」。應改為小批次、短期分支，持續整合 main。若 release-next 僅維護版本，須確認是很晚才切出，只做穩定、修錯與發布；bug 先修在 main
+                                 並驗證，再 cherry-pick。
+  ────────────────────────────  ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   PR review 常等兩天            等待時間必須算入 branch 壽命，還要加上開發時間。TBD 官方的短期分支通常為 1～2 天；DORA 目標是不到一天、至少每天整合一次。兩天不是硬性上限，但目前 review 已阻礙快速整合。
+  ────────────────────────────  ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   CI 紅後仍繼續開發             若紅的是 main，直接違反「主幹保持可工作」：應立即修復或 revert，優先於新功能。若只是個別 branch 紅，仍須修到 CI green 才能 merge。
+
+  尚未提供、不能視為通過的項目：每人是否每天整合 main、完整 branch 壽命、active branches 數量、CI 回饋速度、是否依賴 code freeze，以及 Feature Flag 是否清理。
+
+  依 Skill 的六題自檢：一天內 merge 已受 review 等待阻礙；merge 後是否可工作尚未知；Feature Flag 與 abstraction 是否適用需看變更內容；CI 是否快速回饋未知；長期分支明天仍存在，應檢查工作拆分，但不能把隔夜當成
+  禁令。
+
+  先補足快速 review、可靠的自動 build／test 與 CI、主幹故障優先修復紀律，再調整分支流程。核心是改變工作拆分與整合頻率，單改分支名稱無法達成 TBD。
+
+  Worked for 17s • 9:41 AM
+
+
+› Ask Codex to do anything
+
+  GPT-6.1-Sol medium fast · Context 9% used · weekly 40% left · ← for agents                                                                                                         ⚠ 4 warnings · f2 to view

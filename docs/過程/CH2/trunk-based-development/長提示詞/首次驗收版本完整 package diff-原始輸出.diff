@@ -1,0 +1,807 @@
+[tracked files diff]
+diff --git a/.agents/skills/trunk-based-development/SKILL.md b/.agents/skills/trunk-based-development/SKILL.md
+index 7857f9a..9d6f432 100644
+--- a/.agents/skills/trunk-based-development/SKILL.md
++++ b/.agents/skills/trunk-based-development/SKILL.md
+@@ -5,110 +5,29 @@ description: 依主幹式開發（Trunk-Based Development，TBD）規劃與審
+ 
+ # 主幹式開發（Trunk-Based Development）
+ 
+-核心目的：不要讓大家的程式碼分開太久。所有人圍繞單一 trunk（`main`）工作，不建立長期開發分支，持續把小變更整合回 main，main 任何時候都保持可工作、可發布。
++# SOP
+ 
+-回答時區分規則來源：
++## Phase 1 -- 釐清情境與按主題載入判斷規則
+ 
+-- **TBD 官方**：TrunkBasedDevelopment.com。
+-- **DORA**：Google DORA 的 DevOps 研究，標準通常比官方嚴格。
+-- **團隊規則**：TBD 沒規定、由團隊自行決定的部分。
++1. `READ` 使用者需求，以及使用者提供的 branch、PR、CI、release 與工作目錄現況。
++2. `THINK` 將本次任務標記為需求拆分規劃、workflow 審查、TBD 與 GitFlow 比較中的一個或多個模式，並判斷是否要求來源分級、特殊策略與完整案例；列出各模式需要的實際判斷主題與未知限制。
++3. `READ` 依第 2 步的主題分支，讀取所選 RuleFile 的全部 Rule，並分別建立具名清單：需要判斷 trunk／main 是否可工作或需求／審查涉及核心整合時，讀取 rules/主幹式開發核心規則-格式規範.md，建立「TBD 核心規則檢查清單」；需要規劃 PR、branch 壽命、同步、驗證或刪除時，讀取 rules/主幹式開發需求拆分-格式規範.md，建立「TBD 需求拆分檢查清單」；需要標示官方／DORA／團隊來源或門檻時，讀取 rules/主幹式開發來源分級-格式規範.md，建立「TBD 來源分級檢查清單」；遇到不能曝光、大型重構、相容性遷移或 release／hotfix 時，讀取 rules/主幹式開發策略選擇-格式規範.md，建立「TBD 策略選擇檢查清單」；審查 workflow 或比較 TBD 與 GitFlow 時，讀取 rules/主幹式開發流程審查-格式規範.md，建立「TBD 流程審查檢查清單」；只有需要完整情境拆法時，才讀取 references/cases.md 並建立「TBD 案例參考」。未選中的檔案不載入。
++4. `THINK` 只使用與模式相符的「TBD 核心規則檢查清單」、「TBD 需求拆分檢查清單」、「TBD 來源分級檢查清單」、「TBD 策略選擇檢查清單」、「TBD 流程審查檢查清單」與（若已建立）「TBD 案例參考」；需求規劃列出小批次、技巧、main 可工作理由與 branch 壽命，workflow 審查列出證據、違反項、導入前提與修正順序，TBD 與 GitFlow 比較明確比較隔離後一次整合與小批次持續整合，並對每項結論保留輸入事實、來源層級與未知限制。
++5. `CHECK` 逐項確認已選的「TBD 核心規則檢查清單」、「TBD 需求拆分檢查清單」、「TBD 來源分級檢查清單」、「TBD 策略選擇檢查清單」、「TBD 流程審查檢查清單」與（若已建立）「TBD 案例參考」，以及已知限制；缺少的事實標為未知，不用未提供資訊補成結論。
+ 
+-Branch 壽命兩邊標準不同：官方認為短期 branch 通常 1～2 天；DORA 以不到一天為目標。不要把「2 天」說成硬性標準。
++完成條件：模式與主題分支已判定，只有必要的 RuleFile／案例資源已載入並命名，分析已覆蓋已選檢查項且未知限制已標明。
+ 
+-## 規則分級
++## Phase 2 -- 產出與交付檢查
+ 
+-**核心規則**（違反就不算 TBD）：
++1. `WRITE` 依 Phase 1 已載入且命名的適用清單產生結果。需求規劃使用下列固定格式；workflow 審查列出不符合項、證據、導入前提與修正順序；TBD 與 GitFlow 比較列出兩者的整合節奏、分支用途與 main 可工作條件。
+ 
+-1. 沒有長期開發分支。
+-2. 頻繁整合 main。DORA：至少每天一次，一天多次更好。
+-3. main 保持可工作。CI 紅了先修 main，不繼續開發新功能；DORA 建議立即修或立即 revert，不是「晚上再看」。
+-
+-**強烈建議**：branch 非常短命（官方約 1～2 天，DORA < 1 天）；active branches 盡量少；不靠 code freeze 解決整合問題；merge 後刪 branch。
+-
+-**團隊自行決定**（不要說成 TBD 的要求）：squash／merge commit／rebase merge、同步 main 用 merge 還是 rebase、branch 命名、reviewer 人數、GitHub 或 GitLab、是否禁止 direct push。
+-
+-## 規劃需求的流程
+-
+-收到需求時，不先問「要開什麼 branch」，依序想：
+-
+-1. **切小**：把需求拆成多個能獨立整合的小變更。一張 Story／Ticket 不等於一個 branch 或一個 PR。
+-2. **每個小變更開短期 branch**，目標是「這個小變更做完就 merge」，不是「整個 feature 做完才 merge」。
+-3. **工作期間同步 main**，merge 前 branch 要跟 main 保持最新。
+-4. **CI 驗證**：build → lint → unit test → 必要的 integration test；PR → review → CI green → merge。DORA 建議每個 commit 都觸發 build 與自動測試，回饋在幾分鐘內。
+-5. **merge 後刪 branch**。
+-
+-規劃結果用這個格式給出：
+-
+-```text
++~~~text
+ PR 1：<變更>  — 使用技巧：<無／Feature Flag／Abstraction／新舊並存>
+ PR 2：...
+ 每個 PR merge 後 main 為什麼仍可工作：<說明>
+ 預估 branch 壽命（含等 review）：<時間>
+-```
+-
+-## Decision Tree
+-
+-```text
+-我要做一個變更
+-│
+-├─ 幾小時／一天內可完成？
+-│   └─ Yes → short-lived branch → CI + Review → merge main
+-│
+-└─ No → 能不能切更小？
+-    ├─ Yes → 切小 → 多個 PR，每個回到上一步判斷
+-    └─ No → 為什麼？
+-        ├─ 功能還不能曝光     → Feature Flag
+-        ├─ 大型程式重構       → Branch by Abstraction
+-        ├─ 舊系統／相容性遷移 → 新舊並存（Strangler）
+-        └─ 維護已發布版本     → Release Branch
+-```
+-
+-未完成的工作不靠 branch 藏起來，靠小批次、Feature Flag、抽象層、向後相容、CI、自動測試。
+-
+-### 技巧要點
+-
+-- **Feature Flag**：程式每天 merge，flag 關閉，最後打開（Deploy ≠ Release）。功能上線後要刪 flag，官方警告不清理的 flag 會變成技術債。
+-- **Branch by Abstraction**：建立 abstraction → 舊實作接上 → 加入新實作 → 逐步切換 → 刪舊實作。每一步都 merge main。
+-- **新舊並存**：改 API 時先讓舊 API 與新 API 並存 → consumer 遷移 → 刪舊 API。不要讓 main 處在「API 改了、前端還沒跟上」的中間狀態。
+-- **Release Branch**：很晚才切，只負責該版本的穩定、bug fix、發布，不能承載新功能開發。Bug 先修在 main（fix on trunk first），驗證後再 cherry-pick 到 release branch；只在 release branch 修再回灌 main 是官方列出的錯誤模式。
+-
+-各情境的完整拆法（小 bug、三天功能、大型重構、Vuex → Pinia、一週的 Feature Flag 功能、舊版 hotfix）見 [references/cases.md](references/cases.md)。
+-
+-## 常見錯誤
+-
+-- **「我們都從 main 開 branch，所以是 TBD」**：feature branch 活 2～3 週就不是 TBD。
+-- **一張 Story = 一個 branch = 一個 PR**：一張 Story 可以拆成 refactor、API、UI、cleanup 多個 PR，這樣更符合 TBD。
+-- **為了 merge 小，把不能工作的程式 merge main**：每一步都要保持可工作，用新舊並存處理跨層改動。
+-- **PR 很小但等 review 3 天**：效果跟三天 branch 一樣。branch 壽命要算入等 review 的時間。DORA 把重量級、非同步、耗時的 review 流程列為 TBD 常見阻礙。
+-- **多人在同一個 feature branch 開發**、**branch 一直不刪**、**接近 release 就 code freeze**：都是官方 You're Doing It Wrong 列出的模式。
+-
+-## 審查團隊的 workflow
+-
+-檢查是否真的在做 TBD：
+-
+-- 有沒有 `develop`、`team-a`、`release-next` 這類長期共同開發分支？
+-- 每人每天至少整合 main 一次嗎？
+-- branch 壽命（含 review 等待）多長？active branches 多少？
+-- CI 多快回饋？main 紅了是否立即修或 revert？
+-- 有沒有靠 code freeze 解決整合問題？
+-- Feature Flag 有沒有清理？
+-
+-導入前提：自動 build、自動 test、快速 CI、小批次開發能力、快速 code review。缺這些時，TBD 容易變成「大家一直 merge main，main 一直壞」。DORA 指出經驗不足、缺 gated checks、沒有「broken trunk 優先修復」紀律的團隊，實行 TBD 反而可能增加錯誤與返工。遇到這種團隊，先指出缺的前提，不要直接建議全面導入。
+-
+-適合：SaaS、Web App、Backend API、Frontend App、Microservice、企業內部系統、頻繁發布、多人共同維護的 codebase。需求一直變、多人同時改、需要頻繁 release 三者同時成立時價值最高。
+-
+-## TBD 與 GitFlow
+-
+-- GitFlow 類：先隔離 → 做完整 → 最後整合。
+-- TBD：先切小 → 持續整合 → 任何時候都保持可工作。
+-
+-TBD 主要改變拆分工作的方式，Git 操作本身變化不大。
++~~~
+ 
+-## 送出前檢查
++2. `CHECK` 逐條驗證 Phase 1 已選的具名清單、結果欄位、來源分級、未知限制與模式專屬輸出；未通過時修正後重新檢查。
+ 
+-1. 能不能切到一天內可以 merge？
+-2. 這個 PR 現在 merge，main 還能正常工作嗎？
+-3. 未完成功能能不能用 Feature Flag 隱藏？
+-4. 大改造能不能用 abstraction 讓新舊實作共存？
+-5. CI 能不能快速告訴我這次改動有沒有破壞系統？
+-6. 這個 branch 明天還會存在嗎？是的話，檢查是不是切得太大。
++完成條件：規劃、審查或比較結果已交付，且交付前 `CHECK` 的適用項目全部通過。
+diff --git a/.claude/skills/trunk-based-development/SKILL.md b/.claude/skills/trunk-based-development/SKILL.md
+index 7857f9a..9d6f432 100644
+--- a/.claude/skills/trunk-based-development/SKILL.md
++++ b/.claude/skills/trunk-based-development/SKILL.md
+@@ -5,110 +5,29 @@ description: 依主幹式開發（Trunk-Based Development，TBD）規劃與審
+ 
+ # 主幹式開發（Trunk-Based Development）
+ 
+-核心目的：不要讓大家的程式碼分開太久。所有人圍繞單一 trunk（`main`）工作，不建立長期開發分支，持續把小變更整合回 main，main 任何時候都保持可工作、可發布。
++# SOP
+ 
+-回答時區分規則來源：
++## Phase 1 -- 釐清情境與按主題載入判斷規則
+ 
+-- **TBD 官方**：TrunkBasedDevelopment.com。
+-- **DORA**：Google DORA 的 DevOps 研究，標準通常比官方嚴格。
+-- **團隊規則**：TBD 沒規定、由團隊自行決定的部分。
++1. `READ` 使用者需求，以及使用者提供的 branch、PR、CI、release 與工作目錄現況。
++2. `THINK` 將本次任務標記為需求拆分規劃、workflow 審查、TBD 與 GitFlow 比較中的一個或多個模式，並判斷是否要求來源分級、特殊策略與完整案例；列出各模式需要的實際判斷主題與未知限制。
++3. `READ` 依第 2 步的主題分支，讀取所選 RuleFile 的全部 Rule，並分別建立具名清單：需要判斷 trunk／main 是否可工作或需求／審查涉及核心整合時，讀取 rules/主幹式開發核心規則-格式規範.md，建立「TBD 核心規則檢查清單」；需要規劃 PR、branch 壽命、同步、驗證或刪除時，讀取 rules/主幹式開發需求拆分-格式規範.md，建立「TBD 需求拆分檢查清單」；需要標示官方／DORA／團隊來源或門檻時，讀取 rules/主幹式開發來源分級-格式規範.md，建立「TBD 來源分級檢查清單」；遇到不能曝光、大型重構、相容性遷移或 release／hotfix 時，讀取 rules/主幹式開發策略選擇-格式規範.md，建立「TBD 策略選擇檢查清單」；審查 workflow 或比較 TBD 與 GitFlow 時，讀取 rules/主幹式開發流程審查-格式規範.md，建立「TBD 流程審查檢查清單」；只有需要完整情境拆法時，才讀取 references/cases.md 並建立「TBD 案例參考」。未選中的檔案不載入。
++4. `THINK` 只使用與模式相符的「TBD 核心規則檢查清單」、「TBD 需求拆分檢查清單」、「TBD 來源分級檢查清單」、「TBD 策略選擇檢查清單」、「TBD 流程審查檢查清單」與（若已建立）「TBD 案例參考」；需求規劃列出小批次、技巧、main 可工作理由與 branch 壽命，workflow 審查列出證據、違反項、導入前提與修正順序，TBD 與 GitFlow 比較明確比較隔離後一次整合與小批次持續整合，並對每項結論保留輸入事實、來源層級與未知限制。
++5. `CHECK` 逐項確認已選的「TBD 核心規則檢查清單」、「TBD 需求拆分檢查清單」、「TBD 來源分級檢查清單」、「TBD 策略選擇檢查清單」、「TBD 流程審查檢查清單」與（若已建立）「TBD 案例參考」，以及已知限制；缺少的事實標為未知，不用未提供資訊補成結論。
+ 
+-Branch 壽命兩邊標準不同：官方認為短期 branch 通常 1～2 天；DORA 以不到一天為目標。不要把「2 天」說成硬性標準。
++完成條件：模式與主題分支已判定，只有必要的 RuleFile／案例資源已載入並命名，分析已覆蓋已選檢查項且未知限制已標明。
+ 
+-## 規則分級
++## Phase 2 -- 產出與交付檢查
+ 
+-**核心規則**（違反就不算 TBD）：
++1. `WRITE` 依 Phase 1 已載入且命名的適用清單產生結果。需求規劃使用下列固定格式；workflow 審查列出不符合項、證據、導入前提與修正順序；TBD 與 GitFlow 比較列出兩者的整合節奏、分支用途與 main 可工作條件。
+ 
+-1. 沒有長期開發分支。
+-2. 頻繁整合 main。DORA：至少每天一次，一天多次更好。
+-3. main 保持可工作。CI 紅了先修 main，不繼續開發新功能；DORA 建議立即修或立即 revert，不是「晚上再看」。
+-
+-**強烈建議**：branch 非常短命（官方約 1～2 天，DORA < 1 天）；active branches 盡量少；不靠 code freeze 解決整合問題；merge 後刪 branch。
+-
+-**團隊自行決定**（不要說成 TBD 的要求）：squash／merge commit／rebase merge、同步 main 用 merge 還是 rebase、branch 命名、reviewer 人數、GitHub 或 GitLab、是否禁止 direct push。
+-
+-## 規劃需求的流程
+-
+-收到需求時，不先問「要開什麼 branch」，依序想：
+-
+-1. **切小**：把需求拆成多個能獨立整合的小變更。一張 Story／Ticket 不等於一個 branch 或一個 PR。
+-2. **每個小變更開短期 branch**，目標是「這個小變更做完就 merge」，不是「整個 feature 做完才 merge」。
+-3. **工作期間同步 main**，merge 前 branch 要跟 main 保持最新。
+-4. **CI 驗證**：build → lint → unit test → 必要的 integration test；PR → review → CI green → merge。DORA 建議每個 commit 都觸發 build 與自動測試，回饋在幾分鐘內。
+-5. **merge 後刪 branch**。
+-
+-規劃結果用這個格式給出：
+-
+-```text
++~~~text
+ PR 1：<變更>  — 使用技巧：<無／Feature Flag／Abstraction／新舊並存>
+ PR 2：...
+ 每個 PR merge 後 main 為什麼仍可工作：<說明>
+ 預估 branch 壽命（含等 review）：<時間>
+-```
+-
+-## Decision Tree
+-
+-```text
+-我要做一個變更
+-│
+-├─ 幾小時／一天內可完成？
+-│   └─ Yes → short-lived branch → CI + Review → merge main
+-│
+-└─ No → 能不能切更小？
+-    ├─ Yes → 切小 → 多個 PR，每個回到上一步判斷
+-    └─ No → 為什麼？
+-        ├─ 功能還不能曝光     → Feature Flag
+-        ├─ 大型程式重構       → Branch by Abstraction
+-        ├─ 舊系統／相容性遷移 → 新舊並存（Strangler）
+-        └─ 維護已發布版本     → Release Branch
+-```
+-
+-未完成的工作不靠 branch 藏起來，靠小批次、Feature Flag、抽象層、向後相容、CI、自動測試。
+-
+-### 技巧要點
+-
+-- **Feature Flag**：程式每天 merge，flag 關閉，最後打開（Deploy ≠ Release）。功能上線後要刪 flag，官方警告不清理的 flag 會變成技術債。
+-- **Branch by Abstraction**：建立 abstraction → 舊實作接上 → 加入新實作 → 逐步切換 → 刪舊實作。每一步都 merge main。
+-- **新舊並存**：改 API 時先讓舊 API 與新 API 並存 → consumer 遷移 → 刪舊 API。不要讓 main 處在「API 改了、前端還沒跟上」的中間狀態。
+-- **Release Branch**：很晚才切，只負責該版本的穩定、bug fix、發布，不能承載新功能開發。Bug 先修在 main（fix on trunk first），驗證後再 cherry-pick 到 release branch；只在 release branch 修再回灌 main 是官方列出的錯誤模式。
+-
+-各情境的完整拆法（小 bug、三天功能、大型重構、Vuex → Pinia、一週的 Feature Flag 功能、舊版 hotfix）見 [references/cases.md](references/cases.md)。
+-
+-## 常見錯誤
+-
+-- **「我們都從 main 開 branch，所以是 TBD」**：feature branch 活 2～3 週就不是 TBD。
+-- **一張 Story = 一個 branch = 一個 PR**：一張 Story 可以拆成 refactor、API、UI、cleanup 多個 PR，這樣更符合 TBD。
+-- **為了 merge 小，把不能工作的程式 merge main**：每一步都要保持可工作，用新舊並存處理跨層改動。
+-- **PR 很小但等 review 3 天**：效果跟三天 branch 一樣。branch 壽命要算入等 review 的時間。DORA 把重量級、非同步、耗時的 review 流程列為 TBD 常見阻礙。
+-- **多人在同一個 feature branch 開發**、**branch 一直不刪**、**接近 release 就 code freeze**：都是官方 You're Doing It Wrong 列出的模式。
+-
+-## 審查團隊的 workflow
+-
+-檢查是否真的在做 TBD：
+-
+-- 有沒有 `develop`、`team-a`、`release-next` 這類長期共同開發分支？
+-- 每人每天至少整合 main 一次嗎？
+-- branch 壽命（含 review 等待）多長？active branches 多少？
+-- CI 多快回饋？main 紅了是否立即修或 revert？
+-- 有沒有靠 code freeze 解決整合問題？
+-- Feature Flag 有沒有清理？
+-
+-導入前提：自動 build、自動 test、快速 CI、小批次開發能力、快速 code review。缺這些時，TBD 容易變成「大家一直 merge main，main 一直壞」。DORA 指出經驗不足、缺 gated checks、沒有「broken trunk 優先修復」紀律的團隊，實行 TBD 反而可能增加錯誤與返工。遇到這種團隊，先指出缺的前提，不要直接建議全面導入。
+-
+-適合：SaaS、Web App、Backend API、Frontend App、Microservice、企業內部系統、頻繁發布、多人共同維護的 codebase。需求一直變、多人同時改、需要頻繁 release 三者同時成立時價值最高。
+-
+-## TBD 與 GitFlow
+-
+-- GitFlow 類：先隔離 → 做完整 → 最後整合。
+-- TBD：先切小 → 持續整合 → 任何時候都保持可工作。
+-
+-TBD 主要改變拆分工作的方式，Git 操作本身變化不大。
++~~~
+ 
+-## 送出前檢查
++2. `CHECK` 逐條驗證 Phase 1 已選的具名清單、結果欄位、來源分級、未知限制與模式專屬輸出；未通過時修正後重新檢查。
+ 
+-1. 能不能切到一天內可以 merge？
+-2. 這個 PR 現在 merge，main 還能正常工作嗎？
+-3. 未完成功能能不能用 Feature Flag 隱藏？
+-4. 大改造能不能用 abstraction 讓新舊實作共存？
+-5. CI 能不能快速告訴我這次改動有沒有破壞系統？
+-6. 這個 branch 明天還會存在嗎？是的話，檢查是不是切得太大。
++完成條件：規劃、審查或比較結果已交付，且交付前 `CHECK` 的適用項目全部通過。
+[new RuleFile diff]
+diff --git "a/.agents/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\344\276\206\346\272\220\345\210\206\347\264\232-\346\240\274\345\274\217\350\246\217\347\257\204.md" "b/.agents/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\344\276\206\346\272\220\345\210\206\347\264\232-\346\240\274\345\274\217\350\246\217\347\257\204.md"
+new file mode 100644
+index 0000000..29b9476
+--- /dev/null
++++ "b/.agents/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\344\276\206\346\272\220\345\210\206\347\264\232-\346\240\274\345\274\217\350\246\217\347\257\204.md"
+@@ -0,0 +1,49 @@
++# Rule 1 - 明確標示來源層級
++
++規則說明：
++
++- TBD 官方是 TrunkBasedDevelopment.com 的規則與技巧。
++- DORA 是 Google DORA 的研究與較嚴格建議。
++- TBD 未規定、由團隊自行決定的命名、平台、reviewer、merge 方式等，要標為團隊規則。
++- 一個結論若混合多個來源，拆開寫出各自來源，不用單一標籤掩蓋差異。
++
++## Good Example
++
++寫「官方短期 branch 通常約 1–2 天；DORA 以少於 1 天為目標；branch 命名由團隊決定」，並把三者分成三層。
++
++## Bad Example
++
++寫「TBD 規定 branch 少於一天、必須 squash、每個 PR 兩位 reviewer」，把 DORA 與團隊選項冒充 TBD 硬規則。
++
++# Rule 2 - branch 壽命要包含 review 並保留兩套門檻
++
++規則說明：
++
++- 官方常見短期 branch 約 1–2 天；DORA 以少於 1 天為目標，兩者不是同一條硬性標準。
++- branch 壽命包含等待 review、CI 與合併所耗時間。
++- 若題目未提供等待時間或每日整合證據，標記未知，不能假造實際壽命。
++
++## Good Example
++
++把「實作半天、等待 review 兩天」計為約兩天半，並分別標示官方約 1–2 天與 DORA 少於 1 天的參考，指出需要縮短 review。
++
++## Bad Example
++
++只計工程師動手的半天，說 branch 符合官方；或把「兩天」寫成不論情境都必須遵守的 TBD 硬限制。
++
++# Rule 3 - 團隊選項不得冒充 TBD 要求
++
++規則說明：
++
++- squash、merge commit、rebase、branch 命名、reviewer 人數、GitHub/GitLab 與 direct push 權限屬團隊治理。
++- 回答可以提出團隊選項，但要標示為決策或待決定事項。
++- workflow 審查要把「沒有證據」與「違反 TBD」分開。
++
++## Good Example
++
++寫「可由團隊決定 squash 或 merge commit；目前未提供 direct push 政策」，不把它當成 TBD 違規。
++
++## Bad Example
++
++因為團隊使用 merge commit 就宣稱不符合 TBD，或把禁止 direct push 說成 TBD 官方核心規則。
++
+diff --git "a/.agents/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\346\240\270\345\277\203\350\246\217\345\211\207-\346\240\274\345\274\217\350\246\217\347\257\204.md" "b/.agents/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\346\240\270\345\277\203\350\246\217\345\211\207-\346\240\274\345\274\217\350\246\217\347\257\204.md"
+new file mode 100644
+index 0000000..89e6b80
+--- /dev/null
++++ "b/.agents/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\346\240\270\345\277\203\350\246\217\345\211\207-\346\240\274\345\274\217\350\246\217\347\257\204.md"
+@@ -0,0 +1,32 @@
++# Rule 1 - 圍繞單一 trunk 頻繁整合
++
++規則說明：
++
++- 所有人圍繞 main 工作，不建立長期共同開發分支。
++- 工作拆成可持續整合的小批次，未完成的部分用相容、抽象或關閉開關留在 main；active branches 盡量少，不靠 code freeze 解決整合問題，merge 後刪除 branch。
++- DORA 的「至少每天整合一次」是較嚴格建議；它要與 TBD 官方核心方向及團隊實際證據分開標示。
++
++## Good Example
++
++把一週 REST 到 GraphQL 遷移切成 abstraction、舊實作接入、新實作、caller 分批切換等 PR；每天將可工作的 PR 合回 main，沒有長期 develop 或一週後一次合併的 refactor branch。
++
++## Bad Example
++
++所有人把工作放在長期 develop 或一條活一週的 refactor/graphql branch，等完整功能做完才合併；即使每次都是從 main 開 branch，也沒有持續整合。
++
++# Rule 2 - main 必須保持可工作
++
++規則說明：
++
++- 每個合併都要使 main 仍可 build、test、運作或依題目定義保持可發布。
++- main 紅時先查明失敗，立即修復或 revert；不能為了維持小 PR 而把已知不可工作的程式合進 main，也不能靠 code freeze 延後處理。
++- 若只有 feature branch 紅，該 branch 尚未具備合併條件；不能把它與 main 紅混為同一事實。
++
++## Good Example
++
++CI 發現 main 紅了，團隊先停止新功能、修復失敗或 revert 造成破壞的變更；若只有 feature branch 紅，先修到 green 並確認 main 狀態，再合併。
++
++## Bad Example
++
++明知 main 紅了仍繼續合併新 PR，或說「晚上再看」；也不能把破壞既有 API 的半成品直接合進 main，只因 PR 很小。
++
+diff --git "a/.agents/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\346\265\201\347\250\213\345\257\251\346\237\245-\346\240\274\345\274\217\350\246\217\347\257\204.md" "b/.agents/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\346\265\201\347\250\213\345\257\251\346\237\245-\346\240\274\345\274\217\350\246\217\347\257\204.md"
+new file mode 100644
+index 0000000..5036431
+--- /dev/null
++++ "b/.agents/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\346\265\201\347\250\213\345\257\251\346\237\245-\346\240\274\345\274\217\350\246\217\347\257\204.md"
+@@ -0,0 +1,50 @@
++# Rule 1 - 先收集 workflow 證據與導入前提
++
++規則說明：
++
++- 審查至少檢查長期共同分支（如 develop、team-a、release-next）、每人整合 main 的頻率、branch 壽命含 review、active branches、CI 回饋速度、main 紅時處置、code freeze 與 Feature Flag 清理。
++- 導入前提包括自動 build、自動 test、快速 CI、小批次能力與快速 code review；active branches 應盡量少。
++- DORA 指出，經驗不足、缺少 gated checks、沒有「broken trunk 優先修復」紀律的團隊，實行 TBD 可能增加錯誤與返工；遇到這種團隊要先指出缺少的前提，不直接建議全面導入。
++- 適合情境包括 SaaS、Web App、Backend API、Frontend App、Microservice、企業內部系統與頻繁發布、多人共同維護的 codebase；當需求一直變、多人同時改、需要頻繁 release 三者同時成立時，TBD 的價值最高。
++- 證據不足時列為未知；不因某一個枝節符合就宣稱整體是 TBD。
++
++## Good Example
++
++列出 develop 長期存在、feature branch 9 天、CI 失敗位置待確認、active branches 與 review 時間待補，並先檢查 build/test/CI/review 導入前提。
++
++## Bad Example
++
++只因所有 branch 都從 main 建立，就直接宣稱 workflow 是 TBD；沒有查 branch 壽命、CI 速度、code freeze 或 flag 清理。
++
++# Rule 2 - 按核心違規與阻礙排序修正
++
++規則說明：
++
++- main 紅時先修復或 revert，再處理長期共同分支、長 branch、缺少閘門與整合頻率。
++- 把 TBD 核心規則、官方強烈建議、DORA 建議與團隊決策分開列出；缺少導入前提時，先補前提，不直接建議全面導入。
++- 整合頻率、branch 壽命與 main 可工作判斷引用核心規則或需求拆分 Rule，不在本檔重複另一份規則正文。
++
++## Good Example
++
++先恢復 main green；若紅的是 feature branch，先修 branch 並確認 main 狀態，再拆解 9 天 branch；接著補 gated checks 與快速 review，最後才調整團隊選項。
++
++## Bad Example
++
++讓紅色 main 繼續堆新功能，或只靠 code freeze 解決合併問題；把 DORA 的速度目標直接當成 TBD 官方硬性規定。
++
++# Rule 3 - 明確比較 TBD、GitFlow 與常見假 TBD
++
++規則說明：
++
++- GitFlow 類 workflow 先隔離、做完整、最後整合；TBD 先切小、持續整合、任何時候保持 main 可工作。
++- TBD 主要改變拆分與整合的節奏，Git 操作本身不必被描述成完全不同的命令集合。
++- 「都從 main 開 branch」「PR 很小但 review 等三天」「一張 Story 一個 PR」「多人共用 branch」「靠 code freeze」都是需要具體查證的常見假 TBD 或阻礙，不可用單一口號判定。
++
++## Good Example
++
++在比較輸出中，分別說明 GitFlow 的長隔離與晚整合、TBD 的小批次與持續整合，再指出兩者可使用相近 Git 命令；若 workflow 另有多人共用 branch，列為具體違規證據。
++
++## Bad Example
++
++把「使用 branch」本身說成 GitFlow、把所有從 main 開 branch 的團隊都說成 TBD，或宣稱 TBD 必須改用某一套 Git 命令。
++
+diff --git "a/.agents/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\347\255\226\347\225\245\351\201\270\346\223\207-\346\240\274\345\274\217\350\246\217\347\257\204.md" "b/.agents/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\347\255\226\347\225\245\351\201\270\346\223\207-\346\240\274\345\274\217\350\246\217\347\257\204.md"
+new file mode 100644
+index 0000000..140b012
+--- /dev/null
++++ "b/.agents/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\347\255\226\347\225\245\351\201\270\346\223\207-\346\240\274\345\274\217\350\246\217\347\257\204.md"
+@@ -0,0 +1,64 @@
++# Rule 1 - 功能尚不能曝光時用 Feature Flag
++
++規則說明：
++
++- 程式可以每天 merge，使用者曝光由預設關閉的 Feature Flag 控制。
++- 明確區分 Deploy 與 Release；功能穩定、開啟後要安排清理 flag，官方警告不清理的 flag 會變成技術債。
++- flag 名稱、權限模型與 rollout 方式是團隊決定，除非題目另有規範。
++
++## Good Example
++
++帳單匯出 API、頁面與追蹤每天合入 main，server/client flag 預設 false，週五完成驗證才開啟，之後刪除 flag。
++
++## Bad Example
++
++因為週五才能曝光就把全部程式藏在長期 branch，或留下已開啟多年、沒有清理計畫的 flag。
++
++# Rule 2 - 大型重構用 Branch by Abstraction
++
++規則說明：
++
++- 依序建立 abstraction、接上舊實作、加入新實作、逐步切換 callers、最後移除舊實作。
++- 每一個步驟都要能合併 main；舊實作或安全預設在切換完成前保留。
++- 不把整週工作放在一條重構 branch 後一次合併。
++
++## Good Example
++
++REST 與 GraphQL 共用 abstraction，先由 REST 實作與 contract tests 保持現有行為，再按 caller 小組逐批切換，全部通過後才移除 REST。
++
++## Bad Example
++
++在一條活七天的 refactor/graphql branch 裡同時改所有 caller，最後一次替換 REST；中間 main 會出現 caller 與 API 不匹配。
++
++# Rule 3 - 相容性變更採新舊並存
++
++規則說明：
++
++- 跨 API、consumer 或框架邊界時，先讓舊介面與新介面同時可用，再遷移 consumer，最後移除舊介面。
++- 以向後相容、抽象層或明確 fallback 保持每次 merge 的工作狀態。
++- Branch by Abstraction 是大型實作遷移的具體模式；新舊並存是更一般的相容性判斷，兩者可同時適用但不混為一個步驟。
++
++## Good Example
++
++舊 API 與新 API 暫時並存，consumer 分批改用新 API，確認沒有 caller 依賴舊 API 後才移除舊 API。
++
++## Bad Example
++
++先刪舊 API、再要求所有前端一次改完，讓 main 處於 API 已變更而 consumer 尚未跟上的中間狀態。
++
++# Rule 4 - 已發布版本使用晚切的 Release Branch
++
++規則說明：
++
++- Release branch 只承載該版本穩定、bug fix 與發布，不承載 main 的新功能。
++- 已發布版本 bug 先在 main 修復、補測試並驗證，再把同一修正 cherry-pick 到對應 release branch。
++- 不能只在 release branch 修完再把一大包變更回灌 main；release branch 的具體命名與發布政策由團隊決定。
++
++## Good Example
++
++2026.10 仍在 production 時，在 main 修 bug 並讓 CI green，接著 cherry-pick 到 release/2026.10；main 繼續開發 2026.11，release branch 只做 2026.10 維護。
++
++## Bad Example
++
++只在 release/2026.10 修 bug，等發布後把整條分支回灌 main，或在 release branch 開發 2026.11 新功能。
++
+diff --git "a/.agents/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\351\234\200\346\261\202\346\213\206\345\210\206-\346\240\274\345\274\217\350\246\217\347\257\204.md" "b/.agents/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\351\234\200\346\261\202\346\213\206\345\210\206-\346\240\274\345\274\217\350\246\217\347\257\204.md"
+new file mode 100644
+index 0000000..f023f3e
+--- /dev/null
++++ "b/.agents/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\351\234\200\346\261\202\346\213\206\345\210\206-\346\240\274\345\274\217\350\246\217\347\257\204.md"
+@@ -0,0 +1,48 @@
++# Rule 1 - Story 先切成可獨立整合的小批次
++
++規則說明：
++
++- 一張 Story/Ticket 不等於一個 branch 或一個 PR。
++- 依可驗證、可回復、可工作的邊界拆出 refactor、契約、API、UI、權限、追蹤與測試等小變更。
++- 每個 PR 都要說明與既有行為的關係及 merge 後 main 為何仍可工作。
++
++## Good Example
++
++四天的帳單匯出拆成契約、API/權限、頁面、追蹤與整合測試五個 PR，每個可獨立合併，功能以預設關閉的 flag 控制。
++
++## Bad Example
++
++建立一條 billing-export branch，四天後一次合併 API、UI、權限、追蹤與測試；理由只有「Story 尚未完成所以不能 merge」。
++
++# Rule 2 - branch 短命、同步 main、review 與刪除
++
++規則說明：
++
++- 每個小批次使用短期 branch，目標是完成即 merge，不承載整個 feature。
++- 工作期間同步 main，merge 前確認最新 main；等待 review 的時間也計入 branch 壽命。
++- merge 後刪除 branch；不能用多人共用 branch 或 code freeze 代替持續整合。
++
++## Good Example
++
++每個 PR 於半天至一天完成，包含 review 等待；merge 前同步 main，merge 後刪除 branch，下一批再從最新 main 開始。
++
++## Bad Example
++
++PR 很小但等 review 三天仍說 branch 只有半天，或多人長期共用 team-a branch，接近 release 才 code freeze。
++
++# Rule 3 - 以驗證閘門保護每次 merge
++
++規則說明：
++
++- 依變更需要執行 build、lint、unit test 與必要的 integration test。
++- 對應的流程是 PR → review → CI green → merge；DORA 的較嚴格建議是每個 commit 都觸發 build 與自動測試，並在幾分鐘內得到回饋。
++- 驗證不足時不能為了小批次形式把不可工作的程式合進 main。
++
++## Good Example
++
++新增 GraphQL implementation 先通過既有 abstraction contract tests；CI green 且 review 完成後才 merge，REST 仍是安全預設。
++
++## Bad Example
++
++只因 PR 只有幾行就跳過測試，或在 CI 紅時把半成品合進 main 再靠 code freeze 等待修復。
++
+[synced RuleFile diff]
+diff --git "a/.claude/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\344\276\206\346\272\220\345\210\206\347\264\232-\346\240\274\345\274\217\350\246\217\347\257\204.md" "b/.claude/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\344\276\206\346\272\220\345\210\206\347\264\232-\346\240\274\345\274\217\350\246\217\347\257\204.md"
+new file mode 100644
+index 0000000..29b9476
+--- /dev/null
++++ "b/.claude/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\344\276\206\346\272\220\345\210\206\347\264\232-\346\240\274\345\274\217\350\246\217\347\257\204.md"
+@@ -0,0 +1,49 @@
++# Rule 1 - 明確標示來源層級
++
++規則說明：
++
++- TBD 官方是 TrunkBasedDevelopment.com 的規則與技巧。
++- DORA 是 Google DORA 的研究與較嚴格建議。
++- TBD 未規定、由團隊自行決定的命名、平台、reviewer、merge 方式等，要標為團隊規則。
++- 一個結論若混合多個來源，拆開寫出各自來源，不用單一標籤掩蓋差異。
++
++## Good Example
++
++寫「官方短期 branch 通常約 1–2 天；DORA 以少於 1 天為目標；branch 命名由團隊決定」，並把三者分成三層。
++
++## Bad Example
++
++寫「TBD 規定 branch 少於一天、必須 squash、每個 PR 兩位 reviewer」，把 DORA 與團隊選項冒充 TBD 硬規則。
++
++# Rule 2 - branch 壽命要包含 review 並保留兩套門檻
++
++規則說明：
++
++- 官方常見短期 branch 約 1–2 天；DORA 以少於 1 天為目標，兩者不是同一條硬性標準。
++- branch 壽命包含等待 review、CI 與合併所耗時間。
++- 若題目未提供等待時間或每日整合證據，標記未知，不能假造實際壽命。
++
++## Good Example
++
++把「實作半天、等待 review 兩天」計為約兩天半，並分別標示官方約 1–2 天與 DORA 少於 1 天的參考，指出需要縮短 review。
++
++## Bad Example
++
++只計工程師動手的半天，說 branch 符合官方；或把「兩天」寫成不論情境都必須遵守的 TBD 硬限制。
++
++# Rule 3 - 團隊選項不得冒充 TBD 要求
++
++規則說明：
++
++- squash、merge commit、rebase、branch 命名、reviewer 人數、GitHub/GitLab 與 direct push 權限屬團隊治理。
++- 回答可以提出團隊選項，但要標示為決策或待決定事項。
++- workflow 審查要把「沒有證據」與「違反 TBD」分開。
++
++## Good Example
++
++寫「可由團隊決定 squash 或 merge commit；目前未提供 direct push 政策」，不把它當成 TBD 違規。
++
++## Bad Example
++
++因為團隊使用 merge commit 就宣稱不符合 TBD，或把禁止 direct push 說成 TBD 官方核心規則。
++
+diff --git "a/.claude/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\346\240\270\345\277\203\350\246\217\345\211\207-\346\240\274\345\274\217\350\246\217\347\257\204.md" "b/.claude/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\346\240\270\345\277\203\350\246\217\345\211\207-\346\240\274\345\274\217\350\246\217\347\257\204.md"
+new file mode 100644
+index 0000000..89e6b80
+--- /dev/null
++++ "b/.claude/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\346\240\270\345\277\203\350\246\217\345\211\207-\346\240\274\345\274\217\350\246\217\347\257\204.md"
+@@ -0,0 +1,32 @@
++# Rule 1 - 圍繞單一 trunk 頻繁整合
++
++規則說明：
++
++- 所有人圍繞 main 工作，不建立長期共同開發分支。
++- 工作拆成可持續整合的小批次，未完成的部分用相容、抽象或關閉開關留在 main；active branches 盡量少，不靠 code freeze 解決整合問題，merge 後刪除 branch。
++- DORA 的「至少每天整合一次」是較嚴格建議；它要與 TBD 官方核心方向及團隊實際證據分開標示。
++
++## Good Example
++
++把一週 REST 到 GraphQL 遷移切成 abstraction、舊實作接入、新實作、caller 分批切換等 PR；每天將可工作的 PR 合回 main，沒有長期 develop 或一週後一次合併的 refactor branch。
++
++## Bad Example
++
++所有人把工作放在長期 develop 或一條活一週的 refactor/graphql branch，等完整功能做完才合併；即使每次都是從 main 開 branch，也沒有持續整合。
++
++# Rule 2 - main 必須保持可工作
++
++規則說明：
++
++- 每個合併都要使 main 仍可 build、test、運作或依題目定義保持可發布。
++- main 紅時先查明失敗，立即修復或 revert；不能為了維持小 PR 而把已知不可工作的程式合進 main，也不能靠 code freeze 延後處理。
++- 若只有 feature branch 紅，該 branch 尚未具備合併條件；不能把它與 main 紅混為同一事實。
++
++## Good Example
++
++CI 發現 main 紅了，團隊先停止新功能、修復失敗或 revert 造成破壞的變更；若只有 feature branch 紅，先修到 green 並確認 main 狀態，再合併。
++
++## Bad Example
++
++明知 main 紅了仍繼續合併新 PR，或說「晚上再看」；也不能把破壞既有 API 的半成品直接合進 main，只因 PR 很小。
++
+diff --git "a/.claude/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\346\265\201\347\250\213\345\257\251\346\237\245-\346\240\274\345\274\217\350\246\217\347\257\204.md" "b/.claude/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\346\265\201\347\250\213\345\257\251\346\237\245-\346\240\274\345\274\217\350\246\217\347\257\204.md"
+new file mode 100644
+index 0000000..5036431
+--- /dev/null
++++ "b/.claude/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\346\265\201\347\250\213\345\257\251\346\237\245-\346\240\274\345\274\217\350\246\217\347\257\204.md"
+@@ -0,0 +1,50 @@
++# Rule 1 - 先收集 workflow 證據與導入前提
++
++規則說明：
++
++- 審查至少檢查長期共同分支（如 develop、team-a、release-next）、每人整合 main 的頻率、branch 壽命含 review、active branches、CI 回饋速度、main 紅時處置、code freeze 與 Feature Flag 清理。
++- 導入前提包括自動 build、自動 test、快速 CI、小批次能力與快速 code review；active branches 應盡量少。
++- DORA 指出，經驗不足、缺少 gated checks、沒有「broken trunk 優先修復」紀律的團隊，實行 TBD 可能增加錯誤與返工；遇到這種團隊要先指出缺少的前提，不直接建議全面導入。
++- 適合情境包括 SaaS、Web App、Backend API、Frontend App、Microservice、企業內部系統與頻繁發布、多人共同維護的 codebase；當需求一直變、多人同時改、需要頻繁 release 三者同時成立時，TBD 的價值最高。
++- 證據不足時列為未知；不因某一個枝節符合就宣稱整體是 TBD。
++
++## Good Example
++
++列出 develop 長期存在、feature branch 9 天、CI 失敗位置待確認、active branches 與 review 時間待補，並先檢查 build/test/CI/review 導入前提。
++
++## Bad Example
++
++只因所有 branch 都從 main 建立，就直接宣稱 workflow 是 TBD；沒有查 branch 壽命、CI 速度、code freeze 或 flag 清理。
++
++# Rule 2 - 按核心違規與阻礙排序修正
++
++規則說明：
++
++- main 紅時先修復或 revert，再處理長期共同分支、長 branch、缺少閘門與整合頻率。
++- 把 TBD 核心規則、官方強烈建議、DORA 建議與團隊決策分開列出；缺少導入前提時，先補前提，不直接建議全面導入。
++- 整合頻率、branch 壽命與 main 可工作判斷引用核心規則或需求拆分 Rule，不在本檔重複另一份規則正文。
++
++## Good Example
++
++先恢復 main green；若紅的是 feature branch，先修 branch 並確認 main 狀態，再拆解 9 天 branch；接著補 gated checks 與快速 review，最後才調整團隊選項。
++
++## Bad Example
++
++讓紅色 main 繼續堆新功能，或只靠 code freeze 解決合併問題；把 DORA 的速度目標直接當成 TBD 官方硬性規定。
++
++# Rule 3 - 明確比較 TBD、GitFlow 與常見假 TBD
++
++規則說明：
++
++- GitFlow 類 workflow 先隔離、做完整、最後整合；TBD 先切小、持續整合、任何時候保持 main 可工作。
++- TBD 主要改變拆分與整合的節奏，Git 操作本身不必被描述成完全不同的命令集合。
++- 「都從 main 開 branch」「PR 很小但 review 等三天」「一張 Story 一個 PR」「多人共用 branch」「靠 code freeze」都是需要具體查證的常見假 TBD 或阻礙，不可用單一口號判定。
++
++## Good Example
++
++在比較輸出中，分別說明 GitFlow 的長隔離與晚整合、TBD 的小批次與持續整合，再指出兩者可使用相近 Git 命令；若 workflow 另有多人共用 branch，列為具體違規證據。
++
++## Bad Example
++
++把「使用 branch」本身說成 GitFlow、把所有從 main 開 branch 的團隊都說成 TBD，或宣稱 TBD 必須改用某一套 Git 命令。
++
+diff --git "a/.claude/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\347\255\226\347\225\245\351\201\270\346\223\207-\346\240\274\345\274\217\350\246\217\347\257\204.md" "b/.claude/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\347\255\226\347\225\245\351\201\270\346\223\207-\346\240\274\345\274\217\350\246\217\347\257\204.md"
+new file mode 100644
+index 0000000..140b012
+--- /dev/null
++++ "b/.claude/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\347\255\226\347\225\245\351\201\270\346\223\207-\346\240\274\345\274\217\350\246\217\347\257\204.md"
+@@ -0,0 +1,64 @@
++# Rule 1 - 功能尚不能曝光時用 Feature Flag
++
++規則說明：
++
++- 程式可以每天 merge，使用者曝光由預設關閉的 Feature Flag 控制。
++- 明確區分 Deploy 與 Release；功能穩定、開啟後要安排清理 flag，官方警告不清理的 flag 會變成技術債。
++- flag 名稱、權限模型與 rollout 方式是團隊決定，除非題目另有規範。
++
++## Good Example
++
++帳單匯出 API、頁面與追蹤每天合入 main，server/client flag 預設 false，週五完成驗證才開啟，之後刪除 flag。
++
++## Bad Example
++
++因為週五才能曝光就把全部程式藏在長期 branch，或留下已開啟多年、沒有清理計畫的 flag。
++
++# Rule 2 - 大型重構用 Branch by Abstraction
++
++規則說明：
++
++- 依序建立 abstraction、接上舊實作、加入新實作、逐步切換 callers、最後移除舊實作。
++- 每一個步驟都要能合併 main；舊實作或安全預設在切換完成前保留。
++- 不把整週工作放在一條重構 branch 後一次合併。
++
++## Good Example
++
++REST 與 GraphQL 共用 abstraction，先由 REST 實作與 contract tests 保持現有行為，再按 caller 小組逐批切換，全部通過後才移除 REST。
++
++## Bad Example
++
++在一條活七天的 refactor/graphql branch 裡同時改所有 caller，最後一次替換 REST；中間 main 會出現 caller 與 API 不匹配。
++
++# Rule 3 - 相容性變更採新舊並存
++
++規則說明：
++
++- 跨 API、consumer 或框架邊界時，先讓舊介面與新介面同時可用，再遷移 consumer，最後移除舊介面。
++- 以向後相容、抽象層或明確 fallback 保持每次 merge 的工作狀態。
++- Branch by Abstraction 是大型實作遷移的具體模式；新舊並存是更一般的相容性判斷，兩者可同時適用但不混為一個步驟。
++
++## Good Example
++
++舊 API 與新 API 暫時並存，consumer 分批改用新 API，確認沒有 caller 依賴舊 API 後才移除舊 API。
++
++## Bad Example
++
++先刪舊 API、再要求所有前端一次改完，讓 main 處於 API 已變更而 consumer 尚未跟上的中間狀態。
++
++# Rule 4 - 已發布版本使用晚切的 Release Branch
++
++規則說明：
++
++- Release branch 只承載該版本穩定、bug fix 與發布，不承載 main 的新功能。
++- 已發布版本 bug 先在 main 修復、補測試並驗證，再把同一修正 cherry-pick 到對應 release branch。
++- 不能只在 release branch 修完再把一大包變更回灌 main；release branch 的具體命名與發布政策由團隊決定。
++
++## Good Example
++
++2026.10 仍在 production 時，在 main 修 bug 並讓 CI green，接著 cherry-pick 到 release/2026.10；main 繼續開發 2026.11，release branch 只做 2026.10 維護。
++
++## Bad Example
++
++只在 release/2026.10 修 bug，等發布後把整條分支回灌 main，或在 release branch 開發 2026.11 新功能。
++
+diff --git "a/.claude/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\351\234\200\346\261\202\346\213\206\345\210\206-\346\240\274\345\274\217\350\246\217\347\257\204.md" "b/.claude/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\351\234\200\346\261\202\346\213\206\345\210\206-\346\240\274\345\274\217\350\246\217\347\257\204.md"
+new file mode 100644
+index 0000000..f023f3e
+--- /dev/null
++++ "b/.claude/skills/trunk-based-development/rules/\344\270\273\345\271\271\345\274\217\351\226\213\347\231\274\351\234\200\346\261\202\346\213\206\345\210\206-\346\240\274\345\274\217\350\246\217\347\257\204.md"
+@@ -0,0 +1,48 @@
++# Rule 1 - Story 先切成可獨立整合的小批次
++
++規則說明：
++
++- 一張 Story/Ticket 不等於一個 branch 或一個 PR。
++- 依可驗證、可回復、可工作的邊界拆出 refactor、契約、API、UI、權限、追蹤與測試等小變更。
++- 每個 PR 都要說明與既有行為的關係及 merge 後 main 為何仍可工作。
++
++## Good Example
++
++四天的帳單匯出拆成契約、API/權限、頁面、追蹤與整合測試五個 PR，每個可獨立合併，功能以預設關閉的 flag 控制。
++
++## Bad Example
++
++建立一條 billing-export branch，四天後一次合併 API、UI、權限、追蹤與測試；理由只有「Story 尚未完成所以不能 merge」。
++
++# Rule 2 - branch 短命、同步 main、review 與刪除
++
++規則說明：
++
++- 每個小批次使用短期 branch，目標是完成即 merge，不承載整個 feature。
++- 工作期間同步 main，merge 前確認最新 main；等待 review 的時間也計入 branch 壽命。
++- merge 後刪除 branch；不能用多人共用 branch 或 code freeze 代替持續整合。
++
++## Good Example
++
++每個 PR 於半天至一天完成，包含 review 等待；merge 前同步 main，merge 後刪除 branch，下一批再從最新 main 開始。
++
++## Bad Example
++
++PR 很小但等 review 三天仍說 branch 只有半天，或多人長期共用 team-a branch，接近 release 才 code freeze。
++
++# Rule 3 - 以驗證閘門保護每次 merge
++
++規則說明：
++
++- 依變更需要執行 build、lint、unit test 與必要的 integration test。
++- 對應的流程是 PR → review → CI green → merge；DORA 的較嚴格建議是每個 commit 都觸發 build 與自動測試，並在幾分鐘內得到回饋。
++- 驗證不足時不能為了小批次形式把不可工作的程式合進 main。
++
++## Good Example
++
++新增 GraphQL implementation 先通過既有 abstraction contract tests；CI green 且 review 完成後才 merge，REST 仍是安全預設。
++
++## Bad Example
++
++只因 PR 只有幾行就跳過測試，或在 CI 紅時把半成品合進 main 再靠 code freeze 等待修復。
++

@@ -1,0 +1,8 @@
+{
+  "scenario": "S7",
+  "environment": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r01/docs/過程/CH2/trunk-based-development/本次執行/驗收環境/S7",
+  "skill": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r01/docs/過程/CH2/trunk-based-development/本次執行/驗收環境/S7/.agents/skills/trunk-based-development/SKILL.md",
+  "input": "審查 workflow：多人共用 develop 三週、PR 寫一小時但等 review 三天、CI 40 分鐘且偶爾無測試、main 紅燈晚間才修、發布前 freeze；應直接全面導入 TBD 嗎？",
+  "pre_reply": "不適用；若資訊不足，依已給資料說明限制，不虛構專案現況。",
+  "report": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r01/docs/過程/CH2/trunk-based-development/本次執行/驗收環境/S7/測試回報.md"
+}

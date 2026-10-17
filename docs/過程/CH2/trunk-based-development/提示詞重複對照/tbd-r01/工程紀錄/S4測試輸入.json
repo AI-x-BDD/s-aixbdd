@@ -1,0 +1,8 @@
+{
+  "scenario": "S4",
+  "environment": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r01/docs/過程/CH2/trunk-based-development/本次執行/驗收環境/S4",
+  "skill": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r01/docs/過程/CH2/trunk-based-development/本次執行/驗收環境/S4/.agents/skills/trunk-based-development/SKILL.md",
+  "input": "將散落的 SMTP 呼叫換成新郵件供應商，估六天，現有寄信需持續服務；僅規劃",
+  "pre_reply": "不適用；若資訊不足，依已給資料說明限制，不虛構專案現況。",
+  "report": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r01/docs/過程/CH2/trunk-based-development/本次執行/驗收環境/S4/測試回報.md"
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "name": "tbd-b01",
+    "worktree": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-b01",
+    "pane": "wE:p1",
+    "workspace": "wE",
+    "case": "S4"
+  },
+  {
+    "name": "tbd-b02",
+    "worktree": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-b02",
+    "pane": "wF:p1",
+    "workspace": "wF",
+    "case": "S4"
+  },
+  {
+    "name": "tbd-b03",
+    "worktree": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-b03",
+    "pane": "wG:p1",
+    "workspace": "wG",
+    "case": "S4"
+  },
+  {
+    "name": "tbd-b04",
+    "worktree": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-b04",
+    "pane": "wH:p1",
+    "workspace": "wH",
+    "case": "S5"
+  },
+  {
+    "name": "tbd-b05",
+    "worktree": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-b05",
+    "pane": "wJ:p1",
+    "workspace": "wJ",
+    "case": "S5"
+  },
+  {
+    "name": "tbd-b06",
+    "worktree": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-b06",
+    "pane": "wK:p1",
+    "workspace": "wK",
+    "case": "S5"
+  }
+]

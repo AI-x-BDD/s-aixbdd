@@ -1,0 +1,107 @@
+[
+  {
+    "time": "2026-10-17T09:53:03.976995",
+    "name": "tbd-v01",
+    "workspace": "w8",
+    "closed": true,
+    "worktree_removed": true
+  },
+  {
+    "time": "2026-10-17T09:53:04.098293",
+    "name": "tbd-v02",
+    "workspace": "w9",
+    "closed": true,
+    "worktree_removed": true
+  },
+  {
+    "time": "2026-10-17T09:53:04.279310",
+    "name": "tbd-v03",
+    "workspace": "wA",
+    "closed": true,
+    "worktree_removed": true
+  },
+  {
+    "time": "2026-10-17T09:53:04.460499",
+    "name": "tbd-v04",
+    "workspace": "wB",
+    "closed": true,
+    "worktree_removed": true
+  },
+  {
+    "time": "2026-10-17T09:53:04.598357",
+    "name": "tbd-v05",
+    "workspace": "wC",
+    "closed": true,
+    "worktree_removed": true
+  },
+  {
+    "time": "2026-10-17T09:53:04.722031",
+    "name": "tbd-v06",
+    "workspace": "wD",
+    "closed": true,
+    "worktree_removed": true
+  },
+  {
+    "time": "2026-10-17T09:53:04.885787",
+    "name": "tbd-b01",
+    "workspace": "wE",
+    "closed": true,
+    "worktree_removed": true
+  },
+  {
+    "time": "2026-10-17T09:53:04.998540",
+    "name": "tbd-b02",
+    "workspace": "wF",
+    "closed": true,
+    "worktree_removed": true
+  },
+  {
+    "time": "2026-10-17T09:53:05.154217",
+    "name": "tbd-b03",
+    "workspace": "wG",
+    "closed": true,
+    "worktree_removed": true
+  },
+  {
+    "time": "2026-10-17T09:53:05.393131",
+    "name": "tbd-b04",
+    "workspace": "wH",
+    "closed": true,
+    "worktree_removed": true
+  },
+  {
+    "time": "2026-10-17T09:53:05.641018",
+    "name": "tbd-b05",
+    "workspace": "wJ",
+    "closed": true,
+    "worktree_removed": true
+  },
+  {
+    "time": "2026-10-17T09:53:05.823511",
+    "name": "tbd-b06",
+    "workspace": "wK",
+    "closed": true,
+    "worktree_removed": true
+  },
+  {
+    "time": "2026-10-17T09:53:06.010692",
+    "name": "tbd-q01",
+    "workspace": "wM",
+    "closed": true,
+    "worktree_removed": true
+  },
+  {
+    "time": "2026-10-17T09:53:06.189388",
+    "name": "tbd-q02",
+    "workspace": "wN",
+    "closed": true,
+    "worktree_removed": true
+  },
+  {
+    "time": "2026-10-17T09:53:06.319661",
+    "name": "tbd-q03",
+    "workspace": "wP",
+    "closed": true,
+    "worktree_removed": true
+  }
+]

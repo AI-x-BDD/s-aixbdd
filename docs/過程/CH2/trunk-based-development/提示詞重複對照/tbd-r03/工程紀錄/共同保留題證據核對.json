@@ -1,0 +1,38 @@
+{
+  "來源": "/Volumes/data/Projects-practice/s-aixbdd/docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-c03a-原始畫面.txt",
+  "來源sha256": "fbcfea929be697b815b89a2abd9f05732f6a17eac898673b824ee6ba83d0e1b7",
+  "原始畫面逐位元複製": true,
+  "版本保存核對": {
+    "首次快照": {
+      "與首次雜湊一致": true,
+      "雜湊": {
+        "SKILL.md": "ee0ec4741fea85c62d9212c04e222fb304f3dc6e099a86cb77cd41a56e81a88c",
+        "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+        "rules/Workflow評估-格式規範.md": "2d5202fc57cf4a2481a3a4fdf1728d9af63a325231d0050728f7671a785ebd6a",
+        "rules/變更規劃-格式規範.md": "5322976d2aed7c8b514e4645ca327d1a30a75d2f73cae76a96c570dbe40b6486",
+        "rules/TBD判準-格式規範.md": "3b24234b93d3dab9874aae779666b646379e624e9e950d9b91c432aadcb2ffea"
+      }
+    },
+    "agents": {
+      "與首次雜湊一致": true,
+      "雜湊": {
+        "SKILL.md": "ee0ec4741fea85c62d9212c04e222fb304f3dc6e099a86cb77cd41a56e81a88c",
+        "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+        "rules/Workflow評估-格式規範.md": "2d5202fc57cf4a2481a3a4fdf1728d9af63a325231d0050728f7671a785ebd6a",
+        "rules/變更規劃-格式規範.md": "5322976d2aed7c8b514e4645ca327d1a30a75d2f73cae76a96c570dbe40b6486",
+        "rules/TBD判準-格式規範.md": "3b24234b93d3dab9874aae779666b646379e624e9e950d9b91c432aadcb2ffea"
+      }
+    },
+    "claude": {
+      "與首次雜湊一致": true,
+      "雜湊": {
+        "SKILL.md": "ee0ec4741fea85c62d9212c04e222fb304f3dc6e099a86cb77cd41a56e81a88c",
+        "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+        "rules/Workflow評估-格式規範.md": "2d5202fc57cf4a2481a3a4fdf1728d9af63a325231d0050728f7671a785ebd6a",
+        "rules/變更規劃-格式規範.md": "5322976d2aed7c8b514e4645ca327d1a30a75d2f73cae76a96c570dbe40b6486",
+        "rules/TBD判準-格式規範.md": "3b24234b93d3dab9874aae779666b646379e624e9e950d9b91c432aadcb2ffea"
+      }
+    }
+  },
+  "限制": "來源畫面顯示 tbd-b03，依總指揮回報歸屬本次首次施工版；畫面未附來源受測檔案雜湊，未讀取其他 run 或主工作樹 Skill。"
+}

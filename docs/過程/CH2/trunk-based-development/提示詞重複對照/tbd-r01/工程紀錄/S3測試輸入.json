@@ -1,0 +1,8 @@
+{
+  "scenario": "S3",
+  "environment": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r01/docs/過程/CH2/trunk-based-development/本次執行/驗收環境/S3",
+  "skill": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r01/docs/過程/CH2/trunk-based-development/本次執行/驗收環境/S3/.agents/skills/trunk-based-development/SKILL.md",
+  "input": "新增需四天的報表匯出 UI／API／權限，月底才能對使用者曝光，團隊每日部署；請拆 PR",
+  "pre_reply": "不適用；若資訊不足，依已給資料說明限制，不虛構專案現況。",
+  "report": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r01/docs/過程/CH2/trunk-based-development/本次執行/驗收環境/S3/測試回報.md"
+}

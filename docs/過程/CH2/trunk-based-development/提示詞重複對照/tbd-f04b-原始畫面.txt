@@ -1,0 +1,58 @@
+codex -a never -s danger-full-access --no-alt-screen
+
+󰀵 …/tbd-v04   HEAD !?   v25.0.4   09:48 
+ codex -a never -s danger-full-access --no-alt-screen
+
+  >_ OpenAI Codex (v0.163.0)
+     /private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v04
+  permissions: YOLO mode
+
+  Tip: Use the desktop app. Run codex app to open it. It installs automatically if needed.
+
+
+› 請讀取並使用目前專案 .agents/skills/trunk-based-development/SKILL.md 回答以下需求，僅讀取檔案，不修改專案。
+
+  production v2.4 有 bug，main 已開發 v2.5；請規劃修補與發布分支處理。
+
+
+• 我會讀取指定 Skill，依其規則規劃修補與發布分支；不修改檔案。
+
+• Explored
+  └ Read SKILL.md (trunk-based-development skill)
+
+• Ran cat .agents/skills/trunk-based-development/rules/共通判準-格式規範.md .agents/skills/trunk-based-development/rules/整合技巧-格式規範.md
+  └ # Rule 1 - 來源與 branch 壽命
+
+    - 回答時區分規則來源：
+    +136 lines (⌃t to view transcript)
+
+• 採用 Release Branch：先在 main 修復並驗證，再 cherry-pick 到 v2.4 維護分支，避免把 v2.5 新功能帶進 production。
+
+  1. 準備 v2.4 發布分支
+      • 已有 release/2.4 就沿用；沒有則從 production 實際部署的 v2.4 tag／commit 建立。
+      • 僅用於 v2.4 穩定、修補與發布，不加入新功能。
+
+  2. PR 1：main 的 bug 修復與回歸測試 — 使用技巧：Release Branch
+      • 從最新 main 開短期修補分支，重現問題並加入回歸測試。
+      • 修復後經 review、CI green，merge main，再刪除短期分支。
+
+  3. PR 2：將修復 backport 至 release/2.4 — 使用技巧：Release Branch
+      • 從 release/2.4 開短期分支，只 cherry-pick 已驗證的修復及必要測試。
+      • 若版本差異造成衝突，調整為 v2.4 相容實作並重新驗證。
+      • 通過 review、CI 與 v2.4 回歸測試後，merge release/2.4，刪除短期分支。
+
+  4. 發布修補版
+      • 從通過驗證的 release/2.4 commit 建立修補版 tag，例如 v2.4.1（若已使用，遞增下一個 patch）。
+      • 建置、部署該版本，確認 production 問題已修復。
+      • 不將整條 release/2.4 merge 回 main；修復已先存在 main。
+
+  **每個 PR merge 後 main 為什麼仍可工作：**PR 1 以回歸測試與 CI 驗證 v2.5 相容性；PR 2 僅變更 v2.4 維護分支。CI 依序執行 build → lint → unit test → 必要的 integration test。
+
+  **預估 branch 壽命（含等 review）：**兩個修補分支各以幾小時、不到一天為目標；release/2.4 保留至該版本停止維護。TBD 官方的短期分支通常為 1～2 天，DORA 目標為不到一天；分支命名與版本支援期限由團隊決定。
+
+  Worked for 23s • 9:48 AM
+
+
+› Ask Codex to do anything
+
+  GPT-6.1-Sol medium fast · Context 8% used · weekly 34% left · ← for agents                                                                                                         ⚠ 4 warnings · f2 to view

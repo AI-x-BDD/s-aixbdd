@@ -1,0 +1,29 @@
+{
+  "長提示詞": {
+    "snapshot_matches_worktree": true,
+    "mirrors_identical": true,
+    "hashes_unchanged_during_final_validation": true,
+    "no_symlinks": true
+  },
+  "短提示詞": {
+    "snapshot_matches_worktree": true,
+    "mirrors_identical": true,
+    "hashes_unchanged_during_final_validation": true,
+    "no_symlinks": true
+  },
+  "正式技能未套用": true,
+  "HEAD維持基準": true,
+  "正式指南與已追蹤檔未改": true,
+  "index未改": true,
+  "主工作目錄同步": true,
+  "暫時worktree已移除": {
+    "long": true,
+    "short": true
+  },
+  "目前worktree清單": [
+    "worktree /Volumes/data/Projects-practice/s-aixbdd",
+    "HEAD e588ae1d1fc87b3456a56af08e1379f131333050",
+    "branch refs/heads/main",
+    ""
+  ]
+}

@@ -1,0 +1,154 @@
+[
+  {
+    "name": "tbd-c01a",
+    "snapshot": {
+      "SKILL.md": "d2383e85f6cdf4c3f44b0d6b5a0798003aa93ead2beac7e64a8f30045b0f9283",
+      "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+      "rules/整合技巧-格式規範.md": "7ab2d590238a04a16fc27d55d3730dbbb114924d36f994254ac16b8ae3100c29",
+      "rules/TBD判準-格式規範.md": "f5fcdba0319fd0ae5e66f4b869e13e576ee2746b4438d2f38b0ebeecdfd65965",
+      "rules/workflow審查-格式規範.md": "f77308708f0d087acf5f9991575d08c2e3afc74016180bf264bc12033c28fc3a"
+    },
+    "agents_equal": true,
+    "claude_equal": true,
+    "git_status": " M .agents/skills/trunk-based-development/SKILL.md\n M .claude/skills/trunk-based-development/SKILL.md\n?? .agents/skills/trunk-based-development/rules/\n?? .claude/skills/trunk-based-development/rules/\n"
+  },
+  {
+    "name": "tbd-c01b",
+    "snapshot": {
+      "SKILL.md": "d2383e85f6cdf4c3f44b0d6b5a0798003aa93ead2beac7e64a8f30045b0f9283",
+      "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+      "rules/整合技巧-格式規範.md": "7ab2d590238a04a16fc27d55d3730dbbb114924d36f994254ac16b8ae3100c29",
+      "rules/TBD判準-格式規範.md": "f5fcdba0319fd0ae5e66f4b869e13e576ee2746b4438d2f38b0ebeecdfd65965",
+      "rules/workflow審查-格式規範.md": "f77308708f0d087acf5f9991575d08c2e3afc74016180bf264bc12033c28fc3a"
+    },
+    "agents_equal": true,
+    "claude_equal": true,
+    "git_status": " M .agents/skills/trunk-based-development/SKILL.md\n M .claude/skills/trunk-based-development/SKILL.md\n?? .agents/skills/trunk-based-development/rules/\n?? .claude/skills/trunk-based-development/rules/\n"
+  },
+  {
+    "name": "tbd-c04a",
+    "snapshot": {
+      "SKILL.md": "e2eaad11fd7875703fa14606e3fc43fa7c73c6c130a168c35b5b61ba9f5f99a0",
+      "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+      "rules/整合技巧-格式規範.md": "a29e0385e692de70d91142a578099a304ac7460d81b70d0b843c01bc7c053c8f",
+      "rules/工作流程審查-格式規範.md": "f3bd83d4f51fc12ccdb266de3caf4639fa9dfae75edd64ff19464dd31520edfa",
+      "rules/共通判準-格式規範.md": "b4976b2066f5821dff0d29319fba986b47d2f3e4beae1dedc680688bde5bdfa3"
+    },
+    "agents_equal": true,
+    "claude_equal": true,
+    "git_status": " M .agents/skills/trunk-based-development/SKILL.md\n M .claude/skills/trunk-based-development/SKILL.md\n?? .agents/skills/trunk-based-development/rules/\n?? .claude/skills/trunk-based-development/rules/\n"
+  },
+  {
+    "name": "tbd-c04b",
+    "snapshot": {
+      "SKILL.md": "e2eaad11fd7875703fa14606e3fc43fa7c73c6c130a168c35b5b61ba9f5f99a0",
+      "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+      "rules/整合技巧-格式規範.md": "a29e0385e692de70d91142a578099a304ac7460d81b70d0b843c01bc7c053c8f",
+      "rules/工作流程審查-格式規範.md": "f3bd83d4f51fc12ccdb266de3caf4639fa9dfae75edd64ff19464dd31520edfa",
+      "rules/共通判準-格式規範.md": "b4976b2066f5821dff0d29319fba986b47d2f3e4beae1dedc680688bde5bdfa3"
+    },
+    "agents_equal": true,
+    "claude_equal": true,
+    "git_status": " M .agents/skills/trunk-based-development/SKILL.md\n M .claude/skills/trunk-based-development/SKILL.md\n?? .agents/skills/trunk-based-development/rules/\n?? .claude/skills/trunk-based-development/rules/\n"
+  },
+  {
+    "name": "tbd-c02a",
+    "snapshot": {
+      "SKILL.md": "311af7a21aada82cf7e3b18cd6a276d8578358a3430a488111dea8cff567b307",
+      "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+      "rules/變更拆分-格式規範.md": "534e9f0f20a72a8623106cd253c2c182673f68f0ce3bc18af0037482c8705efa",
+      "rules/主幹整合-格式規範.md": "69a1bbea66f98af946cdd968a8b5e44e93b2b6c800edefd43a8c61da5842831c"
+    },
+    "agents_equal": true,
+    "claude_equal": true,
+    "git_status": " M .agents/skills/trunk-based-development/SKILL.md\n M .claude/skills/trunk-based-development/SKILL.md\n?? .agents/skills/trunk-based-development/rules/\n?? .claude/skills/trunk-based-development/rules/\n"
+  },
+  {
+    "name": "tbd-c02b",
+    "snapshot": {
+      "SKILL.md": "311af7a21aada82cf7e3b18cd6a276d8578358a3430a488111dea8cff567b307",
+      "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+      "rules/變更拆分-格式規範.md": "534e9f0f20a72a8623106cd253c2c182673f68f0ce3bc18af0037482c8705efa",
+      "rules/主幹整合-格式規範.md": "69a1bbea66f98af946cdd968a8b5e44e93b2b6c800edefd43a8c61da5842831c"
+    },
+    "agents_equal": true,
+    "claude_equal": true,
+    "git_status": " M .agents/skills/trunk-based-development/SKILL.md\n M .claude/skills/trunk-based-development/SKILL.md\n?? .agents/skills/trunk-based-development/rules/\n?? .claude/skills/trunk-based-development/rules/\n"
+  },
+  {
+    "name": "tbd-c06a",
+    "snapshot": {
+      "SKILL.md": "e1ec2ef41e113ee873c6dd48036cb408c177d2f7238880d311798c3862f9d8d7",
+      "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+      "rules/變更拆分-格式規範.md": "814c2007d257f9285a77f085829c6a016fca5049bbbef7b3e019edd98cd340f7",
+      "rules/主幹整合-格式規範.md": "87e291a3bb38169a732a3778d48b8bbe2772ebf0130c7ccd4906effc22726818"
+    },
+    "agents_equal": true,
+    "claude_equal": true,
+    "git_status": " M .agents/skills/trunk-based-development/SKILL.md\n M .claude/skills/trunk-based-development/SKILL.md\n?? .agents/skills/trunk-based-development/rules/\n?? .claude/skills/trunk-based-development/rules/\n"
+  },
+  {
+    "name": "tbd-c06b",
+    "snapshot": {
+      "SKILL.md": "e1ec2ef41e113ee873c6dd48036cb408c177d2f7238880d311798c3862f9d8d7",
+      "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+      "rules/變更拆分-格式規範.md": "814c2007d257f9285a77f085829c6a016fca5049bbbef7b3e019edd98cd340f7",
+      "rules/主幹整合-格式規範.md": "87e291a3bb38169a732a3778d48b8bbe2772ebf0130c7ccd4906effc22726818"
+    },
+    "agents_equal": true,
+    "claude_equal": true,
+    "git_status": " M .agents/skills/trunk-based-development/SKILL.md\n M .claude/skills/trunk-based-development/SKILL.md\n?? .agents/skills/trunk-based-development/rules/\n?? .claude/skills/trunk-based-development/rules/\n"
+  },
+  {
+    "name": "tbd-c05a",
+    "snapshot": {
+      "SKILL.md": "cffc4d07bcfcfb7a83627ca607868a3a19e0c61e90577941ffd83254db708fb3",
+      "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+      "rules/變更規劃-格式規範.md": "d56a348ccc8bcc3d2203a594c7c54a740461bcf73aebcd0ad75b02f3574fb341",
+      "rules/TBD判準-格式規範.md": "ec647cea13ca7e72f6dd599edabdf2b8dffecf505dff58e8942fdce1e9fef7f7",
+      "rules/工作流程評估-格式規範.md": "efe2c973eafe6d78e87f772c722396dc71cb93934cac1d3cb1d10877cba7ac45"
+    },
+    "agents_equal": true,
+    "claude_equal": true,
+    "git_status": " M .agents/skills/trunk-based-development/SKILL.md\n M .claude/skills/trunk-based-development/SKILL.md\n?? .agents/skills/trunk-based-development/rules/\n?? .claude/skills/trunk-based-development/rules/\n"
+  },
+  {
+    "name": "tbd-c05b",
+    "snapshot": {
+      "SKILL.md": "cffc4d07bcfcfb7a83627ca607868a3a19e0c61e90577941ffd83254db708fb3",
+      "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+      "rules/變更規劃-格式規範.md": "d56a348ccc8bcc3d2203a594c7c54a740461bcf73aebcd0ad75b02f3574fb341",
+      "rules/TBD判準-格式規範.md": "ec647cea13ca7e72f6dd599edabdf2b8dffecf505dff58e8942fdce1e9fef7f7",
+      "rules/工作流程評估-格式規範.md": "efe2c973eafe6d78e87f772c722396dc71cb93934cac1d3cb1d10877cba7ac45"
+    },
+    "agents_equal": true,
+    "claude_equal": true,
+    "git_status": " M .agents/skills/trunk-based-development/SKILL.md\n M .claude/skills/trunk-based-development/SKILL.md\n?? .agents/skills/trunk-based-development/rules/\n?? .claude/skills/trunk-based-development/rules/\n"
+  },
+  {
+    "name": "tbd-c03a",
+    "snapshot": {
+      "SKILL.md": "ee0ec4741fea85c62d9212c04e222fb304f3dc6e099a86cb77cd41a56e81a88c",
+      "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+      "rules/Workflow評估-格式規範.md": "2d5202fc57cf4a2481a3a4fdf1728d9af63a325231d0050728f7671a785ebd6a",
+      "rules/變更規劃-格式規範.md": "5322976d2aed7c8b514e4645ca327d1a30a75d2f73cae76a96c570dbe40b6486",
+      "rules/TBD判準-格式規範.md": "3b24234b93d3dab9874aae779666b646379e624e9e950d9b91c432aadcb2ffea"
+    },
+    "agents_equal": true,
+    "claude_equal": true,
+    "git_status": " M .agents/skills/trunk-based-development/SKILL.md\n M .claude/skills/trunk-based-development/SKILL.md\n?? .agents/skills/trunk-based-development/rules/\n?? .claude/skills/trunk-based-development/rules/\n"
+  },
+  {
+    "name": "tbd-c03b",
+    "snapshot": {
+      "SKILL.md": "ee0ec4741fea85c62d9212c04e222fb304f3dc6e099a86cb77cd41a56e81a88c",
+      "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+      "rules/Workflow評估-格式規範.md": "2d5202fc57cf4a2481a3a4fdf1728d9af63a325231d0050728f7671a785ebd6a",
+      "rules/變更規劃-格式規範.md": "5322976d2aed7c8b514e4645ca327d1a30a75d2f73cae76a96c570dbe40b6486",
+      "rules/TBD判準-格式規範.md": "3b24234b93d3dab9874aae779666b646379e624e9e950d9b91c432aadcb2ffea"
+    },
+    "agents_equal": true,
+    "claude_equal": true,
+    "git_status": " M .agents/skills/trunk-based-development/SKILL.md\n M .claude/skills/trunk-based-development/SKILL.md\n?? .agents/skills/trunk-based-development/rules/\n?? .claude/skills/trunk-based-development/rules/\n"
+  }
+]

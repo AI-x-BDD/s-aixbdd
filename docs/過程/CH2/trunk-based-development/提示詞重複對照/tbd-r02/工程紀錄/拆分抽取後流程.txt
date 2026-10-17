@@ -1,0 +1,72 @@
+---
+name: trunk-based-development
+description: 依主幹式開發（Trunk-Based Development，TBD）規劃與審查工作拆分、branch 策略與整合方式。用在：收到需求或 ticket 時規劃要拆成幾個 PR、判斷一個變更該直接走短期 branch 還是需要 Feature Flag／Branch by Abstraction／新舊並存／Release Branch、大型重構或框架遷移（例如 Vuex → Pinia、Axios → Fetch）如何每天安全 merge main、舊版本 hotfix 怎麼修、檢查某個 branch 或 PR 是否活太久或太大、審查團隊的 Git workflow 算不算 TBD，以及比較 TBD 與 GitFlow。
+---
+
+# SOP
+
+## Phase 1 -- 分析、規劃與審查
+
+1. `READ` 使用者需求、已提供的團隊 Git workflow 規則與 branch／PR／CI 現況，建立「任務輸入」。
+2. `THINK` 依「任務輸入」判定本次涉及需求拆分與整合規劃、branch／PR／團隊 workflow 審查、技巧選擇或 TBD 與 GitFlow 比較，建立「任務類型」。
+3. `READ` 「任務類型」涉及需求拆分、整合方案、技巧選擇或任何 branch／PR／團隊 workflow 審查時，讀取 `rules/變更拆分-格式規範.md` 的所有 Rule，建立「變更拆分檢查清單」；一般審查即使未點名具體技巧也適用。
+4. `THINK` 依「任務輸入」、下列暫存共同判準及本次適用且已載入的「變更拆分檢查清單」分析整合現況、規則來源與適用範圍，建立「整合判斷」。
+
+   核心目的：不要讓大家的程式碼分開太久。所有人圍繞單一 trunk（`main`）工作，不建立長期開發分支，持續把小變更整合回 main，main 任何時候都保持可工作、可發布。
+   
+   回答時區分規則來源：
+   
+   - **TBD 官方**：TrunkBasedDevelopment.com。
+   - **DORA**：Google DORA 的 DevOps 研究，標準通常比官方嚴格。
+   - **團隊規則**：TBD 沒規定、由團隊自行決定的部分。
+   
+   Branch 壽命兩邊標準不同：官方認為短期 branch 通常 1～2 天；DORA 以不到一天為目標。不要把「2 天」說成硬性標準。
+   
+   ## 規則分級
+   
+   **核心規則**（違反就不算 TBD）：
+   
+   1. 沒有長期開發分支。
+   2. 頻繁整合 main。DORA：至少每天一次，一天多次更好。
+   3. main 保持可工作。CI 紅了先修 main，不繼續開發新功能；DORA 建議立即修或立即 revert，不是「晚上再看」。
+   
+   **強烈建議**：branch 非常短命（官方約 1～2 天，DORA < 1 天）；active branches 盡量少；不靠 code freeze 解決整合問題；merge 後刪 branch。
+   
+   **團隊自行決定**（不要說成 TBD 的要求）：squash／merge commit／rebase merge、同步 main 用 merge 還是 rebase、branch 命名、reviewer 人數、GitHub 或 GitLab、是否禁止 direct push。
+   
+   
+   
+   
+   檢查是否真的在做 TBD：
+   
+   - 有沒有 `develop`、`team-a`、`release-next` 這類長期共同開發分支？
+   - 每人每天至少整合 main 一次嗎？
+   - branch 壽命（含 review 等待）多長？active branches 多少？
+   - CI 多快回饋？main 紅了是否立即修或 revert？
+   - 有沒有靠 code freeze 解決整合問題？
+   
+   
+   導入前提：自動 build、自動 test、快速 CI、小批次開發能力、快速 code review。缺這些時，TBD 容易變成「大家一直 merge main，main 一直壞」。DORA 指出經驗不足、缺 gated checks、沒有「broken trunk 優先修復」紀律的團隊，實行 TBD 反而可能增加錯誤與返工。遇到這種團隊，先指出缺的前提，不要直接建議全面導入。
+   
+   適合：SaaS、Web App、Backend API、Frontend App、Microservice、企業內部系統、頻繁發布、多人共同維護的 codebase。需求一直變、多人同時改、需要頻繁 release 三者同時成立時價值最高。
+   
+   ## TBD 與 GitFlow
+   
+   - GitFlow 類：先隔離 → 做完整 → 最後整合。
+   - TBD：先切小 → 持續整合 → 任何時候都保持可工作。
+   
+   TBD 主要改變拆分工作的方式，Git 操作本身變化不大。
+   
+5. `READ` 已載入「變更拆分檢查清單」且需要參照完整拆分案例時，讀取 `references/cases.md`，建立「實戰案例參照」。
+6. `THINK` 依「任務輸入」、「整合判斷」，以及本次有載入的「變更拆分檢查清單」與「實戰案例參照」，形成「建議草稿」。規劃短期 branch／PR 路徑時，依切小、每個小變更開短期 branch、工作期間及 merge 前同步 main、build → lint → unit test → 必要的 integration test、PR → review → CI green → merge、merge 後刪 branch 的順序安排整合；此為短期 branch／PR 路徑，不將該路徑擴張為所有團隊必用的 Git 操作。
+7. `CHECK` 先依「任務類型」核對變更拆分規則的載入條件是否均已履行；有應載未載的清單時返回對應 READ，重新執行其後的分析與草稿步驟。再逐條驗證「建議草稿」是否符合「任務輸入」及內嵌共同判準與所有適用的具名檢查清單；使用「實戰案例參照」時一併核對與清單的一致性。內容未通過時返回形成草稿步驟修正草稿後重新檢查。
+8. `WRITE` 向使用者交付通過檢查的「建議草稿」；規劃結果使用以下格式，審查或比較任務依「任務類型」交付對應判斷：
+
+   ```text
+   PR 1：<變更>  — 使用技巧：<無／Feature Flag／Abstraction／新舊並存>
+   PR 2：...
+   每個 PR merge 後 main 為什麼仍可工作：<說明>
+   預估 branch 壽命（含等 review）：<時間>
+   ```
+
+完成條件：已交付符合需求與本次載入清單的規劃、審查或比較結果；本次適用的清單均已在使用前載入，且已逐條檢查。

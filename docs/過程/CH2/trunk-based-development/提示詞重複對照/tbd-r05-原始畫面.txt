@@ -1,0 +1,1000 @@
+      6 +- 子代理回報讀取 `AGENTS.md`、目標 `SKILL.md`、`references/cases.md`，沒有其他紀錄；目標 Skill 沒有確認閘門。
+      7 +- 預先回覆一律為「確認，僅提供規劃／審查，不操作 Git」。實際無閘門，未使用。
+      8 +- 下列保留實際回傳內容；沒有額外執行其規劃中的 Git／CI 指令。
+      9 +- 這是一次代表性基線實跑，不是所有輸入的正確性證明，也不是重構後的驗收結果。
+     10 +
+     11 +## A：延後曝光的多日功能
+     12 +
+     13 +輸入：帳務匯出功能需四天完成，第五天開放，既有匯出仍須可用。請按 TBD 規劃 PR，含 branch 壽命與 CI。
+     14 +
+     15 +實際回答：
+     16 +
+     17 +使用 `Feature Flag`，第 1–4 天持續整合，`flag=false`；第 5 天通過驗證後才開放。既有匯出路徑全程保留。
+     18 +
+     19 +```text
+     20 +PR 1：加入新匯出流程的介面、資料準備與關閉中的 Feature Flag
+     21 +PR 2：加入新匯出實作與 unit tests
+     22 +PR 3：接上 API／操作入口與 integration tests，仍由 flag 控制
+     23 +PR 4：補回歸測試、監控與切換／回滾設定
+     24 +```
+     25 +
+     26 +每個 branch 約半天至一天，包含 review 等待；merge 前同步最新 `main`，merge 後刪除。每個 PR 執行 build、lint、unit test、必要的 integration test，並保留既有匯出的回歸測試。CI 或 `main` 紅時立即修復或
+          revert。第 5 天只切換 flag，不需保留長期 feature branch。
+     27 +
+     28 +觀察：未提及上線後清理 flag；其他上述核心行為有呈現。
+     29 +
+     30 +## B：供應商與 API 相容遷移
+     31 +
+     32 +輸入：把寄信供應商從 SMTP SDK 換成 HTTP provider，需要六天，舊服務不能中斷。另有 API 欄位要由 amount 改為 total，舊 consumer 兩週後才遷移。請規劃。
+     33 +
+     34 +實際回答：
+     35 +
+     36 +供應商替換使用 `Branch by Abstraction`；API 欄位使用新舊並存，兩條工作流可分開提交。
+     37 +
+     38 +```text
+     39 +PR 1：建立 mail provider abstraction，SMTP 實作先接上且仍為預設
+     40 +PR 2：加入 HTTP provider implementation，設定或 flag 預設關閉
+     41 +PR 3：加入逐步切換、監控與 SMTP fallback
+     42 +PR 4：穩定後切換預設 provider，確認舊 SMTP 可回退
+     43 +```
+     44 +
+     45 +每個 provider PR 都應在一天內完成並 merge，不能讓單一 migration branch 活六天。舊 SMTP 在 HTTP provider 穩定前不能移除，確保服務不中斷。
+     46 +
+     47 +```text
+     48 +API PR 1：新增 canonical 欄位 total，保留 amount 相容層與 contract tests
+     49 +API PR 2：各 consumer 分別遷移到 total
+     50 +API PR 3：兩週後確認 consumer 全數遷移，再移除 amount
+     51 +```
+     52 +
+     53 +相容期間，`amount` 映射到同一個內部 `total`；若兩者同時存在且值不同，應拒絕請求，避免歧義。回應可暫時同時提供兩欄位，並標記 `amount` deprecated。CI 加入新舊 consumer contract tests、provider integra
+         tion tests 與 fallback 測試；每個 merge 後 `main` 都維持可工作。
+     54 +
+     55 +觀察：有 abstraction、舊實作接入、新實作加入與逐步切換；沒有明列穩定後刪 SMTP 的最後一步。雙欄位衝突處理屬個案設計，不作為 TBD 規則加入目標 Skill。
+     56 +
+     57 +## C：舊版本 hotfix
+     58 +
+     59 +輸入：production 版本 2.4 需修時區計算，main 已開發 2.5，修復一天內完成。請規劃 hotfix。
+     60 +
+     61 +實際回答：
+     62 +
+     63 +採用 `fix on trunk first`。
+     64 +
+     65 +```text
+     66 +PR 1：從 main 修正時區計算，加入失敗案例與回歸測試
+     67 +PR 2：PR 1 通過 CI 後，將修正 backport 到 release/2.4
+     68 +```
+     69 +
+     70 +PR 1 branch 應在數小時至一天內完成，包含 review。先在 `main` 驗證，避免 2.5 漏掉修正；再將同一修正 cherry-pick 或以 backport PR 合入 `release/2.4`，通過 release CI 後發布 2.4。若尚無 `release/2.4`，
+         才從目前 production 2.4 版本建立只負責維護與發布的 release branch。不要只修 release branch 再回灌。
+     71 +
+     72 +## D：workflow 審查
+     73 +
+     74 +輸入：團隊從 main 開 branch，程式修改半天但 review 等三天，CI 紅了晚上修，月底 code freeze；squash 與 rebase 強制是否才算 TBD？請審查。
+     75 +
+     76 +實際回答：
+     77 +
+     78 +目前不算良好的 TBD 實行：
+     79 +
+     80 +- 半天開發加三天 review，branch 壽命至少約三天半，超過 DORA 的 `< 1 day` 目標，也超過官方通常的 1–2 天範圍。
+     81 +- CI 紅到晚上才修，沒有遵守 `main` 紅就立即修復或 revert。
+     82 +- 月底 code freeze 是延後整合，不能解決分支累積的整合風險。
+     83 +
+     84 +`merge commit`、用 merge 同步 `main`、兩位 reviewer、GitLab 都是團隊選擇，不是 TBD 違規；TBD 沒有強制 squash 或 rebase。真正需要改善的是 review 速度、branch 壽命與 broken trunk 處理。可拆成更小的 PR
+         、安排當日 review，並讓 CI 紅時立即修復或 revert。
+     85 +
+     86 +觀察：回答額外列了輸入未指定的團隊選項，但核心判斷與既有規則一致；不將額外例子當作專案事實。
+     87 +
+     88 +## E：比較與導入
+     89 +
+     90 +輸入：兩人內部 Web 工具想從 GitFlow 改 TBD，但沒有自動 test，review 每週一次。請比較兩者與導入建議。
+     91 +
+     92 +實際回答：
+     93 +
+     94 +GitFlow 以長期 `develop`、release 等分支隔離工作，適合固定版本節奏，但兩人內部工具採用它通常增加分支與整合負擔。
+     95 +
+     96 +TBD 以短命 branch、頻繁整合 `main`、持續可工作為核心，較適合小團隊與持續變更；但目前沒有自動 test，且 review 每週一次，缺少 TBD 的必要前提。現在直接全面切換，容易讓 `main` 經常壞掉。
+     97 +
+     98 +建議分階段導入：
+     99 +
+    100 +1. 先建立最小 smoke／unit tests、自動 build 與快速 CI。
+    101 +2. 將 review 改為當天或下一工作日完成。
+    102 +3. 再移除長期 `develop`，採短命 branch → CI → review → `main`。
+    103 +4. 未完成功能使用 Feature Flag；只有發布維護需要時才建立短期 release branch。
+    104 +
+    105 +完成前提前，不應宣稱目前流程已是 TBD。
+    106 +
+    107 +## F：小變更
+    108 +
+    109 +輸入：更正文案錯字預計 20 分鐘，已有快速 CI 與 review。請規劃。
+    110 +
+    111 +實際回答：
+    112 +
+    113 +```text
+    114 +short-lived branch → 更正文案 → lint／快速 CI → PR + review → merge main → 刪除 branch
+    115 +```
+    116 +
+    117 +程式修改約 20 分鐘，連同快速 CI 與 review 預估 branch 在一天內結束；不需要 Feature Flag、Abstraction 或 release branch。merge 後 `main` 保持可工作。
+    118 +
+    119 +## G：來源與分級
+    120 +
+    121 +輸入：官方是不是規定 branch 最長兩天？DORA 跟官方差在哪？我們用 merge commit、merge 同步 main、兩位 reviewer、GitLab，會違反 TBD 嗎？
+    122 +
+    123 +實際回答：
+    124 +
+    125 +官方通常描述 short-lived branch 約 1–2 天，這是常見建議範圍，不是「超過兩天立即違規」的硬性上限。DORA 以 branch 少於一天、至少每天整合、快速 CI 與立即處理 broken trunk 為更嚴格的目標與能力指標。
+    126 +
+    127 +以下做法本身都不違反 TBD：
+    128 +
+    129 +- 使用 `merge commit`
+    130 +- 用 merge 將 `main` 同步到 branch
+    131 +- 指定兩位 reviewer
+    132 +- 使用 GitLab
+    133 +
+    134 +TBD 沒有強制 squash、rebase、GitHub 或特定 reviewer 人數。判斷重點是 branch 是否短命、是否每天整合、`main` 是否持續可工作，以及 review 或 CI 是否造成長時間等待。
+
+• Added docs/過程/CH2/trunk-based-development/本次執行/根因報告.md (+106 -0)
+      1 +# 根因報告：trunk-based-development－行為不變的模組化重構
+      2 +
+      3 +- 紀錄目錄：`docs/過程/CH2/trunk-based-development/本次執行/`
+      4 +- 問題證據：本次需求、目標 Skill 兩側實體檔、`docs/主幹式開發.md`、`蒐證紀錄.md`、`基線結構診斷.json`、`基線實跑.md`。
+      5 +- 狀態：根因確認閘門，尚未修改目標 Skill，尚未設計工程藍圖。
+      6 +
+      7 +## 1. 使用者回報的問題
+      8 +
+      9 +觀察：使用者要求找出可優化之處並重構 `trunk-based-development`，保留既有用途、行為與正確規則；已確認主檔保留 SOP、規則按需載入 RuleFile 的方向，不為湊數硬拆。本次沒有提供歷史錯誤輸出，不能宣稱既有 S
+         kill 曾穩定產生錯誤。
+     10 +
+     11 +觀察：基線主檔混合規劃流程、領域規則、輸出格式、workflow 審查及 GitFlow 比較，沒有 `# SOP` 或 RuleFile；機械診斷回報 `SOP001`。基線七類案例的核心決策大致正確，但 A 沒提 flag 清理、B 沒明列最後刪舊供
+         應商。這些是本次實跑的觀察，不是歷史錯誤，也不足以認定每次都會漏項。
+     12 +
+     13 +推論：可證實的優化需求是執行結構與規則適用邊界；不需要改寫 TBD 的正確領域規則（依據主檔、原始來源與基線實跑）。
+     14 +
+     15 +## 2. 驗收條件
+     16 +
+     17 +| 編號 | 驗收條件 | 來源 | 適用範圍 | 驗收情境 |
+     18 +| ---- | -------- | ---- | -------- | -------- |
+     19 +| E1 | 主檔保留可執行 SOP；領域規則按適用情境載入 RuleFile，引用可解析、使用前已載入，無孤立或重複存放的約束；結構診斷無 error | 本次 | 通用 | S1、S2–S8 |
+     20 +| E2 | 既有 description 的規劃、技巧判斷、重構／遷移、hotfix、branch／PR 審查、workflow 審查、GitFlow 比較用途全部保留；不新增目標 Skill 的使用者確認閘門 | 本次＋既有 | 通用 | S1–S8 |
+     21 +| E3 | 規劃以獨立可整合的小 PR 為單位，交代技巧、各次 merge 後 main 可工作原因及含 review 等待的 branch 壽命；保留工作期間同步 main、CI／review／green 後 merge、merge 後刪 branch | 既有 | 通用 | S2
+         、S3、S4、S5 |
+     22 +| E4 | 區分官方、DORA、團隊選擇；官方約 1～2 天不是硬性兩天上限，DORA 目標不到一天／至少每天整合；merge 策略、同步方法、命名、review 人數、平台、direct push 限制不提升為 TBD 強制規則 | 既有 | 通用 |
+          S6、S8 |
+     23 +| E5 | 依變更性質選技巧：未曝光功能用 flag 並於上線後清理；大型重構包含 abstraction、接舊、加新、逐步切換、刪舊；相容遷移先並存再遷移 consumer 最後刪舊；每步 main 可工作 | 既有 | 通用 | S3、S4 |
+     24 +| E6 | Release Branch 很晚才切、只做版本穩定／bug fix／發布、不承載新功能；hotfix 先 main 修復驗證，再 cherry-pick 到 release | 既有 | 通用 | S5 |
+     25 +| E7 | workflow 審查涵蓋長期共同開發分支、整合頻率、含 review 的 branch 壽命、active branches、CI 回饋、broken trunk 立即修或 revert、code freeze、flag 清理；不以「從 main 開 branch」單獨認定 TBD |
+         既有 | 通用 | S6 |
+     26 +| E8 | 比較保留 GitFlow「隔離→完成→整合」與 TBD「切小→持續整合→保持可工作」；保留適用場合與自動 build／test、快速 CI／review、小批次前提；缺前提時先指出，不直接建議全面導入 | 既有 | 通用 | S7 |
+     27 +| E9 | 原主檔各段規則、六項送出檢查、案例及參考資料均可追溯；沒有無理由刪除或新增領域規則，不以字數或拆檔數達標 | 本次＋既有 | 通用 | S1 |
+     28 +| E10 | 兩側目標 Skill 同步為一致實體檔；變更路徑限目標 Skill 兩側及本次紀錄；不 commit、push、安裝或修改其他 Skill | 本次 | 個案 | 最終差異與同步核對 |
+     29 +
+     30 +來源說明：無推定的驗收條件。E1 為使用者已確認的重構方向，非原 Skill 的既有行為；E3–E9 的既有內容追溯詳見 `蒐證紀錄.md`。個案 E10 不作為目標 Skill 的新增規則。
+     31 +
+     32 +### 驗收情境
+     33 +
+     34 +S1 採本次原始需求作工程產出檢查，不在目標 Skill 內遞迴觸發 `skill-engineering`；S2–S8 是與現有 Skill 案例文字不同的回歸輸入。目標 Skill 本身無確認閘門，所有情境預先回覆均為「若出現閘門，確認，僅提供
+         規劃／審查，不操作 Git」；若重構新增閘門，E2 即不通過。
+     35 +
+     36 +| 編號 | 驗證 | 類型 | 輸入與環境 | 判斷方式 |
+     37 +| ---- | ---- | ---- | ---------- | -------- |
+     38 +| S1 | E1、E2、E9 | 本次 | 原始需求：「來重構 trunk-based-development，在不改變既有行為的前提下，找出可優化之處並且優化」，附本次完整範圍／模組化／確認閘門指示；環境為重構後 Skill 兩側與基線 HEAD |
+         比對逐項內容追溯、用途、載入關係、結構診斷；所有正確規則與來源都保留，無不適用新限制；工程本身遵守兩次確認閘門 |
+     39 +| S2 | E1、E2、E3 | 回歸 | 更正文案錯字預計 20 分鐘，已有快速 CI 與 review。請規劃 | 短期 branch、小變更不強塞技巧；有 E3 的規劃資訊與整合步驟；主檔指定的適用規則於使用前載入 |
+     40 +| S3 | E1、E2、E3、E5 | 回歸 | 帳務匯出功能需四天完成，第五天開放，既有匯出仍須可用。請按 TBD 規劃 PR，含 branch 壽命與 CI | 小 PR 每步可用，flag 關閉時持續 merge，第五天開啟且之後清理；有 E3 所要求
+         資訊；核對適用規則載入 |
+     41 +| S4 | E1、E2、E3、E5 | 回歸 | 把寄信供應商從 SMTP SDK 換成 HTTP provider，需要六天，舊服務不能中斷。另有 API 欄位要由 amount 改為 total，舊 consumer 兩週後才遷移。請規劃 | abstraction 五段均有對應
+         ，舊新 API 並存直到 consumer 遷移才刪舊，每個 merge 可用；有 E3 資訊；不因遷移總工期保留長期 branch；核對載入 |
+     42 +| S5 | E1、E2、E3、E6 | 回歸 | production 版本 2.4 需修時區計算，main 已開發 2.5，修復一天內完成。請規劃 hotfix | 先 main 修與驗證、再 cherry-pick release；release 只穩定／修錯／發布且晚切，不作 2.5
+          開發；有 E3 資訊；核對載入 |
+     43 +| S6 | E1、E2、E4、E7 | 回歸 | 團隊從 main 開 branch，有長期 develop、六個 active branches、兩週才整合；程式修改半天但 review 等三天，CI 需一小時且紅了晚上修，月底 code freeze，上線 flag 從不刪；squ
+         ash 與 rebase 強制是否才算 TBD？請審查 | 評估輸入所列的 E7 各項，壽命含 review，指出 core／建議／團隊選擇差異，不強制 squash／rebase；核對載入 |
+     44 +| S7 | E1、E2、E8 | 回歸 | 兩人內部 Web 工具想從 GitFlow 改 TBD，但沒有自動 test，review 每週一次。請比較兩者與導入建議 | 比較整合方式與小批次，辨識適用場合與缺的前提；不直接全面切換；核對載入 |
+     45 +| S8 | E1、E2、E4 | 回歸 | 官方是不是規定 branch 最長兩天？DORA 跟官方差在哪？我們用 merge commit、merge 同步 main、兩位 reviewer、GitLab，會違反 TBD 嗎？另外 branch 命名與禁止 direct push 是 TBD 硬
+         性要求嗎？ | 正確分辨來源、兩天非硬上限，列出的團隊選項皆不冒充 TBD 要求；核對載入 |
+     46 +
+     47 +S6、S8 比基線 D、G 增補未覆蓋項目，以驗證完整既有規則；後續不得聲稱兩者與基線是完全相同輸入的比較。
+     48 +
+     49 +## 3. 落差
+     50 +
+     51 +| 驗收條件 | 預期 | 實際 | 證據 |
+     52 +| -------- | ---- | ---- | ---- |
+     53 +| E1 | SOP 與情境適用規則有可核對的執行邊界 | 主檔沒有 SOP section、RuleFile 或按情境 READ／CHECK；所有領域說明都在主檔 | 觀察：`SKILL.md` 1–114 行；`基線結構診斷.json` 的 SOP001 |
+     54 +| E5 | flag 上線後清理；abstraction 最終刪舊 | A 未提清 flag；B 未明列穩定後刪 SMTP | 觀察：`基線實跑.md` A、B；不推論為穩定重現缺陷 |
+     55 +| E2–E9 | 保留既有核心行為與內容 | 七案大致保留核心判斷；尚未逐項、逐情境證明全部符合 | 觀察：`基線實跑.md`；不能把部分覆蓋稱為完整通過 |
+     56 +
+     57 +## 4. 演練表
+     58 +
+     59 +觀察：目標沒有 Phase，也沒有 `# SOP`。以下依現有主檔的入口與段落順序演練，再逐步列出「規劃需求的流程」的五個步驟，不虛構既有 Phase 編號。例案採基線 A；非規劃用途另以 D、E、G 核對。
+     60 +
+     61 +| 步驟 | 應載入 | 實際載入 | 應產出 | 實際產出 | 判定 |
+     62 +| ---- | ------ | -------- | ------ | -------- | ---- |
+     63 +| 入口／規則分級，行 6–28 | 依 E1 可辨識適用規則的執行入口 | 觀察：子代理讀取整份主檔；來源、分級、後續所有用途的規則均內嵌，無按需載入邊界 | 有可核對的 SOP 與適用規則關係 | 觀察：無 SOP section／Ru
+         leFile；SOP001 | 偏離 |
+     64 +| 規劃步驟 1：切小 | 小批次規則 | 觀察：已在主檔讀取 | 多個獨立整合 PR | 觀察：A 列 PR1–4，保留既有匯出 | 一致 |
+     65 +| 規劃步驟 2：短期 branch | 壽命與小變更規則 | 觀察：已讀取 | 小變更完成即 merge | 觀察：A 每個 branch 半天至一天，含 review | 一致 |
+     66 +| 規劃步驟 3：同步 main | 同步規則 | 觀察：已讀取 | 工作期間同步、merge 前保持最新 | 觀察：A 說 merge 前同步，未單獨明講工作期間 | 無證據 |
+     67 +| 規劃步驟 4：CI | 驗證順序 | 觀察：已讀取 | build／lint／unit／必要整合測試，review、green 後 merge | 觀察：A 列測試種類及 CI 紅先修，沒有逐字列完整 merge 閘門 | 無證據 |
+     68 +| 規劃步驟 5：刪 branch | 清理 branch 規則 | 觀察：已讀取 | merge 後刪 branch | 觀察：A 明列 | 一致 |
+     69 +| 規劃結果格式，行 40–47 | PR／技巧／main 可用／壽命 | 觀察：已讀取 | 四種資訊 | 觀察：A 有 PR、整體技巧、保留舊匯出與壽命；不是逐字複製格式 | 一致 |
+     70 +| Decision Tree／技巧，行 49–75 | 功能未曝光與 flag 生命週期 | 觀察：已讀取技巧與案例 | 用 flag 並在開放後清理 | 觀察：A 有 flag 關閉、第五天開啟，未提清理 | 偏離 |
+     71 +| 常見錯誤／workflow，行 77–98 | 壽命含 review、main 紅優先修等 | 觀察：D、E 使用已讀主檔 | 評估風險與導入前提 | 觀察：D 指出三天 review、晚上修與 freeze；E 指出缺測試、慢 review | 一致 |
+     72 +| GitFlow，行 100–105 | 比較規則 | 觀察：E 使用已讀主檔 | 對照隔離後整合與持續整合 | 觀察：E 比較兩者 | 一致 |
+     73 +| 送出前六題，行 107–114 | 六題自檢 | 觀察：規則已讀取；子代理未回報內部逐題檢查 | 按六題檢查結果 | 無工具或輸出證據證實內部逐題執行 | 無證據 |
+     74 +
+     75 +第一個偏離點：入口的執行結構不符合本次已確認的 E1（觀察：主檔行 6–28 與 SOP001）。這不是宣稱某個原本不存在的 READ 步驟執行失敗。較後段的 A／B 漏項只作回歸驗收風險，不以單次結果倒推不存在的歷史根因。
+     76 +
+     77 +## 5. 根因
+     78 +
+     79 +| 編號 | 位置 | 缺陷類型 | 說明與證據 | 反事實檢驗 |
+     80 +| ---- | ---- | -------- | ---------- | ---------- |
+     81 +| R1 | `trunk-based-development/SKILL.md`：入口與行 30–114 的流程、判斷、規則區段 | 流程缺陷 | 觀察：只有規劃用途具五個步驟，其他用途以解說章節存在；各用途的規則適用／載入／檢查時機沒有明示，且主檔
+         直接承載全部規則。推論：其執行結構無法滿足本次 E1 的可核對邊界，不是 TBD 知識不正確（依據主檔、來源核對、SOP001）。 | 假設入口與各用途的規則適用、載入、檢查時機可核對，E1 的結構落差即消失；在領域內
+         容與既有用途不變的前提下，S2–S8 仍可沿既有正確判斷完成。這是靜態反事實演練，效果必須待施工後獨立實跑驗證，不宣稱已通過或保證消除模型漏項。 |
+     82 +
+     83 +R1 僅主張結構問題。A 的 flag 清理漏項與 B 的刪舊漏項不能單獨證明 R1 導致模型失誤；本次不以其為由新增領域規則，也不宣稱重構能保證所有回答不漏項。
+     84 +
+     85 +## 6. 被排除的假設
+     86 +
+     87 +| 假設 | 缺陷類型 | 排除依據 |
+     88 +| ---- | -------- | -------- |
+     89 +| H2：缺少 flag 清理、abstraction 刪舊等領域知識，因此應新增正確規則 | 缺失 | 觀察：主檔行 70、71 已明列，來源第 8、9 節有對應；這些既有規則沒有缺失 |
+     90 +| H3：目標 Skill 沒有被觸發，才沒有使用 TBD | 觸發缺陷 | 觀察：子代理回報讀取目標主檔與案例，A–G 使用了相關概念 |
+     91 +| H4：既有 RuleFile 引用損壞／載入太晚 | 未載入 | 觀察：目標根本沒有 RuleFile；案例引用存在且已讀，不能將不存在的引用錯誤當作原因 |
+     92 +| H5：只有模型能力或個案偏好造成結構落差，Skill 不需調整 | 非 Skill 問題 | 觀察：E1 是使用者明確確認的結構方向，主檔無 SOP／RuleFile 是可直接核對的檔案事實，不受模型回答影響。至於 A／B 漏項是否屬模
+         型波動，仍無足夠重複證據，未排除也未立為根因 |
+     93 +
+     94 +## 7. 影響範圍
+     95 +
+     96 +觀察：呼叫圖的直接／間接 callers 為無，callees 為無。沒有其他 Skill 委派目標 Skill；`references/cases.md` 是案例與參考資料，不是委派鏈。
+     97 +
+     98 +推論：影響範圍為目標主檔、其資源及兩側同步複本；不需改其他 Skill（依據呼叫圖與使用者範圍）。
+     99 +
+    100 +## 8. 待確認事項
+    101 +
+    102 +1. 請確認 E1–E10 是否正確、完整，以及通用／個案範圍是否符合預期。本次無推定條件需另外確認。
+    103 +2. 是否同意 R1 是本次可核對的結構根因，並保留所有既有正確規則與用途？
+    104 +3. 尚缺的證據：沒有歷史失敗紀錄，也沒有足夠重複實跑可證明 A／B 的漏項為穩定缺陷；不影響 E1 的靜態根因確認，但不得把重構效果寫成已證實。施工後仍須全部驗收通過才可完成。
+    105 +
+    106 +依 `skill-engineering/SKILL.md` Phase 2 步驟 8「未明確確認時停止執行」，於此暫停；確認後才進入藍圖階段，藍圖另需一次明確確認。
+
+• Ran git status --short && git diff --stat && diff -r .agents/skills/trunk-based-development .claude/skills/trunk-based-development && /usr/bin/python3 -c 'import json,pathlib; p=pathlib.Path("docs/過程/
+  │ CH2/trunk-based-development/本次執行/基線結構診斷.json"); d=json.loads(p.read_text()); print(d["summary"]); print(d["graph"]["callers"]["trunk-based-development"])'
+  └ ?? "docs/\351\201\216\347\250\213/CH2/trunk-based-development/"
+    {'skills': 1, 'errors': 1, 'warnings': 0}
+    []
+
+• 根因報告 (docs/過程/CH2/trunk-based-development/本次執行/根因報告.md)已完成，目標 Skill 尚未修改。
+
+  根因 R1：主檔混合流程與規則，缺少可核對的情境載入及檢查邊界；結構診斷回報缺少 # SOP。七類基線實跑未證明穩定的行為缺陷，單次漏項已如實記錄。
+
+  請總指揮確認報告中的 E1–E10 驗收條件與 R1 根因。
+
+  依 skill-engineering 的 Phase 2 步驟 8 (.agents/skills/skill-engineering/SKILL.md)：「未明確確認時停止執行。」本次停在根因閘門，確認後才製作藍圖。
+
+  Worked for 4m 35s • 9:31 AM
+
+
+› 總指揮已讀取並確認目前根因報告中的驗收條件、驗收情境與結構根因。沒有證據支持的行為故障不當作已證實根因；保留既有用途與正確規則。請依 Skill Engineering 進入 Phase 3，提出工程藍圖後停在第二個確認閘門。這是
+  本次根因閘門確認，尚未核准施工。
+
+
+• 根因閘門已確認；我會將確認內容記入報告，依本專案 skill-engineering 製作工程藍圖，並停在第二個確認閘門。
+
+• Ran cat .agents/skills/skill-engineering/templates/engineering-blueprint.md .agents/skills/skill-engineering/templates/engineering-blueprint.example.md .agents/skills/skill-form-sop/SKILL.md .agents/
+  │ skills/skill-derive-rule/SKILL.md .agents/skills/skill-form-rule/SKILL.md .agents/skills/trunk-based-development/SKILL.md
+  └ # 工程藍圖：{{TARGET_SKILL}}－{{TOPIC}}
+
+    - 模式：{{MODE}}
+    +436 lines (⌃t to view transcript)
+
+• Ran git status --short && cat .agents/skills/skill-engineering/rules/重新設計-格式規範.md .agents/skills/skill-engineering/rules/約束分配-格式規範.md .agents/skills/skill-engineering/rules/施工委派-格式規
+  │ 範.md
+  └ ?? "docs/\351\201\216\347\250\213/CH2/trunk-based-development/"
+    # Rule 1 - To-Be 必須從驗收條件推導
+
+    +433 lines (⌃t to view transcript)
+
+• Ran cat .agents/skills/skill-engineering/templates/engineering-blueprint.md && cat .agents/skills/skill-engineering/rules/施工委派-格式規範.md && cat .agents/skills/skill-form-sop/rules/SOP-格式規
+  │ 範.md .agents/skills/skill-form-sop/rules/SOP-按需載入-格式規範.md .agents/skills/skill-form-rule/rules/RuleFile-格式規範.md .agents/skills/skill-derive-rule/rules/規則展開分析-格式規範.md .agents/
+  │ skills/skill-derive-rule/rules/RuleFile委派-格式規範.md
+  └ # 工程藍圖：{{TARGET_SKILL}}－{{TOPIC}}
+
+    - 模式：{{MODE}}
+    +887 lines (⌃t to view transcript)
+
+• 藍圖會採三個規則主題：TBD 判準、變更規劃、工作流程評估。既有 description 與案例檔保留，領域規則集中到 RuleFile，主檔負責情境分流、載入與檢查。施工順序也會明列為「胖 SOP → 由後往前抽取 → 收尾」。
+
+• Explored
+  └ Read engineering-blueprint.example.md
+
+• Ran /usr/bin/python3 <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +210 lines
+  └ (no output)
+
+• Ran /usr/bin/python3 <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +198 lines
+  └ (no output)
+
+• Ran sed -n '1,160p' docs/過程/CH2/trunk-based-development/本次執行/工程藍圖.md && sed -n '160,220p' docs/過程/CH2/trunk-based-development/本次執行/工程藍圖.md && git diff --name-only && git status --short
+  │ && shasum -a 256 .agents/skills/trunk-based-development/SKILL.md .agents/skills/trunk-based-development/references/cases.md .claude/skills/trunk-based-development/SKILL.md .claude/skills/
+  │ trunk-based-development/references/cases.md
+  └ # 工程藍圖：trunk-based-development－行為不變的模組化重構
+
+    - 模式：優化。
+    +223 lines (⌃t to view transcript)
+
+
+› 總指揮藍圖審查未通過，尚未核准施工。原版「送出前檢查」六題亦適用 branch／PR 審查，但本藍圖把六題放在只於「變更規劃」載入的 Rule 4；單純 branch／PR 審查無法取得這六題，既有 E9 未完整保留。請依原流程修正藍
+  圖，使每個原有用途都能在使用前取得所有適用規則，並核對其他跨檔約束是否也有同類缺口；不要求新增檔案，只要求正確的適用範圍、使用與CHECK。修正後重新呈現藍圖等待確認，保留原版本及修正紀錄。
+
+
+• 收到。原藍圖確實漏了單純 branch／PR 審查對六題自檢的載入。我會保留第一版，返回 Phase 3 修正適用條件、使用與 CHECK，並逐項核對其他跨檔依賴；修正版完成後再次停在確認閘門。
+
+• Ran cp docs/過程/CH2/trunk-based-development/本次執行/工程藍圖.md docs/過程/CH2/trunk-based-development/本次執行/工程藍圖第一版.md && /usr/bin/python3 <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +61 lines
+  └ (no output)
+
+
+› 總指揮已依相同準則審查並確認目前工程藍圖、驗收條件及所列刪除項目。請依 Skill Engineering Phase 5 與藍圖施工，使用指定 primitives，逐項更新狀態，完成結構診斷、規定的同步及乾淨實跑驗收。只改目標 Skill 兩側
+  與本次紀錄，不 commit 或 push。首度施工完成且準備實跑時先將當時目標 Skill 複製到本次紀錄的「首次施工技能」目錄，後續如驗收回修仍保留該快照；實跑失敗依原流程返回分析，不可改判準掩蓋。全部情境通過才回報完
+  成。
+
+
+
+› 共同執行安排：使用者要求以空間換時間。互相獨立、環境隔離的驗收情境可平行啟動乾淨子代理，不必串行等待每題；每題仍須獨立評分、保存原始輸出與副作用檢查。若子代理啟動或等待卡住超過一分鐘，直接列出情境輸入與準
+  備好的環境位置給總指揮，我會安排 Herdr 全新 session，勿因資源等候就省略實跑。這只調整排程，不修改各版驗收判準。
+
+
+• 已收到施工核准。我會依藍圖使用指定 primitives 逐項施工，首次完成後先保存「首次施工技能」快照，再同步並平行執行隔離驗收；每題分別保存原始輸出、評分與副作用檢查。
+
+• Explored
+  └ Read SKILL.md (writing-for-agents skill), 工程藍圖.md, sync-skills.sh
+
+• Ran cat /Users/steve/.agents/skills/writing-for-agents/SKILL-MECHANICS.md && git status --short
+  └ # Skill mechanics
+
+    The skill-specific branch of [`writing-for-agents`](SKILL.md): what changes when the document is a skill (frontmatter, the invocation choice, and router skills). Everything else about writing it is the
+    +21 lines (⌃t to view transcript)
+
+• 施工會一併套用 skill-form-sop、skill-derive-rule、skill-form-rule 與 writing-for-agents。跨用途檢查會特別核對：單純 branch／PR 審查也須載入六題自檢，CHECK 不能只驗證已載入清單而漏查適用規則。
+
+• Ran /usr/bin/python3 <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +54 lines
+  └ (no output)
+
+• Edited 3 files (+283 -0)
+  └ .agents/skills/trunk-based-development/rules/TBD判準-格式規範.md (+84 -0)
+     1 +# Rule 1 - 核心目的與核心規則
+     2 +
+     3 +- 回答必須以核心目的為準：不要讓大家的程式碼分開太久。所有人圍繞單一 trunk（`main`）工作，不建立長期開發分支，持續把小變更整合回 main，main 任何時候都保持可工作、可發布。
+     4 +- 判斷是否為 TBD 時，必須使用以下核心規則（違反就不算 TBD）。
+     5 +  1. 沒有長期開發分支。
+     6 +  2. 頻繁整合 main。DORA：至少每天一次，一天多次更好。
+     7 +  3. main 保持可工作。CI 紅了先修 main，不繼續開發新功能；DORA 建議立即修或立即 revert，不是「晚上再看」。
+     8 +
+     9 +## Good Example
+    10 +
+    11 +以實際整合與 main 狀態判斷。
+    12 +
+    13 +- 情境：main 的 CI 紅了，同時有新功能待開發。
+    14 +- 做法：先立即修復或 revert，保持 main 可工作；新功能維持小批次頻繁整合。
+    15 +
+    16 +## Bad Example
+    17 +
+    18 +同一情境延後處理 main。
+    19 +
+    20 +- 情境：main 的 CI 紅了，同時有新功能待開發。
+    21 +- 做法：繼續新功能，到晚上再看 main；平時長期分支各做幾週才整合。
+    22 +
+    23 +# Rule 2 - 規則來源與 branch 壽命
+    24 +
+    25 +- 回答時必須區分規則來源。
+    26 +  - **TBD 官方**：TrunkBasedDevelopment.com。
+    27 +  - **DORA**：Google DORA 的 DevOps 研究，標準通常比官方嚴格。
+    28 +  - **團隊規則**：TBD 沒規定、由團隊自行決定的部分。
+    29 +- 說明 branch 壽命時，必須保留兩邊標準不同：官方認為短期 branch 通常 1～2 天；DORA 以不到一天為目標。不得把「2 天」說成硬性標準。
+    30 +- branch 壽命必須算入等 review 的時間。PR 很小但等 review 3 天，效果跟三天 branch 一樣。DORA 把重量級、非同步、耗時的 review 流程列為 TBD 常見阻礙。
+    31 +
+    32 +## Good Example
+    33 +
+    34 +比較來源並將等待算進存活時間。
+    35 +
+    36 +- 情境：開發半天、等 review 三天。
+    37 +- 判斷：壽命約三天半；官方通常 1～2 天與 DORA 不到一天的目標不同，不能只算開發半天，也不將兩天稱為硬性上限。
+    38 +
+    39 +## Bad Example
+    40 +
+    41 +相同現況忽略等待並混淆來源。
+    42 +
+    43 +- 情境：開發半天、等 review 三天。
+    44 +- 判斷：「branch 只有半天，符合官方規定的最長兩天。」
+    45 +
+    46 +# Rule 3 - 強烈建議
+    47 +
+    48 +- 必須將下列事項維持為強烈建議，與核心規則及團隊選擇分開。
+    49 +  - branch 應非常短命，壽命說明使用 Rule 2 的來源區分。
+    50 +  - active branches 應維持少量。
+    51 +  - 應避免靠 code freeze 解決整合問題。
+    52 +  - merge 後應刪 branch。
+    53 +
+    54 +## Good Example
+    55 +
+    56 +遵循建議並保持其分級，不自行發明門檻。
+    57 +
+    58 +- 情境：一次小變更已 merge。
+    59 +- 做法：刪除完成的 branch，讓 active branches 保持少量；日常持續整合，不等 release 前 freeze 才解決整合問題。
+    60 +
+    61 +## Bad Example
+    62 +
+    63 +相同工作長期累積完成分支並依賴 freeze。
+    64 +
+    65 +- 情境：多次小變更已 merge。
+    66 +- 做法：branch 一直不刪，接近 release 才 code freeze 解決累積的整合問題；另宣稱 active branches 超過任意自訂數字就必定不算 TBD。
+    67 +
+    68 +# Rule 4 - 團隊自行決定
+    69 +
+    70 +- 團隊可以自行決定以下事項，不得將其說成 TBD 的要求：squash／merge commit／rebase merge、同步 main 用 merge 還是 rebase、branch 命名、reviewer 人數、GitHub 或 GitLab、是否禁止 direct push。
+    71 +
+    72 +## Good Example
+    73 +
+    74 +把 Git 操作選項與 TBD 判準分開。
+    75 +
+    76 +- 情境：團隊採用 merge commit 與 merge 同步 main。
+    77 +- 判斷：這些選項本身不違反 TBD，應回到本檔的核心規則與建議判斷。
+    78 +
+    79 +## Bad Example
+    80 +
+    81 +同一選項被誤當為定義。
+    82 +
+    83 +- 情境：團隊採用 merge commit 與 merge 同步 main。
+    84 +- 判斷：「必須 squash 或 rebase 才算 TBD。」
+
+  └ .agents/skills/trunk-based-development/rules/工作流程評估-格式規範.md (+70 -0)
+     1 +# Rule 1 - workflow 審查維度與常見誤判
+     2 +
+     3 +- 審查 branch／PR／團隊 workflow 時，必須依已載入的「TBD 判準檢查清單」判斷規則來源與分級，並逐項檢查下列現況。
+     4 +  - 有沒有 `develop`、`team-a`、`release-next` 這類長期共同開發分支？
+     5 +  - 每人每天至少整合 main 一次嗎？
+     6 +  - branch 壽命（含 review 等待）多長？active branches 多少？
+     7 +  - CI 多快回饋？main 紅了是否立即修或 revert？
+     8 +  - 有沒有靠 code freeze 解決整合問題？
+     9 +  - Feature Flag 有沒有清理？
+    10 +- 涉及變更、分支或 PR 的審查，必須同時使用已載入的「變更規劃檢查清單」判斷適用項目；其中 Rule 4 的六題自檢不得以本 Rule 的六個 workflow 問題取代。
+    11 +- 審查者必須區分已知現況、未知資訊及不適用項目；不得只因 branch 從 main 建立就認定為 TBD。
+    12 +
+    13 +## Good Example
+    14 +
+    15 +逐項審查現況，並以原常見錯誤對照判準，不把分支起點當成唯一證據。
+    16 +
+    17 +- 情境：所有 branch 從 main 建立，但 feature 活兩三週，PR 很小卻等 review 三天。
+    18 +- 判斷：前者是長期分開開發；後者必須把等待算入壽命。審查也逐項使用規劃 Rule 4 的六題，而非只查天數。
+    19 +- 其他對照例：一張 Story 可以拆成 refactor、API、UI、cleanup 多個 PR；API 已改、前端未跟上的 PR 會破壞 main，需按規劃清單判斷相容遷移。
+    20 +- 多人在同一個 feature branch 開發、branch 一直不刪、接近 release 就 code freeze，都是官方 You're Doing It Wrong 列出的模式。
+    21 +
+    22 +## Bad Example
+    23 +
+    24 +相同現況只看 branch 起點，沒有檢查長期開發與 review 等待。
+    25 +
+    26 +- 情境：所有 branch 從 main 建立，但 feature 活兩三週，PR 很小卻等 review 三天。
+    27 +- 判斷：「都從 main 開 branch，所以是 TBD；PR 小就不需要再檢查六題。」
+    28 +
+    29 +# Rule 2 - 導入前提與風險
+    30 +
+    31 +- 導入評估必須檢查自動 build、自動 test、快速 CI、小批次開發能力、快速 code review。
+    32 +- 說明風險時必須保留來源區分：DORA 指出經驗不足、缺 gated checks、沒有「broken trunk 優先修復」紀律的團隊，實行 TBD 反而可能增加錯誤與返工。
+    33 +- 遇到缺少前提的團隊，必須先指出缺的前提，不得直接建議全面導入。缺這些時，TBD 容易變成「大家一直 merge main，main 一直壞」。
+    34 +
+    35 +## Good Example
+    36 +
+    37 +先辨識缺口，再討論導入。
+    38 +
+    39 +- 情境：團隊缺 gated checks，也沒有 broken trunk 優先修復紀律。
+    40 +- 回覆：先指出自動驗證與修復紀律的缺口，再評估如何補足導入前提。
+    41 +
+    42 +## Bad Example
+    43 +
+    44 +相同前提不足卻直接要求全面切換。
+    45 +
+    46 +- 情境：團隊缺 gated checks，也沒有 broken trunk 優先修復紀律。
+    47 +- 回覆：「立即移除所有分支流程，大家直接持續 merge main 就會改善。」
+    48 +
+    49 +# Rule 3 - 適用場合與 GitFlow 比較
+    50 +
+    51 +- 評估適用性時，可以依下列既有場合判斷：SaaS、Web App、Backend API、Frontend App、Microservice、企業內部系統、頻繁發布、多人共同維護的 codebase。需求一直變、多人同時改、需要頻繁 release 三者同時成立
+        時價值最高。
+    52 +- 比較 TBD 與 GitFlow 時，必須保留下列整合方式的差別。
+    53 +  - GitFlow 類：先隔離 → 做完整 → 最後整合。
+    54 +  - TBD：先切小 → 持續整合 → 任何時候都保持可工作。
+    55 +- 必須說明 TBD 主要改變拆分工作的方式，Git 操作本身變化不大。
+    56 +- 比較或導入建議涉及具體整合驗證、技巧或版本維護時，必須使用已載入的「變更規劃檢查清單」中適用的判準，不得以更換分支名稱代替工作拆分。
+    57 +
+    58 +## Good Example
+    59 +
+    60 +比較整合順序與工作拆分，再連同前提評估適用性。
+    61 +
+    62 +- 情境：多人維護、頻繁改需求並發布的 Web App 想採用 TBD。
+    63 +- 回覆：這類場合適用；相較隔離後完成再整合，需先切小、持續整合並維持 main 可工作，仍需檢查 Rule 2 的導入前提。
+    64 +
+    65 +## Bad Example
+    66 +
+    67 +同一場合只改命名，沒有比較整合方式。
+    68 +
+    69 +- 情境：多人維護、頻繁改需求並發布的 Web App 想採用 TBD。
+    70 +- 回覆：「把 develop 改名 main 就完成導入。」
+
+  └ .agents/skills/trunk-based-development/rules/變更規劃-格式規範.md (+129 -0)
+      1 +# Rule 1 - 小批次與技巧決策
+      2 +
+      3 +- 規劃或審查變更時，必須先考慮切小，而不是先問「要開什麼 branch」。切小：把需求拆成多個能獨立整合的小變更。一張 Story／Ticket 不等於一個 branch 或一個 PR。
+      4 +- 每個小變更應開短期 branch，目標是「這個小變更做完就 merge」，不是「整個 feature 做完才 merge」。
+      5 +- 必須依下列 Decision Tree 判斷變更的整合方式；規劃時產生方案，審查時核對現有方案，不要求審查另做一份計畫。
+      6 +
+      7 +```text
+      8 +我要做一個變更
+      9 +│
+     10 +├─ 幾小時／一天內可完成？
+     11 +│   └─ Yes → short-lived branch → CI + Review → merge main
+     12 +│
+     13 +└─ No → 能不能切更小？
+     14 +    ├─ Yes → 切小 → 多個 PR，每個回到上一步判斷
+     15 +    └─ No → 為什麼？
+     16 +        ├─ 功能還不能曝光     → Feature Flag
+     17 +        ├─ 大型程式重構       → Branch by Abstraction
+     18 +        ├─ 舊系統／相容性遷移 → 新舊並存（Strangler）
+     19 +        └─ 維護已發布版本     → Release Branch
+     20 +```
+     21 +
+     22 +- 未完成的工作必須以小批次、Feature Flag、抽象層、向後相容、CI、自動測試整合，不得靠長期 branch 藏起來。
+     23 +
+     24 +## Good Example
+     25 +
+     26 +同一 Story 拆成可整合的小步驟。
+     27 +
+     28 +- 情境：會員搜尋需要多天。
+     29 +- 方案：API client、搜尋輸入框、基本搜尋、分頁各自形成可整合 PR；若還不能曝光，使用 Rule 3 的技巧。
+     30 +
+     31 +## Bad Example
+     32 +
+     33 +同一 Story 被視為只能有一個 PR。
+     34 +
+     35 +- 情境：會員搜尋需要多天。
+     36 +- 方案：UI、API、權限、分頁全部完成才 merge 一個長期 feature branch。
+     37 +
+     38 +# Rule 2 - 同步與 CI 整合
+     39 +
+     40 +- 規劃或審查整合方案時，必須包含工作期間同步 main，merge 前 branch 要跟 main 保持最新。同步方法依已載入的 TBD 判準中團隊規則處理。
+     41 +- 必須保留 CI 驗證次序：build → lint → unit test → 必要的 integration test；PR → review → CI green → merge。
+     42 +- 說明 DORA 的 CI 建議時，必須保留每個 commit 都觸發 build 與自動測試，回饋在幾分鐘內的目標。
+     43 +- merge 後的 branch 清理，應依已載入的 TBD 判準中強烈建議處理。
+     44 +
+     45 +## Good Example
+     46 +
+     47 +小 bug 也保持同步與驗證的次序。
+     48 +
+     49 +- 情境：按鈕顏色錯誤，30 分鐘可完成。
+     50 +- 方案：short-lived branch → fix；工作期間同步 main，merge 前更新 → build／lint／unit test／必要 integration test → PR／review → CI green → merge → 刪 branch。
+     51 +
+     52 +## Bad Example
+     53 +
+     54 +同一小 bug 省略整合驗證。
+     55 +
+     56 +- 情境：按鈕顏色錯誤，30 分鐘可完成。
+     57 +- 方案：「改動很小，branch 不必同步最新 main，CI 紅了也先 merge。」
+     58 +
+     59 +# Rule 3 - 四種技巧的安全生命週期
+     60 +
+     61 +- 使用或審查 Feature Flag 時，必須保留：程式每天 merge，flag 關閉，最後打開（Deploy ≠ Release）。功能上線後要刪 flag，官方警告不清理的 flag 會變成技術債。
+     62 +- 使用或審查 Branch by Abstraction 時，必須保留：建立 abstraction → 舊實作接上 → 加入新實作 → 逐步切換 → 刪舊實作。每一步都 merge main。
+     63 +- 使用或審查新舊並存時，必須保留：改 API 時先讓舊 API 與新 API 並存 → consumer 遷移 → 刪舊 API。不得讓 main 處在「API 改了、前端還沒跟上」的中間狀態。
+     64 +- 使用或審查 Release Branch 時，必須保留：很晚才切，只負責該版本的穩定、bug fix、發布，不得承載新功能開發。Bug 先修在 main（fix on trunk first），驗證後再 cherry-pick 到 release branch；只在 release
+          branch 修再回灌 main 是官方列出的錯誤模式。
+     65 +
+     66 +## Good Example
+     67 +
+     68 +各技巧的同一情境都有完整生命週期。
+     69 +
+     70 +| 情境 | 完整方案 |
+     71 +| ---- | -------- |
+     72 +| 一週下注介面，週五開放 | flag 關閉時每天 merge，週五開啟，功能穩定後清理 flag |
+     73 +| Axios → Fetch 或 Vuex → Pinia | abstraction、接舊、加新、逐步切換、刪舊，各步 merge |
+     74 +| API 有舊 consumer | 先保留舊新 API，consumer 遷移後才移除舊 API |
+     75 +| 1.5 hotfix，main 已開發 1.6 | main 先修並驗證，再 cherry-pick 到只維護版本的 release/1.5 |
+     76 +
+     77 +## Bad Example
+     78 +
+     79 +相同情境缺少生命週期或破壞次序。
+     80 +
+     81 +| 情境 | 問題方案 |
+     82 +| ---- | -------- |
+     83 +| 一週下注介面，週五開放 | merge 後永遠保留 flag，不清理 |
+     84 +| Axios → Fetch 或 Vuex → Pinia | 新實作未接上就刪舊，等待整週後一次 merge |
+     85 +| API 有舊 consumer | consumer 尚未遷移就刪舊 API |
+     86 +| 1.5 hotfix，main 已開發 1.6 | 只修 release/1.5 再回灌，並在該 branch 開發 1.6 功能 |
+     87 +
+     88 +# Rule 4 - 規劃結果與六題自檢
+     89 +
+     90 +- 產生規劃結果時，必須用下列格式給出；只做審查或判準說明時，不要求另產生 PR 計畫。
+     91 +
+     92 +```text
+     93 +PR 1：<變更>  — 使用技巧：<無／Feature Flag／Abstraction／新舊並存>
+     94 +PR 2：...
+     95 +每個 PR merge 後 main 為什麼仍可工作：<說明>
+     96 +預估 branch 壽命（含等 review）：<時間>
+     97 +```
+     98 +
+     99 +- 規劃與 branch／PR 審查，必須逐項使用以下六題；workflow 審查涉及變更或分支時亦適用。未涉及的項目可以判不適用；未知資料不得當作通過。這是自檢，不強制回覆採六題報告格式。
+    100 +  1. 能不能切到一天內可以 merge？
+    101 +  2. 這個 PR 現在 merge，main 還能正常工作嗎？
+    102 +  3. 未完成功能能不能用 Feature Flag 隱藏？
+    103 +  4. 大改造能不能用 abstraction 讓新舊實作共存？
+    104 +  5. CI 能不能快速告訴我這次改動有沒有破壞系統？
+    105 +  6. 這個 branch 明天還會存在嗎？是的話，檢查是不是切得太大。
+    106 +- 六題涉及的 branch 壽命、來源與分級，必須使用已載入的 TBD 判準；不得將自檢問題提升為隔夜禁令。
+    107 +
+    108 +## Good Example
+    109 +
+    110 +規劃有可核對的整合資訊，單純審查也使用六題。
+    111 +
+    112 +```text
+    113 +PR 1：加入 API client — 使用技巧：無
+    114 +PR 2：加入搜尋輸入框 — 使用技巧：Feature Flag
+    115 +每個 PR merge 後 main 為什麼仍可工作：PR 1 不更改既有行為；PR 2 的新入口由關閉的 flag 控制。
+    116 +預估 branch 壽命（含等 review）：各半天至一天。
+    117 +```
+    118 +
+    119 +- 審查相同會員搜尋 branch：逐題核對切小、main 可工作、未曝光入口、是否涉及大改造、CI 回饋、明日是否仍存在；沒有大改造時第 4 題判不適用，不只檢查天數。
+    120 +
+    121 +## Bad Example
+    122 +
+    123 +同一規劃缺少整合說明，審查漏掉大部分自檢。
+    124 +
+    125 +```text
+    126 +開 feature/member-search，全部做好再 merge。
+    127 +```
+    128 +
+    129 +- 審查同一 branch：「只要存活不到兩天就通過。」沒有核對 main、曝光控制、abstraction 或 CI。
+
+• Ran /usr/bin/python3 <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +62 lines
+  └ (no output)
+
+• Ran /usr/bin/python3 <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ import json
+  │ … +5 lines
+  └ {'skills': 1, 'errors': 0, 'warnings': 0}
+    []
+     .agents/skills/trunk-based-development/SKILL.md | 118 +++---------------------
+    +4 lines (⌃t to view transcript)
+
+• W1–W5 已逐項完成，結構診斷為 0 error、0 warning。接著先保存首次施工快照，再執行同步與隔離實跑；目前尚未判定行為驗收通過。
+
+• Ran /usr/bin/python3 <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +23 lines
+  └ 首次施工快照已保存；其他 Skill 兩側與 AGENTS/CLAUDE 內容一致，可執行規定同步。
+    4.6M    .
+
+• Ran /usr/bin/python3 <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +45 lines
+  └ S2 /private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r05/docs/過程/CH2/trunk-based-development/本次執行/驗收環境/S2
+    S3 /private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r05/docs/過程/CH2/trunk-based-development/本次執行/驗收環境/S3
+    S4 /private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r05/docs/過程/CH2/trunk-based-development/本次執行/驗收環境/S4
+    +8 lines (⌃t to view transcript)
+
+• Started `/root/accept_s2`
+
+• Started `/root/accept_s3`
+
+• Started `/root/accept_s4`
+
+• Started `/root/accept_s5`
+
+• Completed `/root/accept_s2`
+
+• Completed `/root/accept_s3`
+
+• Ran /usr/bin/python3 <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +32 lines
+  └ S1／E10 追溯與範圍核對通過；S2–S12 待實跑評分。
+
+• Completed `/root/accept_s5`
+
+• Completed `/root/accept_s4`
+
+• Started `/root/accept_s6`
+
+• Started `/root/accept_s7`
+
+• Started `/root/accept_s8`
+
+• Started `/root/accept_s9`
+
+• Ran cat docs/過程/CH2/trunk-based-development/本次執行/驗收原始輸出/情境S2.md docs/過程/CH2/trunk-based-development/本次執行/驗收原始輸出/情境S3.md docs/過程/CH2/trunk-based-development/本次執行/驗收原始輸
+  │ 出/情境S4.md docs/過程/CH2/trunk-based-development/本次執行/驗收原始輸出/情境S5.md
+  └ # S2 驗收原始回報
+
+    ## 實際載入檔案
+    +313 lines (⌃t to view transcript)
+
+• Interacted with `/root/accept_s6`
+
+• Interacted with `/root/accept_s7`
+
+• Interacted with `/root/accept_s8`
+
+• Interacted with `/root/accept_s9`
+
+• 首批實跑已回傳；核對時發現 S4 的讀取路徑指向主 worktree，未符合隔離環境要求。該次輸出會保留，但不計通過，須修正環境後以乾淨 session 重跑；Skill 與驗收判準均不變。
+
+• Ran /usr/bin/python3 <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +10 lines
+  └ {'S2': {'files_unchanged': True, 'git_status_unchanged': True, 'added': [], 'removed': [], 'changed': []}, 'S3': {'files_unchanged': True, 'git_status_unchanged': True, 'added': [], 'removed': [],
+    'changed': []}, 'S4': {'files_unchanged': True, 'git_status_unchanged': True, 'added': [], 'removed': [], 'changed': []}, 'S5': {'files_unchanged': True, 'git_status_unchanged': True, 'added': [],
+    'removed': [], 'changed': []}, 'S6': {'files_unchanged': True, 'git_status_unchanged': True, 'added': [], 'removed': [], 'changed': []}, 'S7': {'files_unchanged': True, 'git_status_unchanged': True,
+    +1 line (⌃t to view transcript)
+
+• Completed `/root/accept_s6`
+
+• Completed `/root/accept_s8`
+
+• Completed `/root/accept_s9`
+
+• Interacted with `/root/accept_s2`
+
+• Completed `/root/accept_s2`
+
+• Started `/root/accept_s10`
+
+• Started `/root/accept_s11`
+
+• Started `/root/accept_s12`
+
+• Ran cat docs/過程/CH2/trunk-based-development/本次執行/驗收原始輸出/情境S6.md docs/過程/CH2/trunk-based-development/本次執行/驗收原始輸出/情境S8.md docs/過程/CH2/trunk-based-development/本次執行/驗收原始輸
+  │ 出/情境S9.md
+  └ # S6 驗收原始輸出
+
+    ## 實際載入檔案
+    +303 lines (⌃t to view transcript)
+
+• Completed `/root/accept_s7`
+
+• Ran /usr/bin/python3 <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +9 lines
+  └ (no output)
+
+• Completed `/root/accept_s12`
+
+• Started `/root/clean_s2`
+
+• Started `/root/clean_s4`
+
+• Completed `/root/accept_s11`
+
+• Completed `/root/accept_s10`
+
+• Started `/root/clean_s6`
+
+• Started `/root/clean_s7`
+
+• Ran cat docs/過程/CH2/trunk-based-development/本次執行/驗收原始輸出/情境S10.md docs/過程/CH2/trunk-based-development/本次執行/驗收原始輸出/情境S11.md docs/過程/CH2/trunk-based-development/本次執行/驗收原始
+  │ 輸出/情境S12.md
+  └ # S10 驗收原始輸出
+
+    ## 實際執行環境與載入檔案
+    +206 lines (⌃t to view transcript)
+
+• Ran git diff --check && /usr/bin/python3 <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +7 lines
+  └ 首次施工快照未變，目標 Skill 自首次施工後未回修。
+
+• Completed `/root/clean_s4`
+
+• Explored
+  └ List 驗收原始輸出
+    Read 情境S4.md
+
+• Completed `/root/clean_s2`
+
+• Started `/root/clean_s8`
+
+• Completed `/root/clean_s7`
+
+• Started `/root/clean_s9`
+
+• Completed `/root/clean_s6`
+
+• 相容遷移審查、版本維護比較與純判準問答的隔離實跑已回傳，內容符合既定要求。首批讀檔路徑不符的輸出均未計通過，已安排乾淨重跑；首次施工快照與目標 Skill 內容仍未變更。
+
+• Ran /usr/bin/python3 <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +9 lines
+  └ # 情境 S2 驗收原始輸出
+
+    ## 執行紀錄
+    +105 lines (⌃t to view transcript)
+
+• Completed `/root/clean_s8`
+
+• Completed `/root/clean_s9`
+
+• Context compacted · 2m 40s
+
+• S8、S9 的隔離實跑已回傳。S7 前次仍有環境路徑越界，未計入通過；我會重新實跑，並完成所有情境的逐題評分與副作用檢查。
+
+• Ran cat AGENTS.md .agents/skills/skill-engineering/SKILL.md
+  └ # CLAUDE.md
+
+    給在本專案中工作的 AI coding agent（Claude Code、Codex、Cursor 等）閱讀的共用指引。
+    +191 lines (⌃t to view transcript)
+
+• Explored
+  └ Read 驗收環境清單.json, 情境輸入.txt
+
+• Ran cat docs/過程/CH2/trunk-based-development/本次執行/驗收原始輸出/情境S8.md docs/過程/CH2/trunk-based-development/本次執行/驗收原始輸出/情境S9.md
+  └ # S8 驗收原始輸出
+
+    實際 workdir：
+    +98 lines (⌃t to view transcript)
+
+• Started `/root/clean_s7_final`
+
+• Explored
+  └ Read 工程藍圖.md
+
+• Ran cat docs/過程/CH2/trunk-based-development/本次執行/結構與追溯驗收.md docs/過程/CH2/trunk-based-development/本次執行/施工紀錄.md
+  └ # 結構與追溯驗收
+
+    ## S1：逐步演練與靜態核對
+    +89 lines (⌃t to view transcript)
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ import json,pathlib
+  │ … +6 lines
+  └ 驗收環境清單.json dict ['S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S9', 'S10', 'S11', 'S12']
+    S2 ['input', 'pre_reply', 'criteria', 'acceptance', 'environment', 'skill', 'before_status', 'before_hashes']
+    {'input': '更正文案錯字預計 20 分鐘，已有快速 CI 與 review。請規劃', 'pre_reply': '無目標 Skill 閘門；若出現則回覆「確認，僅提供規劃／審查，不操作 Git」，並依 E2 判失敗', 'criteria': '短期 branch、小變更
+    +4 lines (⌃t to view transcript)
+
+• Ran git status --short
+  └  M .agents/skills/trunk-based-development/SKILL.md
+     M .claude/skills/trunk-based-development/SKILL.md
+    ?? .agents/skills/trunk-based-development/rules/
+    +2 lines (⌃t to view transcript)
+
+• Ran uv run --script scripts/audit_skill.py --skills-root ../../ --skills-root ../../../../.claude/skills --skill trunk-based-development
+  └ /private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/.claude/skills: skills root is not a directory
+
+• Ran uv run --script scripts/audit_skill.py --skills-root /private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r05/.agents/skills --skills-root /private/var/folders/df/
+  │ _gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r05/.claude/skills --skill trunk-based-development > /private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/
+  │ tbd-r05/docs/過程/CH2/trunk-based-development/本次執行/最終結構診斷.json
+  └ (no output)
+
+• Ran scripts/sync-skills.sh --check
+  └ 兩邊一致
+
+• Ran git diff --check
+  └ (no output)
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ import pathlib,json,hashlib,subprocess
+  │ … +16 lines
+  └ {'S2': {'changed_original_files': [], 'git_status_unchanged': True, 'result': '通過'}, 'S3': {'changed_original_files': [], 'git_status_unchanged': True, 'result': '通過'}, 'S4':
+    {'changed_original_files': [], 'git_status_unchanged': True, 'result': '通過'}, 'S5': {'changed_original_files': [], 'git_status_unchanged': True, 'result': '通過'}, 'S6': {'changed_original_files': [],
+    'git_status_unchanged': True, 'result': '通過'}, 'S7': {'changed_original_files': [], 'git_status_unchanged': True, 'result': '通過'}, 'S8': {'changed_original_files': [], 'git_status_unchanged': True,
+    +4 lines (⌃t to view transcript)
+
+• Ran cat .agents/skills/trunk-based-development/rules/工作流程評估-格式規範.md .agents/skills/trunk-based-development/rules/TBD判準-格式規範.md
+  └ # Rule 1 - workflow 審查維度與常見誤判
+
+    - 審查 branch／PR／團隊 workflow 時，必須依已載入的「TBD 判準檢查清單」判斷規則來源與分級，並逐項檢查下列現況。
+    +151 lines (⌃t to view transcript)
+
+• Explored
+  └ Search status|壽命|review|刪|main|同步|green in 情境S5.md
+
+• Interacted with `/root/clean_s7_final`
+
+• 目前結構診斷為 0 error、0 warning，兩側同步一致；範圍外檔案、首次施工快照及各驗收環境的原有檔案均未變更。S7 正在乾淨重跑，其餘情境已完成核對。
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +57 lines
+  └ (no output)
+
+• Explored
+  └ Search 待施工|已完成|尚未|未宣稱|狀態|W[1-5] in 工程藍圖.md
+    Read 情境S6.md
+
+• Interacted with `/root/clean_s7_final`
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +7 lines
+  └ (no output)
+
+• Explored
+  └ List 情境S7.md
+    Read 情境S7.md
+
+• Completed `/root/clean_s7_final`
+
+• S7 乾淨重跑已完成，核對通過。S1 靜態追溯及 S2–S12 隔離實跑現已全部通過；環境不符的原始輸出另行保留，未計入通過結果。
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +33 lines
+  └ (no output)
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +15 lines
+  └ Traceback (most recent call last):
+      File "<stdin>", line 14, in <module>
+    AssertionError
+
+• Ran git diff --check
+  └ (no output)
+
+• Ran git diff --stat
+  └  .agents/skills/trunk-based-development/SKILL.md | 118 +++---------------------
+     .claude/skills/trunk-based-development/SKILL.md | 118 +++---------------------
+     2 files changed, 30 insertions(+), 206 deletions(-)
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +5 lines
+  └ blueprint 1507 actual 1506 symlinks []
+    ---
+    +++
+    +7 lines (⌃t to view transcript)
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +9 lines
+  └ 最終核對通過：code fence 文字一致；副作用11案全通過；範圍外與快照無差異。
+
+• Ran git diff --check
+  └ (no output)
+
+• 已完成重構：主檔保留 SOP，規則分為三份按需載入 RuleFile，既有用途與正確規則保留。
+
+  S1–S12 全部通過，結構診斷 0 error／0 warning，兩側同步一致。首次施工快照與原始驗收輸出均已保存；未 commit、push 或修改其他 Skill。
+
+  驗收結果 (docs/過程/CH2/trunk-based-development/本次執行/驗收結果.md)
+
+  Worked for 23m 39s • 9:55 AM
+
+
+› Ask Codex to do anything
+
+  GPT-6.1-Sol medium fast · Context 31% used · weekly 30% left · Main [default] · ← for agents                                                                                       ⚠ 4 warnings · f2 to view

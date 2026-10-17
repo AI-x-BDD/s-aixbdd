@@ -1,0 +1,54 @@
+codex -a never -s danger-full-access --no-alt-screen
+
+󰀵 …/tbd-v02   HEAD !?   v25.0.4   09:39 
+ codex -a never -s danger-full-access --no-alt-screen
+■ No active thread is available.
+
+
+  >_ OpenAI Codex (v0.163.0)
+     /private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v02
+  permissions: YOLO mode
+
+  Tip: Use the desktop app. Run codex app to open it. It installs automatically if needed.
+
+
+› 請讀取並使用目前專案 .agents/skills/trunk-based-development/SKILL.md 回答以下需求，僅讀取檔案，不修改專案。
+
+  production v2.4 有 bug，main 已開發 v2.5；請規劃修補與發布分支處理。
+
+
+• 我會讀取指定的 trunk-based-development Skill，依其規則規劃；全程只讀取檔案。
+
+• Explored
+  └ Read SKILL.md (trunk-based-development skill)
+
+• Ran cat .agents/skills/trunk-based-development/rules/主幹整合-格式規範.md .agents/skills/trunk-based-development/rules/變更拆分-格式規範.md
+  └ # Rule 1 - 區分 TBD 目的與規則來源
+
+    - 說明 TBD 時，應以「不要讓大家的程式碼分開太久」解釋核心目的：所有人圍繞單一 trunk（main）工作，持續整合，main 保持可工作、可發布。
+    +197 lines (⌃t to view transcript)
+
+• 採用 Release Branch 維護 v2.4：先在 main 修復並驗證，再 cherry-pick 到 release/2.4，發布 v2.4.1，避免帶入 v2.5 功能。
+
+  1. 確認發布基準：已有 release/2.4 就沿用；沒有則從 production 實際部署的 v2.4 tag／commit 建立，不能從目前 main 切出。
+  2. PR 1：修復 main 的 bug，加入回歸測試 — 使用技巧：無。
+     從 main 開短期分支，工作期間及 merge 前同步 main；依序通過 build → lint → unit test → 必要的 integration test，再經 review、CI green 後 merge，刪除工作分支。
+
+  3. PR 2：將已驗證的修復 cherry-pick 到 release/2.4 — 使用技巧：Release Branch。
+     從 release/2.4 開短期修補分支，只帶入必要修復與測試；若有衝突，依 v2.4 調整並重新驗證，經 review、CI green 後合回，刪除修補分支。
+
+  4. 發布 v2.4.1：從通過驗證的 release commit 建立 tag、產出 artifact 並部署，確認 production 修復結果。不要把整條 main merge 到 release/2.4，也不要把 release branch 整包回灌 main。
+  5. 後續維護：main 繼續 v2.5；release/2.4 僅做版本穩定、bug fix 與發布，支援結束後退役。
+
+  **每個 PR merge 後 main 為什麼仍可工作：**PR 1 是完整且通過測試的小修復；PR 2 只影響 v2.4 維護線。
+
+  **預估 branch 壽命（含等 review）：**兩個修補工作分支各以當日完成為目標；release/2.4 依版本支援期間保留，不套用工作分支的短命目標。
+
+  以上依指定 Skill 與其兩份規則檔規劃，未修改專案。
+
+  Worked for 16s • 9:40 AM
+
+
+› Ask Codex to do anything
+
+  GPT-6.1-Sol medium fast · Context 8% used · weekly 39% left · ← for agents                                                                                                         ⚠ 4 warnings · f2 to view

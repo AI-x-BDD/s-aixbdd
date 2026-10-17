@@ -1,0 +1,25 @@
+{
+  "line_count": 552,
+  "to_be_lines": [
+    63,
+    97
+  ],
+  "w1_lines": [
+    456,
+    486
+  ],
+  "checks": {
+    "to_be_outer_fence_is_four_tilde": true,
+    "to_be_inner_text_fence_is_balanced": true,
+    "to_be_has_sop": true,
+    "to_be_controlled_verbs_backticked": true,
+    "to_be_named_lists_reused": true,
+    "to_be_has_conditional_paths": true,
+    "w1_fat_sop_has_full_pending_block": true,
+    "w1_has_no_future_rulefile_reference": true,
+    "source_semantics_preserved": true,
+    "w2_reverse_order_explicit": true,
+    "blueprint_second_version_saved": true,
+    "second_feedback_saved": true
+  }
+}

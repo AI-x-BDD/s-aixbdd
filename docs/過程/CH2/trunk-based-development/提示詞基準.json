@@ -1,0 +1,12 @@
+{
+  "長提示詞": {
+    "characters": 765,
+    "lines": 36,
+    "sha256": "d6455906424ab1fcd228becb91d083140c01f838389e6ae78e2c71f73e3f194e"
+  },
+  "短提示詞": {
+    "characters": 73,
+    "lines": 3,
+    "sha256": "1d73e37f330974856a33ff7f5f2434895eaee0e193caa0d9a0c37391848edc8e"
+  }
+}

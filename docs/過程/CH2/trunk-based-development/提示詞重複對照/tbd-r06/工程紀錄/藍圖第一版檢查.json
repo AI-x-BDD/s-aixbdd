@@ -1,0 +1,23 @@
+{
+  "frontmatter_unchanged": true,
+  "acceptance_rows": 10,
+  "constraints": 24,
+  "scenario_rows": 6,
+  "work_items_pending": 4,
+  "sop_steps": 9,
+  "blueprint_sections": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "baseline_main_unchanged": true,
+  "baseline_cases_unchanged": true,
+  "both_sides_main_equal": true,
+  "both_sides_cases_equal": true,
+  "acceptance_numbers_match": true
+}

@@ -1,0 +1,96 @@
+{
+  "skills_roots": [
+    "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r06/.claude/skills"
+  ],
+  "shadowed_skills": [],
+  "summary": {
+    "skills": 1,
+    "errors": 0,
+    "warnings": 0
+  },
+  "skills": [
+    {
+      "name": "trunk-based-development",
+      "path": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r06/.claude/skills/trunk-based-development",
+      "errors": 0,
+      "warnings": 0,
+      "findings": [],
+      "parts": [
+        "rules/主幹整合-格式規範.md",
+        "rules/變更拆分-格式規範.md"
+      ],
+      "references": {
+        "rules/主幹整合-格式規範.md": [
+          {
+            "phase": 1,
+            "step": 3,
+            "verb": "READ",
+            "line": 12
+          }
+        ],
+        "rules/變更拆分-格式規範.md": [
+          {
+            "phase": 1,
+            "step": 4,
+            "verb": "READ",
+            "line": 13
+          }
+        ]
+      },
+      "sop": [
+        {
+          "phase": 1,
+          "title": "分析與交付",
+          "steps": [
+            {
+              "step": 1,
+              "verb": "READ",
+              "text": "`READ` 使用者需求；使用者提供既有 PR、branch 或團隊 workflow 資訊時，一併讀取該資訊。"
+            },
+            {
+              "step": 2,
+              "verb": "THINK",
+              "text": "`THINK` 確定任務涉及需求規劃、既有變更審查、團隊 workflow 審查或 TBD／GitFlow 比較，以及需要分析的變更與整合技巧範圍。"
+            },
+            {
+              "step": 3,
+              "verb": "READ",
+              "text": "`READ` 判斷或說明 TBD 時，讀取 `rules/主幹整合-格式規範.md` 的所有 Rule，建立「主幹整合檢查清單」。"
+            },
+            {
+              "step": 4,
+              "verb": "READ",
+              "text": "`READ` 任務為需求規劃、既有 PR／branch 審查或團隊 workflow 審查，或涉及 Feature Flag、重構／相容性遷移、舊版維護時，讀取 `rules/變更拆分-格式規範.md` 的所有 Rule，建立「變更拆分檢查清單」。"
+            },
+            {
+              "step": 5,
+              "verb": "READ",
+              "text": "`READ` 需要小 bug、多日功能、大型重構、框架遷移、Feature Flag 或舊版 hotfix 的完整案例協助分析時，讀取 `references/cases.md` 的對應情境，建立「整合案例參考」。"
+            },
+            {
+              "step": 6,
+              "verb": "THINK",
+              "text": "`THINK` 依「主幹整合檢查清單」及本次已載入的「變更拆分檢查清單」「整合案例參考」，形成「分析結論」；規劃短期 branch 的整合方案時，依切小、每個小變更開短期 branch、工作期間與 merge 前同步 main、CI 驗證（build → lint → unit test → 必要的 integration test；PR → review → CI green → merge）、merge 後刪 branch 的順序安排工作；審查採短期 branch 流程的現況時，也使用該順序核對整合流程。"
+            },
+            {
+              "step": 7,
+              "verb": "WRITE",
+              "text": "`WRITE` 依「分析結論」準備「答覆草稿」；規劃結果沿用以下格式，審查與比較任務依需求說明判斷與依據。"
+            },
+            {
+              "step": 8,
+              "verb": "CHECK",
+              "text": "`CHECK` 逐條驗證「答覆草稿」是否符合使用者需求、「主幹整合檢查清單」與本次已載入的「變更拆分檢查清單」，核對步驟 6 的適用整合順序與步驟 7 的規劃格式，並核對「整合案例參考」與本次情境的差異（有載入時）；分析未通過時返回步驟 6，草稿未忠實表達分析或規劃格式時返回步驟 7。"
+            },
+            {
+              "step": 9,
+              "verb": "WRITE",
+              "text": "`WRITE` 向使用者交付通過檢查的答覆。"
+            }
+          ],
+          "completion": "完成條件：已交付符合本次任務的規劃、審查或比較結果，且適用檢查清單逐條通過。"
+        }
+      ]
+    }
+  ]
+}

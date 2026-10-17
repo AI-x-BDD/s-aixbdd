@@ -1,0 +1,3 @@
+官方是不是規定 branch 最長兩天？DORA 跟官方差在哪？我們用 merge commit、merge 同步 main、兩位 reviewer、GitLab，會違反 TBD 嗎？另外 branch 命名與禁止 direct push 是 TBD 硬性要求嗎？
+
+預先回覆：無目標 Skill 閘門；若出現則回覆「確認，僅提供規劃／審查，不操作 Git」，並依 E2 判失敗

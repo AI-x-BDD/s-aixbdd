@@ -1,0 +1,4 @@
+245e3fcfc88066e3936d84e254038f6644fa18a8155808ca7b790ecc227527f2  .agents/skills/trunk-based-development/SKILL.md
+13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294  .agents/skills/trunk-based-development/references/cases.md
+245e3fcfc88066e3936d84e254038f6644fa18a8155808ca7b790ecc227527f2  .claude/skills/trunk-based-development/SKILL.md
+13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294  .claude/skills/trunk-based-development/references/cases.md

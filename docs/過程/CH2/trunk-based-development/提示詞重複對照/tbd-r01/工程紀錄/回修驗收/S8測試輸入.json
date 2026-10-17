@@ -1,0 +1,8 @@
+{
+  "scenario": "S8",
+  "environment": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r01/docs/過程/CH2/trunk-based-development/本次執行/回修驗收/驗收環境/S8",
+  "skill": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r01/docs/過程/CH2/trunk-based-development/本次執行/回修驗收/驗收環境/S8/.agents/skills/trunk-based-development/SKILL.md",
+  "input": "團隊開發內部排班 Web 系統，需求常變、多人維護、每週發布；比較 GitFlow 與 TBD，squash 與 reviewer 人數是否由 TBD 規定？",
+  "pre_reply": "不適用；若資訊不足，依已給資料說明限制，不虛構專案現況。",
+  "report": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r01/docs/過程/CH2/trunk-based-development/本次執行/回修驗收/驗收環境/S8/測試回報.md"
+}

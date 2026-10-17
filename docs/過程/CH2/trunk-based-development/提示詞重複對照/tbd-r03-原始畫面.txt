@@ -1,0 +1,1000 @@
+         |
+     50 +
+     51 +觀察：S1～S3 原核心判準的通過紀錄保留；這些案例沒有覆蓋「未提 flag 的一般 workflow 審查仍檢查清理狀態」。S2 驗證的是已明示 flag 的規劃清理，不能替代這個情境。S4 的機械格式與載入鏈檢查仍可成立，但「
+         所有既有審查語意保留／S4 整體通過」的結論撤回，標為未通過待回修。
+     52 +
+     53 +分類：觀察到實跑輸出遺漏及規範用途遺漏；沒有發現互斥的文字衝突。原 R1 為已確認的結構改善根因，保留歷史；此次新增 R2。推論：R2 能解釋這次遺漏，但無法由單次畫面證明是唯一因果或量化發生率；「修正必定令
+         模型不再漏項」仍待相同判準實跑驗證。
+     54 +
+     55 +## 4. 演練表
+     56 +
+     57 +觀察：畫面只有讀檔操作與最終回答，沒有中間檢查清單及 THINK/CHECK trace；以下不將最終輸出反推成已觀察到的內部步驟。應產出以既有用途及目前 SOP 為基準。
+     58 +
+     59 +| 步驟 | 應載入 | 實際載入 | 應產出 | 實際產出 | 判定 |
+     60 +| --- | --- | --- | --- | --- | --- |
+     61 +| P1-1 | 任務輸入 | 觀察：畫面顯示完整輸入及讀主檔 | 任務輸入 | 觀察：回答對應三項現況 | 一致 |
+     62 +| P1-2 | 任務輸入 | 無內部 trace | workflow 審查分類 | 無中間產出 | 無證據 |
+     63 +| P1-3 | TBD判準所有 Rule | 觀察：cat 含此檔 | 具名清單 | 未展示清單；僅載入可核對 | 無證據 |
+     64 +| P1-4 | 任務、基本清單 | 已讀規則，內部使用無 trace | 基本判斷 | 無中間產出 | 無證據 |
+     65 +| P1-5 | 變更規劃所有 Rule | 觀察：cat 含此檔 | 具名清單 | 未展示清單；僅載入可核對 | 無證據 |
+     66 +| P1-6 | 任務、基本判斷、變更清單 | 已讀規則，內部使用無 trace | 拆分與技巧審查結果 | 無中間產出 | 無證據 |
+     67 +| P1-7 | Workflow評估所有 Rule | 觀察：cat 含此檔 | 具名清單 | 未展示清單；僅載入可核對 | 無證據 |
+     68 +| P1-8 | 任務、基本判斷、適用審查結果及兩清單 | 已讀規則，內部使用無 trace | 涵蓋既有審查用途的評估結論 | 無中間產出 | 無證據 |
+     69 +| P1-9 | 必要時案例／來源 | 未顯示讀取；此題非必讀 | 適用時的參考 | 無 | 無證據 |
+     70 +| P1-10 | 適用時案例與來源參考 | 未顯示載入 | 必要時具體化 | 無中間產出 | 無證據 |
+     71 +| P1-11 | 所有已載入清單 | 已讀規則，內部 CHECK 無 trace | 通過清單的結果 | 無中間產出 | 無證據 |
+     72 +| P2-1 | 變更方案（規劃任務時） | 此題為審查，不要求另排 PR | 不適用 | 未另排 PR | 一致 |
+     73 +| P2-2 | 基本判斷及已載入清單 | 觀察：主檔、三檔均已讀 | 完整呈現既有 workflow 審查；未知 flag 狀態待確認 | 觀察：完整回答沒有 flag 清理審查項 | 偏離 |
+     74 +| P2-3 | 任務及所有已載入清單 | 已讀規則，內部 CHECK 無 trace | 檢查交付並修正漏項 | 無 CHECK trace；最終漏項仍在 | 無證據 |
+     75 +
+     76 +第一個可觀察偏離點為 P2-2。從這裡往回追溯 P1-8 的評估依據、P1-6 的技巧審查依據及兩個 CHECK：O3 顯示依據本身未保留「workflow 要檢查 flag 清理狀態」的義務；不能直接將根因定位為輸出格式，也不能聲稱已觀
+         察到 P1-6 或 P1-8 的內部遺漏。
+     77 +
+     78 +## 5. 根因
+     79 +
+     80 +| 編號 | 位置 | 缺陷類型 | 說明與證據 | 反事實檢驗 |
+     81 +| --- | --- | --- | --- | --- |
+     82 +| R1（歷史） | 原 SKILL.md 規則分級至送出前檢查 | 流程缺陷（結構） | 觀察：原根因報告已確認；與這次行為失敗分開，不改寫成已證實的原版行為故障 | 沿用原報告，不以本次失敗否定模組化要求 |
+     83 +| R2（本次） | trunk-based-development／rules/Workflow評估-格式規範.md Rule 1 的 workflow 審查涵蓋範圍；對照 rules/變更規劃-格式規範.md Rule 2；使用鏈為主檔 P1-6、P1-8、P1-11、P2-2、P2-3 | 缺失 | 觀
+         察 O2、O3：技巧採用後清理的要求存在，但一般 workflow 清理狀態審查義務未表達。推論 I1：清單可以檢查技巧規劃的清理安排，卻無法以此保證一般審查涵蓋未知狀態；與 O1 的漏項相符 | 推論：假設完整承接原 work
+         flow 的這項審查義務，從 P2-2 往回檢查既有評估鏈，這個輸入的 flag 狀態只能判為待確認，不能指控未清理；重新交付及 CHECK 可滿足 E2、E5、E6 的此項要求，同時維持載入鏈 E3 與其他正確判斷。不涉及改變短期 b
+         ranch、紅燈、來源分級及規劃行為。這是語義反事實，不是實測成功或新規則草稿；實際效果待兩閘門後驗證。 |
+     84 +
+     85 +## 6. 被排除的假設
+     86 +
+     87 +| 假設 | 缺陷類型 | 排除依據 |
+     88 +| --- | --- | --- |
+     89 +| H1：只是規則未載入 | 未載入 | 觀察 O1：畫面明列讀取主檔及三檔的操作；本案不支持以載入更多檔作根因結論。工具輸出有折疊，不宣稱看見全部內部 token。 |
+     90 +| H2：正確要求已完整表達，只因 CHECK 不可檢查 | 不可檢查 | 觀察 O3：未完整表達的是一般審查義務；Rule 2 對已採用 flag 的清理要求本身具體可查。推論：比起純 CHECK 強度不足，缺失更直接符合靜態差異。 |
+     91 +| H3：兩個檔案對清理要求互相矛盾 | 衝突 | 觀察：所有檔案沒有要求保留永久 flag，也沒有禁止一般 workflow 清理審查；本案是用途遺漏，不是相反命令。 |
+     92 +| H4：只有模型隨機性或使用者沒提供 flag 資訊，Skill 無缺陷 | 非 Skill 問題 | 觀察 O2、O3 已能核對 Skill 內的用途缺失；未知資訊只限制能否判定已清理，不消除原審查項。推論：不能將問題完全歸因輸入或模型
+         ；仍保留採樣可能共同影響單次表現的限制。 |
+     93 +
+     94 +## 7. 影響範圍
+     95 +
+     96 +觀察：既有「修改前結構診斷.json」的 graph 顯示目標直接、間接呼叫者均為空；目標主檔亦無 DELEGATE。直接／間接委派此 Skill 的其他 Skill：無。受影響為兩側 trunk-based-development 的一般 workflow 審查用
+         途；原規劃、比較、hotfix 正常情境仍須保留回歸，不修改其他 Skill。
+     97 +
+     98 +觀察：首次施工快照與目前 agents、claude 全部檔案雜湊均等於原「首次施工技能雜湊.json」，核對結果另存「共同保留題證據核對.json」。原測試及快照未覆寫；本次只新增證據、診斷與紀錄狀態補註，未做 Skill 回
+         修或重跑。
+     99 +
+    100 +觀察與限制：畫面版本為 Codex CLI v0.163.0，頁尾為 GPT-6.1-Sol medium fast；總指揮回報全新 Herdr Codex session、同 model medium。畫面顯示的 worktree 為 tbd-b03，無來源受測檔案雜湊、有效 temperature/s
+         eed、後端部署 metadata 或機器可讀副作用前後狀態。依指定歸屬採納失敗證據，但不能獨立證明與本 worktree 首次版逐位元一致、完整設定完全相同或無檔案副作用。沒有相同 S5 原版實跑，所以不宣稱「原版實跑過、
+         後版實跑失敗」的成對結果；這不妨礙 O2、O3 的規範保留差異成立。
+    101 +
+    102 +## 8. 待確認事項
+    103 +
+    104 +1. 請確認：沿用 E1～E9，S5 對既有 workflow 審查的解讀是否正確、完整（未知的 Feature Flag 使用／清理狀態列待確認，不憑空判定）？
+    105 +2. 請確認：是否同意 R2 為「一般 workflow 清理審查義務缺失」，並保留 R1 的結構根因及已確認的模組化方向？
+    106 +3. 仍缺證據如第 7 節：來源版本雜湊、完整設定／副作用 metadata、S5 原版配對實跑；目前不因此索取其他 run。這些限制是否另有本題可用證據補充？單次輸出與靜態缺失不等於已證明修復效果。
+    107 +
+    108 +### 確認紀錄
+    109 +
+    110 +- 2026-10-17：總指揮指示保留首次快照與原測試，因共同保留題失敗返回根因分析，不改判準、不只重跑挑成功；目前停於 skill-engineering Phase 2 步驟 8，尚待本次根因明確確認。
+
+• Edited 4 files (+18 -2)
+  └ docs/過程/CH2/trunk-based-development/本次執行/前後比較.md (+2 -0)
+    2
+    3 +> 共同保留題失敗後補註（2026-10-17）：整體驗收未通過，已返回 Phase 2，見「共同保留題失敗根因分析.md」。以下保留首次比較紀錄；S1～S3 原評分不變，S4「原審查語意全保留／整體通過」結論撤回。S5 未列 Featur
+       e Flag 用後清理待確認／審查項，為失敗。首次快照與原始輸出保留，尚未回修或重跑。
+    4 +
+    5  ## 結構差異
+
+  └ docs/過程/CH2/trunk-based-development/本次執行/工程藍圖.md (+10 -2)
+    304
+    305 -尚未施工。以下僅是藍圖自檢，不是修改後驗收結果。
+    305 +首次施工已完成，但整體驗收未通過；共同保留題 S5 失敗，已依 Phase 5 步驟 13 返回 Phase 2，尚待「共同保留題失敗根因分析.md」確認。W1～W4 的已完成表示施工完成，不代表驗收通過。已確認的設計及約束分配在
+         本次診斷階段不改寫。
+    306 +
+    307 +- 兩側首次施工結構診斷各為 0 error、0 warning；這只驗證機械結構。
+    308 +- 已執行規定的 `scripts/sync-skills.sh --from agents` 及 `--check`，退出狀態均為 0、兩邊一致；目標外內容雜湊不變，詳同步命令結果與前後雜湊紀錄。同步輸出中的目標端獨有項目保留，未刪除其他 Skill。
+    309 +- S1～S3 依原判準核心通過，原始輸出、輸入及副作用核對保留；S4 的格式／載入鏈通過，但原審查語意全保留的結論被 S5 及靜態對照推翻，整體改記未通過。
+    310 +- S5 已讀主檔與三規則，仍漏 Feature Flag 清理審查／待確認項；採納總指揮提供的指定原始畫面，保存逐位元複本及來源雜湊。來源版本與模型設定限制見失敗根因報告。
+    311 +- 首次施工快照及目前目標兩側雜湊均未變，未回修或重跑挑結果；未 commit／push。
+    312 +
+    313 +以下保留原藍圖自檢紀錄，不能取代修改後實跑結果：
+    314
+        ⋮
+    317  - 按需載入檢查：條件、相對路徑、讀取範圍、具名清單、同 Phase 緊鄰使用、逐條 CHECK 及修正回路均在 To-Be 呈現。
+    310 -- 尚未宣稱修改後 audit、同步、後測或行為改善通過；施工後再填工作項狀態、結構診斷、同步輸出、逐案結果與前後比較。
+    318 +- 藍圖確認時尚未執行 audit、同步與後測；施工後結果已補於本節上方及前後比較。未證明行為改善，現因 S5 失敗停止於根因確認。
+    319
+
+  └ docs/過程/CH2/trunk-based-development/本次執行/提交訊息草稿.md (+4 -0)
+    22  較短的摘要，仍以 refactor 表達結構改造；本次沒有 breaking change 或 issue footer。
+    23 +# 狀態補註
+    24 +
+    25 +共同保留題失敗，整體尚未驗收完成。以下為既存首次施工草稿，暫不作為完成交付；保留紀錄，不 commit 或 push。待根因、藍圖與全部驗收完成後再依最終差異更新。
+    26 +
+
+  └ docs/過程/CH2/trunk-based-development/本次執行/模組化逐項驗收.md (+2 -0)
+    2
+    3 +> 共同保留題失敗後補註（2026-10-17）：以下為首次靜態驗收原紀錄。機械格式及載入鏈結果保留；「既有 workflow 審查語意全保留」判斷錯誤，S4 整體改記未通過。原版「Feature Flag 有沒有清理？」的審查義務未完整
+       承接，詳「共同保留題失敗根因分析.md」。本頁原內容保留供追溯，不能作為整體完成證據。
+    4 +
+    5  ## 規則與正反例
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +12 lines
+  └ 兩側目標與首次快照均未變；報告八節及十四步演練齊備。
+
+• 整體驗收未通過，已返回根因分析。
+
+  R2：首次施工保留「使用 flag 後清理」規則，卻漏了承接一般 workflow 的清理狀態審查義務。三份規則已讀取，不能歸因未載入。
+
+  已保存證據、保留首次快照及原測試，未回修或重跑。詳見失敗根因報告 (docs/過程/CH2/trunk-based-development/本次執行/共同保留題失敗根因分析.md)。
+
+  請總指揮確認 R2 與沿用驗收條件。skill-engineering (.agents/skills/skill-engineering/SKILL.md) Phase 2 步驟 8 要求「未明確確認時停止執行」，目前停在此閘門。
+
+  Worked for 8m 8s • 9:47 AM
+
+
+› 總指揮已讀完整共同保留題失敗根因分析，確認E1–E9、共同題S5及R2：原workflow的flag清理審查義務在重構時未完整保留，不只是讀檔問題。已另核對兩個共同題受測worktree兩側檔案hash皆與你的首次施工快照相同，證據在主
+  樹提示詞重複對照/首次候選受測版本核對.json，可只讀自己c03a/b項。請提出局部回修藍圖，補回原有workflow清理審查用途與對應正反例，不重寫其他正確規則、不擴大領域行為；保留首次失敗，藍圖後等我確認。
+
+
+• 我會沿用已確認的 E1–E9、S5 與 R2，補記版本雜湊證據，提出局部回修藍圖後停在確認閘門。
+
+• Ran cat .agents/skills/skill-engineering/rules/重新設計-格式規範.md .agents/skills/skill-engineering/rules/約束分配-格式規範.md .agents/skills/skill-engineering/rules/施工委派-格式規範.md .agents/skills/
+  │ skill-engineering/templates/engineering-blueprint.md .agents/skills/skill-engineering/templates/engineering-blueprint.example.md
+  └ # Rule 1 - To-Be 必須從驗收條件推導
+
+    - To-Be 的 Phase、步驟與約束必須從驗收條件推導；優化模式另依已確認的根因推導。
+    +680 lines (⌃t to view transcript)
+
+• Explored
+  └ Read AGENTS.md, Workflow評估-格式規範.md, 變更規劃-格式規範.md, SKILL.md (trunk-based-development skill), 工程藍圖.md
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ import json
+  │ … +6 lines
+  └ list
+    list
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ import json
+  │ … +7 lines
+  └ {
+      "name": "tbd-c03a",
+      "snapshot": {
+    +23 lines (⌃t to view transcript)
+
+• Explored
+  └ Read engineering-blueprint.md, 施工委派-格式規範.md, SKILL.md (skill-form-rule skill), 工程藍圖.md
+
+• c03a、c03b 的版本核對紀錄均與首次快照相符，兩側也一致，已補足先前的版本歸屬限制。局部藍圖將只擴充既有 Workflow 評估 Rule 1，補回 flag 清理審查及未知狀態的正反例，沿用現有 READ、具名清單與 CHECK。
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +12 lines
+  └ {"acceptance": "\n\n沿用根因閘門確認版本，以下列出全文，未變更判準。\n\n| 編號 | 驗收條件 | 來源 | 適用範圍 |\n| --- | --- | --- | --- |\n| E1 | 主檔含可依序執行的 SOP 與完成條件；判斷規則置於有主題邊界
+    的 RuleFile，無為檔數拆分 | 本次 | 通用 |\n| E2 | 每份 RuleFile 的每個 Rule 都有可核對規則、Good Example、Bad Example；不改變原本正確的約束 | 本次 | 通用 |\n| E3 | 每個外部規則載入都列明觸發條件、相對路
+    徑、讀取範圍並建立具名清單；使用步驟及 CHECK 明確引用清單，失敗時有修正回路 | 本次 | 通用 |\n| E4 | 小需求可用短期 branch/小 PR 規劃，說明技巧、main 可工作理由與含 review 等待的壽命；維持同步、CI/
+    +1 line (⌃t to view transcript)
+
+• Edited 2 files (+39 -0)
+  └ docs/過程/CH2/trunk-based-development/本次執行/共同保留題失敗根因分析.md (+3 -0)
+    109
+    110 +- 2026-10-17 根因閘門確認：總指揮已讀完整報告並確認 E1～E9、共同題 S5 與 R2：「原 workflow 的 flag 清理審查義務在重構時未完整保留，不只是讀檔問題。」准許提出局部回修藍圖，未核准回修施工。
+    111 +- 補充觀察 O4：依總指揮授權，只讀主樹「首次候選受測版本核對.json」的 tbd-c03a／tbd-c03b 項；兩項的 snapshot 全部等於本次「首次施工技能雜湊.json」，agents_equal、claude_equal 均為 true，摘錄另存「共
+         同題版本核對摘錄.json」。因此第 3、7、8 節中來源版本雜湊／歸屬限制已獲此核對證據補足；原先限制文字保留歷史。有效採樣設定、執行中副作用 metadata 與 S5 原版配對實跑的限制仍在，未藉此聲稱已取得 c03b 原
+         始輸出或新測試結果。
+    112 +
+    113  - 2026-10-17：總指揮指示保留首次快照與原測試，因共同保留題失敗返回根因分析，不改判準、不只重跑挑成功；目前停於 skill-engineering Phase 2 步驟 8，尚待本次根因明確確認。
+
+  └ docs/過程/CH2/trunk-based-development/本次執行/共同題版本核對摘錄.json (+36 -0)
+     1 +{
+     2 +  "來源": "/Volumes/data/Projects-practice/s-aixbdd/docs/過程/CH2/trunk-based-development/提示詞重複對照/首次候選受測版本核對.json",
+     3 +  "讀取範圍": [
+     4 +    "tbd-c03a",
+     5 +    "tbd-c03b"
+     6 +  ],
+     7 +  "項目": [
+     8 +    {
+     9 +      "name": "tbd-c03a",
+    10 +      "snapshot": {
+    11 +        "SKILL.md": "ee0ec4741fea85c62d9212c04e222fb304f3dc6e099a86cb77cd41a56e81a88c",
+    12 +        "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+    13 +        "rules/Workflow評估-格式規範.md": "2d5202fc57cf4a2481a3a4fdf1728d9af63a325231d0050728f7671a785ebd6a",
+    14 +        "rules/變更規劃-格式規範.md": "5322976d2aed7c8b514e4645ca327d1a30a75d2f73cae76a96c570dbe40b6486",
+    15 +        "rules/TBD判準-格式規範.md": "3b24234b93d3dab9874aae779666b646379e624e9e950d9b91c432aadcb2ffea"
+    16 +      },
+    17 +      "agents_equal": true,
+    18 +      "claude_equal": true,
+    19 +      "git_status": " M .agents/skills/trunk-based-development/SKILL.md\n M .claude/skills/trunk-based-development/SKILL.md\n?? .agents/skills/trunk-based-development/rules/\n?? .claude/skills/trunk-
+        based-development/rules/\n"
+    20 +    },
+    21 +    {
+    22 +      "name": "tbd-c03b",
+    23 +      "snapshot": {
+    24 +        "SKILL.md": "ee0ec4741fea85c62d9212c04e222fb304f3dc6e099a86cb77cd41a56e81a88c",
+    25 +        "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+    26 +        "rules/Workflow評估-格式規範.md": "2d5202fc57cf4a2481a3a4fdf1728d9af63a325231d0050728f7671a785ebd6a",
+    27 +        "rules/變更規劃-格式規範.md": "5322976d2aed7c8b514e4645ca327d1a30a75d2f73cae76a96c570dbe40b6486",
+    28 +        "rules/TBD判準-格式規範.md": "3b24234b93d3dab9874aae779666b646379e624e9e950d9b91c432aadcb2ffea"
+    29 +      },
+    30 +      "agents_equal": true,
+    31 +      "claude_equal": true,
+    32 +      "git_status": " M .agents/skills/trunk-based-development/SKILL.md\n M .claude/skills/trunk-based-development/SKILL.md\n?? .agents/skills/trunk-based-development/rules/\n?? .claude/skills/trunk-
+        based-development/rules/\n"
+    33 +    }
+    34 +  ],
+    35 +  "本次核對": "兩個項目的 snapshot 均逐項等於本次首次施工技能雜湊.json，agents_equal 與 claude_equal 均為 true。未讀取其他 run 結果。"
+    36 +}
+
+• Added docs/過程/CH2/trunk-based-development/本次執行/局部回修工程藍圖.md (+337 -0)
+      1 +# 工程藍圖：trunk-based-development－補回 workflow 的 flag 清理審查
+      2 +
+      3 +- 模式：局部回修；As-Is 為首次施工技能，不是原始基線。
+      4 +- 紀錄目錄：`docs/過程/CH2/trunk-based-development/本次執行/`
+      5 +- 根因報告：「共同保留題失敗根因分析.md」；R1 歷史結構根因保留，本次修正已確認 R2。
+      6 +- 確認紀錄：2026-10-17 總指揮確認 E1～E9、S5、R2，授權提出局部回修藍圖；本藍圖尚待第二閘門確認，尚未施工。原「工程藍圖.md」「工程藍圖初版.md」、首次快照、失敗輸出與原測試均保留。
+      7 +- 版本證據：僅摘錄主樹指定核對檔的 c03a／c03b；兩個項目的 snapshot 均與本次首次快照相同且兩側一致，見「共同題版本核對摘錄.json」。未讀其他 run 或 c03b 輸出。
+      8 +
+      9 +## 1. 驗收條件
+     10 +
+     11 +
+     12 +沿用根因閘門確認版本，以下列出全文，未變更判準。
+     13 +
+     14 +| 編號 | 驗收條件 | 來源 | 適用範圍 |
+     15 +| --- | --- | --- | --- |
+     16 +| E1 | 主檔含可依序執行的 SOP 與完成條件；判斷規則置於有主題邊界的 RuleFile，無為檔數拆分 | 本次 | 通用 |
+     17 +| E2 | 每份 RuleFile 的每個 Rule 都有可核對規則、Good Example、Bad Example；不改變原本正確的約束 | 本次 | 通用 |
+     18 +| E3 | 每個外部規則載入都列明觸發條件、相對路徑、讀取範圍並建立具名清單；使用步驟及 CHECK 明確引用清單，失敗時有修正回路 | 本次 | 通用 |
+     19 +| E4 | 小需求可用短期 branch/小 PR 規劃，說明技巧、main 可工作理由與含 review 等待的壽命；維持同步、CI/review、刪 branch 的流程 | 既有 | 通用 |
+     20 +| E5 | 大變更保留切小優先、flag 隱藏及清理、abstraction 遷移、新舊 API 並存的適用條件與安全整合順序 | 既有 | 通用 |
+     21 +| E6 | 審查區分官方/DORA/團隊、核心/建議/團隊決策；不把兩天或 merge 方法當硬性標準，指出紅燈優先及導入前提，保留 GitFlow 比較 | 既有 | 通用 |
+     22 +| E7 | 舊版本 hotfix 先 main 修復驗證再 cherry-pick release；release 不作長期新功能線 | 既有 | 通用 |
+     23 +| E8 | 前後相同情境與判準使用乾淨新對話；保存輸入、完整原始輸出、設定與限制、結構/行為分開比較；兩側一致且結構無 error | 本次 | 個案 |
+     24 +| E9 | 只修改目標兩側與本次指定目錄；兩個確認閘門各別通過；提供草稿且不 commit/push/家目錄安裝 | 本次 | 個案 |
+     25 +
+     26 +### 從驗收推導步驟目的，再對照舊版
+     27 +
+     28 +| To-Be 步驟 | 目的與後續使用 | 追溯 |
+     29 +| --- | --- | --- |
+     30 +| P1-1 | 取得任務輸入，供所有判斷使用 | E1、E4～E7；必要輸入 |
+     31 +| P1-2 | 辨識本次任務分支，決定適用載入 | E1、E3 |
+     32 +| P1-3～4 | 載入基本判準，形成來源/分級判斷 | E2、E3、E6 |
+     33 +| P1-5～6 | 按需載入拆分/技巧規則，形成變更方案或相關審查結果 | E2～E5、E7 |
+     34 +| P1-7～8 | 按需載入導入/比較規則，形成評估結論 | E2、E3、E6 |
+     35 +| P1-9～10 | 按需讀案例/來源，將參考用於具體方案或評估 | E3、E5、E6 |
+     36 +| P1-11 | 逐條核對所有適用清單，未過返回判斷 | E3 |
+     37 +| P2-1 | 安排原有分支/同步/驗證/合併/清理流程 | E4 |
+     38 +| P2-2 | 呈現任務所需結果，保留原規劃格式 | E4～E7 |
+     39 +| P2-3 | 核對交付內容，未過則修正再交付 | E3 |
+     40 +
+     41 +E8/E9 為本次工程交付條件，不新增到目標 Skill 的一般規則。
+     42 +
+     43 +
+     44 +E1～E9 不變，完整判準沿用原根因報告、測試輸入與判準及已確認失敗根因報告；本藍圖不放寬任何情境。S5 的未知狀態列待確認是原 workflow 審查用途的保留，不是新增領域政策。
+     45 +
+     46 +先由驗收條件推導目的：E2、E5、E6 要求規劃時的清理安排與一般 workflow 清理狀態審查兩種用途都保留；E1、E3 要求此判斷留在按需 RuleFile，透過既有 READ／使用／CHECK 鏈運作；E4、E7 要求正常規劃、hotfix 不
+         被改動。由此需要的是既有評估步驟能取得完整審查義務，無需新增 Phase、步驟或部位。再與 As-Is 比較，僅 Workflow評估 Rule 1 的涵蓋範圍不同，其餘追溯相同者逐字保留。
+     47 +
+     48 +## 2. To-Be SOP
+     49 +
+     50 +
+     51 +以下為完整主檔提案，尚未寫入目標 Skill。frontmatter 逐字保留。
+     52 +
+     53 +````markdown
+     54 +---
+     55 +name: trunk-based-development
+     56 +description: 依主幹式開發（Trunk-Based Development，TBD）規劃與審查工作拆分、branch 策略與整合方式。用在：收到需求或 ticket 時規劃要拆成幾個 PR、判斷一個變更該直接走短期 branch 還是需要 Feature Flag
+         ／Branch by Abstraction／新舊並存／Release Branch、大型重構或框架遷移（例如 Vuex → Pinia、Axios → Fetch）如何每天安全 merge main、舊版本 hotfix 怎麼修、檢查某個 branch 或 PR 是否活太久或太大、審查團
+         隊的 Git workflow 算不算 TBD，以及比較 TBD 與 GitFlow。
+     57 +---
+     58 +
+     59 +# SOP
+     60 +
+     61 +## Phase 1 -- 分析需求與判斷策略
+     62 +
+     63 +1. `READ` 使用者需求與已提供的專案規範；有既有 branch、PR、CI 或團隊 workflow 資訊時，一併讀取作為「任務輸入」。
+     64 +2. `THINK` 依「任務輸入」判定本次涉及變更規劃、workflow 審查、導入評估或 GitFlow 比較，可同時適用多種任務。
+     65 +3. `READ` 進行變更規劃、審查、導入評估或 GitFlow 比較時，讀取 `rules/TBD判準-格式規範.md` 的所有 Rule，建立「TBD判準檢查清單」。
+     66 +4. `THINK` 依「任務輸入」與已載入的「TBD判準檢查清單」，判定相關事實對應的規則來源與分級，形成「基本判斷」。
+     67 +5. `READ` 任務涉及變更規劃、branch 或 PR 審查、技巧使用審查或團隊 workflow 審查時，讀取 `rules/變更規劃-格式規範.md` 的所有 Rule，建立「變更規劃檢查清單」。
+     68 +6. `THINK` 已載入「變更規劃檢查清單」時，依「任務輸入」、「基本判斷」與該清單，形成「變更方案」或「拆分與技巧審查結果」。
+     69 +7. `READ` 任務涉及團隊 workflow 審查、導入評估或 GitFlow 比較時，讀取 `rules/Workflow評估-格式規範.md` 的所有 Rule，建立「Workflow評估檢查清單」。
+     70 +8. `THINK` 已載入「Workflow評估檢查清單」時，依「任務輸入」、「基本判斷」、適用時的「拆分與技巧審查結果」及已載入的「TBD判準檢查清單」與「Workflow評估檢查清單」，形成符合任務範圍的「評估結論」。
+     71 +9. `READ` 需要完整情境拆法協助具體化方案或說明評估時，讀取 `references/cases.md` 中相應案例；需要核對規則來源時讀取其中的參考資料，建立「案例與來源參考」。
+     72 +10. `THINK` 已載入「案例與來源參考」時，將相應案例對照「變更方案」、「拆分與技巧審查結果」或「評估結論」，具體化本次內容。
+     73 +11. `CHECK` 逐條驗證已載入的「TBD判準檢查清單」，以及適用時的「變更規劃檢查清單」與「Workflow評估檢查清單」；未通過時返回本 Phase 對應的判斷步驟修正並重新檢查。
+     74 +
+     75 +完成條件：已依任務形成「基本判斷」及適用的「變更方案」、「拆分與技巧審查結果」或「評估結論」，並通過所有已載入檢查清單。
+     76 +
+     77 +## Phase 2 -- 安排整合與交付
+     78 +
+     79 +1. `THINK` 涉及變更規劃時，依「變更方案」安排整合流程：每個小變更開短期 branch，工作期間同步 main，merge 前 branch 要跟 main 保持最新；build → lint → unit test → 必要的 integration test；PR → review
+          → CI green → merge；merge 後刪 branch。
+     80 +2. `WRITE` 依「基本判斷」及已載入的檢查清單，向使用者呈現「變更方案」與其整合安排、「拆分與技巧審查結果」或符合任務範圍的「評估結論」。規劃結果用這個格式給出：
+     81 +
+     82 +   ```text
+     83 +   PR 1：<變更>  — 使用技巧：<無／Feature Flag／Abstraction／新舊並存>
+     84 +   PR 2：...
+     85 +   每個 PR merge 後 main 為什麼仍可工作：<說明>
+     86 +   預估 branch 壽命（含等 review）：<時間>
+     87 +   ```
+     88 +
+     89 +3. `CHECK` 交付內容符合「任務輸入」與所有已載入的檢查清單；未通過時返回 Phase 1 對應的判斷步驟或本 Phase 的整合安排步驟修正，再更新交付內容並重新檢查。
+     90 +
+     91 +完成條件：使用者要求的規劃、審查、導入評估或比較已呈現，且交付內容符合所有已載入檢查清單。
+     92 +````
+     93 +
+     94 +### 模組關係與界線
+     95 +
+     96 +```mermaid
+     97 +flowchart TD
+     98 +    S[主檔 SOP] --> B[TBD 判準：所有任務的基本判斷]
+     99 +    S -->|規劃或 branch/PR/技巧/workflow 審查| P[變更規劃]
+    100 +    S -->|團隊 workflow、導入或比較| W[Workflow 評估]
+    101 +    S -->|需要具體案例或來源| R[既有 cases.md]
+    102 +    B --> C[依具名清單使用、CHECK 與修正]
+    103 +    P --> C
+    104 +    W --> C
+    105 +    C --> O[整合安排與交付，再次 CHECK]
+    106 +```
+    107 +
+    108 +三個檔案依「判準」「拆分與技巧」「導入與比較」分主題，各含 3／5／2 條 Rule。沒有把每個技巧拆成單檔。小修正不載入 Workflow評估；單純比較不載入變更規劃；完整團隊審查同時需要基本判準、拆分/技巧與導入評
+         估。規則檔路徑只在主檔 READ 提名，首次使用緊鄰 READ 且位於同一 Phase。
+    109 +
+    110 +
+    111 +以上 frontmatter、SOP 及完成條件與首次施工版逐字相同。回修只修改已存在的規則內容；主檔不新增 flag 專用提醒或補償步驟。
+    112 +
+    113 +### 每步目的與追溯
+    114 +
+    115 +| 元素 | 目的 | 驗收條件／約束 |
+    116 +| --- | --- | --- |
+    117 +| P1-1 | 取得已提供需求與現況 | E1；C1 |
+    118 +| P1-2 | 判定本次任務，可複合 | E1、E3；C2 |
+    119 +| P1-3 | 載入基本規則並具名 | E1～E3；C23 |
+    120 +| P1-4 | 形成來源及分級判斷 | E4、E6；C3～C9、C23 |
+    121 +| P1-5 | 按任務載入變更規劃清單 | E1～E3；C24 |
+    122 +| P1-6 | 形成變更方案／技巧審查結果 | E4、E5、E7；C10～C16、C24 |
+    123 +| P1-7 | 按任務載入 workflow 清單，含修復後義務 | E1～E3、E6；C25 |
+    124 +| P1-8 | 依具名清單形成適用的評估結論 | E2、E5、E6；C3、C17～C19、C25、C29 |
+    125 +| P1-9 | 必要時載入案例／來源 | E3；C22 |
+    126 +| P1-10 | 用已載入參考具體化 | E3；C26 |
+    127 +| P1-11 | 逐條核對已載入清單，失敗回判斷 | E2、E3；C27（涵蓋清單內 C29） |
+    128 +| P1 完成條件 | 概述分析及清單通過 | E1、E3；不另存判斷約束 |
+    129 +| P2-1 | 規劃任務安排整合順序 | E4；C20 |
+    130 +| P2-2 | 呈現適用方案／審查／結論 | E2～E7；C21，使用已載入清單 |
+    131 +| P2-3 | 核對交付並回修重檢 | E2、E3；C28（涵蓋清單內 C29） |
+    132 +| P2 完成條件 | 概述交付且清單通過 | E1、E3；不另存判斷約束 |
+    133 +
+    134 +### 唯一修改部位的 To-Be
+    135 +
+    136 +目標：`rules/Workflow評估-格式規範.md` Rule 1。Rule 2 逐字不動。下列為 Rule 1 完整預期內容，非新增另一份規範：
+    137 +
+    138 +```markdown
+    139 +# Rule 1 - 審查 workflow 並依前提與情境評估導入
+    140 +
+    141 +- 評估導入時，必須檢查自動 build、自動 test、快速 CI、小批次開發能力與快速 code review。
+    142 +- 必須指出經驗不足、缺 gated checks、沒有「broken trunk 優先修復」紀律時的風險；DORA 指出這類團隊實行 TBD 反而可能增加錯誤與返工。
+    143 +- 缺少上述前提時，必須先指出缺的前提，不得直接建議全面導入。
+    144 +- 可以依適用情境說明價值：SaaS、Web App、Backend API、Frontend App、Microservice、企業內部系統、頻繁發布、多人共同維護的 codebase。需求一直變、多人同時改、需要頻繁 release 三者同時成立時價值最高。
+    145 +- 審查團隊 workflow 時，必須檢查 Feature Flag 的用後清理狀態；未提供使用與清理狀態時，必須列為待確認的審查項，不得推定已使用或未清理。
+    146 +
+    147 +## Good Example
+    148 +
+    149 +### Example 1
+    150 +
+    151 +先指出團隊缺少的前提，沒有把改 branch 命名當成完成導入。
+    152 +
+    153 +- 情境：SaaS 團隊沒有自動測試，review 需要三天，打算明天全面導入 TBD。
+    154 +- 評估：先補自動 build/test、快速 CI 與 gated checks，縮短 review，建立 broken trunk 優先修復紀律，再逐步導入；團隊仍有小批次開發能力與經驗需要評估。
+    155 +
+    156 +### Example 2
+    157 +
+    158 +一般 workflow 審查仍檢查 flag 清理，資訊不足時明列待確認。
+    159 +
+    160 +- 情境：團隊有長期 develop 與 release-next、PR review 常等待兩天、CI 變紅後仍繼續開發，要求檢查是否符合 TBD。
+    161 +- 評估：針對長期開發線、含 review 的 branch 壽命與紅燈處理指出問題；另列「是否使用 Feature Flag，以及用後是否清理」為待確認的審查項，不把未知狀態判為已使用或未清理。
+    162 +
+    163 +## Bad Example
+    164 +
+    165 +### Example 1
+    166 +
+    167 +相同團隊缺少安全前提，卻被直接建議全面導入。
+    168 +
+    169 +- 情境：SaaS 團隊沒有自動測試，review 需要三天，打算明天全面導入 TBD。
+    170 +- 評估：明天把 branch 改名為 `short-task/*`，所有人開始直接整合 main，就算完成導入。
+    171 +
+    172 +### Example 2
+    173 +
+    174 +相同 workflow 審查漏掉 flag 清理狀態，或把未知狀態當事實。
+    175 +
+    176 +- 情境：團隊有長期 develop 與 release-next、PR review 常等待兩天、CI 變紅後仍繼續開發，要求檢查是否符合 TBD。
+    177 +- 評估：只列長期線、review、紅燈及導入前提，完全不列 Feature Flag 清理審查項；或在沒有資訊時直接斷言「團隊使用了 flag 而且沒有清理」。
+    178 +```
+    179 +
+    180 +原 Rule 1 四個條列與既有正反例正文逐字保留，只擴充標題、新增審查條列、為原例加 Example 1 層級並補入 Example 2。例子示範既有判斷，不產生額外數字門檻、輸出模板或必須使用 flag 的政策。變更規劃 Rule 2
+         仍是規劃時如何控制曝光及安排清理的唯一規範位置；C29 規範的是一般 workflow 的檢查涵蓋範圍及未知資訊處理，兩者不可互相替代。
+    181 +
+    182 +## 3. 差異表
+    183 +
+    184 +### 刪除
+    185 +
+    186 +無整檔、Rule、步驟或既有判準刪除。唯一文字替換是 Rule 1 原標題改為同時涵蓋 workflow 審查與導入評估；沒有另留舊標題。未授權任何其他刪除。
+    187 +
+    188 +### 修改、合併、改換存放位置與新增
+    189 +
+    190 +| 元素 | 動作 | 內容 | 追溯 |
+    191 +| --- | --- | --- | --- |
+    192 +| Workflow評估 Rule 1 標題 | 修改 | 擴充為審查 workflow 與導入評估 | R2；C17、C18、C29 |
+    193 +| Workflow評估 Rule 1 條列 | 修改既有部位內容 | 保留四條，補回清理狀態審查及未知時待確認 | E2、E5、E6；R2；C29 |
+    194 +| 同一 Rule 正反例 | 修改 | 原例正文保留並標 Example 1，新增同題 Example 2 對照漏項及無依據斷言 | E2；C29 |
+    195 +
+    196 +### 保留
+    197 +
+    198 +| 元素 | 追溯 | 約束 |
+    199 +| --- | --- | --- |
+    200 +| frontmatter name／description | 原用途、觸發範圍符合 E1、E2，不改觸發 | 概述，不另存判斷細節 |
+    201 +| Phase 1 全部 11 步與完成條件 | E1～E7；每步追溯見第 2 節 | C1～C19、C22～C27；使用新增清單內容 C29 |
+    202 +| Phase 2 全部 3 步與完成條件 | E1～E7；每步追溯見第 2 節 | C20、C21、C28；依清單交付／檢核 |
+    203 +| TBD判準檔案及 Rule 1／2／3 的條列與全部正反例 | E2、E4、E6 | C3～C4／C5～C8／C9 |
+    204 +| 變更規劃檔案及 Rule 1／2／3／4／5 的條列與全部正反例 | E2、E4、E5、E7 | C10～C11／C12／C13／C14／C15～C16 |
+    205 +| Workflow評估 Rule 1 原四條及原正反例正文 | E6，既有導入／適用性仍正確 | C17、C18 |
+    206 +| Workflow評估 Rule 2 標題、條列及全部正反例 | E2、E6 | C19 |
+    207 +| references/cases.md 全文 | E2、E4～E7；相應案例與來源示範 | 示範 C3～C19，不另存新規範 |
+    208 +| 樣板組與腳本 | 無，As-Is 亦無 | 無 |
+    209 +
+    210 +已依刪除→改寫→改換存放位置→新增順序考慮：刪除正確導入規則不能恢復審查用途；只改寫四個正確導入條列會改變其原意；把變更規劃 Rule 2 搬到 workflow 會傷害規劃用途；因此在既有同主題 Rule 1 內擴充一個遺漏
+         的審查條列及正反例。不是新增檔案、Rule 或 SOP，也不重寫其他正確規則。
+    211 +
+    212 +## 4. 淨增減
+    213 +
+    214 +| 項目 | As-Is 首次施工 | To-Be 回修 | 增減 |
+    215 +| --- | --- | --- | --- |
+    216 +| Phase | 2 | 2 | 0 |
+    217 +| SOP 步驟 | 14 | 14 | 0 |
+    218 +| RuleFile | 3 | 3 | 0 |
+    219 +| Rule | 10（3＋5＋2） | 10（3＋5＋2） | 0 |
+    220 +| 樣板組 | 0 | 0 | 0 |
+    221 +| 腳本 | 0 | 0 | 0 |
+    222 +| references 檔案 | 1 | 1 | 0 |
+    223 +
+    224 +內容增減：僅 Rule 1 更換標題、新增一個審查條列與一組正反例；既有正反例正文不改。C29 是工程約束編號新增、原用途補回，不是新增 TBD 領域行為。無可合理刪去的正確既有要求，故無整項刪除。
+    225 +
+    226 +## 5. 約束分配表
+    227 +
+    228 +
+    229 +位置簡寫對應第 2 節同名規則檔。每條約束只有一個規範位置；範例可示範，SOP 只引用載入結果。
+    230 +
+    231 +| 編號 | 約束 | 所屬步驟 | 存放位置 | 理由 |
+    232 +| --- | --- | --- | --- | --- |
+    233 +| C1 | 讀取需求、已提供規範及存在的現況資訊 | P1-1 | P1-1 內文 | E1；輸入流程留 SOP |
+    234 +| C2 | 辨識規劃/審查/導入/比較，可複合 | P1-2 | P1-2 內文 | E1、E3；任務分支留 SOP |
+    235 +| C3 | 區分官方、DORA、團隊規則來源 | P1-4、P1-8 | TBD判準 Rule 1 | E6；語意分類需判斷，非腳本/固定檔案結構 |
+    236 +| C4 | 官方通常 1～2 天、DORA <1 天，兩天非硬性國際標準 | P1-4 | TBD判準 Rule 1 | E6；來源與強度需判斷，腳本/樣板不能保證 |
+    237 +| C5 | 單一 trunk/main、沒有長期開發分支，main 可工作及可發布 | P1-4 | TBD判準 Rule 2 | E4、E6；工作流語意判斷，非固定結構 |
+    238 +| C6 | 頻繁整合；DORA 至少每日一次，多次更好 | P1-4 | TBD判準 Rule 2 | E4、E6；需判斷頻率與規範來源 |
+    239 +| C7 | CI 紅燈立即先修或 revert；DORA 建議每 commit 自動 build/test、幾分鐘回饋 | P1-4 | TBD判準 Rule 2 | E6；需判斷優先性及來源，非單一機械輸出 |
+    240 +| C8 | 短命、少量 active branches、不靠 code freeze；長期多人共用 feature 線、不清理等錯誤模式 | P1-4 | TBD判準 Rule 2 | E6；建議與錯誤模式判斷；刪 branch 動作另屬 C20 |
+    241 +| C9 | merge 方法、同步方法、命名、reviewer 數、平台、direct push 政策由團隊決定 | P1-4 | TBD判準 Rule 3 | E6；需分類，非固定結構 |
+    242 +| C10 | 小批次優先，Story/Ticket 不等於單 PR；小變更短 branch，不能完成再切或依原因選技巧；不以長分支藏未完成工作 | P1-6 | 變更規劃 Rule 1 | E4、E5；拆分及策略選擇需語意判斷 |
+    243 +| C11 | branch 壽命含 review 等待；明天仍存在須檢查是否切太大 | P1-6 | 變更規劃 Rule 1 | E4；情境估計，腳本/樣板不能保證 |
+    244 +| C12 | 不能曝光用 flag 關閉，完成後開啟；Deploy ≠ Release；上線後清理 | P1-6 | 變更規劃 Rule 2 | E5；曝光與清理時機需判斷 |
+    245 +| C13 | 大改造：抽象→舊接入→新實作→逐步切換→刪舊；各階段可整合 | P1-6 | 變更規劃 Rule 3 | E5；規劃對象的遷移判準，不是本 Skill 的 Phase 轉移 |
+    246 +| C14 | API 新舊並存，consumer 遷移後才刪舊 API | P1-6 | 變更規劃 Rule 4 | E5；相容性判斷，非固定檔案結構 |
+    247 +| C15 | Release Branch 很晚才切，只穩定/修復/發布，不作新功能開發 | P1-6 | 變更規劃 Rule 5 | E7；分支用途需判斷 |
+    248 +| C16 | main 先修並驗證，再 cherry-pick release；不只修 release 再回灌 | P1-6 | 變更規劃 Rule 5 | E7；版本維護方案的判準，不新增操作授權 |
+    249 +| C17 | 自動 build/test、快速 CI/gated checks、小批次、快速 review、broken trunk 優先紀律；缺少時先指出，不全面導入；保留 DORA 返工風險 | P1-8 | Workflow評估 Rule 1 | E6；團隊能力判斷，腳本或樣板不
+         能保證 |
+    250 +| C18 | 保留適用專案及需求變動/多人共改/頻繁發布的價值情境 | P1-8 | Workflow評估 Rule 1 | E6；適用性評估，非排他清單或機械門檻 |
+    251 +| C19 | GitFlow 先隔離做完整再合；TBD 先切小持續整合保持可工作，主要改變拆分方式 | P1-8 | Workflow評估 Rule 2 | E6；比較語意需正反例，非檔案骨架 |
+    252 +| C20 | 短 branch→同步→build/lint/unit/必要 integration→PR/review/CI green/merge→刪 branch | P2-1 | P2-1 內文 | E4；整合流程順序留 SOP |
+    253 +| C21 | 原 PR/技巧/main 安全性/含 review 壽命呈現格式 | P2-2 | P2-2 內文 | E4；既有一小段對話格式，不是要生成獨立檔案，不硬加雙檔樣板 |
+    254 +| C22 | 按需要讀案例或來源，建立具名參考 | P1-9 | P1-9 內文 | E3；載入條件與路徑留 SOP |
+    255 +| C23 | 基本判準 READ 緊鄰 THINK，以具名清單使用 | P1-3～4 | P1-3～4 載入鏈 | E1～E3；流程留 SOP，不重述規則 |
+    256 +| C24 | 規劃或相關審查時 READ，緊鄰 THINK 使用具名清單 | P1-5～6 | P1-5～6 載入鏈 | E1～E3；條件分支留 SOP |
+    257 +| C25 | 團隊審查/導入/比較時 READ，緊鄰 THINK 使用具名清單 | P1-7～8 | P1-7～8 載入鏈 | E1～E3；條件分支留 SOP |
+    258 +| C26 | 用具名案例結果具體化方案或審查 | P1-10 | P1-10 內文 | E3；單一步驟，不需獨立規則檔 |
+    259 +| C27 | 分析後逐條 CHECK 所有已載入清單，未過返回判斷 | P1-11 | P1-11 內文 | E3；檢核與回路留 SOP |
+    260 +| C28 | 核對交付與輸入/清單，未過修正並再次檢查 | P2-3 | P2-3 內文 | E3；檢核與回路留 SOP |
+    261 +| C29 | 團隊 workflow 審查必須檢查 Feature Flag 用後清理狀態；未知使用／清理狀態列待確認，不能推定已使用或未清理 | P1-8，P1-11／P2-3 檢核及 P2-2 交付 | Workflow評估 Rule 1 | E2、E5、E6／R2；審查涵蓋
+         範圍與資訊充分性需要判斷，腳本無法由任意敘述確認真實狀態，非產出檔整體結構，不適用樣板；用既有 RuleFile 與正反例承接 |
+    262 +
+    263 +同一載入鏈的 READ 與使用步驟並非兩份重述的規則。RuleFile 約束需語意判斷，不能由程式直接產生/判斷，且不規定整份產出檔的骨架，因此不選較高順序的腳本或樣板。流程本身依載體規則直接留 SOP。
+    264 +
+    265 +
+    266 +C1～C28 沿用原已確認分配；C29 唯一規範位置是既有 Workflow評估 Rule 1，不在 SOP 或變更規劃檔重述。範例只是示範。沒有將所有未知資訊泛化成新的強制審查制度。
+    267 +
+    268 +## 6. 施工工作項
+    269 +
+    270 +| 順序 | 工作項 | 執行者 | 目標 | 內容 | 約束 | 狀態 |
+    271 +| --- | --- | --- | --- | --- | --- | --- |
+    272 +| 1 | W5 | skill-form-rule | rules/Workflow評估-格式規範.md Rule 1 | 按第 2 節完整 To-Be 局部擴充，保留 Rule 2 | C17、C18、C29 | 待施工 |
+    273 +
+    274 +### 工作項內容
+    275 +
+    276 +- 本節內容須在本次第二閘門明確確認後，完整交給 skill-form-rule；不得帶入藍圖以外要求。執行 primitive 可在本 agent 依其 SOP 操作，不必另開施工子代理。
+    277 +- Before：首次快照的 Workflow評估 Rule 1（依前提與情境評估導入，四條＋一組正反例）；無一般 workflow 的 flag 清理狀態審查義務。
+    278 +- After：第 2 節所列 Rule 1 完整文字。只改 `.agents/skills/trunk-based-development/rules/Workflow評估-格式規範.md` 此一 Rule；Rule 2、其他 RuleFile、SKILL.md、cases 逐字保留。
+    279 +- 定位：既有規則檔的 `# Rule 1 - 依前提與情境評估導入`，原條列與 Good／Bad Example 區段；不是以行號定位。
+    280 +- 不改載入條件、路徑、範圍、清單名稱、使用步驟或 CHECK。因此用 skill-form-rule，無需 skill-derive-rule 或胖 SOP；沒有新增部位，也沒有 SOP 施工可交 skill-form-sop。
+    281 +- skill-form-rule 若認為工作項不符合其檢查清單，保存狀態、停止並返回 Phase 3，不能自行增加規則或省略要求。完成 W5 後逐項更新狀態；後續若仍失敗返回 Phase 2，不覆寫首次快照或挑成功結果。
+    282 +
+    283 +## 7. 驗收情境
+    284 +
+    285 +| 編號 | 驗證 | 類型 | 輸入 | 預先回覆 | 判斷方式 |
+    286 +| --- | --- | --- | --- | --- | --- |
+    287 +| S1 | E2、E4 | 既有回歸 | 原 S1/輸入.md，逐字不變 | 無 | 原判準不變：小 PR／無技巧、main 安全、CI/review、含等待壽命、刪 branch；同步有無另列觀察 |
+    288 +| S2 | E2、E4、E5 | 既有回歸 | 原 S2/輸入.md，逐字不變 | 無 | 原三種技巧、安全順序、清理安排、含 review 壽命判準不變 |
+    289 +| S3 | E2、E6、E7 | 既有回歸 | 原 S3/輸入.md，逐字不變 | 無 | 原 workflow／來源分級／前提／比較／hotfix 判準不變；未明示資訊不當作已知事實 |
+    290 +| S4 | E1～E6 | 靜態逐項 | 同一原始模組化需求、兩側檔案及原版 workflow 六項清單 | 無 | 保留原所有檢查，逐 Rule 正反例、READ／具名／使用／CHECK；新增精確核對原六項審查用途的對應，尤其 C29，不能只查「
+         清理」字詞 |
+    291 +| S5 | E2、E5、E6 | 已確認共同題回歸 | 失敗根因報告第 2 節固定完整輸入，與首次失敗相同 | 無 | 保留三項現況的正確判斷；必須列 Feature Flag 用後清理待確認／審查項；未給狀態不得斷言已使用或未清理 |
+    292 +
+    293 +S5 完整輸入：
+    294 +
+    295 +```text
+    296 +請讀取並使用目前專案 .agents/skills/trunk-based-development/SKILL.md 回答以下需求，僅讀取檔案，不修改專案。
+    297 +
+    298 +團隊有長期 develop 與 release-next、PR review 常等待兩天、CI 變紅後仍繼續開發；請檢查是否符合 TBD。
+    299 +```
+    300 +
+    301 +### READ／使用／CHECK 驗收
+    302 +
+    303 +- P1-7 對團隊 workflow 審查／導入／比較讀 Workflow評估所有 Rule，建立「Workflow評估檢查清單」，不改既有條件。
+    304 +- P1-8 緊鄰使用此清單形成評估結論；本題屬團隊 workflow 審查，C29 適用，不能以輸入沒提 flag 跳過審查項。
+    305 +- P1-11 及 P2-3 沿用所有已載入清單逐條核對及修正回路；P2-2 依清單交付，不能只讀檔而未在評估中處理此項。
+    306 +- 小變更規劃不因此強制載入 Workflow評估；單純比較不因此新增 flag 清理檢查義務，C29 限一般團隊 workflow 審查。不重述或改變其他既有領域判準。
+    307 +
+    308 +### 實跑與證據安排
+    309 +
+    310 +1. 首次快照與首次失敗永久保留。施工前先核對兩側與首次快照雜湊；施工後另存「回修技能」及雜湊，所有新原始輸出另命名，不覆寫原 S1～S3／S5。
+    311 +2. S1～S3 前測與首次後測已實跑，保留證據；回修後以相同輸入、路徑與「測試執行包裝.md」在 fork_turns=none 全新子代理實跑，模型／推理不另覆寫，逐案評分並與原版及首次施工結果分開比較。不得把不同環境當嚴
+         格配對；可得設定不一致即揭露並交總指揮安排。
+    312 +3. S5 的首次失敗是既有全新 Herdr Codex session、GPT-6.1-Sol medium fast 畫面；回修後優先由總指揮安排相同 CLI／model medium／fast 設定的新 session，使用相同完整輸入、工作目錄中的同一路徑，只替換受測
+         Skill。現有子代理若無法證明與 Herdr 設定相同，只能當補充測試，不拿來替代此配對。
+    313 +4. S5 若需補原始基線配對：提供「修改前技能複本」同名路徑與相同輸入給另一乾淨 session，採相同設定及判準，完整保存結果；不假稱已有此基線實跑，也不以重跑首次候選來消除既存失敗。S5 主要修復比較是首次候
+         選失敗與回修候選；原始基線結果只補足三版本對照。
+    314 +5. 各獨立情境可平行啟動，仍各自保存完整輸入、原始 final、可得工具載入紀錄、模型設定、前後檔案清單／雜湊／Git 狀態及副作用核對。只給路徑、輸入、原相同必要操作限制，不給根因、藍圖、判準、其他答案或預
+         先提示 flag。
+    315 +6. 子代理啟動／等待超過一分鐘，立即交付情境完整輸入、環境位置、Skill 雜湊與設定要求給總指揮安排 Herdr；不省略實跑。S4 是人工語義核對加既有 audit，不假稱乾淨模型測試。
+    316 +7. 失敗輸出全部保留。環境失敗先證明環境與情境不符再修正；Skill 失敗返回 Phase 2，不改判準、不只重跑挑成功、不以部分通過完成。分開記錄結構差異與行為差異；未改善如實記錄。
+    317 +8. 限制沿用：無後端部署精確版本、temperature／seed 或 OS sandbox；讀取 trace 不完整時只報可得證據，設定自述不等於 runtime metadata。無真實 Git mutation 或部署驗證。無呼叫者回歸，且不重跑 conventiona
+         l-commits。
+    318 +
+    319 +### 診斷、同步、範圍及交付
+    320 +
+    321 +- 施工前保存 Git diff／狀態，以及兩側目標與本次紀錄外的檔案清單、內容雜湊，涵蓋其他 Skill、AGENTS.md／CLAUDE.md；若同步範圍原本有非目標差異，先回報，不覆寫。
+    322 +- 施工完成後分別以既有 audit_skill.py 對 agents、claude 目標診斷，兩側均須 0 error；另人工核對本藍圖、全部 Rule／正反例及原 workflow 六項審查用途。既有機械 audit 不足以證明語義保留。
+    323 +- 從專案根目錄依序執行 `scripts/sync-skills.sh --from agents` 及 `scripts/sync-skills.sh --check`，保存輸出及兩個退出狀態；須皆為零且兩邊一致，不建立 symlink。不以手工複製目標代替規定命令，不改腳本
+         。
+    324 +- 再保存相同範圍檔案清單、內容雜湊及 Git diff，核對目標外無新增／刪除／內容變更；同步重建造成 inode／時間改變不算內容差異。保存目標端獨有而未刪除的 Skill 資訊。若出現目標外差異或檢查失敗，保存證據停
+         止回報，不回退他人內容。
+    325 +- 預期 Skill diff 只含兩側 Workflow評估 Rule 1；SKILL.md、其他規則、Rule 2、cases 及首次快照皆以雜湊確保不變。紀錄只在指定目錄，Markdown 檔名繁體中文；必要的 Skill 複本原路徑例外沿用。
+    326 +- 全部情境通過才完成並更新 commit message 草稿；不 commit、push、安裝或修改其他 Skill／應用程式。
+    327 +
+    328 +## 8. 驗收結果
+    329 +
+    330 +尚未施工。W5 待施工，原 S5 失敗維持，整體驗收未通過；本文件只提出可審查的局部設計，不以反事實或靜態檢查冒充實跑成功。
+    331 +
+    332 +藍圖自檢：已由 E2／E5／E6 與 R2 推導再與 As-Is 對照；原各元素及 C1～C28 保留追溯，C29 僅一處；無新增 SOP、部位或 Rule；施工用 skill-form-rule；規定同步與範圍雜湊、原失敗保存、相同輸入判準、乾淨配對
+         及設定限制均明列。呼叫者：無。
+    333 +
+    334 +### 確認紀錄
+    335 +
+    336 +- 根因閘門：總指揮已確認 E1～E9、S5、R2，並補足共同題版本雜湊歸屬證據。
+    337 +- 本次藍圖閘門：待總指揮確認；未施工。既有已確認的模組化方向、用途及正確規則沿用，不重問。
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +18 lines
+  └ Traceback (most recent call last):
+      File "<stdin>", line 16, in <module>
+    AssertionError
+
+• Ran git status --short; sed -n '1,42p' docs/過程/CH2/trunk-based-development/本次執行/局部回修工程藍圖.md
+  └  M .agents/skills/trunk-based-development/SKILL.md
+     M .claude/skills/trunk-based-development/SKILL.md
+    ?? .agents/skills/trunk-based-development/rules/
+    +44 lines (⌃t to view transcript)
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +11 lines
+  └
+
+
+    +16 lines (⌃t to view transcript)
+
+• Explored
+  └ Search C29|同一載入鏈|## 5|## 6 in 局部回修工程藍圖.md
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +6 lines
+  └ [(19, 2)]
+    full in blueprint True
+    sections []
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +16 lines
+  └ {"八節齊備": true, "完整SOP逐字保留": true, "每條約束在分配表中恰一列": true, "首次快照及目標未修改": {"首次快照": true, "agents": true, "claude": true}, "狀態": "僅藍圖自檢，尚未施工或執行回修實跑；等待
+    第二閘門確認", "自檢限制": "首次自檢誤以全文計算約束表列數，將保留表的 C19 單元格重複計入；已限定第5節核對，不涉及變更工程要求。"}
+
+
+› 總指揮已讀完整局部回修工程藍圖並核准W5：skill-form-rule只改Workflow評估Rule1，補回原workflow清理審查義務、未知列待確認及正反例；其他規則/主檔/cases保持原文。照藍圖平行回歸S1–S3、靜態S4；S5共同題由總指揮另
+  開相同Herdr環境複驗，你不必等待子代理來取代它。施工及規定同步完成、回修技能快照保存後立即告知我，我會啟動S5。首次失敗保留，不commit/push。回修後同題屬回歸驗證，勿當未看過的新保留題。
+
+
+• 我會依核准 W5 使用 skill-form-rule 修改 Workflow 評估 Rule 1。完成規定同步並保存回修快照後立即通知你啟動 S5，同時平行回歸 S1～S3、核對 S4。
+
+• Explored
+  └ Read RuleFile-格式規範.md, TBD判準-格式規範.md, 測試執行包裝.md, 測試輸入與判準.md, sync-skills.sh
+
+• Ran git status --short; cat docs/過程/CH2/trunk-based-development/本次執行/修改後實測前雜湊.json; cat docs/過程/CH2/trunk-based-development/本次執行/修改後實測後狀態.json
+  └  M .agents/skills/trunk-based-development/SKILL.md
+     M .claude/skills/trunk-based-development/SKILL.md
+    ?? .agents/skills/trunk-based-development/rules/
+    +90 lines (⌃t to view transcript)
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +12 lines
+  └ 施工前目標外雜湊與Git狀態已保存；兩側原本一致。
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ import json
+  │ … +10 lines
+  └ {"old": "# Rule 1 - 依前提與情境評估導入\n\n- 評估導入時，必須檢查自動 build、自動 test、快速 CI、小批次開發能力與快速 code review。\n- 必須指出經驗不足、缺 gated checks、沒有「broken trunk 優先修復」紀
+    律時的風險；DORA 指出這類團隊實行 TBD 反而可能增加錯誤與返工。\n- 缺少上述前提時，必須先指出缺的前提，不得直接建議全面導入。\n- 可以依適用情境說明價值：SaaS、Web App、Backend API、Frontend App、
+    Microservice、企業內部系統、頻繁發布、多人共同維護的 codebase。需求一直變、多人同時改、需要頻繁 release 三者同時成立時價值最高。\n\n## Good Example\n\n先指出團隊缺少的前提，沒有把改 branch 命名當成完成導
+    +1 line (⌃t to view transcript)
+
+• Edited 2 files (+21 -3)
+  └ .agents/skills/trunk-based-development/rules/Workflow評估-格式規範.md (+19 -1)
+     1 -# Rule 1 - 依前提與情境評估導入
+     1 +# Rule 1 - 審查 workflow 並依前提與情境評估導入
+     2
+       ⋮
+     6  - 可以依適用情境說明價值：SaaS、Web App、Backend API、Frontend App、Microservice、企業內部系統、頻繁發布、多人共同維護的 codebase。需求一直變、多人同時改、需要頻繁 release 三者同時成立時價值最高。
+     7 +- 審查團隊 workflow 時，必須檢查 Feature Flag 的用後清理狀態；未提供使用與清理狀態時，必須列為待確認的審查項，不得推定已使用或未清理。
+     8
+       ⋮
+    10
+    11 +### Example 1
+    12 +
+    13  先指出團隊缺少的前提，沒有把改 branch 命名當成完成導入。
+       ⋮
+    17
+    18 +### Example 2
+    19 +
+    20 +一般 workflow 審查仍檢查 flag 清理，資訊不足時明列待確認。
+    21 +
+    22 +- 情境：團隊有長期 develop 與 release-next、PR review 常等待兩天、CI 變紅後仍繼續開發，要求檢查是否符合 TBD。
+    23 +- 評估：針對長期開發線、含 review 的 branch 壽命與紅燈處理指出問題；另列「是否使用 Feature Flag，以及用後是否清理」為待確認的審查項，不把未知狀態判為已使用或未清理。
+    24 +
+    25  ## Bad Example
+    26
+    27 +### Example 1
+    28 +
+    29  相同團隊缺少安全前提，卻被直接建議全面導入。
+       ⋮
+    33
+    34 +### Example 2
+    35 +
+    36 +相同 workflow 審查漏掉 flag 清理狀態，或把未知狀態當事實。
+    37 +
+    38 +- 情境：團隊有長期 develop 與 release-next、PR review 常等待兩天、CI 變紅後仍繼續開發，要求檢查是否符合 TBD。
+    39 +- 評估：只列長期線、review、紅燈及導入前提，完全不列 Feature Flag 清理審查項；或在沒有資訊時直接斷言「團隊使用了 flag 而且沒有清理」。
+    40  # Rule 2 - 比較工作拆分與整合方式
+
+  └ docs/過程/CH2/trunk-based-development/本次執行/局部回修工程藍圖.md (+2 -2)
+    271  | --- | --- | --- | --- | --- | --- | --- |
+    272 -| 1 | W5 | skill-form-rule | rules/Workflow評估-格式規範.md Rule 1 | 按第 2 節完整 To-Be 局部擴充，保留 Rule 2 | C17、C18、C29 | 待施工 |
+    272 +| 1 | W5 | skill-form-rule | rules/Workflow評估-格式規範.md Rule 1 | 按第 2 節完整 To-Be 局部擴充，保留 Rule 2 | C17、C18、C29 | 已完成 |
+    273
+        ⋮
+    336  - 根因閘門：總指揮已確認 E1～E9、S5、R2，並補足共同題版本雜湊歸屬證據。
+    337 -- 本次藍圖閘門：待總指揮確認；未施工。既有已確認的模組化方向、用途及正確規則沿用，不重問。
+    337 +- 本次藍圖閘門：2026-10-17 總指揮已讀完整局部回修藍圖並核准 W5；只改 Workflow評估 Rule 1，其餘原文保留。核准平行回歸 S1～S3、靜態 S4；S5 由總指揮以相同 Herdr 環境複驗，屬已知題回歸，不當新保留題。同
+         步與回修快照完成後立即通知總指揮，不以子代理取代 S5。
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +38 lines
+  └ {"回修快照": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r03/docs/過程/CH2/trunk-based-development/本次執行/回修技能", "雜湊": {"SKILL.md":
+    "ee0ec4741fea85c62d9212c04e222fb304f3dc6e099a86cb77cd41a56e81a88c", "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294", "rules/Workflow評估-格式規範.md":
+    "77aa0670958904111550478cf71f69fc4b6bbc46ab372106a03b503de9f6a79d", "rules/變更規劃-格式規範.md": "5322976d2aed7c8b514e4645ca327d1a30a75d2f73cae76a96c570dbe40b6486", "rules/TBD判準-格式規範.md":
+    +1 line (⌃t to view transcript)
+
+• W5 施工、規定同步及回修快照已完成，可啟動 S5 已知題回歸。兩側診斷皆 0 error、同步檢查一致，目標外內容雜湊未變。
+
+  快照位於 docs/過程/CH2/trunk-based-development/本次執行/回修技能/；雜湊清單為同目錄的 回修技能雜湊.json。Workflow 規則檔 SHA-256：77aa0670958904111550478cf71f69fc4b6bbc46ab372106a03b503de9f6a79d。我會繼續
+  S1～S4 驗收。
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +17 lines
+  └ S1～S3 同路徑僅替換 Skill，輸入未改，已保存實測前狀態。
+
+• Started `/root/repair_s1`
+
+• Started `/root/repair_s2`
+
+• Started `/root/repair_s3`
+
+• Explored
+  └ Read SKILL.md, Workflow評估-格式規範.md, 輸入.md
+
+• Completed `/root/repair_s1`
+
+• Edited 2 files (+43 -1)
+  └ docs/過程/CH2/trunk-based-development/本次執行/局部回修工程藍圖.md (+1 -1)
+    329
+    330 -尚未施工。W5 待施工，原 S5 失敗維持，整體驗收未通過；本文件只提出可審查的局部設計，不以反事實或靜態檢查冒充實跑成功。
+    330 +W5 已依核准設計施工完成，兩側結構診斷各 0 error，規定同步與檢查皆退出零、兩側一致，目標外內容不變；已保存回修技能快照並即時通知總指揮啟動 S5。S1～S3 已平行啟動乾淨回歸，S4 靜態通過，詳「局部回修施工
+         與靜態驗收.md」。原 S5 首次失敗維持；回修 S5 由總指揮另行執行已知題回歸，待其結果，整體尚未完成。
+    331
+
+  └ docs/過程/CH2/trunk-based-development/本次執行/局部回修施工與靜態驗收.md (+42 -0)
+     1 +# 局部回修施工與靜態驗收
+     2 +
+     3 +## W5 施工
+     4 +
+     5 +- 總指揮已明確核准局部藍圖 W5。使用 skill-form-rule，載入其 SKILL.md 及 RuleFile 格式九項清單；依已確認設計施工，未另行設計。
+     6 +- 僅修改 agents 的 Workflow評估 Rule 1：標題、審查條列及 Example 2；既有正文保留，原範例僅增加 Example 1 層級。正式內容與藍圖完整 To-Be 一致。
+     7 +- RuleFile 九項檢查：連續 Rule／固定結構、同一 workflow 主題、本地完整且不循環／不重述、繁體中文與原檔名、既有按需載入、可執行可檢查、明確強度、原生條列、同題正反例，均通過。C29 是審查覆蓋義務，不重
+        述變更規劃 Rule 2 的曝光與清理時機政策。
+     8 +- 主檔與載入步驟未改；skill-form-rule 的載入更新條件不適用，無需另交 skill-form-sop／skill-derive-rule。
+     9 +- W5 已標已完成；這表示施工完成，不表示行為驗收完成。
+    10 +
+    11 +## S4 逐項靜態驗收
+    12 +
+    13 +| 原 workflow 審查項 | 正式規範位置與使用 | 結果 |
+    14 +| --- | --- | --- |
+    15 +| 長期共同開發分支 | TBD判準 Rule 2；P1-3→P1-4 | 語意存在，原文未改 |
+    16 +| 每人至少每日整合 main | TBD判準 Rule 2 的 DORA 頻率；P1-4／P1-8 | 語意存在，原文未改 |
+    17 +| 含 review 壽命與 active branches | 變更規劃 Rule 1、TBD判準 Rule 2；P1-6／P1-8 | 語意存在，原文未改 |
+    18 +| CI 回饋與 broken trunk 立即修／revert | TBD判準 Rule 2、Workflow評估 Rule 1 原前提；P1-4／P1-8 | 語意存在，原文未改 |
+    19 +| code freeze | TBD判準 Rule 2；P1-4／P1-8 | 語意存在，原文未改 |
+    20 +| Feature Flag 用後清理狀態 | Workflow評估 Rule 1 新補 C29；P1-7→P1-8 | 已補回；未知資訊列待確認，不假設已使用或未清理 |
+    21 +
+    22 +此表是靜態用途追溯，不是每一項在所有模型輸出中皆已實測的證明；尤其 C29 的 S5 由總指揮另行複驗。
+    23 +
+    24 +| 模組化驗收項 | 核對 | 結果 |
+    25 +| --- | --- | --- |
+    26 +| 規則與正反例 | TBD 3 Rule、變更 5 Rule、Workflow 2 Rule，每條有規則／Good／Bad。未改九條逐字保留；修改 Rule 1 原導入案例保留，新增一般審查同題正反例：列清理待確認對照漏項或無依據斷言 | 通過 |
+    27 +| READ 條件／路徑／範圍 | P1-3 基本任務讀 TBD 所有 Rule；P1-5 規劃／相關審查讀變更所有 Rule；P1-7 團隊審查／導入／比較讀 Workflow 所有 Rule；案例 P1-9 按需要讀對應範圍 | 通過，主檔逐字未改 |
+    28 +| 具名清單 | TBD判準檢查清單、變更規劃檢查清單、Workflow評估檢查清單、案例與來源參考 | 通過 |
+    29 +| 載入後使用 | P1-4／6／8／10 緊鄰相應 READ，P1-8 使用 Workflow 清單形成評估結論，C29 僅在團隊 workflow 審查適用 | 通過 |
+    30 +| CHECK | P1-11 及 P2-3 逐條核對已載入清單，未過返回判斷／整合並更新重檢；P2-2 按清單交付 | 通過 |
+    31 +| 無硬拆／孤兒 | 三檔仍是基本、變更策略、workflow 評估；無新增檔、Rule、SOP 或模板／腳本，無新引用或孤兒 | 通過 |
+    32 +| 正確規則保留 | 首次快照對照：只有 Workflow Rule 1 改變；Rule 2、主檔、其他規則及 cases 全文相同 | 通過，雜湊及機械對照另存 |
+    33 +| 診斷／同步 | agents、claude audit error 各零；from agents 及 check 退出狀態皆零、兩邊一致；目標外清單與內容雜湊前後相同 | 通過，詳回修診斷／同步／雜湊紀錄 |
+    34 +
+    35 +S4 本次靜態檢查通過。原首次 S4 的錯誤語義保留結論及 S5 失敗仍保留，不以新靜態結果追溯改判。整體完成仍須 S1～S3 回歸結果與總指揮的 S5 已知題回歸結果。
+    36 +
+    37 +## 快照、模型及排程
+    38 +
+    39 +- 首次施工技能與其雜湊不動；新增「回修技能」與「回修技能雜湊.json」，在回修實跑前保存。
+    40 +- S1～S3 沿用相同路徑、固定輸入與包裝，只有 Skill 內容替換；各為全新 fork_turns=none 子代理，無 model／reasoning_effort 覆寫，平行啟動。各案保存原始 final 與前後雜湊。模型有效部署／採樣設定不可得的限
+        制沿用，不將文字自述當 runtime metadata。
+    41 +- S5 由總指揮安排相同 Herdr 環境複驗；本 agent 不啟動替代子代理。回修後同題是已知回歸題，因規則正反例使用同題，不能宣稱為未見過的新保留題或獨立泛化證據。
+    42 +- 原三案前測、首次後測、共同題首次失敗及本次回修輸出分開保存；未 commit／push。
+
+• Added docs/過程/CH2/trunk-based-development/本次執行/回修後原始輸出-S1.md (+14 -0)
+     1 +PR 1：修正匯出報表檔名日期補零，並加入／更新測試 — 使用技巧：無
+     2 +從 `main` 開短期 branch；完成修正與測試約 40 分鐘，送 PR 後等待 CI 約 4 分鐘、review 約 20 分鐘，確認通過後 merge，再刪除 branch。
+     3 +
+     4 +每個 PR merge 後 main 為什麼仍可工作：日期格式修正與測試可獨立完成，CI 通過後才整合，不會留下未完成或不可工作的狀態。
+     5 +
+     6 +預估 branch 壽命（含等 review）：約 64 分鐘（40 + 4 + 20）。這是本案估算，不是硬性國際門檻。branch 命名、merge 方式與 reviewer 人數由團隊決定。
+     7 +
+     8 +實際讀取的資源：
+     9 +- `docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S1/skill/SKILL.md`
+    10 +- `docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S1/輸入.md`
+    11 +- `docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S1/skill/rules/TBD判準-格式規範.md`
+    12 +- `docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S1/skill/rules/變更規劃-格式規範.md`
+    13 +
+    14 +模型設定：未知
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +19 lines
+  └ {"僅變更檔案": ["rules/Workflow評估-格式規範.md"], "Rule2逐字保留": true, "主檔與其他檔案逐字保留": true, "SOP步驟": 14, "RuleFile數": 3, "Rule數": [3, 5, 2], "兩側等於回修快照": true}
+
+• S1 已完成並通過原判準；S4 靜態核對也通過。S2、S3 尚未回傳，我已備妥替代 session 的完整輸入與環境交接，若啟動或等待卡住超過一分鐘，就交由總指揮安排，不省略實跑。
+
+• Completed `/root/repair_s3`
+
+• Completed `/root/repair_s2`
+
+• Interacted with `/root/repair_s2`
+
+• Interacted with `/root/repair_s3`
+
+
+› 總指揮共同複驗已完成：f03a workflow清理PASS，f03b hotfix四欄/安全/壽命與載入PASS。原始畫面與獨立評分在主工作樹提示詞重複對照/tbd-f03a-原始畫面.txt、tbd-f03b-原始畫面.txt、回修候選評分.md；可只讀自己的兩
+  題，勿讀其他run。請核對回修版本hash與主樹 tbd-r03/共同複驗技能 一致，將此作S5已知題回歸證據；完成你自己的S1–S4後收尾，保留首次失敗，不重跑已完成共同題，不commit/push。
+
+
+• S1～S3 已全部回傳，依原判準通過；S4 也已通過。接著只讀指定的 f03a、f03b 證據與自己的評分，核對共同複驗版本雜湊後收尾，不重跑共同題。
+
+• Explored
+  └ Read tbd-f03a-原始畫面.txt
+    Read tbd-f03b-原始畫面.txt
+    List 共同複驗技能
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +4 lines
+  └ # 回修候選共同測試評分
+    | --- | --- | --- | --- | --- | --- | --- | --- |
+    ## 已知失敗題回歸：f03a／f03b
+    +5 lines (⌃t to view transcript)
+
+• Completed `/root/repair_s2`
+
+• Completed `/root/repair_s3`
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +31 lines
+  └ 共同複驗5個檔案雜湊全等回修快照；兩份原始畫面已保存；S1～S3輸入相同且副作用檢查通過。
+
+• Explored
+  └ Read 提交訊息草稿.md
+
+• 共同複驗技能的五個檔案雜湊均與回修快照一致，f03a 清理審查、f03b hotfix 均核對通過；自己的 S1～S4 也全部通過，S1～S3 輸入及副作用核對無異常。
+
+  f03b 畫面另有搜尋 MEMORY.md 的紀錄，我會如實列為隔離限制，不將它當成完全只讀受測 Skill 的證據；本地 S3 另有獨立 hotfix 回歸結果。
+
+• Edited 6 files (+74 -1)
+  └ docs/過程/CH2/trunk-based-development/本次執行/前後比較.md (+2 -0)
+    2
+    3 +> 最終狀態：經核准 R2 局部回修後，S1～S4 及共同 S5 已知題回歸通過。完整三版本比較及限制見「回修前後比較與最終驗收.md」。以下原首次比較與失敗補註均保留歷史，不作最終版本結論。
+    4 +
+    5  > 共同保留題失敗後補註（2026-10-17）：整體驗收未通過，已返回 Phase 2，見「共同保留題失敗根因分析.md」。以下保留首次比較紀錄；S1～S3 原評分不變，S4「原審查語意全保留／整體通過」結論撤回。S5 未列 Featur
+       e Flag 用後清理待確認／審查項，為失敗。首次快照與原始輸出保留，尚未回修或重跑。
+
+  └ docs/過程/CH2/trunk-based-development/本次執行/回修前後比較與最終驗收.md (+52 -0)
+     1 +# 回修前後比較與最終驗收
+     2 +
+     3 +## 驗收結論
+     4 +
+     5 +已核准 W5 完成；S1～S3 原判準回歸、S4 靜態及 S5 共同已知題回歸均通過。兩側 audit error 各零，規定同步及 check 成功，目標外內容未變。未 commit、push、安裝或修改其他 Skill。
+     6 +
+     7 +原共同題首次失敗及原 S4 誤判保留，不因回修通過而改寫為成功；根因及局部藍圖均在確認閘門通過後才施工。S5 是規則例子已涵蓋的已知題回歸，不能用來宣稱對未見情境的泛化改善。
+     8 +
+     9 +## 每案結果與副作用
+    10 +
+    11 +| 情境 | 原判準核對 | 結果 | 原始證據 |
+    12 +| --- | --- | --- | --- |
+    13 +| S1 | 一個小 PR、無技巧、日期補零與測試、main 安全、CI／review、64 分鐘含等待、merge 後刪 branch | 通過；同步 main 沒有提到，仍依原判準另列觀察，不提高或放寬門檻 | 回修後原始輸出-S1.md |
+    14 +| S2 | A 抽象接原 SMTP，再加 SDK、逐批切換及刪舊；B flag 關閉到活動曝光、穩定後清理；C API 並存、兩 consumer 遷移後刪舊；各 PR main 安全與含 review 壽命明列 | 通過；部分階段混用 flag／並存作為實作策
+        略，沒有把它們當新增必要政策 | 回修後原始輸出-S2.md |
+    15 +| S3 | 長期線、每週合、review 等待、紅燈延後、自動測試缺失與導入前提；來源／團隊選項／兩天非硬線；GitFlow 比較；main 先修驗證再 cherry-pick release，只維護舊版 | 通過；另正確列未知 flag 清理狀態待確
+        認 | 回修後原始輸出-S3.md |
+    16 +| S4 | 全部 Rule／同題正反例、READ 條件／範圍／具名清單、緊鄰使用、兩個 CHECK 回路、原六項 workflow 用途、無孤兒及雙側同步 | 靜態通過；不當行為實跑 | 局部回修施工與靜態驗收.md、局部回修靜態核對.json
+        |
+    17 +| S5-a／f03a | 固定 workflow 共同題：已讀主檔與三規則；保留原三項判斷；明列是否使用 flag、上線後是否清理為待確認，不推定 | 通過，總指揮獨立評分 PASS；本地亦核對完整畫面 | tbd-f03a-原始畫面.txt、共同
+        複驗評分摘錄.md |
+    18 +| S5-b／f03b | 固定 hotfix 共同題：讀主檔、基本／變更規則及 cases；PR 1 main 修復驗證，PR 2 cherry-pick release，技巧、main 安全與含 review 壽命齊全 | 通過，總指揮獨立評分 PASS；此題是補充既有規劃輸
+        出回歸，隔離限制見下 | tbd-f03b-原始畫面.txt、共同複驗評分摘錄.md |
+    19 +
+    20 +S1～S3 各用獨立全新子代理，同一路徑、輸入與執行包裝，未提供分析、判準、其他版答案或 flag 提示。三案並行啟動，各自保存完整 final；測試完成後才授權 S2／S3 代理將既有 final 原文另存工程紀錄，未重跑。S1
+        ～S3 測試目錄檔案清單及雜湊前後一致，輸入與前兩輪完全相同，見「回修實測後副作用檢查.json」。
+    21 +
+    22 +共同題由總指揮執行，沒有重跑已完成共同題。只讀本次 f03a、f03b 原始畫面與相應評分列，不使用其他 run 的結果；兩份畫面逐位元保存及來源雜湊另存「共同複驗版本與證據核對.json」。共同評分表情境編號與本次不
+        同，本地統一列 S5-a／S5-b，避免將外部 S4 編號誤當本地靜態 S4。
+    23 +
+    24 +## 結構差異
+    25 +
+    26 +| 比較 | 差異 |
+    27 +| --- | --- |
+    28 +| 原始基線→首次施工 | 參考式主檔改為兩 Phase／14 步 SOP；3 份 RuleFile、10 Rule；新增按需具名載入／使用／CHECK，原案例不改。詳原前後比較 |
+    29 +| 首次施工→回修 | 唯一改動檔為 Workflow評估規則、唯一修改 Rule 為 Rule 1；擴充標題、補一個清理狀態審查條列及一組正反例；原導入正文與例子保留。Rule 2、主檔、其他規則及 cases 逐字相同 |
+    30 +| 結構數量 | 回修仍為 2 Phase／14 步、3 檔／10 Rule，無新增部位、樣板或腳本 |
+    31 +
+    32 +首次至回修逐行差異見「首次施工至回修差異.diff」；原始基線至主檔最終差異見「回修最終Git差異.diff」，新增規則以正式目標及回修快照保存。首次快照未覆寫。
+    33 +
+    34 +## 實際行為差異
+    35 +
+    36 +- S1～S3：原始基線、首次施工與回修三輪核心判準均通過；輸出粒度與表述不同，不宣稱這些正常情境有可證實的品質改善。S1 三輪同步 main 的另列觀察仍如實保留。
+    37 +- S5-a：首次 c03a 在已讀三規則後未列 flag 清理審查；回修 f03a 明列「是否使用 Feature Flag，以及功能上線後是否安排清理；目前資訊不足，不能判定」。這次已知題回歸出現預期的可觀察差異，但單次結果、同題已
+        進入正反例，不證明錯誤率下降或泛化可靠度。
+    38 +- S3 回修輸出也在另一個既有 workflow 輸入中列未知 flag 狀態待確認，作為本地回歸觀察，不宣稱新的盲測。
+    39 +- S5-b：hotfix 載入及規劃四欄／安全／壽命通過，支持原本正常用途仍存在；未取得並不虛構相同題的原始基線實跑配對。原始基線的 hotfix 行為由原 S3 證據覆蓋。
+    40 +
+    41 +## 模型、隔離與版本限制
+    42 +
+    43 +- 本地三輪 S1～S3 均 fork_turns=none，無 model／reasoning_effort 覆寫，相同執行包裝；本輪三案自述模型設定未知。有效部署、temperature／seed 不可得，不能宣稱完整控制採樣。副作用以複本清單／雜湊核對，無
+         OS sandbox，不執行真實 Git mutation／部署。
+    44 +- 共同題畫面顯示 Codex CLI v0.163.0、GPT-6.1-Sol medium fast；總指揮確認全新相同 Herdr 環境。f03a 顯示讀主檔、三規則；f03b 顯示另搜尋 MEMORY.md，因此 f03b 不作「完全只讀 Skill」的嚴格隔離證據。它保留
+        作附帶 hotfix 回歸，完整副作用機器紀錄、後端採樣設定不可得。本地乾淨 S3 另覆蓋 hotfix 正常行為。
+    45 +- 已將主樹 `提示詞重複對照/tbd-r03/共同複驗技能/` 全部五個檔案逐項雜湊對照本地「回修技能雜湊.json」，完全一致；本地正式兩側亦與該快照一致。首次 c03a／c03b 版本也已由核對摘錄確認與首次快照一致。未讀其
+        他 run，未因題目通過而移除這些限制。
+    46 +
+    47 +## 同步、範圍及交付
+    48 +
+    49 +- 「回修同步命令結果.json」記錄 `scripts/sync-skills.sh --from agents` 及 `--check` 皆退出零，檢查「兩邊一致」。同步未列出需刪除的目標端獨有 Skill，未手動刪除或回退其他內容。
+    50 +- 兩側結構診斷各 0 error、0 warning；規則語意另以人工 S4 核對，不用 audit 取代。
+    51 +- 回修前後目標外全部可見檔案清單與內容雜湊一致；不以 inode／時間判定差異。前後 Git 狀態／差異保存，改動限制於兩側目標及本次紀錄目錄。
+    52 +- 首次失敗、根因、兩次藍圖確認、首次快照、回修快照、每輪原始輸出均保留。最終草稿另存「最終提交訊息草稿.md」，不 commit／push。
+
+  └ docs/過程/CH2/trunk-based-development/本次執行/局部回修工程藍圖.md (+2 -1)
+    329
+    330 -W5 已依核准設計施工完成，兩側結構診斷各 0 error，規定同步與檢查皆退出零、兩側一致，目標外內容不變；已保存回修技能快照並即時通知總指揮啟動 S5。S1～S3 已平行啟動乾淨回歸，S4 靜態通過，詳「局部回修施工
+         與靜態驗收.md」。原 S5 首次失敗維持；回修 S5 由總指揮另行執行已知題回歸，待其結果，整體尚未完成。
+    330 +W5 已完成；S1～S3 原判準乾淨回歸、S4 靜態及總指揮執行的 S5-a／S5-b 已知題回歸均通過。兩側結構診斷各 0 error／0 warning，規定同步與檢查皆退出零、兩側一致，目標外內容不變；回修快照已保存，與主樹共同複
+         驗技能五個檔案雜湊全等。原 S5 首次失敗與原快照完整保留，不重跑已完成共同題。詳「回修前後比較與最終驗收.md」逐案結果、原始證據、模型／隔離限制（含 f03b 搜尋記憶）及交付；已更新最終提交訊息草稿，未 co
+         mmit／push。
+    331
+        ⋮
+    337  - 本次藍圖閘門：2026-10-17 總指揮已讀完整局部回修藍圖並核准 W5；只改 Workflow評估 Rule 1，其餘原文保留。核准平行回歸 S1～S3、靜態 S4；S5 由總指揮以相同 Herdr 環境複驗，屬已知題回歸，不當新保留題。同
+         步與回修快照完成後立即通知總指揮，不以子代理取代 S5。
+    338 +- 共同複驗回報：2026-10-17 總指揮確認 f03a workflow 清理 PASS、f03b hotfix 四欄／安全／壽命與載入 PASS，授權只讀指定證據並要求核對共同複驗技能雜湊。已核對全等並保存原始畫面與自身評分列，不讀其他 run
+         、不重跑共同題。
+
+  └ docs/過程/CH2/trunk-based-development/本次執行/工程藍圖.md (+2 -0)
+    304
+    305 +最終狀態補註：首次施工及失敗紀錄以下保留。R2 已另經根因與局部藍圖確認後完成 W5，S1～S4 與共同 S5 已知題回歸通過，兩側診斷／規定同步／範圍核對完成，詳「局部回修工程藍圖.md」第 8 節及「回修前後比較與
+         最終驗收.md」。不將首次失敗改判為通過。
+    306 +
+    307  首次施工已完成，但整體驗收未通過；共同保留題 S5 失敗，已依 Phase 5 步驟 13 返回 Phase 2，尚待「共同保留題失敗根因分析.md」確認。W1～W4 的已完成表示施工完成，不代表驗收通過。已確認的設計及約束分配在
+         本次診斷階段不改寫。
+
+  └ docs/過程/CH2/trunk-based-development/本次執行/最終提交訊息草稿.md (+11 -0)
+     1 +# 最終提交訊息草稿
+     2 +
+     3 +```text
+     4 +refactor(trunk-based-development): 將判斷規則改為按需載入
+     5 +
+     6 +- 保留主檔 SOP，集中三主題規則、正反例與具名檢核鏈
+     7 +- 保留 workflow 的 flag 清理審查與未知狀態待確認用途
+     8 +- 保存首次失敗、回修快照、配對回歸及雙側同步證據
+     9 +```
+    10 +
+    11 +依最終差異更新；舊「提交訊息草稿.md」保留首次狀態，不取代本稿。refactor 描述相對原始基線的結構改造；施工中遺漏與回修證據如實保留。不新增 breaking change 或虛構 issue footer。未 commit／push。
+
+  └ docs/過程/CH2/trunk-based-development/本次執行/模型設定澄清.md (+5 -0)
+    1 +# 模型設定澄清
+    2 +
+    3 +本地前測、首次後測與回修後測的 S1～S3 都以 fork_turns=none 全新子代理，未覆寫 model／reasoning_effort；相同包裝與輸入。平台未提供精確後端部署版本、有效採樣參數或 seed，無法證明完全相同的內部採樣設定。
+       子代理文字自述的模型身分不是 runtime metadata；回修三案自述均為未知。
+    4 +
+    5 +共同題由總指揮安排全新 Herdr session，畫面顯示 Codex CLI v0.163.0、GPT-6.1-Sol medium fast。受測版本雜湊已核對一致；這只能確認受測檔案及可見設定，不能補足所有後端參數。f03b 畫面可見 MEMORY.md 搜尋，須
+       保留此隔離限制。詳「回修前後比較與最終驗收.md」。
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +26 lines
+  └ {"S1": "PASS", "S2": "PASS", "S3": "PASS", "S4": "靜態PASS", "S5-a": "已知題回歸PASS", "S5-b": "補充hotfix回歸PASS；記憶搜尋隔離限制已揭露", "目標外內容變更": false, "首次快照未變": true, "正式雙側等於回
+    修快照": true, "主樹共同複驗技能等於回修快照": true, "結構診斷": "兩側0error/0warning", "同步": "兩命令rc0且一致", "commit或push": "未執行"}
+
+• 已完成。S1～S4 與 S5 已知題回歸均通過；兩側同步一致、診斷零錯誤，回修版本與共同複驗快照雜湊相同。首次失敗與快照完整保留，未 commit／push。
+
+  最終驗收與測試限制 (docs/過程/CH2/trunk-based-development/本次執行/回修前後比較與最終驗收.md)
+
+  Commit message 草稿：
+
+  refactor(trunk-based-development): 將判斷規則改為按需載入
+
+  Worked for 6m 7s • 9:53 AM
+
+
+› Ask Codex to do anything
+
+  GPT-6.1-Sol medium fast · Context 51% used · weekly 30% left · Main [default] · ← for agents                                                                                       ⚠ 4 warnings · f2 to view

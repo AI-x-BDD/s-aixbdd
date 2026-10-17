@@ -1,0 +1,49 @@
+{
+  "S1": {
+    "environment": "docs/過程/CH2/trunk-based-development/本次執行/暫存測試環境/S1重跑",
+    "changed_protected_files": [],
+    "added_files": [
+      "執行補充.md",
+      "驗收回報.md"
+    ],
+    "local_git": false,
+    "result": "失敗：多載入案例"
+  },
+  "S2": {
+    "environment": "docs/過程/CH2/trunk-based-development/本次執行/暫存測試環境/S2",
+    "changed_protected_files": [],
+    "added_files": [
+      "驗收回報.md"
+    ],
+    "local_git": false,
+    "result": "通過"
+  },
+  "S3": {
+    "environment": "docs/過程/CH2/trunk-based-development/本次執行/暫存測試環境/S3",
+    "changed_protected_files": [],
+    "added_files": [
+      "驗收回報.md"
+    ],
+    "local_git": false,
+    "result": "通過"
+  },
+  "S4": {
+    "environment": "docs/過程/CH2/trunk-based-development/本次執行/暫存測試環境/S4",
+    "changed_protected_files": [],
+    "added_files": [
+      "驗收回報.md"
+    ],
+    "local_git": false,
+    "result": "通過"
+  },
+  "S1首次": {
+    "environment": "docs/過程/CH2/trunk-based-development/本次執行/暫存測試環境/S1",
+    "changed_protected_files": [],
+    "added_files": [
+      "執行補充.md",
+      "驗收回報.md"
+    ],
+    "local_git": false,
+    "result": "環境越界讀取，非通過；其餘檔案未變"
+  }
+}

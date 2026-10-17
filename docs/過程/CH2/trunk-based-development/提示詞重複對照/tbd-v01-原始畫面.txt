@@ -1,0 +1,51 @@
+codex -a never -s danger-full-access --no-alt-screen
+
+󰀵 …/tbd-v01   HEAD !?   v25.0.4   09:27 
+ codex -a never -s danger-full-access --no-alt-screen
+
+  >_ OpenAI Codex (v0.163.0)
+     /private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v01
+  permissions: YOLO mode
+
+  Tip: Use the desktop app. Run codex app to open it. It installs automatically if needed.
+
+
+› 請讀取並使用目前專案 .agents/skills/trunk-based-development/SKILL.md 回答以下需求，僅讀取檔案，不修改專案。
+
+  團隊有長期 develop 與 release-next、PR review 常等待兩天、CI 變紅後仍繼續開發；請檢查是否符合 TBD。
+
+
+• 我會讀取指定的 TBD Skill，依其準則檢查；全程只讀，不修改檔案。
+
+• Explored
+  └ Read SKILL.md (trunk-based-development skill)
+
+• Ran python3 - <<'PY'
+  │ from pathlib import Path
+  │ for name in ['來源與壽命','規則分級','常見錯誤','workflow審查','送出前檢查']:
+  │ … +3 lines
+  └
+    .agents/skills/trunk-based-development/rules/TBD-來源與壽命-格式規範.md
+    # Rule 1 - 回答時區分規則來源與 branch 壽命
+    +99 lines (⌃t to view transcript)
+
+• 依指定 Skill 判斷，目前流程不符合 TBD。
+
+   現況                          判斷與改善
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   長期 develop、release-next    若兩者持續承接共同開發，違反「沒有長期開發分支」的核心規則；應改為圍繞單一 main，以小變更頻繁整合。
+  ────────────────────────────  ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   PR review 常等待兩天          等待時間也算 branch 壽命，是頻繁整合的阻礙；應縮小 PR、加快 review。TBD 官方短期 branch 通常為 1～2 天，DORA 目標為不到一天；「兩天」不是硬性合格線。
+  ────────────────────────────  ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   CI 變紅後仍繼續開發           若是 main 的 CI 變紅，違反保持主幹可工作的核心規則；應優先修復或立即 revert，再繼續新功能開發。
+
+  目前已明顯缺少快速 review 與 broken trunk 優先修復的紀律。應先補齊這些前提，並確認自動 build、test、快速 CI 與合併檢查足夠，再推進流程調整；不能只要求大家更頻繁 merge。
+
+  以上僅依你提供的情況與專案 Skill 判讀，未修改任何檔案。
+
+  Worked for 12s • 9:28 AM
+
+
+› Ask Codex to do anything
+
+  GPT-6.1-Sol medium fast · Context 8% used · weekly 53% left · ← for agents                                                                                                         ⚠ 4 warnings · f2 to view

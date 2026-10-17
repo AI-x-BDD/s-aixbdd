@@ -1,0 +1,8 @@
+{
+  "scenario": "S6",
+  "environment": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r01/docs/過程/CH2/trunk-based-development/本次執行/驗收環境/S6",
+  "skill": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r01/docs/過程/CH2/trunk-based-development/本次執行/驗收環境/S6/.agents/skills/trunk-based-development/SKILL.md",
+  "input": "production 2.4 金額計算錯誤，main 在開發 2.5；安排 hotfix 與 release/2.4 維護，不執行命令",
+  "pre_reply": "不適用；若資訊不足，依已給資料說明限制，不虛構專案現況。",
+  "report": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r01/docs/過程/CH2/trunk-based-development/本次執行/驗收環境/S6/測試回報.md"
+}

@@ -1,0 +1,25 @@
+{
+  "共同技能來源": "/Volumes/data/Projects-practice/s-aixbdd/docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-r03/共同複驗技能",
+  "與回修快照全部雜湊一致": true,
+  "共同技能雜湊": {
+    "SKILL.md": "ee0ec4741fea85c62d9212c04e222fb304f3dc6e099a86cb77cd41a56e81a88c",
+    "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+    "rules/Workflow評估-格式規範.md": "77aa0670958904111550478cf71f69fc4b6bbc46ab372106a03b503de9f6a79d",
+    "rules/變更規劃-格式規範.md": "5322976d2aed7c8b514e4645ca327d1a30a75d2f73cae76a96c570dbe40b6486",
+    "rules/TBD判準-格式規範.md": "3b24234b93d3dab9874aae779666b646379e624e9e950d9b91c432aadcb2ffea"
+  },
+  "畫面證據": {
+    "tbd-f03a-原始畫面.txt": {
+      "來源": "/Volumes/data/Projects-practice/s-aixbdd/docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-f03a-原始畫面.txt",
+      "sha256": "48d38935c365aa53ab511d64c3298e4033e689b3069e8651e2b1f50a9ef213de",
+      "逐位元保存": true
+    },
+    "tbd-f03b-原始畫面.txt": {
+      "來源": "/Volumes/data/Projects-practice/s-aixbdd/docs/過程/CH2/trunk-based-development/提示詞重複對照/tbd-f03b-原始畫面.txt",
+      "sha256": "9063269869b0430939d98ab1d2f8b7860ab0e02e9fa16de9a86e3e969ae567c8",
+      "逐位元保存": true
+    }
+  },
+  "總指揮確認": "f03a workflow清理PASS；f03b hotfix四欄/安全/壽命與載入PASS",
+  "限制": "f03b畫面含對 MEMORY.md 的搜尋，不作完全只讀Skill隔離證據；不重跑已完成共同題。"
+}

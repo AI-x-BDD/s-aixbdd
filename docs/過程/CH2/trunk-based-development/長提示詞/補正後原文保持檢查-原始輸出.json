@@ -1,0 +1,79 @@
+{
+  "target_skill_sha256": "2ea002a4e1dd82f5dcd055027b44f347b8b2cdbd8b83ca442d538ac14a7906e5",
+  "claude_skill_sha256": "2ea002a4e1dd82f5dcd055027b44f347b8b2cdbd8b83ca442d538ac14a7906e5",
+  "target_claude_skill_identical": true,
+  "references_cases_sha256": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+  "rule_metrics": {
+    "主幹式開發核心規則-格式規範.md": {
+      "exists": true,
+      "sha256": "c824acafd59e6a96d30e41e624e3e1308dc528b26367e091e9c6f70b9d54c8d2",
+      "starts_with_rule_1": true,
+      "rule_count": 2,
+      "good_example_count": 2,
+      "bad_example_count": 2
+    },
+    "主幹式開發需求拆分-格式規範.md": {
+      "exists": true,
+      "sha256": "b9aec4dafa04e3a5efa51a9c9a3d4397c642079b03a4d98c4f9ce9a21d02a04f",
+      "starts_with_rule_1": true,
+      "rule_count": 3,
+      "good_example_count": 3,
+      "bad_example_count": 3
+    },
+    "主幹式開發來源分級-格式規範.md": {
+      "exists": true,
+      "sha256": "5c6f114606333acfcc78b0fea895039617cf9b5aaccfb77b7bd308c834e54ef1",
+      "starts_with_rule_1": true,
+      "rule_count": 3,
+      "good_example_count": 3,
+      "bad_example_count": 3
+    },
+    "主幹式開發策略選擇-格式規範.md": {
+      "exists": true,
+      "sha256": "0ee9c4cd47b6d4bc01fe54723d480585829049a402034fe1fc08f0f1f2037e00",
+      "starts_with_rule_1": true,
+      "rule_count": 4,
+      "good_example_count": 4,
+      "bad_example_count": 4
+    },
+    "主幹式開發流程審查-格式規範.md": {
+      "exists": true,
+      "sha256": "eac41459c364ad4fb7696a24c94ca86ca5270f689dc6706f2ff31e5b89b1bb71",
+      "starts_with_rule_1": true,
+      "rule_count": 3,
+      "good_example_count": 3,
+      "bad_example_count": 3
+    }
+  },
+  "new_contract_evidence": {
+    "original_decision_tree_source_lines": "49-64 of git HEAD SKILL.md",
+    "original_pre_submit_source_lines": "107-114 of git HEAD SKILL.md",
+    "decision_tree_sha256": "96d4216551413573bbf8b8bbe488d513cb23b445ff441867cde7260288400040",
+    "pre_submit_checks_sha256": "f638e9eac29e4c2ec86395fea7207ba749fa95914f4a1df8768fb232c5dfee58"
+  },
+  "semantic_checks": {
+    "frontmatter_and_title_preserved": true,
+    "references_cases_unchanged": true,
+    "approved_tobe_equal_ignoring_terminal_newline": true,
+    "single_sop": true,
+    "all_rule_paths_are_in_read_step": true,
+    "cases_path_is_conditional_read": true,
+    "fixed_planning_format_preserved": true,
+    "core_main_and_integration": true,
+    "core_main_workable_and_red_recovery": true,
+    "source_layers_and_team_options": true,
+    "source_branch_thresholds_and_review_time": true,
+    "story_split_branch_and_review": true,
+    "build_test_and_minutes_feedback": true,
+    "strategies_preserved": true,
+    "decision_tree_exactly_preserved": true,
+    "decision_tree_order_and_consumption_wired": true,
+    "pre_submit_six_checks_exactly_preserved": true,
+    "pre_submit_read_think_check_wired": true,
+    "workflow_evidence_prerequisites_and_suitability": true,
+    "gitflow_comparison_preserved": true,
+    "rulefiles_have_15_rules_and_examples": true,
+    "agents_claude_package_identical": true
+  },
+  "all_semantic_checks_pass": true
+}

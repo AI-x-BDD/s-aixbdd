@@ -1,0 +1,47 @@
+codex -a never -s danger-full-access --no-alt-screen
+
+󰀵 …/tbd-v01   HEAD !?   v25.0.4   09:48 
+ codex -a never -s danger-full-access --no-alt-screen
+■ No active thread is available.
+
+
+  >_ OpenAI Codex (v0.163.0)
+     /private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v01
+  permissions: YOLO mode
+
+  Tip: Use the desktop app. Run codex app to open it. It installs automatically if needed.
+
+
+› 請讀取並使用目前專案 .agents/skills/trunk-based-development/SKILL.md 回答以下需求，僅讀取檔案，不修改專案。
+
+  production v2.4 有 bug，main 已開發 v2.5；請規劃修補與發布分支處理。
+
+
+• 我會讀取指定的 trunk-based-development Skill，依其規則規劃；不修改任何檔案。
+
+• Explored
+  └ Read SKILL.md (trunk-based-development skill), 整合技巧-格式規範.md, cases.md, TBD判準-格式規範.md
+
+• 依指定 Skill，採用 先修 main、驗證後再 cherry-pick 到 release/2.4。
+
+  1. 準備發布分支：已有 release/2.4 就沿用；沒有則從 production v2.4 對應的 tag／commit 建立，避免帶入 v2.5 的變更。此分支只做 v2.4 的穩定、修補與發布。
+  2. PR 1：修正 bug 並加入回歸測試 → main
+     使用技巧：無。從 main 開短期修補分支，merge 前同步最新 main；完成 review，通過 build → lint → unit test → 必要的 integration test 後合併，刪除修補分支。
+
+  3. PR 2：將已驗證的修正 cherry-pick → release/2.4
+     使用技巧：Release Branch。從 release/2.4 開短期回補分支，只帶入修正與必要測試；若有衝突，依 v2.4 調整並重新驗證。review、CI 通過後合併並刪除回補分支。不要把 main 整包 merge 到 release/2.4，也不要先在
+     release 修完再回灌 main。
+
+  4. 發布修補版：從 release/2.4 的已驗證 commit 建置、標記並部署，例如下一個可用版本 v2.4.1；部署後確認 bug 已消失。main 繼續開發 v2.5。release/2.4 保留至該版本停止維護。
+
+  每個 PR merge 後 main 為什麼仍可工作：PR 1 包含修正與回歸測試，經 CI 驗證；PR 2 僅回補至 release，不改動 main。若 main 的 CI 變紅，立即修復或 revert。
+
+  預估 branch 壽命（含等 review）：兩個修補分支各以幾小時、不到一天為目標；Skill 引述 TBD 官方通常為 1～2 天，DORA 目標不到一天，兩天不是硬性上限。發布分支的壽命則依 v2.4 支援期決定；命名、版本號與維護期限屬
+  團隊規則。
+
+  Worked for 26s • 9:48 AM
+
+
+› Ask Codex to do anything
+
+  GPT-6.1-Sol medium fast · Context 9% used · weekly 33% left · ← for agents                                                                                                         ⚠ 4 warnings · f2 to view

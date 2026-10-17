@@ -1,0 +1,44 @@
+{
+  "purpose": "trunk-based-development 修改前配對基線",
+  "source_head": "e588ae1d1fc87b3456a56af08e1379f131333050",
+  "fixed_isolation_root": "/tmp/tbd-baseline-mgYdNe",
+  "isolation": {
+    "creation": "git archive --format=tar HEAD | tar -xf - -C /tmp/tbd-baseline-mgYdNe",
+    "analysis_records_excluded": true,
+    "target_mode": "唯讀；codex exec --sandbox read-only；非容器",
+    "filesystem_note": "固定複本只含 HEAD 追蹤檔案，未帶入目前 worktree 的 docs/過程/CH2/trunk-based-development/本次執行/紀錄"
+  },
+  "target_hashes": {
+    ".agents/skills/trunk-based-development/SKILL.md": "245e3fcfc88066e3936d84e254038f6644fa18a8155808ca7b790ecc227527f2",
+    ".agents/skills/trunk-based-development/references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294"
+  },
+  "command": "env PATH=/opt/homebrew/bin:/usr/bin:/bin:/opt/homebrew/sbin /opt/homebrew/bin/codex exec --ephemeral --json --sandbox read-only --skip-git-repo-check -C /tmp/tbd-baseline-mgYdNe",
+  "session_method": {
+    "actual": "每案例一個 codex exec --ephemeral 全新 process，stdin 提示逐字固定",
+    "fork_turns_none": false,
+    "reason": "本工具上下文沒有 collaboration spawn/fork_turns=none 介面；不得把 CLI fresh session 冒稱為 fork_turns=none",
+    "pairing_control": "後測須沿用相同命令、相同提示、相同固定環境路徑（只替換目標 Skill），並保留此限制"
+  },
+  "model_settings": {
+    "model": "未由 CLI JSON 事件揭露；未指定 --model，繼承預設",
+    "temperature": "工具未揭露，無法核實",
+    "seed": "工具未揭露，無法核實",
+    "configuration": "未覆寫使用者模型設定；只設定唯讀 sandbox、ephemeral、json、skip-git-repo-check 與固定 cwd",
+    "agent_output": "JSONL 保存完整 CLI 事件；包含 MCP transport/OAuth 警告與 agent_message、command_execution 事件；沒有以代理自述取代讀檔事件"
+  },
+  "tool_correction": "固定複本 cwd 會使 login shell 選用 pyenv/nvm 舊 node；命令明確把 /opt/homebrew/bin 放在 PATH 前，避免 env node Bad CPU type。未用 Python 產生測試檔。",
+  "cases": [
+    {"id": "S1", "thread_id": "01a14783-987a-7d42-924a-0bb2737bb490", "input": "基線配對-S1-逐字輸入.txt", "raw_output": "基線配對-S1-原始輸出.jsonl", "input_sha256": "c1db5b6e15b92a64e49c59ca950bbcd7c5fe6af52ce4baa489ff7264d3db4e92", "raw_sha256": "e96066bdde0d52f0a5708d0e57e9481850de869c7285e18196ddaa58906ad85e"},
+    {"id": "S2", "thread_id": "01a14783-987a-7171-b73e-9db4b0dfd098", "input": "基線配對-S2-逐字輸入.txt", "raw_output": "基線配對-S2-原始輸出.jsonl", "input_sha256": "c1b08738b44796a1eac7c53308110c1860eb58fb6dce53aaeb8c87dbf024a7c6", "raw_sha256": "966e420201dc7e283be1a1d3acc07021b7d750883e4119cc6a01df119942ce91"},
+    {"id": "S3", "thread_id": "01a14785-19d7-7440-90f9-3859e8fe6535", "input": "基線配對-S3-逐字輸入.txt", "raw_output": "基線配對-S3-完整原始輸出.jsonl", "input_sha256": "20a0f1baee957a47aa8302d5aec9ef8b4098d3baecbead0846462ce5ee41abc7", "raw_sha256": "f352e5283dee3b94b0f32e76df51190f63485aa7ce859affab861ac45e3a89f0"},
+    {"id": "S5", "thread_id": "01a14784-607a-7313-8029-9f5c4c86ecf3", "input": "基線配對-S5-逐字輸入.txt", "raw_output": "基線配對-S5-原始輸出.jsonl", "input_sha256": "3e9745af76a02434e031cc679b988f0c44d11ab6f60da202dd297df75d2af409", "raw_sha256": "70f6bc8d0dc369b011b38bd9f87f2336a3f0cb8dc015790825d1a344ce3c4419"},
+    {"id": "S6", "thread_id": "01a14784-6104-7140-805d-790a9faaeb25", "input": "基線配對-S6-逐字輸入.txt", "raw_output": "基線配對-S6-原始輸出.jsonl", "input_sha256": "de0ec04f6e84a273dcc74dab527c0274f2595f3e93206be81e6e688cb5cbcb9c", "raw_sha256": "a85794b3aac176f415d208b868c1b191337f3ef3641036ea1d7f8a1e0b23ec27"},
+    {"id": "S7", "thread_id": "01a14785-bd3e-7362-b35f-5f257dee77a9", "input": "基線配對-S7-逐字輸入.txt", "raw_output": "基線配對-S7-原始輸出.jsonl", "input_sha256": "122e82d732eb3a671b0c80ba4db7e8dafeb23ec5f2211c57f7e2faecd53e7e50", "raw_sha256": "a8a228dd7caf44e3f3b09fca685a305d065f5bcf9d01a7f5715ed82ecbdc884e"},
+    {"id": "S8", "thread_id": "01a14785-bd3e-7743-a932-fbc19fed05cc", "input": "基線配對-S8-逐字輸入.txt", "raw_output": "基線配對-S8-原始輸出.jsonl", "input_sha256": "3c907b0f04063eb8ed74df8065ca0d2137bd27aeb2eeca68fc9a4ac2a04e999f", "raw_sha256": "72ad19b446d830fc474fb8d6e7ee4ae0c77ae23aa87c9be6ee145adb7337477f"}
+  ],
+  "notes": [
+    "S3 曾有一次初始呼叫在 30 秒 yield 時回傳 partial chunk，另保存為基線配對-S3-原始輸出.jsonl；正式基線證據採同提示重新開立的完整單次 JSONL。",
+    "CLI raw stdout 包含 artifact under-development warning、MCP transport/OAuth error；agent_message 與 command_execution 仍完成，exit_code=0。這些環境訊息保留，不改判準。",
+    "未執行 S4 動態代理；S4 為靜態結構驗收，既有修改前結構診斷.json 已記錄舊版 SOP001、無 RuleFile。"
+  ]
+}

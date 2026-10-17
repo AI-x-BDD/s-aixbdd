@@ -1,0 +1,53 @@
+codex -a never -s danger-full-access --no-alt-screen
+
+󰀵 …/tbd-v04   HEAD !?   v25.0.4   09:27 
+ codex -a never -s danger-full-access --no-alt-screen
+
+  >_ OpenAI Codex (v0.163.0)
+     /private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v04
+  permissions: YOLO mode
+
+  Tip: Use the desktop app. Run codex app to open it. It installs automatically if needed.
+
+
+› 請讀取並使用目前專案 .agents/skills/trunk-based-development/SKILL.md 回答以下需求，僅讀取檔案，不修改專案。
+
+  production v2.4 有 bug，main 已開發 v2.5；請規劃修補與發布分支處理。
+
+
+• 我會讀取指定的 trunk-based-development Skill，依其規則規劃；僅讀取檔案。
+
+• Explored
+  └ Read SKILL.md (trunk-based-development skill)
+
+• Ran cat .agents/skills/trunk-based-development/rules/TBD-策略選擇-格式規範.md .agents/skills/trunk-based-development/rules/TBD-需求規劃-格式規範.md .agents/skills/trunk-based-development/rules/TBD-來源與壽
+  │ 命-格式規範.md .agents/skills/trunk-based-development/rules/TBD-送出前檢查-格式規範.md
+  └ # Rule 1 - 決策樹與技巧選擇
+
+    - 依下列決策樹判斷變更策略：
+    +106 lines (⌃t to view transcript)
+
+• 採用 先修 main，再 cherry-pick 到 v2.4 release branch；避免將 v2.5 的新功能帶進 production。
+
+   PR                 變更與技巧                                                              整合後仍可工作的理由                                       分支壽命（含 review）
+  ━━━━━━━━━━━━━━━━━  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  ━━━━━━━━━━━━━━━━━━━━━━━
+   1 → main           從 main 開短期修補分支，加入 bug 修正與回歸測試                         驗證修正適用於 v2.5，通過 CI、review 後合併                目標不到一天
+  ─────────────────  ──────────────────────────────────────────────────────────────────────  ─────────────────────────────────────────────────────────  ───────────────────────
+   2 → release/2.4    將 main 已驗證的修補 commit cherry-pick 過來；必要時調整 v2.4 相容性    不改動 main；另在 v2.4 執行回歸測試，確認修補可獨立運作    回移分支目標不到一天
+
+  發布分支處理：
+
+  1. 已有 release/2.4 就沿用；沒有則從 production 實際部署的 v2.4 tag／commit 建立，不能從目前 main 切。
+  2. release branch 只接受該版本的穩定化、bug fix 與發布變更，不加入新功能，也不整批合併 main。
+  3. v2.4 修補通過 build、lint、測試與 review 後，建立下一個 patch tag（例如 v2.4.1，須確認尚未使用），部署並驗證。
+  4. 合併後刪除兩個短期修補分支；release/2.4 保留至 v2.4 支援結束。保留期限由團隊決定。
+  5. v2.5 繼續在 main 開發；接近發布且需要獨立穩定化時，才切 release/2.5。
+
+  依指定 Skill：TBD 官方短期分支通常為 1～2 天；DORA目標不到一天；本規劃採不到一天作為建議目標，並非硬性上限，也不套用於 release branch 的支援期限。
+
+  Worked for 13s • 9:28 AM
+
+
+› Ask Codex to do anything
+
+  GPT-6.1-Sol medium fast · Context 8% used · weekly 53% left · ← for agents                                                                                                         ⚠ 4 warnings · f2 to view

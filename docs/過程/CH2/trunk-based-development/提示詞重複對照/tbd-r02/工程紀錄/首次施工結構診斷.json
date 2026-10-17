@@ -1,0 +1,173 @@
+{
+  "skills_roots": [
+    "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.agents/skills",
+    "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.claude/skills"
+  ],
+  "shadowed_skills": [
+    {
+      "name": "conventional-commits",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.agents/skills/conventional-commits",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.claude/skills/conventional-commits"
+    },
+    {
+      "name": "double-diamond",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.agents/skills/double-diamond",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.claude/skills/double-diamond"
+    },
+    {
+      "name": "plan-with-class-diagram",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.agents/skills/plan-with-class-diagram",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.claude/skills/plan-with-class-diagram"
+    },
+    {
+      "name": "skill-creator",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.agents/skills/skill-creator",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.claude/skills/skill-creator"
+    },
+    {
+      "name": "skill-derive-rule",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.agents/skills/skill-derive-rule",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.claude/skills/skill-derive-rule"
+    },
+    {
+      "name": "skill-derive-script",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.agents/skills/skill-derive-script",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.claude/skills/skill-derive-script"
+    },
+    {
+      "name": "skill-derive-template",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.agents/skills/skill-derive-template",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.claude/skills/skill-derive-template"
+    },
+    {
+      "name": "skill-engineering",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.agents/skills/skill-engineering",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.claude/skills/skill-engineering"
+    },
+    {
+      "name": "skill-form-description",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.agents/skills/skill-form-description",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.claude/skills/skill-form-description"
+    },
+    {
+      "name": "skill-form-rule",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.agents/skills/skill-form-rule",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.claude/skills/skill-form-rule"
+    },
+    {
+      "name": "skill-form-script",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.agents/skills/skill-form-script",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.claude/skills/skill-form-script"
+    },
+    {
+      "name": "skill-form-sop",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.agents/skills/skill-form-sop",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.claude/skills/skill-form-sop"
+    },
+    {
+      "name": "skill-form-template",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.agents/skills/skill-form-template",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.claude/skills/skill-form-template"
+    },
+    {
+      "name": "trunk-based-development",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.agents/skills/trunk-based-development",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.claude/skills/trunk-based-development"
+    },
+    {
+      "name": "typesafe-ai",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.agents/skills/typesafe-ai",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.claude/skills/typesafe-ai"
+    }
+  ],
+  "summary": {
+    "skills": 1,
+    "errors": 0,
+    "warnings": 0
+  },
+  "skills": [
+    {
+      "name": "trunk-based-development",
+      "path": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02/.agents/skills/trunk-based-development",
+      "errors": 0,
+      "warnings": 0,
+      "findings": [],
+      "parts": [
+        "rules/主幹整合-格式規範.md",
+        "rules/變更拆分-格式規範.md"
+      ],
+      "references": {
+        "rules/主幹整合-格式規範.md": [
+          {
+            "phase": 1,
+            "step": 3,
+            "verb": "READ",
+            "line": 12
+          }
+        ],
+        "rules/變更拆分-格式規範.md": [
+          {
+            "phase": 1,
+            "step": 4,
+            "verb": "READ",
+            "line": 13
+          }
+        ]
+      },
+      "sop": [
+        {
+          "phase": 1,
+          "title": "分析、規劃與審查",
+          "steps": [
+            {
+              "step": 1,
+              "verb": "READ",
+              "text": "`READ` 使用者需求、已提供的團隊 Git workflow 規則與 branch／PR／CI 現況，建立「任務輸入」。"
+            },
+            {
+              "step": 2,
+              "verb": "THINK",
+              "text": "`THINK` 依「任務輸入」判定本次涉及需求拆分與整合規劃、branch／PR／團隊 workflow 審查、技巧選擇或 TBD 與 GitFlow 比較，建立「任務類型」。"
+            },
+            {
+              "step": 3,
+              "verb": "READ",
+              "text": "`READ` 進行 TBD 規劃、審查或比較時，讀取 `rules/主幹整合-格式規範.md` 的所有 Rule，建立「主幹整合檢查清單」。"
+            },
+            {
+              "step": 4,
+              "verb": "READ",
+              "text": "`READ` 「任務類型」涉及需求拆分、整合方案、技巧選擇或任何 branch／PR／團隊 workflow 審查時，讀取 `rules/變更拆分-格式規範.md` 的所有 Rule，建立「變更拆分檢查清單」；一般審查即使未點名具體技巧也適用。"
+            },
+            {
+              "step": 5,
+              "verb": "THINK",
+              "text": "`THINK` 依「任務輸入」、「主幹整合檢查清單」及本次適用且已載入的「變更拆分檢查清單」分析整合現況、規則來源與適用範圍，建立「整合判斷」。"
+            },
+            {
+              "step": 6,
+              "verb": "READ",
+              "text": "`READ` 已載入「變更拆分檢查清單」且需要參照完整拆分案例時，讀取 `references/cases.md`，建立「實戰案例參照」。"
+            },
+            {
+              "step": 7,
+              "verb": "THINK",
+              "text": "`THINK` 依「任務輸入」、「整合判斷」、「主幹整合檢查清單」，以及本次有載入的「變更拆分檢查清單」與「實戰案例參照」，形成「建議草稿」。規劃短期 branch／PR 路徑時，依切小、每個小變更開短期 branch、工作期間及 merge 前同步 main、build → lint → unit test → 必要的 integration test、PR → review → CI green → merge、merge 後刪 branch 的順序安排整合；此為短期 branch／PR 路徑，不將該路徑擴張為所有團隊必用的 Git 操作。"
+            },
+            {
+              "step": 8,
+              "verb": "CHECK",
+              "text": "`CHECK` 先依「任務類型」核對步驟 3、4 的載入條件是否均已履行；有應載未載的清單時返回對應 READ，重新執行其後的分析與草稿步驟。再逐條驗證「建議草稿」是否符合「任務輸入」及所有適用的具名檢查清單；使用「實戰案例參照」時一併核對與清單的一致性。內容未通過時返回步驟 7 修正草稿後重新檢查。"
+            },
+            {
+              "step": 9,
+              "verb": "WRITE",
+              "text": "`WRITE` 向使用者交付通過檢查的「建議草稿」；規劃結果使用以下格式，審查或比較任務依「任務類型」交付對應判斷："
+            }
+          ],
+          "completion": "完成條件：已交付符合需求與本次載入清單的規劃、審查或比較結果；本次適用的清單均已在使用前載入，且已逐條檢查。"
+        }
+      ]
+    }
+  ]
+}

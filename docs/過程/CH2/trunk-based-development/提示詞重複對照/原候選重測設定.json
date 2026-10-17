@@ -1,0 +1,44 @@
+[
+  {
+    "name": "tbd-v01",
+    "worktree": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v01",
+    "pane": "w8:p1",
+    "workspace": "w8",
+    "case": "S4"
+  },
+  {
+    "name": "tbd-v02",
+    "worktree": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v02",
+    "pane": "w9:p1",
+    "workspace": "w9",
+    "case": "S4"
+  },
+  {
+    "name": "tbd-v03",
+    "worktree": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v03",
+    "pane": "wA:p1",
+    "workspace": "wA",
+    "case": "S4"
+  },
+  {
+    "name": "tbd-v04",
+    "worktree": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v04",
+    "pane": "wB:p1",
+    "workspace": "wB",
+    "case": "S5"
+  },
+  {
+    "name": "tbd-v05",
+    "worktree": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v05",
+    "pane": "wC:p1",
+    "workspace": "wC",
+    "case": "S5"
+  },
+  {
+    "name": "tbd-v06",
+    "worktree": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v06",
+    "pane": "wD:p1",
+    "workspace": "wD",
+    "case": "S5"
+  }
+]

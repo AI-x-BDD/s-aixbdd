@@ -1,0 +1,11 @@
+{
+  "base_commit": "e588ae1d1fc87b3456a56af08e1379f131333050",
+  "temporary_root": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i",
+  "model_override": null,
+  "reasoning_override": null,
+  "exact_server_version": "unknown",
+  "randomness_parameters": "unknown",
+  "repetitions_per_prompt": 1,
+  "prompt_blocks": 2,
+  "scope": "僅暫時 worktree 的目標 Skill；正式版本待確認"
+}

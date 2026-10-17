@@ -1,0 +1,44 @@
+{
+  "S1": {
+    "input": "設定頁標點錯了，預計20分鐘、review15分鐘、CI4分鐘，請用 TBD 規劃",
+    "environment": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/docs/過程/CH2/trunk-based-development/本次執行/回修測試環境/S1",
+    "skill": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/docs/過程/CH2/trunk-based-development/本次執行/回修測試環境/S1/.agents/skills/trunk-based-development/SKILL.md",
+    "pre_reply": "不適用：原Skill無互動確認閘門"
+  },
+  "S2": {
+    "input": "推薦清單需四天，週四才可曝光；API、UI、追蹤可分別完成，CI5分鐘、review30分鐘，請拆 PR",
+    "environment": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/docs/過程/CH2/trunk-based-development/本次執行/回修測試環境/S2",
+    "skill": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/docs/過程/CH2/trunk-based-development/本次執行/回修測試環境/S2/.agents/skills/trunk-based-development/SKILL.md",
+    "pre_reply": "不適用：原Skill無互動確認閘門"
+  },
+  "S3": {
+    "input": "將通知寄送由 SMTP adapter 換為雲端郵件 SDK，需六天，不能中斷寄信，CI6分鐘、review30分鐘",
+    "environment": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/docs/過程/CH2/trunk-based-development/本次執行/回修測試環境/S3",
+    "skill": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/docs/過程/CH2/trunk-based-development/本次執行/回修測試環境/S3/.agents/skills/trunk-based-development/SKILL.md",
+    "pre_reply": "不適用：原Skill無互動確認閘門"
+  },
+  "S4": {
+    "input": "地址 API 的 street 欄位改為 addressLines，舊版手機 app 仍使用 street，要分批遷移，CI5分鐘、review30分鐘",
+    "environment": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/docs/過程/CH2/trunk-based-development/本次執行/回修測試環境/S4",
+    "skill": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/docs/過程/CH2/trunk-based-development/本次執行/回修測試環境/S4/.agents/skills/trunk-based-development/SKILL.md",
+    "pre_reply": "不適用：原Skill無互動確認閘門"
+  },
+  "S5": {
+    "input": "production 3.2 有時區 bug，main 已開發3.3；review20分鐘、CI5分鐘，如何 hotfix，release branch 可否順便開新報表",
+    "environment": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/docs/過程/CH2/trunk-based-development/本次執行/回修測試環境/S5",
+    "skill": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/docs/過程/CH2/trunk-based-development/本次執行/回修測試環境/S5/.agents/skills/trunk-based-development/SKILL.md",
+    "pre_reply": "不適用：原Skill無互動確認閘門"
+  },
+  "S6": {
+    "input": "都從main開branch，寫半天、review三天、CI45分鐘、紅燈晚上再看、發布前freeze；規定squash及兩位reviewer。算TBD嗎？和GitFlow差在哪？超過兩天一律違規嗎",
+    "environment": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/docs/過程/CH2/trunk-based-development/本次執行/回修測試環境/S6",
+    "skill": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/docs/過程/CH2/trunk-based-development/本次執行/回修測試環境/S6/.agents/skills/trunk-based-development/SKILL.md",
+    "pre_reply": "不適用：原Skill無互動確認閘門"
+  },
+  "S7": {
+    "input": "企業內部 Web 系統需求常變、多人維護、想頻繁發布，但無自動測試、build手動、review平均四天。能直接全面改TBD嗎？",
+    "environment": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/docs/過程/CH2/trunk-based-development/本次執行/回修測試環境/S7",
+    "skill": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/docs/過程/CH2/trunk-based-development/本次執行/回修測試環境/S7/.agents/skills/trunk-based-development/SKILL.md",
+    "pre_reply": "不適用：原Skill無互動確認閘門"
+  }
+}

@@ -1,0 +1,2 @@
+d2ca158a1f4388411b4c73bb02f26f10755cfcfbc1a2e4125a73d0f613375c04  /var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/long-own-after.md
+d2ca158a1f4388411b4c73bb02f26f10755cfcfbc1a2e4125a73d0f613375c04  docs/過程/CH2/trunk-based-development/長提示詞/最佳化後行為驗收-原始輸出.md

@@ -1,0 +1,293 @@
+{
+  "skills_roots": [
+    "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.agents/skills",
+    "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.claude/skills",
+    "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/skills"
+  ],
+  "shadowed_skills": [
+    {
+      "name": "conventional-commits",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.agents/skills/conventional-commits",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.claude/skills/conventional-commits"
+    },
+    {
+      "name": "double-diamond",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.agents/skills/double-diamond",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.claude/skills/double-diamond"
+    },
+    {
+      "name": "plan-with-class-diagram",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.agents/skills/plan-with-class-diagram",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.claude/skills/plan-with-class-diagram"
+    },
+    {
+      "name": "skill-creator",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.agents/skills/skill-creator",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.claude/skills/skill-creator"
+    },
+    {
+      "name": "skill-derive-rule",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.agents/skills/skill-derive-rule",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.claude/skills/skill-derive-rule"
+    },
+    {
+      "name": "skill-derive-script",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.agents/skills/skill-derive-script",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.claude/skills/skill-derive-script"
+    },
+    {
+      "name": "skill-derive-template",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.agents/skills/skill-derive-template",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.claude/skills/skill-derive-template"
+    },
+    {
+      "name": "skill-engineering",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.agents/skills/skill-engineering",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.claude/skills/skill-engineering"
+    },
+    {
+      "name": "skill-form-description",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.agents/skills/skill-form-description",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.claude/skills/skill-form-description"
+    },
+    {
+      "name": "skill-form-rule",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.agents/skills/skill-form-rule",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.claude/skills/skill-form-rule"
+    },
+    {
+      "name": "skill-form-script",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.agents/skills/skill-form-script",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.claude/skills/skill-form-script"
+    },
+    {
+      "name": "skill-form-sop",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.agents/skills/skill-form-sop",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.claude/skills/skill-form-sop"
+    },
+    {
+      "name": "skill-form-template",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.agents/skills/skill-form-template",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.claude/skills/skill-form-template"
+    },
+    {
+      "name": "trunk-based-development",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.agents/skills/trunk-based-development",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.claude/skills/trunk-based-development"
+    },
+    {
+      "name": "typesafe-ai",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.agents/skills/typesafe-ai",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.claude/skills/typesafe-ai"
+    }
+  ],
+  "summary": {
+    "skills": 1,
+    "errors": 1,
+    "warnings": 0
+  },
+  "skills": [
+    {
+      "name": "trunk-based-development",
+      "path": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r04/.agents/skills/trunk-based-development",
+      "errors": 1,
+      "warnings": 0,
+      "findings": [
+        {
+          "code": "SOP001",
+          "severity": "error",
+          "file": "SKILL.md",
+          "line": null,
+          "message": "SKILL.md 缺少 `# SOP` section。"
+        }
+      ],
+      "parts": [],
+      "references": {},
+      "sop": []
+    }
+  ],
+  "graph": {
+    "edges": [
+      {
+        "from": "skill-derive-rule",
+        "to": "skill-form-rule",
+        "phase": 3,
+        "step": 3,
+        "via": "skill-form-rule"
+      },
+      {
+        "from": "skill-derive-rule",
+        "to": "skill-form-sop",
+        "phase": 3,
+        "step": 4,
+        "via": "skill-form-sop"
+      },
+      {
+        "from": "skill-derive-script",
+        "to": "skill-form-script",
+        "phase": 3,
+        "step": 2,
+        "via": "skill-form-script"
+      },
+      {
+        "from": "skill-derive-script",
+        "to": "skill-form-sop",
+        "phase": 3,
+        "step": 3,
+        "via": "skill-form-sop"
+      },
+      {
+        "from": "skill-derive-template",
+        "to": "skill-form-template",
+        "phase": 3,
+        "step": 3,
+        "via": "skill-form-template"
+      },
+      {
+        "from": "skill-derive-template",
+        "to": "skill-form-sop",
+        "phase": 3,
+        "step": 4,
+        "via": "skill-form-sop"
+      },
+      {
+        "from": "skill-engineering",
+        "to": "skill-form-description",
+        "phase": 5,
+        "step": 3,
+        "via": "skill-form-*"
+      },
+      {
+        "from": "skill-engineering",
+        "to": "skill-form-rule",
+        "phase": 5,
+        "step": 3,
+        "via": "skill-form-*"
+      },
+      {
+        "from": "skill-engineering",
+        "to": "skill-form-script",
+        "phase": 5,
+        "step": 3,
+        "via": "skill-form-*"
+      },
+      {
+        "from": "skill-engineering",
+        "to": "skill-form-sop",
+        "phase": 5,
+        "step": 3,
+        "via": "skill-form-*"
+      },
+      {
+        "from": "skill-engineering",
+        "to": "skill-form-template",
+        "phase": 5,
+        "step": 3,
+        "via": "skill-form-*"
+      },
+      {
+        "from": "skill-engineering",
+        "to": "skill-derive-rule",
+        "phase": 5,
+        "step": 3,
+        "via": "skill-derive-*"
+      },
+      {
+        "from": "skill-engineering",
+        "to": "skill-derive-script",
+        "phase": 5,
+        "step": 3,
+        "via": "skill-derive-*"
+      },
+      {
+        "from": "skill-engineering",
+        "to": "skill-derive-template",
+        "phase": 5,
+        "step": 3,
+        "via": "skill-derive-*"
+      }
+    ],
+    "callers": {
+      "conventional-commits": [],
+      "course-transcript-notes": [],
+      "double-diamond": [],
+      "git-commit-draft": [],
+      "plan-with-class-diagram": [],
+      "review-article-stepwise": [],
+      "skill-creator": [],
+      "skill-derive-rule": [
+        "skill-engineering"
+      ],
+      "skill-derive-script": [
+        "skill-engineering"
+      ],
+      "skill-derive-template": [
+        "skill-engineering"
+      ],
+      "skill-engineering": [],
+      "skill-form-description": [
+        "skill-engineering"
+      ],
+      "skill-form-rule": [
+        "skill-derive-rule",
+        "skill-engineering"
+      ],
+      "skill-form-script": [
+        "skill-derive-script",
+        "skill-engineering"
+      ],
+      "skill-form-sop": [
+        "skill-derive-rule",
+        "skill-derive-script",
+        "skill-derive-template",
+        "skill-engineering"
+      ],
+      "skill-form-template": [
+        "skill-derive-template",
+        "skill-engineering"
+      ],
+      "transcript-deep-learning": [],
+      "trunk-based-development": [],
+      "typesafe-ai": []
+    },
+    "callees": {
+      "conventional-commits": [],
+      "course-transcript-notes": [],
+      "double-diamond": [],
+      "git-commit-draft": [],
+      "plan-with-class-diagram": [],
+      "review-article-stepwise": [],
+      "skill-creator": [],
+      "skill-derive-rule": [
+        "skill-form-rule",
+        "skill-form-sop"
+      ],
+      "skill-derive-script": [
+        "skill-form-script",
+        "skill-form-sop"
+      ],
+      "skill-derive-template": [
+        "skill-form-template",
+        "skill-form-sop"
+      ],
+      "skill-engineering": [
+        "skill-form-description",
+        "skill-form-rule",
+        "skill-form-script",
+        "skill-form-sop",
+        "skill-form-template",
+        "skill-derive-rule",
+        "skill-derive-script",
+        "skill-derive-template"
+      ],
+      "skill-form-description": [],
+      "skill-form-rule": [],
+      "skill-form-script": [],
+      "skill-form-sop": [],
+      "skill-form-template": [],
+      "transcript-deep-learning": [],
+      "trunk-based-development": [],
+      "typesafe-ai": []
+    }
+  }
+}

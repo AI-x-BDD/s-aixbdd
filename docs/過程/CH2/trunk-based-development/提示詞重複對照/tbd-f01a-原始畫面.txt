@@ -1,0 +1,45 @@
+codex -a never -s danger-full-access --no-alt-screen
+
+󰀵 …/tbd-b01   HEAD !?   v25.0.4   09:48 
+ codex -a never -s danger-full-access --no-alt-screen
+■ No active thread is available.
+
+
+  >_ OpenAI Codex (v0.163.0)
+     /private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-b01
+  permissions: YOLO mode
+
+  Tip: Use the desktop app. Run codex app to open it. It installs automatically if needed.
+
+
+› 請讀取並使用目前專案 .agents/skills/trunk-based-development/SKILL.md 回答以下需求，僅讀取檔案，不修改專案。
+
+  團隊有長期 develop 與 release-next、PR review 常等待兩天、CI 變紅後仍繼續開發；請檢查是否符合 TBD。
+
+
+• 我會讀取指定 Skill，依其中準則檢查；不修改專案。
+
+• Explored
+  └ Read SKILL.md (trunk-based-development skill), TBD判準-格式規範.md, 整合技巧-格式規範.md, workflow審查-格式規範.md
+
+• 依描述，目前不符合 TBD。 按指定 Skill 判準：
+
+   現況                          判定與修正
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   長期 develop、release-next    若承載共同開發，就是長期開發分支，違反圍繞單一 trunk 持續整合的核心。應將小變更頻繁整合回 main。若 release-next 僅負責版本穩定、修 bug、發布，則需另行判斷；名稱本身不決定合
+                                 規。
+  ────────────────────────────  ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   PR review 常等兩天            等待 review 計入 branch 壽命。TBD 官方短期分支通常 1～2 天，DORA 目標不到一天；兩天不是硬性上限，但光等待就兩天，已是整合瓶頸。應縮小 PR、加快 review。
+  ────────────────────────────  ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   CI 變紅仍繼續開發             若紅的是 main，直接違反核心紀律：應優先修復或立即 revert，恢復 green 後再開發新功能。若只是 PR CI 紅，則應修正並通過檢查後才合併。
+
+  改善重點：先建立快速 review 與 broken trunk 優先修復的紀律，再以小批次安全整合；DORA 要求每人至少每天整合 main 一次。未完成功能可用 Feature Flag 隱藏，上線穩定後清除。
+
+  尚未提供每日整合頻率、active branches 數量、CI 回饋速度、code freeze 與 Flag 清理情況，這些仍待確認。以上依指定 Skill 及其規則檔判讀，未修改專案。
+
+  Worked for 15s • 9:49 AM
+
+
+› Ask Codex to do anything
+
+  GPT-6.1-Sol medium fast · Context 9% used · weekly 33% left · ← for agents                                                                                                         ⚠ 4 warnings · f2 to view

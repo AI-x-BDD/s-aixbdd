@@ -1,0 +1,64 @@
+diff -ruN docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本/.claude/skills/trunk-based-development/SKILL.md .claude/skills/trunk-based-development/SKILL.md
+--- docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本/.claude/skills/trunk-based-development/SKILL.md	2026-10-17 08:32:22
++++ .claude/skills/trunk-based-development/SKILL.md	2026-10-17 08:45:18
+@@ -10,10 +10,10 @@
+ ## Phase 1 -- 釐清情境與按主題載入判斷規則
+ 
+ 1. `READ` 使用者需求，以及使用者提供的 branch、PR、CI、release 與工作目錄現況。
+-2. `THINK` 將本次任務標記為需求拆分規劃、workflow 審查、TBD 與 GitFlow 比較中的一個或多個模式，並判斷是否要求來源分級、特殊策略與完整案例；列出各模式需要的實際判斷主題與未知限制。
+-3. `READ` 依第 2 步的主題分支，讀取所選 RuleFile 的全部 Rule，並分別建立具名清單：需要判斷 trunk／main 是否可工作或需求／審查涉及核心整合時，讀取 rules/主幹式開發核心規則-格式規範.md，建立「TBD 核心規則檢查清單」；需要規劃 PR、branch 壽命、同步、驗證或刪除時，讀取 rules/主幹式開發需求拆分-格式規範.md，建立「TBD 需求拆分檢查清單」；需要標示官方／DORA／團隊來源或門檻時，讀取 rules/主幹式開發來源分級-格式規範.md，建立「TBD 來源分級檢查清單」；遇到不能曝光、大型重構、相容性遷移或 release／hotfix 時，讀取 rules/主幹式開發策略選擇-格式規範.md，建立「TBD 策略選擇檢查清單」；審查 workflow 或比較 TBD 與 GitFlow 時，讀取 rules/主幹式開發流程審查-格式規範.md，建立「TBD 流程審查檢查清單」；只有需要完整情境拆法時，才讀取 references/cases.md 並建立「TBD 案例參考」。未選中的檔案不載入。
+-4. `THINK` 只使用與模式相符的「TBD 核心規則檢查清單」、「TBD 需求拆分檢查清單」、「TBD 來源分級檢查清單」、「TBD 策略選擇檢查清單」、「TBD 流程審查檢查清單」與（若已建立）「TBD 案例參考」；需求規劃列出小批次、技巧、main 可工作理由與 branch 壽命，workflow 審查列出證據、違反項、導入前提與修正順序，TBD 與 GitFlow 比較明確比較隔離後一次整合與小批次持續整合，並對每項結論保留輸入事實、來源層級與未知限制。
+-5. `CHECK` 逐項確認已選的「TBD 核心規則檢查清單」、「TBD 需求拆分檢查清單」、「TBD 來源分級檢查清單」、「TBD 策略選擇檢查清單」、「TBD 流程審查檢查清單」與（若已建立）「TBD 案例參考」，以及已知限制；缺少的事實標為未知，不用未提供資訊補成結論。
++2. `THINK` 將本次任務標記為需求拆分規劃、workflow 審查、TBD 與 GitFlow 比較中的一個或多個模式，並判斷是否需要執行 Decision Tree、送出前檢查、來源分級、特殊策略與完整案例；列出各模式需要的實際判斷主題與未知限制。
++3. `READ` 依第 2 步的主題分支，讀取所選 RuleFile 的全部 Rule，並分別建立具名清單：需要判斷 trunk／main 是否可工作、需求／審查涉及核心整合，或需要執行送出前檢查時，讀取 rules/主幹式開發核心規則-格式規範.md，建立「TBD 核心規則檢查清單」；需要規劃 PR、branch 壽命、同步、驗證或刪除時，讀取 rules/主幹式開發需求拆分-格式規範.md，建立「TBD 需求拆分檢查清單」；需要標示官方／DORA／團隊來源或門檻時，讀取 rules/主幹式開發來源分級-格式規範.md，建立「TBD 來源分級檢查清單」；需要判斷完成時間、能否再切小或選擇特殊策略時，讀取 rules/主幹式開發策略選擇-格式規範.md，建立「TBD 策略選擇檢查清單」；審查 workflow 或比較 TBD 與 GitFlow 時，讀取 rules/主幹式開發流程審查-格式規範.md，建立「TBD 流程審查檢查清單」；只有需要完整情境拆法時，才讀取 references/cases.md 並建立「TBD 案例參考」。未選中的檔案不載入。
++4. `THINK` 只使用與模式相符的「TBD 核心規則檢查清單」、「TBD 需求拆分檢查清單」、「TBD 來源分級檢查清單」、「TBD 策略選擇檢查清單」、「TBD 流程審查檢查清單」與（若已建立）「TBD 案例參考」；需求規劃列出小批次、技巧、main 可工作理由與 branch 壽命，若本次需要 Decision Tree，先判斷幾小時／一天內能否完成，再判斷能否切得更小，只有不能切小時才依不能曝光、大型重構、相容性遷移或已發布版本選擇技巧；若本次需要送出前檢查，逐項使用「TBD 核心規則檢查清單」中的「送出前檢查」；workflow 審查列出證據、違反項、導入前提與修正順序，TBD 與 GitFlow 比較明確比較隔離後一次整合與小批次持續整合，並對每項結論保留輸入事實、來源層級與未知限制。
++5. `CHECK` 逐項確認已選的「TBD 核心規則檢查清單」、「TBD 需求拆分檢查清單」、「TBD 來源分級檢查清單」、「TBD 策略選擇檢查清單」、「TBD 流程審查檢查清單」與（若已建立）「TBD 案例參考」，並核對已選清單中的 Decision Tree 與「送出前檢查」項目，以及已知限制；缺少的事實標為未知，不用未提供資訊補成結論。
+ 
+ 完成條件：模式與主題分支已判定，只有必要的 RuleFile／案例資源已載入並命名，分析已覆蓋已選檢查項且未知限制已標明。
+ 
+diff -ruN docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本/.claude/skills/trunk-based-development/rules/主幹式開發核心規則-格式規範.md .claude/skills/trunk-based-development/rules/主幹式開發核心規則-格式規範.md
+--- docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本/.claude/skills/trunk-based-development/rules/主幹式開發核心規則-格式規範.md	2026-10-17 08:32:22
++++ .claude/skills/trunk-based-development/rules/主幹式開發核心規則-格式規範.md	2026-10-17 08:45:18
+@@ -22,6 +22,15 @@
+ - main 紅時先查明失敗，立即修復或 revert；不能為了維持小 PR 而把已知不可工作的程式合進 main，也不能靠 code freeze 延後處理。
+ - 若只有 feature branch 紅，該 branch 尚未具備合併條件；不能把它與 main 紅混為同一事實。
+ 
++**送出前檢查**
++
++1. 能不能切到一天內可以 merge？
++2. 這個 PR 現在 merge，main 還能正常工作嗎？
++3. 未完成功能能不能用 Feature Flag 隱藏？
++4. 大改造能不能用 abstraction 讓新舊實作共存？
++5. CI 能不能快速告訴我這次改動有沒有破壞系統？
++6. 這個 branch 明天還會存在嗎？是的話，檢查是不是切得太大。
++
+ ## Good Example
+ 
+ CI 發現 main 紅了，團隊先停止新功能、修復失敗或 revert 造成破壞的變更；若只有 feature branch 紅，先修到 green 並確認 main 狀態，再合併。
+diff -ruN docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本/.claude/skills/trunk-based-development/rules/主幹式開發策略選擇-格式規範.md .claude/skills/trunk-based-development/rules/主幹式開發策略選擇-格式規範.md
+--- docs/過程/CH2/trunk-based-development/長提示詞/首次驗收版本/.claude/skills/trunk-based-development/rules/主幹式開發策略選擇-格式規範.md	2026-10-17 08:32:22
++++ .claude/skills/trunk-based-development/rules/主幹式開發策略選擇-格式規範.md	2026-10-17 08:45:18
+@@ -14,6 +14,23 @@
+ 
+ 因為週五才能曝光就把全部程式藏在長期 branch，或留下已開啟多年、沒有清理計畫的 flag。
+ 
++**Decision Tree**
++
++~~~text
++我要做一個變更
++│
++├─ 幾小時／一天內可完成？
++│   └─ Yes → short-lived branch → CI + Review → merge main
++│
++└─ No → 能不能切更小？
++    ├─ Yes → 切小 → 多個 PR，每個回到上一步判斷
++    └─ No → 為什麼？
++        ├─ 功能還不能曝光     → Feature Flag
++        ├─ 大型程式重構       → Branch by Abstraction
++        ├─ 舊系統／相容性遷移 → 新舊並存（Strangler）
++        └─ 維護已發布版本     → Release Branch
++~~~
++
+ # Rule 2 - 大型重構用 Branch by Abstraction
+ 
+ 規則說明：

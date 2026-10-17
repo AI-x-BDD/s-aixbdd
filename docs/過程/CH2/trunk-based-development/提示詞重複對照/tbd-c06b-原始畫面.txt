@@ -1,0 +1,50 @@
+codex -a never -s danger-full-access --no-alt-screen
+
+󰀵 …/tbd-v06   HEAD !?   v25.0.4   09:39 
+ codex -a never -s danger-full-access --no-alt-screen
+
+  >_ OpenAI Codex (v0.163.0)
+     /private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v06
+  permissions: YOLO mode
+
+  Tip: Use the desktop app. Run codex app to open it. It installs automatically if needed.
+
+
+› 請讀取並使用目前專案 .agents/skills/trunk-based-development/SKILL.md 回答以下需求，僅讀取檔案，不修改專案。
+
+  production v2.4 有 bug，main 已開發 v2.5；請規劃修補與發布分支處理。
+
+
+• 我會讀取專案的 trunk-based-development Skill，依其規則規劃；僅讀取檔案。
+
+• Explored
+  └ Read SKILL.md (trunk-based-development skill)
+
+• Ran cat .agents/skills/trunk-based-development/rules/主幹整合-格式規範.md .agents/skills/trunk-based-development/rules/變更拆分-格式規範.md .agents/skills/trunk-based-development/references/cases.md
+  └ # Rule 1 - 區分來源、規則強度與團隊政策
+
+    - 回答時必須區分規則來源：TBD 官方是 TrunkBasedDevelopment.com；DORA 是 Google DORA 的 DevOps 研究，標準通常比官方嚴格；團隊規則是 TBD 沒規定、由團隊自行決定的部分。
+    +282 lines (⌃t to view transcript)
+
+• 先在 main 修復並驗證，再將修正 cherry-pick 到 release/2.4，發布 v2.4.1。
+
+  1. 準備維護分支：已有 release/2.4 就沿用；若沒有，從 production v2.4 對應的 tag／commit 建立，避免帶入 v2.5 變更。
+  2. PR 1：main 的 bug 修復與回歸測試 — 使用技巧：無
+      • 從 main 開短期 branch；工作期間及 merge 前同步 main。
+      • 執行 build → lint → unit test → 必要的 integration test；經 PR review、CI green 後 merge main，刪除短期 branch。
+
+  3. PR 2：將已驗證修正移植至 release/2.4 — 使用技巧：Release Branch
+      • Cherry-pick PR 1 的修正；若版本差異造成衝突，針對 v2.4 調整並重新驗證。
+      • Review、CI green 後整合，確認回歸測試及發布驗證通過，再標記 v2.4.1、發布 production。
+
+  每個 PR merge 後 main 為什麼仍可工作： PR 1 是通過驗證的小幅修復；PR 2 僅影響 v2.4 維護分支。不要將整條 main merge 到 release/2.4，也不要只在 release 修完再回灌 main。
+
+  預估 branch 壽命（含等 review）： 小型修復的短期 branch 以數小時至一天內完成為目標；實際取決於問題大小。release/2.4 則保留至 v2.4 停止支援，只處理穩定、bug fix 與發布，不承載新功能。分支名稱與停止支援時間
+  由團隊決定。
+
+  Worked for 15s • 9:40 AM
+
+
+› Ask Codex to do anything
+
+  GPT-6.1-Sol medium fast · Context 8% used · weekly 39% left · ← for agents                                                                                                         ⚠ 4 warnings · f2 to view

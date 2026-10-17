@@ -1,0 +1,3 @@
+讀取目前 worktree 的 `.agents/skills/trunk-based-development/SKILL.md`，依該 Skill 處理下列輸入；需要時讀取它引用的資源。僅讀取這個 Skill 的檔案，不讀其他工程紀錄或其他 Skill，不修改檔案，不執行 Git 寫入操作。回覆繁體中文，先列讀取的檔案與確認閘門（沒有則寫無），接著提供完整建議。這是獨立任務。固定環境根目錄：/tmp/tbd-baseline-mgYdNe。只回覆給使用者的原始答案，不要描述這個測試、父代理或評分判準，不要展示內部推理。
+
+輸入：只審查這個 PR 的拆分與整合方式：我們把商品查詢的舊 endpoint 移除，今天先合到 main；兩個外部 consumer 明天才修改。單元測試用 mock 所以現在是綠燈。另一個已 merge 的功能 branch 還留著三星期沒刪。請依 trunk-based-development 指出問題與可行的拆分方式。

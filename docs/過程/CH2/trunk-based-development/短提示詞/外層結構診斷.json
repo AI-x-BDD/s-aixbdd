@@ -1,0 +1,408 @@
+{
+  "skills_roots": [
+    "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.agents/skills",
+    "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.claude/skills"
+  ],
+  "shadowed_skills": [
+    {
+      "name": "conventional-commits",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.agents/skills/conventional-commits",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.claude/skills/conventional-commits"
+    },
+    {
+      "name": "double-diamond",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.agents/skills/double-diamond",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.claude/skills/double-diamond"
+    },
+    {
+      "name": "plan-with-class-diagram",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.agents/skills/plan-with-class-diagram",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.claude/skills/plan-with-class-diagram"
+    },
+    {
+      "name": "skill-creator",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.agents/skills/skill-creator",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.claude/skills/skill-creator"
+    },
+    {
+      "name": "skill-derive-rule",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.agents/skills/skill-derive-rule",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.claude/skills/skill-derive-rule"
+    },
+    {
+      "name": "skill-derive-script",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.agents/skills/skill-derive-script",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.claude/skills/skill-derive-script"
+    },
+    {
+      "name": "skill-derive-template",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.agents/skills/skill-derive-template",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.claude/skills/skill-derive-template"
+    },
+    {
+      "name": "skill-engineering",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.agents/skills/skill-engineering",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.claude/skills/skill-engineering"
+    },
+    {
+      "name": "skill-form-description",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.agents/skills/skill-form-description",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.claude/skills/skill-form-description"
+    },
+    {
+      "name": "skill-form-rule",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.agents/skills/skill-form-rule",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.claude/skills/skill-form-rule"
+    },
+    {
+      "name": "skill-form-script",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.agents/skills/skill-form-script",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.claude/skills/skill-form-script"
+    },
+    {
+      "name": "skill-form-sop",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.agents/skills/skill-form-sop",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.claude/skills/skill-form-sop"
+    },
+    {
+      "name": "skill-form-template",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.agents/skills/skill-form-template",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.claude/skills/skill-form-template"
+    },
+    {
+      "name": "trunk-based-development",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.agents/skills/trunk-based-development",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.claude/skills/trunk-based-development"
+    },
+    {
+      "name": "typesafe-ai",
+      "used": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.agents/skills/typesafe-ai",
+      "ignored": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.claude/skills/typesafe-ai"
+    }
+  ],
+  "summary": {
+    "skills": 1,
+    "errors": 0,
+    "warnings": 1
+  },
+  "skills": [
+    {
+      "name": "trunk-based-development",
+      "path": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-tbd-compare-w7qvka6i/short/.agents/skills/trunk-based-development",
+      "errors": 0,
+      "warnings": 1,
+      "findings": [
+        {
+          "code": "RUL006",
+          "severity": "warning",
+          "file": "rules/TBD-規則分級-格式規範.md",
+          "line": 4,
+          "message": "規則說明使用未定義的強度用詞「盡量」。"
+        }
+      ],
+      "parts": [
+        "rules/TBD-GitFlow比較-格式規範.md",
+        "rules/TBD-workflow審查-格式規範.md",
+        "rules/TBD-來源與壽命-格式規範.md",
+        "rules/TBD-常見錯誤-格式規範.md",
+        "rules/TBD-策略選擇-格式規範.md",
+        "rules/TBD-規則分級-格式規範.md",
+        "rules/TBD-送出前檢查-格式規範.md",
+        "rules/TBD-需求規劃-格式規範.md"
+      ],
+      "references": {
+        "rules/TBD-來源與壽命-格式規範.md": [
+          {
+            "phase": 1,
+            "step": 3,
+            "verb": "READ",
+            "line": 12
+          }
+        ],
+        "rules/TBD-規則分級-格式規範.md": [
+          {
+            "phase": 1,
+            "step": 3,
+            "verb": "READ",
+            "line": 12
+          }
+        ],
+        "rules/TBD-需求規劃-格式規範.md": [
+          {
+            "phase": 1,
+            "step": 3,
+            "verb": "READ",
+            "line": 12
+          }
+        ],
+        "rules/TBD-策略選擇-格式規範.md": [
+          {
+            "phase": 1,
+            "step": 3,
+            "verb": "READ",
+            "line": 12
+          }
+        ],
+        "rules/TBD-常見錯誤-格式規範.md": [
+          {
+            "phase": 1,
+            "step": 3,
+            "verb": "READ",
+            "line": 12
+          }
+        ],
+        "rules/TBD-workflow審查-格式規範.md": [
+          {
+            "phase": 1,
+            "step": 3,
+            "verb": "READ",
+            "line": 12
+          }
+        ],
+        "rules/TBD-GitFlow比較-格式規範.md": [
+          {
+            "phase": 1,
+            "step": 3,
+            "verb": "READ",
+            "line": 12
+          }
+        ],
+        "rules/TBD-送出前檢查-格式規範.md": [
+          {
+            "phase": 1,
+            "step": 3,
+            "verb": "READ",
+            "line": 12
+          }
+        ]
+      },
+      "sop": [
+        {
+          "phase": 1,
+          "title": "分析 TBD 任務",
+          "steps": [
+            {
+              "step": 1,
+              "verb": "READ",
+              "text": "`READ` 使用者需求、ticket、branch／PR／workflow 現況與已提供的團隊規則，建立「TBD 任務輸入」。"
+            },
+            {
+              "step": 2,
+              "verb": "THINK",
+              "text": "`THINK` 依「TBD 任務輸入」判定適用的判斷主題：規則來源與 branch 壽命、規則分級、需求規劃、策略選擇、常見錯誤、團隊 workflow 審查、TBD 與 GitFlow 比較、送出前檢查；建立「TBD 判斷範圍」。"
+            },
+            {
+              "step": 3,
+              "verb": "READ",
+              "text": "`READ` 依「TBD 判斷範圍」只載入適用主題的 RuleFile 全部 Rule，並依下列條件載入各主題：回答需要使用來源或 branch 壽命規則（例如規劃輸出 branch 壽命），或使用者要求區分來源時，讀取 `rules/TBD-來源與壽命-格式規範.md`，建立「TBD 來源規則」；回答需要使用核心規則、強烈建議或團隊選項的強度判斷，或使用者要求規則分級時，讀取 `rules/TBD-規則分級-格式規範.md`，建立「TBD 分級規則」；判斷範圍包含需求拆分或 PR 規劃時，讀取 `rules/TBD-需求規劃-格式規範.md`，建立「TBD 需求規劃規則」；判斷範圍包含 branch 策略或技巧選擇時，讀取 `rules/TBD-策略選擇-格式規範.md`，建立「TBD 策略規則」；判斷範圍包含 branch／PR／merge 違反模式時，讀取 `rules/TBD-常見錯誤-格式規範.md`，建立「TBD 常見錯誤規則」；判斷範圍包含團隊 Git workflow 或導入前提時，讀取 `rules/TBD-workflow審查-格式規範.md`，建立「TBD workflow 審查規則」；判斷範圍包含 TBD 與 GitFlow 比較時，讀取 `rules/TBD-GitFlow比較-格式規範.md`，建立「TBD GitFlow 比較規則」；需求規劃、branch／PR 檢查或團隊 workflow 審查有交付前對應事項時，或使用者明確要求交付前檢查時，讀取 `rules/TBD-送出前檢查-格式規範.md`，建立「TBD 送出前檢查規則」；未涉及的主題不載入。"
+            },
+            {
+              "step": 4,
+              "verb": "READ",
+              "text": "`READ` 需要完整情境案例時，讀取 `references/cases.md`，建立「TBD 案例參考」；只需通用規則時不載入。"
+            },
+            {
+              "step": 5,
+              "verb": "THINK",
+              "text": "`THINK` 依「TBD 判斷範圍」、已載入的具名判斷規則（包括適用的「TBD 來源規則」、「TBD 分級規則」、「TBD 需求規劃規則」、「TBD 策略規則」、「TBD 常見錯誤規則」、「TBD workflow 審查規則」、「TBD GitFlow 比較規則」與「TBD 送出前檢查規則」）與「TBD 案例參考」（若已建立），建立「TBD 產出設計」。"
+            }
+          ],
+          "completion": "完成條件：已建立「TBD 任務輸入」與「TBD 判斷範圍」；每個適用主題的 RuleFile 已載入並建立對應具名結果；未涉及主題未載入；需要完整案例時也已建立「TBD 案例參考」；「TBD 產出設計」已指出要回答的模式與相關判斷。"
+        },
+        {
+          "phase": 2,
+          "title": "產出與驗證",
+          "steps": [
+            {
+              "step": 1,
+              "verb": "WRITE",
+              "text": "`WRITE` 依「TBD 產出設計」與已載入的具名判斷規則產生對應的規劃、審查或比較回答；需求規劃使用「TBD 需求規劃規則」指定的規劃格式，其他模式使用各自已載入的規則。"
+            },
+            {
+              "step": 2,
+              "verb": "CHECK",
+              "text": "`CHECK` 依已載入的具名判斷規則逐條驗證回答的相關規則、決策理由與檢查結果；有載入「TBD 送出前檢查規則」時執行其內部六項檢查，不要求把六項檢查逐項展示在回答中；未通過時回到 Phase 1 步驟 5 修正，缺少輸入時依對應規則中的導入前提指出限制。"
+            }
+          ],
+          "completion": "完成條件：已產出對應模式的回答，且已載入的具名判斷規則均完成逐條驗證；內部送出前檢查若適用已完成；未通過項目已修正或缺少輸入的限制已回報。"
+        }
+      ]
+    }
+  ],
+  "graph": {
+    "edges": [
+      {
+        "from": "skill-derive-rule",
+        "to": "skill-form-rule",
+        "phase": 3,
+        "step": 3,
+        "via": "skill-form-rule"
+      },
+      {
+        "from": "skill-derive-rule",
+        "to": "skill-form-sop",
+        "phase": 3,
+        "step": 4,
+        "via": "skill-form-sop"
+      },
+      {
+        "from": "skill-derive-script",
+        "to": "skill-form-script",
+        "phase": 3,
+        "step": 2,
+        "via": "skill-form-script"
+      },
+      {
+        "from": "skill-derive-script",
+        "to": "skill-form-sop",
+        "phase": 3,
+        "step": 3,
+        "via": "skill-form-sop"
+      },
+      {
+        "from": "skill-derive-template",
+        "to": "skill-form-template",
+        "phase": 3,
+        "step": 3,
+        "via": "skill-form-template"
+      },
+      {
+        "from": "skill-derive-template",
+        "to": "skill-form-sop",
+        "phase": 3,
+        "step": 4,
+        "via": "skill-form-sop"
+      },
+      {
+        "from": "skill-engineering",
+        "to": "skill-form-description",
+        "phase": 5,
+        "step": 3,
+        "via": "skill-form-*"
+      },
+      {
+        "from": "skill-engineering",
+        "to": "skill-form-rule",
+        "phase": 5,
+        "step": 3,
+        "via": "skill-form-*"
+      },
+      {
+        "from": "skill-engineering",
+        "to": "skill-form-script",
+        "phase": 5,
+        "step": 3,
+        "via": "skill-form-*"
+      },
+      {
+        "from": "skill-engineering",
+        "to": "skill-form-sop",
+        "phase": 5,
+        "step": 3,
+        "via": "skill-form-*"
+      },
+      {
+        "from": "skill-engineering",
+        "to": "skill-form-template",
+        "phase": 5,
+        "step": 3,
+        "via": "skill-form-*"
+      },
+      {
+        "from": "skill-engineering",
+        "to": "skill-derive-rule",
+        "phase": 5,
+        "step": 3,
+        "via": "skill-derive-*"
+      },
+      {
+        "from": "skill-engineering",
+        "to": "skill-derive-script",
+        "phase": 5,
+        "step": 3,
+        "via": "skill-derive-*"
+      },
+      {
+        "from": "skill-engineering",
+        "to": "skill-derive-template",
+        "phase": 5,
+        "step": 3,
+        "via": "skill-derive-*"
+      }
+    ],
+    "callers": {
+      "conventional-commits": [],
+      "double-diamond": [],
+      "plan-with-class-diagram": [],
+      "skill-creator": [],
+      "skill-derive-rule": [
+        "skill-engineering"
+      ],
+      "skill-derive-script": [
+        "skill-engineering"
+      ],
+      "skill-derive-template": [
+        "skill-engineering"
+      ],
+      "skill-engineering": [],
+      "skill-form-description": [
+        "skill-engineering"
+      ],
+      "skill-form-rule": [
+        "skill-derive-rule",
+        "skill-engineering"
+      ],
+      "skill-form-script": [
+        "skill-derive-script",
+        "skill-engineering"
+      ],
+      "skill-form-sop": [
+        "skill-derive-rule",
+        "skill-derive-script",
+        "skill-derive-template",
+        "skill-engineering"
+      ],
+      "skill-form-template": [
+        "skill-derive-template",
+        "skill-engineering"
+      ],
+      "trunk-based-development": [],
+      "typesafe-ai": []
+    },
+    "callees": {
+      "conventional-commits": [],
+      "double-diamond": [],
+      "plan-with-class-diagram": [],
+      "skill-creator": [],
+      "skill-derive-rule": [
+        "skill-form-rule",
+        "skill-form-sop"
+      ],
+      "skill-derive-script": [
+        "skill-form-script",
+        "skill-form-sop"
+      ],
+      "skill-derive-template": [
+        "skill-form-template",
+        "skill-form-sop"
+      ],
+      "skill-engineering": [
+        "skill-form-description",
+        "skill-form-rule",
+        "skill-form-script",
+        "skill-form-sop",
+        "skill-form-template",
+        "skill-derive-rule",
+        "skill-derive-script",
+        "skill-derive-template"
+      ],
+      "skill-form-description": [],
+      "skill-form-rule": [],
+      "skill-form-script": [],
+      "skill-form-sop": [],
+      "skill-form-template": [],
+      "trunk-based-development": [],
+      "typesafe-ai": []
+    }
+  }
+}

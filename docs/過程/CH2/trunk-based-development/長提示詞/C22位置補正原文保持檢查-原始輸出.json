@@ -1,0 +1,20 @@
+{
+  "agents_skill_sha256": "2ea002a4e1dd82f5dcd055027b44f347b8b2cdbd8b83ca442d538ac14a7906e5",
+  "claude_skill_sha256": "2ea002a4e1dd82f5dcd055027b44f347b8b2cdbd8b83ca442d538ac14a7906e5",
+  "c22_block_sha256": "f226ba56d9a65abe7e029e5b99f0a11fd0a753c69c674d7034b36ab34348dd5b",
+  "rule2_positions": {
+    "block_start_relative": 219,
+    "good_example_relative": 409,
+    "bad_example_relative": 519
+  },
+  "checks": {
+    "agents_claude_package_identical": true,
+    "c22_block_exact_text": true,
+    "c22_block_before_good_example": true,
+    "good_example_before_bad_example": true,
+    "c22_block_not_after_bad_example": true,
+    "c22_block_in_rule_2": true,
+    "blueprint_rule_2_same_position": true
+  },
+  "all_checks_pass": true
+}

@@ -1,0 +1,470 @@
+[
+  {
+    "name": "tbd-c01a",
+    "run": "tbd-r01",
+    "case": "S4",
+    "worktree": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-b01",
+    "workspace": "wE",
+    "herdr": {
+      "id": "cli:tab:create",
+      "result": {
+        "root_pane": {
+          "agent_status": "unknown",
+          "cwd": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-b01",
+          "focused": false,
+          "foreground_cwd": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-b01",
+          "pane_id": "wE:p2",
+          "revision": 0,
+          "scroll": {
+            "max_offset_from_bottom": 0,
+            "offset_from_bottom": 0,
+            "viewport_rows": 47
+          },
+          "tab_id": "wE:t2",
+          "terminal_id": "term_65dff5068e25219",
+          "workspace_id": "wE"
+        },
+        "tab": {
+          "agent_status": "unknown",
+          "focused": false,
+          "label": "tbd-c01a",
+          "number": 2,
+          "pane_count": 1,
+          "tab_id": "wE:t2",
+          "workspace_id": "wE"
+        },
+        "type": "tab_created"
+      }
+    },
+    "prompt": "請讀取並使用目前專案 .agents/skills/trunk-based-development/SKILL.md 回答以下需求，僅讀取檔案，不修改專案。\n\n團隊有長期 develop 與 release-next、PR review 常等待兩天、CI 變紅後仍繼續開發；請檢查是否符合 TBD。"
+  },
+  {
+    "name": "tbd-c01b",
+    "run": "tbd-r01",
+    "case": "S5",
+    "worktree": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v01",
+    "workspace": "w8",
+    "herdr": {
+      "id": "cli:tab:create",
+      "result": {
+        "root_pane": {
+          "agent_status": "unknown",
+          "cwd": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v01",
+          "focused": false,
+          "foreground_cwd": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v01",
+          "pane_id": "w8:p2",
+          "revision": 0,
+          "scroll": {
+            "max_offset_from_bottom": 0,
+            "offset_from_bottom": 0,
+            "viewport_rows": 47
+          },
+          "tab_id": "w8:t2",
+          "terminal_id": "term_65dff50692b9f1a",
+          "workspace_id": "w8"
+        },
+        "tab": {
+          "agent_status": "unknown",
+          "focused": false,
+          "label": "tbd-c01b",
+          "number": 2,
+          "pane_count": 1,
+          "tab_id": "w8:t2",
+          "workspace_id": "w8"
+        },
+        "type": "tab_created"
+      }
+    },
+    "prompt": "請讀取並使用目前專案 .agents/skills/trunk-based-development/SKILL.md 回答以下需求，僅讀取檔案，不修改專案。\n\nproduction v2.4 有 bug，main 已開發 v2.5；請規劃修補與發布分支處理。"
+  },
+  {
+    "name": "tbd-c04a",
+    "run": "tbd-r04",
+    "case": "S4",
+    "worktree": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-b04",
+    "workspace": "wH",
+    "herdr": {
+      "id": "cli:tab:create",
+      "result": {
+        "root_pane": {
+          "agent_status": "unknown",
+          "cwd": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-b04",
+          "focused": false,
+          "foreground_cwd": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-b04",
+          "pane_id": "wH:p2",
+          "revision": 0,
+          "scroll": {
+            "max_offset_from_bottom": 0,
+            "offset_from_bottom": 0,
+            "viewport_rows": 47
+          },
+          "tab_id": "wH:t2",
+          "terminal_id": "term_65dff5331e9d71b",
+          "workspace_id": "wH"
+        },
+        "tab": {
+          "agent_status": "unknown",
+          "focused": false,
+          "label": "tbd-c04a",
+          "number": 2,
+          "pane_count": 1,
+          "tab_id": "wH:t2",
+          "workspace_id": "wH"
+        },
+        "type": "tab_created"
+      }
+    },
+    "prompt": "請讀取並使用目前專案 .agents/skills/trunk-based-development/SKILL.md 回答以下需求，僅讀取檔案，不修改專案。\n\n團隊有長期 develop 與 release-next、PR review 常等待兩天、CI 變紅後仍繼續開發；請檢查是否符合 TBD。"
+  },
+  {
+    "name": "tbd-c04b",
+    "run": "tbd-r04",
+    "case": "S5",
+    "worktree": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v04",
+    "workspace": "wB",
+    "herdr": {
+      "id": "cli:tab:create",
+      "result": {
+        "root_pane": {
+          "agent_status": "unknown",
+          "cwd": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v04",
+          "focused": false,
+          "foreground_cwd": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v04",
+          "pane_id": "wB:p2",
+          "revision": 0,
+          "scroll": {
+            "max_offset_from_bottom": 0,
+            "offset_from_bottom": 0,
+            "viewport_rows": 47
+          },
+          "tab_id": "wB:t2",
+          "terminal_id": "term_65dff5332309e1c",
+          "workspace_id": "wB"
+        },
+        "tab": {
+          "agent_status": "unknown",
+          "focused": false,
+          "label": "tbd-c04b",
+          "number": 2,
+          "pane_count": 1,
+          "tab_id": "wB:t2",
+          "workspace_id": "wB"
+        },
+        "type": "tab_created"
+      }
+    },
+    "prompt": "請讀取並使用目前專案 .agents/skills/trunk-based-development/SKILL.md 回答以下需求，僅讀取檔案，不修改專案。\n\nproduction v2.4 有 bug，main 已開發 v2.5；請規劃修補與發布分支處理。"
+  },
+  {
+    "name": "tbd-c02a",
+    "run": "tbd-r02",
+    "case": "S4",
+    "worktree": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-b02",
+    "workspace": "wF",
+    "herdr": {
+      "id": "cli:tab:create",
+      "result": {
+        "root_pane": {
+          "agent_status": "unknown",
+          "cwd": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-b02",
+          "focused": false,
+          "foreground_cwd": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-b02",
+          "pane_id": "wF:p2",
+          "revision": 0,
+          "scroll": {
+            "max_offset_from_bottom": 0,
+            "offset_from_bottom": 0,
+            "viewport_rows": 47
+          },
+          "tab_id": "wF:t2",
+          "terminal_id": "term_65dff5b54f0a11d",
+          "workspace_id": "wF"
+        },
+        "tab": {
+          "agent_status": "unknown",
+          "focused": false,
+          "label": "tbd-c02a",
+          "number": 2,
+          "pane_count": 1,
+          "tab_id": "wF:t2",
+          "workspace_id": "wF"
+        },
+        "type": "tab_created"
+      }
+    },
+    "prompt": "請讀取並使用目前專案 .agents/skills/trunk-based-development/SKILL.md 回答以下需求，僅讀取檔案，不修改專案。\n\n團隊有長期 develop 與 release-next、PR review 常等待兩天、CI 變紅後仍繼續開發；請檢查是否符合 TBD。"
+  },
+  {
+    "name": "tbd-c02b",
+    "run": "tbd-r02",
+    "case": "S5",
+    "worktree": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v02",
+    "workspace": "w9",
+    "herdr": {
+      "id": "cli:tab:create",
+      "result": {
+        "root_pane": {
+          "agent_status": "unknown",
+          "cwd": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v02",
+          "focused": false,
+          "foreground_cwd": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v02",
+          "pane_id": "w9:p2",
+          "revision": 0,
+          "scroll": {
+            "max_offset_from_bottom": 0,
+            "offset_from_bottom": 0,
+            "viewport_rows": 47
+          },
+          "tab_id": "w9:t2",
+          "terminal_id": "term_65dff5b553ecd1e",
+          "workspace_id": "w9"
+        },
+        "tab": {
+          "agent_status": "unknown",
+          "focused": false,
+          "label": "tbd-c02b",
+          "number": 2,
+          "pane_count": 1,
+          "tab_id": "w9:t2",
+          "workspace_id": "w9"
+        },
+        "type": "tab_created"
+      }
+    },
+    "prompt": "請讀取並使用目前專案 .agents/skills/trunk-based-development/SKILL.md 回答以下需求，僅讀取檔案，不修改專案。\n\nproduction v2.4 有 bug，main 已開發 v2.5；請規劃修補與發布分支處理。"
+  },
+  {
+    "name": "tbd-c06a",
+    "run": "tbd-r06",
+    "case": "S4",
+    "worktree": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-b06",
+    "workspace": "wK",
+    "herdr": {
+      "id": "cli:tab:create",
+      "result": {
+        "root_pane": {
+          "agent_status": "unknown",
+          "cwd": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-b06",
+          "focused": false,
+          "foreground_cwd": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-b06",
+          "pane_id": "wK:p2",
+          "revision": 0,
+          "scroll": {
+            "max_offset_from_bottom": 0,
+            "offset_from_bottom": 0,
+            "viewport_rows": 47
+          },
+          "tab_id": "wK:t2",
+          "terminal_id": "term_65dff5b559b851f",
+          "workspace_id": "wK"
+        },
+        "tab": {
+          "agent_status": "unknown",
+          "focused": false,
+          "label": "tbd-c06a",
+          "number": 2,
+          "pane_count": 1,
+          "tab_id": "wK:t2",
+          "workspace_id": "wK"
+        },
+        "type": "tab_created"
+      }
+    },
+    "prompt": "請讀取並使用目前專案 .agents/skills/trunk-based-development/SKILL.md 回答以下需求，僅讀取檔案，不修改專案。\n\n團隊有長期 develop 與 release-next、PR review 常等待兩天、CI 變紅後仍繼續開發；請檢查是否符合 TBD。"
+  },
+  {
+    "name": "tbd-c06b",
+    "run": "tbd-r06",
+    "case": "S5",
+    "worktree": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v06",
+    "workspace": "wD",
+    "herdr": {
+      "id": "cli:tab:create",
+      "result": {
+        "root_pane": {
+          "agent_status": "unknown",
+          "cwd": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v06",
+          "focused": false,
+          "foreground_cwd": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v06",
+          "pane_id": "wD:p2",
+          "revision": 0,
+          "scroll": {
+            "max_offset_from_bottom": 0,
+            "offset_from_bottom": 0,
+            "viewport_rows": 47
+          },
+          "tab_id": "wD:t2",
+          "terminal_id": "term_65dff5b55f9d820",
+          "workspace_id": "wD"
+        },
+        "tab": {
+          "agent_status": "unknown",
+          "focused": false,
+          "label": "tbd-c06b",
+          "number": 2,
+          "pane_count": 1,
+          "tab_id": "wD:t2",
+          "workspace_id": "wD"
+        },
+        "type": "tab_created"
+      }
+    },
+    "prompt": "請讀取並使用目前專案 .agents/skills/trunk-based-development/SKILL.md 回答以下需求，僅讀取檔案，不修改專案。\n\nproduction v2.4 有 bug，main 已開發 v2.5；請規劃修補與發布分支處理。"
+  },
+  {
+    "name": "tbd-c05a",
+    "run": "tbd-r05",
+    "case": "S4",
+    "worktree": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-b05",
+    "workspace": "wJ",
+    "herdr": {
+      "id": "cli:tab:create",
+      "result": {
+        "root_pane": {
+          "agent_status": "unknown",
+          "cwd": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-b05",
+          "focused": false,
+          "foreground_cwd": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-b05",
+          "pane_id": "wJ:p2",
+          "revision": 0,
+          "scroll": {
+            "max_offset_from_bottom": 0,
+            "offset_from_bottom": 0,
+            "viewport_rows": 47
+          },
+          "tab_id": "wJ:t2",
+          "terminal_id": "term_65dff60ee3e6921",
+          "workspace_id": "wJ"
+        },
+        "tab": {
+          "agent_status": "unknown",
+          "focused": false,
+          "label": "tbd-c05a",
+          "number": 2,
+          "pane_count": 1,
+          "tab_id": "wJ:t2",
+          "workspace_id": "wJ"
+        },
+        "type": "tab_created"
+      }
+    },
+    "prompt": "請讀取並使用目前專案 .agents/skills/trunk-based-development/SKILL.md 回答以下需求，僅讀取檔案，不修改專案。\n\n團隊有長期 develop 與 release-next、PR review 常等待兩天、CI 變紅後仍繼續開發；請檢查是否符合 TBD。"
+  },
+  {
+    "name": "tbd-c05b",
+    "run": "tbd-r05",
+    "case": "S5",
+    "worktree": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v05",
+    "workspace": "wC",
+    "herdr": {
+      "id": "cli:tab:create",
+      "result": {
+        "root_pane": {
+          "agent_status": "unknown",
+          "cwd": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v05",
+          "focused": false,
+          "foreground_cwd": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v05",
+          "pane_id": "wC:p2",
+          "revision": 0,
+          "scroll": {
+            "max_offset_from_bottom": 0,
+            "offset_from_bottom": 0,
+            "viewport_rows": 47
+          },
+          "tab_id": "wC:t2",
+          "terminal_id": "term_65dff60ee84f422",
+          "workspace_id": "wC"
+        },
+        "tab": {
+          "agent_status": "unknown",
+          "focused": false,
+          "label": "tbd-c05b",
+          "number": 2,
+          "pane_count": 1,
+          "tab_id": "wC:t2",
+          "workspace_id": "wC"
+        },
+        "type": "tab_created"
+      }
+    },
+    "prompt": "請讀取並使用目前專案 .agents/skills/trunk-based-development/SKILL.md 回答以下需求，僅讀取檔案，不修改專案。\n\nproduction v2.4 有 bug，main 已開發 v2.5；請規劃修補與發布分支處理。"
+  },
+  {
+    "name": "tbd-c03a",
+    "run": "tbd-r03",
+    "case": "S4",
+    "worktree": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-b03",
+    "workspace": "wG",
+    "herdr": {
+      "id": "cli:tab:create",
+      "result": {
+        "root_pane": {
+          "agent_status": "unknown",
+          "cwd": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-b03",
+          "focused": false,
+          "foreground_cwd": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-b03",
+          "pane_id": "wG:p2",
+          "revision": 0,
+          "scroll": {
+            "max_offset_from_bottom": 0,
+            "offset_from_bottom": 0,
+            "viewport_rows": 47
+          },
+          "tab_id": "wG:t2",
+          "terminal_id": "term_65dff684fed4423",
+          "workspace_id": "wG"
+        },
+        "tab": {
+          "agent_status": "unknown",
+          "focused": false,
+          "label": "tbd-c03a",
+          "number": 2,
+          "pane_count": 1,
+          "tab_id": "wG:t2",
+          "workspace_id": "wG"
+        },
+        "type": "tab_created"
+      }
+    },
+    "prompt": "請讀取並使用目前專案 .agents/skills/trunk-based-development/SKILL.md 回答以下需求，僅讀取檔案，不修改專案。\n\n團隊有長期 develop 與 release-next、PR review 常等待兩天、CI 變紅後仍繼續開發；請檢查是否符合 TBD。"
+  },
+  {
+    "name": "tbd-c03b",
+    "run": "tbd-r03",
+    "case": "S5",
+    "worktree": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v03",
+    "workspace": "wA",
+    "herdr": {
+      "id": "cli:tab:create",
+      "result": {
+        "root_pane": {
+          "agent_status": "unknown",
+          "cwd": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v03",
+          "focused": false,
+          "foreground_cwd": "/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v03",
+          "pane_id": "wA:p2",
+          "revision": 0,
+          "scroll": {
+            "max_offset_from_bottom": 0,
+            "offset_from_bottom": 0,
+            "viewport_rows": 47
+          },
+          "tab_id": "wA:t2",
+          "terminal_id": "term_65dff6850471324",
+          "workspace_id": "wA"
+        },
+        "tab": {
+          "agent_status": "unknown",
+          "focused": false,
+          "label": "tbd-c03b",
+          "number": 2,
+          "pane_count": 1,
+          "tab_id": "wA:t2",
+          "workspace_id": "wA"
+        },
+        "type": "tab_created"
+      }
+    },
+    "prompt": "請讀取並使用目前專案 .agents/skills/trunk-based-development/SKILL.md 回答以下需求，僅讀取檔案，不修改專案。\n\nproduction v2.4 有 bug，main 已開發 v2.5；請規劃修補與發布分支處理。"
+  }
+]

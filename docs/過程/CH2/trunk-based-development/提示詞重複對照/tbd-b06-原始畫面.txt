@@ -1,0 +1,44 @@
+codex -a never -s danger-full-access --no-alt-screen
+
+󰀵 …/tbd-b06   HEAD   v25.0.4   09:28 
+ codex -a never -s danger-full-access --no-alt-screen
+
+  >_ OpenAI Codex (v0.163.0)
+     /private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-b06
+  permissions: YOLO mode
+
+  Tip: Use the desktop app. Run codex app to open it. It installs automatically if needed.
+
+
+› 請讀取並使用目前專案 .agents/skills/trunk-based-development/SKILL.md 回答以下需求，僅讀取檔案，不修改專案。
+
+  production v2.4 有 bug，main 已開發 v2.5；請規劃修補與發布分支處理。
+
+
+• 我會讀取指定的 trunk-based-development Skill，僅讀取檔案並提供修補與發布分支規劃。
+
+• Explored
+  └ Read SKILL.md (trunk-based-development skill)
+    Search trunk-based|主幹式|hotfix|release branch in MEMORY.md
+    Read cases.md
+
+• 依指定 Skill，採 先修 main，驗證後 cherry-pick 到 release/2.4。
+
+  1. 確認發布基準：以 production 實際部署的 v2.4 tag／commit 為準；已有 release/2.4 就沿用，否則從該基準建立，避免帶入 v2.5 功能。
+  2. PR 1：修正 main 並加入回歸測試 — 使用技巧：無。從 main 開短期修補分支，完成 review、CI 通過後 merge main，再刪除分支。
+  3. PR 2：將修正 cherry-pick 到 release/2.4 — 使用技巧：Release Branch。只帶入必要修正；若有衝突，依 v2.4 程式調整，重新執行回歸測試與發布檢查。
+  4. 發布 v2.4.1：從驗證通過的 release/2.4 commit 打 tag、建置並部署；確認 production 修補結果，保留上一版產物供回滾。
+  5. 分支收尾：release/2.4 僅供 v2.4 穩定、修補與發布，維護期結束後刪除。main 繼續開發 v2.5；不將整條 main merge 到 release/2.4，也不把 release branch 整包回灌 main。
+
+  每個 PR merge 後 main 仍可工作：PR 1 以回歸測試及 CI 驗證；PR 2 只影響 v2.4 發布線。
+
+  預估修補分支壽命（含 review）：各以一天內完成為目標；release branch 可保留至 v2.4 維護期結束。分支名稱、維護期限與 v2.4.1 命名屬團隊規則。
+
+  僅讀取檔案，未修改專案。
+
+  Worked for 13s • 9:29 AM
+
+
+› Ask Codex to do anything
+
+  GPT-6.1-Sol medium fast · Context 8% used · weekly 52% left · ← for agents                                                                                                         ⚠ 4 warnings · f2 to view

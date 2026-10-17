@@ -1,0 +1,10 @@
+{
+  "skill_copies_unchanged": {
+    "S1": true,
+    "S2": true,
+    "S3": true,
+    "S4": true,
+    "S5": true
+  },
+  "input_change": "僅 S2 依測試設計修正明示變更；技能均未變。"
+}

@@ -1,0 +1,21 @@
+[
+  {
+    "命令": [
+      "scripts/sync-skills.sh",
+      "--from",
+      "agents"
+    ],
+    "退出狀態": 0,
+    "stdout": "已同步 Skill：conventional-commits\n已同步 Skill：double-diamond\n已同步 Skill：plan-with-class-diagram\n已同步 Skill：skill-creator\n已同步 Skill：skill-derive-rule\n已同步 Skill：skill-derive-script\n已同步 Skill：skill-derive-template\n已同步 Skill：skill-engineering\n已同步 Skill：skill-form-description\n已同步 Skill：skill-form-rule\n已同步 Skill：skill-form-script\n已同步 Skill：skill-form-sop\n已同步 Skill：skill-form-template\n已同步 Skill：trunk-based-development\n已同步 Skill：typesafe-ai\n已同步：AGENTS.md → CLAUDE.md\n",
+    "stderr": ""
+  },
+  {
+    "命令": [
+      "scripts/sync-skills.sh",
+      "--check"
+    ],
+    "退出狀態": 0,
+    "stdout": "兩邊一致\n",
+    "stderr": ""
+  }
+]

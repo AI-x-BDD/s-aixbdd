@@ -1,0 +1,42 @@
+codex -a never -s danger-full-access --no-alt-screen
+
+󰀵 …/tbd-v02   HEAD !?   v25.0.4   09:27 
+ codex -a never -s danger-full-access --no-alt-screen
+
+  >_ OpenAI Codex (v0.163.0)
+     /private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v02
+  permissions: YOLO mode
+
+  Tip: Use the desktop app. Run codex app to open it. It installs automatically if needed.
+
+
+› 請讀取並使用目前專案 .agents/skills/trunk-based-development/SKILL.md 回答以下需求，僅讀取檔案，不修改專案。
+
+  團隊有長期 develop 與 release-next、PR review 常等待兩天、CI 變紅後仍繼續開發；請檢查是否符合 TBD。
+
+
+• 我會讀取指定的 TBD Skill，僅檢查、不修改檔案。
+
+• Explored
+  └ Read SKILL.md (trunk-based-development skill), TBD-規則分級-格式規範.md, TBD-workflow審查-格式規範.md, TBD-送出前檢查-格式規範.md, TBD-來源與壽命-格式規範.md, TBD-常見錯誤-格式規範.md
+
+• 目前不符合 TBD，且快速 review 與主幹故障優先修復的前提不足。
+
+   現況                          判斷                                                                                      改善方向
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   長期 develop、release-next    若兩者持續承接共同開發，違反「沒有長期開發分支」的核心規則；不能只靠分支名稱判斷用途。    將日常開發整合回單一 main，避免長期平行開發。
+  ────────────────────────────  ────────────────────────────────────────────────────────────────────────────────────────  ────────────────────────────────────────────────
+   PR review 常等兩天            等待時間也算 branch 壽命，阻礙頻繁整合；PR 小並不足以符合 TBD。                           優先加快 review、縮小變更，支援每天整合。
+  ────────────────────────────  ────────────────────────────────────────────────────────────────────────────────────────  ────────────────────────────────────────────────
+   CI 紅後仍繼續開發             若紅的是 main，直接違反主幹保持可工作的核心規則；若只是個別 PR，則需另行判斷。            main 紅時優先修復或立即 revert，再繼續新功能。
+
+  來源標準須分開：TBD 官方的短期 branch 通常為 1～2 天；DORA 以 不到一天、至少每天整合一次為目標。「兩天」不是 TBD 的硬性上限；團隊另訂的 review 期限屬於團隊規則。
+
+  先改善快速 review、快速 CI、合併前檢查與主幹修復紀律，並確認自動 build／test 足夠，再調整分支流程；目前不宜只要求大家增加 merge 次數。
+
+  Worked for 11s • 9:28 AM
+
+
+› Ask Codex to do anything
+
+  GPT-6.1-Sol medium fast · Context 8% used · weekly 53% left · ← for agents                                                                                                         ⚠ 4 warnings · f2 to view

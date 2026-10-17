@@ -1,0 +1,68 @@
+{
+  "target_skill_sha256": "880d1a32b05e7730777bc52e1bbc30c8cabc3361f96781ba01da86c40dcc514f",
+  "claude_skill_sha256": "880d1a32b05e7730777bc52e1bbc30c8cabc3361f96781ba01da86c40dcc514f",
+  "target_claude_skill_identical": true,
+  "references_cases_sha256": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+  "rule_metrics": {
+    "主幹式開發核心規則-格式規範.md": {
+      "exists": true,
+      "sha256": "dc604bf9794415e5d580fb7e543fd2de84c3396a435bf6531a3fc7432ede0425",
+      "starts_with_rule_1": true,
+      "rule_count": 2,
+      "good_example_count": 2,
+      "bad_example_count": 2
+    },
+    "主幹式開發需求拆分-格式規範.md": {
+      "exists": true,
+      "sha256": "b9aec4dafa04e3a5efa51a9c9a3d4397c642079b03a4d98c4f9ce9a21d02a04f",
+      "starts_with_rule_1": true,
+      "rule_count": 3,
+      "good_example_count": 3,
+      "bad_example_count": 3
+    },
+    "主幹式開發來源分級-格式規範.md": {
+      "exists": true,
+      "sha256": "5c6f114606333acfcc78b0fea895039617cf9b5aaccfb77b7bd308c834e54ef1",
+      "starts_with_rule_1": true,
+      "rule_count": 3,
+      "good_example_count": 3,
+      "bad_example_count": 3
+    },
+    "主幹式開發策略選擇-格式規範.md": {
+      "exists": true,
+      "sha256": "b3e8525d83e12d8ccbeb734b14c3314a6464d44b60c3f6ea7e155cc5708d4f69",
+      "starts_with_rule_1": true,
+      "rule_count": 4,
+      "good_example_count": 4,
+      "bad_example_count": 4
+    },
+    "主幹式開發流程審查-格式規範.md": {
+      "exists": true,
+      "sha256": "eac41459c364ad4fb7696a24c94ca86ca5270f689dc6706f2ff31e5b89b1bb71",
+      "starts_with_rule_1": true,
+      "rule_count": 3,
+      "good_example_count": 3,
+      "bad_example_count": 3
+    }
+  },
+  "semantic_checks": {
+    "frontmatter_and_title_preserved": true,
+    "references_cases_unchanged": true,
+    "approved_tobe_equal_ignoring_terminal_newline": true,
+    "single_sop": true,
+    "all_rule_paths_are_in_read_step": true,
+    "cases_path_is_conditional_read": true,
+    "fixed_planning_format_preserved": true,
+    "core_main_and_integration": true,
+    "core_main_workable_and_red_recovery": true,
+    "source_layers_and_team_options": true,
+    "source_branch_thresholds_and_review_time": true,
+    "story_split_branch_and_review": true,
+    "build_test_and_minutes_feedback": true,
+    "strategies_preserved": true,
+    "workflow_evidence_prerequisites_and_suitability": true,
+    "gitflow_comparison_preserved": true,
+    "rulefiles_have_15_rules_and_examples": true
+  },
+  "all_semantic_checks_pass": true
+}

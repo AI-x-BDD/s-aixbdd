@@ -1,0 +1,5 @@
+{
+  "command": "uv run --script .agents/skills/skill-engineering/scripts/audit_skill.py --skills-root .agents/skills --skills-root .claude/skills --skill trunk-based-development --graph",
+  "exit_code": 0,
+  "stderr": ""
+}

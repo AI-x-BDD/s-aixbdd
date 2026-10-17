@@ -1,0 +1,17 @@
+{
+  "head": "e588ae1d1fc87b3456a56af08e1379f131333050",
+  "initial_status": "乾淨；開始時 git status --short 無輸出",
+  "hashes": {
+    ".agents/skills/trunk-based-development/SKILL.md": "245e3fcfc88066e3936d84e254038f6644fa18a8155808ca7b790ecc227527f2",
+    ".agents/skills/trunk-based-development/references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294"
+  },
+  "model": "繼承主代理預設，未指定 override；工具不揭露精確後端模型、temperature、seed，不能獨立核實",
+  "isolation": "fork_turns=none；每例新代理；唯讀；共享檔案系統，非容器；不提供根因與判準",
+  "cases": [
+    "S1",
+    "S2",
+    "S3"
+  ],
+  "tool_correction": "pyenv python3 中文 heredoc 報 Non-UTF-8 SyntaxError，該次未建立檔案；後改用 /usr/bin/python3 加 UTF-8 宣告；不影響受測輸入",
+  "source_scope": "僅目前基線目標、docs/主幹式開發.md、CH1 既有使用紀錄；未讀其他實驗/session；不重跑 conventional-commits"
+}

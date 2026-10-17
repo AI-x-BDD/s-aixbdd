@@ -1,0 +1,7 @@
+Reading prompt from stdin...
+2026-10-17T01:44:27.724506Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest("http/request failed: error sending request for url (http://127.0.0.1:64342/stream)")))
+2026-10-17T01:44:28.125607Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest("http/request failed: error sending request for url (http://127.0.0.1:64342/stream)")))
+2026-10-17T01:44:28.356177Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when AuthRequired(AuthRequiredError { www_authenticate_header: "Bearer resource_metadata=\"https://mcp.postman.com/.well-known/oauth-protected-resource/mcp\"" })
+2026-10-17T01:44:28.762059Z ERROR codex_rmcp_client::oauth::refresh_transaction: error=failed to refresh OAuth tokens for server linear: OAuth refresh token was rejected: Server returned error response: invalid_grant: Grant not found
+2026-10-17T01:44:29.017297Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when AuthRequired(AuthRequiredError { www_authenticate_header: "Bearer resource_metadata=\"https://mcp.postman.com/.well-known/oauth-protected-resource/mcp\"" })
+2026-10-17T01:44:29.136734Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest("http/request failed: error sending request for url (http://127.0.0.1:64342/stream)")))

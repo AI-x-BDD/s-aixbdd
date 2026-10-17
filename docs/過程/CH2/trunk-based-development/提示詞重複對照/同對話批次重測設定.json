@@ -1,0 +1,20 @@
+[
+  {
+    "name": "tbd-q01",
+    "worktree": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-q01",
+    "pane": "wM:p1",
+    "workspace": "wM"
+  },
+  {
+    "name": "tbd-q02",
+    "worktree": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-q02",
+    "pane": "wN:p1",
+    "workspace": "wN"
+  },
+  {
+    "name": "tbd-q03",
+    "worktree": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-q03",
+    "pane": "wP:p1",
+    "workspace": "wP"
+  }
+]

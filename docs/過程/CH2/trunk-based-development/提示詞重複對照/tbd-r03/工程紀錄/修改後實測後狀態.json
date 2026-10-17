@@ -1,0 +1,68 @@
+{
+  "S1": {
+    "副作用檢查通過": true,
+    "輸入前後相同": true,
+    "前測後輸入雜湊": "616288eac697250936d02adeae202d003915265e00547e8e18ef572d439038ee",
+    "後測輸入雜湊": "616288eac697250936d02adeae202d003915265e00547e8e18ef572d439038ee",
+    "測試前檔案": {
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S1/輸入.md": "616288eac697250936d02adeae202d003915265e00547e8e18ef572d439038ee",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S1/skill/SKILL.md": "ee0ec4741fea85c62d9212c04e222fb304f3dc6e099a86cb77cd41a56e81a88c",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S1/skill/references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S1/skill/rules/Workflow評估-格式規範.md": "2d5202fc57cf4a2481a3a4fdf1728d9af63a325231d0050728f7671a785ebd6a",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S1/skill/rules/變更規劃-格式規範.md": "5322976d2aed7c8b514e4645ca327d1a30a75d2f73cae76a96c570dbe40b6486",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S1/skill/rules/TBD判準-格式規範.md": "3b24234b93d3dab9874aae779666b646379e624e9e950d9b91c432aadcb2ffea"
+    },
+    "測試後檔案": {
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S1/輸入.md": "616288eac697250936d02adeae202d003915265e00547e8e18ef572d439038ee",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S1/skill/SKILL.md": "ee0ec4741fea85c62d9212c04e222fb304f3dc6e099a86cb77cd41a56e81a88c",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S1/skill/references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S1/skill/rules/Workflow評估-格式規範.md": "2d5202fc57cf4a2481a3a4fdf1728d9af63a325231d0050728f7671a785ebd6a",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S1/skill/rules/變更規劃-格式規範.md": "5322976d2aed7c8b514e4645ca327d1a30a75d2f73cae76a96c570dbe40b6486",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S1/skill/rules/TBD判準-格式規範.md": "3b24234b93d3dab9874aae779666b646379e624e9e950d9b91c432aadcb2ffea"
+    }
+  },
+  "S2": {
+    "副作用檢查通過": true,
+    "輸入前後相同": true,
+    "前測後輸入雜湊": "ea80fe7bf0e8bb624f28e4e750066eaff2dc57635a3b93e888a84af0da5ad14c",
+    "後測輸入雜湊": "ea80fe7bf0e8bb624f28e4e750066eaff2dc57635a3b93e888a84af0da5ad14c",
+    "測試前檔案": {
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S2/輸入.md": "ea80fe7bf0e8bb624f28e4e750066eaff2dc57635a3b93e888a84af0da5ad14c",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S2/skill/SKILL.md": "ee0ec4741fea85c62d9212c04e222fb304f3dc6e099a86cb77cd41a56e81a88c",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S2/skill/references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S2/skill/rules/Workflow評估-格式規範.md": "2d5202fc57cf4a2481a3a4fdf1728d9af63a325231d0050728f7671a785ebd6a",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S2/skill/rules/變更規劃-格式規範.md": "5322976d2aed7c8b514e4645ca327d1a30a75d2f73cae76a96c570dbe40b6486",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S2/skill/rules/TBD判準-格式規範.md": "3b24234b93d3dab9874aae779666b646379e624e9e950d9b91c432aadcb2ffea"
+    },
+    "測試後檔案": {
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S2/輸入.md": "ea80fe7bf0e8bb624f28e4e750066eaff2dc57635a3b93e888a84af0da5ad14c",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S2/skill/SKILL.md": "ee0ec4741fea85c62d9212c04e222fb304f3dc6e099a86cb77cd41a56e81a88c",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S2/skill/references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S2/skill/rules/Workflow評估-格式規範.md": "2d5202fc57cf4a2481a3a4fdf1728d9af63a325231d0050728f7671a785ebd6a",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S2/skill/rules/變更規劃-格式規範.md": "5322976d2aed7c8b514e4645ca327d1a30a75d2f73cae76a96c570dbe40b6486",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S2/skill/rules/TBD判準-格式規範.md": "3b24234b93d3dab9874aae779666b646379e624e9e950d9b91c432aadcb2ffea"
+    }
+  },
+  "S3": {
+    "副作用檢查通過": true,
+    "輸入前後相同": true,
+    "前測後輸入雜湊": "267a993153ffc153831e066839b4b491dc1a8ea0f9ca55de9cae8a5b69265b8f",
+    "後測輸入雜湊": "267a993153ffc153831e066839b4b491dc1a8ea0f9ca55de9cae8a5b69265b8f",
+    "測試前檔案": {
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S3/輸入.md": "267a993153ffc153831e066839b4b491dc1a8ea0f9ca55de9cae8a5b69265b8f",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S3/skill/SKILL.md": "ee0ec4741fea85c62d9212c04e222fb304f3dc6e099a86cb77cd41a56e81a88c",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S3/skill/references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S3/skill/rules/Workflow評估-格式規範.md": "2d5202fc57cf4a2481a3a4fdf1728d9af63a325231d0050728f7671a785ebd6a",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S3/skill/rules/變更規劃-格式規範.md": "5322976d2aed7c8b514e4645ca327d1a30a75d2f73cae76a96c570dbe40b6486",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S3/skill/rules/TBD判準-格式規範.md": "3b24234b93d3dab9874aae779666b646379e624e9e950d9b91c432aadcb2ffea"
+    },
+    "測試後檔案": {
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S3/輸入.md": "267a993153ffc153831e066839b4b491dc1a8ea0f9ca55de9cae8a5b69265b8f",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S3/skill/SKILL.md": "ee0ec4741fea85c62d9212c04e222fb304f3dc6e099a86cb77cd41a56e81a88c",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S3/skill/references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S3/skill/rules/Workflow評估-格式規範.md": "2d5202fc57cf4a2481a3a4fdf1728d9af63a325231d0050728f7671a785ebd6a",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S3/skill/rules/變更規劃-格式規範.md": "5322976d2aed7c8b514e4645ca327d1a30a75d2f73cae76a96c570dbe40b6486",
+      "docs/過程/CH2/trunk-based-development/本次執行/隔離環境/S3/skill/rules/TBD判準-格式規範.md": "3b24234b93d3dab9874aae779666b646379e624e9e950d9b91c432aadcb2ffea"
+    }
+  }
+}

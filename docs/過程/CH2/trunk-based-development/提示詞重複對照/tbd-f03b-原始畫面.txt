@@ -1,0 +1,47 @@
+codex -a never -s danger-full-access --no-alt-screen
+
+󰀵 …/tbd-v03   HEAD !?   v25.0.4   09:50 
+ codex -a never -s danger-full-access --no-alt-screen
+
+  >_ OpenAI Codex (v0.163.0)
+     /private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v03
+  permissions: YOLO mode
+
+  Tip: Use the desktop app. Run codex app to open it. It installs automatically if needed.
+
+
+› 請讀取並使用目前專案 .agents/skills/trunk-based-development/SKILL.md 回答以下需求，僅讀取檔案，不修改專案。
+
+  production v2.4 有 bug，main 已開發 v2.5；請規劃修補與發布分支處理。
+
+
+• 我會讀取指定的 trunk-based-development Skill，依其規則規劃；僅讀取檔案。
+
+• Explored
+  └ Read SKILL.md (trunk-based-development skill)
+    Search trunk-based|hotfix|release branch in MEMORY.md
+
+• Ran cat .agents/skills/trunk-based-development/rules/TBD判準-格式規範.md .agents/skills/trunk-based-development/rules/變更規劃-格式規範.md .agents/skills/trunk-based-development/references/cases.md
+  └ # Rule 1 - 區分來源與 branch 壽命目標
+
+    - 回答時必須區分規則來源：TBD 官方為 TrunkBasedDevelopment.com；DORA 為 Google DORA 的 DevOps 研究；團隊規則是 TBD 沒規定、由團隊自行決定的部分。
+    +276 lines (⌃t to view transcript)
+
+• 依指定 Skill，採 main 先修、驗證後 cherry-pick 到 release/2.4。
+
+  1. 確認發布基準：已有 release/2.4 就沿用；沒有則在需要修補時，從 production v2.4 對應的 tag／commit 建立，避免帶入 v2.5 變更。
+  2. PR 1：回歸測試與最小修正 → main — 使用技巧：無。從 main 開短期 branch，merge 前同步最新 main；通過 build、lint、unit test、必要的 integration test，完成 review、CI green 後 merge，再刪工作 branch。
+  3. PR 2：將已驗證的修正 cherry-pick → release/2.4 — 使用技巧：Release Branch。若有衝突，依 v2.4 程式調整，重新驗證回歸測試與版本相容性。
+  4. 發布 v2.4.1：從通過驗證的 release/2.4 commit 建立 tag、建置並部署；保留前一版可部署產物供回滾。
+  5. 分支收尾：release/2.4 僅接受 v2.4 的穩定修正與發布工作，維護期結束後刪除；v2.5 持續在 main 開發。不要先修 release 再整包合回 main，也不要把 main 整包合進 release。
+
+  每個 PR merge 後 main 為什麼仍可工作： PR 1 包含經測試的完整修正；PR 2 僅更新 release branch，main 已包含修正。
+
+  預估 branch 壽命（含等 review）： 小型修正的工作 branch 以當天合併、不到一天為目標；TBD 官方通常為 1～2 天，DORA 目標為不到一天，並非硬性期限。release/2.4 則依版本維護期保留。
+
+  Worked for 16s • 9:51 AM
+
+
+› Ask Codex to do anything
+
+  GPT-6.1-Sol medium fast · Context 9% used · weekly 32% left · ← for agents                                                                                                         ⚠ 4 warnings · f2 to view

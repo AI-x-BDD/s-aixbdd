@@ -1,0 +1,5 @@
+ M .agents/skills/trunk-based-development/SKILL.md
+ M .claude/skills/trunk-based-development/SKILL.md
+?? .agents/skills/trunk-based-development/rules/
+?? .claude/skills/trunk-based-development/rules/
+?? "docs/\351\201\216\347\250\213/CH2/trunk-based-development/"

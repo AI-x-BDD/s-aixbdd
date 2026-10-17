@@ -1,0 +1,379 @@
+diff --git "a/Volumes/data/Projects-practice/s-aixbdd/docs/\351\201\216\347\250\213/CH2/trunk-based-development/\346\234\200\344\275\263\345\214\226\345\211\215\346\212\200\350\203\275/SKILL.md" "b/Volumes/data/Projects-practice/s-aixbdd/docs/\351\201\216\347\250\213/CH2/trunk-based-development/\346\217\220\347\244\272\350\251\236\351\207\215\350\244\207\345\260\215\347\205\247/tbd-r03/\346\234\200\347\265\202\346\212\200\350\203\275/SKILL.md"
+index 7857f9a..ba7540a 100644
+--- "a/Volumes/data/Projects-practice/s-aixbdd/docs/\351\201\216\347\250\213/CH2/trunk-based-development/\346\234\200\344\275\263\345\214\226\345\211\215\346\212\200\350\203\275/SKILL.md"
++++ "b/Volumes/data/Projects-practice/s-aixbdd/docs/\351\201\216\347\250\213/CH2/trunk-based-development/\346\217\220\347\244\272\350\251\236\351\207\215\350\244\207\345\260\215\347\205\247/tbd-r03/\346\234\200\347\265\202\346\212\200\350\203\275/SKILL.md"
+@@ -3,112 +3,36 @@ name: trunk-based-development
+ description: 依主幹式開發（Trunk-Based Development，TBD）規劃與審查工作拆分、branch 策略與整合方式。用在：收到需求或 ticket 時規劃要拆成幾個 PR、判斷一個變更該直接走短期 branch 還是需要 Feature Flag／Branch by Abstraction／新舊並存／Release Branch、大型重構或框架遷移（例如 Vuex → Pinia、Axios → Fetch）如何每天安全 merge main、舊版本 hotfix 怎麼修、檢查某個 branch 或 PR 是否活太久或太大、審查團隊的 Git workflow 算不算 TBD，以及比較 TBD 與 GitFlow。
+ ---
+ 
+-# 主幹式開發（Trunk-Based Development）
++# SOP
+ 
+-核心目的：不要讓大家的程式碼分開太久。所有人圍繞單一 trunk（`main`）工作，不建立長期開發分支，持續把小變更整合回 main，main 任何時候都保持可工作、可發布。
++## Phase 1 -- 分析需求與判斷策略
+ 
+-回答時區分規則來源：
++1. `READ` 使用者需求與已提供的專案規範；有既有 branch、PR、CI 或團隊 workflow 資訊時，一併讀取作為「任務輸入」。
++2. `THINK` 依「任務輸入」判定本次涉及變更規劃、workflow 審查、導入評估或 GitFlow 比較，可同時適用多種任務。
++3. `READ` 進行變更規劃、審查、導入評估或 GitFlow 比較時，讀取 `rules/TBD判準-格式規範.md` 的所有 Rule，建立「TBD判準檢查清單」。
++4. `THINK` 依「任務輸入」與已載入的「TBD判準檢查清單」，判定相關事實對應的規則來源與分級，形成「基本判斷」。
++5. `READ` 任務涉及變更規劃、branch 或 PR 審查、技巧使用審查或團隊 workflow 審查時，讀取 `rules/變更規劃-格式規範.md` 的所有 Rule，建立「變更規劃檢查清單」。
++6. `THINK` 已載入「變更規劃檢查清單」時，依「任務輸入」、「基本判斷」與該清單，形成「變更方案」或「拆分與技巧審查結果」。
++7. `READ` 任務涉及團隊 workflow 審查、導入評估或 GitFlow 比較時，讀取 `rules/Workflow評估-格式規範.md` 的所有 Rule，建立「Workflow評估檢查清單」。
++8. `THINK` 已載入「Workflow評估檢查清單」時，依「任務輸入」、「基本判斷」、適用時的「拆分與技巧審查結果」及已載入的「TBD判準檢查清單」與「Workflow評估檢查清單」，形成符合任務範圍的「評估結論」。
++9. `READ` 需要完整情境拆法協助具體化方案或說明評估時，讀取 `references/cases.md` 中相應案例；需要核對規則來源時讀取其中的參考資料，建立「案例與來源參考」。
++10. `THINK` 已載入「案例與來源參考」時，將相應案例對照「變更方案」、「拆分與技巧審查結果」或「評估結論」，具體化本次內容。
++11. `CHECK` 逐條驗證已載入的「TBD判準檢查清單」，以及適用時的「變更規劃檢查清單」與「Workflow評估檢查清單」；未通過時返回本 Phase 對應的判斷步驟修正並重新檢查。
+ 
+-- **TBD 官方**：TrunkBasedDevelopment.com。
+-- **DORA**：Google DORA 的 DevOps 研究，標準通常比官方嚴格。
+-- **團隊規則**：TBD 沒規定、由團隊自行決定的部分。
++完成條件：已依任務形成「基本判斷」及適用的「變更方案」、「拆分與技巧審查結果」或「評估結論」，並通過所有已載入檢查清單。
+ 
+-Branch 壽命兩邊標準不同：官方認為短期 branch 通常 1～2 天；DORA 以不到一天為目標。不要把「2 天」說成硬性標準。
++## Phase 2 -- 安排整合與交付
+ 
+-## 規則分級
++1. `THINK` 涉及變更規劃時，依「變更方案」安排整合流程：每個小變更開短期 branch，工作期間同步 main，merge 前 branch 要跟 main 保持最新；build → lint → unit test → 必要的 integration test；PR → review → CI green → merge；merge 後刪 branch。
++2. `WRITE` 依「基本判斷」及已載入的檢查清單，向使用者呈現「變更方案」與其整合安排、「拆分與技巧審查結果」或符合任務範圍的「評估結論」。規劃結果用這個格式給出：
+ 
+-**核心規則**（違反就不算 TBD）：
++   ```text
++   PR 1：<變更>  — 使用技巧：<無／Feature Flag／Abstraction／新舊並存>
++   PR 2：...
++   每個 PR merge 後 main 為什麼仍可工作：<說明>
++   預估 branch 壽命（含等 review）：<時間>
++   ```
+ 
+-1. 沒有長期開發分支。
+-2. 頻繁整合 main。DORA：至少每天一次，一天多次更好。
+-3. main 保持可工作。CI 紅了先修 main，不繼續開發新功能；DORA 建議立即修或立即 revert，不是「晚上再看」。
++3. `CHECK` 交付內容符合「任務輸入」與所有已載入的檢查清單；未通過時返回 Phase 1 對應的判斷步驟或本 Phase 的整合安排步驟修正，再更新交付內容並重新檢查。
+ 
+-**強烈建議**：branch 非常短命（官方約 1～2 天，DORA < 1 天）；active branches 盡量少；不靠 code freeze 解決整合問題；merge 後刪 branch。
+-
+-**團隊自行決定**（不要說成 TBD 的要求）：squash／merge commit／rebase merge、同步 main 用 merge 還是 rebase、branch 命名、reviewer 人數、GitHub 或 GitLab、是否禁止 direct push。
+-
+-## 規劃需求的流程
+-
+-收到需求時，不先問「要開什麼 branch」，依序想：
+-
+-1. **切小**：把需求拆成多個能獨立整合的小變更。一張 Story／Ticket 不等於一個 branch 或一個 PR。
+-2. **每個小變更開短期 branch**，目標是「這個小變更做完就 merge」，不是「整個 feature 做完才 merge」。
+-3. **工作期間同步 main**，merge 前 branch 要跟 main 保持最新。
+-4. **CI 驗證**：build → lint → unit test → 必要的 integration test；PR → review → CI green → merge。DORA 建議每個 commit 都觸發 build 與自動測試，回饋在幾分鐘內。
+-5. **merge 後刪 branch**。
+-
+-規劃結果用這個格式給出：
+-
+-```text
+-PR 1：<變更>  — 使用技巧：<無／Feature Flag／Abstraction／新舊並存>
+-PR 2：...
+-每個 PR merge 後 main 為什麼仍可工作：<說明>
+-預估 branch 壽命（含等 review）：<時間>
+-```
+-
+-## Decision Tree
+-
+-```text
+-我要做一個變更
+-│
+-├─ 幾小時／一天內可完成？
+-│   └─ Yes → short-lived branch → CI + Review → merge main
+-│
+-└─ No → 能不能切更小？
+-    ├─ Yes → 切小 → 多個 PR，每個回到上一步判斷
+-    └─ No → 為什麼？
+-        ├─ 功能還不能曝光     → Feature Flag
+-        ├─ 大型程式重構       → Branch by Abstraction
+-        ├─ 舊系統／相容性遷移 → 新舊並存（Strangler）
+-        └─ 維護已發布版本     → Release Branch
+-```
+-
+-未完成的工作不靠 branch 藏起來，靠小批次、Feature Flag、抽象層、向後相容、CI、自動測試。
+-
+-### 技巧要點
+-
+-- **Feature Flag**：程式每天 merge，flag 關閉，最後打開（Deploy ≠ Release）。功能上線後要刪 flag，官方警告不清理的 flag 會變成技術債。
+-- **Branch by Abstraction**：建立 abstraction → 舊實作接上 → 加入新實作 → 逐步切換 → 刪舊實作。每一步都 merge main。
+-- **新舊並存**：改 API 時先讓舊 API 與新 API 並存 → consumer 遷移 → 刪舊 API。不要讓 main 處在「API 改了、前端還沒跟上」的中間狀態。
+-- **Release Branch**：很晚才切，只負責該版本的穩定、bug fix、發布，不能承載新功能開發。Bug 先修在 main（fix on trunk first），驗證後再 cherry-pick 到 release branch；只在 release branch 修再回灌 main 是官方列出的錯誤模式。
+-
+-各情境的完整拆法（小 bug、三天功能、大型重構、Vuex → Pinia、一週的 Feature Flag 功能、舊版 hotfix）見 [references/cases.md](references/cases.md)。
+-
+-## 常見錯誤
+-
+-- **「我們都從 main 開 branch，所以是 TBD」**：feature branch 活 2～3 週就不是 TBD。
+-- **一張 Story = 一個 branch = 一個 PR**：一張 Story 可以拆成 refactor、API、UI、cleanup 多個 PR，這樣更符合 TBD。
+-- **為了 merge 小，把不能工作的程式 merge main**：每一步都要保持可工作，用新舊並存處理跨層改動。
+-- **PR 很小但等 review 3 天**：效果跟三天 branch 一樣。branch 壽命要算入等 review 的時間。DORA 把重量級、非同步、耗時的 review 流程列為 TBD 常見阻礙。
+-- **多人在同一個 feature branch 開發**、**branch 一直不刪**、**接近 release 就 code freeze**：都是官方 You're Doing It Wrong 列出的模式。
+-
+-## 審查團隊的 workflow
+-
+-檢查是否真的在做 TBD：
+-
+-- 有沒有 `develop`、`team-a`、`release-next` 這類長期共同開發分支？
+-- 每人每天至少整合 main 一次嗎？
+-- branch 壽命（含 review 等待）多長？active branches 多少？
+-- CI 多快回饋？main 紅了是否立即修或 revert？
+-- 有沒有靠 code freeze 解決整合問題？
+-- Feature Flag 有沒有清理？
+-
+-導入前提：自動 build、自動 test、快速 CI、小批次開發能力、快速 code review。缺這些時，TBD 容易變成「大家一直 merge main，main 一直壞」。DORA 指出經驗不足、缺 gated checks、沒有「broken trunk 優先修復」紀律的團隊，實行 TBD 反而可能增加錯誤與返工。遇到這種團隊，先指出缺的前提，不要直接建議全面導入。
+-
+-適合：SaaS、Web App、Backend API、Frontend App、Microservice、企業內部系統、頻繁發布、多人共同維護的 codebase。需求一直變、多人同時改、需要頻繁 release 三者同時成立時價值最高。
+-
+-## TBD 與 GitFlow
+-
+-- GitFlow 類：先隔離 → 做完整 → 最後整合。
+-- TBD：先切小 → 持續整合 → 任何時候都保持可工作。
+-
+-TBD 主要改變拆分工作的方式，Git 操作本身變化不大。
+-
+-## 送出前檢查
+-
+-1. 能不能切到一天內可以 merge？
+-2. 這個 PR 現在 merge，main 還能正常工作嗎？
+-3. 未完成功能能不能用 Feature Flag 隱藏？
+-4. 大改造能不能用 abstraction 讓新舊實作共存？
+-5. CI 能不能快速告訴我這次改動有沒有破壞系統？
+-6. 這個 branch 明天還會存在嗎？是的話，檢查是不是切得太大。
++完成條件：使用者要求的規劃、審查、導入評估或比較已呈現，且交付內容符合所有已載入檢查清單。
+diff --git "a/Volumes/data/Projects-practice/s-aixbdd/docs/\351\201\216\347\250\213/CH2/trunk-based-development/\346\217\220\347\244\272\350\251\236\351\207\215\350\244\207\345\260\215\347\205\247/tbd-r03/\346\234\200\347\265\202\346\212\200\350\203\275/rules/TBD\345\210\244\346\272\226-\346\240\274\345\274\217\350\246\217\347\257\204.md" "b/Volumes/data/Projects-practice/s-aixbdd/docs/\351\201\216\347\250\213/CH2/trunk-based-development/\346\217\220\347\244\272\350\251\236\351\207\215\350\244\207\345\260\215\347\205\247/tbd-r03/\346\234\200\347\265\202\346\212\200\350\203\275/rules/TBD\345\210\244\346\272\226-\346\240\274\345\274\217\350\246\217\347\257\204.md"
+new file mode 100644
+index 0000000..a2669c2
+--- /dev/null
++++ "b/Volumes/data/Projects-practice/s-aixbdd/docs/\351\201\216\347\250\213/CH2/trunk-based-development/\346\217\220\347\244\272\350\251\236\351\207\215\350\244\207\345\260\215\347\205\247/tbd-r03/\346\234\200\347\265\202\346\212\200\350\203\275/rules/TBD\345\210\244\346\272\226-\346\240\274\345\274\217\350\246\217\347\257\204.md"
+@@ -0,0 +1,61 @@
++# Rule 1 - 區分來源與 branch 壽命目標
++
++- 回答時必須區分規則來源：TBD 官方為 TrunkBasedDevelopment.com；DORA 為 Google DORA 的 DevOps 研究；團隊規則是 TBD 沒規定、由團隊自行決定的部分。
++- 說明 branch 壽命時，必須區分官方通常 1～2 天與 DORA 以不到一天為目標；不得把「2 天」說成硬性國際標準。
++
++## Good Example
++
++同一問題分別列出來源與目標，沒有把建議變成硬性界線。
++
++- 情境：團隊問 branch 活兩天是否必然違反 TBD。
++- 回答：官方短期 branch 通常約 1～2 天；DORA 以不到一天為目標。兩天不是硬性國際標準，還要檢查整合方式與其他核心規則。
++
++## Bad Example
++
++相同問題將不同來源混成單一硬性規定。
++
++- 情境：團隊問 branch 活兩天是否必然違反 TBD。
++- 回答：TBD、DORA 和團隊規範都一樣，國際標準規定超過兩天必然違規。
++
++# Rule 2 - 區分核心規則與強烈建議
++
++- 必須以單一 trunk（`main`）為整合主線，不得建立長期開發分支；只從 main 開 branch 但 feature branch 活 2～3 週，仍不算 TBD。
++- 必須頻繁整合 main。DORA 的要求是至少每天一次，一天多次更好。
++- 必須讓 main 任何時候保持可工作、可發布；不得為了小批次而整合不能工作的程式。
++- CI 紅了必須先修 main，不得繼續開發新功能；DORA 建議立即修或立即 revert，不是「晚上再看」。
++- Branch 應非常短命、active branches 應維持少量；不得把這些強烈建議當作團隊自行選的 merge 方法，也不得為其另造硬性數字門檻。
++- 應避免靠 code freeze 解決整合問題；多人在同一 feature branch 開發、branch 一直不刪、接近 release 就 code freeze，必須辨識為官方列出的錯誤模式。
++- 說明 CI 回饋時，應保留 DORA 建議：每個 commit 觸發 build 與自動測試，回饋在幾分鐘內。
++
++## Good Example
++
++同一團隊以小變更持續整合，優先處理 broken trunk，並區分核心與建議。
++
++- 情境：團隊從 main 開工作分支，正在評估是否符合 TBD。
++- 回答：目前是少量短命分支，每天整合小變更；main 紅了立即修復或 revert，未整合不能工作的程式，符合核心方向。仍應維持短壽命與少量 active branches。
++
++## Bad Example
++
++相同團隊只看分支起點，忽略長期隔離及 broken trunk。
++
++- 情境：團隊從 main 開工作分支，正在評估是否符合 TBD。
++- 回答：只要從 main 開 branch 就符合；大家共用同一 feature branch 三週，月底合 main，紅燈晚上再修，release 前 code freeze 即可。
++
++# Rule 3 - 保留團隊工作流的決策空間
++
++- 必須將下列項目歸為團隊自行決定：squash／merge commit／rebase merge、同步 main 用 merge 還是 rebase、branch 命名、reviewer 人數、GitHub 或 GitLab、是否禁止 direct push。
++- 不得將這些團隊選項說成 TBD 的必要要求。
++
++## Good Example
++
++同一個團隊可以選擇自己的整合方式，不因 Git 命令被錯誤分類。
++
++- 情境：團隊同步 main 用 merge，整合用 merge commit，只有一位 reviewer。
++- 回答：這些由團隊決定，TBD 沒規定一定要 rebase、squash 或兩位 reviewer；應以核心規則評估工作方式。
++
++## Bad Example
++
++相同團隊被額外套上沒有依據的必要條件。
++
++- 情境：團隊同步 main 用 merge，整合用 merge commit，只有一位 reviewer。
++- 回答：必須改用 rebase、squash、兩位 reviewer 並禁止 direct push，否則一定不是 TBD。
+diff --git "a/Volumes/data/Projects-practice/s-aixbdd/docs/\351\201\216\347\250\213/CH2/trunk-based-development/\346\217\220\347\244\272\350\251\236\351\207\215\350\244\207\345\260\215\347\205\247/tbd-r03/\346\234\200\347\265\202\346\212\200\350\203\275/rules/Workflow\350\251\225\344\274\260-\346\240\274\345\274\217\350\246\217\347\257\204.md" "b/Volumes/data/Projects-practice/s-aixbdd/docs/\351\201\216\347\250\213/CH2/trunk-based-development/\346\217\220\347\244\272\350\251\236\351\207\215\350\244\207\345\260\215\347\205\247/tbd-r03/\346\234\200\347\265\202\346\212\200\350\203\275/rules/Workflow\350\251\225\344\274\260-\346\240\274\345\274\217\350\246\217\347\257\204.md"
+new file mode 100644
+index 0000000..ed5290e
+--- /dev/null
++++ "b/Volumes/data/Projects-practice/s-aixbdd/docs/\351\201\216\347\250\213/CH2/trunk-based-development/\346\217\220\347\244\272\350\251\236\351\207\215\350\244\207\345\260\215\347\205\247/tbd-r03/\346\234\200\347\265\202\346\212\200\350\203\275/rules/Workflow\350\251\225\344\274\260-\346\240\274\345\274\217\350\246\217\347\257\204.md"
+@@ -0,0 +1,57 @@
++# Rule 1 - 審查 workflow 並依前提與情境評估導入
++
++- 評估導入時，必須檢查自動 build、自動 test、快速 CI、小批次開發能力與快速 code review。
++- 必須指出經驗不足、缺 gated checks、沒有「broken trunk 優先修復」紀律時的風險；DORA 指出這類團隊實行 TBD 反而可能增加錯誤與返工。
++- 缺少上述前提時，必須先指出缺的前提，不得直接建議全面導入。
++- 可以依適用情境說明價值：SaaS、Web App、Backend API、Frontend App、Microservice、企業內部系統、頻繁發布、多人共同維護的 codebase。需求一直變、多人同時改、需要頻繁 release 三者同時成立時價值最高。
++- 審查團隊 workflow 時，必須檢查 Feature Flag 的用後清理狀態；未提供使用與清理狀態時，必須列為待確認的審查項，不得推定已使用或未清理。
++
++## Good Example
++
++### Example 1
++
++先指出團隊缺少的前提，沒有把改 branch 命名當成完成導入。
++
++- 情境：SaaS 團隊沒有自動測試，review 需要三天，打算明天全面導入 TBD。
++- 評估：先補自動 build/test、快速 CI 與 gated checks，縮短 review，建立 broken trunk 優先修復紀律，再逐步導入；團隊仍有小批次開發能力與經驗需要評估。
++
++### Example 2
++
++一般 workflow 審查仍檢查 flag 清理，資訊不足時明列待確認。
++
++- 情境：團隊有長期 develop 與 release-next、PR review 常等待兩天、CI 變紅後仍繼續開發，要求檢查是否符合 TBD。
++- 評估：針對長期開發線、含 review 的 branch 壽命與紅燈處理指出問題；另列「是否使用 Feature Flag，以及用後是否清理」為待確認的審查項，不把未知狀態判為已使用或未清理。
++
++## Bad Example
++
++### Example 1
++
++相同團隊缺少安全前提，卻被直接建議全面導入。
++
++- 情境：SaaS 團隊沒有自動測試，review 需要三天，打算明天全面導入 TBD。
++- 評估：明天把 branch 改名為 `short-task/*`，所有人開始直接整合 main，就算完成導入。
++
++### Example 2
++
++相同 workflow 審查漏掉 flag 清理狀態，或把未知狀態當事實。
++
++- 情境：團隊有長期 develop 與 release-next、PR review 常等待兩天、CI 變紅後仍繼續開發，要求檢查是否符合 TBD。
++- 評估：只列長期線、review、紅燈及導入前提，完全不列 Feature Flag 清理審查項；或在沒有資訊時直接斷言「團隊使用了 flag 而且沒有清理」。
++# Rule 2 - 比較工作拆分與整合方式
++
++- 比較時必須依工作拆分與整合方式說明差異：GitFlow 類先隔離 → 做完整 → 最後整合；TBD 先切小 → 持續整合 → 任何時候都保持可工作。
++- 必須保留此判斷：TBD 主要改變拆分工作的方式，Git 操作本身變化不大。
++
++## Good Example
++
++比較聚焦工作隔離多久及如何整合，沒有以單一 Git 操作替代判斷。
++
++- 情境：甲團隊用 merge commit，將完整功能留在開發線後才整合；乙團隊也用 merge commit，但把需求切小持續整合。
++- 比較：甲符合 GitFlow 類的先隔離再整合思路；乙符合 TBD 的切小持續整合思路。兩者都用 merge commit，不影響這項區分。
++
++## Bad Example
++
++相同兩團隊只以 squash 與否分類，沒有比較工作方式。
++
++- 情境：甲團隊用 merge commit，將完整功能留在開發線後才整合；乙團隊也用 merge commit，但把需求切小持續整合。
++- 比較：兩隊都沒有 squash，所以都不是 TBD。
+diff --git "a/Volumes/data/Projects-practice/s-aixbdd/docs/\351\201\216\347\250\213/CH2/trunk-based-development/\346\217\220\347\244\272\350\251\236\351\207\215\350\244\207\345\260\215\347\205\247/tbd-r03/\346\234\200\347\265\202\346\212\200\350\203\275/rules/\350\256\212\346\233\264\350\246\217\345\212\203-\346\240\274\345\274\217\350\246\217\347\257\204.md" "b/Volumes/data/Projects-practice/s-aixbdd/docs/\351\201\216\347\250\213/CH2/trunk-based-development/\346\217\220\347\244\272\350\251\236\351\207\215\350\244\207\345\260\215\347\205\247/tbd-r03/\346\234\200\347\265\202\346\212\200\350\203\275/rules/\350\256\212\346\233\264\350\246\217\345\212\203-\346\240\274\345\274\217\350\246\217\347\257\204.md"
+new file mode 100644
+index 0000000..801334b
+--- /dev/null
++++ "b/Volumes/data/Projects-practice/s-aixbdd/docs/\351\201\216\347\250\213/CH2/trunk-based-development/\346\217\220\347\244\272\350\251\236\351\207\215\350\244\207\345\260\215\347\205\247/tbd-r03/\346\234\200\347\265\202\346\212\200\350\203\275/rules/\350\256\212\346\233\264\350\246\217\345\212\203-\346\240\274\345\274\217\350\246\217\347\257\204.md"
+@@ -0,0 +1,101 @@
++# Rule 1 - 以可獨立整合的小變更選擇策略
++
++- 必須先切小：把需求拆成多個能獨立整合的小變更。一張 Story／Ticket 不等於一個 branch 或一個 PR。
++- 幾小時／一天內可完成的小變更，可以使用短期 branch，不需要強加特殊技巧；不能時必須先判斷能否再切小，再對每個小變更判斷。
++- 仍不能完成時，必須依原因選擇：功能還不能曝光用 Feature Flag；大型程式重構用 Branch by Abstraction；舊系統／相容性遷移用新舊並存（Strangler）；維護已發布版本用 Release Branch。
++- 未完成的工作不得靠長期 branch 藏起來；可以靠小批次、Feature Flag、抽象層、向後相容、CI、自動測試承接。
++- 預估 branch 壽命必須算入等 review 的時間。PR 很小但等 review 三天，效果跟三天 branch 一樣；DORA 把重量級、非同步、耗時的 review 流程列為 TBD 常見阻礙。
++- 送出前必須檢查能否切到一天內可 merge；branch 明天仍會存在時，必須檢查是否切得太大，不得把此檢查當作 branch 壽命的硬性國際標準。
++
++## Good Example
++
++將可獨立完成的小修改獨立整合，沒有強加 flag 或抽象層，且估時包含 review。
++
++- 情境：登入頁文案需半小時修正測試，review 預計二十分鐘；同張登入改版票另有 UI、API 與權限需求。
++- 方案：文案獨立一個短期 PR，技巧為無，完成驗證再整合；branch 壽命含 review 預估約一小時。其餘改版另拆可獨立整合的小變更。
++
++## Bad Example
++
++相同文案被綁進整張大票，壽命還漏算 review。
++
++- 情境：登入頁文案需半小時修正測試，review 預計二十分鐘；同張登入改版票另有 UI、API 與權限需求。
++- 方案：所有工作放在同一 branch 兩週，改版完成才整合，文案的 branch 壽命卻只列半小時。
++
++# Rule 2 - 控制曝光與清理 Feature Flag
++
++- 功能還不能曝光時，可以用 Feature Flag 隱藏未完成功能：flag 關閉，最後打開（Deploy ≠ Release）。
++- 功能上線後必須安排刪除 flag；官方警告不清理的 flag 會變成技術債。
++
++## Good Example
++
++功能的部署與開放分離，上線後有清理安排。
++
++- 情境：新活動橫幅需要多天開發，但活動開始前不能曝光。
++- 方案：在關閉 flag 下持續整合程式，驗證完成及活動開始時才開啟；功能穩定後用短期 PR 清理 flag。
++
++## Bad Example
++
++相同功能以長分支代替曝光控制，且沒有清理計畫。
++
++- 情境：新活動橫幅需要多天開發，但活動開始前不能曝光。
++- 方案：把工作藏在長期 branch 到活動當天才合；即使用了 flag，上線後也永久留著。
++
++# Rule 3 - 以抽象層承接大型重構
++
++- 大型程式重構可以使用 Branch by Abstraction，讓新舊實作暫時共存。
++- 採用時必須規劃：建立 abstraction → 舊實作接上 → 加入新實作 → 逐步切換 → 刪舊實作。
++- 必須讓每個階段都能整合 main，不得把整段改造留在多週的不穩定 branch，最後才合。
++
++## Good Example
++
++同一個日誌元件替換拆成可工作的階段，舊實作持續承接尚未遷移的呼叫。
++
++- 情境：替換日誌元件需要兩週，其他功能不能因此停擺。
++- 方案：建立日誌 abstraction、接入舊元件、增加新實作、逐批切換呼叫、刪除舊實作；每個階段獨立驗證並整合。
++
++## Bad Example
++
++相同替換在長期不穩定分支隔離，沒有持續整合的階段。
++
++- 情境：替換日誌元件需要兩週，其他功能不能因此停擺。
++- 方案：開 `refactor/logging`，期間允許系統壞掉，兩週後全部完成才一次合回 main。
++
++# Rule 4 - 維持遷移期間的新舊相容
++
++- 舊系統／相容性遷移可以使用新舊並存（Strangler）。
++- 改 API 時必須先讓舊 API 與新 API 並存 → consumer 遷移 → 刪舊 API。
++- 不得讓 main 處在「API 改了、前端還沒跟上」的中間狀態。
++
++## Good Example
++
++先讓新舊 API 共存，再遷移使用端，沒有跨層破壞的中間狀態。
++
++- 情境：配送 API 要改回傳格式，兩個 consumer 無法同時更新。
++- 方案：先加新 API 並保留舊 API，逐個遷移 consumer；確認都完成後才移除舊 API。
++
++## Bad Example
++
++相同遷移先刪舊格式，讓尚未更新的 consumer 失效。
++
++- 情境：配送 API 要改回傳格式，兩個 consumer 無法同時更新。
++- 方案：PR 1 刪除舊 API，PR 2 才更新第一個 consumer，第二個下週再處理。
++
++# Rule 5 - 限定 Release Branch 與修正方向
++
++- 維護已發布版本可以使用 Release Branch；必須很晚才切，只負責該版本的穩定、bug fix、發布，不得承載新功能開發。
++- Bug 必須先修在 main（fix on trunk first），驗證後再 cherry-pick 到 release branch。
++- 不得只在 release branch 修再回灌 main；這是官方列出的錯誤模式。
++
++## Good Example
++
++先讓主線包含經驗證的修正，再維護已發布版本。
++
++- 情境：正式版本 3.4 有 bug，main 已進入 3.5 開發。
++- 方案：main 修正並驗證後，將修正 cherry-pick 到 `release/3.4` 驗證發布；該 release branch 只處理 3.4 維護。
++
++## Bad Example
++
++相同版本問題只先修 release，還把 release 當下一版開發線。
++
++- 情境：正式版本 3.4 有 bug，main 已進入 3.5 開發。
++- 方案：只在 `release/3.4` 修，再把一大包修改回灌 main；同時在該 branch 開發 3.5 新功能。

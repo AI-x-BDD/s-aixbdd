@@ -1,0 +1,29 @@
+{
+  "to_be_matches": true,
+  "frontmatter_unchanged": true,
+  "cases_unchanged": true,
+  "single_sop": true,
+  "phases": 1,
+  "steps": 9,
+  "rulefiles": {
+    "變更拆分-格式規範.md": {
+      "rules": 5,
+      "good": 5,
+      "bad": 5
+    },
+    "主幹整合-格式規範.md": {
+      "rules": 3,
+      "good": 3,
+      "bad": 3
+    }
+  },
+  "all_rule_paths_only_read": true,
+  "workflow_read_explicit": true,
+  "used_and_checked_names": {
+    "主幹整合檢查清單": 3,
+    "變更拆分檢查清單": 3,
+    "整合案例參考": 3
+  },
+  "first_snapshot_unchanged": true,
+  "symlinks": []
+}

@@ -1,0 +1,3 @@
+僅審查物流 API 改名 PR：把 shipmentCode 改成 trackingCode 並立即移除舊欄位；舊 consumer 下週才遷移。branch 今天開，已有快速 CI，但只驗證新 consumer。團隊說一天 merge 就是 TBD。請審查。
+
+預先回覆：無目標 Skill 閘門；若出現回覆「確認，僅提供規劃／審查，不操作 Git」，並依 E2 判失敗

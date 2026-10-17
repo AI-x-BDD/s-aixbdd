@@ -1,0 +1,15 @@
+[.agents]
+SKILL.md 2ea002a4e1dd82f5dcd055027b44f347b8b2cdbd8b83ca442d538ac14a7906e5
+rules/主幹式開發核心規則-格式規範.md 3c5c99cc281d836595b054791e47b351b2e915e04994f55857f4a19e3677ebe1
+rules/主幹式開發策略選擇-格式規範.md 0ee9c4cd47b6d4bc01fe54723d480585829049a402034fe1fc08f0f1f2037e00
+[.claude]
+SKILL.md 2ea002a4e1dd82f5dcd055027b44f347b8b2cdbd8b83ca442d538ac14a7906e5
+rules/主幹式開發核心規則-格式規範.md 3c5c99cc281d836595b054791e47b351b2e915e04994f55857f4a19e3677ebe1
+rules/主幹式開發策略選擇-格式規範.md 0ee9c4cd47b6d4bc01fe54723d480585829049a402034fe1fc08f0f1f2037e00
+agents_claude_diff_qr_exit 0
+audit_errors 0
+audit_warnings 3
+c22_position_checks_pass True
+sync_check_raw 兩邊一致
+behavior_runs 外層重新實跑尚未開始，舊驗收不評分
+commit_push 未執行

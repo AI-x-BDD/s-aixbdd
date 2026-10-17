@@ -1,0 +1,39 @@
+{
+  "prior_static_checks": {
+    "frontmatter_and_title_preserved": true,
+    "references_cases_unchanged": true,
+    "approved_tobe_equal_ignoring_terminal_newline": true,
+    "single_sop": true,
+    "all_rule_paths_are_in_read_step": true,
+    "cases_path_is_conditional_read": true,
+    "fixed_planning_format_preserved": true,
+    "core_main_and_integration": true,
+    "core_main_workable_and_red_recovery": true,
+    "source_layers_and_team_options": true,
+    "source_branch_thresholds_and_review_time": true,
+    "story_split_branch_and_review": true,
+    "build_test_and_minutes_feedback": true,
+    "strategies_preserved": true,
+    "decision_tree_exactly_preserved": true,
+    "decision_tree_order_and_consumption_wired": true,
+    "pre_submit_six_checks_exactly_preserved": true,
+    "pre_submit_read_think_check_wired": true,
+    "workflow_evidence_prerequisites_and_suitability": true,
+    "gitflow_comparison_preserved": true,
+    "rulefiles_have_15_rules_and_examples": true,
+    "agents_claude_package_identical": true
+  },
+  "prior_static_checks_pass": true,
+  "c22_position_checks": {
+    "agents_claude_package_identical": true,
+    "c22_block_exact_text": true,
+    "c22_block_before_good_example": true,
+    "good_example_before_bad_example": true,
+    "c22_block_not_after_bad_example": true,
+    "c22_block_in_rule_2": true,
+    "blueprint_rule_2_same_position": true
+  },
+  "c22_position_checks_pass": true,
+  "all_checks_pass": true,
+  "note": "C22 只移動原文區塊；既有 22 項檢查沿用前一份 raw，新增位置檢查逐項執行。"
+}

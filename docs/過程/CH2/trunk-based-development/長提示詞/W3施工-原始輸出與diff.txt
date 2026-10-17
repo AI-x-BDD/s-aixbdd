@@ -1,0 +1,10 @@
+To-Be exact equality: False
+To-Be lines: 33 target lines: 33
+SOP count: 1
+RuleFile path refs outside READ step: 0
+Future inline marker present: False
+Approved output format fence: True
+'單、結果欄位、來源分級、未知限制與模式專屬輸出；未通過時修正後重新檢查。\n\n完成條件：規劃、審查或比較結果已交付，且交付前 `CHECK` 的適用項目全部通過。'
+'、結果欄位、來源分級、未知限制與模式專屬輸出；未通過時修正後重新檢查。\n\n完成條件：規劃、審查或比較結果已交付，且交付前 `CHECK` 的適用項目全部通過。\n'
+lengths 1922 1923
+

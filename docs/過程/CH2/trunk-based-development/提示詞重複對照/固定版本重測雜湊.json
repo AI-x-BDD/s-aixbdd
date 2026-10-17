@@ -1,0 +1,98 @@
+{
+  "tbd-v01": {
+    "SKILL.md": "9cecceae6db627125370522f5095463d52bbdcbee015faa3dc9fbacb4907ea37",
+    "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+    "rules/TBD-GitFlow比較-格式規範.md": "8c39f3e4f4cbf5d7954476a1231a39c5f75c1a47f80d177477124dd54f9fb573",
+    "rules/TBD-workflow審查-格式規範.md": "90d39fff6231b9c868aa888aeab1ce9aa3d3cf306b1aa3f6d1783796949138bf",
+    "rules/TBD-來源與壽命-格式規範.md": "9d2439b21cc91d3fac26de711c5d35f63a5e07d51813887830563f119dcc8f14",
+    "rules/TBD-常見錯誤-格式規範.md": "c0803cc3ddbd49756d1226ef6d1cf3ed4407dc4c2db15d9ef06950df5ac44c8e",
+    "rules/TBD-策略選擇-格式規範.md": "d950efa9b5180ae6c28725ec97e362852605a86de4182b4ab7ef2bd11fd18db5",
+    "rules/TBD-規則分級-格式規範.md": "ee0d1123bcc6fdcbd5028ca9a3573dca00633f32e92681a627c5f2811525de77",
+    "rules/TBD-送出前檢查-格式規範.md": "fcd3c18d0b48f26a5b6e7bb2c0aea7a5935de46cb9bfc2105df8de15b1efb18e",
+    "rules/TBD-需求規劃-格式規範.md": "2384918f3a6265662dcc2adbdfdfff72c6b88084909db5e9258aaa35b8bafd08"
+  },
+  "tbd-v02": {
+    "SKILL.md": "9cecceae6db627125370522f5095463d52bbdcbee015faa3dc9fbacb4907ea37",
+    "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+    "rules/TBD-GitFlow比較-格式規範.md": "8c39f3e4f4cbf5d7954476a1231a39c5f75c1a47f80d177477124dd54f9fb573",
+    "rules/TBD-workflow審查-格式規範.md": "90d39fff6231b9c868aa888aeab1ce9aa3d3cf306b1aa3f6d1783796949138bf",
+    "rules/TBD-來源與壽命-格式規範.md": "9d2439b21cc91d3fac26de711c5d35f63a5e07d51813887830563f119dcc8f14",
+    "rules/TBD-常見錯誤-格式規範.md": "c0803cc3ddbd49756d1226ef6d1cf3ed4407dc4c2db15d9ef06950df5ac44c8e",
+    "rules/TBD-策略選擇-格式規範.md": "d950efa9b5180ae6c28725ec97e362852605a86de4182b4ab7ef2bd11fd18db5",
+    "rules/TBD-規則分級-格式規範.md": "ee0d1123bcc6fdcbd5028ca9a3573dca00633f32e92681a627c5f2811525de77",
+    "rules/TBD-送出前檢查-格式規範.md": "fcd3c18d0b48f26a5b6e7bb2c0aea7a5935de46cb9bfc2105df8de15b1efb18e",
+    "rules/TBD-需求規劃-格式規範.md": "2384918f3a6265662dcc2adbdfdfff72c6b88084909db5e9258aaa35b8bafd08"
+  },
+  "tbd-v03": {
+    "SKILL.md": "9cecceae6db627125370522f5095463d52bbdcbee015faa3dc9fbacb4907ea37",
+    "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+    "rules/TBD-GitFlow比較-格式規範.md": "8c39f3e4f4cbf5d7954476a1231a39c5f75c1a47f80d177477124dd54f9fb573",
+    "rules/TBD-workflow審查-格式規範.md": "90d39fff6231b9c868aa888aeab1ce9aa3d3cf306b1aa3f6d1783796949138bf",
+    "rules/TBD-來源與壽命-格式規範.md": "9d2439b21cc91d3fac26de711c5d35f63a5e07d51813887830563f119dcc8f14",
+    "rules/TBD-常見錯誤-格式規範.md": "c0803cc3ddbd49756d1226ef6d1cf3ed4407dc4c2db15d9ef06950df5ac44c8e",
+    "rules/TBD-策略選擇-格式規範.md": "d950efa9b5180ae6c28725ec97e362852605a86de4182b4ab7ef2bd11fd18db5",
+    "rules/TBD-規則分級-格式規範.md": "ee0d1123bcc6fdcbd5028ca9a3573dca00633f32e92681a627c5f2811525de77",
+    "rules/TBD-送出前檢查-格式規範.md": "fcd3c18d0b48f26a5b6e7bb2c0aea7a5935de46cb9bfc2105df8de15b1efb18e",
+    "rules/TBD-需求規劃-格式規範.md": "2384918f3a6265662dcc2adbdfdfff72c6b88084909db5e9258aaa35b8bafd08"
+  },
+  "tbd-v04": {
+    "SKILL.md": "9cecceae6db627125370522f5095463d52bbdcbee015faa3dc9fbacb4907ea37",
+    "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+    "rules/TBD-GitFlow比較-格式規範.md": "8c39f3e4f4cbf5d7954476a1231a39c5f75c1a47f80d177477124dd54f9fb573",
+    "rules/TBD-workflow審查-格式規範.md": "90d39fff6231b9c868aa888aeab1ce9aa3d3cf306b1aa3f6d1783796949138bf",
+    "rules/TBD-來源與壽命-格式規範.md": "9d2439b21cc91d3fac26de711c5d35f63a5e07d51813887830563f119dcc8f14",
+    "rules/TBD-常見錯誤-格式規範.md": "c0803cc3ddbd49756d1226ef6d1cf3ed4407dc4c2db15d9ef06950df5ac44c8e",
+    "rules/TBD-策略選擇-格式規範.md": "d950efa9b5180ae6c28725ec97e362852605a86de4182b4ab7ef2bd11fd18db5",
+    "rules/TBD-規則分級-格式規範.md": "ee0d1123bcc6fdcbd5028ca9a3573dca00633f32e92681a627c5f2811525de77",
+    "rules/TBD-送出前檢查-格式規範.md": "fcd3c18d0b48f26a5b6e7bb2c0aea7a5935de46cb9bfc2105df8de15b1efb18e",
+    "rules/TBD-需求規劃-格式規範.md": "2384918f3a6265662dcc2adbdfdfff72c6b88084909db5e9258aaa35b8bafd08"
+  },
+  "tbd-v05": {
+    "SKILL.md": "9cecceae6db627125370522f5095463d52bbdcbee015faa3dc9fbacb4907ea37",
+    "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+    "rules/TBD-GitFlow比較-格式規範.md": "8c39f3e4f4cbf5d7954476a1231a39c5f75c1a47f80d177477124dd54f9fb573",
+    "rules/TBD-workflow審查-格式規範.md": "90d39fff6231b9c868aa888aeab1ce9aa3d3cf306b1aa3f6d1783796949138bf",
+    "rules/TBD-來源與壽命-格式規範.md": "9d2439b21cc91d3fac26de711c5d35f63a5e07d51813887830563f119dcc8f14",
+    "rules/TBD-常見錯誤-格式規範.md": "c0803cc3ddbd49756d1226ef6d1cf3ed4407dc4c2db15d9ef06950df5ac44c8e",
+    "rules/TBD-策略選擇-格式規範.md": "d950efa9b5180ae6c28725ec97e362852605a86de4182b4ab7ef2bd11fd18db5",
+    "rules/TBD-規則分級-格式規範.md": "ee0d1123bcc6fdcbd5028ca9a3573dca00633f32e92681a627c5f2811525de77",
+    "rules/TBD-送出前檢查-格式規範.md": "fcd3c18d0b48f26a5b6e7bb2c0aea7a5935de46cb9bfc2105df8de15b1efb18e",
+    "rules/TBD-需求規劃-格式規範.md": "2384918f3a6265662dcc2adbdfdfff72c6b88084909db5e9258aaa35b8bafd08"
+  },
+  "tbd-v06": {
+    "SKILL.md": "9cecceae6db627125370522f5095463d52bbdcbee015faa3dc9fbacb4907ea37",
+    "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+    "rules/TBD-GitFlow比較-格式規範.md": "8c39f3e4f4cbf5d7954476a1231a39c5f75c1a47f80d177477124dd54f9fb573",
+    "rules/TBD-workflow審查-格式規範.md": "90d39fff6231b9c868aa888aeab1ce9aa3d3cf306b1aa3f6d1783796949138bf",
+    "rules/TBD-來源與壽命-格式規範.md": "9d2439b21cc91d3fac26de711c5d35f63a5e07d51813887830563f119dcc8f14",
+    "rules/TBD-常見錯誤-格式規範.md": "c0803cc3ddbd49756d1226ef6d1cf3ed4407dc4c2db15d9ef06950df5ac44c8e",
+    "rules/TBD-策略選擇-格式規範.md": "d950efa9b5180ae6c28725ec97e362852605a86de4182b4ab7ef2bd11fd18db5",
+    "rules/TBD-規則分級-格式規範.md": "ee0d1123bcc6fdcbd5028ca9a3573dca00633f32e92681a627c5f2811525de77",
+    "rules/TBD-送出前檢查-格式規範.md": "fcd3c18d0b48f26a5b6e7bb2c0aea7a5935de46cb9bfc2105df8de15b1efb18e",
+    "rules/TBD-需求規劃-格式規範.md": "2384918f3a6265662dcc2adbdfdfff72c6b88084909db5e9258aaa35b8bafd08"
+  },
+  "tbd-b01": {
+    "SKILL.md": "245e3fcfc88066e3936d84e254038f6644fa18a8155808ca7b790ecc227527f2",
+    "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294"
+  },
+  "tbd-b02": {
+    "SKILL.md": "245e3fcfc88066e3936d84e254038f6644fa18a8155808ca7b790ecc227527f2",
+    "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294"
+  },
+  "tbd-b03": {
+    "SKILL.md": "245e3fcfc88066e3936d84e254038f6644fa18a8155808ca7b790ecc227527f2",
+    "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294"
+  },
+  "tbd-b04": {
+    "SKILL.md": "245e3fcfc88066e3936d84e254038f6644fa18a8155808ca7b790ecc227527f2",
+    "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294"
+  },
+  "tbd-b05": {
+    "SKILL.md": "245e3fcfc88066e3936d84e254038f6644fa18a8155808ca7b790ecc227527f2",
+    "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294"
+  },
+  "tbd-b06": {
+    "SKILL.md": "245e3fcfc88066e3936d84e254038f6644fa18a8155808ca7b790ecc227527f2",
+    "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294"
+  }
+}

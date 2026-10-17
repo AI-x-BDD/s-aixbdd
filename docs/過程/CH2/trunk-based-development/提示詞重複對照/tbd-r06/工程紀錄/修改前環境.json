@@ -1,0 +1,38 @@
+{
+  "baseline_commit": "e588ae1d1fc87b3456a56af08e1379f131333050",
+  "initial_git_status": "開始工作時 git status --short 為空；目前變動為本次紀錄。",
+  "environment_root": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/tbd-r06-baseline-gbs_rdqo",
+  "isolation": "每情境獨立技能副本、fork_turns=none 子代理；不帶工程分析，只給技能路徑與情境；唯讀測試。",
+  "model": "繼承父代理模型與 reasoning 設定，無覆寫；平台未提供實際 model ID / temperature / seed，無法確認底層快照與隨機性一致。",
+  "cases": [
+    [
+      "S1",
+      "修正報表匯出檔名的日期格式，估計 40 分鐘，現有測試與 CI 正常，review 可在一小時內完成。請依此 Skill 規劃工作拆分與整合，不執行 Git 寫入。",
+      "一個短期 PR 即可；不強加特殊技巧；說明 main 可工作、CI/review 與含等待的壽命。"
+    ],
+    [
+      "S2",
+      "新增訂閱方案比較頁需四天，週五才能公開，後端先提供新 API、舊頁面仍使用舊 API。請依此 Skill 規劃每天整合方式，不執行 Git 寫入。",
+      "切成可獨立整合的小 PR；未曝光用 flag 並安排清理；新舊 API 並存、consumer 遷移後才移除；每步 main 可工作。"
+    ],
+    [
+      "S3",
+      "把專案的日期處理從 Moment.js 遷移到 date-fns，估計六天，多個模組需逐步替換。請依此 Skill 規劃拆分與整合，不執行 Git 寫入。",
+      "abstraction→接上舊實作→新實作→逐步切換→清除；每天小 PR，main 可工作，不用長期分支隔離。"
+    ],
+    [
+      "S4",
+      "線上 2.4 有時區 bug，main 已在開發 2.5，問題在 main 也可重現；release/2.4 已存在。有人提議先在 release/2.4 修好，再把整條 release merge 回 main，並在 release 分支新增 2.5 功能。請審查並給整合順序，不執行 Git 寫入。",
+      "main 修正驗證後 cherry-pick 到 release；release 只做維護，不承載新功能，不整包回灌。"
+    ],
+    [
+      "S5",
+      "請審查是否符合 TBD：團隊沒有 develop、只從 main 開 branch，但每個功能 branch 活兩週；寫程式半天、review 排三天；CI 紅了晚上才修。主管認為只要強制 squash、rebase 同步、兩位 reviewer 就是 TBD，還說官方規定最多兩天。團隊自動測試不足。也請簡述與 GitFlow 的差異。不執行 Git 寫入。",
+      "指出長期分支、review 等待、紅 main、導入前提；區分官方約1–2天與 DORA <1天；merge/rebase/reviewer 為團隊規則；TBD 切小持續整合，GitFlow 隔離完整後整合。"
+    ]
+  ],
+  "hashes": {
+    ".agents/skills/trunk-based-development/SKILL.md": "245e3fcfc88066e3936d84e254038f6644fa18a8155808ca7b790ecc227527f2",
+    ".agents/skills/trunk-based-development/references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294"
+  }
+}

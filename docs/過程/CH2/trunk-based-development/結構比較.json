@@ -1,0 +1,26 @@
+{
+  "原版": {
+    "主檔行數": 114,
+    "package行數": 231,
+    "package字元數": 6191,
+    "RuleFile": 0,
+    "Rule": 0,
+    "Phase": 0
+  },
+  "長版": {
+    "主檔行數": 33,
+    "package行數": 419,
+    "package字元數": 11276,
+    "RuleFile": 5,
+    "Rule": 15,
+    "Phase": 2
+  },
+  "短版": {
+    "主檔行數": 29,
+    "package行數": 317,
+    "package字元數": 9727,
+    "RuleFile": 8,
+    "Rule": 9,
+    "Phase": 2
+  }
+}

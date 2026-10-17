@@ -1,0 +1,3 @@
+請讀取並使用目前專案 .agents/skills/trunk-based-development/SKILL.md 回答以下需求，僅讀取檔案，不修改專案。
+
+production v2.4 有 bug，main 已開發 v2.5；請規劃修補與發布分支處理。

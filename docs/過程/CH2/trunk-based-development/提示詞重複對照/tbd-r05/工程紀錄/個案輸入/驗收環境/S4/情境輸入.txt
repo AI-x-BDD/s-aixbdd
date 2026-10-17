@@ -1,0 +1,3 @@
+把寄信供應商從 SMTP SDK 換成 HTTP provider，需要六天，舊服務不能中斷。另有 API 欄位要由 amount 改為 total，舊 consumer 兩週後才遷移。請規劃
+
+預先回覆：無目標 Skill 閘門；若出現則回覆「確認，僅提供規劃／審查，不操作 Git」，並依 E2 判失敗

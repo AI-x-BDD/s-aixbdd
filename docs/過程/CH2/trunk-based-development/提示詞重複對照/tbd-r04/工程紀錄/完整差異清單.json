@@ -1,0 +1,38 @@
+[
+  {
+    "comparison": "原始到首次",
+    "changed_files": [
+      "SKILL.md",
+      "rules/共通判準-格式規範.md",
+      "rules/工作流程審查-格式規範.md",
+      "rules/整合技巧-格式規範.md"
+    ],
+    "unchanged_files": [
+      "references/cases.md"
+    ]
+  },
+  {
+    "comparison": "首次到回修",
+    "changed_files": [
+      "SKILL.md"
+    ],
+    "unchanged_files": [
+      "references/cases.md",
+      "rules/共通判準-格式規範.md",
+      "rules/工作流程審查-格式規範.md",
+      "rules/整合技巧-格式規範.md"
+    ]
+  },
+  {
+    "comparison": "原始到最終",
+    "changed_files": [
+      "SKILL.md",
+      "rules/共通判準-格式規範.md",
+      "rules/工作流程審查-格式規範.md",
+      "rules/整合技巧-格式規範.md"
+    ],
+    "unchanged_files": [
+      "references/cases.md"
+    ]
+  }
+]

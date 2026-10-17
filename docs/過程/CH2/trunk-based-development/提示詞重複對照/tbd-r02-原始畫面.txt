@@ -1,0 +1,1000 @@
+    170 +## 6. 施工工作項
+    171 +
+    172 +| 順序 | 工作項 | 執行者 | 目標 | 內容 | 約束 | 狀態 |
+    173 +| ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+    174 +| 1 | W1 | skill-form-sop | 主檔 | 先建立胖 SOP；待抽取判準置於所屬步驟，不引用不存在的檔案 | C1–C26 | 待施工 |
+    175 +| 2 | W2 | skill-derive-rule | Phase 1「分析、規劃與審查」的 THINK「形成建議草稿」 | 從後往前先抽變更拆分主題，更新依賴 CHECK | C11–C20、C24/C25 | 待施工 |
+    176 +| 3 | W3 | skill-derive-rule | 同 Phase 的 THINK「分析整合現況、規則來源與適用範圍」 | 再抽前方的共同主幹整合主題，更新依賴 CHECK | C1–C10、C23/C25 | 待施工 |
+    177 +| 4 | W4 | skill-form-sop | 主檔 SOP 收尾 | 與第 2 節全文核對，移除搬移後副本，保留 frontmatter 與既有案例 | C21–C26 | 待施工 |
+    178 +
+    179 +### 工作項內容
+    180 +
+    181 +#### W1：胖 SOP
+    182 +
+    183 +- 僅改 `.agents/skills/trunk-based-development/SKILL.md` 的主文；frontmatter 逐字保留。
+    184 +- 使用第 2 節單一 Phase、輸入／任務分類、草稿／檢查／交付順序作為骨架。
+    185 +- 在「THINK 分析整合現況、規則來源與適用範圍」步驟內暫存 C1–C10 的既有條文；在「THINK 形成建議草稿」步驟內暫存 C11–C20。兩個 THINK 可唯一定位，不能混成同一步。
+    186 +- 胖 SOP 先不包含兩個尚未存在的 RuleFile READ，也不使用尚未建立的清單名稱。CHECK 暫按內嵌條文核對；完成條件暫為草稿已依內嵌判準檢查並交付。保留案例 READ 與結果格式。
+    187 +- C21 的工程順序與短期 branch／PR 適用範圍按第 2 節寫入；不新增 direct push 強制方式或 review 人數。
+    188 +- 已有正確文字可原文搬移者保留；因固定 Rule 格式需要的「必須／不得／應／可以」僅調整句型，原官方／DORA／團隊來源及核心／強烈建議／可選強度保持。
+    189 +- 將胖 SOP 存於本次紀錄的 `胖流程施工基準.txt`，供 W2/W3 比對；不是額外可執行 Skill。
+    190 +
+    191 +#### W2：抽取變更拆分
+    192 +
+    193 +- 目標：Phase 1「分析、規劃與審查」，受控動詞 THINK，關鍵詞「形成建議草稿」。只抽 C11–C20，C21 的執行順序留 SOP。
+    194 +- Before：該 THINK 內嵌 C11–C20；CHECK 按內嵌判準驗證。
+    195 +- After：在該 THINK 前、案例 READ 前新增第 2 節 P1-5 的條件 READ，建立「變更拆分檢查清單」。THINK 及 CHECK 改用該具名清單；未觸發時略過對該清單的依賴。完成條件按第 2 節概述實際適用的清單。
+    196 +- `skill-derive-rule` 使用 `skill-form-rule` 寫入 `rules/變更拆分-格式規範.md`，再使用 `skill-form-sop` 更新載入點與依賴步驟。
+    197 +
+    198 +| Rule | 完整主題與約束 | Good Example 的情境／差異 | Bad Example 的同情境／差異 |
+    199 +| ---- | ---- | ---- | ---- |
+    200 +| 1 先切可獨立整合的小變更 | C11/C12/C13/C19/C20；保留決策樹的順序與四種結果，無額外技巧門檻 | 三天的資料列表功能拆成可工作的小 PR；很小的文案修正單一 PR、技巧無 | 同需求一個 branch 等全做完；或先破
+         壞 main 再補；小修正無故引入抽象層 |
+    201 +| 2 用 Feature Flag 分離部署與曝光 | C14 | 未到公布日的帳務頁持續整合、flag 關閉，穩定後清理 | 同頁面放長 branch 等公布，或 flag 永不清理 |
+    202 +| 3 用 Abstraction 漸進替換實作 | C15 | 更換付款 SDK：抽象、接舊、加新、切換、刪舊各自整合 | 同替換做一週 branch 最後合回，或抽象完成前刪舊造成 main 壞掉 |
+    203 +| 4 相容性遷移先並存後移除 | C16 | API 欄位遷移保留 v1/v2，consumer 遷移後移除 v1 | 同遷移先刪 v1 再等待 consumer 跟上 |
+    204 +| 5 Release Branch 只維護發布版本 | C17/C18 | 已發布 2.7 的共通 bug 先 main 修正驗證，再 cherry-pick；分支只做版本維護 | 同 bug 只修 release 再回灌，或在 release 承載下一版功能 |
+    205 +
+    206 +每個 Rule 需條列說明、Good Example、Bad Example，正反例簡述符合／違反原因，使用原生條列或適合格式；案例不得與 S1–S3 相同。沿用 `references/cases.md` 原文，不從中刪例子。
+    207 +
+    208 +#### W3：抽取主幹整合
+    209 +
+    210 +- 目標：Phase 1「分析、規劃與審查」，受控動詞 THINK，關鍵詞「分析整合現況、規則來源與適用範圍」。從前方步驟抽 C1–C10，不改 W2 已完成的主題。
+    211 +- Before：該 THINK 內嵌 C1–C10；CHECK 按該內嵌判準驗證。
+    212 +- After：在該 THINK 之前加入第 2 節 P1-3 的 READ，建立「主幹整合檢查清單」；該 THINK、後方形成草稿 THINK 及 CHECK 都依具名結果使用，完成條件按第 2 節。刪除移出主檔的規則副本。
+    213 +- `skill-derive-rule` 使用 `skill-form-rule` 寫入 `rules/主幹整合-格式規範.md`，再使用 `skill-form-sop` 更新載入與依賴步驟。
+    214 +
+    215 +| Rule | 完整主題與約束 | Good Example 的情境／差異 | Bad Example 的同情境／差異 |
+    216 +| ---- | ---- | ---- | ---- |
+    217 +| 1 區分 TBD 目的與規則來源 | C1 | 說明同一 trunk、避免長期分離與可工作目的，分清官方／DORA／團隊 | 同說明把自家規則全稱官方要求，或只以分支名稱定義 TBD |
+    218 +| 2 以核心整合行為判斷 TBD | C2/C3/C4 | 工作小批次回 main；main 紅燈即修／revert，長共同開發分支屬問題 | 同工作只更新 feature、不回 main；紅燈繼續新功能等晚上 |
+    219 +| 3 區分短命目標與強烈建議 | C5/C6 | branch 一天寫碼再兩天 review，算完整等待；區分官方約 1～2 天、DORA <1 天；指出 active branches 與 freeze 風險 | 同 branch 只算寫碼、說兩天硬性合規，或靠 freeze
+         大整合 |
+    220 +| 4 團隊選擇不冒充 TBD 要求 | C7 | 團隊選 merge commit／rebase、review 人數及 direct push 政策，與核心行為分開評估 | 同團隊只因不是 squash 或沒有特定 reviewer 人數而被判不是 TBD |
+    221 +| 5 審查導入前提與適用情境 | C8/C9 | 缺自動測試的頻繁發布團隊先補前提；說明 SaaS/Web/API/Frontend/Microservice/企業系統及變動協作情境 | 同團隊只改 branch 規則即建議全面導入，不問 CI／test／紀律 |
+    222 +| 6 比較工作整合方式 | C10 | 比較 GitFlow 類隔離完成後整合與 TBD 切小持續整合，指出工作拆分的改變 | 同比較只說 branch 名不同或把 merge/rebase 當方法論差異 |
+    223 +
+    224 +每個 Rule 的固定結構、正反例對照、規範強度及示範格式與 W2 相同。不新增 direct push 操作流程、不加入 release 少見例外，不把本次空格誤述變成規則。
+    225 +
+    226 +#### W4：SOP 收尾及工程驗收
+    227 +
+    228 +- 由 `skill-form-sop` 核對最終主檔逐字符合第 2 節；完成條件、9 個步驟、兩份具名清單與條件載入一致。
+    229 +- 檢查 C1–C26 一個權威存放位置；文件間只有示範，不重複判準；frontmatter、既有案例全文及非目標檔案保持不變。
+    230 +- 工程驗收由 skill-engineering 依 Phase 5 執行：audit、同步與檢查、同提示乾淨子代理後測、原始輸出及前後比較、Git 範圍確認與 commit 草稿。
+    231 +- 同步前確認其他 Skill 兩側沒有漂移；執行 `scripts/sync-skills.sh --from agents` 後與 `--check`。若全域同步會覆蓋其他人差異，先停下回報，不擴大本次寫入範圍或回退他人修改。
+    232 +- 若施工 Skill 拒絕本工作項或發現設計不符其規則，停止並回報，已完成項保留狀態，其餘待施工；回 Phase 3 修訂及重新取得必要確認，不自行跳過。
+    233 +
+    234 +## 7. 驗收情境
+    235 +
+    236 +| 編號 | 驗證 | 類型 | 輸入 | 預先回覆 | 判斷方式 |
+    237 +| ---- | ---- | ---- | ---- | ---- | ---- |
+    238 +| S1 | E1/E4；觀察 E3 | 回歸實跑 | `測試輸入與判準.md` S1 全文：通知信主旨空格、45 分鐘小修正 | 無，目標沒有確認閘門 | 與前測相同的單 PR、技巧無、可工作／CI／review／壽命／同步／刪分支判準；另獨立記
+         錄空格方向誤述是否再出現 |
+    239 +| S2 | E1/E5；觀察 E3 | 回歸實跑 | 同檔 S2 全文：兩週分支、三天 review、direct push 與紅燈／導入 | 無 | 與前測相同判準；記錄 review 適用範圍的實際輸出，不預稱 R2 已改善行為 |
+    240 +| S3 | E1/E6；觀察 E3 | 回歸實跑 | 同檔 S3 全文：報名頁、郵件供應商、4.2 hotfix、外部 consumer | 無 | 與前測相同四技巧、清理、相容、main 先修／驗證後 backport、可工作及壽命判準 |
+    241 +| S4 | E1–E3 | 本次結構檢查 | 本次原始需求全文，檢查兩側目標 | 無 | audit 與人工依 Rule 結構、正反例、READ 條件、具名結果、使用及 CHECK 逐項驗證；非行為實跑 |
+    242 +
+    243 +實跑條件沿用 `測試輸入與判準.md` 及 `修改前環境.json`，不改題、提示或判準，不提供根因與標準答案；每例新的 fork_turns=none 子代理，不覆寫模型設定。乾淨對話共享檔案系統、精確後端模型／temperature／see
+         d 不可核實的限制仍保留。
+    244 +
+    245 +E7–E9 另外以 Git 範圍、雜湊、audit／sync 原始輸出、紀錄與確認內容驗收。可執行的後測在包含未提交修改的隔離專案複本執行，並保留相同目標相對路徑；若相較前測工作根位置改變，明確揭露，不能稱為只換版本且
+         其他條件完全相同。前測為唯讀新對話工作目錄，不能事後冒稱容器測試。
+    246 +
+    247 +失敗處理：環境不符先修環境重跑；Skill 行為不符回 Phase 2，不以部分通過結案。保留 S1 用詞異常及 S2 適用範圍張力；沒有可歸因的行為改善就寫無證據。S4 結構改善、S1–S3 實際行為變化分別報告。
+    248 +
+    249 +## 8. 驗收結果
+    250 +
+    251 +尚未施工。根因已確認；本藍圖待第二個確認閘門，目標兩側無修改。W1–W4 皆為待施工，audit／同步／後測均未執行，不宣稱驗收完成。
+    252 +
+    253 +設計檢查：已按重新設計 Rule 1–6、約束分配 Rule 1–3、施工委派 Rule 1–5 核對；To-Be 各步驟有追溯、既有元素有處置、約束有唯一位置及理由、正反例主題明確、胖 SOP 與倒序抽取工作項完整。呼叫圖直接／間接呼
+         叫者皆無，無需其他 Skill 的回歸或改動。
+    254 +
+    255 +待確認：是否核准本藍圖 To-Be、兩份 RuleFile 的十一條 Rule、明列的主檔副本刪除、W1–W4 施工順序與驗收方式。沒有新增推定的產品行為條件；不重問已確認的模組化方向。
+
+  └ docs/過程/CH2/trunk-based-development/本次執行/根因分析.md (+1 -1)
+    80
+    81 -確認紀錄：尚未確認；依 skill-engineering Phase 2 步驟 8 暫停，未改目標 Skill、未進入藍圖或施工。
+    81 +確認紀錄：2026-10-17，總指揮明確確認「目前根因報告中的驗收條件、驗收情境與結構根因」，並指示「沒有證據支持的行為故障不當作已證實根因；保留既有用途與正確規則」。依此進入 Phase 3；R2 限於文字適用範圍一
+        致性，不升格為已證實的行為故障。總指揮另明確指定「提出工程藍圖後停在第二個確認閘門」，本次確認不授權施工。
+
+• 藍圖規劃兩份 RuleFile：共同整合判準，以及變更拆分與技巧；主檔保留 SOP。施工順序依 Skill 要求採「胖 SOP → 由後往前抽取 → SOP 收尾」。藍圖也列明保留、搬移與刪除的內容，不將模組化視為行為改善。
+
+• Edited docs/過程/CH2/trunk-based-development/本次執行/工程藍圖.md (+2 -1)
+    182
+    183 +- 施工前的配對測試準備由 skill-engineering 執行：為滿足 Phase 5 的暫存複本要求及「只替換 Skill 版本」，先建立固定測試根目錄，在該位置以舊版快照、新對話重播 S1–S3；保存為「配對基線」的輸入、原始輸出
+         、雜湊與結果。施工後在同一位置只替換目標 Skill，再以新對話同提示後測。此前已完成的前測完整保留為根因證據，不覆寫，也不因重播結果更動判準。這項補跑是為控制前後路徑及測試環境差異，不是重跑 conventiona
+         l-commits。
+    184  - 僅改 `.agents/skills/trunk-based-development/SKILL.md` 的主文；frontmatter 逐字保留。
+        ⋮
+    245
+    245 -E7–E9 另外以 Git 範圍、雜湊、audit／sync 原始輸出、紀錄與確認內容驗收。可執行的後測在包含未提交修改的隔離專案複本執行，並保留相同目標相對路徑；若相較前測工作根位置改變，明確揭露，不能稱為只換版本且
+         其他條件完全相同。前測為唯讀新對話工作目錄，不能事後冒稱容器測試。
+    246 +E7–E9 另外以 Git 範圍、雜湊、audit／sync 原始輸出、紀錄與確認內容驗收。依 W1 施工前配對基線安排，使用固定暫存專案複本，保留相同 Skill 路徑；施工後只替換目標 Skill 為包含未提交修改的新版。每輪先後核
+         對非目標檔案雜湊及 Git 狀態，原始輸出存在專案複本之外，避免形成新的受測輸入。這樣可控制測試根路徑與其餘專案內容；現有前測仍是根因依據，不能事後冒稱為該配對測試或容器測試。若有做不到的條件，必須明列
+         ，不宣稱完全受控。
+    247
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +15 lines
+  └ 藍圖檢查通過：8 段、E1–E9、C1–C26、9 步驟、frontmatter 原文一致；目標尚無修改。
+    ?? "docs/\351\201\216\347\250\213/CH2/trunk-based-development/"
+
+• 工程藍圖 (docs/過程/CH2/trunk-based-development/本次執行/工程藍圖.md)已完成，停在第二個確認閘門，尚未施工。
+
+  • 沿用 E1–E9；主檔改為單一 Phase、9 個 SOP 步驟。
+  • 規則分為「主幹整合」與「變更拆分」兩份 RuleFile，共 11 條，逐條配置正反例與載入、使用、CHECK。
+  • 保留用途、正確規則及既有案例；刪除搬移後的主檔副本，釐清 branch／PR 流程適用範圍。
+  • 施工採胖 SOP、倒序抽取、收尾，再做配對實跑與同步驗收；結構與行為差異分開記錄。
+
+  請總指揮確認藍圖。依 skill-engineering Phase 4 (.agents/skills/skill-engineering/SKILL.md)「未明確確認時停止執行」，確認前不修改目標 Skill。
+
+  Worked for 2m 32s • 9:32 AM
+
+
+› 總指揮藍圖審查未通過，尚未核准施工。原版 workflow 審查包含 Feature Flag 清理，但本藍圖把該約束放在「變更拆分」RuleFile；一般 workflow 審查的 READ 路徑不保證載入它，造成既有規則適用任務的依賴遺漏。請依原流
+  程修正藍圖，使每個原有用途都能在使用前取得所有適用規則，並核對其他跨檔約束是否也有同類缺口；不得藉此新增領域政策或只是讓追溯表看起來有歸屬。修正後重新呈現藍圖等待確認，保留原版本及修正紀錄。
+
+
+• 藍圖確實漏了 workflow 審查對 Flag 清理規則的載入依賴。我會保留原版，逐項核對原有用途與規則的載入路徑，修訂後再停在確認閘門。
+
+• Explored
+  └ Read SKILL.md (trunk-based-development skill), 工程藍圖.md
+
+• Ran cp docs/過程/CH2/trunk-based-development/本次執行/工程藍圖.md docs/過程/CH2/trunk-based-development/本次執行/工程藍圖第一版.md
+  │ /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ … +53 lines
+  └ (no output)
+
+• Edited 2 files (+52 -1)
+  └ docs/過程/CH2/trunk-based-development/本次執行/工程藍圖.md (+21 -1)
+    169
+    170 +### 用途與使用前載入路徑（第二版新增核對）
+    171 +
+    172 +矩陣核對的是規則能否實際到達第一個使用步驟，不以「分配表有位置」視為可用。共同檔的第一個依賴在 P1-5，拆分檔亦在 P1-5；兩個 READ 相鄰且都在分析前。P1-7 使用兩份分析結果形成草稿，P1-8 先查應載清單，再
+         驗內容。
+    173 +
+    174 +| 原有用途 | 必要判準／來源位置 | READ 路徑與具名結果 | 首次使用與檢查 | 補充核對 |
+    175 +| ---- | ---- | ---- | ---- | ---- |
+    176 +| 需求拆分與小變更規劃 | C1–C9、C11–C20 按情境適用；原規劃流程、Decision Tree、送出前六問 | P1-3 主幹整合 → P1-4 變更拆分 | P1-5 分析 → P1-7 規劃 → P1-8 應載及逐條 CHECK；C21/C26 留 SOP | S1/S3；主
+         檔流程與題目原樣保留 |
+    177 +| 一般團隊 workflow 審查，未點名任何技巧 | 原六個觀察面向：長期共同分支 C2、每日回 main C3、壽命／active branches C5/C6、CI／紅燈 C4/C8、code freeze C6、Flag 清理 C14；另導入 C8/C9 | P1-3 主幹整合 →
+          P1-4 變更拆分；以審查任務觸發，**不依是否先辨識 Flag** | P1-5 使用共同判準及拆分 Rule 2；P1-7 形成完整審查；P1-8 核對適用清單與六項觀察面向 | S5；缺少現況只列為無法判斷，不推定有未清 Flag |
+    178 +| branch／PR 大小、壽命、事後整合審查 | C2–C8、C11/C12/C13，涉及技巧再適用 C14–C20；原常見錯誤與送出檢查 | P1-3 → P1-4 兩份清單 | P1-5 判斷 → P1-7 審查 → P1-8 CHECK；包含 merge 後不刪 branch 的 C6 |
+          S2/S6；不只載入壽命判準 |
+    179 +| 未完成曝光／大型重構／框架遷移／相容性遷移，包含審查已採方案 | C11–C16/C19/C20 及共同 C1–C9；原技巧要點、跨層中間狀態錯誤 | 規劃、技巧選擇或審查任一類型均走 P1-3 → P1-4 | P1-5 分析使用技巧各 Rule
+         ；P1-7 方案／審查 → P1-8 CHECK | S3/S6；不要求先把「審查」重新命名成「技巧選擇」 |
+    180 +| Release Branch、舊版 hotfix，包含審查現有修復方向 | C17/C18 及共同 C1–C9；原技巧要點、hotfix 案例 | P1-3 → P1-4 兩份清單 | P1-5 使用拆分 Rule 5；P1-7 方案／審查 → P1-8 CHECK | S3/S7；不將 release
+         當一般長開發分支，也不漏掉 main 先修與 backport |
+    181 +| TBD 與 GitFlow 純比較 | C1–C10；原比較、來源與分級 | P1-3 主幹整合；純比較無規劃／審查／技巧時不觸發 P1-4 | P1-5 → P1-7 比較 → P1-8 共同清單 CHECK | S8；一旦比較混合具體 workflow 審查，任務類型同
+         時觸發 P1-4 |
+    182 +| 參照完整實戰案例 | 原 references/cases.md 的小變更、Flag、Abstraction、相容、release 示範 | 已有兩份清單且需要案例才 P1-6 讀「實戰案例參照」 | P1-7 使用，P1-8 核對與已載判準一致 | 案例不作為補漏載
+         入規則的替代來源 |
+    183 +
+    184 +另核對原「送出前檢查」六問：切小 C11/C13、可工作 C12、Flag C14、Abstraction C15、CI C8、隔天仍存在 C5；規劃及審查都可經 P1-4 取得相關判準。第一版還漏了 C6 的「merge 後刪 branch」審查歸屬，第二版已補
+         回共同 Rule 3；C21 僅保存程序順序，不能代替審查的建議判準。沒有把 Flag 清理升格為核心合規條件，也不新增清理期限。
+    185 +
+    186  ## 6. 施工工作項
+        ⋮
+    258  | S4 | E1–E3 | 本次結構檢查 | 本次原始需求全文，檢查兩側目標 | 無 | audit 與人工依 Rule 結構、正反例、READ 條件、具名結果、使用及 CHECK 逐項驗證；非行為實跑 |
+    259 +| S5 | E1/E3/E5/E6 | 補充回歸實跑 | `補充測試輸入與判準.md` S5：未點名技巧的一般 workflow 審查 | 無 | 包含原六個觀察面向，Flag 清理資訊缺少時列為待核對，不虛構問題；新版應在分析前實讀兩份清單 |
+    260 +| S6 | E1/E3/E4/E6 | 補充回歸實跑 | 同檔 S6：PR 已合未刪 branch、跨 API consumer 尚未同步 | 無 | 判斷未刪分支與破壞相容的中間狀態，審查路徑取得 C6/C12/C16 |
+    261 +| S7 | E1/E3/E5/E6 | 補充回歸實跑 | 同檔 S7：release 分支承載新功能、release 先修才回灌 | 無 | 保留 release 維護用途與修復方向判準，審查路徑取得 C17/C18，不因長命直接判 release 不允許 |
+    262 +| S8 | E1/E3/E5 | 補充回歸實跑 | 同檔 S8：純 TBD 與 GitFlow 比較 | 無 | 保留比較與團隊選擇區分；新版只讀共同檔即可完成，不強制讀技巧或案例 |
+    263
+    244 -實跑條件沿用 `測試輸入與判準.md` 及 `修改前環境.json`，不改題、提示或判準，不提供根因與標準答案；每例新的 fork_turns=none 子代理，不覆寫模型設定。乾淨對話共享檔案系統、精確後端模型／temperature／see
+         d 不可核實的限制仍保留。
+    264 +實跑條件沿用 `測試輸入與判準.md` 及 `修改前環境.json`，S1–S4 不改題、提示或判準；S5–S8 是本次審查所要求依賴核對的補充案例，施工前在配對基線與施工後各用相同輸入、設定及判準實跑。載入差異另外依 E3 評
+         分，不把舊版沒有新 RuleFile 當成舊版答題失敗。不提供根因與標準答案；每例新的 fork_turns=none 子代理，不覆寫模型設定。乾淨對話共享檔案系統、精確後端模型／temperature／seed 不可核實的限制仍保留。
+    265
+
+  └ docs/過程/CH2/trunk-based-development/本次執行/補充測試輸入與判準.md (+31 -0)
+     1 +# 載入依賴補充測試
+     2 +
+     3 +第二版藍圖待確認，尚未實跑。沿用「測試輸入與判準.md」的共用執行指示與環境限制；判準不交給受測代理。S1–S4 完全保留。S5–S8 在施工前配對基線及施工後以相同輸入與判準執行；沒有使用者確認閘門，預先回覆皆為
+        「無」。不新增領域政策，只驗證原有用途與規則的可達性。
+     4 +
+     5 +## S5：一般 workflow 審查
+     6 +
+     7 +輸入：請用 trunk-based-development 審查我們的團隊 workflow，列出核對項目、已知問題與還無法判斷的部分。目前每人每天至少回 main 一次，feature branch 含 review 約六小時，沒有 develop 或其他長期共同開發
+        分支；CI 五分鐘內完成且紅燈立即處理，發布前不做 code freeze。這些資訊足夠判斷了嗎？
+     8 +
+     9 +判準：審查涵蓋原版六個面向；已知資訊照實判斷，active branches 數量及 Feature Flag 是否清理等未提供資訊列為尚無法判斷或待核對，不虛構未清理問題、不加清理期限。新版一般審查即使輸入沒提 Flag，也應在分析
+        前實讀兩份 RuleFile，並於 CHECK 核對適用清單。
+    10 +
+    11 +## S6：branch／PR 審查
+    12 +
+    13 +輸入：只審查這個 PR 的拆分與整合方式：我們把商品查詢的舊 endpoint 移除，今天先合到 main；兩個外部 consumer 明天才修改。單元測試用 mock 所以現在是綠燈。另一個已 merge 的功能 branch 還留著三星期沒刪。
+        請依 trunk-based-development 指出問題與可行的拆分方式。
+    14 +
+    15 +判準：不能以小 PR 或 mock 測試綠燈合理化破壞 consumer；保留新舊相容、遷移後移除；識別已 merge branch 未刪的問題，不虛構額外 Git 清理政策。新版審查在使用前取得共同 C6 與拆分 C12/C16，不能只讀壽命判準
+        。
+    16 +
+    17 +## S7：既有 release workflow 審查
+    18 +
+    19 +輸入：請審查我們維護 6.8 的做法：release/6.8 會留到版本支援結束，也順便開發下一版報表功能。main 與 6.8 都有同一個 bug，團隊先在 release/6.8 修，之後再把整包修改 merge 回 main。依 trunk-based-developm
+        ent 哪些合理、哪些需調整？
+    20 +
+    21 +判準：允許版本維護分支，不以長命本身否定 release；指出承載新功能與既有修復方向問題，保留 main 修正驗證後 cherry-pick；不引入本次未要求的少見例外或新發布政策。新版審查在分析前取得 C17/C18。
+    22 +
+    23 +## S8：純方法比較
+    24 +
+    25 +輸入：只比較 trunk-based-development 與 GitFlow 的工作拆分及整合方式，並說明 squash merge、reviewer 人數與允許 direct push 能否用來判定是哪一種方法。沒有具體需求或團隊 workflow 要審查，不用給遷移方案
+        。
+    26 +
+    27 +判準：TBD 切小持續整合、GitFlow 類先隔離做完整再整合；區分團隊選擇與方法核心。新版只需主幹整合清單，不必讀變更拆分或實戰案例；不強加技巧方案。
+    28 +
+    29 +## 結果紀錄
+    30 +
+    31 +尚未執行。需保存各輪輸入、原始輸出與實際讀檔證據。載入合規與領域答案分開評分；代理自述讀檔不等於完整工具軌跡，取得不到工具證據時明列限制。S4 的靜態依賴演練亦不冒充 S5–S8 實跑。
+
+• Explored
+  └ Search P1-4|P1-5|S1–S3|前方|倒序|後往前|兩個 THINK|實際載入|只在|才讀|Before|After|C6|確認 in 工程藍圖.md
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +5 lines
+  └ (no output)
+
+• Added docs/過程/CH2/trunk-based-development/本次執行/藍圖修正紀錄.md (+39 -0)
+     1 +# 藍圖第一版審查與第二版修正
+     2 +
+     3 +## 審查與版本
+     4 +
+     5 +- 第一版：[工程藍圖第一版.md](工程藍圖第一版.md)，保留審查前全文，未覆寫。
+     6 +- 現行提案：[工程藍圖.md](工程藍圖.md)，標示第二版；仍未取得藍圖確認。
+     7 +- 2026-10-17 總指揮未通過第一版：workflow 原有 Feature Flag 清理檢查位於拆分檔，一般審查的 READ 不保證載入，屬依賴遺漏。要求核對其他跨檔適用規則，禁止新增領域政策或只補追溯表。
+     8 +- 依 skill-engineering Phase 4 步驟 2，對非驗收條件的設計修正返回 Phase 3；既有根因確認與 E1–E9 不變，重新呈現藍圖等待第二個閘門，不施工。
+     9 +
+    10 +## 已證實的設計缺口
+    11 +
+    12 +| 位置 | 觀察 | 結論 |
+    13 +| ---- | ---- | ---- |
+    14 +| 原 Skill「審查團隊的 workflow」第六項、第一版 P1-5、C14 | 原版要求檢查 Flag 清理；第一版只有拆分／技巧選擇才讀拆分檔 | 一般 workflow 審查不保證取得 C14，第一版 E1/E3 的設計檢查宣稱不成立 |
+    15 +| 原 Skill「常見錯誤」branch 一直不刪、第一版 C21/P1-7 | 原版審查面向包括 branch 不刪；第一版只留在規劃短期 branch 的順序，未給共同審查判準 | 類似任務適用缺口，需保留共同 Rule 3 的刪除建議，不能以規
+        劃順序代替審查規則 |
+    16 +| 第一版 P1-4/5/8 | 分析在條件載入前；CHECK 只驗「實際有載入」的清單 | 可漏載卻仍自行宣告通過，必須同時修載入條件、順序、使用與完整性檢查 |
+    17 +| 第一版 C12/C15/C16/C17/C18 | 正確判準都有歸屬，但 branch／PR／既有技巧／release 的審查不一定讀拆分檔 | 同類可達性缺口；不能只為 Flag 單點加例外 |
+    18 +
+    19 +這些都是藍圖文字可核對的設計缺陷，尚未施工，沒有宣稱受測新版實跑已失敗。
+    20 +
+    21 +## 第二版具體修正
+    22 +
+    23 +1. P1-4 READ 明列所有 branch／PR／團隊 workflow 審查，包括未點名技巧的一般審查；規劃與技巧選擇同樣載入拆分清單。純方法比較可略過。
+    24 +2. 兩份 READ 均移至分析前：P1-3 共同規則、P1-4 適用拆分規則、P1-5 使用具名清單分析，再 P1-7 形成方案或審查草稿。
+    25 +3. P1-8 先核對應載清單是否齊全；漏載回 READ 並重做後續分析／草稿，再逐條檢查內容。完成條件包含使用前已載入，不只對已有清單自我檢查。
+    26 +4. C6／主幹 Rule 3 補回原有 merge 後刪 branch 的強烈建議與未刪模式；C21 僅表達流程順序。兩者各自單一存放位置，不改建議強度。
+    27 +5. 藍圖第 5 節新增用途→原規則→READ→第一次使用→CHECK 矩陣，核對六個 workflow 面向、六個送出問題及所有 description 用途。Flag、API 相容、抽象替換、release 修復方向均可由審查路徑到達。
+    28 +6. W1 改為同一個分析 THINK 暫存兩主題；W2/W3 定位同一步驟、分別抽取拆分與共同規則，並同時交付 READ、分析／草稿使用及 CHECK 的完整 After。保留胖 SOP 先寫入的施工要求。
+    29 +7. 增列 S5–S8 補充配對情境：一般 workflow（不在輸入點名 Flag）、branch／PR 審查、release 審查及純方法比較。先跑舊版配對基線、再跑新版；不變動既有 S1–S4，不將舊版無 RuleFile 視為領域答案失敗。
+    30 +
+    31 +不變項：兩份 RuleFile、十一條 Rule、單一 Phase／九步驟；原有正確判準、來源區分、規則強度、案例與 frontmatter；不新增 Flag 清理期限、Git 分支政策、發布例外或確認閘門。不以全面載入案例彌補規則漏載。
+    32 +
+    33 +## 驗證與限制
+    34 +
+    35 +- 已逐一核對目前目標主檔的規則分級、規劃流程、Decision Tree、技巧、常見錯誤、workflow 六項、導入適用性、GitFlow 及送出六問；矩陣列出各原有用途的可達路徑。
+    36 +- 機械檢查另存 `藍圖第二版檢查.json`：標題／步驟、frontmatter、原版本雜湊、用途路徑靜態演練與目標未修改。路徑演練只核對藍圖設計，不是實跑，也不是模型正確載入的證據。
+    37 +- 新版 RuleFile 尚不存在，不能執行施工後 audit 或宣稱載入行為已通過；補充案例尚未實跑，需藍圖確認後按前後配對安排執行。
+    38 +
+    39 +確認紀錄：第二版待總指揮確認；W1–W4 均待施工。目標兩側未改，未執行 commit／push／安裝。
+
+• 跨檔核對也找到同類缺口：branch 未刪除的審查判準，以及 API 相容、重構、release 方案的審查，都可能漏讀拆分檔。第二版將所有審查在分析前載入兩份清單，CHECK 也先核對「應載清單是否齊全」；純方法比較仍可只讀共同
+  規則。原版藍圖與修正紀錄已保留。
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +38 lines
+  └ 第二版靜態檢查通過：原版保留、驗收條件不變、READ先於分析、應載清單CHECK、用途依賴矩陣、目標兩側未修改。尚未實跑或施工。
+    ?? "docs/\351\201\216\347\250\213/CH2/trunk-based-development/"
+
+• 第二版工程藍圖 (docs/過程/CH2/trunk-based-development/本次執行/工程藍圖.md)已修正，尚未施工。
+
+  • 所有 workflow／branch／PR 審查在分析前載入兩份適用清單，涵蓋 Flag 清理、相容性與 release 等判準。
+  • CHECK 先確認應載清單齊全，再逐條驗證內容。
+  • 補回 branch 未刪除的審查判準，新增用途與載入路徑矩陣及配對測試案例；未新增領域政策。
+
+  第一版 (docs/過程/CH2/trunk-based-development/本次執行/工程藍圖第一版.md)與[修正紀錄](docs/過程/CH2/trunk-based-development/本次執行/藍圖修
+
+
+› 總指揮已依相同準則審查並確認目前工程藍圖、驗收條件及所列刪除項目。請依 Skill Engineering Phase 5 與藍圖施工，使用指定 primitives，逐項更新狀態，完成結構診斷、規定的同步及乾淨實跑驗收。只改目標 Skill 兩側
+  與本次紀錄，不 commit 或 push。首度施工完成且準備實跑時先將當時目標 Skill 複製到本次紀錄的「首次施工技能」目錄，後續如驗收回修仍保留該快照；實跑失敗依原流程返回分析，不可改判準掩蓋。全部情境通過才回報完
+  成。
+
+
+• 藍圖已確認，開始 Phase 5。我會依序使用指定 primitives 施工並更新狀態，保存「首次施工技能」快照，再做結構、同步及配對實跑驗收；失敗會照原流程處理。
+
+• Ran cat .agents/skills/skill-derive-rule/rules/規則展開分析-格式規範.md .agents/skills/skill-derive-rule/rules/RuleFile委派-格式規範.md; cat scripts/sync-skills.sh
+  └ # Rule 1 - 候選規則必須可追溯至指定步驟
+
+    - 分析指定步驟時，必須辨識該步驟的輸入、可觀察的輸出或行為，以及完成條件。
+    +237 lines (⌃t to view transcript)
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +10 lines
+  └ (no output)
+
+• Started `/root/paired_test_harness`
+
+• Ran sed -n '250,500p' .agents/skills/skill-engineering/scripts/audit_skill.py; cat .agents/skills/skill-form-sop/rules/SOP-格式規範.md .agents/skills/skill-form-sop/rules/SOP-按需載入-格式規範.md
+  └                         rel,
+                            step.line,
+                            f"Phase {phase.number} 的步驟編號必須連續；預期 {expected_step}，實際 {step.number}。",
+    +514 lines (⌃t to view transcript)
+
+• Ran scripts/sync-skills.sh --check; git diff --name-only; git status --short; cat .agents/skills/skill-form-rule/rules/RuleFile-格式規範.md
+  └ 兩邊一致
+    ?? "docs/\351\201\216\347\250\213/CH2/trunk-based-development/"
+    # Rule 1 - 每條規則使用固定結構
+    +283 lines (⌃t to view transcript)
+
+• Interacted with `/root/paired_test_harness`
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +33 lines
+  └ 胖 SOP 已準備於工程紀錄；未寫入目標。
+
+
+› 共同執行安排：使用者要求以空間換時間。互相獨立、環境隔離的驗收情境可平行啟動乾淨子代理，不必串行等待每題；每題仍須獨立評分、保存原始輸出與副作用檢查。若子代理啟動或等待卡住超過一分鐘，直接列出情境輸入與準
+  備好的環境位置給總指揮，我會安排 Herdr 全新 session，勿因資源等候就省略實跑。這只調整排程，不修改各版驗收判準。
+
+
+• Interacted with `/root/paired_test_harness`
+
+• Interacted with `/root/paired_test_harness`
+
+• Edited 2 files (+200 -0)
+  └ docs/過程/CH2/trunk-based-development/本次執行/拆分規則施工準備.txt (+94 -0)
+     1 +# Rule 1 - 先切可獨立整合的小變更
+     2 +
+     3 +- 必須先把需求拆成能獨立整合的小變更。一張 Story／Ticket 不等於一個 branch 或一個 PR。
+     4 +- 每個小變更必須保持 main 可工作；不得為了 merge 小，把不能工作的程式 merge main，或造成「API 改了、前端還沒跟上」的中間狀態。
+     5 +- 判斷時必須先看幾小時／一天內能否完成，再看能否切更小；可以時切成多個小 PR，分別重新判斷。
+     6 +- 無法直接完成或再切小時，必須依原因選技巧：功能還不能曝光用 Feature Flag，大型程式重構用 Branch by Abstraction，舊系統／相容性遷移用新舊並存，維護已發布版本用 Release Branch。
+     7 +- 小 bug 等可直接完成的小變更可以不使用特殊技巧；不得只因需求工期較長就讓單一 feature branch 存活到全部完成。
+     8 +- 未完成的工作應靠小批次、Feature Flag、抽象層、向後相容、CI、自動測試整合，不得靠長期開發分支藏起來。
+     9 +
+    10 +## Good Example
+    11 +
+    12 +切成可工作的整合單位，小變更也不強加技巧。
+    13 +
+    14 +- 三天的資料列表功能拆成 API client、列表骨架、讀取資料、分頁數個 PR；每次整合仍可工作，未能曝光的部分另依曝光技巧處理。
+    15 +- 同專案的小文案修正可在一個短期 PR 完成，技巧為無。
+    16 +
+    17 +## Bad Example
+    18 +
+    19 +同需求把工期等同 branch 壽命，或為了切小而破壞 main。
+    20 +
+    21 +- 三天的資料列表功能只開一個 branch，全部做完才合回；或先移除可用 API，等下一個 PR 才修 UI。
+    22 +- 同專案的小文案修正也要求先引入抽象層，沒有情境上的理由。
+    23 +
+    24 +# Rule 2 - 用 Feature Flag 分離部署與曝光
+    25 +
+    26 +- 功能還不能曝光時，應使用 Feature Flag 關閉功能，程式每天 merge，最後打開（Deploy ≠ Release）。
+    27 +- 功能上線並穩定後應刪除 flag；不得把不清理的 flag 當作沒有技術債。
+    28 +- 審查團隊 workflow 時，必須檢查 Feature Flag 有沒有清理。
+    29 +
+    30 +## Good Example
+    31 +
+    32 +相同曝光限制透過 flag 控制，並保留清理步驟。
+    33 +
+    34 +- 帳務頁要到公布日才能開放，開發期間 flag 關閉、小批次持續進 main；驗證後開啟，穩定後刪 flag。
+    35 +- 審查這個團隊時，核對其已上線 flag 是否清理，而非只檢查 branch 壽命。
+    36 +
+    37 +## Bad Example
+    38 +
+    39 +同帳務頁把發布等待藏在長 branch，或讓 flag 永久累積。
+    40 +
+    41 +- 功能到公布日才把一週的 branch 合回；或功能已穩定，仍將永不清理 flag 視為沒有問題。
+    42 +- 審查這個團隊時，只因 branch 短就省略 Flag 清理檢查。
+    43 +
+    44 +# Rule 3 - 用 Abstraction 漸進替換實作
+    45 +
+    46 +- 大型程式重構應採 Branch by Abstraction：建立 abstraction → 舊實作接上 → 加入新實作 → 逐步切換 → 刪舊實作。
+    47 +- 每一步都必須可整合到 main，不得等整個替換完成才合回長期 branch。
+    48 +
+    49 +## Good Example
+    50 +
+    51 +新舊實作在 main 共存，替換可逐步整合。
+    52 +
+    53 +- 更換付款 SDK 時，先建抽象並接舊 SDK，再加新 SDK、逐步切換，最後刪舊 SDK；各步分別整合。
+    54 +
+    55 +## Bad Example
+    56 +
+    57 +同替換隔離太久或過早刪掉可用實作。
+    58 +
+    59 +- 更換付款 SDK 開一週 branch 最後才合回；或抽象尚未接好就先刪舊 SDK，讓 main 暫時不能付款。
+    60 +
+    61 +# Rule 4 - 相容性遷移先並存後移除
+    62 +
+    63 +- 改 API 或做舊系統相容性遷移時，應採新舊並存（Strangler）：先讓舊 API 與新 API 並存 → consumer 遷移 → 刪舊 API。
+    64 +- 每一步都必須保持可工作，不得讓 main 處在 API 已改、consumer 還沒跟上的中間狀態。
+    65 +
+    66 +## Good Example
+    67 +
+    68 +同一 API 遷移讓 consumer 有可工作的過渡路徑。
+    69 +
+    70 +- API 欄位遷移先保留 v1 並新增 v2，各 consumer 分批遷移後才刪 v1。
+    71 +
+    72 +## Bad Example
+    73 +
+    74 +同一遷移先破壞舊契約，再等待 consumer 補上。
+    75 +
+    76 +- API 欄位遷移先刪 v1，consumer 要幾天後才切到 v2，期間仍把 main 當作可工作。
+    77 +
+    78 +# Rule 5 - Release Branch 只維護發布版本
+    79 +
+    80 +- Release Branch 應很晚才切，只負責該版本的穩定、bug fix、發布；不得承載持續的新功能開發。
+    81 +- Bug 必須先修在 main（fix on trunk first），驗證後再 cherry-pick 到 release branch；不得只在 release branch 修再回灌 main。
+    82 +- 判斷時必須區分維護已發布版本的 Release Branch 與長期共同開發分支，不得只因 release branch 存在就認定違反 TBD。
+    83 +
+    84 +## Good Example
+    85 +
+    86 +相同版本維護以 main 為修復來源，release 不承載下一版開發。
+    87 +
+    88 +- 已發布 2.7 有共通 bug，在 main 修正及驗證，再 cherry-pick 到 release/2.7；該分支只做版本穩定、修復與發布。
+    89 +
+    90 +## Bad Example
+    91 +
+    92 +同一分支變成開發線，或讓 main 可能漏掉修正。
+    93 +
+    94 +- 只在 release/2.7 修共通 bug，再把整包變更回灌 main；並在 release/2.7 繼續開發下一版功能。
+
+  └ docs/過程/CH2/trunk-based-development/本次執行/整合規則施工準備.txt (+106 -0)
+      1 +# Rule 1 - 區分 TBD 目的與規則來源
+      2 +
+      3 +- 說明 TBD 時，應以「不要讓大家的程式碼分開太久」解釋核心目的：所有人圍繞單一 trunk（main）工作，持續整合，main 保持可工作、可發布。
+      4 +- 回答時必須區分規則來源：TBD 官方是 TrunkBasedDevelopment.com；DORA 是 Google DORA 的 DevOps 研究，標準通常比官方嚴格；團隊規則是 TBD 沒規定、由團隊自行決定的部分。
+      5 +
+      6 +## Good Example
+      7 +
+      8 +同一個說明保留共同整合的目的，且區分來源。
+      9 +
+     10 +- 說明團隊透過單一 main 持續整合來避免長期分離，並分別標明官方、DORA 與自家團隊政策。
+     11 +
+     12 +## Bad Example
+     13 +
+     14 +同一說明只看名稱，或把團隊政策冒充官方定義。
+     15 +
+     16 +- 只因 branch 叫 main 就說已經做到 TBD；把自家要求 squash、兩個 reviewer 全稱為 TBD 官方規定。
+     17 +
+     18 +# Rule 2 - 以核心整合行為判斷 TBD
+     19 +
+     20 +- 判斷是否符合 TBD 時，必須檢查沒有長期開發分支、頻繁整合 main、main 保持可工作這三項核心規則。
+     21 +- 不得只因工作 branch 從 main 開出就判為 TBD；feature branch 活 2～3 週、develop／team-a／release-next 長期共同開發、多人共用 feature branch 都是需指出的錯誤模式。
+     22 +- 必須區分把 main 同步到工作 branch 與把小變更整合回 main；DORA 要求至少每天整合 main 一次，一天多次更好。
+     23 +- main CI 紅了必須先修 main，不繼續開發新功能；依 DORA 建議立即修或立即 revert，不得等到晚上再看。
+     24 +
+     25 +## Good Example
+     26 +
+     27 +同團隊以實際回到 main 的整合及可工作狀態判斷。
+     28 +
+     29 +- 每人把小變更至少每天整合回 main；CI 紅了優先修復或 revert，恢復可工作後再繼續新功能。
+     30 +
+     31 +## Bad Example
+     32 +
+     33 +同團隊只做單向同步並延後處理壞掉的主線。
+     34 +
+     35 +- 多人共同開發一條長 feature branch，每天把 main 更新進去，兩週後才合回，卻宣稱每天整合；main 紅了仍繼續新功能，晚上再修。
+     36 +
+     37 +# Rule 3 - 區分短命目標與強烈建議
+     38 +
+     39 +- Branch 應非常短命，壽命必須包含等 review 的時間；官方通常約 1～2 天，DORA 以不到一天為目標，不得把兩天說成硬性標準。
+     40 +- active branches 應少；應避免靠 code freeze 解決整合問題；merge 後應刪 branch。這些屬強烈建議，必須與核心規則區分。
+     41 +- 審查時應指出 PR 小但等 review 三天、branch 一直不刪、接近 release 就 code freeze 的問題；branch 明天仍存在時，應檢查是不是切得太大。
+     42 +
+     43 +## Good Example
+     44 +
+     45 +同一 branch 的評估計入等待，並區分目標與強度。
+     46 +
+     47 +- 一天寫完卻等兩天 review，算三天壽命，建議縮短等待與檢查切分；分開說明官方約 1～2 天與 DORA <1 天目標。
+     48 +- 同時指出 active branches 太多、靠 freeze 整合及 merge 後未刪 branch 的風險。
+     49 +
+     50 +## Bad Example
+     51 +
+     52 +同一 branch 漏算等待，或把建議當硬門檻。
+     53 +
+     54 +- 一天寫完等兩天 review 仍算一天，並說只要不超過兩天就必定是 TBD；靠 code freeze 收尾，已 merge branch 留著也不檢查。
+     55 +
+     56 +# Rule 4 - 團隊選擇不冒充 TBD 要求
+     57 +
+     58 +- Squash／merge commit／rebase merge、同步 main 用 merge 還是 rebase、branch 命名、reviewer 人數、GitHub 或 GitLab、是否禁止 direct push，都可以由團隊決定，不得說成 TBD 的要求。
+     59 +- 使用短期 branch／PR 的示範流程時，必須保留其適用範圍，不得推定所有團隊都必須採相同 Git 操作。
+     60 +
+     61 +## Good Example
+     62 +
+     63 +同一團隊的 Git 選擇與核心整合行為分開評估。
+     64 +
+     65 +- 團隊採 merge commit、自訂 reviewer 人數與 direct push 政策；審查時依實際整合行為判斷，而不是只看是否 squash。
+     66 +
+     67 +## Bad Example
+     68 +
+     69 +同一團隊只因選了不同 Git 選項就被誤判。
+     70 +
+     71 +- 因團隊不用 squash、沒有特定 reviewer 人數或允許 direct push，就直接說不算 TBD。
+     72 +
+     73 +# Rule 5 - 審查導入前提與適用情境
+     74 +
+     75 +- 導入前應具備自動 build、自動 test、快速 CI、小批次開發能力與快速 code review；DORA 建議每個 commit 都觸發 build 與自動測試，回饋在幾分鐘內。
+     76 +- 缺經驗、缺 gated checks 或沒有 broken trunk 優先修復紀律時，必須先指出缺的前提，不得直接建議全面導入；DORA 指出此時可能增加錯誤與返工。
+     77 +- 評估適用情境時，可以列出 SaaS、Web App、Backend API、Frontend App、Microservice、企業內部系統、頻繁發布、多人共同維護的 codebase；需求一直變、多人同時改、需要頻繁 release 三者同時成立時價值最高。
+     78 +
+     79 +## Good Example
+     80 +
+     81 +同團隊先補足整合安全前提，再考慮導入。
+     82 +
+     83 +- 頻繁發布的 Web 團隊沒有自動測試，先指出需補 build／test、快速 CI、review、小批次與 broken trunk 紀律，不直接建議全面改用 TBD。
+     84 +
+     85 +## Bad Example
+     86 +
+     87 +同團隊只換 branch 政策就被當成準備完成。
+     88 +
+     89 +- 沒有自動測試的 Web 團隊被建議明天全面導入，只要每人每天 merge 就會安全，忽略 CI、經驗與修復紀律。
+     90 +
+     91 +# Rule 6 - 比較工作整合方式
+     92 +
+     93 +- 比較時必須區分：GitFlow 類先隔離 → 做完整 → 最後整合；TBD 先切小 → 持續整合 → 任何時候都保持可工作。
+     94 +- 應指出 TBD 主要改變拆分工作的方式，Git 操作本身變化不大，不得只用 branch 名稱或 merge／rebase 選擇當作方法論差異。
+     95 +
+     96 +## Good Example
+     97 +
+     98 +同一比較聚焦工作拆分及整合時機。
+     99 +
+    100 +- GitFlow 類把功能隔離到完成後才整合；TBD 把需求切小、持續回 main，因此團隊需要改變工作拆分習慣。
+    101 +
+    102 +## Bad Example
+    103 +
+    104 +同一比較只看工具細節，沒有說明整合方式。
+    105 +
+    106 +- 把 GitFlow 與 TBD 的差異說成 branch 叫 develop 或 main，或說一個必須 merge、另一個必須 rebase。
+
+
+› 目前已核准施工。請簡短回報尚未寫入目標的具體阻礙；若在等待 paired_test_harness，請先平行施工，測試工具準備與修改目標沒有相依時不要串行等待。需要總指揮提供 Herdr 測試資源時列出具體輸入與環境，保留原驗收判
+  準。
+
+
+• 沒有寫入阻礙；剛才是在等配對基線。測試使用固定的舊版複本，與修改目標沒有相依，我現在平行施工。
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +5 lines
+  └ W1 已透過 skill-form-sop 完成：胖 SOP 寫入，尚無不存在部位的引用。
+
+• Interacted with `/root/paired_test_harness`
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +24 lines
+  └ W2 完成：五條拆分 Rule 及按需 READ／具名結果／使用／CHECK 已寫入。
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +10 lines
+  └ W3 完成：六條主幹 Rule 已寫入，SOP 使用前 READ 且引用具名清單。
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +19 lines
+  └ W4 完成；首次施工 audit 0 error／0 warning；首次施工技能已逐檔複製並保存 SHA-256，禁止覆寫。
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +18 lines
+  └ 同步及 --check 通過；非目標 Skill 內容雜湊不變；未列出只存在目標端的 Skill。
+
+• Interacted with `/root/paired_test_harness`
+
+• Ran rg --files docs/過程/CH2/trunk-based-development/本次執行 | sort; git diff --stat
+  └ docs/過程/CH2/trunk-based-development/本次執行/來源核對.md
+    docs/過程/CH2/trunk-based-development/本次執行/修改前原始輸出一.md
+    docs/過程/CH2/trunk-based-development/本次執行/修改前原始輸出三.md
+    +32 lines (⌃t to view transcript)
+
+• 首次施工已完成，結構診斷為 0 error／0 warning，兩側同步檢查通過；「首次施工技能」快照已保存。配對基線已產生部分原始紀錄，我正在確認其餘情境的執行狀態。
+
+• Ran head -12 docs/過程/CH2/trunk-based-development/本次執行/基線配對-S1-逐字輸入.txt; tail -3 docs/過程/CH2/trunk-based-development/本次執行/基線配對-S1-原始輸出.jsonl; tail -2 docs/過程/CH2/
+  │ trunk-based-development/本次執行/基線配對-S2-原始輸出.jsonl
+  └ 讀取目前 worktree 的 `.agents/skills/trunk-based-development/SKILL.md`，依該 Skill 處理下列輸入；需要時讀取它引用的資源。僅讀取這個 Skill 的檔案，不讀其他工程紀錄或其他 Skill，不修改檔案，不執行 Git 寫入
+    操作。回覆繁體中文，先列讀取的檔案與確認閘門（沒有則寫無），接著提供完整建議。這是獨立任務。固定環境根目錄：/tmp/tbd-baseline-mgYdNe。只回覆給使用者的原始答案，不要描述這個測試、父代理或評分判準，不要展
+    示內部推理。
+    +7 lines (⌃t to view transcript)
+
+• Interacted with `/root/paired_test_harness`
+
+• Added docs/過程/CH2/trunk-based-development/本次執行/施工紀錄.md (+38 -0)
+     1 +# 施工與 primitives 執行紀錄
+     2 +
+     3 +## 授權及範圍
+     4 +
+     5 +2026-10-17 總指揮確認第二版藍圖、驗收條件及刪除項目，授權 Phase 5；另要求首度施工後、實跑前保存首次施工快照，後續回修不可覆寫。施工只寫目標兩側與本次紀錄，未 commit、push 或家目錄安裝。
+     6 +
+     7 +使用者後續要求平行施工，不等待固定舊版複本的配對基線：已依指示實施。早先 S1–S3 前測在修改前完成且保留；補充配對測試讀固定 HEAD 複本，與目標施工互不相依，沒有把新版混入基線。
+     8 +
+     9 +## primitives
+    10 +
+    11 +已讀取並依序執行 `skill-form-sop`、`skill-derive-rule` 與其下游 `skill-form-rule`／`skill-form-sop` 的 SOP。委派是載入 Skill 並在本代理執行，不冒稱另開施工子代理。
+    12 +
+    13 +已載入：SOP 格式及按需載入規範、RuleFile 格式規範、規則展開分析與 RuleFile 委派規範，以及 skill-engineering 的設計／分配／施工委派檢查清單。各工作項完整內容取自已確認藍圖，不另行設計。
+    14 +
+    15 +| 工作項 | primitive 執行與檢查 | 保存結果 |
+    16 +| ---- | ---- | ---- |
+    17 +| W1 | skill-form-sop：先將既有判準寫入分析 THINK，保留原有流程順序；無尚未建立 RuleFile 的 READ，完成條件按內嵌判準檢查 | `胖流程施工基準.txt`；目標先實際寫入胖 SOP，才執行抽取 |
+    18 +| W2 | skill-derive-rule：定位分析 THINK，核對 C11–C20 的輸入／輸出／風險與原文；按已確認五條 Rule，使用 skill-form-rule 建立拆分檔，再以 skill-form-sop 加入條件 READ 與具名結果及依賴 CHECK | `拆分規
+        則施工準備.txt`、`拆分抽取後流程.txt`；工程藍圖 W2 已完成 |
+    19 +| W3 | skill-derive-rule：同一分析 THINK 抽出 C1–C10；按已確認六條 Rule，使用 skill-form-rule 建共同檔，再以 skill-form-sop 完成 READ／使用／CHECK；兩個主題各有獨立判斷價值，不另拆技巧檔 | `整合規則
+        施工準備.txt`；工程藍圖 W3 已完成 |
+    20 +| W4 | skill-form-sop：最終主檔逐字符合藍圖 To-Be，frontmatter 原文、既有案例不變；九步驟、兩份清單、使用前載入與漏載返回均一致 | 首次施工 audit 0 error／0 warning；工程藍圖 W4 已完成 |
+    21 +
+    22 +## 結構與首次快照
+    23 +
+    24 +- 執行 audit_skill.py，JSON 可解析，退出 0，首次施工 0 error／0 warning。診斷檢查的是正式結構，語意正確性另經清單與實跑驗收。
+    25 +- 首次施工完成且尚未開始新版實跑時，完整複製目標至 `首次施工技能/`，逐檔 SHA-256 保存於 `首次施工技能雜湊.json`。快照內 `SKILL.md` 與 `references/cases.md` 保留原技術檔名，工程報告均使用繁中檔名。
+    26 +- 主檔及兩份 RuleFile 均有明確清單命名；共同與拆分 READ 同在分析前；一般 workflow／branch／PR 審查無需先點名技巧即可載入；純方法比較僅需共同清單。
+    27 +- 每份 RuleFile 逐條具備條列說明、同情境正反例與符合／違反原因；規範用詞區分核心／建議／團隊選擇，未新增 Flag 清理期限等領域政策。
+    28 +
+    29 +## 同步
+    30 +
+    31 +- 施工前 `scripts/sync-skills.sh --check`：兩邊一致。
+    32 +- 施工後執行 `scripts/sync-skills.sh --from agents`，再 `--check`，均退出 0，輸出「兩邊一致」。完整輸出見 `首次施工同步檢查.txt`。
+    33 +- 同步前核對非目標兩側一致；同步後再比非目標全部檔案 SHA-256，內容不變，見 `非目標同步前後雜湊.json`。
+    34 +- 同步輸出沒有只存在於目標端而未刪除的 Skill。
+    35 +
+    36 +## 實跑
+    37 +
+    38 +配對基線及新版驗收由獨立測試工具執行，原始輸出與結果另存；未完成之前不宣稱全部通過。測試若發現 Skill 失敗，依原流程返回 Phase 2，保留快照與原判準。
+
+• Ran git diff --check; /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +7 lines
+  └ 首次施工快照及目前目標雜湊一致，git diff --check 通過。
+
+• Ran rg --files docs/過程/CH2/trunk-based-development/本次執行 | rg '配對|環境|結果'; ps -axo pid,etime,command | rg 'tbd-baseline|codex exec|codex.*json'
+  └ docs/過程/CH2/trunk-based-development/本次執行/基線配對-S1-原始輸出.jsonl
+    docs/過程/CH2/trunk-based-development/本次執行/基線配對-S2-逐字輸入.txt
+    docs/過程/CH2/trunk-based-development/本次執行/基線配對-S1-逐字輸入.txt
+    +11 lines (⌃t to view transcript)
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +20 lines
+  └ {"修改前主檔行數": 114, "修改後主檔行數": 27, "修改前主檔UTF8位元組": 7005, "修改後主檔UTF8位元組": 3309, "修改前Skill總UTF8位元組": 10355, "修改後Skill總UTF8位元組": 17310}
+
+• Ran rg --files docs/過程/CH2/trunk-based-development/本次執行 | rg '配對|環境|結果'; ps -axo pid,etime,command | rg 'codex exec --ephemeral'
+  └ docs/過程/CH2/trunk-based-development/本次執行/基線配對-S5-原始輸出.jsonl
+    docs/過程/CH2/trunk-based-development/本次執行/基線配對-S1-逐字輸入.txt
+    docs/過程/CH2/trunk-based-development/本次執行/修改前環境.json
+    +11 lines (⌃t to view transcript)
+
+• Ran cat .agents/skills/conventional-commits/SKILL.md /Users/steve/.agents/skills/git-commit-draft/SKILL.md
+  └ ---
+    name: conventional-commits
+    description: 依 Conventional Commits 1.0.0 判斷 commit type、scope 與 breaking change，並撰寫或審查 commit message。用在：根據 git diff 寫 commit message、判斷該用 feat／fix／refactor／chore 等哪個
+    +161 lines (⌃t to view transcript)
+
+• Ran cat .agents/skills/conventional-commits/rules/變更分類-格式規範.md .agents/skills/conventional-commits/rules/提交訊息-格式規範.md; git log --oneline -30; rg --files -g '*commitlint*' -g
+  │ '*CONTRIBUTING*' -g '*release*' -g '!upstreams/**' -g '!docs/**'; git diff --staged --stat
+  └ # Rule 1 - 判斷必須區分來源
+
+    - 回答必須區分官方規定（CC 1.0.0 的 MUST）、官方建議（FAQ）、業界慣例與團隊規則。
+    +236 lines (⌃t to view transcript)
+
+• Interacted with `/root/paired_test_harness`
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ import json
+  │ … +12 lines
+  └ 基線配對-S1-原始輸出.jsonl ["/bin/zsh -lc 'cat .agents/skills/trunk-based-development/SKILL.md'", 'turn.completed']
+    基線配對-S2-原始輸出.jsonl ["/bin/zsh -lc 'cat .agents/skills/trunk-based-development/SKILL.md'", 'turn.completed']
+    基線配對-S3-原始輸出.jsonl ["/bin/zsh -lc 'cat .agents/skills/trunk-based-development/SKILL.md'", "/bin/zsh -lc 'cat .agents/skills/trunk-based-development/references/cases.md'"]
+    +2 lines (⌃t to view transcript)
+
+• Ran tail -3 docs/過程/CH2/trunk-based-development/本次執行/基線配對-S3-原始輸出.jsonl; ps -axo pid,etime,command | rg 'codex exec --ephemeral'
+  └ {"type":"item.started","item":{"id":"item_3","type":"command_execution","command":"/bin/zsh -lc 'cat .agents/skills/trunk-based-development/references/
+    cases.md'","aggregated_output":"","exit_code":null,"status":"in_progress"}}
+    {"type":"item.completed","item":{"id":"item_3","type":"command_execution","command":"/bin/zsh -lc 'cat .agents/skills/trunk-based-development/references/cases.md'","aggregated_output":"# TBD 實戰案例
+    +6 lines (⌃t to view transcript)
+
+• Waiting for agents
+
+• Finished waiting
+  └ No agents completed yet
+
+• Ran ps -axo pid,etime,command | rg 'codex exec --ephemeral'; rg --files docs/過程/CH2/trunk-based-development/本次執行 | rg '配對|環境|結果'
+  └ 90839    00:04 node /opt/homebrew/bin/codex exec --ephemeral --json --sandbox read-only --skip-git-repo-check -C /tmp/tbd-baseline-mgYdNe
+    90840    00:04 node /opt/homebrew/bin/codex exec --ephemeral --json --sandbox read-only --skip-git-repo-check -C /tmp/tbd-baseline-mgYdNe
+    91374    00:03 /opt/homebrew/lib/node_modules/@openai/codex/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex exec --ephemeral --json --sandbox read-only --skip-git-repo-check
+    +17 lines (⌃t to view transcript)
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +11 lines
+  └ 固定測試根仍是原版： True
+    基線配對-S1-原始輸出.jsonl 完整回覆=True
+    基線配對-S2-原始輸出.jsonl 完整回覆=True
+    +4 lines (⌃t to view transcript)
+
+• 配對基線已有五題完成，其餘仍在執行；固定測試根的 Skill 已核對仍是原版。結構比較也已記錄：主檔變短，但加入 RuleFile 與正反例後，Skill 總文字量增加；目前沒有據此宣稱效能或行為改善。驗收完成後會用 git-commit-
+  draft 提供草稿。
+
+• Ran ps -axo pid,etime,command | rg 'codex exec --ephemeral'; rg --files docs/過程/CH2/trunk-based-development/本次執行 | rg '配對-S[78]|新版|修改後|配對環境|配對結果'
+  └ 95849    00:00 /bin/zsh -c ps -axo pid,etime,command | rg 'codex exec --ephemeral'; rg --files docs/過程/CH2/trunk-based-development/本次執行 | rg '配對-S[78]|新版|修改後|配對環境|配對結果'
+    95871    00:00 rg codex exec --ephemeral
+    docs/過程/CH2/trunk-based-development/本次執行/基線配對-S8-原始輸出.jsonl
+    +3 lines (⌃t to view transcript)
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +11 lines
+  └
+    S2
+    我會讀取指定 Skill 及必要的引用資源，依其規則審查流程。
+    +183 lines (⌃t to view transcript)
+
+• Added docs/過程/CH2/trunk-based-development/本次執行/前後比較.md (+30 -0)
+     1 +# trunk-based-development 前後比較
+     2 +
+     3 +## 結構差異
+     4 +
+     5 +| 項目 | 修改前 | 首次施工後 |
+     6 +| ---- | ---- | ---- |
+     7 +| 主檔 | 目的、規則、流程、決策樹、技巧與檢查混放 | 單一 Phase、9 步驟 SOP，條件載入、具名清單、使用及 CHECK |
+     8 +| RuleFile | 0 | 2：主幹整合 6 Rule、變更拆分 5 Rule |
+     9 +| Rule 正反例 | 沒有固定 Rule 格式 | 11 Rule 各含條列規則、原因說明及同情境正反例 |
+    10 +| 一般 workflow 審查 | 所有規則內嵌主檔 | 分析前讀兩份清單，包含 Flag 清理；不依輸入是否先點名技巧 |
+    11 +| branch／PR、相容性與 release 審查 | 判準內嵌主檔 | 同樣在分析前取得所有適用規則，漏載返回 READ 重做分析 |
+    12 +| 純 TBD／GitFlow 比較 | 讀整份主檔 | 只需共同整合清單，不強制讀技巧或案例 |
+    13 +| 結構診斷 | 1 error：SOP001 | 0 error／0 warning |
+    14 +| 主檔行數／UTF-8 位元組 | 114 行／7,005 bytes | 27 行／3,309 bytes |
+    15 +| Skill 總 UTF-8 位元組（含案例） | 10,355 bytes | 17,310 bytes |
+    16 +
+    17 +主檔縮短，但加入 RuleFile 正反例後總文字量增加；沒有量測或宣稱 token、延遲或效能改善。案例檔全文與 frontmatter 原文保留；沒有新增領域政策或改用途。完整人工核對見 `施工後人工結構檢查.json`，首次快照見
+         `首次施工技能/`。
+    18 +
+    19 +## 行為差異
+    20 +
+    21 +等待配對測試全部完成後，依同輸入、同設定與同判準比較。不得以結構通過替代行為通過。
+    22 +
+    23 +既有蒐證前測與配對測試分開：初次 S1 的空格方向誤述、S2 的 review 適用範圍張力保留於原紀錄。配對舊版 S1 已正確描述缺少空格，故不能把新版若答對空格宣稱為 Skill 修正所致。
+    24 +
+    25 +## 確認與限制
+    26 +
+    27 +- 根因與第二版藍圖已分別取得明確確認；第一版未通過的依賴缺口及修正完整保留。
+    28 +- 首次施工技能快照已在新版實跑前保存，不覆寫；回修若有發生，須另記版本與原因。
+    29 +- 實跑方法、逐字輸入、讀檔工具事件、原始輸出、副作用與設定以配對測試紀錄為準；沒有取得的模型／內部設定不冒稱已控制。
+    30 +- 未 commit、push；驗收完成才提供 commit message 草稿。
+
+• Waiting for agents
+
+• Finished waiting
+  └ No agents completed yet
+
+• Interrupted `/root/paired_test_harness`
+
+• Interacted with `/root/paired_test_harness`
+
+• Ran ps -axo pid,etime,command | rg 'codex exec --ephemeral'; /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +12 lines
+  └  7359    00:01 /bin/zsh -c ps -axo pid,etime,command | rg 'codex exec --ephemeral'; /usr/bin/python3 - <<'PY'\012# -*- coding: utf-8 -*-\012from pathlib import Path\012import json\012r=Path('docs/過程/
+    CH2/trunk-based-development/本次執行')\012for sid in ['S1','S2','S3','S5','S6','S7','S8']:\012 paths=list(r.glob('基線配對-'+sid+'-*原始輸出.jsonl'));completed=[]\012 for p in paths:\012  events=[]\012
+    for l in p.read_text(encoding='utf-8').splitlines():\012   try:events.append(json.loads(l))\012   except ValueError:pass\012  if any(e.get('type')=='turn.completed' for e in
+    +9 lines (⌃t to view transcript)
+
+• Completed `/root/paired_test_harness`
+
+• Ran cat docs/過程/CH2/trunk-based-development/本次執行/修改前配對基線結果.md; head -70 docs/過程/CH2/trunk-based-development/本次執行/基線配對環境.json
+  └ # 修改前配對基線結果
+
+    執行日期：2026-10-17。固定舊版來源為 `HEAD=e588ae1d1fc87b3456a56af08e1379f131333050` 的 git archive；所有案例使用 `/tmp/tbd-baseline-mgYdNe`，只讀，不讀本次工程紀錄。
+    +63 lines (⌃t to view transcript)
+
+• Context compacted · 56s
+
+• 目標 Skill 已寫入，沒有施工阻礙；首次施工快照、結構診斷與兩側同步已完成。現在將在舊版配對測試的隔離環境只替換目標 Skill，平行執行七題後測。
+
+• Ran pwd; git status --short
+  └ /private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-r02
+     M .agents/skills/trunk-based-development/SKILL.md
+     M .claude/skills/trunk-based-development/SKILL.md
+    +3 lines (⌃t to view transcript)
+
+• Explored
+  └ List 本次執行
+    Read 基線配對環境.json, SKILL.md (skill-engineering skill), 施工紀錄.md, 補充測試輸入與判準.md
+
+• Ran pgrep -fl 'codex exec'
+  └ (no output)
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +15 lines
+  └ 只替換兩側目標，非目標雜湊一致
+
+• Ran cat docs/過程/CH2/trunk-based-development/本次執行/前後比較.md; tail -65 docs/過程/CH2/trunk-based-development/本次執行/工程藍圖.md; cat docs/過程/CH2/trunk-based-development/本次執行/測試輸入與判準.md
+  └ # trunk-based-development 前後比較
+
+    ## 結構差異
+    +131 lines (⌃t to view transcript)
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +6 lines
+  └ 新版配對-S1-原始輸出.jsonl 10 ['item.completed', 'item.completed']
+    新版配對-S2-原始輸出.jsonl 10 ['item.completed', 'item.completed']
+    新版配對-S3-原始輸出.jsonl 6 ['item.started', 'item.completed']
+    +4 lines (⌃t to view transcript)
+
+• Explored
+  └ Read SKILL.md (trunk-based-development skill), 主幹整合-格式規範.md, 變更拆分-格式規範.md
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +10 lines
+  └ 新版配對-S1-原始輸出.jsonl ['item.completed', 'turn.completed']
+    我會讀取指定的 trunk-based-development Skill，依其規則提供拆分及整合建議。
+
+    +56 lines (⌃t to view transcript)
+
+• Ran env PATH=/opt/homebrew/bin:/usr/bin:/bin:/opt/homebrew/sbin /opt/homebrew/bin/codex exec --ephemeral --json --sandbox read-only --skip-git-repo-check -C /tmp/tbd-baseline-mgYdNe < docs/過程/CH2/
+  │ trunk-based-development/本次執行/基線配對-S1-逐字輸入.txt > docs/過程/CH2/trunk-based-development/本次執行/新版配對-S1-原始輸出.jsonl 2> docs/過程/CH2/trunk-based-development/本次執行/新版配對-S1-工具
+  │ 錯誤.txt
+  └ (no output)
+
+• 七題新版測試均已啟動，讀檔紀錄顯示審查情境載入了兩份規則，純方法比較只載入共同規則。S1 已完成；其餘題仍在產生答案，接著會逐題評分並核對副作用。
+
+• Ran env PATH=/opt/homebrew/bin:/usr/bin:/bin:/opt/homebrew/sbin /opt/homebrew/bin/codex exec --ephemeral --json --sandbox read-only --skip-git-repo-check -C /tmp/tbd-baseline-mgYdNe < docs/過程/CH2/
+  │ trunk-based-development/本次執行/基線配對-S7-逐字輸入.txt > docs/過程/CH2/trunk-based-development/本次執行/新版配對-S7-原始輸出.jsonl 2> docs/過程/CH2/trunk-based-development/本次執行/新版配對-S7-工具
+  │ 錯誤.txt
+  └ (no output)
+
+• Ran env PATH=/opt/homebrew/bin:/usr/bin:/bin:/opt/homebrew/sbin /opt/homebrew/bin/codex exec --ephemeral --json --sandbox read-only --skip-git-repo-check -C /tmp/tbd-baseline-mgYdNe < docs/過程/CH2/
+  │ trunk-based-development/本次執行/基線配對-S8-逐字輸入.txt > docs/過程/CH2/trunk-based-development/本次執行/新版配對-S8-原始輸出.jsonl 2> docs/過程/CH2/trunk-based-development/本次執行/新版配對-S8-工具
+  │ 錯誤.txt
+  └ (no output)
+
+• Ran env PATH=/opt/homebrew/bin:/usr/bin:/bin:/opt/homebrew/sbin /opt/homebrew/bin/codex exec --ephemeral --json --sandbox read-only --skip-git-repo-check -C /tmp/tbd-baseline-mgYdNe < docs/過程/CH2/
+  │ trunk-based-development/本次執行/基線配對-S5-逐字輸入.txt > docs/過程/CH2/trunk-based-development/本次執行/新版配對-S5-原始輸出.jsonl 2> docs/過程/CH2/trunk-based-development/本次執行/新版配對-S5-工具
+  │ 錯誤.txt
+  └ (no output)
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +9 lines
+  └ 情境 2 item.completed
+    情境 3 item.completed
+    情境 5 turn.completed
+    +93 lines (⌃t to view transcript)
+
+• Ran env PATH=/opt/homebrew/bin:/usr/bin:/bin:/opt/homebrew/sbin /opt/homebrew/bin/codex exec --ephemeral --json --sandbox read-only --skip-git-repo-check -C /tmp/tbd-baseline-mgYdNe < docs/過程/CH2/
+  │ trunk-based-development/本次執行/基線配對-S2-逐字輸入.txt > docs/過程/CH2/trunk-based-development/本次執行/新版配對-S2-原始輸出.jsonl 2> docs/過程/CH2/trunk-based-development/本次執行/新版配對-S2-工具
+  │ 錯誤.txt
+  └ (no output)
+
+• Ran git diff --check; git diff --stat; git diff --cached --stat; git rev-parse HEAD
+  └  .agents/skills/trunk-based-development/SKILL.md | 131 ++++--------------------
+     .claude/skills/trunk-based-development/SKILL.md | 131 ++++--------------------
+     2 files changed, 44 insertions(+), 218 deletions(-)
+    +1 line (⌃t to view transcript)
+
+• Ran scripts/sync-skills.sh --check
+  └ 兩邊一致
+
+• Ran uv run --script .agents/skills/skill-engineering/scripts/audit_skill.py --skills-root .agents/skills --skills-root .claude/skills --skill trunk-based-development > docs/過程/CH2/
+  │ trunk-based-development/本次執行/最終結構診斷.json
+  └ (no output)
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +9 lines
+  └ 情境 2 turn.completed
+    讀取的檔案：
+
+    +96 lines (⌃t to view transcript)
+
+• Ran env PATH=/opt/homebrew/bin:/usr/bin:/bin:/opt/homebrew/sbin /opt/homebrew/bin/codex exec --ephemeral --json --sandbox read-only --skip-git-repo-check -C /tmp/tbd-baseline-mgYdNe < docs/過程/CH2/
+  │ trunk-based-development/本次執行/基線配對-S6-逐字輸入.txt > docs/過程/CH2/trunk-based-development/本次執行/新版配對-S6-原始輸出.jsonl 2> docs/過程/CH2/trunk-based-development/本次執行/新版配對-S6-工具
+  │ 錯誤.txt
+  └ (no output)
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +8 lines
+  └ item.completed
+    我會讀取指定的 Skill，並依需要讀取它引用的資源。
+
+
+• 六題已完成並通過原判準；S3 仍在產生完整方案。若需總指揮另排 Herdr 接手，環境是 /tmp/tbd-baseline-mgYdNe，逐字輸入是本次紀錄的 基線配對-S3-逐字輸入.txt；目前測試會繼續，判準不變。
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +8 lines
+  └ 1 turn.completed 17686
+    2 turn.completed 21248
+    3 item.completed 16152
+    +4 lines (⌃t to view transcript)
+
+• Ran env PATH=/opt/homebrew/bin:/usr/bin:/bin:/opt/homebrew/sbin /opt/homebrew/bin/codex exec --ephemeral --json --sandbox read-only --skip-git-repo-check -C /tmp/tbd-baseline-mgYdNe < docs/過程/CH2/
+  │ trunk-based-development/本次執行/基線配對-S3-逐字輸入.txt > docs/過程/CH2/trunk-based-development/本次執行/新版配對-S3-原始輸出.jsonl 2> docs/過程/CH2/trunk-based-development/本次執行/新版配對-S3-工具
+  │ 錯誤.txt
+  └ (no output)
+
+• Ran cat docs/過程/CH2/trunk-based-development/本次執行/修改前配對基線結果.md; cat docs/過程/CH2/trunk-based-development/本次執行/最終結構診斷.json; tail -3 docs/過程/CH2/trunk-based-development/本次執行/新
+  │ 版配對-S3-工具錯誤.txt
+  └ # 修改前配對基線結果
+
+    執行日期：2026-10-17。固定舊版來源為 `HEAD=e588ae1d1fc87b3456a56af08e1379f131333050` 的 git archive；所有案例使用 `/tmp/tbd-baseline-mgYdNe`，只讀，不讀本次工程紀錄。
+    +195 lines (⌃t to view transcript)
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +8 lines
+  └ turn.completed
+    讀取的檔案：
+
+    +74 lines (⌃t to view transcript)
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +24 lines
+  └ 七題完整完成；讀檔符合條件；fixture 全部檔案無副作用
+
+• 七題新版實跑已全部通過，隔離複本前後的檔案雜湊一致。前後版本的領域答案都通過，因此只記錄結構與載入路徑改善；精確模型、temperature、seed 無法核實，會明列限制。
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +70 lines
+  └ 驗收紀錄與草稿已更新
+
+• Ran /usr/bin/python3 - <<'PY'
+  │ # -*- coding: utf-8 -*-
+  │ from pathlib import Path
+  │ … +19 lines
+  └ 最終範圍、快照、同步、diff、HEAD／index 檢查通過
+
+• 已完成施工，無剩餘施工阻礙。
+
+  • 主檔保留 SOP，抽出兩份 RuleFile；首次施工快照已保留。
+  • 七題前後實跑及結構驗收均通過，兩側同步一致。
+  • 無領域行為改善證據；精確模型設定無法核實，已記錄限制。
+  • 未 commit、push。
+
+  前後比較與驗收紀錄 (docs/過程/CH2/trunk-based-development/本次執行/前後比較.md)
+
+  Commit message 草稿：
+
+  refactor(trunk-based-development): 模組化 SOP 與判斷規則
+
+  Worked for 11m 52s • 9:46 AM
+
+
+› Ask Codex to do anything
+
+  GPT-6.1-Sol medium fast · Context 26% used · weekly 30% left · Main [default] · ← for agents                                                                                       ⚠ 4 warnings · f2 to view

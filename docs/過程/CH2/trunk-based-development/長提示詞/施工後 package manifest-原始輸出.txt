@@ -1,0 +1,34 @@
+[git status scoped]
+ M .agents/skills/trunk-based-development/SKILL.md
+ M .claude/skills/trunk-based-development/SKILL.md
+?? .agents/skills/trunk-based-development/rules/
+?? .claude/skills/trunk-based-development/rules/
+[package hashes]
+880d1a32b05e7730777bc52e1bbc30c8cabc3361f96781ba01da86c40dcc514f  .agents/skills/trunk-based-development/SKILL.md
+13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294  .agents/skills/trunk-based-development/references/cases.md
+5c6f114606333acfcc78b0fea895039617cf9b5aaccfb77b7bd308c834e54ef1  .agents/skills/trunk-based-development/rules/主幹式開發來源分級-格式規範.md
+dc604bf9794415e5d580fb7e543fd2de84c3396a435bf6531a3fc7432ede0425  .agents/skills/trunk-based-development/rules/主幹式開發核心規則-格式規範.md
+eac41459c364ad4fb7696a24c94ca86ca5270f689dc6706f2ff31e5b89b1bb71  .agents/skills/trunk-based-development/rules/主幹式開發流程審查-格式規範.md
+b3e8525d83e12d8ccbeb734b14c3314a6464d44b60c3f6ea7e155cc5708d4f69  .agents/skills/trunk-based-development/rules/主幹式開發策略選擇-格式規範.md
+b9aec4dafa04e3a5efa51a9c9a3d4397c642079b03a4d98c4f9ce9a21d02a04f  .agents/skills/trunk-based-development/rules/主幹式開發需求拆分-格式規範.md
+880d1a32b05e7730777bc52e1bbc30c8cabc3361f96781ba01da86c40dcc514f  .claude/skills/trunk-based-development/SKILL.md
+13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294  .claude/skills/trunk-based-development/references/cases.md
+5c6f114606333acfcc78b0fea895039617cf9b5aaccfb77b7bd308c834e54ef1  .claude/skills/trunk-based-development/rules/主幹式開發來源分級-格式規範.md
+dc604bf9794415e5d580fb7e543fd2de84c3396a435bf6531a3fc7432ede0425  .claude/skills/trunk-based-development/rules/主幹式開發核心規則-格式規範.md
+eac41459c364ad4fb7696a24c94ca86ca5270f689dc6706f2ff31e5b89b1bb71  .claude/skills/trunk-based-development/rules/主幹式開發流程審查-格式規範.md
+b3e8525d83e12d8ccbeb734b14c3314a6464d44b60c3f6ea7e155cc5708d4f69  .claude/skills/trunk-based-development/rules/主幹式開發策略選擇-格式規範.md
+b9aec4dafa04e3a5efa51a9c9a3d4397c642079b03a4d98c4f9ce9a21d02a04f  .claude/skills/trunk-based-development/rules/主幹式開發需求拆分-格式規範.md
+[package diff stat tracked]
+ .agents/skills/trunk-based-development/SKILL.md | 109 +++---------------------
+ .claude/skills/trunk-based-development/SKILL.md | 109 +++---------------------
+ 2 files changed, 28 insertions(+), 190 deletions(-)
+[RuleFile count]
+       5
+[final side-by-side diff -qr]
+diff -qr exit: 0
+[final sync check]
+兩邊一致
+[final Rule heading total]
+     135
+[corrected Rule heading total]
+      15

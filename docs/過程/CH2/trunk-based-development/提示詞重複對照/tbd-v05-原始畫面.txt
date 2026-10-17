@@ -1,0 +1,63 @@
+codex -a never -s danger-full-access --no-alt-screen
+
+󰀵 …/tbd-v05   HEAD !?   v25.0.4   09:27 
+ codex -a never -s danger-full-access --no-alt-screen
+
+  >_ OpenAI Codex (v0.163.0)
+     /private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v05
+  permissions: YOLO mode
+
+  Tip: NEW: Prevent sleep while running is now available in /experimental.
+
+
+› 請讀取並使用目前專案 .agents/skills/trunk-based-development/SKILL.md 回答以下需求，僅讀取檔案，不修改專案。
+
+  production v2.4 有 bug，main 已開發 v2.5；請規劃修補與發布分支處理。
+
+
+• 我會讀取指定的 trunk-based-development Skill，依其規則規劃；全程只讀取檔案。
+
+• Explored
+  └ Read SKILL.md (trunk-based-development skill)
+
+• Ran cat .agents/skills/trunk-based-development/rules/TBD-策略選擇-格式規範.md .agents/skills/trunk-based-development/rules/TBD-需求規劃-格式規範.md .agents/skills/trunk-based-development/rules/TBD-來源與壽
+  │ 命-格式規範.md .agents/skills/trunk-based-development/rules/TBD-送出前檢查-格式規範.md
+  └ # Rule 1 - 決策樹與技巧選擇
+
+    - 依下列決策樹判斷變更策略：
+    +106 lines (⌃t to view transcript)
+
+• Ran cat .agents/skills/trunk-based-development/references/cases.md .agents/skills/trunk-based-development/rules/TBD-規則分級-格式規範.md
+  └ # TBD 實戰案例
+
+    ## 目錄
+    +127 lines (⌃t to view transcript)
+
+• 採用 先修 main，再 cherry-pick 到 release/2.4，發布 v2.4.1，避免把 v2.5 的功能帶進 production。
+
+  1. PR 1：修正 main
+      • 從 main 開短期修補分支，加入 bug 修正與回歸測試。
+      • 同步最新 main，通過 CI、review 後合併，再刪除修補分支。
+      • main 仍可工作：修正須相容 v2.5，並通過現有測試。
+
+  2. PR 2：回補 v2.4
+      • 使用既有 release/2.4；若不存在，從 production 實際部署的 v2.4 tag／commit 建立，不能從目前 main 切。
+      • 開短期回補分支，僅 cherry-pick 已驗證的修正；若版本差異造成衝突，調整並重新驗證 v2.4 的回歸測試。
+      • 通過該版本 CI、review 後合併至 release/2.4，刪除回補分支。此 PR 不改 main。
+
+  3. 發布與分支收尾
+      • 從 release/2.4 建置、驗證並標記 v2.4.1，再部署、確認 bug 已修復。
+      • release/2.4 僅接受穩定性修正與發布工作；v2.5 持續在 main 開發，接近發布時才切 release/2.5。
+      • 不整包合併 main 到 release/2.4，也不靠 release branch 回灌修正。
+      • v2.4 停止維護後，刪除 release branch，保留發布 tag。
+
+  **分支壽命：**兩個修補分支各以含 review 等待不到一天為目標；Skill 引述的 TBD 官方常見範圍為 1～2 天，DORA 目標為不到一天，並非硬性兩天上限。Release branch 則依版本支援期保留。上述命名與版本號為本案建議。
+
+  已讀取指定 Skill 與相關規則，未修改專案。
+
+  Worked for 17s • 9:28 AM
+
+
+› Ask Codex to do anything
+
+  GPT-6.1-Sol medium fast · Context 9% used · weekly 53% left · ← for agents                                                                                                         ⚠ 4 warnings · f2 to view

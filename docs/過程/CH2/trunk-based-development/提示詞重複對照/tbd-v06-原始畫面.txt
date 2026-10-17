@@ -1,0 +1,56 @@
+codex -a never -s danger-full-access --no-alt-screen
+
+󰀵 …/tbd-v06   HEAD !?   v25.0.4   09:27 
+ codex -a never -s danger-full-access --no-alt-screen
+
+  >_ OpenAI Codex (v0.163.0)
+     /private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v06
+  permissions: YOLO mode
+
+  Tip: Use the desktop app. Run codex app to open it. It installs automatically if needed.
+
+
+› 請讀取並使用目前專案 .agents/skills/trunk-based-development/SKILL.md 回答以下需求，僅讀取檔案，不修改專案。
+
+  production v2.4 有 bug，main 已開發 v2.5；請規劃修補與發布分支處理。
+
+
+• 我會讀取專案的 trunk-based-development Skill，依其規則規劃修補與發布分支；全程只讀取檔案。
+
+• Explored
+  └ Read SKILL.md (trunk-based-development skill)
+    Search trunk|主幹|release|hotfix in MEMORY.md
+
+• Ran cat .agents/skills/trunk-based-development/rules/TBD-來源與壽命-格式規範.md .agents/skills/trunk-based-development/rules/TBD-規則分級-格式規範.md .agents/skills/trunk-based-development/rules/TBD-需求規
+  │ 劃-格式規範.md .agents/skills/trunk-based-development/rules/TBD-策略選擇-格式規範.md .agents/skills/trunk-based-development/rules/TBD-送出前檢查-格式規範.md .agents/skills/trunk-based-development/
+  │ references/cases.md
+  └ # Rule 1 - 回答時區分規則來源與 branch 壽命
+
+    - 回答時必須區分規則來源：**TBD 官方**是 TrunkBasedDevelopment.com；**DORA** 是 Google DORA 的 DevOps 研究，標準通常比官方嚴格；**團隊規則**是 TBD 沒規定、由團隊自行決定的部分。
+    +236 lines (⌃t to view transcript)
+
+• 採用 先修 main、驗證後再 cherry-pick 到 release/2.4，避免 v2.5 漏掉修正，也避免把 v2.5 新功能帶進 production。
+
+   PR                 變更與技巧                                                          整合後仍可工作的理由                                            分支壽命（含 review）
+  ━━━━━━━━━━━━━━━━━  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  ━━━━━━━━━━━━━━━━━━━━━━━
+   1 → main           從最新 main 開短期修補分支，加入最小修正與回歸測試                  驗證 bug 已修復，且 v2.5 既有功能測試通過                       目標當日完成
+  ─────────────────  ──────────────────────────────────────────────────────────────────  ──────────────────────────────────────────────────────────────  ───────────────────────
+   2 → release/2.4    將已驗證的修補 commit cherry-pick 過去；有衝突則依 v2.4 程式調整    在 v2.4 環境重新跑 CI、回歸測試與必要整合測試；main 已含修正    回補分支目標當日完成
+
+  發布分支處理：
+
+  1. 已有 release/2.4 就沿用；沒有則從 production 實際部署的 v2.4 tag／commit 建立，不能從目前 main 切出。
+  2. release/2.4 僅接受該版本的穩定、bug fix 與發布變更，不加入新功能，也不整包 merge main。
+  3. 回補通過 review 與 CI 後，建立修補版 tag（例如 v2.4.1，以現有版號為準），發布並確認 production。
+  4. PR 合併後刪除短期修補分支；release/2.4 保留至 v2.4 維護結束，再依團隊政策清理。
+
+  Skill 所述的壽命標準：TBD 官方短期開發分支通常為 1～2 天，DORA 目標是 不到一天；上面的「當日完成」是本次規劃目標。Release branch 依版本維護週期存在，不套用短期開發分支期限。
+
+  本次僅讀取檔案，未修改專案。
+
+  Worked for 15s • 9:28 AM
+
+
+› Ask Codex to do anything
+
+  GPT-6.1-Sol medium fast · Context 9% used · weekly 53% left · ← for agents                                                                                                         ⚠ 4 warnings · f2 to view

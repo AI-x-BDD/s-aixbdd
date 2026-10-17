@@ -1,0 +1,102 @@
+[
+  {
+    "run": "tbd-r01",
+    "kind": "短提示詞",
+    "final_manifest": {
+      "SKILL.md": "6bd68a1f88cef5a7e2b1ecd76d14d09ff277cdb17ade35f5dc156e799d88ab57",
+      "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+      "rules/整合技巧-格式規範.md": "7ab2d590238a04a16fc27d55d3730dbbb114924d36f994254ac16b8ae3100c29",
+      "rules/TBD判準-格式規範.md": "f5fcdba0319fd0ae5e66f4b869e13e576ee2746b4438d2f38b0ebeecdfd65965",
+      "rules/workflow審查-格式規範.md": "f77308708f0d087acf5f9991575d08c2e3afc74016180bf264bc12033c28fc3a"
+    },
+    "changed_since_first": [
+      "SKILL.md"
+    ],
+    "final_claude_matches": true,
+    "matches_retest": true,
+    "main_lines": 42,
+    "rule_files": 3
+  },
+  {
+    "run": "tbd-r02",
+    "kind": "長提示詞",
+    "final_manifest": {
+      "SKILL.md": "311af7a21aada82cf7e3b18cd6a276d8578358a3430a488111dea8cff567b307",
+      "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+      "rules/變更拆分-格式規範.md": "534e9f0f20a72a8623106cd253c2c182673f68f0ce3bc18af0037482c8705efa",
+      "rules/主幹整合-格式規範.md": "69a1bbea66f98af946cdd968a8b5e44e93b2b6c800edefd43a8c61da5842831c"
+    },
+    "changed_since_first": [],
+    "final_claude_matches": true,
+    "matches_initial_test": true,
+    "main_lines": 27,
+    "rule_files": 2
+  },
+  {
+    "run": "tbd-r03",
+    "kind": "長提示詞",
+    "final_manifest": {
+      "SKILL.md": "ee0ec4741fea85c62d9212c04e222fb304f3dc6e099a86cb77cd41a56e81a88c",
+      "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+      "rules/Workflow評估-格式規範.md": "77aa0670958904111550478cf71f69fc4b6bbc46ab372106a03b503de9f6a79d",
+      "rules/變更規劃-格式規範.md": "5322976d2aed7c8b514e4645ca327d1a30a75d2f73cae76a96c570dbe40b6486",
+      "rules/TBD判準-格式規範.md": "3b24234b93d3dab9874aae779666b646379e624e9e950d9b91c432aadcb2ffea"
+    },
+    "changed_since_first": [
+      "rules/Workflow評估-格式規範.md"
+    ],
+    "final_claude_matches": true,
+    "matches_retest": true,
+    "main_lines": 38,
+    "rule_files": 3
+  },
+  {
+    "run": "tbd-r04",
+    "kind": "短提示詞",
+    "final_manifest": {
+      "SKILL.md": "bef53a58d6f0788fc45533b5fba6027c2c65318f4d08f940c373d1f6ee415f81",
+      "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+      "rules/整合技巧-格式規範.md": "a29e0385e692de70d91142a578099a304ac7460d81b70d0b843c01bc7c053c8f",
+      "rules/工作流程審查-格式規範.md": "f3bd83d4f51fc12ccdb266de3caf4639fa9dfae75edd64ff19464dd31520edfa",
+      "rules/共通判準-格式規範.md": "b4976b2066f5821dff0d29319fba986b47d2f3e4beae1dedc680688bde5bdfa3"
+    },
+    "changed_since_first": [
+      "SKILL.md"
+    ],
+    "final_claude_matches": true,
+    "matches_retest": true,
+    "main_lines": 47,
+    "rule_files": 3
+  },
+  {
+    "run": "tbd-r05",
+    "kind": "短提示詞",
+    "final_manifest": {
+      "SKILL.md": "cffc4d07bcfcfb7a83627ca607868a3a19e0c61e90577941ffd83254db708fb3",
+      "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+      "rules/變更規劃-格式規範.md": "d56a348ccc8bcc3d2203a594c7c54a740461bcf73aebcd0ad75b02f3574fb341",
+      "rules/TBD判準-格式規範.md": "ec647cea13ca7e72f6dd599edabdf2b8dffecf505dff58e8942fdce1e9fef7f7",
+      "rules/工作流程評估-格式規範.md": "efe2c973eafe6d78e87f772c722396dc71cb93934cac1d3cb1d10877cba7ac45"
+    },
+    "changed_since_first": [],
+    "final_claude_matches": true,
+    "matches_initial_test": true,
+    "main_lines": 26,
+    "rule_files": 3
+  },
+  {
+    "run": "tbd-r06",
+    "kind": "長提示詞",
+    "final_manifest": {
+      "SKILL.md": "e1ec2ef41e113ee873c6dd48036cb408c177d2f7238880d311798c3862f9d8d7",
+      "references/cases.md": "13a23d45489a78376f818c099553f029d72aa9000eaa5cdb632ff3a53ba25294",
+      "rules/變更拆分-格式規範.md": "814c2007d257f9285a77f085829c6a016fca5049bbbef7b3e019edd98cd340f7",
+      "rules/主幹整合-格式規範.md": "87e291a3bb38169a732a3778d48b8bbe2772ebf0130c7ccd4906effc22726818"
+    },
+    "changed_since_first": [],
+    "final_claude_matches": true,
+    "matches_initial_test": true,
+    "main_lines": 28,
+    "rule_files": 2
+  }
+]

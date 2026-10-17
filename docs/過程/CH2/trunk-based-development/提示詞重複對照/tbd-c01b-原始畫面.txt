@@ -1,0 +1,49 @@
+
+󰀵 …/tbd-v01   HEAD !?   v25.0.4   09:36 
+ codex -a never -s danger-full-access --no-alt-screen
+
+  >_ OpenAI Codex (v0.163.0)
+     /private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-repeat-3w8rgi1w/tbd-v01
+  permissions: YOLO mode
+
+  Tip: Use the desktop app. Run codex app to open it. It installs automatically if needed.
+
+
+› 請讀取並使用目前專案 .agents/skills/trunk-based-development/SKILL.md 回答以下需求，僅讀取檔案，不修改專案。
+
+  production v2.4 有 bug，main 已開發 v2.5；請規劃修補與發布分支處理。
+
+
+• 我會讀取指定的 trunk-based-development Skill，依其規則規劃；僅讀取檔案，不修改專案。
+
+• Explored
+  └ Read SKILL.md (trunk-based-development skill)
+
+• Ran cat .agents/skills/trunk-based-development/rules/TBD判準-格式規範.md .agents/skills/trunk-based-development/rules/整合技巧-格式規範.md .agents/skills/trunk-based-development/references/cases.md
+  └ # Rule 1 - 規則來源與 branch 壽命
+
+    - 回答時，必須區分規則來源：
+    +280 lines (⌃t to view transcript)
+
+• 依指定 Skill，採 先修 main、驗證後 cherry-pick 至 release/2.4，發布 v2.4.1。
+
+  1. 準備發布分支：若已有 release/2.4 就沿用；否則從 production v2.4 對應的 tag／commit 建立，避免帶入 main 的 v2.5 變更。
+  2. PR 1：修正 bug＋回歸測試 → main
+     使用技巧：無。從 main 開短期分支，merge 前同步最新 main；通過 review、CI 後合併並刪除短期分支。
+
+  3. PR 2：回補修正 → release/2.4
+     使用技巧：Release Branch。將 main 上已驗證的修正 commit cherry-pick 至從 release/2.4 開出的短期分支。若有衝突，依 v2.4 相容性調整，重新驗證後 review、合併並刪除短期分支。
+
+  4. 發布 v2.4.1：在 release 分支通過 build → lint → unit test → 必要的 integration test，確認原 bug 已修復，再建立 v2.4.1 tag、部署及驗證。
+  5. 分支後續：release/2.4 僅接受穩定性修正與發布工作，不加入新功能，也不整包 merge 回 main；維護至 v2.4 停止支援後退役。v2.5 繼續在 main 開發，發布分支等接近發布時才切。
+
+  每個 PR merge 後 main 仍可工作：PR 1 包含修正與回歸測試，CI 通過才合併；PR 2 只影響 v2.4 發布線。main 若 CI 變紅，立即修復或 revert。
+
+  預估短期分支壽命（含等 review）：以數小時、當日合併為目標；Skill 引用的 TBD 官方通常為 1～2 天，DORA 目標不到一天，並非兩天硬性期限。release/2.4 的壽命則依團隊版本支援政策決定。
+
+  Worked for 14s • 9:37 AM
+
+
+› Ask Codex to do anything
+
+  GPT-6.1-Sol medium fast · Context 9% used · weekly 39% left · ← for agents                                                                                                         ⚠ 4 warnings · f2 to view
