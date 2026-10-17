@@ -1,0 +1,20 @@
+{
+  "before": {
+    "main_lines": 160,
+    "package_lines": 267,
+    "files": 2,
+    "phases": 0,
+    "steps": 0,
+    "rulefiles": 0,
+    "rules": 0
+  },
+  "after": {
+    "main_lines": 26,
+    "package_lines": 476,
+    "files": 5,
+    "phases": 2,
+    "steps": 10,
+    "rulefiles": 3,
+    "rules": 12
+  }
+}

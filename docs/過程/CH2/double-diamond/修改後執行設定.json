@@ -1,0 +1,15 @@
+{
+  "test_environment": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-dd-after-zif6ot65",
+  "model": "與基線相同：子代理繼承父代理模型與 reasoning，未覆寫；服務端部署與隨機性參數未知",
+  "isolation": "fork_turns=none；只提供 package、固定案例與輸出指示；八題同一新代理依序執行，不是逐題獨立對話",
+  "files": {
+    "測試輸入.json": "cffb36affcdeb2154307a8e8445457b5262f29f0f8c2865a8e54602e55ced66c",
+    "double-diamond/SKILL.md": "d62e30bca5083dced1b7fd1a44c9e3eb1b985aa2d478b50ba8eb360a4de47ee1",
+    "double-diamond/references/cases.md": "d66c5a788705b799aca6002b66350b31f0538f36688e51551ffb0b1bedf7e119",
+    "double-diamond/rules/雙鑽石判準-格式規範.md": "1d676420b800ec4ee20fd0b7ff9346baf5da6eef4d1783938e33bb7424ecc3b2",
+    "double-diamond/rules/任務分流-格式規範.md": "7f4307e340220c9ad6a2b3033bf38585be63e04a606f49ce4473bf382af6d4c2",
+    "double-diamond/rules/需求分析-格式規範.md": "816a1631d20c87194885c0477181d6ed78b939a8644313f3035b27701848f538"
+  },
+  "head": "7e7e6cb18e19e0cbcea1e07e6a9712f74424a1e9",
+  "status": " M .agents/skills/double-diamond/SKILL.md\n M .claude/skills/double-diamond/SKILL.md\n?? .agents/skills/double-diamond/rules/\n?? .claude/skills/double-diamond/rules/\n?? \"docs/\\351\\201\\216\\347\\250\\213/CH2/double-diamond/\"\n"
+}

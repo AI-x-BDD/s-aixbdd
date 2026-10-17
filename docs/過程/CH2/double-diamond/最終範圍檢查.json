@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-17",
+  "non_target_tracked_changed": [],
+  "tracked_changed": [
+    ".agents/skills/double-diamond/SKILL.md",
+    ".claude/skills/double-diamond/SKILL.md"
+  ],
+  "head_unchanged": true,
+  "staged_diff_empty": true,
+  "working_diff_check": 0,
+  "formal_sides_equal_tested_snapshot": true,
+  "raw_output_hashes_unchanged": true,
+  "new_delivery_local_links_valid": true,
+  "new_delivery_trailing_whitespace": [],
+  "untracked_within_approved_scope": true,
+  "test_environments_cleaned": true,
+  "status": " M .agents/skills/double-diamond/SKILL.md\n M .claude/skills/double-diamond/SKILL.md\n?? .agents/skills/double-diamond/rules/\n?? .claude/skills/double-diamond/rules/\n?? docs/過程/CH2/double-diamond/\n"
+}

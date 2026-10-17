@@ -1,0 +1,11 @@
+{
+  "baseline_commit": "7e7e6cb18e19e0cbcea1e07e6a9712f74424a1e9",
+  "initial_status": "",
+  "test_environment": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-dd-baseline-yotc1ryv",
+  "source_files": {
+    "SKILL.md": "69e608bafa5bc95491de6465da8ae38cf74e52275d3643c5972f577e7457e2f4",
+    "references/cases.md": "d66c5a788705b799aca6002b66350b31f0538f36688e51551ffb0b1bedf7e119"
+  },
+  "model": "子代理繼承父代理模型與 reasoning，未覆寫；服務端部署與隨機性參數未知",
+  "isolation": "fork_turns=none；僅提供 Skill 副本、案例、輸出路徑，不提供根因或優化方案；八題同一代理依序執行，非逐題獨立對話"
+}

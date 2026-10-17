@@ -1,0 +1,84 @@
+{
+  "agents_equals_snapshot": true,
+  "claude_equals_snapshot": true,
+  "frontmatter_unchanged": true,
+  "cases_unchanged": true,
+  "no_symlinks": true,
+  "main_equals_blueprint": true,
+  "expected_package_files": true,
+  "all_rule_structures": true,
+  "rules_details": [
+    {
+      "file": ".agents/skills/double-diamond/rules/任務分流-格式規範.md",
+      "rule": 1,
+      "number": true,
+      "good_and_bad": true
+    },
+    {
+      "file": ".agents/skills/double-diamond/rules/任務分流-格式規範.md",
+      "rule": 2,
+      "number": true,
+      "good_and_bad": true
+    },
+    {
+      "file": ".agents/skills/double-diamond/rules/任務分流-格式規範.md",
+      "rule": 3,
+      "number": true,
+      "good_and_bad": true
+    },
+    {
+      "file": ".agents/skills/double-diamond/rules/雙鑽石判準-格式規範.md",
+      "rule": 1,
+      "number": true,
+      "good_and_bad": true
+    },
+    {
+      "file": ".agents/skills/double-diamond/rules/雙鑽石判準-格式規範.md",
+      "rule": 2,
+      "number": true,
+      "good_and_bad": true
+    },
+    {
+      "file": ".agents/skills/double-diamond/rules/雙鑽石判準-格式規範.md",
+      "rule": 3,
+      "number": true,
+      "good_and_bad": true
+    },
+    {
+      "file": ".agents/skills/double-diamond/rules/需求分析-格式規範.md",
+      "rule": 1,
+      "number": true,
+      "good_and_bad": true
+    },
+    {
+      "file": ".agents/skills/double-diamond/rules/需求分析-格式規範.md",
+      "rule": 2,
+      "number": true,
+      "good_and_bad": true
+    },
+    {
+      "file": ".agents/skills/double-diamond/rules/需求分析-格式規範.md",
+      "rule": 3,
+      "number": true,
+      "good_and_bad": true
+    },
+    {
+      "file": ".agents/skills/double-diamond/rules/需求分析-格式規範.md",
+      "rule": 4,
+      "number": true,
+      "good_and_bad": true
+    },
+    {
+      "file": ".agents/skills/double-diamond/rules/需求分析-格式規範.md",
+      "rule": 5,
+      "number": true,
+      "good_and_bad": true
+    },
+    {
+      "file": ".agents/skills/double-diamond/rules/需求分析-格式規範.md",
+      "rule": 6,
+      "number": true,
+      "good_and_bad": true
+    }
+  ]
+}

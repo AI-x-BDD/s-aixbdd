@@ -1,0 +1,261 @@
+[
+  {
+    "id": "C1",
+    "constraint": "兩次發散收斂、Problem Space／Solution Space 與四階段定義",
+    "location": "`rules/雙鑽石判準-格式規範.md` Rule 1",
+    "trace": "E9",
+    "source": "原第 8–17 行"
+  },
+  {
+    "id": "C2",
+    "constraint": "Develop 不等於開始寫 code、Deliver 不等於 deploy",
+    "location": "`rules/雙鑽石判準-格式規範.md` Rule 1",
+    "trace": "E9",
+    "source": "原第 19 行"
+  },
+  {
+    "id": "C3",
+    "constraint": "模型非固定逐步操作規格、非線性且可因學習回到前面",
+    "location": "`rules/雙鑽石判準-格式規範.md` Rule 1",
+    "trace": "E9",
+    "source": "原第 27、137 行"
+  },
+  {
+    "id": "C4",
+    "constraint": "區分 Design Council 官方、NN/g／IDEO 業界慣例與實務判斷",
+    "location": "`rules/雙鑽石判準-格式規範.md` Rule 2",
+    "trace": "E8、E9",
+    "source": "原第 21–25 行"
+  },
+  {
+    "id": "C5",
+    "constraint": "官方四個 Design Principles 全數保留",
+    "location": "`rules/雙鑽石判準-格式規範.md` Rule 2",
+    "trace": "E9",
+    "source": "原第 29 行"
+  },
+  {
+    "id": "C6",
+    "constraint": "Design Thinking 與 Double Diamond 的定位、IDEO 發散收斂關係",
+    "location": "`rules/雙鑽石判準-格式規範.md` Rule 3",
+    "trace": "E9",
+    "source": "原第 141 行"
+  },
+  {
+    "id": "C7",
+    "constraint": "Agile 關係及 Backlog／Sprint／Feedback 的實務接法",
+    "location": "`rules/雙鑽石判準-格式規範.md` Rule 3",
+    "trace": "E9",
+    "source": "原第 142 行"
+  },
+  {
+    "id": "C8",
+    "constraint": "先判最大未知，對應 Discover／Define／Develop／Deliver 或壓縮路徑",
+    "location": "`rules/任務分流-格式規範.md` Rule 1",
+    "trace": "E2",
+    "source": "原第 31–45 行"
+  },
+  {
+    "id": "C9",
+    "constraint": "日常 Problem／Evidence／Alternatives／Validation 四問，問題與解法、事實與假設分開",
+    "location": "`rules/任務分流-格式規範.md` Rule 1",
+    "trace": "E1、E7",
+    "source": "原第 47–54、158 行"
+  },
+  {
+    "id": "C10",
+    "constraint": "問題不明、多人利害關係、高成本與指定解法適合深入探索",
+    "location": "`rules/任務分流-格式規範.md` Rule 1",
+    "trace": "E2",
+    "source": "原第 121 行"
+  },
+  {
+    "id": "C11",
+    "constraint": "問題、原因、解法、驗證皆已知時直接修／壓縮",
+    "location": "`rules/任務分流-格式規範.md` Rule 2",
+    "trace": "E4",
+    "source": "原第 125 行"
+  },
+  {
+    "id": "C12",
+    "constraint": "緊急事故先 contain／patch／deploy／verify，事後才 incident review",
+    "location": "`rules/任務分流-格式規範.md` Rule 2",
+    "trace": "E5",
+    "source": "原第 126 行"
+  },
+  {
+    "id": "C13",
+    "constraint": "已定法規義務可壓縮第一鑽石，呈現方式與摩擦仍可探索",
+    "location": "`rules/任務分流-格式規範.md` Rule 2",
+    "trace": "E6",
+    "source": "原第 127 行"
+  },
+  {
+    "id": "C14",
+    "constraint": "成熟問題及知識充足時壓縮，而非一律移除流程",
+    "location": "`rules/任務分流-格式規範.md` Rule 2",
+    "trace": "E2",
+    "source": "原第 128 行"
+  },
+  {
+    "id": "C15",
+    "constraint": "研究停止依最大未知與決策是否可能改變，不以固定訪談人數；屬實務判斷",
+    "location": "`rules/任務分流-格式規範.md` Rule 3",
+    "trace": "E8",
+    "source": "原第 27、78、133 行"
+  },
+  {
+    "id": "C16",
+    "constraint": "收到需求先列已知與未知，不直接按指定解法切 component",
+    "location": "`rules/需求分析-格式規範.md` Rule 1",
+    "trace": "E1、E2",
+    "source": "原第 58–65、132 行"
+  },
+  {
+    "id": "C17",
+    "constraint": "Discover 的使用者、行為、Business、Technology 四類資料及原工具例子",
+    "location": "`rules/需求分析-格式規範.md` Rule 1",
+    "trace": "E1",
+    "source": "原第 67–74 行"
+  },
+  {
+    "id": "C18",
+    "constraint": "NN/g 三面向 Desirable／Viable／Feasible 為檢查視角",
+    "location": "`rules/需求分析-格式規範.md` Rule 1",
+    "trace": "E1、E9",
+    "source": "原第 76 行"
+  },
+  {
+    "id": "C19",
+    "constraint": "Define 的 Evidence → Pattern → Insight → Problem → Priority",
+    "location": "`rules/需求分析-格式規範.md` Rule 2",
+    "trace": "E3",
+    "source": "原第 82 行"
+  },
+  {
+    "id": "C20",
+    "constraint": "Problem Statement 包含誰／問題／重要性／成功指標／限制",
+    "location": "`rules/需求分析-格式規範.md` Rule 2",
+    "trace": "E3",
+    "source": "原第 84–94 行"
+  },
+  {
+    "id": "C21",
+    "constraint": "Problem Statement 證據不足欄位標待驗證",
+    "location": "`rules/需求分析-格式規範.md` Rule 2",
+    "trace": "E1",
+    "source": "原第 152 行"
+  },
+  {
+    "id": "C22",
+    "constraint": "Define 要回答真正要解的問題，不能只整理便利貼",
+    "location": "`rules/需求分析-格式規範.md` Rule 2",
+    "trace": "E3",
+    "source": "原第 96、134 行"
+  },
+  {
+    "id": "C23",
+    "constraint": "需探索方案時列至少三個不同方向；問題未定義先不列；已知修正與事故依分流結果不強加多方案",
+    "location": "`rules/需求分析-格式規範.md` Rule 3",
+    "trace": "E3、E4、E5；R2",
+    "source": "原第 100、125–126、135、153 行；僅澄清範圍"
+  },
+  {
+    "id": "C24",
+    "constraint": "便宜原型對準最大風險，保留 wireframe／prototype／SQL query／spike／mock API／fake door／PoC 等工具，不做過完整原型",
+    "location": "`rules/需求分析-格式規範.md` Rule 3",
+    "trace": "E3",
+    "source": "原第 100–102、136 行"
+  },
+  {
+    "id": "C25",
+    "constraint": "Deliver 以任務、改善幅度、錯誤率、效能、開發及維護成本測試淘汰與改善",
+    "location": "`rules/需求分析-格式規範.md` Rule 4",
+    "trace": "E7",
+    "source": "原第 104–106 行"
+  },
+  {
+    "id": "C26",
+    "constraint": "Production 後 Measure／Learn，必要時再探索或比較",
+    "location": "`rules/需求分析-格式規範.md` Rule 4",
+    "trace": "E7、E9",
+    "source": "原第 108 行"
+  },
+  {
+    "id": "C27",
+    "constraint": "四個 Decision Gate 問題原文保留，定位為業界慣例非官方強制",
+    "location": "`rules/需求分析-格式規範.md` Rule 5",
+    "trace": "E8、E9",
+    "source": "原第 110–117 行"
+  },
+  {
+    "id": "C28",
+    "constraint": "需求分析的七項輸出欄位保留；Problem Statement 與方案欄使用本檔 Rule 2／3，不另立要求",
+    "location": "`rules/需求分析-格式規範.md` Rule 6",
+    "trace": "E1、E2、E3",
+    "source": "原第 144–156 行"
+  },
+  {
+    "id": "C29",
+    "constraint": "下一步為具體行動；方法說明／比較按需求回答，不無故套產品需求格式",
+    "location": "`rules/需求分析-格式規範.md` Rule 6",
+    "trace": "E2、E9",
+    "source": "原第 146、155 行及 description；格式原本只用於分析需求"
+  },
+  {
+    "id": "C30",
+    "constraint": "需要案例時讀取相關案例及資料，形成案例參考",
+    "location": "SOP P1-6",
+    "trace": "E1–E9；必要載入",
+    "source": "原第 160 行連結改為條件載入"
+  },
+  {
+    "id": "C31",
+    "constraint": "讀取使用者提供的需求與情境資料，形成需求輸入",
+    "location": "SOP P1-1",
+    "trace": "E1–E9；必要輸入",
+    "source": "R1 重組流程"
+  },
+  {
+    "id": "C32",
+    "constraint": "先辨識用途與規則主題，多用途保留全部適用項目",
+    "location": "SOP P1-2",
+    "trace": "E10；必要分支",
+    "source": "R1 重組流程"
+  },
+  {
+    "id": "C33",
+    "constraint": "規則在使用前按適用範圍載入並命名三份檢查清單",
+    "location": "SOP P1-3～P1-5",
+    "trace": "E10",
+    "source": "R1 重組流程"
+  },
+  {
+    "id": "C34",
+    "constraint": "依已載入結果分析；新發現主題回任務判定後載入",
+    "location": "SOP P1-7",
+    "trace": "E10；必要迴圈",
+    "source": "R1 重組流程"
+  },
+  {
+    "id": "C35",
+    "constraint": "依分析結果與已載入清單建立回覆草稿",
+    "location": "SOP P2-1",
+    "trace": "E10；必要產出",
+    "source": "R1 重組流程"
+  },
+  {
+    "id": "C36",
+    "constraint": "交付前檢查載入及實際使用與草稿；依缺漏種類回對應步驟",
+    "location": "SOP P2-2",
+    "trace": "E10；必要驗證",
+    "source": "R1 重組流程"
+  },
+  {
+    "id": "C37",
+    "constraint": "交付通過檢查的回覆",
+    "location": "SOP P2-3",
+    "trace": "E10；必要交付",
+    "source": "R1 重組流程"
+  }
+]

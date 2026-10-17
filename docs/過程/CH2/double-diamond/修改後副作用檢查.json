@@ -1,0 +1,11 @@
+{
+  "test_environment_unchanged": true,
+  "formal_equals_tested_package": true,
+  "inputs_in_both_outputs": true,
+  "head_unchanged": true,
+  "raw_outputs": {
+    "修改前原始輸出.md": "ae2eddc4703744feeb637e58eaf9c8120ac727b4da082eb40b4f2665233c2c22",
+    "修改後原始輸出.md": "9aa67569e935597391dfb511f341eda5937f0445b1f76bf588c44c35649d186d",
+    "純說明分支原始輸出.md": "e5f6c7644d92b168ad38f1378e09ad8896db5f6d86113586c40f60a471170d6a"
+  }
+}

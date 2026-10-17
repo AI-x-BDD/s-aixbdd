@@ -1,0 +1,10 @@
+{
+  "source_snapshot_unchanged": true,
+  "formal_agents_unchanged": true,
+  "formal_claude_unchanged": true,
+  "test_environment_unchanged": true,
+  "inputs_unchanged": true,
+  "tracked_status_after": "",
+  "baseline_agent": "/root/dd_baseline",
+  "baseline_output_sha256": "ae2eddc4703744feeb637e58eaf9c8120ac727b4da082eb40b4f2665233c2c22"
+}

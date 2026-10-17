@@ -1,0 +1,28 @@
+{
+  "note": "受測 package、原始輸出、設定及副作用證據已封存後，只清理本輪兩個已知資料副本；非 Git worktree。",
+  "environments": [
+    {
+      "path": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-dd-baseline-yotc1ryv",
+      "files_before_cleanup": {
+        "測試輸入.json": "cffb36affcdeb2154307a8e8445457b5262f29f0f8c2865a8e54602e55ced66c",
+        "double-diamond/SKILL.md": "69e608bafa5bc95491de6465da8ae38cf74e52275d3643c5972f577e7457e2f4",
+        "double-diamond/references/cases.md": "d66c5a788705b799aca6002b66350b31f0538f36688e51551ffb0b1bedf7e119"
+      },
+      "existed": true,
+      "removed": true
+    },
+    {
+      "path": "/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/s-aixbdd-dd-after-zif6ot65",
+      "files_before_cleanup": {
+        "測試輸入.json": "cffb36affcdeb2154307a8e8445457b5262f29f0f8c2865a8e54602e55ced66c",
+        "double-diamond/SKILL.md": "d62e30bca5083dced1b7fd1a44c9e3eb1b985aa2d478b50ba8eb360a4de47ee1",
+        "double-diamond/references/cases.md": "d66c5a788705b799aca6002b66350b31f0538f36688e51551ffb0b1bedf7e119",
+        "double-diamond/rules/雙鑽石判準-格式規範.md": "1d676420b800ec4ee20fd0b7ff9346baf5da6eef4d1783938e33bb7424ecc3b2",
+        "double-diamond/rules/任務分流-格式規範.md": "7f4307e340220c9ad6a2b3033bf38585be63e04a606f49ce4473bf382af6d4c2",
+        "double-diamond/rules/需求分析-格式規範.md": "816a1631d20c87194885c0477181d6ed78b939a8644313f3035b27701848f538"
+      },
+      "existed": true,
+      "removed": true
+    }
+  ]
+}

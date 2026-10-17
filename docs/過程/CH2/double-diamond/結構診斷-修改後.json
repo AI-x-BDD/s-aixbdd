@@ -1,0 +1,195 @@
+{
+  "skills_roots": [
+    "/Volumes/data/Projects-practice/s-aixbdd/.agents/skills",
+    "/Volumes/data/Projects-practice/s-aixbdd/.claude/skills",
+    "/Volumes/data/Projects-practice/s-aixbdd/skills"
+  ],
+  "shadowed_skills": [
+    {
+      "name": "conventional-commits",
+      "used": "/Volumes/data/Projects-practice/s-aixbdd/.agents/skills/conventional-commits",
+      "ignored": "/Volumes/data/Projects-practice/s-aixbdd/.claude/skills/conventional-commits"
+    },
+    {
+      "name": "double-diamond",
+      "used": "/Volumes/data/Projects-practice/s-aixbdd/.agents/skills/double-diamond",
+      "ignored": "/Volumes/data/Projects-practice/s-aixbdd/.claude/skills/double-diamond"
+    },
+    {
+      "name": "plan-with-class-diagram",
+      "used": "/Volumes/data/Projects-practice/s-aixbdd/.agents/skills/plan-with-class-diagram",
+      "ignored": "/Volumes/data/Projects-practice/s-aixbdd/.claude/skills/plan-with-class-diagram"
+    },
+    {
+      "name": "skill-creator",
+      "used": "/Volumes/data/Projects-practice/s-aixbdd/.agents/skills/skill-creator",
+      "ignored": "/Volumes/data/Projects-practice/s-aixbdd/.claude/skills/skill-creator"
+    },
+    {
+      "name": "skill-derive-rule",
+      "used": "/Volumes/data/Projects-practice/s-aixbdd/.agents/skills/skill-derive-rule",
+      "ignored": "/Volumes/data/Projects-practice/s-aixbdd/.claude/skills/skill-derive-rule"
+    },
+    {
+      "name": "skill-derive-script",
+      "used": "/Volumes/data/Projects-practice/s-aixbdd/.agents/skills/skill-derive-script",
+      "ignored": "/Volumes/data/Projects-practice/s-aixbdd/.claude/skills/skill-derive-script"
+    },
+    {
+      "name": "skill-derive-template",
+      "used": "/Volumes/data/Projects-practice/s-aixbdd/.agents/skills/skill-derive-template",
+      "ignored": "/Volumes/data/Projects-practice/s-aixbdd/.claude/skills/skill-derive-template"
+    },
+    {
+      "name": "skill-engineering",
+      "used": "/Volumes/data/Projects-practice/s-aixbdd/.agents/skills/skill-engineering",
+      "ignored": "/Volumes/data/Projects-practice/s-aixbdd/.claude/skills/skill-engineering"
+    },
+    {
+      "name": "skill-form-description",
+      "used": "/Volumes/data/Projects-practice/s-aixbdd/.agents/skills/skill-form-description",
+      "ignored": "/Volumes/data/Projects-practice/s-aixbdd/.claude/skills/skill-form-description"
+    },
+    {
+      "name": "skill-form-rule",
+      "used": "/Volumes/data/Projects-practice/s-aixbdd/.agents/skills/skill-form-rule",
+      "ignored": "/Volumes/data/Projects-practice/s-aixbdd/.claude/skills/skill-form-rule"
+    },
+    {
+      "name": "skill-form-script",
+      "used": "/Volumes/data/Projects-practice/s-aixbdd/.agents/skills/skill-form-script",
+      "ignored": "/Volumes/data/Projects-practice/s-aixbdd/.claude/skills/skill-form-script"
+    },
+    {
+      "name": "skill-form-sop",
+      "used": "/Volumes/data/Projects-practice/s-aixbdd/.agents/skills/skill-form-sop",
+      "ignored": "/Volumes/data/Projects-practice/s-aixbdd/.claude/skills/skill-form-sop"
+    },
+    {
+      "name": "skill-form-template",
+      "used": "/Volumes/data/Projects-practice/s-aixbdd/.agents/skills/skill-form-template",
+      "ignored": "/Volumes/data/Projects-practice/s-aixbdd/.claude/skills/skill-form-template"
+    },
+    {
+      "name": "trunk-based-development",
+      "used": "/Volumes/data/Projects-practice/s-aixbdd/.agents/skills/trunk-based-development",
+      "ignored": "/Volumes/data/Projects-practice/s-aixbdd/.claude/skills/trunk-based-development"
+    },
+    {
+      "name": "typesafe-ai",
+      "used": "/Volumes/data/Projects-practice/s-aixbdd/.agents/skills/typesafe-ai",
+      "ignored": "/Volumes/data/Projects-practice/s-aixbdd/.claude/skills/typesafe-ai"
+    }
+  ],
+  "summary": {
+    "skills": 1,
+    "errors": 0,
+    "warnings": 0
+  },
+  "skills": [
+    {
+      "name": "double-diamond",
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/.agents/skills/double-diamond",
+      "errors": 0,
+      "warnings": 0,
+      "findings": [],
+      "parts": [
+        "rules/任務分流-格式規範.md",
+        "rules/雙鑽石判準-格式規範.md",
+        "rules/需求分析-格式規範.md"
+      ],
+      "references": {
+        "rules/雙鑽石判準-格式規範.md": [
+          {
+            "phase": 1,
+            "step": 3,
+            "verb": "READ",
+            "line": 12
+          }
+        ],
+        "rules/任務分流-格式規範.md": [
+          {
+            "phase": 1,
+            "step": 4,
+            "verb": "READ",
+            "line": 13
+          }
+        ],
+        "rules/需求分析-格式規範.md": [
+          {
+            "phase": 1,
+            "step": 5,
+            "verb": "READ",
+            "line": 14
+          }
+        ]
+      },
+      "sop": [
+        {
+          "phase": 1,
+          "title": "理解與分析",
+          "steps": [
+            {
+              "step": 1,
+              "verb": "READ",
+              "text": "`READ` 使用者需求，以及使用者提供的情境、證據、方案或既有驗證結果，建立「需求輸入」。"
+            },
+            {
+              "step": 2,
+              "verb": "THINK",
+              "text": "`THINK` 依「需求輸入」辨識需求分析、階段判定、研究收斂、例外判斷、方法說明或方法比較等用途與所需規則主題，建立「任務範圍」；涉及多種用途或主題時保留所有適用項目。"
+            },
+            {
+              "step": 3,
+              "verb": "READ",
+              "text": "`READ` 讀取 `rules/雙鑽石判準-格式規範.md` 的所有 Rule，建立「雙鑽石判準檢查清單」。"
+            },
+            {
+              "step": 4,
+              "verb": "READ",
+              "text": "`READ` 「任務範圍」涉及需求分析、階段判定、研究收斂、例外判斷，或其他用途需要判斷不確定性及流程適用性時，讀取 `rules/任務分流-格式規範.md` 的所有 Rule，建立「任務分流檢查清單」。"
+            },
+            {
+              "step": 5,
+              "verb": "READ",
+              "text": "`READ` 「任務範圍」涉及需求分析、Problem Statement／Design Brief／Success Criteria、方案發展與驗證、Decision Gate，或其他用途需要說明各階段實際做法時，讀取 `rules/需求分析-格式規範.md` 的所有 Rule，建立「需求分析檢查清單」。"
+            },
+            {
+              "step": 6,
+              "verb": "READ",
+              "text": "`READ` 需要以案例輔助分析或說明時，讀取 `references/cases.md` 中與「任務範圍」相關的案例及參考資料，建立「案例參考」。"
+            },
+            {
+              "step": 7,
+              "verb": "THINK",
+              "text": "`THINK` 依「需求輸入」、「任務範圍」、「雙鑽石判準檢查清單」，以及本次已載入的「任務分流檢查清單」、「需求分析檢查清單」與「案例參考」，形成「分析結果」；發現需要尚未載入的規則主題時，返回步驟 2 更新任務範圍後載入。"
+            }
+          ],
+          "completion": "完成條件：已辨識任務範圍，並依適用檢查清單形成對應需求的分析結果。"
+        },
+        {
+          "phase": 2,
+          "title": "產出與檢查",
+          "steps": [
+            {
+              "step": 1,
+              "verb": "WRITE",
+              "text": "`WRITE` 依「需求輸入」、「分析結果」、「雙鑽石判準檢查清單」，以及本次已載入的「任務分流檢查清單」與「需求分析檢查清單」，形成「回覆草稿」。"
+            },
+            {
+              "step": 2,
+              "verb": "CHECK",
+              "text": "`CHECK` 核對「任務範圍」的適用規則均已載入並實際使用，再逐條驗證「回覆草稿」符合「需求輸入」及本次已載入的檢查清單；缺少適用規則時返回 Phase 1 步驟 2，分析有誤時返回 Phase 1 步驟 7，其餘未通過項返回步驟 1 修正。"
+            },
+            {
+              "step": 3,
+              "verb": "WRITE",
+              "text": "`WRITE` 向使用者交付已通過檢查的回覆。"
+            }
+          ],
+          "completion": "完成條件：回覆涵蓋本次需求，所有適用檢查清單均通過，且已交付使用者。"
+        }
+      ]
+    }
+  ]
+}
