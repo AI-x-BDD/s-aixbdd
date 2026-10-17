@@ -26,6 +26,21 @@
 | ---- | ----- | ---- |
 | ch1  | `double-diamond`、`trunk-based-development`、`conventional-commits` | [docs/ch1.md](docs/ch1.md) |
 | 第二份作業 | `skill-engineering`、`skill-form-*`（description、sop、rule、template、script）、`skill-derive-*`（rule、template、script）、`plan-with-class-diagram`；另收錄外部的 `skill-creator` | [specs/](specs/)、[java-web-framework/](java-web-framework/) |
+| ch2  | 以 `skill-engineering` 改寫 `double-diamond`、`trunk-based-development`、`conventional-commits` | [用 Skill Engineering 改寫三支 Skill](#ch2用-skill-engineering-改寫三支-skill) |
+
+### ch2：用 Skill Engineering 改寫三支 Skill
+
+ch1 建立並試用了三支 Skill，ch2 則使用 `skill-engineering` 檢查它們的問題，重新整理流程與判斷規則，再比較修改前後的回答。
+
+Skill Engineering 負責準備測試案例、保存修改前的回答並分析根因。根因與修改方案經確認後，再由 `skill-form-sop`、`skill-derive-rule` 與 `skill-form-rule` 整理主流程、抽出規則並補上正反例，最後重跑案例，確認原本可用的情境仍能完成。
+
+三支 Skill 原本把流程與規則混在主檔，這次將主檔整理為 SOP，判斷規則放到獨立檔案，由主流程指定何時讀取、如何使用與檢查。各支的修改與實際觀察如下：
+
+| Skill | 改了什麼 | 前後實跑的觀察 |
+| ---- | ---- | ---- |
+| `double-diamond` | 分開雙鑽石判準、任務分流與需求分析規則，釐清小修正、事故及輸出格式的適用範圍。 | 原八題前後核心判準皆通過，這次主要整理結構與規則適用範圍。[前後比較](docs/過程/CH2/double-diamond/前後比較.md) |
+| `trunk-based-development` | 分開 TBD 判準、變更規劃與工作流程評估，讓規劃與審查都能讀取需要的規則。 | 修改後回答補上原本漏列的 Feature Flag 與舊實作清理步驟。[前後比較](docs/過程/CH2/trunk-based-development/前後比較.md) |
+| `conventional-commits` | 分開變更分類、提交訊息與歷史處理規則，補齊 breaking change 標示並修正文句衝突。 | 原版誤判合法的 `BREAKING-CHANGE:`，修改後以同一題重測，能正確接受。[前後比較](docs/過程/CH2/conventional-commits/前後比較.md) |
 
 ## 個人 Skill 與安裝腳本
 
