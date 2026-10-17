@@ -1,0 +1,2734 @@
+{
+  "method": "whisper-word-timestamps-and-transcript-matching",
+  "matched_character_ratio": 0.9847,
+  "unmatched_ranges": [
+    {
+      "text": "附",
+      "recognized": "负"
+    },
+    {
+      "text": "根",
+      "recognized": "更"
+    },
+    {
+      "text": "著",
+      "recognized": "着"
+    },
+    {
+      "text": "步",
+      "recognized": "部"
+    },
+    {
+      "text": "步",
+      "recognized": "部"
+    },
+    {
+      "text": "它",
+      "recognized": "他"
+    },
+    {
+      "text": "带",
+      "recognized": "代"
+    },
+    {
+      "text": "写",
+      "recognized": "血"
+    }
+  ],
+  "scenes": [
+    {
+      "frame": "00",
+      "text": "技能越改越難維護？",
+      "characters": [
+        {
+          "offset": 0,
+          "start": 0.0,
+          "end": 0.18
+        },
+        {
+          "offset": 1,
+          "start": 0.18,
+          "end": 0.4
+        },
+        {
+          "offset": 2,
+          "start": 0.4,
+          "end": 0.64
+        },
+        {
+          "offset": 3,
+          "start": 0.64,
+          "end": 0.86
+        },
+        {
+          "offset": 4,
+          "start": 0.86,
+          "end": 1.0
+        },
+        {
+          "offset": 5,
+          "start": 1.0,
+          "end": 1.16
+        },
+        {
+          "offset": 6,
+          "start": 1.16,
+          "end": 1.34
+        },
+        {
+          "offset": 7,
+          "start": 1.34,
+          "end": 1.54
+        }
+      ],
+      "speech_start": 0.0,
+      "speech_end": 1.54
+    },
+    {
+      "frame": "01",
+      "text": "Skill Engineering 會把建立和優化技能的工作，分派給對應的基礎技能。接下來，看它怎麼分工，以及三支技能改完有什麼不同。",
+      "characters": [
+        {
+          "offset": 0,
+          "start": 1.82,
+          "end": 2.22
+        },
+        {
+          "offset": 1,
+          "start": 2.22,
+          "end": 2.26
+        },
+        {
+          "offset": 2,
+          "start": 2.26,
+          "end": 2.3
+        },
+        {
+          "offset": 3,
+          "start": 2.3,
+          "end": 2.34
+        },
+        {
+          "offset": 4,
+          "start": 2.34,
+          "end": 2.38
+        },
+        {
+          "offset": 6,
+          "start": 2.38,
+          "end": 2.422
+        },
+        {
+          "offset": 7,
+          "start": 2.422,
+          "end": 2.464
+        },
+        {
+          "offset": 8,
+          "start": 2.464,
+          "end": 2.505
+        },
+        {
+          "offset": 9,
+          "start": 2.505,
+          "end": 2.547
+        },
+        {
+          "offset": 10,
+          "start": 2.547,
+          "end": 2.589
+        },
+        {
+          "offset": 11,
+          "start": 2.589,
+          "end": 2.631
+        },
+        {
+          "offset": 12,
+          "start": 2.631,
+          "end": 2.673
+        },
+        {
+          "offset": 13,
+          "start": 2.673,
+          "end": 2.715
+        },
+        {
+          "offset": 14,
+          "start": 2.715,
+          "end": 2.756
+        },
+        {
+          "offset": 15,
+          "start": 2.756,
+          "end": 2.798
+        },
+        {
+          "offset": 16,
+          "start": 2.798,
+          "end": 2.84
+        },
+        {
+          "offset": 18,
+          "start": 2.84,
+          "end": 3.22
+        },
+        {
+          "offset": 19,
+          "start": 3.22,
+          "end": 3.36
+        },
+        {
+          "offset": 20,
+          "start": 3.36,
+          "end": 3.56
+        },
+        {
+          "offset": 21,
+          "start": 3.56,
+          "end": 3.8
+        },
+        {
+          "offset": 22,
+          "start": 3.8,
+          "end": 4.0
+        },
+        {
+          "offset": 23,
+          "start": 4.0,
+          "end": 4.2
+        },
+        {
+          "offset": 24,
+          "start": 4.2,
+          "end": 4.36
+        },
+        {
+          "offset": 25,
+          "start": 4.36,
+          "end": 4.52
+        },
+        {
+          "offset": 26,
+          "start": 4.52,
+          "end": 4.66
+        },
+        {
+          "offset": 27,
+          "start": 4.66,
+          "end": 4.74
+        },
+        {
+          "offset": 28,
+          "start": 4.74,
+          "end": 4.92
+        },
+        {
+          "offset": 29,
+          "start": 4.92,
+          "end": 5.1
+        },
+        {
+          "offset": 31,
+          "start": 5.1,
+          "end": 5.42
+        },
+        {
+          "offset": 32,
+          "start": 5.42,
+          "end": 5.56
+        },
+        {
+          "offset": 33,
+          "start": 5.56,
+          "end": 5.7
+        },
+        {
+          "offset": 34,
+          "start": 5.7,
+          "end": 5.9
+        },
+        {
+          "offset": 35,
+          "start": 5.9,
+          "end": 6.06
+        },
+        {
+          "offset": 36,
+          "start": 6.06,
+          "end": 6.18
+        },
+        {
+          "offset": 37,
+          "start": 6.18,
+          "end": 6.34
+        },
+        {
+          "offset": 38,
+          "start": 6.34,
+          "end": 6.5
+        },
+        {
+          "offset": 39,
+          "start": 6.5,
+          "end": 6.66
+        },
+        {
+          "offset": 40,
+          "start": 6.66,
+          "end": 6.86
+        },
+        {
+          "offset": 42,
+          "start": 7.36,
+          "end": 7.493
+        },
+        {
+          "offset": 43,
+          "start": 7.493,
+          "end": 7.627
+        },
+        {
+          "offset": 44,
+          "start": 7.627,
+          "end": 7.76
+        },
+        {
+          "offset": 46,
+          "start": 7.76,
+          "end": 8.1
+        },
+        {
+          "offset": 47,
+          "start": 8.1,
+          "end": 8.22
+        },
+        {
+          "offset": 48,
+          "start": 8.22,
+          "end": 8.3
+        },
+        {
+          "offset": 49,
+          "start": 8.3,
+          "end": 8.38
+        },
+        {
+          "offset": 50,
+          "start": 8.38,
+          "end": 8.6
+        },
+        {
+          "offset": 51,
+          "start": 8.6,
+          "end": 8.8
+        },
+        {
+          "offset": 53,
+          "start": 8.8,
+          "end": 9.01
+        },
+        {
+          "offset": 54,
+          "start": 9.01,
+          "end": 9.22
+        },
+        {
+          "offset": 55,
+          "start": 9.22,
+          "end": 9.5
+        },
+        {
+          "offset": 56,
+          "start": 9.5,
+          "end": 9.66
+        },
+        {
+          "offset": 57,
+          "start": 9.66,
+          "end": 9.8
+        },
+        {
+          "offset": 58,
+          "start": 9.8,
+          "end": 9.94
+        },
+        {
+          "offset": 59,
+          "start": 9.94,
+          "end": 10.1
+        },
+        {
+          "offset": 60,
+          "start": 10.1,
+          "end": 10.32
+        },
+        {
+          "offset": 61,
+          "start": 10.32,
+          "end": 10.5
+        },
+        {
+          "offset": 62,
+          "start": 10.5,
+          "end": 10.58
+        },
+        {
+          "offset": 63,
+          "start": 10.58,
+          "end": 10.66
+        },
+        {
+          "offset": 64,
+          "start": 10.66,
+          "end": 10.81
+        },
+        {
+          "offset": 65,
+          "start": 10.81,
+          "end": 10.96
+        }
+      ],
+      "speech_start": 1.82,
+      "speech_end": 10.96
+    },
+    {
+      "frame": "02",
+      "text": "先看兩種分工。一組是格式把關，五支技能分別負責用途說明、執行流程、規則、樣板和腳本。用途說明讓 AI 知道何時該用；SOP 寫清楚實際執行的步驟；規則附正反例，樣板提供骨架與範例，腳本則寫清楚輸入輸出。另一組是部位抽取，三支技能把規則、樣板或腳本從流程步驟中分出來。",
+      "characters": [
+        {
+          "offset": 0,
+          "start": 11.22,
+          "end": 11.54
+        },
+        {
+          "offset": 1,
+          "start": 11.54,
+          "end": 11.72
+        },
+        {
+          "offset": 2,
+          "start": 11.72,
+          "end": 11.9
+        },
+        {
+          "offset": 3,
+          "start": 11.9,
+          "end": 12.1
+        },
+        {
+          "offset": 4,
+          "start": 12.1,
+          "end": 12.28
+        },
+        {
+          "offset": 5,
+          "start": 12.28,
+          "end": 12.5
+        },
+        {
+          "offset": 7,
+          "start": 12.78,
+          "end": 13.18
+        },
+        {
+          "offset": 8,
+          "start": 13.18,
+          "end": 13.36
+        },
+        {
+          "offset": 9,
+          "start": 13.36,
+          "end": 13.6
+        },
+        {
+          "offset": 10,
+          "start": 13.6,
+          "end": 13.78
+        },
+        {
+          "offset": 11,
+          "start": 13.78,
+          "end": 13.98
+        },
+        {
+          "offset": 12,
+          "start": 13.98,
+          "end": 14.14
+        },
+        {
+          "offset": 13,
+          "start": 14.14,
+          "end": 14.38
+        },
+        {
+          "offset": 15,
+          "start": 14.9,
+          "end": 15.08
+        },
+        {
+          "offset": 16,
+          "start": 15.08,
+          "end": 15.2
+        },
+        {
+          "offset": 17,
+          "start": 15.2,
+          "end": 15.34
+        },
+        {
+          "offset": 18,
+          "start": 15.34,
+          "end": 15.52
+        },
+        {
+          "offset": 19,
+          "start": 15.52,
+          "end": 15.7
+        },
+        {
+          "offset": 20,
+          "start": 15.7,
+          "end": 15.86
+        },
+        {
+          "offset": 21,
+          "start": 15.86,
+          "end": 16.04
+        },
+        {
+          "offset": 22,
+          "start": 16.04,
+          "end": 16.2
+        },
+        {
+          "offset": 23,
+          "start": 16.2,
+          "end": 16.44
+        },
+        {
+          "offset": 24,
+          "start": 16.44,
+          "end": 16.64
+        },
+        {
+          "offset": 25,
+          "start": 16.64,
+          "end": 16.84
+        },
+        {
+          "offset": 26,
+          "start": 16.84,
+          "end": 17.06
+        },
+        {
+          "offset": 28,
+          "start": 17.32,
+          "end": 17.44
+        },
+        {
+          "offset": 29,
+          "start": 17.44,
+          "end": 17.6
+        },
+        {
+          "offset": 30,
+          "start": 17.6,
+          "end": 17.78
+        },
+        {
+          "offset": 31,
+          "start": 17.78,
+          "end": 18.04
+        },
+        {
+          "offset": 33,
+          "start": 18.24,
+          "end": 18.46
+        },
+        {
+          "offset": 34,
+          "start": 18.46,
+          "end": 18.7
+        },
+        {
+          "offset": 36,
+          "start": 19.02,
+          "end": 19.14
+        },
+        {
+          "offset": 37,
+          "start": 19.14,
+          "end": 19.38
+        },
+        {
+          "offset": 38,
+          "start": 19.38,
+          "end": 19.64
+        },
+        {
+          "offset": 39,
+          "start": 19.64,
+          "end": 19.8
+        },
+        {
+          "offset": 40,
+          "start": 19.8,
+          "end": 20.02
+        },
+        {
+          "offset": 42,
+          "start": 20.6,
+          "end": 20.86
+        },
+        {
+          "offset": 43,
+          "start": 20.86,
+          "end": 21.0
+        },
+        {
+          "offset": 44,
+          "start": 21.0,
+          "end": 21.14
+        },
+        {
+          "offset": 45,
+          "start": 21.14,
+          "end": 21.34
+        },
+        {
+          "offset": 46,
+          "start": 21.34,
+          "end": 21.54
+        },
+        {
+          "offset": 48,
+          "start": 21.54,
+          "end": 21.68
+        },
+        {
+          "offset": 49,
+          "start": 21.68,
+          "end": 21.82
+        },
+        {
+          "offset": 51,
+          "start": 21.82,
+          "end": 21.97
+        },
+        {
+          "offset": 52,
+          "start": 21.97,
+          "end": 22.12
+        },
+        {
+          "offset": 53,
+          "start": 22.12,
+          "end": 22.36
+        },
+        {
+          "offset": 54,
+          "start": 22.36,
+          "end": 22.56
+        },
+        {
+          "offset": 55,
+          "start": 22.56,
+          "end": 22.74
+        },
+        {
+          "offset": 56,
+          "start": 22.74,
+          "end": 22.96
+        },
+        {
+          "offset": 58,
+          "start": 23.5,
+          "end": 23.72
+        },
+        {
+          "offset": 59,
+          "start": 23.72,
+          "end": 23.83
+        },
+        {
+          "offset": 60,
+          "start": 23.83,
+          "end": 23.94
+        },
+        {
+          "offset": 62,
+          "start": 23.94,
+          "end": 24.2
+        },
+        {
+          "offset": 63,
+          "start": 24.2,
+          "end": 24.37
+        },
+        {
+          "offset": 64,
+          "start": 24.37,
+          "end": 24.54
+        },
+        {
+          "offset": 65,
+          "start": 24.54,
+          "end": 24.8
+        },
+        {
+          "offset": 66,
+          "start": 24.8,
+          "end": 24.98
+        },
+        {
+          "offset": 67,
+          "start": 24.98,
+          "end": 25.18
+        },
+        {
+          "offset": 68,
+          "start": 25.18,
+          "end": 25.34
+        },
+        {
+          "offset": 69,
+          "start": 25.34,
+          "end": 25.46
+        },
+        {
+          "offset": 70,
+          "start": 25.46,
+          "end": 25.64
+        },
+        {
+          "offset": 71,
+          "start": 25.64,
+          "end": 25.84
+        },
+        {
+          "offset": 73,
+          "start": 26.24,
+          "end": 26.6
+        },
+        {
+          "offset": 74,
+          "start": 26.6,
+          "end": 26.8
+        },
+        {
+          "offset": 75,
+          "start": 26.8,
+          "end": 27.02
+        },
+        {
+          "offset": 76,
+          "start": 27.02,
+          "end": 27.2
+        },
+        {
+          "offset": 77,
+          "start": 27.2,
+          "end": 27.36
+        },
+        {
+          "offset": 78,
+          "start": 27.36,
+          "end": 27.6
+        },
+        {
+          "offset": 80,
+          "start": 27.6,
+          "end": 28.08
+        },
+        {
+          "offset": 81,
+          "start": 28.08,
+          "end": 28.28
+        },
+        {
+          "offset": 82,
+          "start": 28.28,
+          "end": 28.5
+        },
+        {
+          "offset": 83,
+          "start": 28.5,
+          "end": 28.64
+        },
+        {
+          "offset": 84,
+          "start": 28.64,
+          "end": 28.86
+        },
+        {
+          "offset": 85,
+          "start": 28.86,
+          "end": 29.06
+        },
+        {
+          "offset": 86,
+          "start": 29.06,
+          "end": 29.24
+        },
+        {
+          "offset": 87,
+          "start": 29.24,
+          "end": 29.42
+        },
+        {
+          "offset": 88,
+          "start": 29.42,
+          "end": 29.62
+        },
+        {
+          "offset": 90,
+          "start": 29.62,
+          "end": 30.18
+        },
+        {
+          "offset": 91,
+          "start": 30.18,
+          "end": 30.36
+        },
+        {
+          "offset": 92,
+          "start": 30.36,
+          "end": 30.56
+        },
+        {
+          "offset": 93,
+          "start": 30.56,
+          "end": 30.7
+        },
+        {
+          "offset": 94,
+          "start": 30.7,
+          "end": 30.86
+        },
+        {
+          "offset": 95,
+          "start": 30.86,
+          "end": 31.02
+        },
+        {
+          "offset": 96,
+          "start": 31.02,
+          "end": 31.28
+        },
+        {
+          "offset": 97,
+          "start": 31.28,
+          "end": 31.42
+        },
+        {
+          "offset": 98,
+          "start": 31.42,
+          "end": 31.62
+        },
+        {
+          "offset": 99,
+          "start": 31.62,
+          "end": 31.84
+        },
+        {
+          "offset": 101,
+          "start": 32.44,
+          "end": 32.8
+        },
+        {
+          "offset": 102,
+          "start": 32.8,
+          "end": 32.96
+        },
+        {
+          "offset": 103,
+          "start": 32.96,
+          "end": 33.1
+        },
+        {
+          "offset": 104,
+          "start": 33.1,
+          "end": 33.32
+        },
+        {
+          "offset": 105,
+          "start": 33.32,
+          "end": 33.5
+        },
+        {
+          "offset": 106,
+          "start": 33.5,
+          "end": 33.68
+        },
+        {
+          "offset": 107,
+          "start": 33.68,
+          "end": 33.84
+        },
+        {
+          "offset": 108,
+          "start": 33.84,
+          "end": 34.12
+        },
+        {
+          "offset": 110,
+          "start": 34.12,
+          "end": 34.76
+        },
+        {
+          "offset": 111,
+          "start": 34.76,
+          "end": 34.9
+        },
+        {
+          "offset": 112,
+          "start": 34.9,
+          "end": 35.06
+        },
+        {
+          "offset": 113,
+          "start": 35.06,
+          "end": 35.22
+        },
+        {
+          "offset": 114,
+          "start": 35.22,
+          "end": 35.44
+        },
+        {
+          "offset": 115,
+          "start": 35.44,
+          "end": 35.7
+        },
+        {
+          "offset": 116,
+          "start": 35.7,
+          "end": 35.96
+        },
+        {
+          "offset": 118,
+          "start": 36.12,
+          "end": 36.26
+        },
+        {
+          "offset": 119,
+          "start": 36.26,
+          "end": 36.5
+        },
+        {
+          "offset": 120,
+          "start": 36.5,
+          "end": 36.72
+        },
+        {
+          "offset": 121,
+          "start": 36.72,
+          "end": 36.94
+        },
+        {
+          "offset": 122,
+          "start": 36.94,
+          "end": 37.12
+        },
+        {
+          "offset": 123,
+          "start": 37.12,
+          "end": 37.38
+        },
+        {
+          "offset": 124,
+          "start": 37.38,
+          "end": 37.56
+        },
+        {
+          "offset": 125,
+          "start": 37.56,
+          "end": 37.76
+        },
+        {
+          "offset": 126,
+          "start": 37.76,
+          "end": 37.94
+        },
+        {
+          "offset": 127,
+          "start": 37.94,
+          "end": 38.08
+        },
+        {
+          "offset": 128,
+          "start": 38.08,
+          "end": 38.24
+        },
+        {
+          "offset": 129,
+          "start": 38.24,
+          "end": 38.42
+        },
+        {
+          "offset": 130,
+          "start": 38.42,
+          "end": 38.6
+        },
+        {
+          "offset": 131,
+          "start": 38.6,
+          "end": 38.78
+        }
+      ],
+      "speech_start": 11.22,
+      "speech_end": 38.78
+    },
+    {
+      "frame": "03",
+      "text": "收到優化需求，技能工程先確認哪裡不滿意、原本期待什麼，再找出差異的原因。根因和修改計畫都確認後，才開始動手。接著整理執行流程，判斷每一步需要哪些部位。",
+      "characters": [
+        {
+          "offset": 0,
+          "start": 38.78,
+          "end": 39.5
+        },
+        {
+          "offset": 1,
+          "start": 39.5,
+          "end": 39.66
+        },
+        {
+          "offset": 2,
+          "start": 39.66,
+          "end": 39.82
+        },
+        {
+          "offset": 3,
+          "start": 39.82,
+          "end": 39.98
+        },
+        {
+          "offset": 4,
+          "start": 39.98,
+          "end": 40.18
+        },
+        {
+          "offset": 5,
+          "start": 40.18,
+          "end": 40.44
+        },
+        {
+          "offset": 7,
+          "start": 40.44,
+          "end": 40.96
+        },
+        {
+          "offset": 8,
+          "start": 40.96,
+          "end": 41.1
+        },
+        {
+          "offset": 9,
+          "start": 41.1,
+          "end": 41.26
+        },
+        {
+          "offset": 10,
+          "start": 41.26,
+          "end": 41.46
+        },
+        {
+          "offset": 11,
+          "start": 41.46,
+          "end": 41.7
+        },
+        {
+          "offset": 12,
+          "start": 41.7,
+          "end": 41.88
+        },
+        {
+          "offset": 13,
+          "start": 41.88,
+          "end": 42.04
+        },
+        {
+          "offset": 14,
+          "start": 42.04,
+          "end": 42.2
+        },
+        {
+          "offset": 15,
+          "start": 42.2,
+          "end": 42.36
+        },
+        {
+          "offset": 16,
+          "start": 42.36,
+          "end": 42.48
+        },
+        {
+          "offset": 17,
+          "start": 42.48,
+          "end": 42.64
+        },
+        {
+          "offset": 18,
+          "start": 42.64,
+          "end": 42.82
+        },
+        {
+          "offset": 20,
+          "start": 42.82,
+          "end": 43.18
+        },
+        {
+          "offset": 21,
+          "start": 43.18,
+          "end": 43.34
+        },
+        {
+          "offset": 22,
+          "start": 43.34,
+          "end": 43.56
+        },
+        {
+          "offset": 23,
+          "start": 43.56,
+          "end": 43.72
+        },
+        {
+          "offset": 24,
+          "start": 43.72,
+          "end": 43.85
+        },
+        {
+          "offset": 25,
+          "start": 43.85,
+          "end": 43.98
+        },
+        {
+          "offset": 27,
+          "start": 43.98,
+          "end": 44.48
+        },
+        {
+          "offset": 28,
+          "start": 44.48,
+          "end": 44.66
+        },
+        {
+          "offset": 29,
+          "start": 44.66,
+          "end": 44.82
+        },
+        {
+          "offset": 30,
+          "start": 44.82,
+          "end": 45.0
+        },
+        {
+          "offset": 31,
+          "start": 45.0,
+          "end": 45.16
+        },
+        {
+          "offset": 32,
+          "start": 45.16,
+          "end": 45.26
+        },
+        {
+          "offset": 33,
+          "start": 45.26,
+          "end": 45.44
+        },
+        {
+          "offset": 34,
+          "start": 45.44,
+          "end": 45.62
+        },
+        {
+          "offset": 36,
+          "start": 45.62,
+          "end": 46.42
+        },
+        {
+          "offset": 37,
+          "start": 46.42,
+          "end": 46.6
+        },
+        {
+          "offset": 38,
+          "start": 46.6,
+          "end": 46.8
+        },
+        {
+          "offset": 39,
+          "start": 46.8,
+          "end": 47.0
+        },
+        {
+          "offset": 40,
+          "start": 47.0,
+          "end": 47.12
+        },
+        {
+          "offset": 41,
+          "start": 47.12,
+          "end": 47.3
+        },
+        {
+          "offset": 42,
+          "start": 47.3,
+          "end": 47.44
+        },
+        {
+          "offset": 43,
+          "start": 47.44,
+          "end": 47.6
+        },
+        {
+          "offset": 44,
+          "start": 47.6,
+          "end": 47.8
+        },
+        {
+          "offset": 45,
+          "start": 47.8,
+          "end": 47.94
+        },
+        {
+          "offset": 46,
+          "start": 47.94,
+          "end": 48.12
+        },
+        {
+          "offset": 48,
+          "start": 48.12,
+          "end": 48.36
+        },
+        {
+          "offset": 49,
+          "start": 48.36,
+          "end": 48.49
+        },
+        {
+          "offset": 50,
+          "start": 48.49,
+          "end": 48.62
+        },
+        {
+          "offset": 51,
+          "start": 48.62,
+          "end": 48.76
+        },
+        {
+          "offset": 52,
+          "start": 48.76,
+          "end": 49.0
+        },
+        {
+          "offset": 54,
+          "start": 49.42,
+          "end": 49.78
+        },
+        {
+          "offset": 55,
+          "start": 49.78,
+          "end": 49.96
+        },
+        {
+          "offset": 56,
+          "start": 49.96,
+          "end": 50.16
+        },
+        {
+          "offset": 57,
+          "start": 50.16,
+          "end": 50.34
+        },
+        {
+          "offset": 58,
+          "start": 50.34,
+          "end": 50.52
+        },
+        {
+          "offset": 59,
+          "start": 50.52,
+          "end": 50.66
+        },
+        {
+          "offset": 60,
+          "start": 50.66,
+          "end": 50.82
+        },
+        {
+          "offset": 61,
+          "start": 50.82,
+          "end": 51.06
+        },
+        {
+          "offset": 63,
+          "start": 51.06,
+          "end": 51.48
+        },
+        {
+          "offset": 64,
+          "start": 51.48,
+          "end": 51.62
+        },
+        {
+          "offset": 65,
+          "start": 51.62,
+          "end": 51.78
+        },
+        {
+          "offset": 66,
+          "start": 51.78,
+          "end": 51.92
+        },
+        {
+          "offset": 67,
+          "start": 51.92,
+          "end": 52.04
+        },
+        {
+          "offset": 68,
+          "start": 52.04,
+          "end": 52.16
+        },
+        {
+          "offset": 69,
+          "start": 52.16,
+          "end": 52.28
+        },
+        {
+          "offset": 70,
+          "start": 52.28,
+          "end": 52.48
+        },
+        {
+          "offset": 71,
+          "start": 52.48,
+          "end": 52.68
+        },
+        {
+          "offset": 72,
+          "start": 52.68,
+          "end": 52.82
+        },
+        {
+          "offset": 73,
+          "start": 52.82,
+          "end": 53.02
+        }
+      ],
+      "speech_start": 38.78,
+      "speech_end": 53.02
+    },
+    {
+      "frame": "07",
+      "text": "例如，某一步需要更多判斷規則，就交給規則抽取技能。它請格式技能寫好規則檔，再更新流程，交代何時讀、怎麼用。需要固定輸出或自動處理，也用相同方式分派。既有檔案只改內容，則直接交給格式技能。",
+      "characters": [
+        {
+          "offset": 0,
+          "start": 53.02,
+          "end": 53.72
+        },
+        {
+          "offset": 1,
+          "start": 53.72,
+          "end": 53.92
+        },
+        {
+          "offset": 3,
+          "start": 53.92,
+          "end": 54.26
+        },
+        {
+          "offset": 4,
+          "start": 54.26,
+          "end": 54.38
+        },
+        {
+          "offset": 5,
+          "start": 54.38,
+          "end": 54.48
+        },
+        {
+          "offset": 6,
+          "start": 54.48,
+          "end": 54.6
+        },
+        {
+          "offset": 7,
+          "start": 54.6,
+          "end": 54.72
+        },
+        {
+          "offset": 8,
+          "start": 54.72,
+          "end": 54.92
+        },
+        {
+          "offset": 9,
+          "start": 54.92,
+          "end": 55.1
+        },
+        {
+          "offset": 10,
+          "start": 55.1,
+          "end": 55.28
+        },
+        {
+          "offset": 11,
+          "start": 55.28,
+          "end": 55.4
+        },
+        {
+          "offset": 12,
+          "start": 55.4,
+          "end": 55.6
+        },
+        {
+          "offset": 13,
+          "start": 55.6,
+          "end": 55.76
+        },
+        {
+          "offset": 15,
+          "start": 55.76,
+          "end": 56.1
+        },
+        {
+          "offset": 16,
+          "start": 56.1,
+          "end": 56.24
+        },
+        {
+          "offset": 17,
+          "start": 56.24,
+          "end": 56.42
+        },
+        {
+          "offset": 18,
+          "start": 56.42,
+          "end": 56.64
+        },
+        {
+          "offset": 19,
+          "start": 56.64,
+          "end": 56.82
+        },
+        {
+          "offset": 20,
+          "start": 56.82,
+          "end": 56.98
+        },
+        {
+          "offset": 21,
+          "start": 56.98,
+          "end": 57.18
+        },
+        {
+          "offset": 22,
+          "start": 57.18,
+          "end": 57.34
+        },
+        {
+          "offset": 23,
+          "start": 57.34,
+          "end": 57.56
+        },
+        {
+          "offset": 25,
+          "start": 57.56,
+          "end": 58.24
+        },
+        {
+          "offset": 26,
+          "start": 58.24,
+          "end": 58.42
+        },
+        {
+          "offset": 27,
+          "start": 58.42,
+          "end": 58.58
+        },
+        {
+          "offset": 28,
+          "start": 58.58,
+          "end": 58.76
+        },
+        {
+          "offset": 29,
+          "start": 58.76,
+          "end": 58.92
+        },
+        {
+          "offset": 30,
+          "start": 58.92,
+          "end": 59.1
+        },
+        {
+          "offset": 31,
+          "start": 59.1,
+          "end": 59.3
+        },
+        {
+          "offset": 32,
+          "start": 59.3,
+          "end": 59.44
+        },
+        {
+          "offset": 33,
+          "start": 59.44,
+          "end": 59.6
+        },
+        {
+          "offset": 34,
+          "start": 59.6,
+          "end": 59.76
+        },
+        {
+          "offset": 35,
+          "start": 59.76,
+          "end": 59.98
+        },
+        {
+          "offset": 37,
+          "start": 59.98,
+          "end": 60.2
+        },
+        {
+          "offset": 38,
+          "start": 60.2,
+          "end": 60.38
+        },
+        {
+          "offset": 39,
+          "start": 60.38,
+          "end": 60.54
+        },
+        {
+          "offset": 40,
+          "start": 60.54,
+          "end": 60.68
+        },
+        {
+          "offset": 41,
+          "start": 60.68,
+          "end": 60.94
+        },
+        {
+          "offset": 43,
+          "start": 60.94,
+          "end": 61.36
+        },
+        {
+          "offset": 44,
+          "start": 61.36,
+          "end": 61.5
+        },
+        {
+          "offset": 45,
+          "start": 61.5,
+          "end": 61.72
+        },
+        {
+          "offset": 46,
+          "start": 61.72,
+          "end": 61.92
+        },
+        {
+          "offset": 47,
+          "start": 61.92,
+          "end": 62.12
+        },
+        {
+          "offset": 49,
+          "start": 62.12,
+          "end": 62.28
+        },
+        {
+          "offset": 50,
+          "start": 62.28,
+          "end": 62.44
+        },
+        {
+          "offset": 51,
+          "start": 62.44,
+          "end": 62.7
+        },
+        {
+          "offset": 53,
+          "start": 63.16,
+          "end": 63.34
+        },
+        {
+          "offset": 54,
+          "start": 63.34,
+          "end": 63.52
+        },
+        {
+          "offset": 55,
+          "start": 63.52,
+          "end": 63.7
+        },
+        {
+          "offset": 56,
+          "start": 63.7,
+          "end": 63.82
+        },
+        {
+          "offset": 57,
+          "start": 63.82,
+          "end": 64.02
+        },
+        {
+          "offset": 58,
+          "start": 64.02,
+          "end": 64.22
+        },
+        {
+          "offset": 59,
+          "start": 64.22,
+          "end": 64.4
+        },
+        {
+          "offset": 60,
+          "start": 64.4,
+          "end": 64.6
+        },
+        {
+          "offset": 61,
+          "start": 64.6,
+          "end": 64.7
+        },
+        {
+          "offset": 62,
+          "start": 64.7,
+          "end": 64.9
+        },
+        {
+          "offset": 63,
+          "start": 64.9,
+          "end": 65.06
+        },
+        {
+          "offset": 65,
+          "start": 65.06,
+          "end": 65.3
+        },
+        {
+          "offset": 66,
+          "start": 65.3,
+          "end": 65.44
+        },
+        {
+          "offset": 67,
+          "start": 65.44,
+          "end": 65.64
+        },
+        {
+          "offset": 68,
+          "start": 65.64,
+          "end": 65.8
+        },
+        {
+          "offset": 69,
+          "start": 65.8,
+          "end": 65.98
+        },
+        {
+          "offset": 70,
+          "start": 65.98,
+          "end": 66.14
+        },
+        {
+          "offset": 71,
+          "start": 66.14,
+          "end": 66.3
+        },
+        {
+          "offset": 72,
+          "start": 66.3,
+          "end": 66.52
+        },
+        {
+          "offset": 74,
+          "start": 66.52,
+          "end": 67.24
+        },
+        {
+          "offset": 75,
+          "start": 67.24,
+          "end": 67.38
+        },
+        {
+          "offset": 76,
+          "start": 67.38,
+          "end": 67.5
+        },
+        {
+          "offset": 77,
+          "start": 67.5,
+          "end": 67.68
+        },
+        {
+          "offset": 78,
+          "start": 67.68,
+          "end": 67.86
+        },
+        {
+          "offset": 79,
+          "start": 67.86,
+          "end": 68.0
+        },
+        {
+          "offset": 80,
+          "start": 68.0,
+          "end": 68.16
+        },
+        {
+          "offset": 81,
+          "start": 68.16,
+          "end": 68.4
+        },
+        {
+          "offset": 83,
+          "start": 68.4,
+          "end": 68.7
+        },
+        {
+          "offset": 84,
+          "start": 68.7,
+          "end": 68.86
+        },
+        {
+          "offset": 85,
+          "start": 68.86,
+          "end": 69.02
+        },
+        {
+          "offset": 86,
+          "start": 69.02,
+          "end": 69.2
+        },
+        {
+          "offset": 87,
+          "start": 69.2,
+          "end": 69.36
+        },
+        {
+          "offset": 88,
+          "start": 69.36,
+          "end": 69.54
+        },
+        {
+          "offset": 89,
+          "start": 69.54,
+          "end": 69.7
+        },
+        {
+          "offset": 90,
+          "start": 69.7,
+          "end": 69.86
+        },
+        {
+          "offset": 91,
+          "start": 69.86,
+          "end": 70.06
+        }
+      ],
+      "speech_start": 53.02,
+      "speech_end": 70.06
+    },
+    {
+      "frame": "04",
+      "text": "這次三支技能，主要都把流程和規則分開。慣例式提交，原本把分類、訊息格式和範例混在主檔；現在拆成三份規則，流程在需要時讀取。",
+      "characters": [
+        {
+          "offset": 0,
+          "start": 70.52,
+          "end": 70.88
+        },
+        {
+          "offset": 1,
+          "start": 70.88,
+          "end": 71.02
+        },
+        {
+          "offset": 2,
+          "start": 71.02,
+          "end": 71.22
+        },
+        {
+          "offset": 3,
+          "start": 71.22,
+          "end": 71.4
+        },
+        {
+          "offset": 4,
+          "start": 71.4,
+          "end": 71.56
+        },
+        {
+          "offset": 5,
+          "start": 71.56,
+          "end": 71.78
+        },
+        {
+          "offset": 7,
+          "start": 71.78,
+          "end": 72.02
+        },
+        {
+          "offset": 8,
+          "start": 72.02,
+          "end": 72.14
+        },
+        {
+          "offset": 9,
+          "start": 72.14,
+          "end": 72.26
+        },
+        {
+          "offset": 10,
+          "start": 72.26,
+          "end": 72.4
+        },
+        {
+          "offset": 11,
+          "start": 72.4,
+          "end": 72.62
+        },
+        {
+          "offset": 12,
+          "start": 72.62,
+          "end": 72.8
+        },
+        {
+          "offset": 13,
+          "start": 72.8,
+          "end": 72.96
+        },
+        {
+          "offset": 14,
+          "start": 72.96,
+          "end": 73.16
+        },
+        {
+          "offset": 15,
+          "start": 73.16,
+          "end": 73.32
+        },
+        {
+          "offset": 16,
+          "start": 73.32,
+          "end": 73.5
+        },
+        {
+          "offset": 17,
+          "start": 73.5,
+          "end": 73.82
+        },
+        {
+          "offset": 19,
+          "start": 74.24,
+          "end": 74.6
+        },
+        {
+          "offset": 20,
+          "start": 74.6,
+          "end": 74.74
+        },
+        {
+          "offset": 21,
+          "start": 74.74,
+          "end": 74.88
+        },
+        {
+          "offset": 22,
+          "start": 74.88,
+          "end": 75.06
+        },
+        {
+          "offset": 23,
+          "start": 75.06,
+          "end": 75.3
+        },
+        {
+          "offset": 25,
+          "start": 75.3,
+          "end": 75.64
+        },
+        {
+          "offset": 26,
+          "start": 75.64,
+          "end": 75.76
+        },
+        {
+          "offset": 27,
+          "start": 75.76,
+          "end": 75.94
+        },
+        {
+          "offset": 28,
+          "start": 75.94,
+          "end": 76.16
+        },
+        {
+          "offset": 29,
+          "start": 76.16,
+          "end": 76.42
+        },
+        {
+          "offset": 31,
+          "start": 76.42,
+          "end": 76.76
+        },
+        {
+          "offset": 32,
+          "start": 76.76,
+          "end": 76.92
+        },
+        {
+          "offset": 33,
+          "start": 76.92,
+          "end": 77.1
+        },
+        {
+          "offset": 34,
+          "start": 77.1,
+          "end": 77.32
+        },
+        {
+          "offset": 35,
+          "start": 77.32,
+          "end": 77.52
+        },
+        {
+          "offset": 36,
+          "start": 77.52,
+          "end": 77.72
+        },
+        {
+          "offset": 37,
+          "start": 77.72,
+          "end": 77.88
+        },
+        {
+          "offset": 38,
+          "start": 77.88,
+          "end": 78.1
+        },
+        {
+          "offset": 39,
+          "start": 78.1,
+          "end": 78.28
+        },
+        {
+          "offset": 40,
+          "start": 78.28,
+          "end": 78.48
+        },
+        {
+          "offset": 41,
+          "start": 78.48,
+          "end": 78.68
+        },
+        {
+          "offset": 43,
+          "start": 78.68,
+          "end": 79.03
+        },
+        {
+          "offset": 44,
+          "start": 79.03,
+          "end": 79.38
+        },
+        {
+          "offset": 45,
+          "start": 79.38,
+          "end": 79.64
+        },
+        {
+          "offset": 46,
+          "start": 79.64,
+          "end": 79.8
+        },
+        {
+          "offset": 47,
+          "start": 79.8,
+          "end": 80.0
+        },
+        {
+          "offset": 48,
+          "start": 80.0,
+          "end": 80.16
+        },
+        {
+          "offset": 49,
+          "start": 80.16,
+          "end": 80.36
+        },
+        {
+          "offset": 50,
+          "start": 80.36,
+          "end": 80.6
+        },
+        {
+          "offset": 52,
+          "start": 80.6,
+          "end": 80.96
+        },
+        {
+          "offset": 53,
+          "start": 80.96,
+          "end": 81.16
+        },
+        {
+          "offset": 54,
+          "start": 81.16,
+          "end": 81.32
+        },
+        {
+          "offset": 55,
+          "start": 81.32,
+          "end": 81.48
+        },
+        {
+          "offset": 56,
+          "start": 81.48,
+          "end": 81.64
+        },
+        {
+          "offset": 57,
+          "start": 81.64,
+          "end": 81.88
+        },
+        {
+          "offset": 58,
+          "start": 81.88,
+          "end": 82.06
+        },
+        {
+          "offset": 59,
+          "start": 82.06,
+          "end": 82.28
+        }
+      ],
+      "speech_start": 70.52,
+      "speech_end": 82.28
+    },
+    {
+      "frame": "05",
+      "text": "主幹式開發，把共通判準、變更規劃和工作流程評估分開。先讀共通判準，再依規劃或審查任務，載入相關規則。",
+      "characters": [
+        {
+          "offset": 0,
+          "start": 82.72,
+          "end": 83.08
+        },
+        {
+          "offset": 1,
+          "start": 83.08,
+          "end": 83.22
+        },
+        {
+          "offset": 2,
+          "start": 83.22,
+          "end": 83.4
+        },
+        {
+          "offset": 3,
+          "start": 83.4,
+          "end": 83.56
+        },
+        {
+          "offset": 4,
+          "start": 83.56,
+          "end": 83.8
+        },
+        {
+          "offset": 6,
+          "start": 83.8,
+          "end": 84.32
+        },
+        {
+          "offset": 7,
+          "start": 84.32,
+          "end": 84.52
+        },
+        {
+          "offset": 8,
+          "start": 84.52,
+          "end": 84.66
+        },
+        {
+          "offset": 9,
+          "start": 84.66,
+          "end": 84.88
+        },
+        {
+          "offset": 10,
+          "start": 84.88,
+          "end": 85.12
+        },
+        {
+          "offset": 12,
+          "start": 85.12,
+          "end": 85.42
+        },
+        {
+          "offset": 13,
+          "start": 85.42,
+          "end": 85.58
+        },
+        {
+          "offset": 14,
+          "start": 85.58,
+          "end": 85.76
+        },
+        {
+          "offset": 15,
+          "start": 85.76,
+          "end": 85.98
+        },
+        {
+          "offset": 16,
+          "start": 85.98,
+          "end": 86.16
+        },
+        {
+          "offset": 17,
+          "start": 86.16,
+          "end": 86.33
+        },
+        {
+          "offset": 18,
+          "start": 86.33,
+          "end": 86.5
+        },
+        {
+          "offset": 19,
+          "start": 86.5,
+          "end": 86.66
+        },
+        {
+          "offset": 20,
+          "start": 86.66,
+          "end": 86.82
+        },
+        {
+          "offset": 21,
+          "start": 86.82,
+          "end": 87.0
+        },
+        {
+          "offset": 22,
+          "start": 87.0,
+          "end": 87.16
+        },
+        {
+          "offset": 23,
+          "start": 87.16,
+          "end": 87.32
+        },
+        {
+          "offset": 24,
+          "start": 87.32,
+          "end": 87.6
+        },
+        {
+          "offset": 26,
+          "start": 88.0,
+          "end": 88.36
+        },
+        {
+          "offset": 27,
+          "start": 88.36,
+          "end": 88.54
+        },
+        {
+          "offset": 28,
+          "start": 88.54,
+          "end": 88.68
+        },
+        {
+          "offset": 29,
+          "start": 88.68,
+          "end": 88.84
+        },
+        {
+          "offset": 30,
+          "start": 88.84,
+          "end": 89.04
+        },
+        {
+          "offset": 31,
+          "start": 89.04,
+          "end": 89.26
+        },
+        {
+          "offset": 33,
+          "start": 89.26,
+          "end": 89.56
+        },
+        {
+          "offset": 34,
+          "start": 89.56,
+          "end": 89.72
+        },
+        {
+          "offset": 35,
+          "start": 89.72,
+          "end": 89.92
+        },
+        {
+          "offset": 36,
+          "start": 89.92,
+          "end": 90.14
+        },
+        {
+          "offset": 37,
+          "start": 90.14,
+          "end": 90.32
+        },
+        {
+          "offset": 38,
+          "start": 90.32,
+          "end": 90.52
+        },
+        {
+          "offset": 39,
+          "start": 90.52,
+          "end": 90.7
+        },
+        {
+          "offset": 40,
+          "start": 90.7,
+          "end": 90.84
+        },
+        {
+          "offset": 41,
+          "start": 90.84,
+          "end": 91.04
+        },
+        {
+          "offset": 43,
+          "start": 91.04,
+          "end": 91.26
+        },
+        {
+          "offset": 44,
+          "start": 91.26,
+          "end": 91.4
+        },
+        {
+          "offset": 45,
+          "start": 91.4,
+          "end": 91.58
+        },
+        {
+          "offset": 46,
+          "start": 91.58,
+          "end": 91.76
+        },
+        {
+          "offset": 47,
+          "start": 91.76,
+          "end": 91.96
+        },
+        {
+          "offset": 48,
+          "start": 91.96,
+          "end": 92.18
+        }
+      ],
+      "speech_start": 82.72,
+      "speech_end": 92.18
+    },
+    {
+      "frame": "06",
+      "text": "雙鑽石，把模型判準、任務分流和需求分析分開。主檔負責帶流程，各類判斷回到各自的規則檔，避免全部混寫。",
+      "characters": [
+        {
+          "offset": 0,
+          "start": 92.74,
+          "end": 93.1
+        },
+        {
+          "offset": 1,
+          "start": 93.1,
+          "end": 93.3
+        },
+        {
+          "offset": 2,
+          "start": 93.3,
+          "end": 93.58
+        },
+        {
+          "offset": 4,
+          "start": 93.58,
+          "end": 94.2
+        },
+        {
+          "offset": 5,
+          "start": 94.2,
+          "end": 94.36
+        },
+        {
+          "offset": 6,
+          "start": 94.36,
+          "end": 94.54
+        },
+        {
+          "offset": 7,
+          "start": 94.54,
+          "end": 94.76
+        },
+        {
+          "offset": 8,
+          "start": 94.76,
+          "end": 95.0
+        },
+        {
+          "offset": 10,
+          "start": 95.0,
+          "end": 95.3
+        },
+        {
+          "offset": 11,
+          "start": 95.3,
+          "end": 95.46
+        },
+        {
+          "offset": 12,
+          "start": 95.46,
+          "end": 95.6
+        },
+        {
+          "offset": 13,
+          "start": 95.6,
+          "end": 95.8
+        },
+        {
+          "offset": 14,
+          "start": 95.8,
+          "end": 96.0
+        },
+        {
+          "offset": 15,
+          "start": 96.0,
+          "end": 96.2
+        },
+        {
+          "offset": 16,
+          "start": 96.2,
+          "end": 96.38
+        },
+        {
+          "offset": 17,
+          "start": 96.38,
+          "end": 96.56
+        },
+        {
+          "offset": 18,
+          "start": 96.56,
+          "end": 96.74
+        },
+        {
+          "offset": 19,
+          "start": 96.74,
+          "end": 96.9
+        },
+        {
+          "offset": 20,
+          "start": 96.9,
+          "end": 97.22
+        },
+        {
+          "offset": 22,
+          "start": 97.22,
+          "end": 97.88
+        },
+        {
+          "offset": 23,
+          "start": 97.88,
+          "end": 98.06
+        },
+        {
+          "offset": 24,
+          "start": 98.06,
+          "end": 98.22
+        },
+        {
+          "offset": 25,
+          "start": 98.22,
+          "end": 98.34
+        },
+        {
+          "offset": 26,
+          "start": 98.34,
+          "end": 98.46
+        },
+        {
+          "offset": 27,
+          "start": 98.46,
+          "end": 98.66
+        },
+        {
+          "offset": 28,
+          "start": 98.66,
+          "end": 98.9
+        },
+        {
+          "offset": 30,
+          "start": 98.9,
+          "end": 99.32
+        },
+        {
+          "offset": 31,
+          "start": 99.32,
+          "end": 99.46
+        },
+        {
+          "offset": 32,
+          "start": 99.46,
+          "end": 99.62
+        },
+        {
+          "offset": 33,
+          "start": 99.62,
+          "end": 99.8
+        },
+        {
+          "offset": 34,
+          "start": 99.8,
+          "end": 99.96
+        },
+        {
+          "offset": 35,
+          "start": 99.96,
+          "end": 100.1
+        },
+        {
+          "offset": 36,
+          "start": 100.1,
+          "end": 100.28
+        },
+        {
+          "offset": 37,
+          "start": 100.28,
+          "end": 100.44
+        },
+        {
+          "offset": 38,
+          "start": 100.44,
+          "end": 100.54
+        },
+        {
+          "offset": 39,
+          "start": 100.54,
+          "end": 100.7
+        },
+        {
+          "offset": 40,
+          "start": 100.7,
+          "end": 100.84
+        },
+        {
+          "offset": 41,
+          "start": 100.84,
+          "end": 101.04
+        },
+        {
+          "offset": 43,
+          "start": 101.04,
+          "end": 101.32
+        },
+        {
+          "offset": 44,
+          "start": 101.32,
+          "end": 101.46
+        },
+        {
+          "offset": 45,
+          "start": 101.46,
+          "end": 101.63
+        },
+        {
+          "offset": 46,
+          "start": 101.63,
+          "end": 101.8
+        },
+        {
+          "offset": 47,
+          "start": 101.8,
+          "end": 102.0
+        },
+        {
+          "offset": 48,
+          "start": 102.0,
+          "end": 102.76
+        }
+      ],
+      "speech_start": 92.74,
+      "speech_end": 102.76
+    },
+    {
+      "frame": "08",
+      "text": "三支技能保留各自的用途，共用同一套整理方法：技能工程安排工作，基礎技能分工完成，流程負責在對的時機使用規則。",
+      "characters": [
+        {
+          "offset": 0,
+          "start": 102.76,
+          "end": 103.12
+        },
+        {
+          "offset": 1,
+          "start": 103.12,
+          "end": 103.26
+        },
+        {
+          "offset": 2,
+          "start": 103.26,
+          "end": 103.42
+        },
+        {
+          "offset": 3,
+          "start": 103.42,
+          "end": 103.58
+        },
+        {
+          "offset": 4,
+          "start": 103.58,
+          "end": 103.78
+        },
+        {
+          "offset": 5,
+          "start": 103.78,
+          "end": 103.94
+        },
+        {
+          "offset": 6,
+          "start": 103.94,
+          "end": 104.1
+        },
+        {
+          "offset": 7,
+          "start": 104.1,
+          "end": 104.26
+        },
+        {
+          "offset": 8,
+          "start": 104.26,
+          "end": 104.38
+        },
+        {
+          "offset": 9,
+          "start": 104.38,
+          "end": 104.52
+        },
+        {
+          "offset": 10,
+          "start": 104.52,
+          "end": 104.8
+        },
+        {
+          "offset": 12,
+          "start": 104.8,
+          "end": 105.18
+        },
+        {
+          "offset": 13,
+          "start": 105.18,
+          "end": 105.36
+        },
+        {
+          "offset": 14,
+          "start": 105.36,
+          "end": 105.54
+        },
+        {
+          "offset": 15,
+          "start": 105.54,
+          "end": 105.68
+        },
+        {
+          "offset": 16,
+          "start": 105.68,
+          "end": 105.84
+        },
+        {
+          "offset": 17,
+          "start": 105.84,
+          "end": 105.98
+        },
+        {
+          "offset": 18,
+          "start": 105.98,
+          "end": 106.12
+        },
+        {
+          "offset": 19,
+          "start": 106.12,
+          "end": 106.26
+        },
+        {
+          "offset": 20,
+          "start": 106.26,
+          "end": 106.58
+        },
+        {
+          "offset": 22,
+          "start": 106.58,
+          "end": 107.2
+        },
+        {
+          "offset": 23,
+          "start": 107.2,
+          "end": 107.34
+        },
+        {
+          "offset": 24,
+          "start": 107.34,
+          "end": 107.5
+        },
+        {
+          "offset": 25,
+          "start": 107.5,
+          "end": 107.7
+        },
+        {
+          "offset": 26,
+          "start": 107.7,
+          "end": 107.86
+        },
+        {
+          "offset": 27,
+          "start": 107.86,
+          "end": 108.0
+        },
+        {
+          "offset": 28,
+          "start": 108.0,
+          "end": 108.19
+        },
+        {
+          "offset": 29,
+          "start": 108.19,
+          "end": 108.38
+        },
+        {
+          "offset": 31,
+          "start": 108.38,
+          "end": 108.84
+        },
+        {
+          "offset": 32,
+          "start": 108.84,
+          "end": 109.02
+        },
+        {
+          "offset": 33,
+          "start": 109.02,
+          "end": 109.14
+        },
+        {
+          "offset": 34,
+          "start": 109.14,
+          "end": 109.32
+        },
+        {
+          "offset": 35,
+          "start": 109.32,
+          "end": 109.5
+        },
+        {
+          "offset": 36,
+          "start": 109.5,
+          "end": 109.66
+        },
+        {
+          "offset": 37,
+          "start": 109.66,
+          "end": 109.86
+        },
+        {
+          "offset": 38,
+          "start": 109.86,
+          "end": 110.06
+        },
+        {
+          "offset": 40,
+          "start": 110.06,
+          "end": 110.6
+        },
+        {
+          "offset": 41,
+          "start": 110.6,
+          "end": 110.82
+        },
+        {
+          "offset": 42,
+          "start": 110.82,
+          "end": 111.0
+        },
+        {
+          "offset": 43,
+          "start": 111.0,
+          "end": 111.12
+        },
+        {
+          "offset": 44,
+          "start": 111.12,
+          "end": 111.3
+        },
+        {
+          "offset": 45,
+          "start": 111.3,
+          "end": 111.48
+        },
+        {
+          "offset": 46,
+          "start": 111.48,
+          "end": 111.62
+        },
+        {
+          "offset": 47,
+          "start": 111.62,
+          "end": 111.8
+        },
+        {
+          "offset": 48,
+          "start": 111.8,
+          "end": 111.94
+        },
+        {
+          "offset": 49,
+          "start": 111.94,
+          "end": 112.18
+        },
+        {
+          "offset": 50,
+          "start": 112.18,
+          "end": 112.36
+        },
+        {
+          "offset": 51,
+          "start": 112.36,
+          "end": 112.5
+        },
+        {
+          "offset": 52,
+          "start": 112.5,
+          "end": 112.72
+        }
+      ],
+      "speech_start": 102.76,
+      "speech_end": 112.72
+    }
+  ],
+  "audio_sha256": "90be7b63843854a480625dd6db6b8c89653acd6ecec9e66a10055df98c356b1a",
+  "content_sha256": "8104467224d7404bce6cdb8d2571c8086ca983a9f083bc4a5567118b30b2b85f"
+}
