@@ -5,5 +5,11 @@ description = "讀取外部素材，製作簡報式說明影片"
 requires-python = ">=3.11"
 dependencies = []
 
+[project.optional-dependencies]
+alignment = [
+    "mlx-whisper==0.4.3",
+    "opencc-python-reimplemented>=0.1.7",
+]
+
 [tool.uv]
 package = false

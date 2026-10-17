@@ -65,13 +65,23 @@ def load(args):
 def check(root, materials, content_path, data, out, config):
     if sys.platform != "darwin":
         raise RuntimeError("目前的臨時語音與 SVG 轉圖流程支援 macOS")
-    missing = [tool for tool in ["ffmpeg", "ffprobe", "say", "qlmanage"]
+    missing = [tool for tool in (["ffmpeg", "ffprobe", "qlmanage"] + ([] if config.get("audio") else ["say"]))
                if not shutil.which(tool)]
     if missing:
         raise RuntimeError("缺少工具：" + ", ".join(missing))
-    voices = subprocess.check_output(["say", "-v", "?"], text=True)
-    if not any(line.split()[0] == data["voice"] for line in voices.splitlines() if line):
-        raise RuntimeError(f"macOS 尚未安裝語音 {data['voice']}")
+    if config.get("audio"):
+        audio, alignment_path = materials / config["audio"], materials / config["alignment"]
+        alignment = json.loads(alignment_path.read_text())
+        if alignment["audio_sha256"] != hashlib.sha256(audio.read_bytes()).hexdigest():
+            raise ValueError("音檔已改動，請重新對齊")
+        if alignment["content_sha256"] != hashlib.sha256(content_path.read_bytes()).hexdigest():
+            raise ValueError("製作內容已改動，請重新對齊")
+        if [r["text"] for r in alignment["scenes"]] != [r["text"] for r in data["scenes"]]:
+            raise ValueError("對齊資料與旁白不一致")
+    else:
+        voices = subprocess.check_output(["say", "-v", "?"], text=True)
+        if not any(line.split()[0] == data["voice"] for line in voices.splitlines() if line):
+            raise RuntimeError(f"macOS 尚未安裝語音 {data['voice']}")
     for scene in data["scenes"]:
         if not scene["text"].strip():
             raise ValueError("旁白不可為空")
@@ -86,6 +96,43 @@ def check(root, materials, content_path, data, out, config):
         if positions != sorted(positions):
             raise ValueError("畫面強調順序與旁白不一致")
     print(f"環境與素材檢查通過：{content_path}", flush=True)
+
+
+def recorded_timeline(data, materials, config):
+    alignment = json.loads((materials / config["alignment"]).read_text())
+    fps = data["fps"]
+    length = math.ceil(duration(materials / config["audio"])*fps)/fps
+    starts = [0.0]
+    for previous, current in zip(alignment["scenes"], alignment["scenes"][1:]):
+        # 新畫面稍微領先發聲，但不提早切掉上一段尚在發聲的內容。
+        desired = current["speech_start"]-.06
+        if desired < previous["speech_end"]:
+            desired = (previous["speech_end"]+current["speech_start"])/2
+        starts.append(max(0, round(desired*fps)/fps))
+    ends = starts[1:] + [length]
+    rows = []
+    for scene, aligned, start, end in zip(data["scenes"], alignment["scenes"], starts, ends):
+        if end <= start:
+            raise ValueError("場景時間不遞增，請檢查對齊資料")
+        chars = aligned["characters"]
+        if not all(start-.08 <= c["start"] <= c["end"] <= end+.08 for c in chars):
+            raise ValueError(f"對齊時間超出場景：{scene['title']}")
+        rows.append({**scene, "start": round(start,3), "end": round(end,3),
+                     "voice_seconds": round(end-start,3), "characters": chars,
+                     "last_voiced_end": aligned["speech_end"],
+                     "trailing_silence_seconds": round(max(0,end-aligned["speech_end"]),3),
+                     "artificial_padding_seconds": 0})
+    if not data["min_seconds"] <= length <= data["max_seconds"]:
+        raise ValueError(f"正式配音長度 {length:.2f} 秒超出設定範圍")
+    return rows
+
+
+def text_time(row, offset, end=False):
+    chars = row.get("characters")
+    if chars:
+        selected = [c for c in chars if c["offset"] >= offset]
+        return selected[0]["end" if end else "start"] if selected else row["end"]
+    return row["start"] + row["voice_seconds"] * offset / len(row["text"])
 
 
 def audio_timeline(data, work):
@@ -141,11 +188,16 @@ def captions(rows, out):
                 buf += item
             if buf:
                 chunks.append(buf)
-        total, t = sum(map(len, chunks)), row["start"]
+        offset = 0
         for chunk in chunks:
-            end = t + row["voice_seconds"] * len(chunk) / total
-            cues.append({"start": round(t, 3), "end": round(end, 3), "text": chunk})
-            t = end
+            next_offset = offset + len(chunk)
+            start = max(row["start"], text_time(row, offset)-.04) if row.get("characters") else text_time(row, offset)
+            end = (min(row["end"], text_time(row, next_offset)-.04)
+                   if next_offset < len(row["text"]) else row["end"])
+            if end <= start:
+                raise ValueError("字幕時間沒有前進，請檢查對齊資料")
+            cues.append({"start": round(start, 3), "end": round(end, 3), "text": chunk})
+            offset = next_offset
     (out / "字幕.vtt").write_text("WEBVTT\n\n" + "\n\n".join(
         f"{stamp(c['start'])} --> {stamp(c['end'])}\n{c['text']}" for c in cues) + "\n")
     (out / "字幕.srt").write_text("\n\n".join(
@@ -159,8 +211,7 @@ def focus_timeline(data, rows):
     for group in data.get("focus", []):
         row = rows[group["scene"]]
         entries = group["entries"]
-        times = [round(row["start"] + row["voice_seconds"] * row["text"].index(phrase)
-                       / len(row["text"]), 3) for phrase, _ in entries]
+        times = [round(max(row["start"], text_time(row, row["text"].index(phrase))-.04), 3) for phrase, _ in entries]
         for i, (_, box) in enumerate(entries):
             cues.append({"start": times[i], "end": times[i+1] if i+1 < len(times)
                          else row["end"], "box": box})
@@ -183,7 +234,7 @@ def frames(materials, config, rows, out, work):
                "-frames:v", "1", out / "靜幀" / f"{frame}.png")
 
 
-def documents(root, data, rows, out):
+def documents(root, data, rows, out, config):
     evidence = ["# 影片證據對照\n"]
     for claim in data.get("claims", []):
         path = root / claim["path"]
@@ -199,19 +250,25 @@ def documents(root, data, rows, out):
         md += [f"## {r['start']:.2f}–{r['end']:.2f} 秒：{r['title']}\n",
                r["text"] + "\n", "畫面：" + r.get("visual", "") + "\n",
                f"[畫面](靜幀/{r['frame']}.png)\n"]
-    md.append("字幕與重點框依段內文字比例估時，尚未逐字校時；旁白使用 macOS 臨時系統語音。\n")
+    md.append(("字幕與重點框依語音詞時間對齊；旁白使用 ElevenLabs 正式音檔，仍待聽看確認。\n"
+               if config.get("audio") else "字幕與重點框依段內文字比例估時，尚未逐字校時；旁白使用 macOS 臨時系統語音。\n"))
     (out / "腳本與分鏡.md").write_text("\n".join(md))
 
 
-def export_video(data, rows, focus, out, work):
+def export_video(data, rows, focus, out, work, materials, config):
     count = len(rows)
-    args = []
-    for i in range(count):
-        args += ["-i", work / f"voice-{i}.aiff"]
-    filters = [f"[{i}:a]atrim=duration={r['voice_seconds']},asetpts=PTS-STARTPTS[a{i}]" for i, r in enumerate(rows)]
-    filters.append("".join(f"[a{i}]" for i in range(count)) + f"concat=n={count}:v=0:a=1[a]")
-    ffmpeg(*args, "-filter_complex", ";".join(filters), "-map", "[a]", "-c:a", "libmp3lame",
-           "-b:a", "96k", out / "臨時旁白.mp3")
+    if config.get("audio"):
+        audio = out / "正式旁白.m4a"
+        ffmpeg("-i", materials / config["audio"], "-vn", "-c:a", "aac", "-b:a", "192k", audio)
+    else:
+        audio = out / "臨時旁白.mp3"
+        args = []
+        for i in range(count):
+            args += ["-i", work / f"voice-{i}.aiff"]
+        filters = [f"[{i}:a]atrim=duration={r['voice_seconds']},asetpts=PTS-STARTPTS[a{i}]" for i, r in enumerate(rows)]
+        filters.append("".join(f"[a{i}]" for i in range(count)) + f"concat=n={count}:v=0:a=1[a]")
+        ffmpeg(*args, "-filter_complex", ";".join(filters), "-map", "[a]", "-c:a", "libmp3lame",
+               "-b:a", "96k", audio)
 
     def encode(item):
         i, row = item
@@ -228,13 +285,13 @@ def export_video(data, rows, focus, out, work):
         list(pool.map(encode, enumerate(rows)))
     # 相對檔名避免跨目錄複製後 concat 清單仍指向舊位置。
     (work / "concat.txt").write_text("".join(f"file 'part{i}.mp4'\n" for i in range(count)))
-    ffmpeg("-f", "concat", "-safe", "0", "-i", work / "concat.txt", "-i", out / "臨時旁白.mp3",
+    ffmpeg("-f", "concat", "-safe", "0", "-i", work / "concat.txt", "-i", audio,
            "-i", out / "字幕.srt", "-map", "0:v", "-map", "1:a", "-map", "2:s", "-c:v", "copy",
-           "-c:a", "aac", "-b:a", "96k", "-c:s", "mov_text", "-metadata:s:s:0", "language=zho",
+           "-c:a", "aac", "-b:a", "192k", "-c:s", "mov_text", "-metadata:s:s:0", "language=zho",
            "-disposition:s:0", "default", "-t", rows[-1]["end"], "-movflags", "+faststart", out / "計時預覽.mp4")
 
 
-def preview(data, rows, cues, focus, out):
+def preview(data, rows, cues, focus, out, config):
     page = (HOME / "templates/preview.html").read_text()
     gallery = "".join(f'<figure><a href="靜幀/{r["frame"]}.png"><img src="靜幀/{r["frame"]}.png" alt="{html.escape(r["title"])}"></a><figcaption>{html.escape(r["title"])}</figcaption></figure>'
                       for i, r in enumerate(rows) if r["frame"] not in {v["frame"] for v in rows[:i]})
@@ -245,7 +302,12 @@ def preview(data, rows, cues, focus, out):
                     "__CUES__": json.dumps(cues, ensure_ascii=False), "__FOCUS__": json.dumps(focus)}
     for key, value in replacements.items():
         page = page.replace(key, value)
-    page = page.replace('src="臨時旁白.mp3"', 'src="data:audio/mpeg;base64,' + base64.b64encode((out / "臨時旁白.mp3").read_bytes()).decode() + '"')
+    audio = out / ("正式旁白.m4a" if config.get("audio") else "臨時旁白.mp3")
+    mime = "audio/mp4" if config.get("audio") else "audio/mpeg"
+    page = page.replace('src="臨時旁白.mp3"', f'src="data:{mime};base64,' + base64.b64encode(audio.read_bytes()).decode() + '"')
+    if config.get("audio"):
+        page = page.replace("靜幀＋臨時系統語音", "ElevenLabs 正式配音・對齊預覽")
+        page = page.replace("聲音為本機 Meijia 臨時語音；字幕為段內估時稿。", "使用正式配音；字幕與重點框依語音詞時間對齊，待聽看確認。")
     (out / "預覽.html").write_text(page)
 
 
@@ -254,14 +316,16 @@ def render(root, materials, content_path, data, out, config):
     work = out / "work"
     work.mkdir(parents=True, exist_ok=True)
     inputs = [content_path] + sorted((materials / config["slides"]).glob("*.svg"))
+    if config.get("audio"):
+        inputs += [materials / config["audio"], materials / config["alignment"]]
     before = {str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in inputs}
-    rows = audio_timeline(data, work)
+    rows = recorded_timeline(data, materials, config) if config.get("audio") else audio_timeline(data, work)
     (out / "時間軸.json").write_text(json.dumps(rows, ensure_ascii=False, indent=2) + "\n")
     cues, focus = captions(rows, out), focus_timeline(data, rows)
     frames(materials, config, rows, out, work)
-    documents(root, data, rows, out)
-    export_video(data, rows, focus, out, work)
-    preview(data, rows, cues, focus, out)
+    documents(root, data, rows, out, config)
+    export_video(data, rows, focus, out, work, materials, config)
+    preview(data, rows, cues, focus, out, config)
     length = duration(out / "計時預覽.mp4")
     events = silence(out / "計時預覽.mp4", .5)
     if not data["min_seconds"] <= length <= data["max_seconds"]:
@@ -271,7 +335,9 @@ def render(root, materials, content_path, data, out, config):
     report = {"duration_seconds": length, "added_padding_seconds": 0,
               "silences_at_least_half_second": events,
               "maximum_scene_trailing_silence_seconds": max(r["trailing_silence_seconds"] for r in rows),
-              "source_files_unchanged": True, "subtitle_alignment": "estimated"}
+              "source_files_unchanged": True,
+              "audio_source": config.get("audio", "macOS say"),
+              "subtitle_alignment": "whisper-word-timestamps" if config.get("audio") else "estimated"}
     (out / "節奏檢查.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
     print(f"輸出完成：{out / '計時預覽.mp4'}（{length:.2f} 秒）", flush=True)
 
