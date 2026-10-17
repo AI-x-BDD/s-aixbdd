@@ -276,17 +276,18 @@ def documents(root, data, rows, out, config):
     evidence += ["\n| 時間 | 場景 | 來源 |", "| --- | --- | --- |"]
     evidence += [f"| {r['start']:.2f}–{r['end']:.2f} 秒 | {r['title']} | {r.get('evidence', '')} |" for r in rows]
     (out / "證據對照.md").write_text("\n".join(evidence) + "\n")
+    visual_descriptions = (json.loads((root / config["materials"] / config["visuals"]).read_text()).get("descriptions", {}) if config.get("visuals") else {})
     md = [f"# {data['title']} 腳本與分鏡\n", f"總長 {rows[-1]['end']:.2f} 秒。\n"]
     for r in rows:
         md += [f"## {r['start']:.2f}–{r['end']:.2f} 秒：{r['title']}\n",
-               r["text"] + "\n", "畫面：" + r.get("visual", "") + "\n",
+               r["text"] + "\n", "畫面：" + visual_descriptions.get(r["frame"], r.get("visual", "")) + "\n",
                f"[畫面](../中間產物/靜幀/{r['frame']}.png)\n"]
-    md.append(("字幕與重點框依語音詞時間對齊；旁白使用 ElevenLabs 正式音檔，仍待聽看確認。\n"
+    md.append(("字幕與視覺焦點依語音詞時間對齊；旁白使用 ElevenLabs 正式音檔，仍待聽看確認。\n"
                if config.get("audio") else "字幕與重點框依段內文字比例估時，尚未逐字校時；旁白使用 macOS 臨時系統語音。\n"))
     (out / "腳本與分鏡.md").write_text("\n".join(md))
 
 
-def export_video(data, rows, focus, out, work, materials, config):
+def export_video(data, rows, focus, out, work, materials, config, visual_states=None):
     count = len(rows)
     if config.get("audio"):
         audio = work / "正式旁白.m4a"
@@ -303,6 +304,10 @@ def export_video(data, rows, focus, out, work, materials, config):
 
     def encode(item):
         i, row = item
+        if visual_states is not None:
+            import visual_motion
+            visual_motion.encode(sys.modules[__name__], data, row, visual_states[0][i], visual_states[1], work, work / f"part{i}.mp4")
+            return
         boxes = []
         for f in focus:
             if f["start"] >= row["start"] and f["end"] <= row["end"]:
@@ -323,6 +328,17 @@ def export_video(data, rows, focus, out, work, materials, config):
 
 
 def preview(data, rows, cues, focus, out, config):
+    if config.get("visuals"):
+        page = (HOME / "templates/preview_video.html").read_text()
+        movie = out.parent / "輸出/影片.mp4"
+        revision = hashlib.sha256(movie.read_bytes() + page.encode()).hexdigest()[:12]
+        gallery = "".join(f'<figure><img src="../中間產物/靜幀/{r["frame"]}.png?v={revision}" alt="{html.escape(r["title"])}"><figcaption>{i+1}. {html.escape(r["title"])}</figcaption></figure>' for i,r in enumerate(rows))
+        values = {"__TITLE__": html.escape(data['title']), "__DURATION__":str(round(rows[-1]['end'])), "__TOTAL__":str(rows[-1]['end']), "__REV__":revision,
+                  "__ROWS__":json.dumps(rows,ensure_ascii=False), "__CUES__":json.dumps(cues,ensure_ascii=False), "__GALLERY__":gallery}
+        for key,value in values.items():
+            page = page.replace(key,value)
+        (out/'預覽.html').write_text(page)
+        return
     page = (HOME / "templates/preview.html").read_text()
     gallery = "".join(f'<figure><a href="靜幀/{r["frame"]}.png"><img src="靜幀/{r["frame"]}.png" alt="{html.escape(r["title"])}"></a><figcaption>{html.escape(r["title"])}</figcaption></figure>'
                       for i, r in enumerate(rows) if r["frame"] not in {v["frame"] for v in rows[:i]})
@@ -357,13 +373,19 @@ def render(root, materials, content_path, data, out, config):
         if config.get("audio_recipe"):
             recipe = json.loads((materials / config["audio_recipe"]).read_text())
             inputs += [materials / config["audio_recipe"], materials / recipe["original"], materials / recipe["replacement"]]
+    if config.get("visuals"):
+        inputs.append(materials / config["visuals"])
     before = {str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in inputs}
     rows = recorded_timeline(data, materials, config) if config.get("audio") else audio_timeline(data, work)
     (review / "時間軸.json").write_text(json.dumps(rows, ensure_ascii=False, indent=2) + "\n")
     cues, focus = captions(rows, export), focus_timeline(data, rows)
     frames(materials, config, rows, work, raster)
     documents(root, data, rows, review, config)
-    export_video(data, rows, focus, export, work, materials, config)
+    visual_states = None
+    if config.get("visuals"):
+        import visual_motion
+        visual_states = visual_motion.prepare(sys.modules[__name__], materials, config, data, rows, work)
+    export_video(data, rows, focus, export, work, materials, config, visual_states)
     preview(data, rows, cues, focus, review, config)
     length = duration(export / "影片.mp4")
     events = silence(export / "影片.mp4", .5)
@@ -376,7 +398,9 @@ def render(root, materials, content_path, data, out, config):
               "maximum_scene_trailing_silence_seconds": max(r["trailing_silence_seconds"] for r in rows),
               "source_files_unchanged": True,
               "audio_source": config.get("audio", "macOS say"),
-              "subtitle_alignment": "whisper-word-timestamps" if config.get("audio") else "estimated"}
+              "subtitle_alignment": "whisper-word-timestamps" if config.get("audio") else "estimated",
+              "visual_renderer": "semantic-svg-states" if config.get("visuals") else "legacy-focus-box",
+              "preview_matches_export": bool(config.get("visuals"))}
     (review / "節奏檢查.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
     print(f"輸出完成：{export / '影片.mp4'}（{length:.2f} 秒）", flush=True)
 

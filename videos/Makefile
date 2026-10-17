@@ -18,3 +18,7 @@ render:
 	$(RUN) render
 preview:
 	$(RUN) serve --port $(PORT)
+
+.PHONY: visual-samples
+visual-samples:
+	uv run --frozen python scripts/visual_proposal.py --config "$(PROJECT)" $(if $(SOURCE_ROOT),--source-root "$(SOURCE_ROOT)")

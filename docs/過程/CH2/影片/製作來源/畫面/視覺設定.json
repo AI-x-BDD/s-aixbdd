@@ -1,0 +1,242 @@
+{
+  "transition_seconds": 0.16,
+  "inactive_opacity": 0.58,
+  "frames": {
+    "00": [],
+    "01": [
+      {
+        "phrase": "Skill Engineering",
+        "active": [
+          "engineering",
+          "input"
+        ]
+      },
+      {
+        "phrase": "分派給對應的基礎技能",
+        "active": [
+          "engineering",
+          "primitives"
+        ]
+      },
+      {
+        "phrase": "接下來",
+        "active": [
+          "engineering",
+          "primitives",
+          "output"
+        ]
+      }
+    ],
+    "02": [
+      {
+        "phrase": "先看兩種分工",
+        "primitive": "overview"
+      },
+      {
+        "phrase": "一組是格式把關",
+        "primitive": "forms"
+      },
+      {
+        "phrase": "用途說明、執行流程",
+        "primitive": 0
+      },
+      {
+        "phrase": "執行流程、規則",
+        "primitive": 1
+      },
+      {
+        "phrase": "規則、樣板",
+        "primitive": 2
+      },
+      {
+        "phrase": "樣板和腳本",
+        "primitive": 3
+      },
+      {
+        "phrase": "腳本。用途",
+        "primitive": 4
+      },
+      {
+        "phrase": "用途說明讓",
+        "primitive": 0
+      },
+      {
+        "phrase": "SOP 寫清楚",
+        "primitive": 1
+      },
+      {
+        "phrase": "規則附",
+        "primitive": 2
+      },
+      {
+        "phrase": "樣板提供",
+        "primitive": 3
+      },
+      {
+        "phrase": "腳本則",
+        "primitive": 4
+      },
+      {
+        "phrase": "另一組是部位抽取",
+        "primitive": "derivers"
+      },
+      {
+        "phrase": "三支技能把規則",
+        "primitive": "derive-rule"
+      },
+      {
+        "phrase": "樣板或腳本",
+        "primitive": "derive-template"
+      },
+      {
+        "phrase": "腳本從流程",
+        "primitive": "derive-script"
+      }
+    ],
+    "03": [
+      {
+        "phrase": "收到優化需求",
+        "active": [
+          "s0"
+        ]
+      },
+      {
+        "phrase": "再找出差異",
+        "active": [
+          "s1"
+        ]
+      },
+      {
+        "phrase": "根因和修改計畫",
+        "active": [
+          "s2"
+        ]
+      },
+      {
+        "phrase": "接著整理",
+        "active": [
+          "s3"
+        ]
+      }
+    ],
+    "07": [
+      {
+        "phrase": "例如",
+        "active": [
+          "s0"
+        ]
+      },
+      {
+        "phrase": "它請格式技能",
+        "active": [
+          "s1"
+        ]
+      },
+      {
+        "phrase": "再更新流程",
+        "active": [
+          "s2"
+        ]
+      },
+      {
+        "phrase": "需要固定輸出",
+        "active": [
+          "branches"
+        ]
+      },
+      {
+        "phrase": "既有檔案只改內容",
+        "active": [
+          "existing"
+        ]
+      }
+    ],
+    "04": [
+      {
+        "phrase": "這次三支技能",
+        "active": [
+          "before"
+        ]
+      },
+      {
+        "phrase": "現在拆成",
+        "active": [
+          "after"
+        ]
+      }
+    ],
+    "05": [
+      {
+        "phrase": "主幹式開發",
+        "active": [
+          "after"
+        ]
+      },
+      {
+        "phrase": "先讀共通判準",
+        "active": [
+          "r0"
+        ]
+      },
+      {
+        "phrase": "再依規劃",
+        "active": [
+          "r0",
+          "task"
+        ]
+      }
+    ],
+    "06": [
+      {
+        "phrase": "雙鑽石",
+        "active": [
+          "after"
+        ]
+      },
+      {
+        "phrase": "主檔負責帶流程",
+        "active": [
+          "sop"
+        ]
+      },
+      {
+        "phrase": "各類判斷",
+        "active": [
+          "rules"
+        ]
+      }
+    ],
+    "08": [
+      {
+        "phrase": "技能工程安排工作",
+        "active": [
+          "flow0"
+        ]
+      },
+      {
+        "phrase": "基礎技能分工完成",
+        "active": [
+          "flow1"
+        ]
+      },
+      {
+        "phrase": "流程負責",
+        "active": [
+          "flow2",
+          "results"
+        ]
+      }
+    ]
+  },
+  "descriptions": {
+    "00": "深色開場，大字問題搭配混寫主檔的文件圖示。",
+    "01": "建立／優化需求進入 Engineering，再沿路徑委派 Form、Deriver 並產出 Skill；依旁白調整主從。",
+    "02": "先聚焦上方 Form×5／Deriver×3 分組標題，再依旁白列舉與詳細解說逐項移動淡藍光區；對應部位、Deriver 箭頭及資料夾同步亮起。",
+    "03": "同一淡藍光區依旁白沿預期→根因→工程藍圖→SOP 前進；當前標題轉深藍，其餘保留可讀脈絡，沒有固定 SOP 背景。",
+    "07": "SOP Step → derive-rule／form-rule 產生規則 → form-sop 接回流程；按需分支及直接修改 Form 分別聚焦。",
+    "04": "左側混寫主檔，右側 SOP 接三份獨立規則文件；旁白從改寫前切換至改寫後。",
+    "05": "混寫主檔對照 SOP → 共通 TBD 判準 → 規劃／評估兩分支；共通判準先亮起，再顯示任務分流。",
+    "06": "混寫主檔對照 SOP 與三份獨立規則；先強調流程，再強調三類判斷。",
+    "08": "Engineering → Form＋Deriver → SOP 的工作路徑，連至三支各自用途的 Skill 成果，依結語依序提亮。"
+  }
+}
