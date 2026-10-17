@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-17",
+  "direction": "b",
+  "name": "深色系統路由",
+  "user_quote": "黑色背景的是哪一個選項啊？選這個",
+  "palette": {
+    "bg": "#201D31",
+    "surface": "#373249",
+    "ink": "#F4F0FF",
+    "muted": "#C4BDD5",
+    "accent": "#D8EF8A",
+    "on_accent": "#201D31",
+    "line": "#847B97"
+  },
+  "profile": "projects/ch2-workflow-test/project.toml",
+  "output": "build/ch2-workflow-test/正式版",
+  "subtitle_mode": "burned",
+  "subtitle_instruction": "字幕用燒錄的做法，先這樣做，之後要改再說",
+  "source_sha256": {
+    "圖稿/00.svg": "e2c45190f905a8ea95457be9aef0a54638062846d298aec7244e203d574bd5c8",
+    "圖稿/01.svg": "1882206ec0fc483bc4d8e2fab28703d8831b74d008c5b19cb1e97ecdc95c807d",
+    "圖稿/02.svg": "619c0d663b0fe3f6aaa79c84afce5ff987c616c5c2718399855afe7d8d0831e5",
+    "圖稿/03.svg": "49049eef28031779f3871c913a4030094b93dbb3974d981ee65354ab874afa93",
+    "圖稿/04.svg": "8fb75010b6b8b0b84bf47a4be26b415dac8e75ed5563c5a074edf1c89088ad13",
+    "圖稿/05.svg": "0565711aeb8135e85de2b0dc22948bd3c3edad1e56944be022351ca1bf6e4b9c",
+    "圖稿/06.svg": "fe5115f3d230e3871b182002ee238b44e01d9f8cf00ca8f07827690bcccdabf1",
+    "圖稿/07.svg": "81db55a47d1f0037604781d46424542690681984f74a4ee2ecd9d4ef10357120",
+    "圖稿/08.svg": "54d662e50f98263f48fe4c385a100cece483e0a05461bb2e3529027acc7a31c2",
+    "視覺設定.json": "29334dd00e000f6e1a07eca3baa7db06759bcfee59861981523b9ac5fb8d1800"
+  }
+}

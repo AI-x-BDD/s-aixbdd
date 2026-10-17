@@ -1,0 +1,10 @@
+# 所有來源路徑相對 materials；工具與建置環境均在 videos/。
+source_root = ".."
+materials = "docs/過程/CH2/影片"
+content = "製作來源/內容/製作內容.json"
+slides = "製作來源/畫面/設計提案/workflow-test-b/圖稿"
+output = "build/ch2-workflow-test/提案/b"
+audio = "完整-03修正版.m4a"
+audio_recipe = "製作來源/配音/剪接/第三段替換設定.json"
+alignment = "製作來源/配音/對齊/對齊.json"
+visuals = "製作來源/畫面/設計提案/workflow-test-b/視覺設定.json"

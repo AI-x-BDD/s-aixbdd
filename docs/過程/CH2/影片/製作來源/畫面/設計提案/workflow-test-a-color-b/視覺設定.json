@@ -1,0 +1,254 @@
+{
+  "transition_seconds": 0.2,
+  "inactive_opacity": 0.85,
+  "frames": {
+    "00": [],
+    "01": [
+      {
+        "phrase": "Skill Engineering",
+        "active": [
+          "eng"
+        ]
+      },
+      {
+        "phrase": "分派給對應的基礎技能",
+        "active": [
+          "eng",
+          "parts"
+        ]
+      },
+      {
+        "phrase": "接下來",
+        "active": [
+          "out"
+        ]
+      }
+    ],
+    "02": [
+      {
+        "phrase": "先看兩種分工",
+        "active": [
+          "overview"
+        ]
+      },
+      {
+        "phrase": "一組是格式把關",
+        "active": [
+          "forms-head"
+        ]
+      },
+      {
+        "phrase": "用途說明讓",
+        "active": [
+          "forms-head",
+          "p0"
+        ]
+      },
+      {
+        "phrase": "SOP 寫清楚",
+        "active": [
+          "forms-head",
+          "p1"
+        ]
+      },
+      {
+        "phrase": "規則附",
+        "active": [
+          "forms-head",
+          "p2"
+        ]
+      },
+      {
+        "phrase": "樣板提供",
+        "active": [
+          "forms-head",
+          "p3"
+        ]
+      },
+      {
+        "phrase": "腳本則",
+        "active": [
+          "forms-head",
+          "p4"
+        ]
+      },
+      {
+        "phrase": "另一組是部位抽取",
+        "active": [
+          "derive"
+        ]
+      }
+    ],
+    "03": [
+      {
+        "phrase": "收到優化需求",
+        "active": [
+          "v0",
+          "s0"
+        ]
+      },
+      {
+        "phrase": "再找出差異",
+        "active": [
+          "v0",
+          "v1",
+          "s1"
+        ]
+      },
+      {
+        "phrase": "根因和修改計畫",
+        "active": [
+          "v0",
+          "v1",
+          "v2",
+          "s2"
+        ]
+      },
+      {
+        "phrase": "接著整理",
+        "active": [
+          "v0",
+          "v1",
+          "v2",
+          "v3",
+          "s3"
+        ]
+      }
+    ],
+    "07": [
+      {
+        "phrase": "例如",
+        "active": [
+          "step",
+          "extract"
+        ]
+      },
+      {
+        "phrase": "它請格式技能",
+        "active": [
+          "step",
+          "extract",
+          "write"
+        ]
+      },
+      {
+        "phrase": "再更新流程",
+        "active": [
+          "step",
+          "write",
+          "back"
+        ]
+      },
+      {
+        "phrase": "需要固定輸出",
+        "active": [
+          "step",
+          "write",
+          "back",
+          "branches"
+        ]
+      },
+      {
+        "phrase": "既有檔案只改內容",
+        "active": [
+          "step",
+          "write",
+          "back",
+          "existing"
+        ]
+      }
+    ],
+    "04": [
+      {
+        "phrase": "這次三支技能",
+        "active": [
+          "before"
+        ]
+      },
+      {
+        "phrase": "現在拆成",
+        "active": [
+          "after"
+        ]
+      }
+    ],
+    "05": [
+      {
+        "phrase": "主幹式開發",
+        "active": [
+          "common"
+        ]
+      },
+      {
+        "phrase": "先讀共通判準",
+        "active": [
+          "common"
+        ]
+      },
+      {
+        "phrase": "再依規劃",
+        "active": [
+          "common",
+          "task"
+        ]
+      }
+    ],
+    "06": [
+      {
+        "phrase": "雙鑽石",
+        "active": [
+          "sop"
+        ]
+      },
+      {
+        "phrase": "主檔負責帶流程",
+        "active": [
+          "sop"
+        ]
+      },
+      {
+        "phrase": "各類判斷",
+        "active": [
+          "rules"
+        ]
+      }
+    ],
+    "08": [
+      {
+        "phrase": "三支技能保留",
+        "active": [
+          "v0",
+          "v1",
+          "v2"
+        ]
+      },
+      {
+        "phrase": "技能工程安排工作",
+        "active": [
+          "v0",
+          "v1",
+          "v2",
+          "flow0"
+        ]
+      },
+      {
+        "phrase": "基礎技能分工完成",
+        "active": [
+          "v0",
+          "v1",
+          "v2",
+          "flow1"
+        ]
+      },
+      {
+        "phrase": "流程負責",
+        "active": [
+          "v0",
+          "v1",
+          "v2",
+          "flow2"
+        ]
+      }
+    ]
+  }
+}
