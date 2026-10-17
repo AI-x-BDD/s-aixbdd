@@ -6,7 +6,7 @@
 
 - 專案根目錄：`/Volumes/data/Projects-practice/s-aixbdd`。
 - 新預覽：<http://127.0.0.1:60070/預覽.html>。
-- 新 MP4：`videos/build/ch2-skill-engineering/計時預覽.mp4`，116.28 秒。
+- 新 MP4：`videos/build/ch2-skill-engineering/計時預覽.mp4`，115.72 秒。
 - 操作說明：`videos/README.md`。
 - 原始旁白、分鏡與畫面設定：`docs/過程/CH2/影片/製作內容.json`。
 - 原始圖稿：`docs/過程/CH2/影片/靜幀/00.svg` 至 `08.svg`；場景順序以 JSON 為準。
@@ -31,6 +31,10 @@
 - 環境、uv 快取與輸出分別在 `videos/.venv/`、`.cache/uv/`、`build/`，均已忽略。
 
 目前 Python 無第三方套件，使用本機 Python 3.11.14。外部工具為 FFmpeg／ffprobe、macOS say（Meijia）與 qlmanage；系統執行檔由電腦提供，未打包進 videos。目前流程限定 macOS，不宣稱跨作業系統支援。
+
+## 第二段措辭調整
+
+第二段改以「Skill Engineering 會把建立和優化技能的工作，分派給對應的基礎技能」介紹功能，移除「我做的」原創歸屬暗示；完整配音稿及 02.txt 已同步。重建後片長 115.72 秒。先前 116.28 秒的參考快照保留原樣。
 
 ## 最新敘事改寫
 
