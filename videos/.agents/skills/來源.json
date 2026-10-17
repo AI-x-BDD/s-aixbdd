@@ -1,0 +1,26 @@
+[
+  {
+    "name": "presentation-design",
+    "source": "https://github.com/jwynia/agent-skills/tree/main/skills/general/communication/presentation-design",
+    "installed_date": "2026-10-17",
+    "skill_sha256": "00ea7fd7fb33358e7959ddde8c42ebc97a752427be545e89f5f12d11ab875f71"
+  },
+  {
+    "name": "motion-art-direction",
+    "source": "https://github.com/iart-ai/motion-design-skills/tree/main/skills/motion-art-direction",
+    "installed_date": "2026-10-17",
+    "skill_sha256": "0337edf7c93b8e130bd7658e3d43f546c46f333cacbb2bb970613d65d340c5de"
+  },
+  {
+    "name": "frontend-slides",
+    "source": "https://github.com/zarazhangrui/frontend-slides/tree/main/.",
+    "installed_date": "2026-10-17",
+    "skill_sha256": "832994fe1dfcce2aa7ceca9a1b7b708eca94becef242713999855f4e946cf4d5"
+  },
+  {
+    "name": "impeccable",
+    "source": "https://github.com/pbakaus/impeccable/tree/main/.agents/skills/impeccable",
+    "installed_date": "2026-10-17",
+    "skill_sha256": "5fb0d412928c03e62d2536adfd878ad6aad6f9ce343956aa4f7164da06da3459"
+  }
+]
