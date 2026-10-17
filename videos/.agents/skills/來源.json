@@ -22,5 +22,29 @@
     "source": "https://github.com/pbakaus/impeccable/tree/main/.agents/skills/impeccable",
     "installed_date": "2026-10-17",
     "skill_sha256": "5fb0d412928c03e62d2536adfd878ad6aad6f9ce343956aa4f7164da06da3459"
+  },
+  {
+    "name": "storyboard",
+    "upstream_name": "storyboard",
+    "source": "https://github.com/scibly-dev/skills/tree/bbed194ef880cbf308f6b6c8b025d2f3a928d9d3/skills/storyboard",
+    "revision": "bbed194ef880cbf308f6b6c8b025d2f3a928d9d3",
+    "installed_date": "2026-10-17",
+    "skill_sha256": "de7184a98f0aeb836708846b79fe8f4ba32c9074e409e6d0f51527e75381ac3e",
+    "license": "MIT",
+    "license_path": "storyboard/LICENSE",
+    "license_sha256": "785cc3795d200258364045b327eb51dd900d7eedcf8882833482ff6b2157b4e1",
+    "validation": "未驗證：尚未以完整影片實跑驗收"
+  },
+  {
+    "name": "presentation-design-editorial",
+    "upstream_name": "presentation-design",
+    "source": "https://github.com/blisse-code/presentation-design-skill/tree/53224b199cbe14ea179fd8a4f1f87c73f5f81f90/skill",
+    "revision": "53224b199cbe14ea179fd8a4f1f87c73f5f81f90",
+    "installed_date": "2026-10-17",
+    "skill_sha256": "f5616952f7ff90b5a85c1928c8b441cc354fe71198f886188b3d02580fa28e67",
+    "license": "MIT",
+    "license_path": "presentation-design-editorial/LICENSE",
+    "license_sha256": "d330eb5111b0a381b28c094e2b10278d4bf205d2cf8c3adab5ff43a20c967efa",
+    "validation": "未驗證：尚未以完整影片實跑驗收"
   }
 ]
