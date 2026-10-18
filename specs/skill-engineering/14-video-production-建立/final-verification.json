@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-10-18T10:29:38.436849+08:00",
+  "movies": {
+    "plant": {
+      "movie_sha256": "792751eb3cccb7939a4472793ded73d14944e7c4461578a6f6187d9aba05940d",
+      "source_fingerprints_sha256": "1b6754ec2981af8da96809614a84cb070133b09d96ace3a933a62e9b474c7cd4",
+      "review": "pass",
+      "continuous_av": "unverified"
+    },
+    "refund-paper": {
+      "movie_sha256": "c5605a4ce6884651346a0792214ec0eef647919a6f2764ab179e73a8989baf4d",
+      "source_fingerprints_sha256": "e1d6a95a933ba4aac66218bf1f83e0d01358e4f5c7abc5a44c8026aaa91cfdae",
+      "review": "pass",
+      "continuous_av": "unverified"
+    },
+    "refund-route": {
+      "movie_sha256": "fdf25aee81e9122fa8c0fc3f9b5bf6b14a93f1d78ca815de4a08a86d8f51816a",
+      "source_fingerprints_sha256": "b7823b252f12526be4e93e0f1bdf20bbd0b7f6103a7f61f8ce2e7c8f2c3f4bd2",
+      "review": "pass",
+      "continuous_av": "unverified"
+    }
+  },
+  "portable_skill_and_required_vendors": "exact file hashes match both sides",
+  "tool_sha256": "f22e93f68b7b960cbe320f2d55b3f509711ab6d7baf03427a0d77a8bbfd456a9",
+  "skill_sha256": "507371dd2a89ce635c61c6347089c1109285afc7cd38e36effab37c454f4380b",
+  "preservation": {
+    "baseline_count": 123,
+    "changed": [
+      "docs/過程/CH2/影片/製作紀錄/設計/新流程測試/交付狀態.md"
+    ],
+    "missing": [],
+    "allowed_summary_change": true,
+    "head_unchanged": true
+  },
+  "ch2_movie_sha256": "a0f45efe3a37026fa19ab02de1bdbca43ed6d85d21cfd037b5b09953a43baa85",
+  "user_acceptance": "未驗證"
+}

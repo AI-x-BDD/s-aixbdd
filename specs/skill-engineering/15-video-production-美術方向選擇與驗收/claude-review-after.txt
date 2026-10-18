@@ -1,0 +1,95 @@
+    的反例包含「空白選項先問用戶」。
+  - 舊方向不能冒充確認： Phase 2 步驟 3 改成先載入規則、再判斷能否沿用。W2
+    規定只有可追溯的來源、版本、適用範圍才能沿用，AI 推定和測試預設都不行。
+
+  順手提醒（不阻擋）： 第 5 節「約束分配表」的第一列「CH2
+  現行交付摘要｜修改｜…｜E11、E18」，是上一份藍圖差異表留下的殘列，欄位也對不上，施工前刪掉即可。
+
+✻ Cooked for 41s · done 10:53 AM
+
+❯ W1–W3已完成，請唯讀複查 .agents/skills/video-production/SKILL.md、敘事Rule1、成片Rule1/3/4、製作計
+  畫與評審交付雙檔。藍圖第7節已將所有預先回覆明確套用「測試預設非真人」，每案核對來源，這是既有E4澄
+  清。重點僅看實作是否落實AI先推導／實作／自評推薦，之後才向真人展示具體版本，以及來源、風格差異、成
+  片符合性是否可檢查。請勿改檔，不重開已確認需求；只列會讓目標失敗的具體阻擋，沒有就說沒有。
+  ⎿  1 skill available
+
+⏺ Bash(cd /Volumes/data/Projects-practice/s-aixbdd/.agents/skills/video-production && sed -n '/^##
+      Phase 2/,/^## Phase 3/p' SKILL.md; sed -n '/^# Rule 1/,/^# Rule 2/p'…)
+  ⎿  ## Phase 2 -- 設計方向與代表預覽
+
+     1. `READ` 製作計畫與既有方向確認紀錄。
+     … +51 lines (ctrl+o to expand)
+  ⎿  Allowed by auto mode classifier
+
+⏺ Bash(cd /Volumes/data/Projects-practice/s-aixbdd/.agents/skills/video-production && sed -n '/^#
+      Rule 1/,/^## Good/p' rules/成片評審-格式規範.md; sed -n '/^# Rule 3/,/^## Goo…)
+  ⎿  # Rule 1 - 評審對象必須是實際編碼成片
+
+     - 必須檢查實際編碼
+     MP4，涵蓋全片各段解說中途、尾端、移動／形變／交棒／鏡頭過渡與所有豁免區間
+     … +37 lines (ctrl+o to expand)
+  ⎿  Allowed by auto mode classifier
+
+⏺ Bash(cd /Volumes/data/Projects-practice/s-aixbdd/.agents/skills/video-production/templates && sed
+      -n '/## 候選/,/## 確認/p' 製作計畫.md; grep -n "方向決策\|來源類型\|設計 Skills\|設計 S…)
+  ⎿  ## 候選、比較與推薦
+
+     - 既有確認方向：{{EXISTING_DIRECTION}}
+     … +50 lines (ctrl+o to expand)
+  ⎿  Allowed by auto mode classifier
+
+⏺ Bash(sed -n 15,45p 製作計畫.md; sed -n 15,47p 製作計畫.example.md)
+  ⎿  - 未知、缺漏及處理：{{UNKNOWNS}}
+
+     ### 方向決策來源
+     … +61 lines (ctrl+o to expand)
+  ⎿  Allowed by auto mode classifier
+
+⏺ 沒有阻擋。我讀了 SKILL.md Phase 2、敘事 Rule 1、成片評審 Rule
+  1／3／4，以及製作計畫和評審交付兩組樣板，沒有改任何檔案。
+
+  你要的四件事都已落實：
+
+  - AI 先做完才給人確認：
+    - Phase 2 步驟 5 先取得「推薦初選」，步驟 6 實作候選，步驟 7 檢視實片、有問題回頭修，步驟 8
+      才展示，步驟 9 等使用者確認，未確認就停在候選。
+    - 敘事 Rule 1 第 2 條寫明「先提出推薦初選並實作…再依實際畫面與成片評審修正最終推薦」。Good
+      Example 1 示範了初選是具象場景、看完實片後改推流程圖解的情形。
+    - Bad Example 1 擋下「先留空候選、叫使用者選風格」。
+  - 來源可檢查：
+    - 製作計畫新增「方向決策來源」表，來源類型分成真人、測試、AI 推定，範例三種都有示範。
+    - 確認表把「確認對象」和「實際來源」分開，根因、Skill 藍圖、美術版本、全片驗收各占一列。
+    - 敘事 Rule 1 最後一條規定：只有可追溯的來源、版本、範圍才能沿用，AI
+      推定和測試預設都不能算真人確認；Bad Example 3 就是植物影片淺綠的例子。
+  - 風格差異可檢查：
+    - 候選表有「圖像與構圖特徵」「內容與觀眾適配證據」「動態與閱讀」三欄。
+    - Rule 1 規定只換顏色、卡片位置或動線，不能算完成美術探索。
+    - 範例的兩個候選（資訊圖解 vs 實體櫃台）確實是不同的美術語言。
+  - 成片符合性可檢查：
+    - 成片評審 Rule 1
+      新增兩條：用成片的時間、畫格、位置對照已選方向的辨識特徵；發現退回套版要定位、修正、複查。
+    - Rule 3 規定美術符合性獨立記錄，不能併入技術或使用者驗收。
+    - Rule 4 規定有美術落差就不能用技術成功放行。
+    - 評審交付樣板新增「美術方向與實片符合性」表。
+
+  兩處措辭會讓人誤讀，順手修即可，不阻擋：
+
+  1. 「推薦初版」和「推薦初選」太像。 SOP 步驟 8
+     是「向使用者展示推薦初版及替代案」，這裡的推薦初版指的是看過實片後選出的推薦版本；Rule 1
+     的「推薦初選」則是實作之前的猜測。兩個詞只差一個字，代理可能把實作前的初選拿去展示。另外，範例候
+     選表「推薦初版識別」一欄兩列都填了候選
+     id，看起來像每案都是推薦初版。建議把欄名改成「候選版本識別」，步驟 8
+     的用詞改成「最終推薦版本」。
+  2. 範例有一句和 Rule 1 相反。
+     製作計畫範例寫「比較的控制條件與限制：同構圖先比較色彩，再比較不同結構」，順序正好和 Rule 1 Good
+     Example 2 相反：Rule 1
+     是先有實質不同的候選，之後必要時才比配色。代理照抄範例，可能又從換色開始。
+
+✻ Cogitated for 43s · done 10:57 AM
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────
+❯ 
+─────────────────────────────────────────────────────────────────────────────────────────────────────
+   󰀵   main ✗  ✦ Opus 5.5  ◔ ctx 96%  5h 18%(2h2m) · 7d 5%(1d7h)   10:57 
+  ⏵⏵ auto mode on (shift+tab to cycle) · ← 1 agent
+                                    Context low (2% remaining) · Run /compact to compact & continue

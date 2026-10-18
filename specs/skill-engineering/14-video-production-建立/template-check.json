@@ -1,0 +1,20 @@
+[
+  {
+    "template": "製作計畫",
+    "headings_match": true,
+    "table_headers_match": true,
+    "example_placeholders": 0
+  },
+  {
+    "template": "分鏡與焦點",
+    "headings_match": true,
+    "table_headers_match": true,
+    "example_placeholders": 0
+  },
+  {
+    "template": "評審與交付",
+    "headings_match": true,
+    "table_headers_match": true,
+    "example_placeholders": 0
+  }
+]

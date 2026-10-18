@@ -1,0 +1,2 @@
+0/6  0s
+done -> /tmp/fixed-library-rebuild.mp4

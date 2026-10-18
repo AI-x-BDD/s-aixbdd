@@ -1,0 +1,28 @@
+{
+  "cases": [
+    {
+      "id": "refund-s1-style-a",
+      "movie_sha256": "4c35162097cda59bc3b8f38d00ee7f4564bc643de796455e94e1299e172de602",
+      "movie_review_delivery_match": true,
+      "source_fingerprint": "f213e29a5161f0e3ad45aa4d7c0fc0925610e5dda6daeebb4086db8db9e29706",
+      "source_fingerprint_file_matches": [
+        "videos/build/refund-s1-style-a/workspace/source-fingerprints.json"
+      ]
+    },
+    {
+      "id": "refund-s1-style-b",
+      "movie_sha256": "da92851c9c17607b2050bbea2bc378270e44d4f8666c7225f8ebeea39edff7a0",
+      "movie_review_delivery_match": true,
+      "source_fingerprint": "84e3729d250c011616eef2bf1a1c427a95c16cc1360eb013f96b5efe5b7e506b",
+      "source_fingerprint_file_matches": [
+        "videos/build/refund-s1-style-b/workspace/source-fingerprints.json"
+      ]
+    }
+  ],
+  "isolated_skill_matches_final_source_both_sides": true,
+  "known_scope": "S1 representative preview, not CH2-level human acceptance",
+  "continuous_av": "unverified",
+  "human_art_direction": "pending",
+  "protected_files_unchanged": 36,
+  "HEAD_unchanged": true
+}

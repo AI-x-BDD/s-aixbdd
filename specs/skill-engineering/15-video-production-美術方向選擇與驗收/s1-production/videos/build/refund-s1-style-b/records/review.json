@@ -1,0 +1,1553 @@
+{
+  "tool": "motion-project/0.1",
+  "project_id": "refund-s1-style-b",
+  "movie": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/workspace/out/video.mp4",
+  "movie_sha256": "da92851c9c17607b2050bbea2bc378270e44d4f8666c7225f8ebeea39edff7a0",
+  "source_fingerprints_sha256": "84e3729d250c011616eef2bf1a1c427a95c16cc1360eb013f96b5efe5b7e506b",
+  "render_movie_sha256": "da92851c9c17607b2050bbea2bc378270e44d4f8666c7225f8ebeea39edff7a0",
+  "verdict": "pass",
+  "statuses": {
+    "automated_state": {
+      "status": "pass",
+      "method": "motion_checks.check_focus",
+      "issues": []
+    },
+    "technical": {
+      "status": "pass",
+      "method": "ffprobe+source-fingerprint+encoded-frame-extraction",
+      "issues": []
+    },
+    "static_visual": {
+      "status": "pass",
+      "method": "bound encoded-frame assessment",
+      "assessment": {
+        "status": "pass",
+        "method": "本輪 encoded MP4 的 captured frames 與切點連續序列實際畫格檢查"
+      }
+    },
+    "subtitle_visibility": {
+      "status": "pass",
+      "method": "bound encoded-frame subtitle assessment",
+      "assessment": {
+        "status": "pass",
+        "method": "本輪 encoded MP4 的所有 subtitle frames 實際畫格檢查"
+      }
+    },
+    "audio_analysis": {
+      "status": "pass",
+      "method": "ffprobe、完整解碼與 AAC stream hash；不是直接聽看"
+    },
+    "continuous_av": {
+      "status": "unverified",
+      "reason": "目前工具沒有直接連續聽看輸入"
+    },
+    "user_acceptance": {
+      "status": "pending",
+      "method": "user decision required"
+    }
+  },
+  "assessment": {
+    "status": "pass",
+    "issues": [],
+    "value": {
+      "movie_sha256": "da92851c9c17607b2050bbea2bc378270e44d4f8666c7225f8ebeea39edff7a0",
+      "source_fingerprints_sha256": "84e3729d250c011616eef2bf1a1c427a95c16cc1360eb013f96b5efe5b7e506b",
+      "captured_frames": [
+        {
+          "frame": 0,
+          "time": 0.0,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0000.png",
+          "sha256": "a62f82b2188243284135a67404e25022db95c427551dc5979ef3fd19d33a23b8",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 27,
+          "time": 0.9,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0001.png",
+          "sha256": "f52dc6a14aacca5eb0993cdda12a34d45b407bf89dbdb3560efb5f2e2511cc81",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 30,
+          "time": 1.0,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0002.png",
+          "sha256": "9b292d2bacf4d272aaea68e3cb13360689e47473dbbf34bb5175274f63ddc9ef",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 33,
+          "time": 1.1,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0003.png",
+          "sha256": "086ec4da840b27f1e8a4b3986983d71fa762ac9f588fa080d363c3888d4147c9",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 60,
+          "time": 2.0,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0004.png",
+          "sha256": "fea76e1cb5fc082cf85f4321ec08cc77386a692aaf7e5a20c26ec55a40d3b323",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 66,
+          "time": 2.2,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0005.png",
+          "sha256": "beff67dccebb1c897f948c6e9fc28b44695efa9219ce6b34df409d1cd156e8d9",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 67,
+          "time": 2.2333333333333334,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0006.png",
+          "sha256": "41cf431b9112d2819443db6c954c84f2b9376a8a2ad395f70a2366308273b769",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 90,
+          "time": 3.0,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0007.png",
+          "sha256": "6cd4ed1734bd25cfeaa7d982e81f764e03954115531880ce53aab181b966ab40",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 108,
+          "time": 3.6,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0008.png",
+          "sha256": "18fa79aa12c866e4f01564d231fc0e0790c1849c29d647cae0b7f9d7d91e6b8a",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 120,
+          "time": 4.0,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0009.png",
+          "sha256": "1cfcf549132e96c12aa46e9246ab879b29387544882f91f21fd3a295b831dbd8",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 148,
+          "time": 4.933333333333334,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0010.png",
+          "sha256": "d1968fc68ffe156fedd7e9d8d0fe92e53b98b913d311f6275cc4a42571d33f7c",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 149,
+          "time": 4.966666666666667,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0011.png",
+          "sha256": "8152aed86618daf0e16e0583a987b4ce08228902c8912a7e745bb6d0dcd06ab3",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 150,
+          "time": 5.0,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0012.png",
+          "sha256": "4b5ccc9eeaac54fa8970f0fa443da1e4eb9d01a479a15c23a77d7fb3593609d4",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 180,
+          "time": 6.0,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0013.png",
+          "sha256": "4c37f19c547a2f5cbfb1a67620f3dabfc3e1370dcf28047c6be0057455b40cc7",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 182,
+          "time": 6.066666666666666,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0014.png",
+          "sha256": "49995e1c2e8f718fd7da5aad200948f83dcc02d5b85b03b383d960b107a79383",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 190,
+          "time": 6.333333333333333,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0015.png",
+          "sha256": "5159efd9849e1d122c7f2a7223091030f40101c72b995d2c7a225e0d7f79cc54",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 207,
+          "time": 6.9,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0016.png",
+          "sha256": "862c39a356034fe5868456ecbb6322bf3debeab40afce2204292e99e2b5ab5c8",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的切點連續序列：前一物件退場後才交回下一物件，名稱仍可辨識，字幕在安全區。"
+        },
+        {
+          "frame": 210,
+          "time": 7.0,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0017.png",
+          "sha256": "c4560621d35f68bac4df2f7f9c63dfc8c3525b2adce53d47607de8268e027ef9",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的切點連續序列：前一物件退場後才交回下一物件，名稱仍可辨識，字幕在安全區。"
+        },
+        {
+          "frame": 213,
+          "time": 7.1,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0018.png",
+          "sha256": "fc2416ec04c165839e403a2380a0c625898689a03ce0cf99caf1263be26448c9",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的切點連續序列：前一物件退場後才交回下一物件，名稱仍可辨識，字幕在安全區。"
+        },
+        {
+          "frame": 215,
+          "time": 7.166666666666667,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0019.png",
+          "sha256": "6e23ac33976a78a7654b4ce0565dcf3a216936cc63803e8759941a0b15ee0a4a",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 216,
+          "time": 7.2,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0020.png",
+          "sha256": "32734486a2e1bc5e1bde87ba53dbce3f6ed2598fa313d43fa985463e0726aaef",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的切點連續序列：前一物件退場後才交回下一物件，名稱仍可辨識，字幕在安全區。"
+        },
+        {
+          "frame": 219,
+          "time": 7.3,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0021.png",
+          "sha256": "04390313bcc43736e1a76c91122ef73239c67213ab411ea743242197424b765e",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的切點連續序列：前一物件退場後才交回下一物件，名稱仍可辨識，字幕在安全區。"
+        },
+        {
+          "frame": 222,
+          "time": 7.4,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0022.png",
+          "sha256": "e9e0c23a1bee968df662df3889bf65213ade91589bf045477b06424685b9f921",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的切點連續序列：前一物件退場後才交回下一物件，名稱仍可辨識，字幕在安全區。"
+        },
+        {
+          "frame": 240,
+          "time": 8.0,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0023.png",
+          "sha256": "f956dd5c0a84ed6ad4c145f0d73128d35d5838843bc108b7a7785df7590be376",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 250,
+          "time": 8.333333333333334,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0024.png",
+          "sha256": "d8a6cf1d7366703c7002ada840779767f84f214cfc6f5a1a96f84dfc54833c43",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 252,
+          "time": 8.4,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0025.png",
+          "sha256": "d1b6cdccb3ce9f4daec44bed771fb20dc5b8dcdace30be4b63a48c8f3c8a989d",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 270,
+          "time": 9.0,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0026.png",
+          "sha256": "d530ac117c394ec852399d96b9d26b6d45542975f04f845ad0318d2786da420c",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 283,
+          "time": 9.433333333333334,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0027.png",
+          "sha256": "4188e128d7ac1d782c30aaf283bac14ee1a58b6526021a7f6a57f2d298930699",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 284,
+          "time": 9.466666666666667,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0028.png",
+          "sha256": "2490bf71456123e5159286d7e8ee96e56101236dc9b0f259c5ba3ac3b5966c5c",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 300,
+          "time": 10.0,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0029.png",
+          "sha256": "5a36804ed041a6c59bddc92e19afe6128a627c985fb8444de4864c0f4ab800aa",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 317,
+          "time": 10.566666666666666,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0030.png",
+          "sha256": "10b2ab6e50ea82d4e80ba64a379afbecac1b27d4391c81a6ab7ad2c38962e02a",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 330,
+          "time": 11.0,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0031.png",
+          "sha256": "956f175d494f368ec611973e4fc5f1d02e89fa34f07246ec6ec6a1736f202fe8",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 350,
+          "time": 11.666666666666666,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0032.png",
+          "sha256": "5fa68f5cb1e7631fb633acac1b32304037cc09ce9a75f39ba5fed40e7ab988cb",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 351,
+          "time": 11.7,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0033.png",
+          "sha256": "d6ab61cb01929c832de2341dc014f8dcf00ea7eea9dbac4ecb0b1efab430e114",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 360,
+          "time": 12.0,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0034.png",
+          "sha256": "612e9b5960e525360b349d2cb13fc1d5df269e9e94c4823e1b94bd5f40093293",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 366,
+          "time": 12.2,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0035.png",
+          "sha256": "ecb229b5cf14a0c2aef5675c80971281f12056948f9f411bf9b62d84ded42834",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 380,
+          "time": 12.666666666666666,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0036.png",
+          "sha256": "5c42884f7be1f538d66a1793efc2beea66d714e7c820dc69dd4b0d0ee08af86b",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 381,
+          "time": 12.7,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0037.png",
+          "sha256": "aa5c59068bd7da0fe73a2494f8c3eccb9661c7ad9c89428ffa8876de8a0d8bb9",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 390,
+          "time": 13.0,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0038.png",
+          "sha256": "c9539a973fd6980ec105e894e2664e8f43e89b18c5d07b2187e6663b253692ae",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 414,
+          "time": 13.8,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0039.png",
+          "sha256": "0270f53963e7c3f46cd20f055dec0e8c6ec3d95be6f8fb8da3cc01c510e52908",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 420,
+          "time": 14.0,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0040.png",
+          "sha256": "3aad234595e2804dd4e9e98fb598b9b27081ca4da8026ff0b41399b2c05eb545",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 424,
+          "time": 14.133333333333333,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0041.png",
+          "sha256": "834659bf84271e9867127d868f16c861d67c1494381afa2b1ed1f7bd1458dce5",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 450,
+          "time": 15.0,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0042.png",
+          "sha256": "998833088abb2e40135ee8f5440a4893ea1ce3f447e5d274cdc5a84f6bddb5f7",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 457,
+          "time": 15.233333333333333,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0043.png",
+          "sha256": "637c1a6bdf054e6aea3da15a807aaca141cd984d6ad623b230c28257b9dde946",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的切點連續序列：前一物件退場後才交回下一物件，名稱仍可辨識，字幕在安全區。"
+        },
+        {
+          "frame": 460,
+          "time": 15.333333333333334,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0044.png",
+          "sha256": "60e5232c70c65a91bbe6513b00385afb73b7154dbe1c9e7339b5fdcaa3a2dee4",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的切點連續序列：前一物件退場後才交回下一物件，名稱仍可辨識，字幕在安全區。"
+        },
+        {
+          "frame": 463,
+          "time": 15.433333333333334,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0045.png",
+          "sha256": "8ecb15341a0444111fcd9b6b8828356db22f0152e482a7e2d75ffd63cb32acda",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的切點連續序列：前一物件退場後才交回下一物件，名稱仍可辨識，字幕在安全區。"
+        },
+        {
+          "frame": 465,
+          "time": 15.5,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0046.png",
+          "sha256": "26d32ed023e16d6c9b468e9c02d7d8cb8066e82e6c796b06fa54cee558d1184a",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 466,
+          "time": 15.533333333333333,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0047.png",
+          "sha256": "a3795f95e5356784c4b3c22be9bc8f9b3aa4560205f31fba804c6d1e1dc8f8c7",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的切點連續序列：前一物件退場後才交回下一物件，名稱仍可辨識，字幕在安全區。"
+        },
+        {
+          "frame": 469,
+          "time": 15.633333333333333,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0048.png",
+          "sha256": "67781e6e028358eee46be0dece2aab50360b068594e5948269e74699fc354e03",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的切點連續序列：前一物件退場後才交回下一物件，名稱仍可辨識，字幕在安全區。"
+        },
+        {
+          "frame": 472,
+          "time": 15.733333333333333,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0049.png",
+          "sha256": "cdd6742da9a865e35a8e10b3306bf4a643683d1f53e0621a260cf33eb817dda4",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的切點連續序列：前一物件退場後才交回下一物件，名稱仍可辨識，字幕在安全區。"
+        },
+        {
+          "frame": 475,
+          "time": 15.833333333333334,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0050.png",
+          "sha256": "6db8a4c0b44294e0f71234d795ee92b38ac4cac5c31898bb5e01f78ce6c1079d",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的切點連續序列：前一物件退場後才交回下一物件，名稱仍可辨識，字幕在安全區。"
+        },
+        {
+          "frame": 480,
+          "time": 16.0,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0051.png",
+          "sha256": "dac9187594ba862d2d0bf95555e24c48012a03916233872c313be1e3ae2a8e6b",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 492,
+          "time": 16.4,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0052.png",
+          "sha256": "c817fc7f4bd14cec19c46581d5cf120239a29ced14ebf7e31c8d741198f15670",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 510,
+          "time": 17.0,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0053.png",
+          "sha256": "23f01ac606a4f6efd6ee8b80ef6800853cfed08ef2e19acfe8a6c7e17c81d17f",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 519,
+          "time": 17.3,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0054.png",
+          "sha256": "cc6cfd2733d0087cab489dce791830c0528c7a3321d71204b90b1876e809b7a3",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 531,
+          "time": 17.7,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0055.png",
+          "sha256": "077147efd2a4156dd7e407d40419f4bc682f907d4f0e933d3a6c43ae1a47eb35",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 540,
+          "time": 18.0,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0056.png",
+          "sha256": "db393d8d340c48923f9f2efc4d60f9d2379d27303ade927be916fadc665caac1",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 570,
+          "time": 19.0,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0057.png",
+          "sha256": "81e50178aefb589c4bfc86d9d32d97799ad506539604f381135474d7a6e3b696",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 571,
+          "time": 19.033333333333335,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0058.png",
+          "sha256": "52790b22ed7c87ffa20c499c324bfdb77869fdd48db71f9d6d6c8609c3d79791",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 588,
+          "time": 19.6,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0059.png",
+          "sha256": "78e91a25ca2d7053ca64f439c6b3b66f0a2a3040e5cc50b57e46456aa0496808",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 600,
+          "time": 20.0,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0060.png",
+          "sha256": "d0f272b03a0348b53b2f2beda430778fd48efb8513ec7e126fa15053ebeb5a71",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 605,
+          "time": 20.166666666666668,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0061.png",
+          "sha256": "ff6dd1a9478030f518ec93997eec3368ce0d06bb6de41e27ec677be270ba13c1",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 606,
+          "time": 20.2,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0062.png",
+          "sha256": "2aa847dcf004f96b4e4b64d13606cbf1a3b3c5beef029984ff201e8c8321cf06",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 629,
+          "time": 20.966666666666665,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0063.png",
+          "sha256": "0facba890c2df492a8dadcf12ad458bd5e1962f285b32486692a00378942d905",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 630,
+          "time": 21.0,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0064.png",
+          "sha256": "6bd23ef2047f62d7d0f05448907757dd63a69eab92dc76595275645cd6b7b647",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 651,
+          "time": 21.7,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0065.png",
+          "sha256": "fa6d8980fcfd761ba4a9b73c63c57158bccef797eb9176e6bf4d582df5456563",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 652,
+          "time": 21.733333333333334,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0066.png",
+          "sha256": "b1969b5b46fd1766eeca69c19429b68a7ea174edb8b6cd5fc853f78667e73fd8",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 660,
+          "time": 22.0,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0067.png",
+          "sha256": "980dfa7ca0c6e2508a1ef9034cd7b55bd225fd23549fa6114dd0571e61a6e1cf",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 690,
+          "time": 23.0,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0068.png",
+          "sha256": "693a7204969ae4529b2b045a4b65deef2f39fdb18ba33307bc83753ccd887970",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 692,
+          "time": 23.066666666666666,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0069.png",
+          "sha256": "f4e23cd9f56f4203dbcabd71c7e03fb6049426d2aa9f5c619309b60484ffd2ef",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 的契約焦點畫格：指定內容清楚、未截切，字幕未遮住焦點。"
+        },
+        {
+          "frame": 714,
+          "time": 23.8,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0070.png",
+          "sha256": "72684fd035b7ff03ab86ef6ab1ccb087f342e87ba6c1b4a53bab47e6cd2a4bb5",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 720,
+          "time": 24.0,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0071.png",
+          "sha256": "38d3fb10d14fc3ddb63bb21ade36996c751a3839a8354cafae3a94a974aadfa7",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 723,
+          "time": 24.1,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0072.png",
+          "sha256": "d5a8f6acb966940aaeddfc7abb2140aca2e1dea9444d97b57e1e67634683a7d6",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 穩定段畫格：場景物件清楚、未截切，字幕在安全區。"
+        },
+        {
+          "frame": 731,
+          "time": 24.366666666666667,
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0073.png",
+          "sha256": "ea18e23399a18fcfc928d4b0004976d07bf68e8cc6f3b70cfd12935fd31f6fe8",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 尾格：退款進度與追蹤焦點仍在畫面內，未截切，字幕在安全區。"
+        }
+      ],
+      "subtitle_frames": [
+        {
+          "time": 2.2666666666666666,
+          "text": "第一步，先找到原訂單。核對商品與退款原因，",
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/subtitle-frames/caption-0000.png",
+          "sha256": "90c57876302c96265e222f1ba37eb6fa472f7f6304d83fc49f2643a68101fd56",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 燒錄字幕畫格：文字完整可讀、未被場景物件遮住。"
+        },
+        {
+          "time": 5.666666666666667,
+          "text": "再送出申請。",
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/subtitle-frames/caption-0001.png",
+          "sha256": "95a02df20047c1c223aa059c80f6b5bae3b588cd29e5d012ba94f16105858450",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 燒錄字幕畫格：文字完整可讀、未被場景物件遮住。"
+        },
+        {
+          "time": 9.8,
+          "text": "申請會交給審核人，確認條件是否符合。通過後，",
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/subtitle-frames/caption-0002.png",
+          "sha256": "be4013dc2c78ec89c0b375e618e19b63410c878e7b29a70b5901fe735febeb0b",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 燒錄字幕畫格：文字完整可讀、未被場景物件遮住。"
+        },
+        {
+          "time": 13.7,
+          "text": "訂單就轉成退款單。",
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/subtitle-frames/caption-0003.png",
+          "sha256": "616a747c02c929f14ceeef8f908038d71f0f085ef192737be32cbb5b9830890d",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 燒錄字幕畫格：文字完整可讀、未被場景物件遮住。"
+        },
+        {
+          "time": 17.8,
+          "text": "最後，把退款單回接付款紀錄，查看金額、",
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/subtitle-frames/caption-0004.png",
+          "sha256": "56508d3572b4b53e11519743e7268a33850569ed05d97dccf1c20a69fc1845ae",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 燒錄字幕畫格：文字完整可讀、未被場景物件遮住。"
+        },
+        {
+          "time": 22.133333333333333,
+          "text": "方式與進度。這樣就能追蹤每一筆款項。",
+          "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/subtitle-frames/caption-0005.png",
+          "sha256": "8cfb5384ed4a85e8505ef6a26c03da33115920c694eed038b85890432e6a8125",
+          "status": "pass",
+          "observation": "已核對本輪 encoded MP4 燒錄字幕畫格：文字完整可讀、未被場景物件遮住。"
+        }
+      ],
+      "static_visual": {
+        "status": "pass",
+        "method": "本輪 encoded MP4 的 captured frames 與切點連續序列實際畫格檢查"
+      },
+      "subtitle_visibility": {
+        "status": "pass",
+        "method": "本輪 encoded MP4 的所有 subtitle frames 實際畫格檢查"
+      },
+      "audio_analysis": {
+        "status": "pass",
+        "method": "ffprobe、完整解碼與 AAC stream hash；不是直接聽看"
+      },
+      "continuous_av": {
+        "status": "unverified",
+        "reason": "目前工具沒有直接連續聽看輸入"
+      }
+    }
+  },
+  "audio_stream_hashes": {
+    "canonical_audio_stream_sha256": "c4f2b1c165528b7455593a7754cd522dce84fade959b21d53a600c3a0bbd5f82",
+    "movie_audio_stream_sha256": "c4f2b1c165528b7455593a7754cd522dce84fade959b21d53a600c3a0bbd5f82"
+  },
+  "source_fingerprints": {
+    "tool": "motion-project/0.1",
+    "project_id": "refund-s1-style-b",
+    "source_root": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos",
+    "files": [
+      {
+        "role": "profile",
+        "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/projects/refund-s1/style-b/project.toml",
+        "relative": "projects/refund-s1/style-b/project.toml",
+        "sha256": "53624a1862b22f76a1211b384f8086e77a4d0da6cc1d296f34ae69a0ed7928d5",
+        "bytes": 1487
+      },
+      {
+        "role": "content",
+        "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/projects/refund-s1/style-b/materials/content.json",
+        "relative": "projects/refund-s1/style-b/materials/content.json",
+        "sha256": "cf3834467d872f0e43fac1cc8810d5544184e8e8548761a69b12097fb3aaf22d",
+        "bytes": 733
+      },
+      {
+        "role": "focus_contract",
+        "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/projects/refund-s1/style-b/materials/focus.json",
+        "relative": "projects/refund-s1/style-b/materials/focus.json",
+        "sha256": "5e43e6865009befc8d610215a869f69fc0441d6c3a2a2dbbf0ffd7e30e0ced01",
+        "bytes": 1995
+      },
+      {
+        "role": "audio",
+        "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/projects/refund-s1/style-b/materials/voice.m4a",
+        "relative": "projects/refund-s1/style-b/materials/voice.m4a",
+        "sha256": "3f39fcc46238fd3596623032614a2c649c254a93a2b36e5585332c7170b05c21",
+        "bytes": 302566
+      },
+      {
+        "role": "alignment",
+        "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/projects/refund-s1/style-b/materials/alignment.json",
+        "relative": "projects/refund-s1/style-b/materials/alignment.json",
+        "sha256": "0ae1ab508b40878815832f4e08dcbed3f047baef907d6301e4c6974372ee0ca7",
+        "bytes": 9254
+      },
+      {
+        "role": "state",
+        "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/projects/refund-s1/style-b/materials/state.json",
+        "relative": "projects/refund-s1/style-b/materials/state.json",
+        "sha256": "f941ba0d8f3dbf0a832d0e5fbf51e193b5509c4e8bcf4ffe53d44aad9f9389c4",
+        "bytes": 1676526
+      },
+      {
+        "role": "labels",
+        "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/projects/refund-s1/style-b/materials/labels.json",
+        "relative": "projects/refund-s1/style-b/materials/labels.json",
+        "sha256": "80cc33a8f693101ace8d205b46aa771c2ef651ee0c00f3fac07e22c4d2b73493",
+        "bytes": 399
+      },
+      {
+        "role": "model_provenance",
+        "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/projects/refund-s1/style-b/materials/model-provenance-reference.json",
+        "relative": "projects/refund-s1/style-b/materials/model-provenance-reference.json",
+        "sha256": "e168498b0204a5fb327eba6338232916d187a97c3d6c437cea9fdec5a0c13581",
+        "bytes": 406
+      },
+      {
+        "role": "renderer:LICENSE",
+        "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/workspace/motion/LICENSE",
+        "relative": "build/refund-s1-style-b/workspace/motion/LICENSE",
+        "sha256": "27d5f92a6a46d8b2006cf933f78fbd165cf7d01b300cc7fbe5f68c0b90ff9217",
+        "bytes": 2507
+      },
+      {
+        "role": "renderer:README.md",
+        "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/workspace/motion/README.md",
+        "relative": "build/refund-s1-style-b/workspace/motion/README.md",
+        "sha256": "7eb7e390d574b5931ee1e5e180b251bf0dd380782eae28ee5f62c6767da97e2f",
+        "bytes": 15089
+      },
+      {
+        "role": "renderer:package-lock.json",
+        "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/workspace/motion/package-lock.json",
+        "relative": "build/refund-s1-style-b/workspace/motion/package-lock.json",
+        "sha256": "62d8501f681b8d87fac97732b54f67feb87d617d90795fab000feb2a83597d28",
+        "bytes": 141350
+      },
+      {
+        "role": "renderer:package.json",
+        "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/workspace/motion/package.json",
+        "relative": "build/refund-s1-style-b/workspace/motion/package.json",
+        "sha256": "f2f1bc1ab910b2987c8c6abe9fb8bb4483653fc1aa653d839a584049ffd7437e",
+        "bytes": 594
+      },
+      {
+        "role": "renderer:remotion.config.ts",
+        "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/workspace/motion/remotion.config.ts",
+        "relative": "build/refund-s1-style-b/workspace/motion/remotion.config.ts",
+        "sha256": "9c17a2490c6eb1c16d854bec6cd8412cf37b2ff9268dbcd41f9ab5734b7b395e",
+        "bytes": 175
+      },
+      {
+        "role": "renderer:src/Root.tsx",
+        "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/workspace/motion/src/Root.tsx",
+        "relative": "build/refund-s1-style-b/workspace/motion/src/Root.tsx",
+        "sha256": "57110304293c48d416a873297752a6e48937d66aeed383b43edf13fb99a34e2c",
+        "bytes": 14822
+      },
+      {
+        "role": "renderer:src/index.ts",
+        "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/workspace/motion/src/index.ts",
+        "relative": "build/refund-s1-style-b/workspace/motion/src/index.ts",
+        "sha256": "5462d3268136731ce43bfd7c5072ea1ba48b51fec94fa30076f5044f4b39e4a2",
+        "bytes": 105
+      },
+      {
+        "role": "renderer:src/state-exporter.cjs",
+        "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/workspace/motion/src/state-exporter.cjs",
+        "relative": "build/refund-s1-style-b/workspace/motion/src/state-exporter.cjs",
+        "sha256": "eb1acde4456be944f5694f68d099420df1a771ca4a1b3288756d7b02b2f15072",
+        "bytes": 677
+      },
+      {
+        "role": "renderer:tsconfig.json",
+        "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/workspace/motion/tsconfig.json",
+        "relative": "build/refund-s1-style-b/workspace/motion/tsconfig.json",
+        "sha256": "a90b13e4c80d661fab2fab9636b477f2f7320278e31dcca1b0fbe2744ac15f73",
+        "bytes": 332
+      },
+      {
+        "role": "tool:motion_project",
+        "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/scripts/motion_project.py",
+        "relative": "scripts/motion_project.py",
+        "sha256": "f22e93f68b7b960cbe320f2d55b3f509711ab6d7baf03427a0d77a8bbfd456a9",
+        "bytes": 78150
+      },
+      {
+        "role": "tool:motion_checks",
+        "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/scripts/motion_checks.py",
+        "relative": "scripts/motion_checks.py",
+        "sha256": "1f1a3cd0d03b13d0fa05790cc707f16a92afcbc150f11e21c7d7ed0aba3942d2",
+        "bytes": 24966
+      },
+      {
+        "role": "tool:align",
+        "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/scripts/align.py",
+        "relative": "scripts/align.py",
+        "sha256": "21aee01ce269c724bc63f22fa5d0c8e60dc50a7613b36a0dd6c96cf8e6eef9c8",
+        "bytes": 4657
+      }
+    ]
+  },
+  "captured_frames": [
+    {
+      "frame": 0,
+      "time": 0.0,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0000.png",
+      "sha256": "a62f82b2188243284135a67404e25022db95c427551dc5979ef3fd19d33a23b8",
+      "reasons": [
+        "contract:s1-find-order:start",
+        "periodic"
+      ]
+    },
+    {
+      "frame": 27,
+      "time": 0.9,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0001.png",
+      "sha256": "f52dc6a14aacca5eb0993cdda12a34d45b407bf89dbdb3560efb5f2e2511cc81",
+      "reasons": [
+        "profile-review-time"
+      ]
+    },
+    {
+      "frame": 30,
+      "time": 1.0,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0002.png",
+      "sha256": "9b292d2bacf4d272aaea68e3cb13360689e47473dbbf34bb5175274f63ddc9ef",
+      "reasons": [
+        "periodic"
+      ]
+    },
+    {
+      "frame": 33,
+      "time": 1.1,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0003.png",
+      "sha256": "086ec4da840b27f1e8a4b3986983d71fa762ac9f588fa080d363c3888d4147c9",
+      "reasons": [
+        "contract:s1-find-order:middle"
+      ]
+    },
+    {
+      "frame": 60,
+      "time": 2.0,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0004.png",
+      "sha256": "fea76e1cb5fc082cf85f4321ec08cc77386a692aaf7e5a20c26ec55a40d3b323",
+      "reasons": [
+        "periodic"
+      ]
+    },
+    {
+      "frame": 66,
+      "time": 2.2,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0005.png",
+      "sha256": "beff67dccebb1c897f948c6e9fc28b44695efa9219ce6b34df409d1cd156e8d9",
+      "reasons": [
+        "contract:s1-find-order:end"
+      ]
+    },
+    {
+      "frame": 67,
+      "time": 2.2333333333333334,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0006.png",
+      "sha256": "41cf431b9112d2819443db6c954c84f2b9376a8a2ad395f70a2366308273b769",
+      "reasons": [
+        "contract:s1-check-details:start",
+        "profile-review-time"
+      ]
+    },
+    {
+      "frame": 90,
+      "time": 3.0,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0007.png",
+      "sha256": "6cd4ed1734bd25cfeaa7d982e81f764e03954115531880ce53aab181b966ab40",
+      "reasons": [
+        "periodic"
+      ]
+    },
+    {
+      "frame": 108,
+      "time": 3.6,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0008.png",
+      "sha256": "18fa79aa12c866e4f01564d231fc0e0790c1849c29d647cae0b7f9d7d91e6b8a",
+      "reasons": [
+        "contract:s1-check-details:middle"
+      ]
+    },
+    {
+      "frame": 120,
+      "time": 4.0,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0009.png",
+      "sha256": "1cfcf549132e96c12aa46e9246ab879b29387544882f91f21fd3a295b831dbd8",
+      "reasons": [
+        "periodic"
+      ]
+    },
+    {
+      "frame": 148,
+      "time": 4.933333333333334,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0010.png",
+      "sha256": "d1968fc68ffe156fedd7e9d8d0fe92e53b98b913d311f6275cc4a42571d33f7c",
+      "reasons": [
+        "contract:s1-check-details:end"
+      ]
+    },
+    {
+      "frame": 149,
+      "time": 4.966666666666667,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0011.png",
+      "sha256": "8152aed86618daf0e16e0583a987b4ce08228902c8912a7e745bb6d0dcd06ab3",
+      "reasons": [
+        "contract:s1-submit:start",
+        "profile-review-time"
+      ]
+    },
+    {
+      "frame": 150,
+      "time": 5.0,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0012.png",
+      "sha256": "4b5ccc9eeaac54fa8970f0fa443da1e4eb9d01a479a15c23a77d7fb3593609d4",
+      "reasons": [
+        "periodic"
+      ]
+    },
+    {
+      "frame": 180,
+      "time": 6.0,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0013.png",
+      "sha256": "4c37f19c547a2f5cbfb1a67620f3dabfc3e1370dcf28047c6be0057455b40cc7",
+      "reasons": [
+        "periodic"
+      ]
+    },
+    {
+      "frame": 182,
+      "time": 6.066666666666666,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0014.png",
+      "sha256": "49995e1c2e8f718fd7da5aad200948f83dcc02d5b85b03b383d960b107a79383",
+      "reasons": [
+        "contract:s1-submit:middle"
+      ]
+    },
+    {
+      "frame": 190,
+      "time": 6.333333333333333,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0015.png",
+      "sha256": "5159efd9849e1d122c7f2a7223091030f40101c72b995d2c7a225e0d7f79cc54",
+      "reasons": [
+        "profile-review-time"
+      ]
+    },
+    {
+      "frame": 207,
+      "time": 6.9,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0016.png",
+      "sha256": "862c39a356034fe5868456ecbb6322bf3debeab40afce2204292e99e2b5ab5c8",
+      "reasons": [
+        "profile-transition"
+      ]
+    },
+    {
+      "frame": 210,
+      "time": 7.0,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0017.png",
+      "sha256": "c4560621d35f68bac4df2f7f9c63dfc8c3525b2adce53d47607de8268e027ef9",
+      "reasons": [
+        "periodic",
+        "profile-transition"
+      ]
+    },
+    {
+      "frame": 213,
+      "time": 7.1,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0018.png",
+      "sha256": "fc2416ec04c165839e403a2380a0c625898689a03ce0cf99caf1263be26448c9",
+      "reasons": [
+        "profile-transition"
+      ]
+    },
+    {
+      "frame": 215,
+      "time": 7.166666666666667,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0019.png",
+      "sha256": "6e23ac33976a78a7654b4ce0565dcf3a216936cc63803e8759941a0b15ee0a4a",
+      "reasons": [
+        "contract:s1-submit:end"
+      ]
+    },
+    {
+      "frame": 216,
+      "time": 7.2,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0020.png",
+      "sha256": "32734486a2e1bc5e1bde87ba53dbce3f6ed2598fa313d43fa985463e0726aaef",
+      "reasons": [
+        "contract:s2-handoff:start",
+        "profile-review-time",
+        "profile-transition"
+      ]
+    },
+    {
+      "frame": 219,
+      "time": 7.3,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0021.png",
+      "sha256": "04390313bcc43736e1a76c91122ef73239c67213ab411ea743242197424b765e",
+      "reasons": [
+        "profile-transition"
+      ]
+    },
+    {
+      "frame": 222,
+      "time": 7.4,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0022.png",
+      "sha256": "e9e0c23a1bee968df662df3889bf65213ade91589bf045477b06424685b9f921",
+      "reasons": [
+        "profile-transition"
+      ]
+    },
+    {
+      "frame": 240,
+      "time": 8.0,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0023.png",
+      "sha256": "f956dd5c0a84ed6ad4c145f0d73128d35d5838843bc108b7a7785df7590be376",
+      "reasons": [
+        "periodic"
+      ]
+    },
+    {
+      "frame": 250,
+      "time": 8.333333333333334,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0024.png",
+      "sha256": "d8a6cf1d7366703c7002ada840779767f84f214cfc6f5a1a96f84dfc54833c43",
+      "reasons": [
+        "contract:s2-handoff:middle"
+      ]
+    },
+    {
+      "frame": 252,
+      "time": 8.4,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0025.png",
+      "sha256": "d1b6cdccb3ce9f4daec44bed771fb20dc5b8dcdace30be4b63a48c8f3c8a989d",
+      "reasons": [
+        "profile-review-time"
+      ]
+    },
+    {
+      "frame": 270,
+      "time": 9.0,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0026.png",
+      "sha256": "d530ac117c394ec852399d96b9d26b6d45542975f04f845ad0318d2786da420c",
+      "reasons": [
+        "periodic"
+      ]
+    },
+    {
+      "frame": 283,
+      "time": 9.433333333333334,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0027.png",
+      "sha256": "4188e128d7ac1d782c30aaf283bac14ee1a58b6526021a7f6a57f2d298930699",
+      "reasons": [
+        "contract:s2-handoff:end"
+      ]
+    },
+    {
+      "frame": 284,
+      "time": 9.466666666666667,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0028.png",
+      "sha256": "2490bf71456123e5159286d7e8ee96e56101236dc9b0f259c5ba3ac3b5966c5c",
+      "reasons": [
+        "contract:s2-confirm:start",
+        "profile-review-time"
+      ]
+    },
+    {
+      "frame": 300,
+      "time": 10.0,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0029.png",
+      "sha256": "5a36804ed041a6c59bddc92e19afe6128a627c985fb8444de4864c0f4ab800aa",
+      "reasons": [
+        "periodic"
+      ]
+    },
+    {
+      "frame": 317,
+      "time": 10.566666666666666,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0030.png",
+      "sha256": "10b2ab6e50ea82d4e80ba64a379afbecac1b27d4391c81a6ab7ad2c38962e02a",
+      "reasons": [
+        "contract:s2-confirm:middle"
+      ]
+    },
+    {
+      "frame": 330,
+      "time": 11.0,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0031.png",
+      "sha256": "956f175d494f368ec611973e4fc5f1d02e89fa34f07246ec6ec6a1736f202fe8",
+      "reasons": [
+        "periodic"
+      ]
+    },
+    {
+      "frame": 350,
+      "time": 11.666666666666666,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0032.png",
+      "sha256": "5fa68f5cb1e7631fb633acac1b32304037cc09ce9a75f39ba5fed40e7ab988cb",
+      "reasons": [
+        "contract:s2-confirm:end"
+      ]
+    },
+    {
+      "frame": 351,
+      "time": 11.7,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0033.png",
+      "sha256": "d6ab61cb01929c832de2341dc014f8dcf00ea7eea9dbac4ecb0b1efab430e114",
+      "reasons": [
+        "contract:s2-approve:start",
+        "profile-review-time"
+      ]
+    },
+    {
+      "frame": 360,
+      "time": 12.0,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0034.png",
+      "sha256": "612e9b5960e525360b349d2cb13fc1d5df269e9e94c4823e1b94bd5f40093293",
+      "reasons": [
+        "periodic"
+      ]
+    },
+    {
+      "frame": 366,
+      "time": 12.2,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0035.png",
+      "sha256": "ecb229b5cf14a0c2aef5675c80971281f12056948f9f411bf9b62d84ded42834",
+      "reasons": [
+        "contract:s2-approve:middle"
+      ]
+    },
+    {
+      "frame": 380,
+      "time": 12.666666666666666,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0036.png",
+      "sha256": "5c42884f7be1f538d66a1793efc2beea66d714e7c820dc69dd4b0d0ee08af86b",
+      "reasons": [
+        "contract:s2-approve:end"
+      ]
+    },
+    {
+      "frame": 381,
+      "time": 12.7,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0037.png",
+      "sha256": "aa5c59068bd7da0fe73a2494f8c3eccb9661c7ad9c89428ffa8876de8a0d8bb9",
+      "reasons": [
+        "contract:s2-transform:start",
+        "profile-review-time"
+      ]
+    },
+    {
+      "frame": 390,
+      "time": 13.0,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0038.png",
+      "sha256": "c9539a973fd6980ec105e894e2664e8f43e89b18c5d07b2187e6663b253692ae",
+      "reasons": [
+        "periodic"
+      ]
+    },
+    {
+      "frame": 414,
+      "time": 13.8,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0039.png",
+      "sha256": "0270f53963e7c3f46cd20f055dec0e8c6ec3d95be6f8fb8da3cc01c510e52908",
+      "reasons": [
+        "profile-review-time"
+      ]
+    },
+    {
+      "frame": 420,
+      "time": 14.0,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0040.png",
+      "sha256": "3aad234595e2804dd4e9e98fb598b9b27081ca4da8026ff0b41399b2c05eb545",
+      "reasons": [
+        "periodic"
+      ]
+    },
+    {
+      "frame": 424,
+      "time": 14.133333333333333,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0041.png",
+      "sha256": "834659bf84271e9867127d868f16c861d67c1494381afa2b1ed1f7bd1458dce5",
+      "reasons": [
+        "contract:s2-transform:middle"
+      ]
+    },
+    {
+      "frame": 450,
+      "time": 15.0,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0042.png",
+      "sha256": "998833088abb2e40135ee8f5440a4893ea1ce3f447e5d274cdc5a84f6bddb5f7",
+      "reasons": [
+        "periodic"
+      ]
+    },
+    {
+      "frame": 457,
+      "time": 15.233333333333333,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0043.png",
+      "sha256": "637c1a6bdf054e6aea3da15a807aaca141cd984d6ad623b230c28257b9dde946",
+      "reasons": [
+        "profile-transition"
+      ]
+    },
+    {
+      "frame": 460,
+      "time": 15.333333333333334,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0044.png",
+      "sha256": "60e5232c70c65a91bbe6513b00385afb73b7154dbe1c9e7339b5fdcaa3a2dee4",
+      "reasons": [
+        "profile-transition"
+      ]
+    },
+    {
+      "frame": 463,
+      "time": 15.433333333333334,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0045.png",
+      "sha256": "8ecb15341a0444111fcd9b6b8828356db22f0152e482a7e2d75ffd63cb32acda",
+      "reasons": [
+        "profile-transition"
+      ]
+    },
+    {
+      "frame": 465,
+      "time": 15.5,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0046.png",
+      "sha256": "26d32ed023e16d6c9b468e9c02d7d8cb8066e82e6c796b06fa54cee558d1184a",
+      "reasons": [
+        "contract:s2-transform:end"
+      ]
+    },
+    {
+      "frame": 466,
+      "time": 15.533333333333333,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0047.png",
+      "sha256": "a3795f95e5356784c4b3c22be9bc8f9b3aa4560205f31fba804c6d1e1dc8f8c7",
+      "reasons": [
+        "contract:s3-reconnect:start",
+        "profile-review-time",
+        "profile-transition"
+      ]
+    },
+    {
+      "frame": 469,
+      "time": 15.633333333333333,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0048.png",
+      "sha256": "67781e6e028358eee46be0dece2aab50360b068594e5948269e74699fc354e03",
+      "reasons": [
+        "profile-transition"
+      ]
+    },
+    {
+      "frame": 472,
+      "time": 15.733333333333333,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0049.png",
+      "sha256": "cdd6742da9a865e35a8e10b3306bf4a643683d1f53e0621a260cf33eb817dda4",
+      "reasons": [
+        "profile-transition"
+      ]
+    },
+    {
+      "frame": 475,
+      "time": 15.833333333333334,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0050.png",
+      "sha256": "6db8a4c0b44294e0f71234d795ee92b38ac4cac5c31898bb5e01f78ce6c1079d",
+      "reasons": [
+        "profile-transition"
+      ]
+    },
+    {
+      "frame": 480,
+      "time": 16.0,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0051.png",
+      "sha256": "dac9187594ba862d2d0bf95555e24c48012a03916233872c313be1e3ae2a8e6b",
+      "reasons": [
+        "periodic"
+      ]
+    },
+    {
+      "frame": 492,
+      "time": 16.4,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0052.png",
+      "sha256": "c817fc7f4bd14cec19c46581d5cf120239a29ced14ebf7e31c8d741198f15670",
+      "reasons": [
+        "profile-review-time"
+      ]
+    },
+    {
+      "frame": 510,
+      "time": 17.0,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0053.png",
+      "sha256": "23f01ac606a4f6efd6ee8b80ef6800853cfed08ef2e19acfe8a6c7e17c81d17f",
+      "reasons": [
+        "periodic"
+      ]
+    },
+    {
+      "frame": 519,
+      "time": 17.3,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0054.png",
+      "sha256": "cc6cfd2733d0087cab489dce791830c0528c7a3321d71204b90b1876e809b7a3",
+      "reasons": [
+        "contract:s3-reconnect:middle"
+      ]
+    },
+    {
+      "frame": 531,
+      "time": 17.7,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0055.png",
+      "sha256": "077147efd2a4156dd7e407d40419f4bc682f907d4f0e933d3a6c43ae1a47eb35",
+      "reasons": [
+        "profile-review-time"
+      ]
+    },
+    {
+      "frame": 540,
+      "time": 18.0,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0056.png",
+      "sha256": "db393d8d340c48923f9f2efc4d60f9d2379d27303ade927be916fadc665caac1",
+      "reasons": [
+        "periodic"
+      ]
+    },
+    {
+      "frame": 570,
+      "time": 19.0,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0057.png",
+      "sha256": "81e50178aefb589c4bfc86d9d32d97799ad506539604f381135474d7a6e3b696",
+      "reasons": [
+        "contract:s3-reconnect:end",
+        "periodic"
+      ]
+    },
+    {
+      "frame": 571,
+      "time": 19.033333333333335,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0058.png",
+      "sha256": "52790b22ed7c87ffa20c499c324bfdb77869fdd48db71f9d6d6c8609c3d79791",
+      "reasons": [
+        "contract:s3-amount:start",
+        "profile-review-time"
+      ]
+    },
+    {
+      "frame": 588,
+      "time": 19.6,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0059.png",
+      "sha256": "78e91a25ca2d7053ca64f439c6b3b66f0a2a3040e5cc50b57e46456aa0496808",
+      "reasons": [
+        "contract:s3-amount:middle"
+      ]
+    },
+    {
+      "frame": 600,
+      "time": 20.0,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0060.png",
+      "sha256": "d0f272b03a0348b53b2f2beda430778fd48efb8513ec7e126fa15053ebeb5a71",
+      "reasons": [
+        "periodic"
+      ]
+    },
+    {
+      "frame": 605,
+      "time": 20.166666666666668,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0061.png",
+      "sha256": "ff6dd1a9478030f518ec93997eec3368ce0d06bb6de41e27ec677be270ba13c1",
+      "reasons": [
+        "contract:s3-amount:end"
+      ]
+    },
+    {
+      "frame": 606,
+      "time": 20.2,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0062.png",
+      "sha256": "2aa847dcf004f96b4e4b64d13606cbf1a3b3c5beef029984ff201e8c8321cf06",
+      "reasons": [
+        "contract:s3-method:start",
+        "profile-review-time"
+      ]
+    },
+    {
+      "frame": 629,
+      "time": 20.966666666666665,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0063.png",
+      "sha256": "0facba890c2df492a8dadcf12ad458bd5e1962f285b32486692a00378942d905",
+      "reasons": [
+        "contract:s3-method:middle"
+      ]
+    },
+    {
+      "frame": 630,
+      "time": 21.0,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0064.png",
+      "sha256": "6bd23ef2047f62d7d0f05448907757dd63a69eab92dc76595275645cd6b7b647",
+      "reasons": [
+        "periodic"
+      ]
+    },
+    {
+      "frame": 651,
+      "time": 21.7,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0065.png",
+      "sha256": "fa6d8980fcfd761ba4a9b73c63c57158bccef797eb9176e6bf4d582df5456563",
+      "reasons": [
+        "contract:s3-method:end"
+      ]
+    },
+    {
+      "frame": 652,
+      "time": 21.733333333333334,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0066.png",
+      "sha256": "b1969b5b46fd1766eeca69c19429b68a7ea174edb8b6cd5fc853f78667e73fd8",
+      "reasons": [
+        "contract:s3-progress:start",
+        "profile-review-time"
+      ]
+    },
+    {
+      "frame": 660,
+      "time": 22.0,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0067.png",
+      "sha256": "980dfa7ca0c6e2508a1ef9034cd7b55bd225fd23549fa6114dd0571e61a6e1cf",
+      "reasons": [
+        "periodic"
+      ]
+    },
+    {
+      "frame": 690,
+      "time": 23.0,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0068.png",
+      "sha256": "693a7204969ae4529b2b045a4b65deef2f39fdb18ba33307bc83753ccd887970",
+      "reasons": [
+        "periodic"
+      ]
+    },
+    {
+      "frame": 692,
+      "time": 23.066666666666666,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0069.png",
+      "sha256": "f4e23cd9f56f4203dbcabd71c7e03fb6049426d2aa9f5c619309b60484ffd2ef",
+      "reasons": [
+        "contract:s3-progress:middle"
+      ]
+    },
+    {
+      "frame": 714,
+      "time": 23.8,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0070.png",
+      "sha256": "72684fd035b7ff03ab86ef6ab1ccb087f342e87ba6c1b4a53bab47e6cd2a4bb5",
+      "reasons": [
+        "profile-review-time"
+      ]
+    },
+    {
+      "frame": 720,
+      "time": 24.0,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0071.png",
+      "sha256": "38d3fb10d14fc3ddb63bb21ade36996c751a3839a8354cafae3a94a974aadfa7",
+      "reasons": [
+        "periodic"
+      ]
+    },
+    {
+      "frame": 723,
+      "time": 24.1,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0072.png",
+      "sha256": "d5a8f6acb966940aaeddfc7abb2140aca2e1dea9444d97b57e1e67634683a7d6",
+      "reasons": [
+        "profile-review-time"
+      ]
+    },
+    {
+      "frame": 731,
+      "time": 24.366666666666667,
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/movie-frames/frame-0073.png",
+      "sha256": "ea18e23399a18fcfc928d4b0004976d07bf68e8cc6f3b70cfd12935fd31f6fe8",
+      "reasons": [
+        "contract:s3-progress:end",
+        "full-clip-end"
+      ]
+    }
+  ],
+  "reviewed_at": "2026-10-18T11:13:10+0800"
+}

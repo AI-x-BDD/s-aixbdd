@@ -1,0 +1,10 @@
+{
+  "environment": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s2s5-fa7aueb_",
+  "copied": [
+    "results.md",
+    "results.json"
+  ],
+  "hash_check": "all recorded 64-char sha256 verified against actual inputs/Skill",
+  "case_S5_input": "paper-flow.mp4",
+  "history": "initial S5 used wrong route clip; root caught it and worker rechecked required paper clip; final reports replace initial result; correction retained separately in fault-correction-history.md"
+}

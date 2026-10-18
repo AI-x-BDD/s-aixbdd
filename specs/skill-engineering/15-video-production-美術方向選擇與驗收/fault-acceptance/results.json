@@ -1,0 +1,294 @@
+{
+  "schema_version": "1",
+  "generated_at": "2026-10-18",
+  "scope": {
+    "root": "videos/build/video-production-acceptance/style-s2s5-fa7aueb_",
+    "inputs": [
+      "fixtures/S2.md",
+      "fixtures/S3.md",
+      "fixtures/S4.md",
+      "fixtures/S5.md"
+    ],
+    "source_class": "隔離測試 fixture；非真人方向確認；歷史實際編碼 MP4／畫格不是新完成預覽",
+    "fixed_preamble": "僅隔離測試預設，非真人：依Skill判定並修正，有實片證據後接受推薦。"
+  },
+  "loaded_skill": {
+    "path": ".agents/skills/video-production/SKILL.md",
+    "isolated_path": ".agents/skills/video-production/SKILL.md",
+    "sha256": "b7e8926642409727286b788fab53863f92204a62ccafdaf7388fc0b1af128626"
+  },
+  "referenced_skill_files": [
+    ".agents/skills/video-production/rules/輸入與能力-格式規範.md",
+    ".agents/skills/video-production/rules/敘事與焦點-格式規範.md",
+    ".agents/skills/video-production/rules/成片評審-格式規範.md",
+    ".agents/skills/video-production/templates/評審與交付.md",
+    ".agents/skills/video-production/templates/製作計畫.md",
+    ".agents/skills/video-production/templates/分鏡與焦點.md"
+  ],
+  "capability_boundary": {
+    "methods": [
+      "ffprobe metadata and SHA-256",
+      "ffmpeg video/audio decode with -v error",
+      "ffmpeg MP4 frame extraction at source frame ranges and key frames",
+      "static visual inspection of fixture PNGs and generated contact sheets"
+    ],
+    "direct_continuous_av_input": "未接通",
+    "asr_or_sentence_hearing": "未執行",
+    "interpretation_limit": "解碼、音訊軌存在、抽幀與字幕可見只支持各自的證據；不支持連續聽感、連續節奏、動態舒適度或真人驗收。"
+  },
+  "cases": [
+    {
+      "id": "S2",
+      "preamble": "僅隔離測試預設，非真人：依Skill判定並修正，有實片證據後接受推薦。",
+      "input": {
+        "path": "fixtures/S2.md",
+        "sha256": "a490f56fdc665745c342ef64280a2df1d8825481b63c7adc02e8e32bc30722e3",
+        "source_type": "隔離測試",
+        "summary": "首次申請退款，理解申請→審核→退款單→付款紀錄；候選 A 是紙卡圖解與箭頭，候選 B 是同字體／卡片／平面色塊的水平節點路徑。"
+      },
+      "methods": [
+        "ffprobe 查兩支 MP4 的 codec、解析度、fps、frame count、音訊與 duration；ffmpeg -v error 分別解碼 video/audio。",
+        "檢視 fixtures/paper-flow/frame-0000.png–frame-0069.png、fixtures/route-flow/frame-0000.png–frame-0069.png 及全片 contact sheet。",
+        "從 MP4 抽取來源 video frame 208–224（約 6.933–7.467 秒）與 458–474（約 15.267–15.800 秒），檢視切點前後連續序列；key frames 216（7.2 秒）與 466（15.533 秒）。"
+      ],
+      "media_viewed": [
+        {
+          "path": "fixtures/paper-flow.mp4",
+          "sha256": "c5605a4ce6884651346a0792214ec0eef647919a6f2764ab179e73a8989baf4d",
+          "metadata": "H.264 1280x720 30fps 733 video frames；AAC；24.433333 秒",
+          "evidence": [
+            "fixtures/paper-flow/frame-0000.png–frame-0069.png",
+            "evidence/paper-all-contact.png",
+            "evidence/s2/paper-cut1-index208-224.png",
+            "evidence/s2/paper-cut2-index458-474.png"
+          ]
+        },
+        {
+          "path": "fixtures/route-flow.mp4",
+        "sha256": "fdf25aee81e9122fa8c0fc3f9b5bf6b14a93f1d78ca815de4a08a86d8f51816a",
+          "metadata": "H.264 1280x720 30fps 733 video frames；AAC；24.433333 秒",
+          "evidence": [
+            "fixtures/route-flow/frame-0000.png–frame-0069.png",
+            "evidence/route-all-contact.png",
+            "evidence/s2/route-cut1-index208-224.png",
+            "evidence/s2/route-cut2-index458-474.png"
+          ]
+        }
+      ],
+      "observations": [
+        "paper-flow 的主要語彙是矩形原訂單／退款申請卡、箭頭、卡片式退款單與付款紀錄。",
+        "route-flow 改為圓形／膠囊節點與水平虛線路徑，但仍使用同字體、米白背景、平面色塊、卡片／圓角節點、虛線／箭頭及字幕版面。",
+        "兩支都是有音訊、燒字幕、跨幕的實際 MP4；差異集中在節點形狀、位置、動線和少量配色，沒有第二套材質／空間／實物／手繪／插畫視覺語言。"
+      ],
+      "gate_original_text": [
+        "未定方向時，AI 必須主動從上述來源形成至少兩個候選，先提出推薦初選並實作同一代表內容的候選預覽，再依實際畫面與成片評審修正最終推薦；至少兩個候選都必須以實質不同的實際畫面、有聲片段與跨幕縮圖證明各自的美術選擇。",
+        "只有色彩、卡片位置或動線改變時，不足以證明完成美術探索；必須明列證據不足並補上能實際檢驗美術選擇的候選製作。",
+        "代表片段必須是含配音與燒錄字幕的實際編碼影片，具備該段獨立契約，完成與正式片相同的技術守門及成片評審才可稱為「已通過代表段」；具體判準依本 Skill 成片評審規範，能力限制另記。"
+      ],
+      "evidence_status": {
+        "automatic_technical": "兩支 MP4 video/audio decode 通過；metadata 通過",
+        "static_frames": "通過實片存在與候選可比較；不支持充分美術探索",
+        "audio_analysis": "未驗證；僅確認 AAC 音訊存在且可解碼",
+        "direct_continuous_av": "未驗證",
+        "user_acceptance": "未驗證",
+        "art_direction": "阻擋；實質美術差異不足"
+      },
+      "decision": {
+        "gate": "阻擋方向美術探索通過與推薦接受",
+        "continue": "可保留兩支作基準候選並補做實質不同視覺語言的同內容、有聲、燒字幕候選，再重評",
+        "block": true,
+        "reason": "實片證明是兩個平面圖解路徑版本，不能把路徑、節點形狀與少量配色差異寫成完整美術探索或已通過代表段。"
+      },
+      "correction_supported_scope": "補做具空間／材質／手繪實物等實質差異候選，並完成同一代表段的獨立契約、技術守門與成片評審後，最多支持退款內容關係下的候選比較／推薦初選；仍需真人方向確認。",
+      "unverified": [
+        "音訊內容與字幕逐句對齊",
+        "連續聽感、動態舒適度與連續節奏",
+        "完整焦點契約",
+        "使用者驗收",
+        "補候選前的最終美術方向"
+      ]
+    },
+    {
+      "id": "S3",
+      "preamble": "僅隔離測試預設，非真人：依Skill判定並修正，有實片證據後接受推薦。",
+      "input": {
+        "path": "fixtures/S3.md",
+        "sha256": "8dbee98ff67beeb25434517c918e97571272575ae26eecbc3b5fba2b9068c494",
+        "source_type": "隔離測試",
+        "summary": "設備報修；第一次報修員工需理解設備→報修單→技師→維修紀錄回接設備。輸入提出圖解適配理由，但明載沒有此主題實際預覽。"
+      },
+      "methods": [
+        "檢查 fixture 目錄的媒體清單與主題對應。",
+        "將退款主題的 paper-flow/route-flow 視為 S2 媒體；不拿它們冒充設備報修代表段。",
+        "依敘事與焦點 Rule 1 核對既有方向沿用條件、新主題適配理由與代表段閘門。"
+      ],
+      "media_viewed": [
+        {
+          "path": null,
+          "status": "沒有設備報修適用 MP4／PNG／旁白／字幕來源",
+          "note": "目錄只有退款主題的 paper-flow.mp4、route-flow.mp4 及畫格；兩支雖在 S2 實際查看，未用作 S3 證據。"
+        }
+      ],
+      "observations": [
+        "輸入已從內容關係、觀眾和理解目標說明圖解方向為何可能適配，並把紙張外觀列為美術裁量。",
+        "沒有設備報修實片，故沒有可觀察的實際畫面、動態、字幕、語音對齊或代表段證據。"
+      ],
+      "gate_original_text": [
+        "已有方向時，只有在確認來源、版本與適用範圍可追溯時才可沿用；新主題必須說明本片適配理由，不得以 AI 推定或測試預設代替真人確認，深色方案不是通用預設。",
+        "未定方向時，AI 必須主動從上述來源形成至少兩個候選，先提出推薦初選並實作同一代表內容的候選預覽，再依實際畫面與成片評審修正最終推薦。"
+      ],
+      "evidence_status": {
+        "automatic_technical": "未驗證；沒有本主題成片",
+        "static_frames": "未驗證",
+        "audio_analysis": "未驗證",
+        "direct_continuous_av": "未驗證",
+        "user_acceptance": "未驗證",
+        "art_direction": "候選適配理由存在，但代表段與方向確認阻擋"
+      },
+      "decision": {
+        "gate": "不強制換風格；阻擋把圖解建議寫成已確認方向或已通過代表段",
+        "continue": "可依輸入理由製作設備報修圖解代表預覽，加入實際旁白／燒字幕、焦點契約、技術與成片評審，再呈真人確認",
+        "block": true,
+        "reason": "新主題本身不是強制換風格的理由；但缺少主題實片，不能完成方向／代表段閘門。"
+      },
+      "correction_supported_scope": "若設備報修實片證明具名設備、報修單、技師、維修紀錄與責任交接清楚，可支持圖解方向適配本主題的推薦；不要求因換主題而使用純實物近拍。",
+      "unverified": [
+        "設備報修實際畫面與跨幕縮圖",
+        "動態、閱讀負荷與焦點契約",
+        "旁白、字幕與時間軸對齊",
+        "連續聽看與全片品質",
+        "真人方向確認"
+      ]
+    },
+    {
+      "id": "S4",
+      "preamble": "僅隔離測試預設，非真人：依Skill判定並修正，有實片證據後接受推薦。",
+      "input": {
+        "path": "fixtures/S4.md",
+        "sha256": "aebd827793c7f6585c412c1ba0f730af4e3423c27c584e14a6f6d08ae888ee73",
+        "source_type": "隔離測試",
+        "summary": "A 是植物片的淺綠四幕測試預設與測試回覆；B 是 AI 紙卡推定，兩者都被錯寫成真人已確認／可沿用。"
+      },
+      "methods": [
+        "只讀 fixture 的兩項來源敘述，標記來源類型、真人回覆、既有決策版本與適用範圍。",
+        "核對敘事與焦點 Rule 1 及成片評審 Rule 3；沒有以退款 MP4／PNG 代替 S4 的方向證據。"
+      ],
+      "media_viewed": [
+        {
+          "path": null,
+          "status": "本案沒有適用 MP4／PNG",
+          "note": "S4 是方向來源與測試回覆的文字隔離輸入；沒有直接影音或成片驗收證據。"
+        }
+      ],
+      "gate_original_text": [
+        "已有方向時，只有在確認來源、版本與適用範圍可追溯時才可沿用；新主題必須說明本片適配理由，不得以 AI 推定或測試預設代替真人確認，深色方案不是通用預設。",
+        "必須區分通過、不通過與未驗證；必須列出尚待真人判斷的範圍與版本，AI 推定與測試預設不能改寫成真人確認。"
+      ],
+      "subcases": {
+        "A": {
+          "observation": "來源是測試任務預設淺綠四幕，回覆是測試預設的「接受推薦」；沒有使用者原話、方向版本、適用範圍或真人觀看證據。",
+          "decision": "阻擋「真人已確認此風格」及「已驗證由內容自動選風格」。",
+          "supported_scope_after_correction": "只能記錄來源類型＝測試、預設＝淺綠四幕、測試回覆＝接受推薦、真人確認＝未取得、內容自動選風格＝未驗證；要繼續需實際候選／成片與真人確認版本。"
+        },
+        "B": {
+          "observation": "紙卡方向只有 AI 推定，沒有真人回覆、既有決策來源、方向版本或適用範圍。",
+          "decision": "阻擋沿用既定方向；只能記為 AI 候選／推論。",
+          "supported_scope_after_correction": "保留推定理由，製作同內容代表預覽並完成實片評審；取得真人確認後才可在指定版本／範圍沿用。"
+        }
+      },
+      "evidence_status": {
+        "automatic_technical": "未驗證；沒有成片",
+        "static_frames": "未驗證",
+        "audio_analysis": "未驗證",
+        "direct_continuous_av": "未驗證",
+        "user_acceptance": "未驗證",
+        "art_direction": "A、B 均阻擋虛假確認／沿用"
+      },
+      "decision": {
+        "gate": "阻擋兩項虛假既定方向",
+        "continue": "可保留測試回覆或 AI 推定為未驗證來源，補實片與真人確認",
+        "block": true,
+        "reason": "測試預設／測試回覆及 AI 推定都不能改寫成真人確認；也沒有成片證據可支持方向品質。"
+      },
+      "correction_supported_scope": "只支持修正後的來源分類與未驗證狀態；不支持任何方向已確認、內容自動選風格、焦點、節奏、字幕、音訊或使用者驗收結論。",
+      "unverified": [
+        "兩項的實際成片與畫格",
+        "美術方向符合性",
+        "焦點、節奏、字幕與音訊",
+        "直接連續聽看",
+        "使用者驗收"
+      ]
+    },
+    {
+      "id": "S5",
+      "preamble": "僅隔離測試預設，非真人：依Skill判定並修正，有實片證據後接受推薦。",
+      "input": {
+        "path": "fixtures/S5.md",
+        "sha256": "8150b4a4c16bf7f6a672681a7ff6cd7c0de73055d2513fac366426319f6eec41",
+        "source_type": "隔離測試",
+        "summary": "fixture 指定手繪工作桌方向（斜角筆觸實物訂單、紙張質感、桌面物件、手部交棒），候選成片是 paper-flow.mp4；製作者以 ffprobe、焦點、字幕技術通過宣稱風格與美術品質通過。"
+      },
+      "methods": [
+        "ffprobe 查 paper-flow.mp4 metadata；ffmpeg -v error 分別解碼 video/audio。",
+        "檢視 fixtures/paper-flow/frame-0000.png–frame-0069.png 與 evidence/paper-all-contact.png。",
+        "從 MP4 抽取 key frames n=0、216、466、716（0、7.2、15.533、23.867 秒）及切點前後連續序列 n=208–224、458–474；另抽查末段 20.8–23.6 秒。",
+        "對照 fixture 方向的四項辨識特徵與 paper-flow 實片位置／畫格；把技術、靜態畫格、音訊、直接連續聽看、使用者驗收及美術方向分開記錄。"
+      ],
+      "media_viewed": [
+        {
+          "path": "fixtures/paper-flow.mp4",
+          "sha256": "c5605a4ce6884651346a0792214ec0eef647919a6f2764ab179e73a8989baf4d",
+          "metadata": "H.264 1280x720 30fps 733 video frames；AAC；24.433333 秒；video/audio decode exit=0",
+          "evidence": [
+            "fixtures/paper-flow/frame-0000.png–frame-0069.png",
+            "evidence/paper-all-contact.png",
+            "evidence/s5/paper-key-01.png",
+            "evidence/s5/paper-key-02.png",
+            "evidence/s5/paper-key-03.png",
+            "evidence/s5/paper-key-04.png",
+            "evidence/s5/paper-key-contact.png",
+            "evidence/s5/paper-seq/",
+            "evidence/s5/end-contact.png"
+          ]
+        }
+      ],
+      "observations": [
+        "n=0／0–7.2 秒是米白背景、大型矩形原訂單卡、矩形退款申請卡、欄位與虛線箭頭；沒有桌面、紙張紋理、斜角手繪筆觸或手部。",
+        "n=208–224 顯示退款申請沿虛線交給審核人，落定後轉為橘色矩形退款單；n=458–474 顯示退款單再接到矩形付款紀錄面板；n=466 與 n=716 仍是平面向量／卡片語彙。",
+        "抽查畫格底部均可見深色字幕區，主要圖解未被字幕遮住；這支持畫格級燒錄字幕觀察，不支持逐句對齊或連續聽感。",
+        "抽查切點序列中具名物件仍可辨識，切點位於場景落定後；沒有獨立焦點契約、旁白時間軸或直接連續聽看，故只能記為部分回歸觀察。"
+      ],
+      "gate_original_text": [
+        "必須以實際編碼成片的時間／畫格／位置對照已選方向的辨識特徵與內容目的，記錄實片證據及對理解的作用；不得只用 brief、storyboard 或單張示意代替。",
+        "發現成片退回統一卡片套版或偏離推薦方向時，必須定位受影響的成片時間與畫格，提出修正並重新複查。",
+        "必須從編碼成片逐幀擷取每個切點前後的連續序列，範圍必須涵蓋動作收尾、核心穩定期與下一幕進場；高風險移動必須另涵蓋其起迄，逐項記下位置／方向變化、身份、落定、穩定閱讀時間及切換理由。孤立畫格、技術通過或自報動作時長不得代替序列觀察。",
+        "必須另外記錄美術方向符合性與內容理解適配的實片觀察及證據，至少指向已選方向版本、辨識特徵、成片位置／畫格與理解目的；不得把美術方向符合性併入技術或使用者驗收結果。",
+        "只有抽幀、靜態畫格、ASR 或音訊分析時，必須明示這些證據不能證明連續聽感、連續節奏或動態舒適度；直接連續聽看未完成時不得宣稱已驗證。",
+        "發現已選美術方向的辨識特徵或內容目的在實際成片中有落差時，必須先定位、修正、重建並複查受影響範圍，再交付正式入口；技術檢查成功不得宣告美術品質完成。"
+      ],
+      "evidence_status": {
+        "automatic_technical": "ffprobe metadata 與 video/audio decode 通過",
+        "static_frames": "抽查全片、key frames、切點序列；確認實片偏離手繪工作桌且字幕可見",
+        "audio_analysis": "未驗證；僅確認 AAC 音訊存在且可解碼",
+        "direct_continuous_av": "未驗證",
+        "user_acceptance": "未驗證；方向輸入是 fixture，不是真人選擇",
+        "art_direction": "不通過；實片與四項辨識特徵均有可觀察落差"
+      },
+      "decision": {
+        "gate": "阻擋美術方向符合及正式交付",
+        "continue": "可回到可修改來源，按手繪工作桌方向重做並以新 MP4 重抽全片切點／字幕／焦點／節奏證據",
+        "block": true,
+        "reason": "實片是可解碼、有字幕的退款流程圖解，沒有斜角手繪筆觸、紙張質感、桌面物件或手部交棒；技術成功、焦點聲明與字幕聲明不能取代方向符合性。"
+      },
+      "correction_supported_scope": "現有片只支持技術解碼、抽查畫格字幕存在、抽查序列具名物件與切點觀察；修正來源、重建並分別複查方向特徵、內容目的、技術、字幕、焦點／節奏和音訊後，才可支持 AI 方向評審，真人確認仍獨立記錄。",
+      "unverified": [
+        "直接連續聽看",
+        "連續節奏與動態舒適度",
+        "完整旁白對齊",
+        "完整焦點契約",
+        "使用者驗收",
+        "任何真人已選／已接受結論"
+      ]
+    }
+  ]
+}

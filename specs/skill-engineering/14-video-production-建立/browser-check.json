@@ -1,0 +1,42 @@
+{
+  "browser": "Chrome",
+  "url": "http://127.0.0.1:60079/isolated-smozlqqm/videos/build/plant-watering/delivery/delivery.html",
+  "duration": 13.5,
+  "width": 1280,
+  "height": 720,
+  "readyState": 4,
+  "playback": {
+    "muted": true,
+    "paused": false,
+    "observed_currentTime": [
+      0.164627,
+      3.418115
+    ]
+  },
+  "download_sha256": "792751eb3cccb7939a4472793ded73d14944e7c4461578a6f6187d9aba05940d",
+  "movie_sha256": "792751eb3cccb7939a4472793ded73d14944e7c4461578a6f6187d9aba05940d",
+  "download_matches_movie": true,
+  "scope": "browser playback and download only; not direct continuous audiovisual understanding",
+  "previous_revision": {
+    "browser": "Chrome",
+    "url": "http://127.0.0.1:60079/isolated-smozlqqm/videos/build/plant-watering/delivery/delivery.html",
+    "duration": 13.5,
+    "width": 1280,
+    "height": 720,
+    "readyState": 4,
+    "playback": {
+      "muted": true,
+      "paused": false,
+      "observed_currentTime": [
+        0.13819,
+        4.524136
+      ]
+    },
+    "download_sha256": "52352e451987de24f30a328cdd1a3f5fa635c7ed758236637066b9d044e008b7",
+    "movie_sha256": "52352e451987de24f30a328cdd1a3f5fa635c7ed758236637066b9d044e008b7",
+    "download_matches_movie": true,
+    "scope": "browser playback and download only; not direct continuous audiovisual understanding"
+  },
+  "download_path": "/Volumes/data/downloads/video (1).mp4",
+  "revision": "rhythm-v3/frame-boundary-fix"
+}

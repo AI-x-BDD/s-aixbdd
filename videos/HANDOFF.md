@@ -1,3 +1,22 @@
+# 影片流程與 CH2 交接
+
+2026-10-18：使用者已接受 CH2 最後 B＋M2 成片及製作過程，作為最低完成標準；新章節／其他主題使用 [video-production](../.agents/skills/video-production/SKILL.md)，通用工具操作見 [README](README.md#新章節與其他主題)。本次整理流程不重製 CH2。
+
+新片必要依賴：固定 [風格庫與播放目錄](style-library/README.md)，7 種可用解說形式、34 種可選藝術方向；先從庫內依內容選用，再製作本片有聲候選。啟用 style_library_required 與選用紀錄，缺庫／過期證據阻擋。整合及故障測試見 [固定風格庫驗收](../specs/skill-engineering/16-video-production-固定風格庫整合/acceptance.md)。
+
+CH2 現行基準：B 深色配色＋已選定的 M2 動態敘事，九幕、113 秒、原配音與燒錄字幕。最新進度與下一步只看 [交付狀態](../docs/過程/CH2/影片/製作紀錄/設計/新流程測試/交付狀態.md)。
+
+- 工作流程：[WORKFLOW](WORKFLOW.md)。
+- 預設建置、檢查、預覽及字幕後處理：[README](README.md)。
+- 逐段焦點契約：`projects/ch2-workflow-test/focus-contract.json`；另有 `motion-focus.json` 獨立主焦點表與 `motion-labels.json` 識別文字表；來源與成片檢查分開。
+- 能力實測：`scripts/capability_probe.py`；直接音訊輸入未接通，不以辨識冒充聽審。
+- 動態候選：[motion](motion/README.md)，使用者已選 M2，九幕正式建置入口為預設 profile；原固定構圖 B 另存 `focus-baseline.toml`。
+- 已確認的旁白、原音、片長與深色方向維持；B 原始來源雜湊留存於選定方向.json，焦點修訂另記。
+
+以下為 2026-10-17 歷史交接，所有「本次」「目前」「下一步」僅指當時，不作現行狀態依據。
+
+---
+
 # CH2 影片製作交接
 
 更新日期：2026-10-17。

@@ -1,0 +1,58 @@
+{
+  "a": {
+    "movie_sha256": "4c35162097cda59bc3b8f38d00ee7f4564bc643de796455e94e1299e172de602",
+    "review_sha256": "57299663ab65d94cc14b9ed26b17780b989c41b1d5b5f851249af51e564d8b98",
+    "evidence": [
+      {
+        "path": "specs/skill-engineering/15-video-production-美術方向選擇與驗收/root-final-review/a-identity.png",
+        "sha256": "b34e74f8944017a073a2acd9a98ffb8c317d8b40f7cc4f0a30ad29da3ff6695f",
+        "start": 12,
+        "duration": 3,
+        "fps": 4
+      },
+      {
+        "path": "specs/skill-engineering/15-video-production-美術方向選擇與驗收/root-final-review/a-return.png",
+        "sha256": "5d2ae87c7d591b1f57f6c103d2c82848dbc549482d50938cee28504196de022d",
+        "start": 15.5,
+        "duration": 8.5,
+        "fps": 2
+      }
+    ]
+  },
+  "b": {
+    "movie_sha256": "da92851c9c17607b2050bbea2bc378270e44d4f8666c7225f8ebeea39edff7a0",
+    "review_sha256": "89f941a5f78e5e342ecc69e2a1c38ebf32f326dfa9c786cc41535fc48130a542",
+    "evidence": [
+      {
+        "path": "specs/skill-engineering/15-video-production-美術方向選擇與驗收/root-final-review/b-identity.png",
+        "sha256": "98c722df4e69505d43f9ddf100134fe5a4e004e9b49f08143f9f360c94448066",
+        "start": 12,
+        "duration": 3,
+        "fps": 4
+      },
+      {
+        "path": "specs/skill-engineering/15-video-production-美術方向選擇與驗收/root-final-review/b-return.png",
+        "sha256": "0a413ce964b45f60de7187bde39df6b1ee2e5589ee8d459a9575d88ee43e52fb",
+        "start": 15.5,
+        "duration": 8.5,
+        "fps": 2
+      }
+    ]
+  },
+  "root_observation": {
+    "scope": "實際編碼片畫格與指定過渡序列，非直接連續聽看",
+    "result": "指定缺陷修正已見；可進入真人候選方向確認",
+    "observations": [
+      "A身份過渡先退舊字再留下退款單，未見先前殘字覆疊；B有桌面、角色審核、印章與帳本空間，與A流程軌道有實質圖像語言差異。",
+      "A/B退款單回接付款紀錄時，名稱已完整保留，未見先前帳本遮字。",
+      "回接後的金額、方式、進度依序出現焦點，停留時仍有明確觀看對象。"
+    ],
+    "recommendation": "A：新手操作的三段位置與當前對象最直接；B作情境化插畫備選。",
+    "limits": [
+      "不是CH2同等整體美術品質的真人驗收",
+      "非完整新章影片",
+      "continuous_av unverified",
+      "human art direction pending"
+    ]
+  }
+}

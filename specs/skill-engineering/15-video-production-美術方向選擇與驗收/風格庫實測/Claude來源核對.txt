@@ -1,0 +1,80 @@
+      recursive=1" --jq '.tree[] | select(.type=="blob") | .path' > /pri…)
+  ⎿       509 /private/tmp/claude-501/-Volumes-data-Projects-practice-s-aixbdd/6f32dc3c-ff39-497
+     0-9844-9f683cbfe0be/scratchpad/hs/tree.txt
+     OK  scripts/storyboard_lint.py
+     … +34 lines (ctrl+o to expand)
+  ⎿  Allowed by auto mode classifier
+
+⏺ Bash(S=/private/tmp/claude-501/-Volumes-data-Projects-practice-s-aixbdd/6f32dc3c-ff39-4970-9844-9f6
+      83cbfe0be/scratchpad/hs; sed -n 1,80p $S/scripts_engine_render.py;…)
+  ⎿  #!/usr/bin/env python3
+     """逐帧渲染：起本地 http 服务 → 无头 Chromium 打开 index.html → 对每帧调用 window.renderFra
+     me(t)
+     … +106 lines (ctrl+o to expand)
+  ⎿  Allowed by auto mode classifier
+
+⏺ Bash(S=/private/tmp/claude-501/-Volumes-data-Projects-practice-s-aixbdd/6f32dc3c-ff39-4970-9844-9f6
+      83cbfe0be/scratchpad/hs; sed -n 1,60p $S/scripts_engine_lib_fonts_…)
+  ⎿  # 字体许可 · Font licenses
+
+     本目录的字体都不属于本仓库的 MIT 授权，各自沿用原许可。全部是 SIL Open Font License 1.1（全
+     … +85 lines (ctrl+o to expand)
+  ⎿  Allowed by auto mode classifier
+
+⏺ 結論：能用，但可以實際執行的範圍遠小於 README 的數字。 授權沒有問題（MIT，加上字型 OFL）。對我們的
+  Remotion 流程，比較可行的是先當外部渲染器產出片段再嵌入，不能直接納入 state 和焦點契約。以下是我用
+  gh api 唯讀讀取固定版本的結果，沒有安裝或修改任何東西。
+
+  固定版本
+  - commit 為 8a0d7d72ca65fcce6f8ba82c4a6c8dfe35b8422c（2026-10-16），SKILL.md 標示的版本是
+    1.2.0。root 下載時請鎖定這個 SHA。
+  - 整個 repo 約 78MB，其中 assets/showcase 的展示 GIF 就占了約 40MB。
+
+  授權
+  - 整個 repo 是 MIT，© 2026 alchaincyf。程式碼和 SKILL 文字可以改寫、再散布，但要保留授權聲明。
+  - 例外：
+    - scripts/engine/lib/fonts/ 是 OFL 1.1，不在 MIT 範圍內，有幾款帶保留字型名稱。
+    - three.min.js 另附自己的授權檔。
+    - reference_films/spacex/spacex_wb/assets/ARPHICPL.TXT 是 Arphic 授權。
+  - MIT 不包含第三方的智慧財產。以下不能放進課程產出：
+    - 風格卡裡的吉卜力、皮克斯、南方公園、Rick & Morty。
+    - 展示圖裡的 Mario。
+    - reference_films/spacex。
+    - 作者本人的形象素材。
+
+  真正可以執行的 vs 只是研究配方（數字是我讀 INDEX 和目錄樹算的，不是照 README）
+
+  - 數量本身就不一致：README 說 35 種；SKILL.md 描述寫 16 種研究配方，內文又寫 17 張；INDEX 標題寫 16
+    種，表格實際列了 17 張。所以不能引用 README 的數字。
+  - 既有實做 36 種
+    - 其中 35 種有 Canvas 場景檔（01–06、08–36），37 號 Rick & Morty 是另一套 SVG 渲染器。
+    - 星級是作者自評：三星 20 種、二星 15 種、一星 1 種，沒有獨立驗證。
+    - 重要：INDEX 開頭自己寫明，這 35
+      張樣片都是同一個房間構圖（左上窗、左下貓、右側少女端杯），是「藝術史速通」那支片的設計。所以「
+      可執行」的意思只是能渲染那個房間。套到我們的主題，需要重新構圖、重寫場景程式。
+  - 研究配方 17 種（38–53、55）
+    - 有單場景原型，可以用 --film style_studies 渲染。
+    - 但協議要求 80 分才算實做，目前沒有一個到 80，獨立複核分數是 53–74。其中 8 種還是 35–55
+      分的舊試作。
+    - 作者的進度檔前後矛盾：39–41、43、44 號同時被標為「未重做」和「已重做」。
+    - INDEX 提到的舊版備份目錄 _archive/scenes_20261016/ 沒有包含在 repo 裡。
+    - 結論：這 17 種不能當作可用風格。
+  - 解說動畫語法：宣稱 9 種，實際 8 種有程式
+    - 8 種（t1–t3、y1–y5）有 clips/*.js，可以用 spec JSON 渲染參數化片段。單段超過 8 秒會警告。
+    - 第 9 種 y6 只有一份 1.9KB 的文件，沒有片段程式，不能執行。
+
+  與我們 Remotion 流程整合的限制
+
+  1. 執行環境不同
+     - 他們是 Playwright 開無頭 Chromium，逐幀呼叫 window.renderFrame(t)，再把畫面送進 ffmpeg，預設
+       60fps、1920×1080。場景程式靠同步 XHR 動態載入，又依賴 CAM、MD 等全域物件。
+     - 我們是 Remotion 4.0.536，1280×720、30fps，由 motion-state.ts
+       統一提供畫面狀態並和焦點契約綁定。
+     - 所以場景不能直接 import 進 Remotion。只有兩條路：
+       -
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────
+❯ 
+─────────────────────────────────────────────────────────────────────────────────────────────────────
+   󰀵   main ✗  ✦ Opus 5.5  ◔ ctx 19%  5h 0%(4h55m) · 7d 5%(1d4h)   13:04 
+  ⏵⏵ auto mode on (shift+tab to cycle) · ← 1 agent

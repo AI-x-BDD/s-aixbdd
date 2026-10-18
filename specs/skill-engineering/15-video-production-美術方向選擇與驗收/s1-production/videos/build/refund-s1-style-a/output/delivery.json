@@ -1,0 +1,56 @@
+{
+  "tool": "motion-project/0.1",
+  "project_id": "refund-s1-style-a",
+  "movie": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-a/output/refund-flow-style-a.mp4",
+  "movie_sha256": "4c35162097cda59bc3b8f38d00ee7f4564bc643de796455e94e1299e172de602",
+  "review": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-a/records/review.json",
+  "render_movie_sha256": "4c35162097cda59bc3b8f38d00ee7f4564bc643de796455e94e1299e172de602",
+  "statuses": {
+    "automated_state": {
+      "status": "pass",
+      "method": "motion_checks.check_focus",
+      "issues": []
+    },
+    "technical": {
+      "status": "pass",
+      "method": "ffprobe+source-fingerprint+encoded-frame-extraction",
+      "issues": []
+    },
+    "static_visual": {
+      "status": "pass",
+      "method": "bound encoded-frame assessment",
+      "assessment": {
+        "status": "pass",
+        "method": "本輪 encoded MP4 的 captured frames 與切點連續序列實際畫格檢查"
+      }
+    },
+    "subtitle_visibility": {
+      "status": "pass",
+      "method": "bound encoded-frame subtitle assessment",
+      "assessment": {
+        "status": "pass",
+        "method": "本輪 encoded MP4 的所有 subtitle frames 實際畫格檢查"
+      }
+    },
+    "audio_analysis": {
+      "status": "pass",
+      "method": "ffprobe、完整解碼與 AAC stream hash；不是直接聽看"
+    },
+    "continuous_av": {
+      "status": "unverified",
+      "reason": "目前工具沒有直接連續聽看輸入"
+    },
+    "user_acceptance": {
+      "status": "pending",
+      "method": "user decision required"
+    }
+  },
+  "user_acceptance": "pending",
+  "delivery_html": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-a/output/delivery.html",
+  "subtitle_sources": [
+    "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-a/output/captions.srt",
+    "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-a/output/captions.vtt"
+  ],
+  "rebuild_command": "uv run --frozen python scripts/motion_project.py --config /Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49/videos/projects/refund-s1/style-a/project.toml render",
+  "delivered_at": "2026-10-18T11:13:13+0800"
+}

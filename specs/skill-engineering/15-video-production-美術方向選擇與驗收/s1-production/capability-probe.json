@@ -1,0 +1,81 @@
+{
+  "tool": "isolated-capability-probe/1",
+  "observed_at": "2026-10-18",
+  "probes": {
+    "style-a": {
+      "ffprobe": "pass",
+      "ffprobe_metadata": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "codec_type": "video",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "30/1"
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_long_name": "AAC (Advanced Audio Coding)",
+            "codec_type": "audio",
+            "sample_rate": "22050",
+            "channels": 1,
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "24.433333"
+        }
+      },
+      "full_decode": "pass",
+      "full_decode_stderr": "",
+      "single_frame_extract": "pass"
+    },
+    "style-b": {
+      "ffprobe": "pass",
+      "ffprobe_metadata": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "30/1"
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_type": "audio",
+            "sample_rate": "22050",
+            "channels": 1,
+            "r_frame_rate": "0/0"
+          }
+        ],
+        "format": {
+          "duration": "24.433333"
+        }
+      },
+      "full_decode": "pass",
+      "full_decode_stderr": "",
+      "single_frame_extract": "pass"
+    },
+    "local_model_import": {
+      "status": "pass",
+      "module": "mlx_whisper",
+      "model_exists": true,
+      "model_path": "/Volumes/data/Projects-practice/s-aixbdd/videos/.cache/models/whisper-large-v3-turbo"
+    }
+  },
+  "limitations": {
+    "native_audio_input": "本對話未提供直接音訊輸入工具",
+    "continuous_av": "未宣稱連續聽看；review 的 continuous_av 保持 unverified",
+    "transcription": "alignment.json 沿用既有本機模型證據；未把 ASR 當成聽感評審"
+  }
+}

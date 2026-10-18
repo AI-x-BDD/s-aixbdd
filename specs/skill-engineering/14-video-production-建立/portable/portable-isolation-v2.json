@@ -1,0 +1,26 @@
+{
+  "test": "portable-profile-isolation-v2",
+  "profile_relative": "projects/plant-watering/project.toml",
+  "mutation": "subtitle_margin 18 -> 19 -> restored 18",
+  "portable_original_sha256": "3282f4a78df76db0c4684caea40b08d7842223983f3d3aaa453f073bdc19db75",
+  "portable_changed_sha256": "57bf6207d0ec989f6fe31b835e013b4a00eea2181670f38cfa3fe8555b491af0",
+  "portable_restored_sha256": "3282f4a78df76db0c4684caea40b08d7842223983f3d3aaa453f073bdc19db75",
+  "main_profile_sha256": "3282f4a78df76db0c4684caea40b08d7842223983f3d3aaa453f073bdc19db75",
+  "main_profile_unchanged_observed": true,
+  "changed_prepare": {
+    "exit_code": 0,
+    "fingerprint_sha256": "9d33957962cf43c1e40a6da6df583cecc854fc27a20cb95fb17287b7ab3321d3",
+    "stdout_tail": "33957962cf43c1e40a6da6df583cecc854fc27a20cb95fb17287b7ab3321d3\",\n  \"runtime_hashes\": {\n    \"timeline\": \"e812f941662068d54655a313513c419e183dba782daaf7695cba841564ab975c\",\n    \"state\": \"f7f65601c129e254646b0fabc32e19c7040a6572348308949e6717e75c01742a\",\n    \"focus_contract\": \"28779166bec13aaaee60622302b98c1f92dca071e280923e12d5713baecc30ba\",\n    \"captions_srt\": \"50a3b5b2359fea9fc5295b2d7181d7e785d871a1d55f8e6b83fa7b2d16a73af8\",\n    \"captions_vtt\": \"27ab060f58e2778439365662d7a853e9fe45ab907c762cde99dbe1718b3e5bb3\",\n    \"canonical_audio\": \"76c04c1466f04eb495208eb0cc7017649b63bca9c00707811399a9affef94d2d\",\n    \"render_props\": \"c6bf5c51abc7c4613b14aad13ead414b47320cc6d31f1972f0895549e0a1cfd0\",\n    \"generated_alignment\": \"90cd5deec03fe475b34e75aa31b1c66d58c3fc813f0e91f7115c0f15a36b391b\",\n    \"labels\": \"c7ec6f108b7fb3d03727a2459c976d097f26c6e32eb9075f8086a47b4902bf4a\"\n  },\n  \"tools\": {\n    \"tool\": \"motion-project/0.1\",\n    \"python\": \"Python 3.13.3\",\n    \"ffmpeg\": \"ffmpeg version 9.0.1 Copyright (c) 2000-2026 the FFmpeg developers\",\n    \"ffprobe\": \"ffprobe version 9.0.1 Copyright (c) 2007-2026 the FFmpeg developers\",\n    \"node\": \"v26.8.2\",\n    \"npm\": \"11.19.1\",\n    \"sips\": \"sips-316\"\n  }\n}\n",
+    "stderr_tail": ""
+  },
+  "restored_prepare": {
+    "exit_code": 0,
+    "fingerprint_sha256": "93f2bbe4125f7a3d1d8af7fcf82957dd4703f1cdcc302de0a5b8e18c110340a4",
+    "stdout_tail": "f2bbe4125f7a3d1d8af7fcf82957dd4703f1cdcc302de0a5b8e18c110340a4\",\n  \"runtime_hashes\": {\n    \"timeline\": \"e812f941662068d54655a313513c419e183dba782daaf7695cba841564ab975c\",\n    \"state\": \"f7f65601c129e254646b0fabc32e19c7040a6572348308949e6717e75c01742a\",\n    \"focus_contract\": \"28779166bec13aaaee60622302b98c1f92dca071e280923e12d5713baecc30ba\",\n    \"captions_srt\": \"50a3b5b2359fea9fc5295b2d7181d7e785d871a1d55f8e6b83fa7b2d16a73af8\",\n    \"captions_vtt\": \"27ab060f58e2778439365662d7a853e9fe45ab907c762cde99dbe1718b3e5bb3\",\n    \"canonical_audio\": \"76c04c1466f04eb495208eb0cc7017649b63bca9c00707811399a9affef94d2d\",\n    \"render_props\": \"c6bf5c51abc7c4613b14aad13ead414b47320cc6d31f1972f0895549e0a1cfd0\",\n    \"generated_alignment\": \"90cd5deec03fe475b34e75aa31b1c66d58c3fc813f0e91f7115c0f15a36b391b\",\n    \"labels\": \"c7ec6f108b7fb3d03727a2459c976d097f26c6e32eb9075f8086a47b4902bf4a\"\n  },\n  \"tools\": {\n    \"tool\": \"motion-project/0.1\",\n    \"python\": \"Python 3.13.3\",\n    \"ffmpeg\": \"ffmpeg version 9.0.1 Copyright (c) 2000-2026 the FFmpeg developers\",\n    \"ffprobe\": \"ffprobe version 9.0.1 Copyright (c) 2007-2026 the FFmpeg developers\",\n    \"node\": \"v26.8.2\",\n    \"npm\": \"11.19.1\",\n    \"sips\": \"sips-316\"\n  }\n}\n",
+    "stderr_tail": ""
+  },
+  "restored_matches_original": true,
+  "restored_matches_main": true,
+  "backup_path": "/tmp/video-skill-s2-portable-plant-20261018-project.toml.isolation-backup",
+  "scope": "temporary profile edit was made only under portable root; original isolated profile was not written"
+}

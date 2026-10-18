@@ -1,0 +1,23 @@
+{
+  "repository": "https://github.com/alchaincyf/huashu-art-motion",
+  "revision": "8a0d7d72ca65fcce6f8ba82c4a6c8dfe35b8422c",
+  "integrated_into_video_production": false,
+  "results": {
+    "whiteboard.mp4": {
+      "sha256": "c554713945caa59fba63a2bbffb6ff449ac7a39017b576077bfc25bba987f2db",
+      "width": 1920,
+      "height": 1080,
+      "frames": 300,
+      "duration": 10,
+      "scope": "upstream sample rendering only; no production-quality acceptance"
+    },
+    "bauhaus.mp4": {
+      "sha256": "fe1854dee1aa92d04a62ed96bfb1071f1ab5131e024a9367edfad13199c415d4",
+      "width": 1920,
+      "height": 1080,
+      "frames": 60,
+      "duration": 2,
+      "scope": "upstream sample rendering only; no production-quality acceptance"
+    }
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "head_unchanged": true,
+  "protected_files": [
+    {
+      "path": "videos/projects/ch2-workflow-test/preview.py",
+      "unchanged": true,
+      "sha256": "5dbdda442b5c034b2ce094f937e91acfdcacff776a1df526336ef8cdb39a5d8c"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/motion_runtime.py",
+      "unchanged": true,
+      "sha256": "49e31e15541d45a9cbb6e4a71fcb0444c91eeb58dc665202487c92dbb43a26ac"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/prepare_motion.py",
+      "unchanged": true,
+      "sha256": "328e2290821bbafc85cbc70bb895f43b213463df3bc1b32d72604e494fe50a1d"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/focus-baseline.toml",
+      "unchanged": true,
+      "sha256": "65f9637eec90cf724ea40ae65f4b5cf1a59840af6c750e7dcda51a421fac8f02"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/選定方向.json",
+      "unchanged": true,
+      "sha256": "13340de728b1f5b4f551d86cfbccc6c7364c5e82b72f3af9914ff6109c9e1e2d"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/setup_motion.py",
+      "unchanged": true,
+      "sha256": "7f970fedf0219d1482d94228467c3bab1e268a98ad0e59d9b55c37ae24475cd2"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/design.py",
+      "unchanged": true,
+      "sha256": "88e77742a9d9d1caac201ab4c8a8c62e31887d1ece0307e69b518fd8262cf401"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/motion-focus.json",
+      "unchanged": true,
+      "sha256": "0c88d3446e0046bbfd23f791b1836d8db7cf835847214fa35d66be467692640a"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/README.md",
+      "unchanged": true,
+      "sha256": "a15c7c4c8675952c34aefc5873a9c31e02afcb57cec2c8b66f173531c23c0a63"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/motion_samples.py",
+      "unchanged": true,
+      "sha256": "04c35c2690aef6204b78ec34cd73c7cd4fd1a915fa0a7354bf7891d007442078"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/burn_subtitles.py",
+      "unchanged": true,
+      "sha256": "e81178ce056342955e94519a76ada379fd3ddeacd6798eedf4030069617806d8"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/render_motion.py",
+      "unchanged": true,
+      "sha256": "13d275557848e9acd6e4908072d1c69b8bcd5bc8e3af6630318c9b1c2572d6c7"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/project.toml",
+      "unchanged": true,
+      "sha256": "8563f9c337599ccdc08d2918ac34b3195178df718da591f20dac76b12fd47578"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/motion-labels.json",
+      "unchanged": true,
+      "sha256": "de456b7342504ac69bd19e2e7bd85dbeeed3f2e1b64c9510cb35ea14d29ec9c6"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/focus-contract.json",
+      "unchanged": true,
+      "sha256": "cd27831fe7bc176e5773e41618b8c15badf336127b593314bd22a0198ded4867"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/review_motion.py",
+      "unchanged": true,
+      "sha256": "3d22a8a716618466a13dc7201979ad19e5c178e983c0792079ee30996a4b7f79"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/compare.py",
+      "unchanged": true,
+      "sha256": "bd6b62289d52d28eaef0d732e943fbaaf488607b7a58cfca9ec10e6ac552a20c"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/finish.py",
+      "unchanged": true,
+      "sha256": "56056e71c080d9efe52df43e7fb0cdce8aea6584f15198750f9b1c6f4edb3886"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/__pycache__/motion_samples.cpython-311.pyc",
+      "unchanged": true,
+      "sha256": "87565a1ee7b47b0fdc043c376ad880a51491efef05e88001e519c41509e4b903"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/__pycache__/prepare_motion.cpython-311.pyc",
+      "unchanged": true,
+      "sha256": "dc1be7c36fbce86cdf24e22575651cdaacb5abcae89d70b1b70a7385a9d887df"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/__pycache__/compare.cpython-311.pyc",
+      "unchanged": true,
+      "sha256": "6455242638008890e64206c177b951523c0acbfcd42928f5bf05b4e507379431"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/__pycache__/render_motion.cpython-311.pyc",
+      "unchanged": true,
+      "sha256": "b7cb806709a6863027586586ff147f9d59698e09080017205fa85001323257e6"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/__pycache__/motion_runtime.cpython-311.pyc",
+      "unchanged": true,
+      "sha256": "bd0c407ca2e66d8dea3fa5b9f22b86fb52ef9b5052299f00a9f2b981b2a605c0"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/__pycache__/burn_subtitles.cpython-39.pyc",
+      "unchanged": true,
+      "sha256": "ff35e806edb305aae925661dc3ece4376f207c22fed67768856c7eb6d149b243"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/__pycache__/preview.cpython-311.pyc",
+      "unchanged": true,
+      "sha256": "48f8f8a88347af51144e5d2cbc48d7cef3192bf78e7f394fa56d03a42ec39e29"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/__pycache__/review_motion.cpython-311.pyc",
+      "unchanged": true,
+      "sha256": "7d593e87aab11b91dfcfe0007e787c4fc4f0ebf5f684ebf9d98ba405b60bd969"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/__pycache__/finish.cpython-39.pyc",
+      "unchanged": true,
+      "sha256": "c145ebb1e121c2e3f04b83c0b16aa30ea67c17f1951af1437981b58f8538a4f8"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/__pycache__/burn_subtitles.cpython-311.pyc",
+      "unchanged": true,
+      "sha256": "8363b3b0bbde13d73c24ab6a15abeacb6bac770fe3c22472e9e912bec6570709"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/__pycache__/setup_motion.cpython-311.pyc",
+      "unchanged": true,
+      "sha256": "268117f6e465a8526030569dbbc88825bb81d2e7873628cab24be5b23adbfd30"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/__pycache__/design.cpython-311.pyc",
+      "unchanged": true,
+      "sha256": "ddbba65eb5f6967fbfe6035edd273d64a6edfa70d9af818d815d47e70a0bece5"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/__pycache__/finish.cpython-311.pyc",
+      "unchanged": true,
+      "sha256": "64b8ad141ccc3091bf83e62653efd58a069cbff1f825a9a72da2648c5f9fd3ea"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/proposals/c.toml",
+      "unchanged": true,
+      "sha256": "47566ec16b6240292914d04b1e2d0cd35f927266ff8c0e15a3e6626a2ee02335"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/proposals/b.toml",
+      "unchanged": true,
+      "sha256": "80dd52d246c667d1d44d419ce16174295f3780bbc2d318694523a0ae6240bbb7"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/proposals/a.toml",
+      "unchanged": true,
+      "sha256": "0350de94b2597d0111366a18cc90dfe4f6f8df88e4f2d0298ccc630ddf97a92c"
+    },
+    {
+      "path": "videos/projects/ch2-workflow-test/proposals/a-color-b.toml",
+      "unchanged": true,
+      "sha256": "fa95639b9fa8ca3c1c4239bbe62d8e25ab8b39b25ec51e54ede532cc429998b0"
+    },
+    {
+      "path": "videos/build/ch2-workflow-test/動態正式版/輸出/影片.mp4",
+      "unchanged": true,
+      "sha256": "a0f45efe3a37026fa19ab02de1bdbca43ed6d85d21cfd037b5b09953a43baa85"
+    }
+  ],
+  "unexpected_changes": [],
+  "motion_project_sha256": "f22e93f68b7b960cbe320f2d55b3f509711ab6d7baf03427a0d77a8bbfd456a9",
+  "status": "final recheck passed"
+}

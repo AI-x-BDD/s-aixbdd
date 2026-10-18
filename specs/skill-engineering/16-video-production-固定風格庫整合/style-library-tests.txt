@@ -1,0 +1,89 @@
+{
+  "status": "pass",
+  "revision": "8a0d7d72ca65fcce6f8ba82c4a6c8dfe35b8422c",
+  "catalog_sha256": "1d5b7281230d25f8a51fcc9e468cd8aa73ab649822fe76a2510199ec9a274ee2",
+  "counts": {
+    "explainer": 8,
+    "art": 35
+  },
+  "selectable_counts": {
+    "explainer": 7,
+    "art": 34
+  },
+  "selectable": 41,
+  "issues": []
+}
+{
+  "status": "fail",
+  "revision": "8a0d7d72ca65fcce6f8ba82c4a6c8dfe35b8422c",
+  "catalog_sha256": "1d5b7281230d25f8a51fcc9e468cd8aa73ab649822fe76a2510199ec9a274ee2",
+  "counts": {
+    "explainer": 8,
+    "art": 35
+  },
+  "selectable_counts": {
+    "explainer": 7,
+    "art": 34
+  },
+  "selectable": 41,
+  "issues": [
+    "不可選用的風格：invented-style"
+  ]
+}
+{
+  "status": "fail",
+  "revision": "8a0d7d72ca65fcce6f8ba82c4a6c8dfe35b8422c",
+  "catalog_sha256": "1d5b7281230d25f8a51fcc9e468cd8aa73ab649822fe76a2510199ec9a274ee2",
+  "counts": {
+    "explainer": 8,
+    "art": 35
+  },
+  "selectable_counts": {
+    "explainer": 7,
+    "art": 34
+  },
+  "selectable": 41,
+  "issues": [
+    "不可選用的風格：invented-style"
+  ]
+}
+{
+  "status": "fail",
+  "revision": "8a0d7d72ca65fcce6f8ba82c4a6c8dfe35b8422c",
+  "catalog_sha256": "1d5b7281230d25f8a51fcc9e468cd8aa73ab649822fe76a2510199ec9a274ee2",
+  "counts": {
+    "explainer": 8,
+    "art": 35
+  },
+  "selectable_counts": {
+    "explainer": 7,
+    "art": 34
+  },
+  "selectable": 41,
+  "issues": [
+    "不可選用的風格：invented-style"
+  ]
+}
+{
+  "status": "fail",
+  "revision": "8a0d7d72ca65fcce6f8ba82c4a6c8dfe35b8422c",
+  "catalog_sha256": "1d5b7281230d25f8a51fcc9e468cd8aa73ab649822fe76a2510199ec9a274ee2",
+  "counts": {
+    "explainer": 8,
+    "art": 35
+  },
+  "selectable_counts": {
+    "explainer": 7,
+    "art": 34
+  },
+  "selectable": 41,
+  "issues": [
+    "不可選用的風格：invented-style"
+  ]
+}
+style-library: [Errno 2] No such file or directory: '/private/var/folders/df/_gkj2bcd1vl2x5cg2lqsfrch0000gn/T/fixed-style-library-mcuiur1r/style-library/catalog.json'
+.............
+----------------------------------------------------------------------
+Ran 13 tests in 4.296s
+
+OK

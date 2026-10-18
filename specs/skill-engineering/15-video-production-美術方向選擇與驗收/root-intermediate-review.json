@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-10-18T11:03:31.216469+08:00",
+  "stage": "intermediate, not final",
+  "movie_sha256": "2033140f3d2285b0252998b053802a9d58cb60f2ca84a1a77e6a75ded283a0d6",
+  "frame": "videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-a/records/subtitle-frames/caption-0002.png",
+  "frame_sha256": "ced3abe74349e4399df585f128f0e98920feaa69f9be632b781f89b280b03cef",
+  "method": "root view_image of encoded subtitle evidence frame",
+  "result": "fail",
+  "observations": [
+    "形變時舊身份殘字與退款單疊影，身份不夠清楚",
+    "小字說明製作規則，缺乏觀眾內容價值"
+  ],
+  "action": "已交製作代理修正，改後重建並以新證據複查",
+  "continuous_av": "unverified",
+  "second_candidate_review": {
+    "movie_sha256": "d36c7e74c8d9c1c9deef10688f8d5fdfe60b82e5c04ac368e80b45c59e173050",
+    "frame": "videos/build/video-production-acceptance/style-s1-eq6sab49/videos/build/refund-s1-style-b/records/subtitle-frames/caption-0002.png",
+    "frame_sha256": "7f3161f8ab238fa9119d4f49a25a96583321a6b4551fbc7f64fd8ee6b602334b",
+    "method": "root view_image of encoded subtitle frame",
+    "result": "insufficient art exploration evidence, not final",
+    "observation": "B仍以紙卡、圓形角色、虛線路徑為主；傾斜、背景網格及圖示差異不足以支持實質不同美術語言的結論",
+    "action": "交還製作代理自評／修正，未通過前不發布為完成"
+  }
+}

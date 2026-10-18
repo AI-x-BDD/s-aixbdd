@@ -1,0 +1,95 @@
+{
+  "source_environment": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49",
+  "files": [
+    {
+      "path": "videos/projects/refund-s1/style-a/project.toml",
+      "sha256": "ad7d8d0f5e4520271e39e3af3e904920b7fac6030acff0662b4d750a106af45a"
+    },
+    {
+      "path": "videos/projects/refund-s1/style-a/assessment.json",
+      "sha256": "f8f17ecb9e518a64c7313cf1407598419dcedbc4425c3bba0d163401e8bd8654"
+    },
+    {
+      "path": "videos/projects/refund-s1/style-a/storyboard.md",
+      "sha256": "049a16feb6c3b2886c3df2e2673b705a1df262b08e5be733a51360837caac9cc"
+    },
+    {
+      "path": "videos/projects/refund-s1/style-a/review.md",
+      "sha256": "70bd2c1018af09db345b818cd6134fda8facdf36b244c5c159e3d5e01098e62f"
+    },
+    {
+      "path": "videos/build/refund-s1-style-a/records/review.json",
+      "sha256": "57299663ab65d94cc14b9ed26b17780b989c41b1d5b5f851249af51e564d8b98"
+    },
+    {
+      "path": "videos/build/refund-s1-style-a/records/motion-checks.json",
+      "sha256": "4fdca9344bd0e84e4ad3f72c77b92af5affd425f79bf40f19a2b7a2ce43c951f"
+    },
+    {
+      "path": "videos/build/refund-s1-style-a/output/delivery.json",
+      "sha256": "edf25ec94b959967faf3d1540daf984902cead4f5514c5e720204fb6130b70d5"
+    },
+    {
+      "path": "videos/build/refund-s1-style-a/workspace/motion/src/Root.tsx",
+      "sha256": "57663416cc0bb30029ae5d0717133d939d5ba6b69011b769f143fad3c6c23501"
+    },
+    {
+      "path": "videos/build/refund-s1-style-a/workspace/motion/remotion.config.ts",
+      "sha256": "9c17a2490c6eb1c16d854bec6cd8412cf37b2ff9268dbcd41f9ab5734b7b395e"
+    },
+    {
+      "path": "videos/build/refund-s1-style-a/workspace/motion/package.json",
+      "sha256": "f2f1bc1ab910b2987c8c6abe9fb8bb4483653fc1aa653d839a584049ffd7437e"
+    },
+    {
+      "path": "videos/build/refund-s1-style-a/workspace/motion/package-lock.json",
+      "sha256": "62d8501f681b8d87fac97732b54f67feb87d617d90795fab000feb2a83597d28"
+    },
+    {
+      "path": "videos/projects/refund-s1/style-b/project.toml",
+      "sha256": "53624a1862b22f76a1211b384f8086e77a4d0da6cc1d296f34ae69a0ed7928d5"
+    },
+    {
+      "path": "videos/projects/refund-s1/style-b/assessment.json",
+      "sha256": "8ac0862a8338d631c7d3d6feaca891b9eaf369ecb5cd8d600b8d184d53c5ee18"
+    },
+    {
+      "path": "videos/projects/refund-s1/style-b/storyboard.md",
+      "sha256": "4a87dc736a4f202355fdca79cd24661362b955886933fdaf7fb0101fbe929c84"
+    },
+    {
+      "path": "videos/projects/refund-s1/style-b/review.md",
+      "sha256": "0c08f364bd836eac16ee9aa5fdc33048f29792df84142393b5d1f8651238f186"
+    },
+    {
+      "path": "videos/build/refund-s1-style-b/records/review.json",
+      "sha256": "89f941a5f78e5e342ecc69e2a1c38ebf32f326dfa9c786cc41535fc48130a542"
+    },
+    {
+      "path": "videos/build/refund-s1-style-b/records/motion-checks.json",
+      "sha256": "4fdca9344bd0e84e4ad3f72c77b92af5affd425f79bf40f19a2b7a2ce43c951f"
+    },
+    {
+      "path": "videos/build/refund-s1-style-b/output/delivery.json",
+      "sha256": "3e0c327c609bf48875a8b35646d7d4e597d0f1a7703eda9e3e40eb33530c2a43"
+    },
+    {
+      "path": "videos/build/refund-s1-style-b/workspace/motion/src/Root.tsx",
+      "sha256": "57110304293c48d416a873297752a6e48937d66aeed383b43edf13fb99a34e2c"
+    },
+    {
+      "path": "videos/build/refund-s1-style-b/workspace/motion/remotion.config.ts",
+      "sha256": "9c17a2490c6eb1c16d854bec6cd8412cf37b2ff9268dbcd41f9ab5734b7b395e"
+    },
+    {
+      "path": "videos/build/refund-s1-style-b/workspace/motion/package.json",
+      "sha256": "f2f1bc1ab910b2987c8c6abe9fb8bb4483653fc1aa653d839a584049ffd7437e"
+    },
+    {
+      "path": "videos/build/refund-s1-style-b/workspace/motion/package-lock.json",
+      "sha256": "62d8501f681b8d87fac97732b54f67feb87d617d90795fab000feb2a83597d28"
+    }
+  ],
+  "player": "http://127.0.0.1:60079/style-s1-eq6sab49/comparison.html",
+  "note": "comparison.html retained as evidence copy; relative media links resolve only in original environment"
+}

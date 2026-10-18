@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>網購退款代表預覽｜候選比較</title>
+  <style>
+    :root { color-scheme: light; --ink:#24303b; --muted:#69737c; --paper:#f5efe5; --line:#d8cec0; --accent:#e36b3f; --blue:#2457d6; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.6 -apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC",sans-serif; }
+    main { max-width:1320px; margin:0 auto; padding:36px 28px 56px; }
+    header { border-bottom:1px solid var(--line); padding-bottom:24px; margin-bottom:28px; }
+    h1 { margin:0 0 8px; font-size:clamp(26px,4vw,42px); letter-spacing:.02em; }
+    h2 { margin:0 0 8px; font-size:24px; }
+    p { margin:8px 0; }
+    .meta { color:var(--muted); }
+    .recommendation { border:2px solid var(--accent); background:#fffaf2; padding:18px 20px; margin:22px 0 30px; border-radius:14px; }
+    .recommendation strong { color:#b84e27; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+    .card { background:#fffdf8; border:1px solid var(--line); border-radius:16px; padding:16px; box-shadow:0 10px 24px rgba(44,34,23,.08); }
+    .card.recommended { border:2px solid var(--accent); }
+    .badge { display:inline-block; padding:2px 9px; border-radius:999px; color:#fff; background:var(--muted); font-size:13px; }
+    .recommended .badge { background:var(--accent); }
+    video { width:100%; aspect-ratio:16/9; display:block; border-radius:10px; background:#20252a; }
+    .links { display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; }
+    a { color:#1e4dab; }
+    .links a { background:#edf2ff; padding:6px 10px; border-radius:8px; text-decoration:none; }
+    ul { margin:12px 0; padding-left:22px; }
+    .controls { margin-top:30px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); }
+    code { font-size:.9em; }
+    @media (max-width: 900px) { .grid { grid-template-columns:1fr; } main { padding:24px 16px 42px; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="meta">網購退款：新手操作說明｜24.433 秒代表預覽</p>
+    <h1>兩個實質不同的美術候選</h1>
+    <p class="meta">同一份內容、完整原音、對齊、字幕契約、1280×720／30 fps；差異在空間、物件與動作語言。</p>
+  </header>
+
+  <section class="recommendation" aria-label="推薦">
+    <h2>推薦：A 紙面流程軌道</h2>
+    <p><strong>理由：</strong>三段水平節點讓第一次申請退款的觀眾持續知道自己在「找單／審核／付款紀錄」哪一步；12.72 秒身份轉換先退場再落定，15.56 秒回接後退款單仍完整可讀。B 的桌面人物、手部、印章與帳本有較強操作情境，適合作為備選，但資訊層次較多。</p>
+    <p class="meta">AI 畫格評審與技術檢查通過；真人方向待確認；AI 直接連續聽看未驗證。</p>
+  </section>
+
+  <section class="grid" aria-label="候選播放器">
+    <article class="card recommended">
+      <span class="badge">推薦候選</span>
+      <h2>A｜紙面流程軌道</h2>
+      <video controls preload="metadata" poster="videos/build/refund-s1-style-a/output/thumbnail.png">
+        <source src="videos/build/refund-s1-style-a/output/refund-flow-style-a.mp4" type="video/mp4">
+        您的瀏覽器不支援 HTML5 影片。
+      </video>
+      <p>文件卡、水平軌道與審核節點構成清楚的教學路徑；退款單與付款紀錄在回接段左右分置。</p>
+      <div class="links">
+        <a href="videos/build/refund-s1-style-a/output/delivery.html">開啟獨立播放頁</a>
+        <a href="videos/build/refund-s1-style-a/output/refund-flow-style-a.mp4" download>下載同一 MP4</a>
+        <a href="videos/projects/refund-s1/style-a/review.md">查看評審紀錄</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <span class="badge">比較候選</span>
+      <h2>B｜俯視桌面插畫</h2>
+      <video controls preload="metadata" poster="videos/build/refund-s1-style-b/output/thumbnail.png">
+        <source src="videos/build/refund-s1-style-b/output/refund-flow-style-b.mp4" type="video/mp4">
+        您的瀏覽器不支援 HTML5 影片。
+      </video>
+      <p>桌墊、便箋、人物、實體印章與開放帳本承擔操作關係；圖像語言與 A 的流程軌道不同。</p>
+      <div class="links">
+        <a href="videos/build/refund-s1-style-b/output/delivery.html">開啟獨立播放頁</a>
+        <a href="videos/build/refund-s1-style-b/output/refund-flow-style-b.mp4" download>下載同一 MP4</a>
+        <a href="videos/projects/refund-s1/style-b/review.md">查看評審紀錄</a>
+      </div>
+    </article>
+  </section>
+
+  <section class="controls">
+    <h2>比較條件與驗收狀態</h2>
+    <ul>
+      <li>兩案共用 `content.json`、`voice.m4a`、`alignment.json` 的內容契約與完整 24.433 秒時間軸。</li>
+      <li>兩案皆為 1280×720／30 fps、燒錄字幕，並各自保有 profile、workspace、source、review、output。</li>
+      <li>已實看本輪 encoded MP4 的 7.2 秒交接、12.72 秒身份轉換、15.56 秒回接連續序列，以及約 17.8 秒字幕畫格；兩案 label 可讀。</li>
+      <li>技術檢查：A/B 均通過；AI 直接連續聽看未驗證；真人方向與全片驗收待確認。</li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

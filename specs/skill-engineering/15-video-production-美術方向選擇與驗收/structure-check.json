@@ -1,0 +1,24 @@
+{
+  "skill_equals_blueprint": true,
+  "phases": 5,
+  "steps": 43,
+  "templates": {
+    "製作計畫": {
+      "headings_match": true,
+      "table_headers_match": true,
+      "example_no_placeholders": true
+    },
+    "分鏡與焦點": {
+      "headings_match": true,
+      "table_headers_match": true,
+      "example_no_placeholders": true
+    },
+    "評審與交付": {
+      "headings_match": true,
+      "table_headers_match": true,
+      "example_no_placeholders": true
+    }
+  },
+  "skill_sha256": "b7e8926642409727286b788fab53863f92204a62ccafdaf7388fc0b1af128626",
+  "heading_comparison": "compare section headings H2-H6; H1 topic placeholder versus filled example intentionally differs"
+}

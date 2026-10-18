@@ -1,0 +1,120 @@
+    legacy_style_reason，prepare.json 會記錄這個欄位。
+  - 選用紀錄檢查：沿用模式（reuse）要附證據實檔和
+    SHA，並寫明本片適配方式，而且不能和庫內選項同時出現；choices 格式錯誤會被擋下；選到不可選的 ID
+    會被擋下。
+  - 上游檔案：鎖定保留 373 個檔案，任何未鎖定的檔案都會判失敗，包括 __pycache__，不再有豁免。排除 136
+    個檔案（demos 102 個，加上 showcase、總覽圖、證據圖和作者形象），Mario、Clawd
+    和作者形象都已經不在保留清單裡。
+  - 授權：渲染需要的 LICENSE、THREE_LICENSE.txt、字型的 LICENSES.md 與
+    OFL.txt、render.py、spec_assets.py、eras_gallery.js、clip.html、examples/assets 都還在。
+  - y4 與一星項：y4 標為缺素材、不可選、不需要預覽；Rembrandt
+    不可選；兩者都不算進可選數量。解說預覽用的 spec 都有 SHA，而且會被驗證。
+
+  範圍限制
+
+  - 我只親自跑了 check。11 個風格庫測試、7 個 motion 工具回歸測試、Skill
+    兩側同步和稽核結果，都是依你們的回報，我沒有重跑。
+  - 新題材套用各風格後的品質不在這次驗收範圍內，這次也沒有宣稱通過。CH2 和已確認的 A 版都沒有動。
+
+✻ Crunched for 1m 5s · done 1:15 PM
+
+❯ 末輪兩個指出項已修：scripts/engine/reference_films/ 的78檔本次副本也排除，實際295 retained/214
+  excluded，README及驗收已改數字；check pass。motion_project.py check_style_library 解析後限定
+  library == tool_root/style-library，替換庫路徑直接阻擋，新增故障測試（共12項）。請只複查這兩點並回
+  覆仍有無阻擋，避免再擴範圍。
+
+⏺ Bash(cd /Volumes/data/Projects-practice/s-aixbdd/videos; /usr/bin/python3 scripts/style_library.py
+      check --library style-library | head -20; echo exit=$?; /usr/bin/p…)
+  ⎿  {
+       "status": "pass",
+       "revision": "8a0d7d72ca65fcce6f8ba82c4a6c8dfe35b8422c",
+     … +31 lines (ctrl+o to expand)
+  ⎿  Allowed by auto mode classifier
+
+⏺ Bash(cd /Volumes/data/Projects-practice/s-aixbdd/videos; sed -n 239,246p scripts/motion_project.py;
+      grep -n '"tool_root"' scripts/motion_project.py | head -3)
+  ⎿      if library.resolve() != (project["tool_root"] / "style-library").resolve():
+             raise ProjectError("新片只可使用工具包內的固定 style-library，不可替換為臨時風格庫"
+     )
+     … +9 lines (ctrl+o to expand)
+  ⎿  Allowed by auto mode classifier
+
+⏺ Bash(cd /Volumes/data/Projects-practice/s-aixbdd/videos; sed -n 160,181p scripts/motion_project.py
+      | grep -n -E "tool_root|TOOL_ROOT|config\.get" )
+  ⎿  11:        return ((tool_root if path.parts and path.parts[0] == "build" else resolved_sour
+     ce_root) / path).resolve()
+     13:    project_id = str(config.get("id", config.get("name", config_path.stem)))
+     … +4 lines (ctrl+o to expand)
+  ⎿  Allowed by auto mode classifier
+
+⏺ Bash(cd /Volumes/data/Projects-practice/s-aixbdd/videos; grep -n -E "^\s*tool_root\s*="
+      scripts/motion_project.py; sed -n 110,119p scripts/motion_project.py)
+  ⎿  152:    tool_root = _find_tool_root(config_path)
+         minutes, millis = divmod(millis, 60_000)
+         secs, millis = divmod(millis, 1000)
+     … +8 lines (ctrl+o to expand)
+  ⎿  Allowed by auto mode classifier
+
+⏺ 兩點裡，參考整片的排除已經解決；風格庫路徑的鎖定還有一個漏洞，算阻擋。
+  這次我只看這兩點，沒有修改任何檔案。
+
+  1. 排除參考整片：已解決
+
+  - lock 檔的保留 295 個加上排除 214 個，正好等於上游原本的 509 個檔案。保留清單裡已經沒有任何
+    reference_films 的路徑，實際的 scripts/engine/reference_films 目錄也不存在了。
+  - style-library/README.md 的數字（295／214）已經改對。第 52
+    行「本包不收錄該參考整片」現在也和實際情況一致。
+  - 我自己跑了一次 check，結果 exit 0、pass，catalog SHA 仍是 1d5b7281…，可選數量 7／34，沒有任何
+    issue。
+
+  2. 鎖定風格庫路徑：還能繞過
+
+  - check_style_library 用來比對的基準是 project["tool_root"]。
+  - 但 tool_root 是由 _find_tool_root(config_path) 決定的：從設定檔所在的目錄往上找，第一個含有
+    scripts/motion_project.py 的目錄就是 tool_root；一路都找不到的話，就直接用設定檔所在的目錄。
+  - 所以只要把設定檔放在任何一個工具包以外的目錄（或在上層放一個假的
+    scripts/motion_project.py），旁邊再放一份自己做的
+    style-library/，這份庫就會被當成「工具包內的固定庫」，比對通過，替換庫的情況照樣過關。
+  - 修法：比對基準改用正在執行的工具自己的根目錄，也就是 motion_project.py 裡現成的常數
+    TOOL_ROOT（Path(__file__).resolve().parents[1]），寫成 library.resolve() == (TOOL_ROOT / "style-l
+    ibrary").resolve()。這樣搬移到隔離環境時，每份工具包仍然各自帶著自己的固定庫，不影響可攜性。
+  - 新增的故障測試要補一個案例：設定檔放在工具包以外的目錄、旁邊附一份自製的庫，必須被擋下。
+
+  修完這一點，就沒有阻擋了。
+
+✻ Baked for 26s · done 1:16 PM
+
+❯ 已依你末次建議修完：check_style_library 與 _source_files 都以正在執行腳本的常數 TOOL_ROOT
+  定位／核對固定庫，不再以 config 推導 tool_root 作風格庫基準。補了 config ancestor spoof
+  測試（共13項），隔離fixture 用 patch模擬搬移後工具包常數；產品沒有override這個常數的介面。請只確認
+  這項修法，不擴新議題；你說此項修完無阻擋。
+
+⏺ Bash(cd /Volumes/data/Projects-practice/s-aixbdd/videos; grep -n -E
+      "TOOL_ROOT|style-library|tool_root\"\] / " scripts/motion_project.py | head -20; grep -n -A6
+      "def…)
+  ⎿  47:TOOL_ROOT = Path(__file__).resolve().parents[1]
+     134:            "style_library_required = true\nstyle_library = \"style-library\"\nstyle_se
+     lection = \"style-selection.json\"\n"
+     … +22 lines (ctrl+o to expand)
+  ⎿  Allowed by auto mode classifier
+
+⏺ 確認：這項修好了，固定風格庫整合已經沒有阻擋。 我只看了這一項，沒有修改任何檔案。
+
+  - 比對基準不能再被設定檔位置操控。 TOOL_ROOT
+    是由正在執行的腳本自己的位置決定的（motion_project.py:47）。check_style_library（第 238-240
+    行）只要解析後的路徑不等於
+    TOOL_ROOT/style-library，就直接報錯。把設定檔放在別處、旁邊附一份自製的庫，已經無法通過。
+  - 來源指紋用的是同一個基準。 _source_files 在第 364 行也改用
+    TOOL_ROOT，所以指紋綁定的庫和實際被檢查的庫是同一份，不會一個檢查 A、一個記錄 B。
+  - 檢查工具也來自同一份工具包。 實際執行檢查的 style_library.py 是用 Path(__file__).with_name(...)
+    找到的，和 motion_project.py 在同一個目錄。
+
+  13 項測試的結果是依你們的回報，我這次沒有重跑。
+
+✻ Cooked for 8s · done 1:17 PM
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────
+❯ 請重跑13項style測試確認
+─────────────────────────────────────────────────────────────────────────────────────────────────────
+   󰀵   main ✗  ✦ Opus 5.5  ◔ ctx 25%  5h 2%(4h42m) · 7d 6%(1d4h)   13:17 
+  ⏵⏵ auto mode on (shift+tab to cycle) · ← 1 agent

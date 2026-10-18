@@ -1,0 +1,14 @@
+{
+  "test": "portable-required-dependency-missing-v2",
+  "dependency": "projects/plant-watering/renderer/node_modules",
+  "command": "uv run --frozen --extra alignment python scripts/motion_project.py --config projects/plant-watering/project.toml render",
+  "expected_failure": true,
+  "exit_code": 2,
+  "failed": true,
+  "error_evidence": "\nmotion-project: 缺少 Remotion 依賴：/private/tmp/video-skill-s2-portable-plant-20261018/videos/projects/plant-watering/renderer/node_modules/.bin/remotion；先執行 init 並 npm ci\n",
+  "movie_sha_before": "792751eb3cccb7939a4472793ded73d14944e7c4461578a6f6187d9aba05940d",
+  "movie_sha_after_restore": "792751eb3cccb7939a4472793ded73d14944e7c4461578a6f6187d9aba05940d",
+  "output_preserved": true,
+  "restored": true,
+  "quarantine_path": "/tmp/video-skill-s2-portable-plant-20261018-node_modules-missing-test-v2"
+}

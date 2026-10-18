@@ -1,0 +1,371 @@
+{
+  "skills_roots": [
+    "/Volumes/data/Projects-practice/s-aixbdd/.claude/skills"
+  ],
+  "shadowed_skills": [],
+  "summary": {
+    "skills": 1,
+    "errors": 0,
+    "warnings": 1
+  },
+  "skills": [
+    {
+      "name": "video-production",
+      "path": "/Volumes/data/Projects-practice/s-aixbdd/.claude/skills/video-production",
+      "errors": 0,
+      "warnings": 1,
+      "findings": [
+        {
+          "code": "REF003",
+          "severity": "warning",
+          "file": "SKILL.md",
+          "line": 41,
+          "message": "`rules/敘事與焦點-格式規範.md` 在多個 `READ` 步驟重複載入。"
+        }
+      ],
+      "parts": [
+        "rules/成片評審-格式規範.md",
+        "rules/敘事與焦點-格式規範.md",
+        "rules/輸入與能力-格式規範.md",
+        "templates/分鏡與焦點.example.md",
+        "templates/分鏡與焦點.md",
+        "templates/製作計畫.example.md",
+        "templates/製作計畫.md",
+        "templates/評審與交付.example.md",
+        "templates/評審與交付.md"
+      ],
+      "references": {
+        "rules/輸入與能力-格式規範.md": [
+          {
+            "phase": 1,
+            "step": 3,
+            "verb": "READ",
+            "line": 12
+          }
+        ],
+        "templates/製作計畫.md": [
+          {
+            "phase": 1,
+            "step": 10,
+            "verb": "READ",
+            "line": 19
+          }
+        ],
+        "templates/製作計畫.example.md": [
+          {
+            "phase": 1,
+            "step": 10,
+            "verb": "READ",
+            "line": 19
+          }
+        ],
+        "rules/敘事與焦點-格式規範.md": [
+          {
+            "phase": 2,
+            "step": 2,
+            "verb": "READ",
+            "line": 27
+          },
+          {
+            "phase": 3,
+            "step": 2,
+            "verb": "READ",
+            "line": 41
+          }
+        ],
+        "templates/分鏡與焦點.md": [
+          {
+            "phase": 3,
+            "step": 7,
+            "verb": "READ",
+            "line": 46
+          }
+        ],
+        "templates/分鏡與焦點.example.md": [
+          {
+            "phase": 3,
+            "step": 7,
+            "verb": "READ",
+            "line": 46
+          }
+        ],
+        "rules/成片評審-格式規範.md": [
+          {
+            "phase": 5,
+            "step": 1,
+            "verb": "READ",
+            "line": 64
+          }
+        ],
+        "templates/評審與交付.md": [
+          {
+            "phase": 5,
+            "step": 4,
+            "verb": "READ",
+            "line": 67
+          }
+        ],
+        "templates/評審與交付.example.md": [
+          {
+            "phase": 5,
+            "step": 4,
+            "verb": "READ",
+            "line": 67
+          }
+        ]
+      },
+      "sop": [
+        {
+          "phase": 1,
+          "title": "確定內容與可用能力",
+          "steps": [
+            {
+              "step": 1,
+              "verb": "READ",
+              "text": "`READ` 使用者需求、專案指引、指定章節素材、已有的影片設定與決策；續作時另讀現行交付紀錄。"
+            },
+            {
+              "step": 2,
+              "verb": "THINK",
+              "text": "`THINK` 確定本片識別、工具根目錄、本片目錄、本片設定與製作範圍；從授權區分提案、製作、修正與重建。"
+            },
+            {
+              "step": 3,
+              "verb": "READ",
+              "text": "`READ` `rules/輸入與能力-格式規範.md` 的所有 Rule，建立「輸入與能力檢查清單」。"
+            },
+            {
+              "step": 4,
+              "verb": "THINK",
+              "text": "`THINK` 依輸入與能力檢查清單判定缺少資料與依賴；無缺漏時進入步驟 7。"
+            },
+            {
+              "step": 5,
+              "verb": "WRITE",
+              "text": "`WRITE` 只向使用者詢問影響製作且無法從來源取得的缺少資料。"
+            },
+            {
+              "step": 6,
+              "verb": "CHECK",
+              "text": "`CHECK` 回覆是否補齊資料；補齊後回步驟 4，未回覆則停止依賴該答案的工作，無法提供時列阻擋。"
+            },
+            {
+              "step": 7,
+              "verb": "READ",
+              "text": "`READ` 工具根目錄的 README、第三方來源清單及各實際指令的 help，建立「製作工具介面」。"
+            },
+            {
+              "step": 8,
+              "verb": "DELEGATE",
+              "text": "`DELEGATE` 使用製作工具介面初始化本片工作區、安裝鎖定依賴並執行能力小段實測；音訊生成／對齊依輸入與能力檢查清單選定的方法執行。"
+            },
+            {
+              "step": 9,
+              "verb": "CHECK",
+              "text": "`CHECK` 實測結果；缺少必要工具時回報具體原因並停止依賴步驟，可替代的能力按輸入與能力檢查清單記錄限制。"
+            },
+            {
+              "step": 10,
+              "verb": "READ",
+              "text": "`READ` `templates/製作計畫.md` 與 `templates/製作計畫.example.md`，載入「製作計畫樣板組」。"
+            },
+            {
+              "step": 11,
+              "verb": "WRITE",
+              "text": "`WRITE` 依製作計畫樣板組及輸入與能力檢查清單建立內容依據、能力結果、依賴清單與既有決策。"
+            }
+          ],
+          "completion": "完成條件：素材、理解目標、授權與能力均有紀錄，必要依賴可用或已明列阻擋。"
+        },
+        {
+          "phase": 2,
+          "title": "設計方向與代表預覽",
+          "steps": [
+            {
+              "step": 1,
+              "verb": "READ",
+              "text": "`READ` 製作計畫與既有方向確認紀錄。"
+            },
+            {
+              "step": 2,
+              "verb": "READ",
+              "text": "`READ` `rules/敘事與焦點-格式規範.md` 的所有 Rule，建立「敘事與焦點檢查清單」。"
+            },
+            {
+              "step": 3,
+              "verb": "CHECK",
+              "text": "`CHECK` 依製作計畫的方向決策紀錄與敘事與焦點檢查清單判定方向是否可沿用；可沿用時進入 Phase 3，否則繼續。"
+            },
+            {
+              "step": 4,
+              "verb": "THINK",
+              "text": "`THINK` 依敘事與焦點檢查清單選取能檢驗內容關係與閱讀負荷的代表段落。"
+            },
+            {
+              "step": 5,
+              "verb": "DELEGATE",
+              "text": "`DELEGATE` 依 Phase 1 依賴清單的精確路徑載入 storyboard、editorial presentation-design 與 motion-art-direction，提供內容依據與代表段落，取得候選方向、推薦初選及製作 brief；將實際載入路徑與所得設計決策交接至製作計畫。"
+            },
+            {
+              "step": 6,
+              "verb": "DELEGATE",
+              "text": "`DELEGATE` 使用製作工具介面及固定版 Remotion Skill，在隔離的候選目錄製作代表預覽。"
+            },
+            {
+              "step": 7,
+              "verb": "CHECK",
+              "text": "`CHECK` 依敘事與焦點檢查清單檢視實際預覽；有問題回步驟 5 修正。"
+            },
+            {
+              "step": 8,
+              "verb": "WRITE",
+              "text": "`WRITE` 將實作後的比較、最終推薦、能力限制及預覽連結寫入製作計畫，向使用者展示推薦初版及替代案。"
+            },
+            {
+              "step": 9,
+              "verb": "CHECK",
+              "text": "`CHECK` 使用者確認方向後記錄並進入 Phase 3；要求調整回步驟 4，未確認則停在候選。"
+            }
+          ],
+          "completion": "完成條件：有可審閱的代表預覽與方向確認紀錄，或已沿用既有確認方向。"
+        },
+        {
+          "phase": 3,
+          "title": "對齊旁白與逐幕分鏡",
+          "steps": [
+            {
+              "step": 1,
+              "verb": "READ",
+              "text": "`READ` 已確認方向、內容來源、既有旁白／音訊、能力結果與製作計畫。"
+            },
+            {
+              "step": 2,
+              "verb": "READ",
+              "text": "`READ` `rules/敘事與焦點-格式規範.md` 的所有 Rule，建立「分鏡檢查清單」。"
+            },
+            {
+              "step": 3,
+              "verb": "THINK",
+              "text": "`THINK` 依分鏡檢查清單形成旁白與動態設計，判定是否需要變更既有決策；不需變更時進入步驟 6。"
+            },
+            {
+              "step": 4,
+              "verb": "WRITE",
+              "text": "`WRITE` 展示須變更的內容、原因、時間影響與替代方案。"
+            },
+            {
+              "step": 5,
+              "verb": "CHECK",
+              "text": "`CHECK` 取得變更確認後繼續，未確認時停止受影響工作，要求調整時回步驟 3。"
+            },
+            {
+              "step": 6,
+              "verb": "DELEGATE",
+              "text": "`DELEGATE` 依製作工具介面及已確認配音方式取得音訊與實際語音對齊；尚未正式配音時先產生明確標示的預覽語音。"
+            },
+            {
+              "step": 7,
+              "verb": "READ",
+              "text": "`READ` `templates/分鏡與焦點.md` 與 `templates/分鏡與焦點.example.md`，載入「分鏡與焦點樣板組」。"
+            },
+            {
+              "step": 8,
+              "verb": "WRITE",
+              "text": "`WRITE` 依分鏡與焦點樣板組、分鏡檢查清單及實際對齊，建立逐幕設計與獨立焦點契約。"
+            },
+            {
+              "step": 9,
+              "verb": "CHECK",
+              "text": "`CHECK` 逐條核對分鏡檢查清單；時間負荷不符時回步驟 3 修正，涉及變更時通過對應確認步驟。"
+            }
+          ],
+          "completion": "完成條件：每段解說都有可執行分鏡與時間契約，配音來源與未驗證事項可追溯。"
+        },
+        {
+          "phase": 4,
+          "title": "製作、編碼與技術守門",
+          "steps": [
+            {
+              "step": 1,
+              "verb": "CHECK",
+              "text": "`CHECK` 本次授權是否涵蓋正式製作；只有提案授權時展示已有預覽並停止正式製作。"
+            },
+            {
+              "step": 2,
+              "verb": "READ",
+              "text": "`READ` 確認後分鏡、實際時間軸、本片設定與工具介面。"
+            },
+            {
+              "step": 3,
+              "verb": "DELEGATE",
+              "text": "`DELEGATE` 使用本片 Remotion workspace 與固定版官方 Skill 實作場景、字幕及實際繪圖共用狀態；沿用已通過代表段，其他場景依各自分鏡製作。"
+            },
+            {
+              "step": 4,
+              "verb": "DELEGATE",
+              "text": "`DELEGATE` 使用製作工具介面執行本片檢查與候選成片編碼。"
+            },
+            {
+              "step": 5,
+              "verb": "CHECK",
+              "text": "`CHECK` 技術結果；失敗時保留既有正式交付並回步驟 3 修正；通過才進 Phase 5。"
+            }
+          ],
+          "completion": "完成條件：候選完整成片及技術證據已產生，尚未以未評審版本取代正式交付。"
+        },
+        {
+          "phase": 5,
+          "title": "成片評審、修正與交付",
+          "steps": [
+            {
+              "step": 1,
+              "verb": "READ",
+              "text": "`READ` `rules/成片評審-格式規範.md` 的所有 Rule，建立「成片評審檢查清單」。"
+            },
+            {
+              "step": 2,
+              "verb": "CHECK",
+              "text": "`CHECK` 依成片評審檢查清單核對實際成片與證據；能力允許時直接聽看，不能直接聽看時採已實測替代檢查並保留限制。"
+            },
+            {
+              "step": 3,
+              "verb": "THINK",
+              "text": "`THINK` 依成片評審檢查清單及本片理解目標，從實際畫格與時間點評審內容負荷與溝通問題；已有可用授權證據的診斷版 presentation-design 時才按精確路徑載入輔助。"
+            },
+            {
+              "step": 4,
+              "verb": "READ",
+              "text": "`READ` `templates/評審與交付.md` 與 `templates/評審與交付.example.md`，載入「評審與交付樣板組」。"
+            },
+            {
+              "step": 5,
+              "verb": "WRITE",
+              "text": "`WRITE` 依評審與交付樣板組記錄各面向結果、問題、修法與未驗證項目。"
+            },
+            {
+              "step": 6,
+              "verb": "CHECK",
+              "text": "`CHECK` 有可修正缺陷時回 Phase 4，涉及既定決策變動時回 Phase 3；無缺陷時繼續。"
+            },
+            {
+              "step": 7,
+              "verb": "DELEGATE",
+              "text": "`DELEGATE` 使用製作工具介面發布已評審成片到本片交付入口，保存來源、重建命令與相同影片雜湊。"
+            },
+            {
+              "step": 8,
+              "verb": "WRITE",
+              "text": "`WRITE` 提供成片與簡短檢查結果；仍需使用者判斷的項目具體列出，已有使用者接受紀錄時沿用。"
+            },
+            {
+              "step": 9,
+              "verb": "CHECK",
+              "text": "`CHECK` 使用者接受時記錄驗收與版本，回報問題時回相應製作階段，未回覆時記為待驗收，不重問既有方向與授權。"
+            }
+          ],
+          "completion": "完成條件：交付入口、來源與證據對應同一版本；AI 檢查及使用者驗收分別有明確狀態。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,294 @@
+{
+  "schema": "portable-s10-v2",
+  "portable_root": "/private/tmp/video-skill-s2-portable-plant-20261018/videos",
+  "created_at": "2026-10-18",
+  "scope": {
+    "project": "plant-watering",
+    "direction": "淺綠植物風；4幕；1280x720；30fps；保留原音完整長度",
+    "inputs": {
+      "audio": "projects/plant-watering/materials/原音.aiff",
+      "audio_sha256": "e06d8988892b915ad2709b2e732a3ac5df082536ce4ad87f8dfcd052c7065d9f",
+      "narration": "projects/plant-watering/materials/旁白.txt",
+      "narration_sha256": "0dd50db7efba96e5989d085288fcdefc1a67b50c8df43d10135f1d586a9096d1"
+    },
+    "no_specs_or_old_ch2_materials_read": true,
+    "ch2_boundary": "final package has only projects/plant-watering; pre-existing legacy helpers with CH2 default config were moved out before final S10; see portable-package-cleanup.json"
+  },
+  "skills": {
+    "inventory": [
+      "video-production",
+      "storyboard",
+      "presentation-design-editorial",
+      "motion-art-direction"
+    ],
+    "required_by_video_production": [
+      "storyboard",
+      "presentation-design-editorial",
+      "motion-art-direction"
+    ],
+    "entries": [
+      {
+        "name": "storyboard",
+        "agents_skill": ".agents/skills/storyboard/SKILL.md",
+        "agents_skill_sha256": "de7184a98f0aeb836708846b79fe8f4ba32c9074e409e6d0f51527e75381ac3e",
+        "claude_skill": ".claude/skills/storyboard/SKILL.md",
+        "claude_skill_sha256": "de7184a98f0aeb836708846b79fe8f4ba32c9074e409e6d0f51527e75381ac3e",
+        "license": ".agents/skills/storyboard/LICENSE",
+        "license_sha256": "785cc3795d200258364045b327eb51dd900d7eedcf8882833482ff6b2157b4e1"
+      },
+      {
+        "name": "presentation-design-editorial",
+        "agents_skill": ".agents/skills/presentation-design-editorial/SKILL.md",
+        "agents_skill_sha256": "f5616952f7ff90b5a85c1928c8b441cc354fe71198f886188b3d02580fa28e67",
+        "claude_skill": ".claude/skills/presentation-design-editorial/SKILL.md",
+        "claude_skill_sha256": "f5616952f7ff90b5a85c1928c8b441cc354fe71198f886188b3d02580fa28e67",
+        "license": ".agents/skills/presentation-design-editorial/LICENSE",
+        "license_sha256": "d330eb5111b0a381b28c094e2b10278d4bf205d2cf8c3adab5ff43a20c967efa"
+      },
+      {
+        "name": "motion-art-direction",
+        "agents_skill": ".agents/skills/motion-art-direction/SKILL.md",
+        "agents_skill_sha256": "0337edf7c93b8e130bd7658e3d43f546c46f333cacbb2bb970613d65d340c5de",
+        "claude_skill": ".claude/skills/motion-art-direction/SKILL.md",
+        "claude_skill_sha256": "0337edf7c93b8e130bd7658e3d43f546c46f333cacbb2bb970613d65d340c5de",
+        "license": ".agents/skills/motion-art-direction/LICENSE",
+        "license_sha256": "33d6cd35a20903b5e968a76a1e584a7aeae2c83e3e58ea58ecc50b889b83e668"
+      }
+    ],
+    "video_production_agents_path": ".agents/skills/video-production/SKILL.md",
+    "video_production_agents_sha256": "507371dd2a89ce635c61c6347089c1109285afc7cd38e36effab37c454f4380b",
+    "video_production_claude_path": ".claude/skills/video-production/SKILL.md",
+    "video_production_claude_sha256": "507371dd2a89ce635c61c6347089c1109285afc7cd38e36effab37c454f4380b",
+    "source_manifest_agents": ".agents/skills/來源.json",
+    "source_manifest_claude": ".claude/skills/來源.json",
+    "source_manifest_sha256": "d2e3f37d2102cc100788d60e35317fd61a426474e5f4e6839aea7e9060ef93cf",
+    "filtered_required_manifest_agents": ".agents/skills/required-skill-sources.json",
+    "filtered_required_manifest_sha256": "4ea4b3c6ca21a8ab311c3f55915d82b48bc8e61ffffa9d796e3acd9edb1d8c4e",
+    "optional_unapproved_skills_carried": [],
+    "optional_not_carried": [
+      "presentation-design",
+      "frontend-slides",
+      "impeccable"
+    ]
+  },
+  "tools_and_locks": {
+    "motion_project": "scripts/motion_project.py",
+    "motion_project_sha256": "f22e93f68b7b960cbe320f2d55b3f509711ab6d7baf03427a0d77a8bbfd456a9",
+    "motion_checks": "scripts/motion_checks.py",
+    "motion_checks_sha256": "1f1a3cd0d03b13d0fa05790cc707f16a92afcbc150f11e21c7d7ed0aba3942d2",
+    "align": "scripts/align.py",
+    "align_sha256": "21aee01ce269c724bc63f22fa5d0c8e60dc50a7613b36a0dd6c96cf8e6eef9c8",
+    "python_lock": "uv.lock",
+    "python_lock_sha256": "7cde351cc52c2b592d6be9d29558d2f04d84eb552bcf3a5736cae2aaf92b8264",
+    "renderer_package": "projects/plant-watering/renderer/package.json",
+    "renderer_package_sha256": "f2f1bc1ab910b2987c8c6abe9fb8bb4483653fc1aa653d839a584049ffd7437e",
+    "renderer_lock": "projects/plant-watering/renderer/package-lock.json",
+    "renderer_lock_sha256": "62d8501f681b8d87fac97732b54f67feb87d617d90795fab000feb2a83597d28",
+    "renderer_license": "projects/plant-watering/renderer/LICENSE",
+    "renderer_license_sha256": "27d5f92a6a46d8b2006cf933f78fbd165cf7d01b300cc7fbe5f68c0b90ff9217",
+    "template_package": "templates/motion-project/package.json",
+    "template_package_sha256": "f2f1bc1ab910b2987c8c6abe9fb8bb4483653fc1aa653d839a584049ffd7437e",
+    "template_lock": "templates/motion-project/package-lock.json",
+    "template_lock_sha256": "62d8501f681b8d87fac97732b54f67feb87d617d90795fab000feb2a83597d28",
+    "template_license": "templates/motion-project/LICENSE",
+    "template_license_sha256": "27d5f92a6a46d8b2006cf933f78fbd165cf7d01b300cc7fbe5f68c0b90ff9217",
+    "npm_install": "npm ci --ignore-scripts",
+    "npm_install_status": "pass",
+    "official_remotion_install_script": "scripts/install-official-remotion-skill.sh",
+    "official_remotion_install_script_sha256": "54c0ec2bd3e687e59039e330b776316b001abb9cd329d98d6124127858c8ee88",
+    "official_remotion_hash_manifest": "scripts/official-remotion-skill.sha256",
+    "official_remotion_hash_manifest_sha256": "f5af8f64567f2efe2584ca0acfaf159d175ec87300df4339955679bc4995ba09",
+    "official_remotion_source_record": "scripts/official-remotion-skill-source.json",
+    "official_remotion_source_record_sha256": "dcab6b92230597439464f88784c9099e7385a86d741328b1d7e96f1597fb2571"
+  },
+  "model_and_prerequisites": {
+    "shared_read_only_model": "/Volumes/data/Projects-practice/s-aixbdd/videos/.cache/models/whisper-large-v3-turbo",
+    "model_source": "https://huggingface.co/mlx-community/whisper-large-v3-turbo",
+    "model_revision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb",
+    "portable_provenance": "projects/plant-watering/materials/model-provenance.json",
+    "provenance_sha256": "d0435dd6f5f279b9d1857cc380cfb87a2a38d0ffc59d5e1adfa1f753019f26e0",
+    "shared_model_copied": false,
+    "host_tools": {
+      "tool": "motion-project/0.1",
+      "python": "Python 3.13.3",
+      "ffmpeg": "ffmpeg version 9.0.1 Copyright (c) 2000-2026 the FFmpeg developers",
+      "ffprobe": "ffprobe version 9.0.1 Copyright (c) 2007-2026 the FFmpeg developers",
+      "node": "v26.8.2",
+      "npm": "11.19.1",
+      "sips": "sips-316"
+    }
+  },
+  "pipeline": {
+    "init": "pass",
+    "prepare": "pass",
+    "render": "pass",
+    "review": "pass",
+    "deliver": "pass",
+    "source_fingerprints_sha256": "93f2bbe4125f7a3d1d8af7fcf82957dd4703f1cdcc302de0a5b8e18c110340a4",
+    "renderer_sha256": "f22e93f68b7b960cbe320f2d55b3f509711ab6d7baf03427a0d77a8bbfd456a9"
+  },
+  "outputs": {
+    "workspace_movie": "build/plant-watering/workspace/out/video.mp4",
+    "workspace_movie_sha256": "792751eb3cccb7939a4472793ded73d14944e7c4461578a6f6187d9aba05940d",
+    "delivery_movie": "build/plant-watering/delivery/video.mp4",
+    "delivery_movie_sha256": "792751eb3cccb7939a4472793ded73d14944e7c4461578a6f6187d9aba05940d",
+    "delivery_named": "build/plant-watering/delivery/輸出/影片.mp4",
+    "delivery_named_sha256": "792751eb3cccb7939a4472793ded73d14944e7c4461578a6f6187d9aba05940d",
+    "review_verdict": "pass",
+    "user_acceptance": "pending",
+    "audio_stream_hashes": {
+      "canonical_audio_stream_sha256": "16a43f77cedfb5fa758f561777ef2012aa5b8b792bcb2ebb00f34ce5ace389db",
+      "movie_audio_stream_sha256": "16a43f77cedfb5fa758f561777ef2012aa5b8b792bcb2ebb00f34ce5ace389db"
+    },
+    "encoded_specs": {
+      "width": 1280,
+      "height": 720,
+      "fps": "30/1",
+      "duration_s": 13.5
+    }
+  },
+  "review_evidence": {
+    "assessment": "build/plant-watering/assessment.json",
+    "assessment_sha256": "16e3e72b6f74ea35c8daa31c3486174ee18bdb8470fa239db9460b17cb8f7ba0",
+    "sequence_dir": "build/plant-watering/records/cutpoint-continuous-v4",
+    "cutpoint_dir": "build/plant-watering/records/cutpoint-check-v4",
+    "sequence_sha256": {
+      "scene1-settle.png": "3c29c09d859bc17287be1311a72d36f34bd7696a9f1aaa872008c52ca25eb58c",
+      "scene1-transition.png": "431cdd90bca4d7ea3b81425050d947a7eda72f84e024239903d3e5117f268d4c",
+      "scene2-transition.png": "c02b8a1e63d4d58e5d793f36ac02519528822402081b4c907747a436361a9b03",
+      "scene3-settle.png": "e4b198d4f6f4c093346639ee2ed876b964a37432cf5d2ee735f8f3634e5d9b0f",
+      "scene3-transition.png": "dce35af7277e89305c8c55ee75cca101ae9f65c398a2b5f5f1f291b36ea81743",
+      "scene4-motion-settle.png": "cad9363526064ee777755dcf30b27b5f31a7d8f731e49b25afccd42e0568c6fc",
+      "scene4-settled.png": "149593ba069bdfa153eac2e912e040e3dda6ead244c3fc721c636b5d6cfb044c"
+    },
+    "cutpoint_sha256": {
+      "scene-1-cut.png": "75cd85d8554a39cec49e9763e90cf7d6e47aec35e7d4879b1d822c5cfacc1867",
+      "scene-2-cut.png": "ceb62119990e51665b0feca10fb00f1404b82a1409c508fcce5b184e563a1985",
+      "scene-3-cut.png": "5d51ce165148a57b963cc755cc3f7cd4f0297f3ea10663744e337e3db7a1c757",
+      "scene-4-tail.png": "9b4d959678a1d654e920c7b89660b2283729f7590dccd236cb503bddb2f4f846"
+    },
+    "review_statuses": {
+      "automated_state": {
+        "status": "pass",
+        "method": "motion_checks.check_focus",
+        "issues": []
+      },
+      "technical": {
+        "status": "pass",
+        "method": "ffprobe+source-fingerprint+encoded-frame-extraction",
+        "issues": []
+      },
+      "static_visual": {
+        "status": "pass",
+        "method": "bound encoded-frame assessment",
+        "assessment": {
+          "status": "pass",
+          "method": "encoded MP4 review frames plus continuous cutpoint sequences and cutpoint samples",
+          "observation": "已檢視本次 encoded MP4 的 25 張 review 畫格及四幕連續切點序列。四幕核心各自清楚：摸土、土濕等待、沿盆邊澆水、觀察排水；Root 以 frame boundary 與 state 同幀切換，未見錯幕或字幕帶遮蔽主要焦點。"
+        }
+      },
+      "subtitle_visibility": {
+        "status": "pass",
+        "method": "bound encoded-frame subtitle assessment",
+        "assessment": {
+          "status": "pass",
+          "method": "current encoded subtitle-evidence frames reviewed after sips alpha rasterization",
+          "observation": "四段字幕均在本次編碼後畫格可讀，字幕帶與上方 footer 分離，未覆蓋植物焦點。"
+        }
+      },
+      "audio_analysis": {
+        "status": "pass",
+        "method": "ffprobe plus full decode plus canonical/movie AAC stream hash comparison; not direct listening",
+        "source_audio_sha256": "e06d8988892b915ad2709b2e732a3ac5df082536ce4ad87f8dfcd052c7065d9f",
+        "canonical_audio_stream_sha256": "16a43f77cedfb5fa758f561777ef2012aa5b8b792bcb2ebb00f34ce5ace389db",
+        "movie_audio_stream_sha256": "16a43f77cedfb5fa758f561777ef2012aa5b8b792bcb2ebb00f34ce5ace389db",
+        "observation": "來源 AIFF 全長保留；封裝後 AAC stream 與 canonical AAC stream 雜湊一致。"
+      },
+      "continuous_av": {
+        "status": "unverified",
+        "method": "encoded frame sequences verify visual continuity only; no direct continuous listening claim",
+        "reason": "已逐格檢查動作位置與切點；Root frame-boundary 修正支持編碼畫格的同幀場景交接，但未宣稱人耳連續播放下的主觀聲畫節奏或同步驗收。"
+      },
+      "user_acceptance": {
+        "status": "pending",
+        "method": "user decision required"
+      }
+    }
+  },
+  "isolation_test": {
+    "test": "portable-profile-isolation-v2",
+    "profile_relative": "projects/plant-watering/project.toml",
+    "mutation": "subtitle_margin 18 -> 19 -> restored 18",
+    "portable_original_sha256": "3282f4a78df76db0c4684caea40b08d7842223983f3d3aaa453f073bdc19db75",
+    "portable_changed_sha256": "57bf6207d0ec989f6fe31b835e013b4a00eea2181670f38cfa3fe8555b491af0",
+    "portable_restored_sha256": "3282f4a78df76db0c4684caea40b08d7842223983f3d3aaa453f073bdc19db75",
+    "main_profile_sha256": "3282f4a78df76db0c4684caea40b08d7842223983f3d3aaa453f073bdc19db75",
+    "main_profile_unchanged_observed": true,
+    "changed_prepare": {
+      "exit_code": 0,
+      "fingerprint_sha256": "9d33957962cf43c1e40a6da6df583cecc854fc27a20cb95fb17287b7ab3321d3",
+      "stdout_tail": "33957962cf43c1e40a6da6df583cecc854fc27a20cb95fb17287b7ab3321d3\",\n  \"runtime_hashes\": {\n    \"timeline\": \"e812f941662068d54655a313513c419e183dba782daaf7695cba841564ab975c\",\n    \"state\": \"f7f65601c129e254646b0fabc32e19c7040a6572348308949e6717e75c01742a\",\n    \"focus_contract\": \"28779166bec13aaaee60622302b98c1f92dca071e280923e12d5713baecc30ba\",\n    \"captions_srt\": \"50a3b5b2359fea9fc5295b2d7181d7e785d871a1d55f8e6b83fa7b2d16a73af8\",\n    \"captions_vtt\": \"27ab060f58e2778439365662d7a853e9fe45ab907c762cde99dbe1718b3e5bb3\",\n    \"canonical_audio\": \"76c04c1466f04eb495208eb0cc7017649b63bca9c00707811399a9affef94d2d\",\n    \"render_props\": \"c6bf5c51abc7c4613b14aad13ead414b47320cc6d31f1972f0895549e0a1cfd0\",\n    \"generated_alignment\": \"90cd5deec03fe475b34e75aa31b1c66d58c3fc813f0e91f7115c0f15a36b391b\",\n    \"labels\": \"c7ec6f108b7fb3d03727a2459c976d097f26c6e32eb9075f8086a47b4902bf4a\"\n  },\n  \"tools\": {\n    \"tool\": \"motion-project/0.1\",\n    \"python\": \"Python 3.13.3\",\n    \"ffmpeg\": \"ffmpeg version 9.0.1 Copyright (c) 2000-2026 the FFmpeg developers\",\n    \"ffprobe\": \"ffprobe version 9.0.1 Copyright (c) 2007-2026 the FFmpeg developers\",\n    \"node\": \"v26.8.2\",\n    \"npm\": \"11.19.1\",\n    \"sips\": \"sips-316\"\n  }\n}\n",
+      "stderr_tail": ""
+    },
+    "restored_prepare": {
+      "exit_code": 0,
+      "fingerprint_sha256": "93f2bbe4125f7a3d1d8af7fcf82957dd4703f1cdcc302de0a5b8e18c110340a4",
+      "stdout_tail": "f2bbe4125f7a3d1d8af7fcf82957dd4703f1cdcc302de0a5b8e18c110340a4\",\n  \"runtime_hashes\": {\n    \"timeline\": \"e812f941662068d54655a313513c419e183dba782daaf7695cba841564ab975c\",\n    \"state\": \"f7f65601c129e254646b0fabc32e19c7040a6572348308949e6717e75c01742a\",\n    \"focus_contract\": \"28779166bec13aaaee60622302b98c1f92dca071e280923e12d5713baecc30ba\",\n    \"captions_srt\": \"50a3b5b2359fea9fc5295b2d7181d7e785d871a1d55f8e6b83fa7b2d16a73af8\",\n    \"captions_vtt\": \"27ab060f58e2778439365662d7a853e9fe45ab907c762cde99dbe1718b3e5bb3\",\n    \"canonical_audio\": \"76c04c1466f04eb495208eb0cc7017649b63bca9c00707811399a9affef94d2d\",\n    \"render_props\": \"c6bf5c51abc7c4613b14aad13ead414b47320cc6d31f1972f0895549e0a1cfd0\",\n    \"generated_alignment\": \"90cd5deec03fe475b34e75aa31b1c66d58c3fc813f0e91f7115c0f15a36b391b\",\n    \"labels\": \"c7ec6f108b7fb3d03727a2459c976d097f26c6e32eb9075f8086a47b4902bf4a\"\n  },\n  \"tools\": {\n    \"tool\": \"motion-project/0.1\",\n    \"python\": \"Python 3.13.3\",\n    \"ffmpeg\": \"ffmpeg version 9.0.1 Copyright (c) 2000-2026 the FFmpeg developers\",\n    \"ffprobe\": \"ffprobe version 9.0.1 Copyright (c) 2007-2026 the FFmpeg developers\",\n    \"node\": \"v26.8.2\",\n    \"npm\": \"11.19.1\",\n    \"sips\": \"sips-316\"\n  }\n}\n",
+      "stderr_tail": ""
+    },
+    "restored_matches_original": true,
+    "restored_matches_main": true,
+    "backup_path": "/tmp/video-skill-s2-portable-plant-20261018-project.toml.isolation-backup",
+    "scope": "temporary profile edit was made only under portable root; original isolated profile was not written"
+  },
+  "missing_dependency_test": {
+    "test": "portable-required-dependency-missing-v2",
+    "dependency": "projects/plant-watering/renderer/node_modules",
+    "command": "uv run --frozen --extra alignment python scripts/motion_project.py --config projects/plant-watering/project.toml render",
+    "expected_failure": true,
+    "exit_code": 2,
+    "failed": true,
+    "error_evidence": "\nmotion-project: 缺少 Remotion 依賴：/private/tmp/video-skill-s2-portable-plant-20261018/videos/projects/plant-watering/renderer/node_modules/.bin/remotion；先執行 init 並 npm ci\n",
+    "movie_sha_before": "792751eb3cccb7939a4472793ded73d14944e7c4461578a6f6187d9aba05940d",
+    "movie_sha_after_restore": "792751eb3cccb7939a4472793ded73d14944e7c4461578a6f6187d9aba05940d",
+    "output_preserved": true,
+    "restored": true,
+    "quarantine_path": "/tmp/video-skill-s2-portable-plant-20261018-node_modules-missing-test-v2"
+  },
+  "package_cleanup": {
+    "test": "portable-package-cleanup-before-s10",
+    "moved_preexisting_unauthorized_helpers": [
+      {
+        "path": "scripts/video.py",
+        "sha256": "1456139f18e528ad1b00dca5de54d576a1457d95266b35fa7fd2b0cad45a364b",
+        "quarantine": "/tmp/video-skill-s2-portable-plant-20261018-preexisting-helper-quarantine/video.py"
+      },
+      {
+        "path": "scripts/capability_probe.py",
+        "sha256": "51e6d8cb3b21fe6f8f2b208cb86c85b2b9482f4025167c1b4aa32a627bc16c30",
+        "quarantine": "/tmp/video-skill-s2-portable-plant-20261018-preexisting-helper-quarantine/capability_probe.py"
+      },
+      {
+        "path": "tests.test_motion_subtitles.py",
+        "sha256": "b8f0c95df206cd5a732da19c56a1da087a455be27ea7ce370033ec7711d4782a",
+        "quarantine": "/tmp/video-skill-s2-portable-plant-20261018-preexisting-helper-quarantine/tests.test_motion_subtitles.py"
+      }
+    ],
+    "reason": "pre-existing helpers included CH2 default config or duplicate legacy test; not required by motion-project flow; original isolated tree untouched"
+  },
+  "limits": [
+    "portable重跑使用共享唯讀模型與macOS host工具；模型未拷入portable。",
+    "frame序列支持編碼後可見連續性與同幀切幕；未宣稱人耳直接連續播放的主觀聲畫同步。",
+    "使用者實際驗證仍為pending。",
+    "官方 Remotion Skill 原文未隨包；portable 帶固定 revision、來源 JSON、下載腳本與 291 檔 SHA-256 manifest，按需下載到 .cache 後驗證。"
+  ],
+  "official_remotion_skill": {
+    "bundled": false,
+    "source_record": "scripts/official-remotion-skill-source.json",
+    "revision": "1441a11e95db35443bd76bb318386c0d3ca00053",
+    "manifest_entries": 291,
+    "manifest_sha256": "f5af8f64567f2efe2584ca0acfaf159d175ec87300df4339955679bc4995ba09",
+    "fixed_download_verify_command": "bash scripts/install-official-remotion-skill.sh",
+    "reason": "upstream has no license file; source text not redistributed"
+  }
+}

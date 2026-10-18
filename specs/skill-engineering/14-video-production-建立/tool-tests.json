@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-18",
+  "runs": [
+    {
+      "command": "videos/.venv/bin/python videos/tests/test_motion_project.py",
+      "exit_code": 0,
+      "tests": 7,
+      "result": "OK",
+      "scope": "isolated synthetic tool fixtures; not semantic visual acceptance"
+    },
+    {
+      "command": "videos/.venv/bin/python videos/tests/check_motion_contracts.py",
+      "exit_code": 0,
+      "tests": 10,
+      "result": "OK",
+      "scope": "independent expected contracts and actual state fault detection"
+    },
+    {
+      "command": "videos/.venv/bin/python videos/tests/test_motion_subtitles.py",
+      "exit_code": 0,
+      "tests": 1,
+      "result": "OK",
+      "scope": "actual macOS sips/FFmpeg encode/decode, non-square colored background and visible Chinese caption"
+    }
+  ],
+  "total": 18,
+  "direct_continuous_av": "unverified",
+  "final_suite": {
+    "command": "videos/.venv/bin/python -m unittest videos/tests/test_motion_project.py videos/tests/check_motion_contracts.py videos/tests/test_motion_subtitles.py",
+    "tests": 18,
+    "seconds": 10.057,
+    "exit_code": 0,
+    "result": "OK",
+    "motion_project_sha256": "f22e93f68b7b960cbe320f2d55b3f509711ab6d7baf03427a0d77a8bbfd456a9"
+  }
+}

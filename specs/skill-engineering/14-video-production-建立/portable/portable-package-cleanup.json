@@ -1,0 +1,21 @@
+{
+  "test": "portable-package-cleanup-before-s10",
+  "moved_preexisting_unauthorized_helpers": [
+    {
+      "path": "scripts/video.py",
+      "sha256": "1456139f18e528ad1b00dca5de54d576a1457d95266b35fa7fd2b0cad45a364b",
+      "quarantine": "/tmp/video-skill-s2-portable-plant-20261018-preexisting-helper-quarantine/video.py"
+    },
+    {
+      "path": "scripts/capability_probe.py",
+      "sha256": "51e6d8cb3b21fe6f8f2b208cb86c85b2b9482f4025167c1b4aa32a627bc16c30",
+      "quarantine": "/tmp/video-skill-s2-portable-plant-20261018-preexisting-helper-quarantine/capability_probe.py"
+    },
+    {
+      "path": "tests.test_motion_subtitles.py",
+      "sha256": "b8f0c95df206cd5a732da19c56a1da087a455be27ea7ce370033ec7711d4782a",
+      "quarantine": "/tmp/video-skill-s2-portable-plant-20261018-preexisting-helper-quarantine/tests.test_motion_subtitles.py"
+    }
+  ],
+  "reason": "pre-existing helpers included CH2 default config or duplicate legacy test; not required by motion-project flow; original isolated tree untouched"
+}

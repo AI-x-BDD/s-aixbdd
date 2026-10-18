@@ -1,0 +1,273 @@
+{
+  "segments": [
+    {
+      "id": "s1-find-order",
+      "start": 0.0,
+      "end": 2.24,
+      "targets": [
+        {
+          "id": "order-card",
+          "name": "原訂單"
+        }
+      ],
+      "required_active": [
+        "order-card"
+      ],
+      "forbidden_active": []
+    },
+    {
+      "id": "s1-check-details",
+      "start": 2.24,
+      "end": 4.98,
+      "targets": [
+        {
+          "id": "product-check",
+          "name": "商品"
+        },
+        {
+          "id": "reason-check",
+          "name": "退款原因"
+        }
+      ],
+      "required_active": [
+        "product-check",
+        "reason-check"
+      ],
+      "forbidden_active": []
+    },
+    {
+      "id": "s1-submit",
+      "start": 4.98,
+      "end": 7.2,
+      "targets": [
+        {
+          "id": "submit-button",
+          "name": "送出申請"
+        }
+      ],
+      "required_active": [
+        "submit-button"
+      ],
+      "forbidden_active": []
+    },
+    {
+      "id": "s2-handoff",
+      "start": 7.2,
+      "end": 9.48,
+      "targets": [
+        {
+          "id": "application-card",
+          "name": "退款申請"
+        },
+        {
+          "id": "reviewer",
+          "name": "審核人"
+        }
+      ],
+      "required_active": [
+        "application-card",
+        "reviewer"
+      ],
+      "forbidden_active": []
+    },
+    {
+      "id": "s2-confirm",
+      "start": 9.48,
+      "end": 11.7,
+      "targets": [
+        {
+          "id": "reviewer",
+          "name": "審核人"
+        }
+      ],
+      "required_active": [
+        "reviewer"
+      ],
+      "forbidden_active": []
+    },
+    {
+      "id": "s2-approve",
+      "start": 11.7,
+      "end": 12.72,
+      "targets": [
+        {
+          "id": "approval-stamp",
+          "name": "條件符合"
+        }
+      ],
+      "required_active": [
+        "approval-stamp"
+      ],
+      "forbidden_active": []
+    },
+    {
+      "id": "s2-transform",
+      "start": 12.72,
+      "end": 15.56,
+      "targets": [
+        {
+          "id": "refund-ticket",
+          "name": "退款單"
+        }
+      ],
+      "required_active": [
+        "refund-ticket"
+      ],
+      "forbidden_active": []
+    },
+    {
+      "id": "s3-settle",
+      "start": 15.56,
+      "end": 17.34,
+      "targets": [
+        {
+          "id": "refund-ticket",
+          "name": "退款單"
+        }
+      ],
+      "required_active": [
+        "refund-ticket"
+      ],
+      "forbidden_active": [
+        "payment-link",
+        "payment-ledger",
+        "amount",
+        "method",
+        "progress",
+        "trace-line"
+      ]
+    },
+    {
+      "id": "s3-connect",
+      "start": 17.34,
+      "end": 17.86,
+      "targets": [
+        {
+          "id": "payment-link",
+          "name": "回接"
+        }
+      ],
+      "required_active": [
+        "payment-link"
+      ],
+      "forbidden_active": [
+        "refund-ticket",
+        "payment-ledger",
+        "amount",
+        "method",
+        "progress",
+        "trace-line"
+      ]
+    },
+    {
+      "id": "s3-ledger",
+      "start": 17.86,
+      "end": 19.04,
+      "targets": [
+        {
+          "id": "payment-ledger",
+          "name": "付款紀錄"
+        }
+      ],
+      "required_active": [
+        "payment-ledger"
+      ],
+      "forbidden_active": [
+        "refund-ticket",
+        "payment-link",
+        "amount",
+        "method",
+        "progress",
+        "trace-line"
+      ]
+    },
+    {
+      "id": "s3-amount",
+      "start": 19.04,
+      "end": 20.2,
+      "targets": [
+        {
+          "id": "amount",
+          "name": "金額"
+        }
+      ],
+      "required_active": [
+        "amount"
+      ],
+      "forbidden_active": [
+        "refund-ticket",
+        "payment-link",
+        "payment-ledger",
+        "method",
+        "progress",
+        "trace-line"
+      ]
+    },
+    {
+      "id": "s3-method",
+      "start": 20.2,
+      "end": 21.06,
+      "targets": [
+        {
+          "id": "method",
+          "name": "方式"
+        }
+      ],
+      "required_active": [
+        "method"
+      ],
+      "forbidden_active": [
+        "refund-ticket",
+        "payment-link",
+        "payment-ledger",
+        "amount",
+        "progress",
+        "trace-line"
+      ]
+    },
+    {
+      "id": "s3-progress",
+      "start": 21.06,
+      "end": 22.44,
+      "targets": [
+        {
+          "id": "progress",
+          "name": "進度"
+        }
+      ],
+      "required_active": [
+        "progress"
+      ],
+      "forbidden_active": [
+        "refund-ticket",
+        "payment-link",
+        "payment-ledger",
+        "amount",
+        "method",
+        "trace-line"
+      ]
+    },
+    {
+      "id": "s3-trace",
+      "start": 22.44,
+      "end": 24.4333333333,
+      "targets": [
+        {
+          "id": "trace-line",
+          "name": "追蹤款項"
+        }
+      ],
+      "required_active": [
+        "trace-line"
+      ],
+      "forbidden_active": [
+        "refund-ticket",
+        "payment-link",
+        "payment-ledger",
+        "amount",
+        "method",
+        "progress"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "task": "網購退款新手操作說明代表預覽",
+  "status": "ready_for_user_acceptance",
+  "test_reply": "測試接受推薦",
+  "user_acceptance": "pending",
+  "continuous_av": "unverified",
+  "recommendation": {
+    "candidate_id": "refund-s1-style-a",
+    "reason": "三段水平流程軌道讓第一次退款使用者持續辨識找單、審核、付款紀錄；12.72 秒身份變換先退場再落定，15.56 秒回接後退款單完整可讀。B 保留為桌面操作感較強的比較候選。"
+  },
+  "comparison_page": "comparison.html",
+  "control_conditions": {
+    "content": "同一 content.json",
+    "audio": "同一 voice.m4a，完整 24.402222 秒來源音訊，成片時間軸 24.433 秒",
+    "alignment": "同一 alignment.json",
+    "format": "1280x720/30fps",
+    "subtitles": "burned subtitles",
+    "focus_contract": "同一 11 段 focus contract、733 frames"
+  },
+  "candidates": [
+    {
+      "id": "refund-s1-style-a",
+      "label": "A 紙面流程軌道",
+      "style": "紙面流程軌道",
+      "movie_sha256": "4c35162097cda59bc3b8f38d00ee7f4564bc643de796455e94e1299e172de602",
+      "review_movie_sha256": "4c35162097cda59bc3b8f38d00ee7f4564bc643de796455e94e1299e172de602",
+      "source_fingerprints_sha256": "f213e29a5161f0e3ad45aa4d7c0fc0925610e5dda6daeebb4086db8db9e29706",
+      "review_verdict": "pass",
+      "statuses": {
+        "automated_state": "pass",
+        "technical": "pass",
+        "static_visual": "pass",
+        "subtitle_visibility": "pass",
+        "audio_analysis": "pass",
+        "continuous_av": "unverified",
+        "user_acceptance": "pending"
+      },
+      "profile": "videos/projects/refund-s1/style-a/project.toml",
+      "workspace": "videos/build/refund-s1-style-a/workspace",
+      "source": "videos/projects/refund-s1/style-a/materials",
+      "review": "videos/build/refund-s1-style-a/records/review.json",
+      "assessment": "videos/projects/refund-s1/style-a/assessment.json",
+      "motion_checks": "videos/build/refund-s1-style-a/records/motion-checks.json",
+      "delivery_json": "videos/build/refund-s1-style-a/output/delivery.json",
+      "delivery_html": "videos/build/refund-s1-style-a/output/delivery.html",
+      "movie": "videos/build/refund-s1-style-a/output/refund-flow-style-a.mp4",
+      "thumbnail": "videos/build/refund-s1-style-a/output/thumbnail.png",
+      "visual_evidence": [
+        "videos/build/refund-s1-style-a/records/visual-review/cut-1-final.png",
+        "videos/build/refund-s1-style-a/records/visual-review/cut-2-final.png",
+        "videos/build/refund-s1-style-a/records/visual-review/scene-3-final.png",
+        "videos/build/refund-s1-style-a/records/subtitle-frames/caption-0004.png"
+      ],
+      "user_acceptance": "pending",
+      "continuous_av": "unverified"
+    },
+    {
+      "id": "refund-s1-style-b",
+      "label": "B 俯視桌面插畫",
+      "style": "俯視桌面插畫",
+      "movie_sha256": "da92851c9c17607b2050bbea2bc378270e44d4f8666c7225f8ebeea39edff7a0",
+      "review_movie_sha256": "da92851c9c17607b2050bbea2bc378270e44d4f8666c7225f8ebeea39edff7a0",
+      "source_fingerprints_sha256": "84e3729d250c011616eef2bf1a1c427a95c16cc1360eb013f96b5efe5b7e506b",
+      "review_verdict": "pass",
+      "statuses": {
+        "automated_state": "pass",
+        "technical": "pass",
+        "static_visual": "pass",
+        "subtitle_visibility": "pass",
+        "audio_analysis": "pass",
+        "continuous_av": "unverified",
+        "user_acceptance": "pending"
+      },
+      "profile": "videos/projects/refund-s1/style-b/project.toml",
+      "workspace": "videos/build/refund-s1-style-b/workspace",
+      "source": "videos/projects/refund-s1/style-b/materials",
+      "review": "videos/build/refund-s1-style-b/records/review.json",
+      "assessment": "videos/projects/refund-s1/style-b/assessment.json",
+      "motion_checks": "videos/build/refund-s1-style-b/records/motion-checks.json",
+      "delivery_json": "videos/build/refund-s1-style-b/output/delivery.json",
+      "delivery_html": "videos/build/refund-s1-style-b/output/delivery.html",
+      "movie": "videos/build/refund-s1-style-b/output/refund-flow-style-b.mp4",
+      "thumbnail": "videos/build/refund-s1-style-b/output/thumbnail.png",
+      "visual_evidence": [
+        "videos/build/refund-s1-style-b/records/visual-review/cut-1-final.png",
+        "videos/build/refund-s1-style-b/records/visual-review/cut-2-final.png",
+        "videos/build/refund-s1-style-b/records/visual-review/scene-3-final.png",
+        "videos/build/refund-s1-style-b/records/subtitle-frames/caption-0004.png"
+      ],
+      "user_acceptance": "pending",
+      "continuous_av": "unverified"
+    }
+  ],
+  "actual_visual_checks": {
+    "cut_1": "7.20s 交接；現行 MP4 6.83–7.50s 連續序列，cut-1-final.png",
+    "identity_transform": "12.72s 申請轉退款單；review transition frames 與 label opacity 複查",
+    "cut_2": "15.56s 回接付款紀錄；現行 MP4 15.17–16.00s 連續序列，cut-2-final.png",
+    "label": "約17.8s caption-0004.png；退款單完整可讀且未被付款紀錄遮住",
+    "source": "AI/工具實看 encoded frame 與連續序列；非真人確認"
+  },
+  "limitations": [
+    "沒有直接連續聽看輸入；continuous_av 保持 unverified。",
+    "真人美術方向、真人全片與音色驗收尚未發生；user_acceptance 保持 pending。",
+    "本次是兩個代表預覽，不是正式新章全片。"
+  ],
+  "skills_evidence": {
+    "video_production": ".agents/skills/video-production/SKILL.md",
+    "downstream": [
+      "videos/.agents/skills/storyboard/SKILL.md",
+      "videos/.agents/skills/presentation-design-editorial/SKILL.md",
+      "videos/.agents/skills/motion-art-direction/SKILL.md"
+    ],
+    "official_remotion": "videos/.cache/official-skills/remotion-dev-skills/1441a11e95db35443bd76bb318386c0d3ca00053/skills/remotion-best-practices/SKILL.md"
+  }
+}

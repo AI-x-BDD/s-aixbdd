@@ -1,0 +1,22 @@
+{
+  "url": "http://127.0.0.1:60079/style-s1-eq6sab49/comparison.html",
+  "browser": "Chrome",
+  "both_players": {
+    "duration": 24.433333,
+    "width": 1280,
+    "height": 720,
+    "readyState": 4
+  },
+  "A_playback": {
+    "paused": false,
+    "time": 3.383242,
+    "ended": false
+  },
+  "B_playback": {
+    "paused": false,
+    "time": 2.566792,
+    "ended": false
+  },
+  "scope": "UIcontrols started playback and currentTime advanced; no AI continuous audio-visual comprehension verified",
+  "layout": "final reload verified: poster-only two players; no duplicate image; plain language status; marked deliverable"
+}

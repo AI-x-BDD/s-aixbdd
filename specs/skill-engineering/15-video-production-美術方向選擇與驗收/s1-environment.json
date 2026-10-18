@@ -1,0 +1,15 @@
+{
+  "environment": "/Volumes/data/Projects-practice/s-aixbdd/videos/build/video-production-acceptance/style-s1-eq6sab49",
+  "input_hashes": {
+    "content.json": "cf3834467d872f0e43fac1cc8810d5544184e8e8548761a69b12097fb3aaf22d",
+    "alignment.json": "0ae1ab508b40878815832f4e08dcbed3f047baef907d6301e4c6974372ee0ca7",
+    "model-provenance-reference.json": "e168498b0204a5fb327eba6338232916d187a97c3d6c437cea9fdec5a0c13581",
+    "原始測試輸入.md": "b470dfd04555d6e1bbe5b33b7231893201c0b150684444c60cfd3daf1768d948",
+    "任務.md": "140b8e2d2784038ad718d1394ac2a70e1d4f5bd599e13cf84b41e28ef2e3a9e1",
+    "voice.m4a": "3f39fcc46238fd3596623032614a2c649c254a93a2b36e5585332c7170b05c21"
+  },
+  "shared_host_python": "/Volumes/data/Projects-practice/s-aixbdd/videos/.venv/bin/python",
+  "shared_model": "/Volumes/data/Projects-practice/s-aixbdd/videos/.cache/models/whisper-large-v3-turbo",
+  "existing_ch2_not_provided": true,
+  "no_prior_renderers_or_art_decisions_provided": true
+}

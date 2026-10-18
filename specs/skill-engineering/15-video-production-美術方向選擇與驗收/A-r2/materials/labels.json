@@ -1,0 +1,16 @@
+{
+  "order-card": "原訂單",
+  "product-check": "商品",
+  "reason-check": "退款原因",
+  "submit-button": "送出申請",
+  "application-card": "退款申請",
+  "reviewer": "審核人",
+  "approval-stamp": "條件符合",
+  "refund-ticket": "退款單",
+  "payment-ledger": "付款紀錄",
+  "amount": "金額",
+  "method": "方式",
+  "progress": "進度",
+  "trace-line": "追蹤款項",
+  "payment-link": "回接"
+}

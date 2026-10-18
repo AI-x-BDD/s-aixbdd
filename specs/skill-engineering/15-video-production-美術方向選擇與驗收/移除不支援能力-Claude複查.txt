@@ -1,0 +1,100 @@
+     1292-    technical = []
+     1293-    technical.extend(stale)
+     … +3 lines (ctrl+o to expand)
+  ⎿  1 skill available
+
+⏺ Bash(cd /Volumes/data/Projects-practice/s-aixbdd/videos; sed -n 1337,1400p
+      scripts/motion_project.py; sed -n 1217,1260p scripts/motion_project.py | grep -n -E "statu…)
+  ⎿  def command_deliver(project: dict[str, Any], acceptance: str = "pending") -> dict[str, Any]
+     :
+         _, paths = _ensure_prepared(project, require_current_render=True)
+     … +71 lines (ctrl+o to expand)
+  ⎿  Allowed by auto mode classifier
+
+⏺ 正在檢查工具交付條件與指紋綁定，確認移除欄位的連帶影響。
+
+⏺ Bash(cd /Volumes/data/Projects-practice/s-aixbdd/videos; grep -n -E
+      "TOOL_VERSION|__file__|motion_project.py|motion_checks" scripts/motion_project.py | head -20;
+      R=b…)
+  ⎿  10:    uv run --frozen python scripts/motion_project.py --config projects/demo.toml init
+     11:    uv run --frozen python scripts/motion_project.py --config projects/demo.toml prepare
+     12:    uv run --frozen python scripts/motion_project.py --config projects/demo.toml render
+     … +42 lines (ctrl+o to expand)
+  ⎿  Allowed by auto mode classifier
+
+⏺ 結論：範圍方向正確，但有三處漏項一定要補，否則改完會自相矛盾或少了工具層的防線。
+  以下全是唯讀檢查，我沒有修改任何檔案。
+
+  必須補上
+  1. 工具仍會照單全收 assessment 自報的聽看狀態。 videos/scripts/motion_project.py:1317-1318 只要
+     assessment JSON 裡有 continuous_av 這個 dict，就原封不動放進 statuses。拿掉預設的 unverified
+     之後，這兩行如果還在，任何人都能在 assessment 裡寫一個 pass，「抽幀不能冒充直接聽看」這條規則就
+     沒有工具擋了。建議刪掉這段轉入，並明確拒收或忽略這個欄位，同時補一個回歸測試。
+  2. 工具說明和實際行為不一致。
+     - videos/templates/motion-project/README.md:293-296 的 assessment 範例還有
+       continuous_av，要一起拿掉。
+     - 同檔第 324 行寫「continuous AV 未驗證會阻擋交付」，但 command_deliver（第 1344-1352
+       行）實際只檢查 static_visual、字幕與 SHA，從來沒有因為 continuous_av
+       擋過交付，這句本來就不正確，要照實改寫。
+     - videos/tests/test_motion_project.py 第 5 行的說明文字和第 142 行的 fixture 也要同步修改。
+  3. 藍圖 14 的 E11 是已確認的需求（要求「自動檢查、靜態視覺、音訊、直接連續聽看、使用者驗收五項各自
+     記狀態」）。這次變更等於改寫它。建議不要直接改 E11
+     的原文，而是另寫一筆變更紀錄，引用使用者這次的原話，歷史才追得到。
+
+  Skill 改動範圍（.claude 和 .agents 兩邊都要改，改完跑 scripts/sync-skills.sh --from
+  <修改的那一側>，再跑 --check）
+
+  - SKILL.md:65：「能力允許時直接聽看」改成「目前不支援，採替代檢查」。
+  - rules/成片評審-格式規範.md：
+    - 第 58 行的「五項分別記錄」改成四項。
+    - 第 61、62、82、86 行是「不得冒充」與反例，保留。
+  - rules/輸入與能力-格式規範.md：
+    - 第 45 行要求每次都列出連續影音輸入並做小段實測，和「能力只寫一次」衝突，要改。
+    - 第 53 行「直接聽看記未驗證」也要改。
+    - 第 46 行「抽幀、ASR 等不得冒充直接聽看」保留。
+  - templates/評審與交付.md:17、評審與交付.example.md:17,40：刪掉「直接連續聽看」這一列和對應的未驗證
+    說明。
+  - templates/製作計畫.example.md:31：如果能力表不再列「連續影音」，這裡也要一致。
+
+  措辭建議
+  - 能力說明寫成「目前工具不支援；日後若新增此能力，實測後再更新」。不要寫成永久禁止，這是
+    research.md:77 原本的決定。
+
+  其他現行文件
+  - videos/README.md:31 寫「直接連續聽看與使用者驗收分別記錄」，要改。
+  - videos/HANDOFF.md:3 寫「AI 仍未直接連續聽看」，「仍未」讀起來像待辦，建議改成陳述能力。
+  - videos/motion/README.md:54、videos/WORKFLOW.md:32
+    屬於事實陳述，可以保留，或統一改成「目前不支援」的寫法。
+
+  不要動
+  - CH2 的 docs、videos/projects/ch2-workflow-test/*、videos/scripts/capability_probe.py（CH2
+    時期的工具）。
+  - specs/ 下的歷史紀錄，例如 final-verification.json、tool-tests.json、acceptance.md。
+  - 各驗收環境既有的 review.json 和 delivery.json。
+
+  連帶影響
+  - 修改 motion_project.py 或 motion_checks.py 會讓來源指紋改變，因為這兩個檔被列入指紋（第 357-359
+    行）。如果修改落在 A-r2 環境自己那份工具上，現有的 review.json 會變成過期，deliver 會拒絕交付。
+  - 建議只改主 repo 的 videos/scripts，或確認 A-r2 改用新工具後重跑 review。指紋只要求重跑
+    review，不需要重新渲染。
+
+  保留不變的部分沒問題：static_visual 和字幕預設為未驗證、使用者驗收預設
+  pending、技術檢查不等於通過。
+
+✻ Cooked for 1m 14s · done 12:57 PM
+
+❯ 補充：修改已完成，7項test_motion_project測試通過、兩側同步/結構診斷通過。只更新canonical
+  scripts，隔離R2工具包與歷史review未改，避免破壞既有指紋；新影片與新建環境才帶新工具。請立即以已蒐
+  證內容給結論，勿擴大查找。
+
+⏺ 我這次沒有重新讀修改後的檔案，以下只依你們回報的結果和我先前蒐集的證據下判斷。
+
+  結論：範圍和做法可以接受，沒有阻擋問題。
+
+  - 只改主 repo 的工具是對的。 A-r2 隔離環境自己那份工具和既有的 review.json
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────
+❯ 
+─────────────────────────────────────────────────────────────────────────────────────────────────────
+   󰀵   main ✗  ✦ Opus 5.5  ◔ ctx 14%  5h 21%(2m) · 7d 5%(1d5h)   12:57 
+  ⏵⏵ auto mode on (shift+tab to cycle) · ← 1 agent
