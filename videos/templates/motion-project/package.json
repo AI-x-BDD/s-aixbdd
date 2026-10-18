@@ -1,0 +1,25 @@
+{
+  "name": "motion-project-template",
+  "private": true,
+  "description": "Reusable Remotion workspace for one profile-driven motion video",
+  "license": "SEE LICENSE IN LICENSE",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "studio": "remotion studio"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.536",
+    "@remotion/media": "4.0.536",
+    "@remotion/paths": "4.0.536",
+    "react": "19.1.10",
+    "react-dom": "19.1.10",
+    "remotion": "4.0.536"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.17",
+    "typescript": "5.9.3"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "composition": "Main",
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "frameCount": 1,
+  "background": "#000000",
+  "foreground": "#ffffff",
+  "focus": "currentColor"
+}
