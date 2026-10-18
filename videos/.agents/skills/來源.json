@@ -3,13 +3,22 @@
     "name": "presentation-design",
     "source": "https://github.com/jwynia/agent-skills/tree/main/skills/general/communication/presentation-design",
     "installed_date": "2026-10-17",
-    "skill_sha256": "00ea7fd7fb33358e7959ddde8c42ebc97a752427be545e89f5f12d11ab875f71"
+    "skill_sha256": "00ea7fd7fb33358e7959ddde8c42ebc97a752427be545e89f5f12d11ab875f71",
+    "required": false,
+    "portable": false,
+    "license_status": "未取得可用再散布授權；選用，基本流程不依賴此原文"
   },
   {
     "name": "motion-art-direction",
-    "source": "https://github.com/iart-ai/motion-design-skills/tree/main/skills/motion-art-direction",
+    "source": "https://github.com/iart-ai/motion-design-skills/tree/3c129f769d90a1328c209c386492333c9ac62312/skills/motion-art-direction",
     "installed_date": "2026-10-17",
-    "skill_sha256": "0337edf7c93b8e130bd7658e3d43f546c46f333cacbb2bb970613d65d340c5de"
+    "skill_sha256": "0337edf7c93b8e130bd7658e3d43f546c46f333cacbb2bb970613d65d340c5de",
+    "revision": "3c129f769d90a1328c209c386492333c9ac62312",
+    "license": "MIT",
+    "license_path": "motion-art-direction/LICENSE",
+    "license_sha256": "33d6cd35a20903b5e968a76a1e584a7aeae2c83e3e58ea58ecc50b889b83e668",
+    "checked_at": "2026-10-18",
+    "validation": "原文與固定版逐檔比對；製作效果依各片驗收，不以安裝代表通過"
   },
   {
     "name": "frontend-slides",
@@ -46,5 +55,18 @@
     "license_path": "presentation-design-editorial/LICENSE",
     "license_sha256": "d330eb5111b0a381b28c094e2b10278d4bf205d2cf8c3adab5ff43a20c967efa",
     "validation": "未驗證：尚未以完整影片實跑驗收"
+  },
+  {
+    "name": "huashu-art-motion",
+    "source": "https://github.com/alchaincyf/huashu-art-motion",
+    "revision": "8a0d7d72ca65fcce6f8ba82c4a6c8dfe35b8422c",
+    "installed_date": "2026-10-18",
+    "required": true,
+    "portable": true,
+    "skill_sha256": "df73e57c621425a82670ea74c68e8516d02553cf77cfe41c5f55883c542afb0a",
+    "license_path": "huashu-art-motion/LICENSE",
+    "license": "MIT 程式／文件；字體與原作者角色素材有各自例外，見原 README 與 style-library/README.md",
+    "file_manifest": "../../style-library/upstream-lock.json",
+    "validation": "本機固定庫；逐檔雜湊與實際預覽檢查，非全風格新題材成片驗收"
   }
 ]

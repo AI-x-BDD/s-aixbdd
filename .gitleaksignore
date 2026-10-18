@@ -1,0 +1,14 @@
+# 固定風格庫清單的檔案 SHA-256，已逐一與來源檔案內容核對；不是 API 金鑰。
+# 僅排除指定檔案／規則／行號的 12 筆誤判，不關閉其他金鑰掃描。
+videos/.agents/skills/huashu-art-motion/release-manifest.json:generic-api-key:68
+videos/.agents/skills/huashu-art-motion/release-manifest.json:generic-api-key:76
+videos/.agents/skills/huashu-art-motion/release-manifest.json:generic-api-key:154
+videos/.agents/skills/huashu-art-motion/release-manifest.json:generic-api-key:275
+videos/.agents/skills/huashu-art-motion/release-manifest.json:generic-api-key:493
+videos/.agents/skills/huashu-art-motion/release-manifest.json:generic-api-key:494
+videos/style-library/upstream-lock.json:generic-api-key:36
+videos/style-library/upstream-lock.json:generic-api-key:44
+videos/style-library/upstream-lock.json:generic-api-key:123
+videos/style-library/upstream-lock.json:generic-api-key:142
+videos/style-library/upstream-lock.json:generic-api-key:282
+videos/style-library/upstream-lock.json:generic-api-key:283

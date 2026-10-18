@@ -45,3 +45,5 @@ scripts/sync-upstreams.sh、skills-lock.json）沿用該 repo 原本的授權狀
   著作權屬原權利人
 
 docs/ 下的學習筆記與過程紀錄未另行宣告授權。
+
+影片第三方依賴補充：videos/.agents/skills/huashu-art-motion/ 保留上游 MIT 與個別字體、角色、示範素材權利聲明；videos/style-library/ 的原庫渲染示範沿用來源資產權利，不納入本專案自建內容的 MIT 概括授權。詳見 videos/style-library/README.md 與該上游 README。
