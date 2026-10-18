@@ -1,0 +1,16 @@
+{
+  "order-doc": "原訂單",
+  "product-row": "商品",
+  "reason-row": "退款原因",
+  "application-slip": "退款申請",
+  "reviewer-card": "審核人",
+  "conditions-card": "退款條件",
+  "approval-stamp": "通過",
+  "refund-slip": "退款單",
+  "payment-link": "回接",
+  "payment-ledger": "付款紀錄",
+  "amount-row": "金額",
+  "method-row": "方式",
+  "progress-row": "進度",
+  "trace-label": "追蹤每一筆款項"
+}

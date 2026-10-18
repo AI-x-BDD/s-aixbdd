@@ -1,0 +1,229 @@
+{
+  "segments": [
+    {
+      "id": "narration-0",
+      "start": 0,
+      "end": 2.6,
+      "targets": [
+        {
+          "id": "order",
+          "name": "原訂單"
+        }
+      ],
+      "required_active": [
+        "order"
+      ],
+      "forbidden_active": []
+    },
+    {
+      "id": "narration-1",
+      "start": 2.6,
+      "end": 3.68,
+      "targets": [
+        {
+          "id": "product",
+          "name": "商品"
+        }
+      ],
+      "required_active": [
+        "product"
+      ],
+      "forbidden_active": []
+    },
+    {
+      "id": "narration-2",
+      "start": 3.68,
+      "end": 4.98,
+      "targets": [
+        {
+          "id": "reason",
+          "name": "退款原因"
+        }
+      ],
+      "required_active": [
+        "reason"
+      ],
+      "forbidden_active": []
+    },
+    {
+      "id": "narration-3",
+      "start": 4.98,
+      "end": 7.2,
+      "targets": [
+        {
+          "id": "submit",
+          "name": "送出申請"
+        }
+      ],
+      "required_active": [
+        "submit"
+      ],
+      "forbidden_active": []
+    },
+    {
+      "id": "narration-4-handoff",
+      "start": 7.2,
+      "end": 8.48,
+      "targets": [
+        {
+          "id": "application",
+          "name": "退款申請"
+        }
+      ],
+      "required_active": [
+        "application"
+      ],
+      "forbidden_active": []
+    },
+    {
+      "id": "narration-4-reviewer",
+      "start": 8.48,
+      "end": 9.48,
+      "targets": [
+        {
+          "id": "reviewer",
+          "name": "審核人"
+        }
+      ],
+      "required_active": [
+        "reviewer"
+      ],
+      "forbidden_active": []
+    },
+    {
+      "id": "narration-5",
+      "start": 9.48,
+      "end": 11.7,
+      "targets": [
+        {
+          "id": "reviewer",
+          "name": "審核人"
+        }
+      ],
+      "required_active": [
+        "reviewer"
+      ],
+      "forbidden_active": []
+    },
+    {
+      "id": "narration-6",
+      "start": 11.7,
+      "end": 12.72,
+      "targets": [
+        {
+          "id": "approve",
+          "name": "條件符合"
+        }
+      ],
+      "required_active": [
+        "approve"
+      ],
+      "forbidden_active": []
+    },
+    {
+      "id": "narration-7",
+      "start": 12.72,
+      "end": 17.34,
+      "targets": [
+        {
+          "id": "refund",
+          "name": "退款單"
+        }
+      ],
+      "required_active": [
+        "refund"
+      ],
+      "forbidden_active": []
+    },
+    {
+      "id": "narration-8",
+      "start": 17.34,
+      "end": 17.86,
+      "targets": [
+        {
+          "id": "link",
+          "name": "回接"
+        }
+      ],
+      "required_active": [
+        "link"
+      ],
+      "forbidden_active": []
+    },
+    {
+      "id": "narration-9",
+      "start": 17.86,
+      "end": 19.04,
+      "targets": [
+        {
+          "id": "ledger",
+          "name": "付款紀錄"
+        }
+      ],
+      "required_active": [
+        "ledger"
+      ],
+      "forbidden_active": []
+    },
+    {
+      "id": "narration-10",
+      "start": 19.04,
+      "end": 20.2,
+      "targets": [
+        {
+          "id": "amount",
+          "name": "金額"
+        }
+      ],
+      "required_active": [
+        "amount"
+      ],
+      "forbidden_active": []
+    },
+    {
+      "id": "narration-11",
+      "start": 20.2,
+      "end": 21.06,
+      "targets": [
+        {
+          "id": "method",
+          "name": "方式"
+        }
+      ],
+      "required_active": [
+        "method"
+      ],
+      "forbidden_active": []
+    },
+    {
+      "id": "narration-12",
+      "start": 21.06,
+      "end": 22.44,
+      "targets": [
+        {
+          "id": "progress",
+          "name": "進度"
+        }
+      ],
+      "required_active": [
+        "progress"
+      ],
+      "forbidden_active": []
+    },
+    {
+      "id": "narration-13",
+      "start": 22.44,
+      "end": 24.4333333334,
+      "targets": [
+        {
+          "id": "trace",
+          "name": "追蹤款項"
+        }
+      ],
+      "required_active": [
+        "trace"
+      ],
+      "forbidden_active": []
+    }
+  ]
+}

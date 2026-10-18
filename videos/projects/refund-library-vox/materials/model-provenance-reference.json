@@ -1,0 +1,6 @@
+{
+  "source": "huggingface mlx-community/whisper-large-v3-turbo",
+  "revision": "a4aaeec0636e6fef84abdcbe3544cb2bf7e9f6fb2",
+  "provided_provenance_path": "/Volumes/data/Projects-practice/s-aixbdd/specs/skill-engineering/14-video-production-建立/model-provenance.json",
+  "note": "本片依使用者提供的來源與 revision 設定；原專案 specs 檔未讀取，避免讀取被排除的 specs。"
+}

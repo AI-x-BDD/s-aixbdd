@@ -1,0 +1,44 @@
+id = "refund-library-whiteboard"
+source_root = "."
+materials = "projects/refund-library-whiteboard/materials"
+content = "content.json"
+audio = "voice.m4a"
+alignment = "alignment.json"
+focus_contract = "focus.json"
+labels = "labels.json"
+state = "state.json"
+model_provenance = "projects/refund-library-whiteboard/materials/model-provenance-reference.json"
+workspace = "build/refund-library-whiteboard/workspace"
+output = "build/refund-library-whiteboard/output"
+records = "build/refund-library-whiteboard/records"
+width = 1280
+height = 720
+fps = 30
+composition = "Main"
+renderer = "remotion"
+entry = "src/index.ts"
+npm_install = false
+require_audio = true
+burn_subtitles = true
+content_safe_area = {left = 48, top = 32, right = 1232, bottom = 570}
+subtitle_area = {left = 48, top = 590, right = 1232, bottom = 708}
+opacity_threshold = 0.5
+sample_interval = 1.0
+review_times = [16.34, 17.0, 17.34, 17.6, 17.86, 18.52, 21.06, 22.44, 22.9, 0.9, 2.24, 4.98, 6.36, 7.2, 8.4, 9.48, 11.7, 12.72, 13.8, 15.56, 16.4, 17.7, 19.04, 20.2, 21.76, 23.8, 24.1]
+transition_times = [6.9, 7.0, 7.1, 7.2, 7.3, 7.4, 15.26, 15.36, 15.46, 15.56, 15.66, 15.76, 15.86]
+background = "#FBFBFB"
+foreground = "#20252A"
+focus = "#E36B3F"
+subtitle_font = "PingFang TC"
+subtitle_font_size = 24
+subtitle_color = "#FFFFFF"
+subtitle_background = "#20252A"
+subtitle_background_opacity = 0.72
+subtitle_max_chars = 22
+subtitle_max_lines = 2
+subtitle_force_style = "FontName=PingFang TC,FontSize=24,PrimaryColour=&H00FFFFFF,OutlineColour=&H0020252A,BorderStyle=1,Outline=2,Alignment=2,MarginV=22"
+filename = "refund-whiteboard.mp4"
+
+style_library_required = true
+style_library = "style-library"
+style_selection = "projects/refund-library-whiteboard/style-selection.json"

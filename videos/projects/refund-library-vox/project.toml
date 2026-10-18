@@ -1,0 +1,50 @@
+id = "refund-library-vox"
+source_root = "projects/refund-library-vox"
+materials = "materials"
+style_library_required = true
+style_library = "style-library"
+style_selection = "style-selection.json"
+
+content = "content.json"
+audio = "voice.m4a"
+alignment = "alignment.json"
+focus_contract = "focus.json"
+labels = "labels.json"
+state = "state.json"
+model_provenance = "materials/model-provenance-reference.json"
+# 本片畫面來源納入指紋：幾何產生器與繪圖程式副本改動時，舊 state／成片／評審即過期。
+visuals = ["scene_state.py", "src/Root.tsx", "src/index.ts", "remotion.config.ts"]
+
+workspace = "build/refund-library-vox/workspace"
+output = "build/refund-library-vox/output"
+records = "build/refund-library-vox/records"
+
+width = 1280
+height = 720
+fps = 30
+composition = "Main"
+renderer = "remotion"
+entry = "src/index.ts"
+npm_install = true
+
+require_audio = true
+burn_subtitles = true
+opacity_threshold = 0.5
+content_safe_area = {left = 48, top = 32, right = 1232, bottom = 570}
+subtitle_area = {left = 48, top = 590, right = 1232, bottom = 708}
+sample_interval = 1.0
+# 切點與動作收尾、核心落定的取樣（秒）；依本片旁白對齊設計，不是通用值。
+review_times = [0.3, 1.5, 2.0, 2.24, 2.8, 3.2, 3.74, 4.4, 4.98, 5.53, 5.83, 6.9, 7.2, 7.8, 8.3, 8.48, 9.0, 9.48, 10.38, 11.04, 11.7, 11.94, 12.6, 12.72, 13.3, 13.85, 13.88, 15.56, 16.34, 17.2, 17.34, 17.74, 17.86, 18.3, 19.04, 19.7, 20.02, 20.2, 20.6, 21.06, 21.6, 22.44, 22.84, 23.29, 24.1, 24.4]
+transition_times = [7.1, 7.17, 7.2, 7.23, 12.62, 12.68, 12.72, 12.75, 15.5, 15.56, 15.6]
+background = "#E4DDCF"
+foreground = "#1B1B1A"
+focus = "#B8433F"
+subtitle_font = "PingFang TC"
+subtitle_font_size = 24
+subtitle_color = "#FFFFFF"
+subtitle_background = "#1B1B1A"
+subtitle_background_opacity = 0.78
+subtitle_max_chars = 22
+subtitle_max_lines = 2
+subtitle_force_style = "FontName=PingFang TC,FontSize=24,PrimaryColour=&H00FFFFFF,OutlineColour=&H001A1B1B,BorderStyle=1,Outline=2,Alignment=2,MarginV=22"
+filename = "refund-flow-library-vox.mp4"

@@ -1,0 +1,22 @@
+{
+  "title": "網購退款：新手操作說明",
+  "audience": "第一次申請退款的網購使用者",
+  "source": "/tmp/video-skill-s1-input/素材.md",
+  "scenes": [
+    {
+      "id": "order-apply",
+      "frame": "order-apply",
+      "text": "第一步，先找到原訂單。核對商品與退款原因，再送出申請。"
+    },
+    {
+      "id": "review-handoff",
+      "frame": "review-handoff",
+      "text": "申請會交給審核人，確認條件是否符合。通過後，訂單就轉成退款單。"
+    },
+    {
+      "id": "payment-track",
+      "frame": "payment-track",
+      "text": "最後，把退款單回接付款紀錄，查看金額、方式與進度。這樣就能追蹤每一筆款項。"
+    }
+  ]
+}
