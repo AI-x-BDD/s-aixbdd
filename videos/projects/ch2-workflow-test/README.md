@@ -1,20 +1,25 @@
 # CH2 新流程測試
 
-使用者已選 B「深色系統路由」。已凍結九幕來源、建立分鏡並獨立輸出113秒正式測試片；原片、候選及原配音保留。字幕依使用者要求燒錄進畫面，放在底部獨立字幕帶；正式 MP4 不含可開關的字幕軌。交付頁：<http://127.0.0.1:60071/預覽/交付.html>。檔案與靜態畫格檢查已執行；AI未直接聽看全片，使用者驗收仍待進行。
+使用者已選 B 深色配色，並於 2026-10-18 選定 M2 動態敘事套用九幕。維持 113 秒、原旁白與音訊；字幕直接繪進畫面。最新完成範圍與限制只看 [交付狀態](../../../docs/過程/CH2/影片/製作紀錄/設計/新流程測試/交付狀態.md)。交付頁：<http://127.0.0.1:60071/預覽/交付.html>。
 
-正式輸出重建（repo 根目錄；先依 [素材說明](../../../../docs/過程/CH2/影片/素材/README.md) 放入兩份原始 MP3）：
+從 repo 根目錄重建（先依 [素材說明](../../../docs/過程/CH2/影片/素材/README.md) 提供原始 MP3）：
 
 ```sh
 make -C videos setup
-make -C videos render PROJECT=projects/ch2-workflow-test/project.toml
-videos/.venv/bin/python videos/projects/ch2-workflow-test/finish.py
+make -C videos check test
+make -C videos render
+make -C videos preview
 ```
 
-`選定方向.json` 記錄使用者選 B；正式來源為外層 `製作來源/畫面/新流程測試定版/`，`design.py` 不會覆寫該凍結目錄。`finish.py` 先執行 `burn_subtitles.py` 將 SRT 燒錄，再擷取正式 MP4 全狀態與過渡、依版控的來源雜湊清單及對齊資料核對來源／配音一致及片長，產生交付頁與驗證紀錄。正式版可獨立重建，不需要先產生 A／B／C 候選或配色比較；只有另行建置比較頁時，交付頁才顯示比較入口。候選比較頁由下方 `preview.py` 命令建立。未燒錄版本留在正式版的中間產物供重建，不作交付；音訊直接複製，不重新編碼。更新評審文字後可只執行其 `delivery()` 重新同步交付頁，不必重編影片。
+預設 `project.toml` 使用 Remotion `Full-Motion`，輸出 `build/ch2-workflow-test/動態正式版/`。`prepare_motion.py` 從原始來源準備九幕配音、字幕與字元時間，不需舊成片。`render_motion.py` 渲染含字幕的無聲畫面，再複製原 AAC 音訊；`review_motion.py` 核對 2825 影格與 49 段主焦點、來源指紋、完整解碼、音訊流並擷取實際成片。通過後才更新交付頁。
+
+動態程式、官方 Skill、版本與授權見 [motion](../../motion/README.md)。原固定構圖 B 保留在 `正式版/`，重建須明確指定 `PROJECT=projects/ch2-workflow-test/focus-baseline.toml`（使用 `finish.py` 燒錄字幕及舊 SVG 稽核）；此基準重建只更新 `預覽/基準.html`，不覆寫最新動態交付頁。`選定方向.json` 保留 B 舊來源與動態決策，不將後來改版冒充昨天原版。
+
+技術、逐影格狀態與靜態抽幀檢查不等於 AI 直接聽看；直接聽感、連續觀看的節奏與舒適度仍需使用者試看。
 
 以下保留候選重建方式與歷程。
 
-個案紀錄：[新流程測試](../../../../docs/過程/CH2/影片/製作紀錄/設計/新流程測試/交付狀態.md)。旁白、原始音檔剪接與字元時間沿用 CH2，維持 113 秒。舊來源及原成片不覆寫。
+個案紀錄：[新流程測試](../../../docs/過程/CH2/影片/製作紀錄/設計/新流程測試/交付狀態.md)。旁白、原始音檔剪接與字元時間沿用 CH2，維持 113 秒。舊來源及原成片不覆寫。
 
 從 repo 根目錄重建：
 

@@ -1,6 +1,7 @@
 """從候選 MP4 擷取有聲片段與實際畫格，建立本輪評閱入口。"""
 from pathlib import Path
 import json
+import math
 import hashlib
 import re
 import subprocess
@@ -31,6 +32,8 @@ def export(candidate, folder=None):
     mp4=folder/'輸出/影片.mp4'
     images=OUT/candidate
     images.mkdir(exist_ok=True)
+    for pattern in ("state-*.png", "transition-*.png"):
+        for stale in images.glob(pattern):stale.unlink()
     # 有聲節錄全部保留來源中的對應時間，不拼接或重配音。
     video.ffmpeg('-ss','53.04','-i',mp4,'-t','17.40','-c:v','libx264','-preset','fast','-crf','20','-c:a','aac','-b:a','192k','-movflags','+faststart',images/'節奏預覽.mp4')
     rows=json.loads((folder/'預覽/時間軸.json').read_text())
@@ -46,11 +49,14 @@ def export(candidate, folder=None):
             image_at(mp4,t,images/name)
             inventory.append(dict(file=name,time=round(t,3),state=event['frame'],phrase=event['step'].get('phrase','開場狀態')))
     (images/'畫格索引.json').write_text(json.dumps(inventory,ensure_ascii=False,indent=2)+'\n')
-    video.ffmpeg('-framerate','1','-i',images/'state-%02d.png','-vf','scale=400:225,tile=4x9:padding=4:margin=4:color=white','-frames:v','1','-update','1',images/'狀態總覽.png')
+    video.ffmpeg('-framerate','1','-i',images/'state-%02d.png','-vf',f'scale=400:225,tile=4x{math.ceil(len(inventory)/4)}:padding=4:margin=4:color=white','-frames:v','1','-update','1',images/'狀態總覽.png')
     # 淡化中點亦從成片抽查，不拿靜幀冒充過渡。
     transitions=[e for g in states for e in g[1:]]
-    for i,e in enumerate(transitions):image_at(mp4,max(0,e['start']-.08),images/f'transition-{i:02}.png')
-    video.ffmpeg('-framerate','1','-i',images/'transition-%02d.png','-vf','scale=400:225,tile=4x7:padding=4:margin=4:color=white','-frames:v','1','-update','1',images/'過渡總覽.png')
+    manifest=json.loads((folder/'來源指紋.json').read_text()) if (folder/'來源指紋.json').exists() else {}
+    visual_paths=[Path(p) for p in manifest if p.endswith('視覺設定.json')]
+    fade=json.loads(visual_paths[0].read_text()).get('transition_seconds',.2) if visual_paths else .2
+    for i,e in enumerate(transitions):image_at(mp4,max(0,e['start']-fade/2),images/f'transition-{i:02}.png')
+    video.ffmpeg('-framerate','1','-i',images/'transition-%02d.png','-vf',f'scale=400:225,tile=4x{max(1,math.ceil(len(transitions)/4))}:padding=4:margin=4:color=white','-frames:v','1','-update','1',images/'過渡總覽.png')
     video.ffmpeg('-i',mp4,'-f','null','-')
     return rows
 

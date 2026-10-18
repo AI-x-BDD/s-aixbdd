@@ -1,0 +1,366 @@
+{
+  "00": [
+    {
+      "phrase": "技能越改越難維護",
+      "targets": [],
+      "hold_reason": "問題大字是唯一觀看對象；保留完整閱讀時間"
+    }
+  ],
+  "01": [
+    {
+      "phrase": "Skill Engineering",
+      "targets": [
+        "eng"
+      ]
+    },
+    {
+      "phrase": "分派給對應的基礎技能",
+      "targets": [
+        "eng",
+        "parts"
+      ]
+    },
+    {
+      "phrase": "接下來",
+      "targets": [
+        "out"
+      ]
+    }
+  ],
+  "02": [
+    {
+      "phrase": "先看兩種分工",
+      "targets": [
+        "overview"
+      ]
+    },
+    {
+      "phrase": "一組是格式把關",
+      "targets": [
+        "forms-head"
+      ]
+    },
+    {
+      "phrase": "用途說明、執行流程",
+      "targets": [
+        "forms-head",
+        "p0"
+      ]
+    },
+    {
+      "phrase": "執行流程、規則",
+      "targets": [
+        "forms-head",
+        "p1"
+      ]
+    },
+    {
+      "phrase": "規則、樣板和腳本",
+      "targets": [
+        "forms-head",
+        "p2"
+      ]
+    },
+    {
+      "phrase": "樣板和腳本",
+      "targets": [
+        "forms-head",
+        "p3"
+      ]
+    },
+    {
+      "phrase": "腳本。用途",
+      "targets": [
+        "forms-head",
+        "p4"
+      ]
+    },
+    {
+      "phrase": "用途說明讓",
+      "targets": [
+        "forms-head",
+        "p0"
+      ]
+    },
+    {
+      "phrase": "SOP 寫清楚",
+      "targets": [
+        "forms-head",
+        "p1"
+      ]
+    },
+    {
+      "phrase": "規則附",
+      "targets": [
+        "forms-head",
+        "p2"
+      ]
+    },
+    {
+      "phrase": "樣板提供",
+      "targets": [
+        "forms-head",
+        "p3"
+      ]
+    },
+    {
+      "phrase": "腳本則",
+      "targets": [
+        "forms-head",
+        "p4"
+      ]
+    },
+    {
+      "phrase": "另一組是部位抽取",
+      "targets": [
+        "derive"
+      ]
+    },
+    {
+      "phrase": "規則、樣板或腳本",
+      "targets": [
+        "derive",
+        "d0"
+      ]
+    },
+    {
+      "phrase": "樣板或腳本",
+      "targets": [
+        "derive",
+        "d1"
+      ]
+    },
+    {
+      "phrase": "腳本從流程",
+      "targets": [
+        "derive",
+        "d2"
+      ]
+    }
+  ],
+  "03": [
+    {
+      "phrase": "收到優化需求",
+      "targets": [
+        "v0",
+        "s0"
+      ]
+    },
+    {
+      "phrase": "再找出差異",
+      "targets": [
+        "v0",
+        "v1",
+        "s1"
+      ]
+    },
+    {
+      "phrase": "根因和修改計畫",
+      "targets": [
+        "v0",
+        "v1",
+        "v2",
+        "s2"
+      ]
+    },
+    {
+      "phrase": "接著整理",
+      "targets": [
+        "v0",
+        "v1",
+        "v2",
+        "v3",
+        "s3"
+      ]
+    }
+  ],
+  "07": [
+    {
+      "phrase": "例如",
+      "targets": [
+        "step"
+      ]
+    },
+    {
+      "phrase": "就交給規則抽取技能",
+      "targets": [
+        "extract"
+      ]
+    },
+    {
+      "phrase": "它請格式技能",
+      "targets": [
+        "step",
+        "extract",
+        "write"
+      ]
+    },
+    {
+      "phrase": "再更新流程",
+      "targets": [
+        "step",
+        "write",
+        "back"
+      ]
+    },
+    {
+      "phrase": "需要固定輸出",
+      "targets": [
+        "step",
+        "write",
+        "back",
+        "branches"
+      ]
+    },
+    {
+      "phrase": "既有檔案只改內容",
+      "targets": [
+        "step",
+        "write",
+        "back",
+        "existing"
+      ]
+    }
+  ],
+  "04": [
+    {
+      "phrase": "這次三支技能",
+      "targets": [
+        "before"
+      ]
+    },
+    {
+      "phrase": "分類、訊息格式和範例",
+      "targets": [
+        "before",
+        "before-class"
+      ]
+    },
+    {
+      "phrase": "訊息格式和範例",
+      "targets": [
+        "before",
+        "before-message"
+      ]
+    },
+    {
+      "phrase": "範例混在主檔",
+      "targets": [
+        "before",
+        "before-example"
+      ]
+    },
+    {
+      "phrase": "現在拆成",
+      "targets": [
+        "after"
+      ]
+    }
+  ],
+  "05": [
+    {
+      "phrase": "主幹式開發",
+      "targets": [
+        "common"
+      ]
+    },
+    {
+      "phrase": "變更規劃和工作流程評估",
+      "targets": [
+        "common",
+        "task"
+      ]
+    },
+    {
+      "phrase": "先讀共通判準",
+      "targets": [
+        "common"
+      ]
+    },
+    {
+      "phrase": "再依規劃",
+      "targets": [
+        "common",
+        "task"
+      ]
+    }
+  ],
+  "06": [
+    {
+      "phrase": "雙鑽石",
+      "targets": [
+        "sop"
+      ]
+    },
+    {
+      "phrase": "模型判準、任務分流和需求分析",
+      "targets": [
+        "rule0"
+      ]
+    },
+    {
+      "phrase": "任務分流和需求分析",
+      "targets": [
+        "rule1"
+      ]
+    },
+    {
+      "phrase": "需求分析分開",
+      "targets": [
+        "rule2"
+      ]
+    },
+    {
+      "phrase": "主檔負責帶流程",
+      "targets": [
+        "sop"
+      ]
+    },
+    {
+      "phrase": "各類判斷",
+      "targets": [
+        "rules",
+        "rule0",
+        "rule1",
+        "rule2"
+      ]
+    }
+  ],
+  "08": [
+    {
+      "phrase": "三支技能保留",
+      "targets": [
+        "v0",
+        "v1",
+        "v2"
+      ]
+    },
+    {
+      "phrase": "技能工程安排工作",
+      "targets": [
+        "v0",
+        "v1",
+        "v2",
+        "flow0"
+      ]
+    },
+    {
+      "phrase": "基礎技能分工完成",
+      "targets": [
+        "v0",
+        "v1",
+        "v2",
+        "flow1"
+      ]
+    },
+    {
+      "phrase": "流程負責",
+      "targets": [
+        "v0",
+        "v1",
+        "v2",
+        "flow2"
+      ]
+    }
+  ]
+}

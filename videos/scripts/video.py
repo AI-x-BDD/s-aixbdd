@@ -27,7 +27,7 @@ def run(args, **kwargs):
 
 
 def ffmpeg(*args):
-    run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", *args])
+    run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-xerror", *args])
 
 
 def duration(path):
@@ -88,8 +88,13 @@ def prepare_audio(materials, config):
                "[1:a]asetpts=PTS-STARTPTS[b];"
                f"[0:a]atrim=start={end},asetpts=PTS-STARTPTS[c];"
                "[a][b][c]concat=n=3:v=0:a=1[out]")
-    ffmpeg("-i", original, "-i", replacement, "-filter_complex", filters,
-           "-map", "[out]", "-c:a", "aac", "-b:a", "192k", target)
+    temporary = target.with_name(f".{target.stem}-{os.getpid()}.m4a")
+    try:
+        ffmpeg("-i", original, "-i", replacement, "-filter_complex", filters,
+               "-map", "[out]", "-c:a", "aac", "-b:a", "192k", temporary)
+        temporary.replace(target)
+    finally:
+        temporary.unlink(missing_ok=True)
     print(f"合成配音：{target}", flush=True)
 
 
@@ -402,30 +407,43 @@ def render(root, materials, content_path, data, out, config):
               "visual_renderer": "semantic-svg-states" if config.get("visuals") else "legacy-focus-box",
               "preview_matches_export": bool(config.get("visuals"))}
     (review / "節奏檢查.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
+    (out / "來源指紋.json").write_text(json.dumps(before, ensure_ascii=False, indent=2)+"\n")
     print(f"輸出完成：{export / '影片.mp4'}（{length:.2f} 秒）", flush=True)
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--config", default="projects/ch2-skill-engineering/project.toml")
+    parser.add_argument("--config", default="projects/ch2-workflow-test/project.toml")
     parser.add_argument("--source-root", help="外部素材所在的大專案根目錄")
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("check", help="檢查環境與素材")
+    commands.add_parser("setup", help="安裝 profile 指定的渲染依賴")
     commands.add_parser("prepare-audio", help="從原始音檔重建剪接配音")
     commands.add_parser("render", help="重新製作旁白、字幕、預覽與 MP4")
     serve = commands.add_parser("serve", help="啟動本機預覽，不重新製作影片")
-    serve.add_argument("--port", type=int, default=60070)
+    serve.add_argument("--port", type=int, default=60071)
     args = parser.parse_args()
     state = load(args)
-    if args.command == "prepare-audio":
+    if args.command == "setup":
+        if state[5].get("setup_script"):
+            run([sys.executable, HOME/state[5]["setup_script"]])
+    elif args.command == "prepare-audio":
         prepare_audio(state[1], state[5])
     elif args.command == "check":
         check(*state)
     elif args.command == "render":
-        render(*state)
+        if state[5].get("renderer_script"):
+            run([sys.executable, HOME/state[5]["renderer_script"], "--config", args.config,
+                 *(["--source-root", args.source_root] if args.source_root else [])])
+        else:
+            render(*state)
+            if state[5].get("postprocess"):
+                run([sys.executable, HOME/state[5]["postprocess"], "--config", args.config,
+                     *(["--source-root", args.source_root] if args.source_root else [])])
     else:
-        out = state[4]
-        if not (out / "預覽/預覽.html").is_file():
+        out = HOME/state[5]["preview_root"] if state[5].get("preview_root") else state[4]
+        entry = state[5].get("preview_entry", "預覽/預覽.html")
+        if not (out / entry).is_file():
             parser.error("請先執行 render")
         handler = partial(http.server.SimpleHTTPRequestHandler, directory=str(out))
         # 本機固定 IP 不需反查主機名稱，避免 macOS DNS 延遲阻塞預覽啟動。
@@ -434,7 +452,7 @@ def main():
             socketserver.TCPServer.server_bind(server)
             server.server_name, server.server_port = server.server_address
             server.server_activate()
-            print(f"預覽：http://127.0.0.1:{server.server_port}/預覽/預覽.html", flush=True)
+            print(f"預覽：http://127.0.0.1:{server.server_port}/{entry}", flush=True)
             server.serve_forever()
 
 

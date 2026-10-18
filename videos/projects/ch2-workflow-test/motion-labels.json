@@ -1,0 +1,29 @@
+{
+  "02": {
+    "d0": [
+      "d0-label"
+    ],
+    "d1": [
+      "d1-label"
+    ],
+    "d2": [
+      "d2-label"
+    ]
+  },
+  "06": {
+    "rule0": [
+      "rule0-label"
+    ],
+    "rule1": [
+      "rule1-label"
+    ],
+    "rule2": [
+      "rule2-label"
+    ]
+  },
+  "07": {
+    "write": [
+      "rule-need-label"
+    ]
+  }
+}

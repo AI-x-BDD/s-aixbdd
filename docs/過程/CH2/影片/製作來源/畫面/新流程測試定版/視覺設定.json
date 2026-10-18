@@ -1,5 +1,5 @@
 {
-  "transition_seconds": 0.2,
+  "transition_seconds": 0,
   "inactive_opacity": 0.85,
   "frames": {
     "00": [],
@@ -35,6 +35,41 @@
         "phrase": "一組是格式把關",
         "active": [
           "forms-head"
+        ]
+      },
+      {
+        "phrase": "用途說明、執行流程",
+        "active": [
+          "forms-head",
+          "p0"
+        ]
+      },
+      {
+        "phrase": "執行流程、規則",
+        "active": [
+          "forms-head",
+          "p1"
+        ]
+      },
+      {
+        "phrase": "規則、樣板",
+        "active": [
+          "forms-head",
+          "p2"
+        ]
+      },
+      {
+        "phrase": "樣板和腳本",
+        "active": [
+          "forms-head",
+          "p3"
+        ]
+      },
+      {
+        "phrase": "腳本。用途",
+        "active": [
+          "forms-head",
+          "p4"
         ]
       },
       {
@@ -76,6 +111,27 @@
         "phrase": "另一組是部位抽取",
         "active": [
           "derive"
+        ]
+      },
+      {
+        "phrase": "規則、樣板或腳本",
+        "active": [
+          "derive",
+          "d0"
+        ]
+      },
+      {
+        "phrase": "樣板或腳本",
+        "active": [
+          "derive",
+          "d1"
+        ]
+      },
+      {
+        "phrase": "腳本從流程",
+        "active": [
+          "derive",
+          "d2"
         ]
       }
     ],
@@ -119,7 +175,12 @@
       {
         "phrase": "例如",
         "active": [
-          "step",
+          "step"
+        ]
+      },
+      {
+        "phrase": "就交給規則抽取技能",
+        "active": [
           "extract"
         ]
       },
@@ -166,6 +227,27 @@
         ]
       },
       {
+        "phrase": "分類、訊息格式和範例",
+        "active": [
+          "before",
+          "before-class"
+        ]
+      },
+      {
+        "phrase": "訊息格式和範例",
+        "active": [
+          "before",
+          "before-message"
+        ]
+      },
+      {
+        "phrase": "範例混在主檔",
+        "active": [
+          "before",
+          "before-example"
+        ]
+      },
+      {
         "phrase": "現在拆成",
         "active": [
           "after"
@@ -177,6 +259,13 @@
         "phrase": "主幹式開發",
         "active": [
           "common"
+        ]
+      },
+      {
+        "phrase": "變更規劃和工作流程評估",
+        "active": [
+          "common",
+          "task"
         ]
       },
       {
@@ -201,6 +290,24 @@
         ]
       },
       {
+        "phrase": "模型判準、任務分流和需求分析",
+        "active": [
+          "rule0"
+        ]
+      },
+      {
+        "phrase": "任務分流和需求分析",
+        "active": [
+          "rule1"
+        ]
+      },
+      {
+        "phrase": "需求分析分開",
+        "active": [
+          "rule2"
+        ]
+      },
+      {
         "phrase": "主檔負責帶流程",
         "active": [
           "sop"
@@ -209,7 +316,10 @@
       {
         "phrase": "各類判斷",
         "active": [
-          "rules"
+          "rules",
+          "rule0",
+          "rule1",
+          "rule2"
         ]
       }
     ],

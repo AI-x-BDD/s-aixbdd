@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-10-18",
+  "renderer": {
+    "name": "Remotion",
+    "repository": "https://github.com/remotion-dev/remotion",
+    "npm_version": "4.0.536",
+    "git_tag": "v4.0.536",
+    "tag_commit": "d16a341948f8948a69ba260dd9a8b24732aa8f52",
+    "npm_integrity": "sha512-e2e1TCk7a2qmTY+ow0Tco1NMY9/m/Vss6eBfh9WkZSlLB5EyTWRnUvLKUK/wYMLHDdlvOfUJ9kqtuQyX6RCNRw==",
+    "packages": ["remotion", "@remotion/cli", "@remotion/media", "@remotion/paths"],
+    "license": "Remotion License（https://github.com/remotion-dev/remotion/blob/main/LICENSE.md）：個人、3 人以下營利組織、非營利組織免費；其他營利組織需購買 Company License。不是 MIT。",
+    "license_file_in_package": "node_modules/remotion/LICENSE.md",
+    "github_stars_on_check": 64775,
+    "telemetry": "本專案不傳 licenseKey；@remotion/renderer 4.0.536 的 render-media.js 在 licenseKey 為 null 時不呼叫 registerUsageEvent。"
+  },
+  "official_skills": {
+    "name": "remotion-best-practices（remotion-dev/skills）",
+    "repository": "https://github.com/remotion-dev/skills",
+    "revision": "1441a11e95db35443bd76bb318386c0d3ca00053",
+    "skill_version": "4.0.536",
+    "official_install_command": "npx skills add remotion-dev/skills",
+    "license": "repo 未附授權檔，GitHub 偵測為無授權；未取得再散布授權，因此原文不納入本 repo 版控。",
+    "local_path": "videos/.cache/official-skills/remotion-dev-skills/1441a11e95db35443bd76bb318386c0d3ca00053/skills/remotion-best-practices/SKILL.md",
+    "install": "videos/motion/scripts/install-official-skills.sh",
+    "file_manifest": "videos/motion/official-skills.sha256（291 檔逐檔 SHA-256）",
+    "github_stars_on_check": 5293,
+    "used_sections": ["SKILL.md", "remotion-create/REFERENCE.md", "remotion-create/video-layout.md", "remotion-markup/REFERENCE.md", "remotion-markup/compositions.md", "remotion-markup/audio.md", "remotion-markup/local-fonts.md", "remotion-render/REFERENCE.md"]
+  },
+  "evidence_note": "GitHub 星數只代表關注度與社群規模，不是畫面品質或教學成效的證據；本次未找到針對這組 Skill 或 Remotion 改善說明影片理解度的公開成效研究。"
+}

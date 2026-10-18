@@ -78,11 +78,16 @@ def state_svg(root, step, dim):
             if keys:
                 node.set('opacity', '1' if not active or keys & active else str(dim))
                 selected = bool(keys & active)
-                for child in node.iter():
+                # 子群組有獨立焦點時，由子群組自己決定顏色，避免父群組把所有項目一起點亮。
+                def decorate(current):
                     for attr in ('fill', 'stroke'):
-                        value = child.get(f'data-active-{attr}')
+                        value = current.get(f'data-active-{attr}')
                         if selected and value:
-                            child.set(attr, value)
+                            current.set(attr, value)
+                    for child in current:
+                        if not child.get('data-focus'):
+                            decorate(child)
+                decorate(node)
             only = set(node.get('data-active-only', '').split())
             if only:
                 node.set('opacity', '1' if only & active else '0')
@@ -138,6 +143,15 @@ def encode(video, data, row, events, spec, work, target):
     for event in events:
         inputs += ['-loop','1','-framerate',str(data['fps']),'-t',str(length),'-i',str(work/'視覺狀態/靜幀'/f"{event['frame']}.png")]
     filters = [f'[{i}:v]format=yuv420p,settb=AVTB,setpts=PTS-STARTPTS[v{i}]' for i in range(len(events))]
+    if spec['transition_seconds'] <= 0:
+        # 快速列舉時直接換焦點，避免完整句子交叉淡化造成疊字。
+        cuts = [f'[{i}:v]trim=duration={e["end"]-e["start"]:.6f},setpts=PTS-STARTPTS[c{i}]'
+                for i, e in enumerate(events)]
+        cuts.append(''.join(f'[c{i}]' for i in range(len(events)))+f'concat=n={len(events)}:v=1:a=0[out]')
+        video.ffmpeg(*inputs,'-filter_complex_threads','1','-filter_complex',';'.join(cuts),'-map','[out]',
+                     '-t',str(length),'-r',str(data['fps']),'-c:v','libx264','-preset','veryfast',
+                     '-crf','20','-pix_fmt','yuv420p','-threads','2',target)
+        return
     previous = 'v0'
     for i in range(1, len(events)):
         offset = events[i]['start']-row['start']

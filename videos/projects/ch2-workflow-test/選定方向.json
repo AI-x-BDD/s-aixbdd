@@ -12,11 +12,23 @@
     "on_accent": "#201D31",
     "line": "#847B97"
   },
-  "profile": "projects/ch2-workflow-test/project.toml",
+  "profile": "projects/ch2-workflow-test/focus-baseline.toml",
   "output": "build/ch2-workflow-test/正式版",
   "subtitle_mode": "burned",
   "subtitle_instruction": "字幕用燒錄的做法，先這樣做，之後要改再說",
   "source_sha256": {
+    "圖稿/00.svg": "e2c45190f905a8ea95457be9aef0a54638062846d298aec7244e203d574bd5c8",
+    "圖稿/01.svg": "1882206ec0fc483bc4d8e2fab28703d8831b74d008c5b19cb1e97ecdc95c807d",
+    "圖稿/02.svg": "8e5f5e5ed31deb8a27bbfe02b435e424f87d7a375c82bddc04b4efc05885cec8",
+    "圖稿/03.svg": "49049eef28031779f3871c913a4030094b93dbb3974d981ee65354ab874afa93",
+    "圖稿/04.svg": "d5a2abfff980bca1221664beb37c72407e3c920d74a4412796996fbeab6aa09a",
+    "圖稿/05.svg": "0565711aeb8135e85de2b0dc22948bd3c3edad1e56944be022351ca1bf6e4b9c",
+    "圖稿/06.svg": "f9ff232811088710d702cdcb9381d25edaab3fed81589997caf664a3662426ce",
+    "圖稿/07.svg": "81db55a47d1f0037604781d46424542690681984f74a4ee2ecd9d4ef10357120",
+    "圖稿/08.svg": "54d662e50f98263f48fe4c385a100cece483e0a05461bb2e3529027acc7a31c2",
+    "視覺設定.json": "8eb0e2687286ef45c83950295d10f8cb9b04a51c6379479960028d4898ff440c"
+  },
+  "original_source_sha256": {
     "圖稿/00.svg": "e2c45190f905a8ea95457be9aef0a54638062846d298aec7244e203d574bd5c8",
     "圖稿/01.svg": "1882206ec0fc483bc4d8e2fab28703d8831b74d008c5b19cb1e97ecdc95c807d",
     "圖稿/02.svg": "619c0d663b0fe3f6aaa79c84afce5ff987c616c5c2718399855afe7d8d0831e5",
@@ -27,5 +39,23 @@
     "圖稿/07.svg": "81db55a47d1f0037604781d46424542690681984f74a4ee2ecd9d4ef10357120",
     "圖稿/08.svg": "54d662e50f98263f48fe4c385a100cece483e0a05461bb2e3529027acc7a31c2",
     "視覺設定.json": "29334dd00e000f6e1a07eca3baa7db06759bcfee59861981523b9ac5fb8d1800"
-  }
+  },
+  "focus_revision": {
+    "date": "2026-10-18",
+    "reason": "依使用者回報補齊列舉、細部分類與觀看對象；未改旁白、配色、構圖及片長",
+    "transition": "焦點直接切換，避免快速列舉的句子疊字"
+  },
+  "motion_revision": {
+    "date": "2026-10-18",
+    "user_quote": "用動態敘事的做法",
+    "direction": "M2",
+    "scope": "九幕全片，113 秒；原旁白、原音訊與 B 深色配色維持",
+    "renderer": "Remotion Full-Motion",
+    "source": "videos/motion/src/",
+    "profile": "projects/ch2-workflow-test/project.toml",
+    "output": "build/ch2-workflow-test/動態正式版",
+    "baseline_profile": "projects/ch2-workflow-test/focus-baseline.toml",
+    "note": "外層 source_sha256 與 output 保留 SVG 基準歷程；動態來源指紋由新輸出/來源指紋.json 記錄"
+  },
+  "current_revision": "motion_revision"
 }

@@ -1,0 +1,4 @@
+node_modules/
+# 由 prepare_motion.py 從 CH2 對齊、字幕與原配音產生；含使用者原始配音衍生檔，不納入版控。
+public/
+out/

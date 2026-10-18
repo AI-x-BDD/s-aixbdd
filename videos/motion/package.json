@@ -1,0 +1,25 @@
+{
+  "name": "ch2-motion",
+  "private": true,
+  "description": "CH2 九幕動態敘事全片：連續移動、SVG 形變與二維鏡頭；保留原配音與字幕",
+  "license": "SEE LICENSE IN ../../LICENSE",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "studio": "remotion studio",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.536",
+    "@remotion/media": "4.0.536",
+    "@remotion/paths": "4.0.536",
+    "react": "19.1.10",
+    "react-dom": "19.1.10",
+    "remotion": "4.0.536"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.17",
+    "typescript": "5.9.3"
+  }
+}
