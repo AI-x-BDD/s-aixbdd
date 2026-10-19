@@ -4,3 +4,6 @@ target/
 
 # macOS 本機檔案
 .DS_Store
+
+# 本機暫存筆記，不納入版控
+docs/tmp/
