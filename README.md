@@ -1,40 +1,52 @@
 # s-aixbdd
 
-## 關於這個 repo
+水球軟體學院《AI x BDD》學員的 Skill 作品集，給想看 Agent Skill 怎麼寫、怎麼用 String Calculator 與一個小型 Java Web 框架驗證的人。
 
-這個 repo 收錄我自己整理的 Skill 與開發過程，之後預計會再增加。
+[![CI](https://github.com/AI-x-BDD/s-aixbdd/actions/workflows/ci.yml/badge.svg)](https://github.com/AI-x-BDD/s-aixbdd/actions/workflows/ci.yml)
 
-## 結構說明
+![Skill 目錄結構：SKILL.md 放流程，rules/、templates/、scripts/ 按需載入](assets/LV1.png)
 
-| 路徑              | 內容                                                                               |
-| ----------------- | ---------------------------------------------------------------------------------- |
-| `.claude/skills/` | Claude Code 格式的 skills                                                          |
-| `.agents/skills/` | Codex／.agents 格式的 skills（與 `.claude/skills/` 實體相同，用 `scripts/sync-skills.sh` 同步） |
-| `VERSION`         | template 版本                                                                      |
-| `docs/`           | Skill 的來源筆記、各章需求清單與過程紀錄                                           |
-| `docs/ch1.md`     | ch1 的 Skill 說明與實作驗證                                                        |
-| `src/`、`pom.xml` | String Calculator 實作與測試（Java 21、Maven、JUnit 5）                            |
-| `specs/`          | 第二份作業的紀錄：`skill-engineering/` 為 Skill 建立與優化的藍圖和根因報告，`plan/` 為類別圖提案 |
-| `java-web-framework/` | 第二份作業以 `plan-with-class-diagram` 規劃實作的 Java Web 框架（Java 17、Maven、JUnit 5） |
-| `assets/`         | Skill 資源目錄結構示意圖                                                           |
-| `skills/`、`upstreams/`、`scripts/install.sh`、`scripts/sync-upstreams.sh`、`skills-lock.json` | 來自 [stevecyj/skills](https://github.com/stevecyj/skills) 的個人 Skill、上游 submodule 與安裝腳本，見下方「個人 Skill 與安裝腳本」 |
-| `LICENSE`         | MIT 授權原文（來自 [stevecyj/skills](https://github.com/stevecyj/skills)）與本 repo 的授權範圍，見下方「授權」 |
+Skill 的目錄結構：`SKILL.md` 放流程，`rules/`、`templates/`、`scripts/` 由步驟指定、按需載入。
 
-## 各章內容
+## Quick Start
 
-| 章節 | Skill | 說明 |
-| ---- | ----- | ---- |
-| ch1  | `double-diamond`、`trunk-based-development`、`conventional-commits` | [docs/ch1.md](docs/ch1.md) |
-| 第二份作業 | `skill-engineering`、`skill-form-*`（description、sop、rule、template、script）、`skill-derive-*`（rule、template、script）、`plan-with-class-diagram`；另收錄外部的 `skill-creator` | [specs/](specs/)、[java-web-framework/](java-web-framework/) |
-| ch2  | 以 `skill-engineering` 改寫 `double-diamond`、`trunk-based-development`、`conventional-commits` | [用 Skill Engineering 改寫三支 Skill](#ch2用-skill-engineering-改寫三支-skill) |
+需要 Java 21 與 Maven。
+
+```bash
+git clone https://github.com/AI-x-BDD/s-aixbdd.git
+cd s-aixbdd
+mvn test
+mvn test -f java-web-framework/pom.xml
+```
+
+第一個指令跑 String Calculator（`src/`）的測試，第二個跑 `java-web-framework/` 的測試。CI（`.github/workflows/ci.yml`）在 push 或 PR 到 `main` 時以 Java 21 執行同樣兩組測試，並用 `scripts/sync-skills.sh --check` 確認兩邊 Skill 一致。
+
+## Features
+
+| 作業 | Skill | 用途 | 相關紀錄 |
+| ---- | ----- | ---- | -------- |
+| ch1 | `double-diamond` | 依雙鑽石原則釐清需求、定義問題、比較解法 | [docs/ch1.md](docs/ch1.md) |
+| ch1 | `trunk-based-development` | 依主幹式開發規劃 PR 拆分、branch 策略與整合方式 | [docs/ch1.md](docs/ch1.md) |
+| ch1 | `conventional-commits` | 撰寫符合 Conventional Commits 的提交訊息 | [docs/ch1.md](docs/ch1.md) |
+| 第二份作業 | `skill-engineering` | 建立新 Skill，或依不滿意的結果做根因分析並優化既有 Skill，編排下列兩組 Skill 施工 | [specs/skill-engineering/](specs/skill-engineering/) |
+| 第二份作業 | `skill-form-*`（description、sop、rule、template、script） | 撰寫 Skill 的單一部位 | [specs/skill-engineering/](specs/skill-engineering/) |
+| 第二份作業 | `skill-derive-*`（rule、template、script） | 為指定的 SOP 步驟抽出規則、樣板或腳本，並掛上載入步驟 | [specs/skill-engineering/](specs/skill-engineering/) |
+| 第二份作業 | `plan-with-class-diagram` | 實作前先提出 Mermaid 類別圖，取得確認後再依類別圖實作 | [specs/plan/](specs/plan/)、[java-web-framework/](java-web-framework/) |
+| 外部 | `skill-creator` | 來自 [anthropics/skills](https://github.com/anthropics/skills)，保持原樣，來源與雜湊記在 `skills-lock.json` | — |
+
+同目錄還有 `typesafe-ai`（TypeSafe 使用指引）與 `video-production`（把章節素材做成有旁白與字幕的影片；使用者實際驗證：未驗證）。
+
+## Why
+
+- **ch1**：以 [Coding Dojo](https://codingdojo.org/) 的 String Calculator（Java 21、Maven、JUnit 5）實際驗證三支 Skill，說明與驗證見 [docs/ch1.md](docs/ch1.md)，各步驟過程見 `docs/過程/CH1/`。
+- **第二份作業**：用 `plan-with-class-diagram` 先畫類別圖規劃，再實作 [java-web-framework/](java-web-framework/)（Java 17、Maven、JUnit 5）；類別圖提案在 `specs/plan/`，Skill 建立與優化的藍圖和根因報告在 `specs/skill-engineering/`。
+- **ch2**：用 `skill-engineering` 改寫 ch1 的三支 Skill，前後比較在 `docs/過程/CH2/`。
 
 ### ch2：用 Skill Engineering 改寫三支 Skill
 
-ch1 建立並試用了三支 Skill，ch2 則使用 `skill-engineering` 檢查它們的問題，重新整理流程與判斷規則，再比較修改前後的回答。
-
 Skill Engineering 負責準備測試案例、保存修改前的回答並分析根因。根因與修改方案經確認後，再由 `skill-form-sop`、`skill-derive-rule` 與 `skill-form-rule` 整理主流程、抽出規則並補上正反例，最後重跑案例，確認原本可用的情境仍能完成。
 
-三支 Skill 原本把流程與規則混在主檔，這次將主檔整理為 SOP，判斷規則放到獨立檔案，由主流程指定何時讀取、如何使用與檢查。各支的修改與實際觀察如下：
+三支 Skill 原本把流程與規則混在主檔，這次將主檔整理為 SOP，判斷規則放到獨立檔案，由主流程指定何時讀取、如何使用與檢查。
 
 | Skill | 改了什麼 | 前後實跑的觀察 |
 | ---- | ---- | ---- |
@@ -42,73 +54,42 @@ Skill Engineering 負責準備測試案例、保存修改前的回答並分析�
 | `trunk-based-development` | 分開 TBD 判準、變更規劃與工作流程評估，讓規劃與審查都能讀取需要的規則。 | 修改後回答補上原本漏列的 Feature Flag 與舊實作清理步驟。[前後比較](docs/過程/CH2/trunk-based-development/前後比較.md) |
 | `conventional-commits` | 分開變更分類、提交訊息與歷史處理規則，補齊 breaking change 標示並修正文句衝突。 | 原版誤判合法的 `BREAKING-CHANGE:`，修改後以同一題重測，能正確接受。[前後比較](docs/過程/CH2/conventional-commits/前後比較.md) |
 
-## 個人 Skill 與安裝腳本
+## 用法範例
 
-第二份作業原本放在 [stevecyj/skills](https://github.com/stevecyj/skills)，以保留雙方 Git 歷史的 merge 整合進本 repo。根目錄的 `skills/`、`upstreams/`、`scripts/install.sh` 與 `scripts/sync-upstreams.sh` 是個人跨專案使用的 Skill 與安裝工具，和課程平台讀取的 `.claude/skills/`、`.agents/skills/` 分開；`install.sh` 會在家目錄建立 symlink，只影響個人環境。
+用 Claude Code，或用會讀 `.agents/skills/` 的 agent，在這個 repo 裡直接說要做的事。下面的句子可以整段複製。
 
-以下保留原 repo README 的內容，其中的 clone 網址與 `~/src/skills` 路徑仍以原 repo 為準。
+| 貼上這段 | Skill | 回覆裡會有 |
+| --- | --- | --- |
+| 老闆說報表匯出太慢，叫我們加 Excel 匯出。先別開工，幫我看這到底在解什麼。 | `double-diamond` | 這是問題還是已經指定的解法、卡在哪個階段、Problem Statement（誰、遇到什麼問題、為什麼重要、什麼叫成功、限制；不足標待驗證）、下一步 |
+| 我們要把 Vuex 換成 Pinia，而且每天都要能合回 main。幫我拆 PR。 | `trunk-based-development` | 可每天合回 main 的 PR 拆法，以及哪些步驟要用 Feature Flag、Branch by Abstraction 或新舊並存 |
+| 看現在的 git diff，寫 commit message。先不要 commit。 | `conventional-commits` | 一則 `<type>[optional scope][!]: <description>`。破壞相容時用 `!`，或 `BREAKING CHANGE:`／`BREAKING-CHANGE:` footer。只給文字，不改 git |
+| 做會員搜尋前先畫類別圖，我確認之後再寫程式。 | `plan-with-class-diagram` | `specs/plan/<NN>-<名稱>/class-diagram-proposal.md`。明確確認前不改程式 |
+| 這個 Skill 上次的結果不對，幫我查原因再改。 | `skill-engineering` | 先寫驗收條件。要優化時先給根因分析，確認後才改，並用 `skill-form-*`、`skill-derive-*` 施工 |
 
-Personal agent skills for Codex CLI and Claude Code.
+只改一個部位時，直接點名：
 
-`skills/` contains skills maintained here. `upstreams/` contains third-party skills as Git submodules, so their history and release updates stay with the original authors.
+- 改 description、SOP，或某一份 rule、template、script：`用 skill-form-description`（或 `skill-form-sop`、`skill-form-rule`、`skill-form-template`、`skill-form-script`）。
+- 為某一個 SOP 步驟抽出 rule、template 或 script：`用 skill-derive-rule`（或 `skill-derive-template`、`skill-derive-script`）。
 
-### Install
+`video-production` 尚未實際驗證，先不要拿它當可複製的用法。`typesafe-ai` 與 `skill-creator` 依各自上游的說明使用。
 
-```bash
-git clone --recurse-submodules https://github.com/stevecyj/skills.git ~/src/skills
-~/src/skills/scripts/install.sh
-```
+## Installation / Usage
 
-The installer creates a symbolic link for every managed skill in both locations:
+### 專案內的 Skill
 
-- Codex CLI: `~/.agents/skills/<skill>`
-- Claude Code: `~/.claude/skills/<skill>`
-
-It preserves a non-symlinked skill with the same name and reports the conflict instead of overwriting it.
-
-#### Important: `--recurse-submodules`
-
-The `--recurse-submodules` flag is **required** to clone upstream skills (no-ai-slop, shuorenhua, etc.). Without it, the `upstreams/` directory will be empty and those skills won't be available.
-
-**If you already cloned without `--recurse-submodules`:**
+- Skill 放在 `.claude/skills/`（Claude Code）與 `.agents/skills/`（Codex 等讀 `.agents` 的 agent），兩邊是實體複製，不是 symlink；在本 repo 開啟 agent 即可使用，只在本專案生效。
+- 改了其中一邊，從改的那一邊同步，再確認一致：
 
 ```bash
-cd ~/src/skills
-git submodule update --init --recursive
-~/src/skills/scripts/install.sh
+scripts/sync-skills.sh --from claude   # 或 --from agents
+scripts/sync-skills.sh --check
 ```
 
-#### Verify installation
+### 個人跨專案工具
 
-After running `install.sh`, confirm all 7 skills are linked:
+`skills/`、`upstreams/`、`scripts/install.sh`、`scripts/sync-upstreams.sh` 來自 [stevecyj/skills](https://github.com/stevecyj/skills)（第二份作業原本的 repo，以保留雙方 Git 歷史的 merge 整合進來），是個人跨專案使用的 Skill 與安裝工具，和課程平台讀取的 `.claude/skills/`、`.agents/skills/` 分開。`install.sh` 會在家目錄建立 symlink，跑本專案的測試或使用專案內的 Skill 都不需要執行它；安裝方式以 stevecyj/skills 的 README 為準（clone 網址是 `https://github.com/stevecyj/skills.git`，不是本 repo）。
 
-```bash
-ls -la ~/.claude/skills/ | grep -E "transcript|commit|article|slop|shuorenhua|ste100"
-# Should show symlinks to all 7 skills
-```
-
-### Update
-
-Update this repository and its pinned upstream versions:
-
-```bash
-git pull --ff-only
-git submodule update --init --recursive
-./scripts/install.sh
-```
-
-To review and adopt the newest upstream versions, run:
-
-```bash
-./scripts/sync-upstreams.sh
-git diff --submodule=log
-git commit -am "chore: update upstream skills"
-git push
-```
-
-The sync script never commits or pushes. Review the submodule revisions before committing them.
-
-### Managed upstreams
+`upstreams/` 以 Git submodule 記錄的第三方 Skill：
 
 | Skill | Source |
 | --- | --- |
@@ -116,7 +97,9 @@ The sync script never commits or pushes. Review the submodule revisions before c
 | `no-ai-slop` | [`petergyang/no-ai-slop`](https://github.com/petergyang/no-ai-slop) (MIT) |
 | `shuorenhua` | [`MrGeDiao/shuorenhua`](https://github.com/MrGeDiao/shuorenhua) (MIT) |
 
-Third-party files remain in their own repositories; this repo records only the upstream commit to use.
+## Contributing
+
+使用上的問題或改進建議，歡迎開 [issue](https://github.com/AI-x-BDD/s-aixbdd/issues)。改 Skill、跑測試，以及哪些檔案不要動，見 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 ## 授權
 
@@ -128,11 +111,17 @@ Third-party files remain in their own repositories; this repo records only the u
   - `skill-creator`：來自 [anthropics/skills](https://github.com/anthropics/skills)，Apache License 2.0，見 `skill-creator/LICENSE.txt`
   - `upstreams/` 的 submodule：依各自 repo 的授權
   - 水球軟體學院課程官方文字及素材：文末官方區塊、`CLAUDE.md`／`AGENTS.md` 的「課程產出規範」、兩個 `skills/README.md`、`VERSION`
-- **未宣告**：`docs/` 的學習筆記與過程紀錄。
+- **保留所有權利**：docs/ 下的筆記與過程紀錄供個人推進作業使用，保留所有權利，不適用 MIT 授權。
 
-## 交流
+## Acknowledgments
 
-使用上的問題或改進建議，歡迎開 issue 討論。
+- [水球軟體學院《AI x BDD》](https://waterballs.tw/Ghl6O)與[官方 Template](https://github.com/AI-x-BDD/aixbdd-skill-homework-template)。
+- [Coding Dojo](https://codingdojo.org/) 的 String Calculator，用作 ch1 的驗證題。
+- [Design Council 的 Double Diamond](https://www.designcouncil.org.uk/resources/the-double-diamond/)。
+- [Trunk Based Development](https://trunkbaseddevelopment.com/)（Paul Hammant 等人維護）與 [Google DORA](https://dora.dev/) 的研究。
+- [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/)。
+- [`skill-creator`](https://github.com/anthropics/skills)，Apache License 2.0。
+- 第二份作業整合自 [stevecyj/skills](https://github.com/stevecyj/skills)。`upstreams/` 的第三方 Skill 見上方表格。
 
 ---
 
