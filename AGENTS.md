@@ -35,12 +35,12 @@
 │   ├── sync-skills.sh         同步兩邊的 skills 與 CLAUDE.md／AGENTS.md
 │   ├── install.sh             個人工具：把 skills/ 與 upstreams/ 的 Skill 以 symlink 裝到家目錄
 │   └── sync-upstreams.sh      個人工具：更新 upstreams/ 的 submodule 版本
+├── assets/                    README 封面圖
 ├── src/                       String Calculator 程式碼與測試
 ├── java-web-framework/        第二份作業的 Java Web 框架（獨立的 Maven 專案）
 ├── specs/                     第二份作業的紀錄
 │   ├── skill-engineering/     skill-engineering 各次建立與優化的藍圖、根因報告
 │   └── plan/                  plan-with-class-diagram 產出的類別圖提案
-├── assets/                    Skill 資源目錄結構示意圖
 ├── skills/                    個人跨專案使用的 Skill，由 install.sh 安裝，不是課程平台讀取的路徑
 ├── upstreams/                 第三方 Skill 的 Git submodule，由 install.sh 安裝
 ├── docs/                      學習筆記

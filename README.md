@@ -4,9 +4,7 @@
 
 [![CI](https://github.com/AI-x-BDD/s-aixbdd/actions/workflows/ci.yml/badge.svg)](https://github.com/AI-x-BDD/s-aixbdd/actions/workflows/ci.yml)
 
-![Skill 目錄結構：SKILL.md 放流程，rules/、templates/、scripts/ 按需載入](assets/LV1.png)
-
-Skill 的目錄結構：`SKILL.md` 放流程，`rules/`、`templates/`、`scripts/` 由步驟指定、按需載入。
+![s-aixbdd：Agent Skill → Engineering Practice → Validation](assets/readme-banner.png)
 
 ## Quick Start
 
@@ -106,7 +104,7 @@ scripts/sync-skills.sh --check
 完整範圍以 [LICENSE](LICENSE) 為準，摘要如下：
 
 - **MIT**：我擁有權利的自建程式與 Skill，包括第一份作業的 `src/`、`pom.xml`、`scripts/sync-skills.sh` 與 `conventional-commits`、`double-diamond`、`trunk-based-development`，以及第二份作業的 `skill-engineering`、`skill-form-*`、`skill-derive-*`、`plan-with-class-diagram`。
-- **沿用原狀**：原 stevecyj/skills 的其他內容（`skills/`、`java-web-framework/`、`specs/`、`assets/`、`scripts/install.sh`、`scripts/sync-upstreams.sh`、`skills-lock.json`）維持該 repo 原本的授權狀態。
+- **沿用原狀**：原 stevecyj/skills 的其他內容（`skills/`、`java-web-framework/`、`specs/`、`scripts/install.sh`、`scripts/sync-upstreams.sh`、`skills-lock.json`）維持該 repo 原本的授權狀態。
 - **第三方與課程內容，保留各自授權**：
   - `skill-creator`：來自 [anthropics/skills](https://github.com/anthropics/skills)，Apache License 2.0，見 `skill-creator/LICENSE.txt`
   - `upstreams/` 的 submodule：依各自 repo 的授權
