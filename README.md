@@ -6,6 +6,13 @@
 
 ![s-aixbdd：Agent Skill → Engineering Practice → Validation](assets/readme-banner.png)
 
+## Demo 影片
+
+| 作業 | 影片 |
+| ---- | ---- |
+| ch1：三個 Skill（String Calculator） | [![CH1 作業介紹](https://img.youtube.com/vi/mnkeM-561Ok/hqdefault.jpg)](https://www.youtube.com/watch?v=mnkeM-561Ok) |
+| ch2：Skill Engineering | [![CH2 作業介紹](https://img.youtube.com/vi/-9rQGbni1fs/hqdefault.jpg)](https://www.youtube.com/watch?v=-9rQGbni1fs) |
+
 ## Quick Start
 
 需要 Java 21 與 Maven。
@@ -23,10 +30,10 @@ mvn test -f java-web-framework/pom.xml
 
 | 作業 | Skill | 用途 | 相關紀錄 |
 | ---- | ----- | ---- | -------- |
-| ch1 | `double-diamond` | 依雙鑽石原則釐清需求、定義問題、比較解法 | [docs/ch1.md](docs/ch1.md) |
+| ch1 | `double-diamond` | 依雙鑽石原則釐清需求、定義問題、比較解法 | [docs/ch1.md](docs/ch1.md)、[CH1 影片](https://www.youtube.com/watch?v=mnkeM-561Ok) |
 | ch1 | `trunk-based-development` | 依主幹式開發規劃 PR 拆分、branch 策略與整合方式 | [docs/ch1.md](docs/ch1.md) |
 | ch1 | `conventional-commits` | 撰寫符合 Conventional Commits 的提交訊息 | [docs/ch1.md](docs/ch1.md) |
-| 第二份作業 | `skill-engineering` | 建立新 Skill，或依不滿意的結果做根因分析並優化既有 Skill，編排下列兩組 Skill 施工 | [specs/skill-engineering/](specs/skill-engineering/) |
+| 第二份作業 | `skill-engineering` | 建立新 Skill，或依不滿意的結果做根因分析並優化既有 Skill，編排下列兩組 Skill 施工 | [specs/skill-engineering/](specs/skill-engineering/)、[CH2 影片](https://www.youtube.com/watch?v=-9rQGbni1fs) |
 | 第二份作業 | `skill-form-*`（description、sop、rule、template、script） | 撰寫 Skill 的單一部位 | [specs/skill-engineering/](specs/skill-engineering/) |
 | 第二份作業 | `skill-derive-*`（rule、template、script） | 為指定的 SOP 步驟抽出規則、樣板或腳本，並掛上載入步驟 | [specs/skill-engineering/](specs/skill-engineering/) |
 | 第二份作業 | `plan-with-class-diagram` | 實作前先提出 Mermaid 類別圖，取得確認後再依類別圖實作 | [specs/plan/](specs/plan/)、[java-web-framework/](java-web-framework/) |
