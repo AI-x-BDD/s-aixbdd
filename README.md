@@ -39,7 +39,7 @@ mvn test -f java-web-framework/pom.xml
 | 第二份作業 | `plan-with-class-diagram` | 實作前先提出 Mermaid 類別圖，取得確認後再依類別圖實作 | [specs/plan/](specs/plan/)、[java-web-framework/](java-web-framework/) |
 | 外部 | `skill-creator` | 來自 [anthropics/skills](https://github.com/anthropics/skills)，保持原樣，來源與雜湊記在 `skills-lock.json` | — |
 
-同目錄還有 `typesafe-ai`（TypeSafe 使用指引）與 `video-production`（把章節素材做成有旁白與字幕的影片；使用者實際驗證：未驗證）。
+同目錄還有 `typesafe-ai`（TypeSafe 使用指引）。影片製作（含 `video-production` Skill）已移到獨立專案 `s-aixbdd-videos`。
 
 ## Why
 
@@ -76,7 +76,7 @@ Skill Engineering 負責準備測試案例、保存修改前的回答並分析�
 - 改 description、SOP，或某一份 rule、template、script：`用 skill-form-description`（或 `skill-form-sop`、`skill-form-rule`、`skill-form-template`、`skill-form-script`）。
 - 為某一個 SOP 步驟抽出 rule、template 或 script：`用 skill-derive-rule`（或 `skill-derive-template`、`skill-derive-script`）。
 
-`video-production` 尚未實際驗證，先不要拿它當可複製的用法。`typesafe-ai` 與 `skill-creator` 依各自上游的說明使用。
+`typesafe-ai` 與 `skill-creator` 依各自上游的說明使用。
 
 ## Installation / Usage
 

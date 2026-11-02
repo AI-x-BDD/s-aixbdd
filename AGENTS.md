@@ -7,7 +7,7 @@
 ## 規則
 
 1. Always reply in ZH-TW
-2. 規劃影片、修改影片製作流程、美術提案或設計評審時，先讀 `videos/WORKFLOW.md`；只重建既有影片時讀 `videos/README.md`。
+2. 影片製作（規劃、流程、美術提案、設計評審、重建既有影片）已移到平行專案 `../s-aixbdd-videos`，請到該專案作業；本專案不再包含 `videos/`。
 3. 撰寫 Mermaid `flowchart` 時，含中文標點（如 `、`、`，`）的節點文字要用 `A["文字"]` 形式加引號；展示前以 Mermaid 10.2.3 解析確認，避免 Neovim 的 `markdown-preview.nvim` 顯示 `Syntax error in text`。
 
 ## 專案概覽
